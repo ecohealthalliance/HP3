@@ -32,22 +32,15 @@ f = expand.grid(
   pdo = c(
     "s(hOrder, bs ='re') +",
     "s(PdHoSa.cbCst, bs = 'ts', k=7) +",
-    "s(PdHoSa.cbCst, bs = 'ts', k=7) + s(hOrder, bs ='re') +",
-    "s(PdHoSaSTPD, bs = 'ts', k=7) +",
-    "PdHoSaSTPDf +"),
+    "s(PdHoSa.cbCst, bs = 'ts', k=7) +",
+    "s(PdHoSaSTPD, bs = 'ts', k=7) +"),
   f1 = c( "hHuntedIUCN +", ""),
   f2 = c( "hArtfclHbttUsrIUCN +", ""),
   f3 = c( "RedList_status +", ""),
-  pop =  c(
-    "s(TotHumPopLn, bs = 'ts', k=7) +",
-    "s(TotHumPopAEG, bs = 'ts', k=7) +",
-    "s(TotHumPopLn, bs = 'ts', k=7) + s(TotHumPopAEG, bs = 'ts', k=7) +",
-    "s(RurTotHumPopAEG, bs = 'ts', k=7) +",
-    "s(RurTotHumPopLn, bs = 'ts', k=7) +",
-    "s(RurTotHumPopLn, bs = 'ts', k=7) + s(RurTotHumPopAEG, bs = 'ts', k=7) +",
-    "s(UrbTotHumPopAEG, bs = 'ts', k=7) +",
-    "s(UrbTotHumPopLn, bs = 'ts', k=7) +",
-    "s(UrbTotHumPopLn, bs = 'ts', k=7) + s(UrbTotHumPopAEG, bs = 'ts', k=7) +"),
+  pop1 =  "s(RurTotHumPopAEG, bs = 'ts', k=7) +",
+  pop2 = "s(RurTotHumPopLn, bs = 'ts', k=7) +",
+  pop3 = "s(UrbTotHumPopAEG, bs = 'ts', k=7) +",
+  pop4 = "s(UrbTotHumPopLn, bs = 'ts', k=7) +",
   bias = c(
     "s(hDiseaseZACitesLn, bs = 'ts', k=7) +",
     "s(hAllZACitesLn, bs = 'ts', k=7) +"),
@@ -55,7 +48,7 @@ f = expand.grid(
   stringsAsFactors=FALSE)
 
 f$rhs = with(f, paste( s0, s1, s2, s3, s4, s5, s6, s7,
-                       pdo, f1, f2, f3, pop, bias, intercept, sep = " ") )
+                       pdo, f1, f2, f3, pop1, pop2, pop3, pop4, bias, intercept, sep = " ") )
 e = data_frame(rhs = unique(c(f$rhs, "1" ) ) )# %>% 
   #sample_n(nrow(f) + 1)
 

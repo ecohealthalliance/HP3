@@ -54,3 +54,9 @@ shortform = function(formula) {
   stri_replace_all_fixed(rhs, "(1 + | + 1)", "")
 }
 
+check_vals <- function(x) {
+  w = which(is.nan(x) | is.na(x) | is.infinite(x))
+  z = x[w]
+  names(z) = w
+  return(z)
+}

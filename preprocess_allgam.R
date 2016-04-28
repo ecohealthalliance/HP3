@@ -1,155 +1,91 @@
-rm(list=ls())
+library(dplyr)
+library(magrittr)
+library(readr)
 
-options(stringsAsFactors=FALSE)
+# Notes:
+# Felis_concolor is an incorrect species name and is largely empty. It should be Puma_concolor.
 
-## Read in assocation file
-a = read.csv("data/HP3.assocV41_FINAL.csv", as.is=T)
+## Read the data files
+associations = read_csv("data/HP3.assocV41_FINAL.csv")
+hosts  = read_csv("data/HP3.hostv41_FINAL.csv"); hosts[[1]] <- NULL
+viruses = read_csv("data/HP3.virusv41_FINAL_withRevZoon.csv")
 
-## Calculate total num virus per host.
-a$TotVirusPerHost = 1
-x = aggregate( TotVirusPerHost ~ hHostNameFinal, data=a, sum, na.rm=T)
+## Add viruses per host to host data
+hosts = associations %>% 
+  group_by(hHostNameFinal) %>% 
+  summarise(TotVirusPerHost = n()) %>% 
+  full_join(hosts, by="hHostNameFinal")
 
-b = a[,2:3]   	## Select just host and virus name for data frame
-d = b			## duplicate that dataframe
+## Add viruses shared with humans to host data
 
-names(d)[2] = "hHostNameAgain"		## rename second host name
+human_viruses = associations %>% 
+  filter(hHostNameFinal == "Homo_sapiens") %>% 
+  use_series("vVirusNameCorrected")
 
-m = merge(b,d,all=TRUE)  ## merge two dataframes by virus name
+hosts = associations %>% 
+  group_by(hHostNameFinal) %>% 
+  summarise(NSharedWithHoSa = sum(vVirusNameCorrected %in% human_viruses)) %>% 
+  full_join(hosts, by="hHostNameFinal")
 
-mt = with(m, table(hHostNameFinal,hHostNameAgain) )		## turn it into a table
+# Add additional host fields from other data files
 
-u = data.frame(mt, stringsAsFactors=FALSE) ## automatically reshapes!
+#phylo-corrected mass
+hosts = read_csv("data/PVR_cytb_hostmass.csv") %>%  
+  select(-hMassGramsLn) %>% 
+  rename(hMassGramsPVR = PVRcytb_resid) %>% 
+  full_join(hosts, by="hHostNameFinal")
 
-v = u[ u$hHostNameFinal != u$hHostNameAgain, ]
+#phylo-dist to humans via cyt-b
+hosts = read.csv("data/phylo/HP3-cytb_PDmatrix-12Mar2016.csv", 
+             as.is=T, row.names = 1, stringsAsFactors = FALSE) %>%
+    add_rownames("hHostNameFinal") %>% 
+    select(hHostNameFinal, Homo_sapiens) %>% 
+    rename(PdHoSa.cbCst = Homo_sapiens) %>% 
+    full_join(hosts, by="hHostNameFinal")
 
-v$hHostNameFinal = as.character(v$hHostNameFinal)
-v$hHostNameAgain = as.character(v$hHostNameAgain)
+#phylo-dist to humans via mammallian supertree
+hosts = read.csv("data/phylo/HP3-ST_PDmatrix-12Mar2016.csv", 
+                 as.is=T, row.names = 1, stringsAsFactors = FALSE) %>%
+  add_rownames("hHostNameFinal") %>% 
+  select(hHostNameFinal, Homo_sapiens) %>% 
+  rename(PdHoSaSTPD = Homo_sapiens) %>% 
+  full_join(hosts, by="hHostNameFinal")
 
-h = v[ v$hHostNameAgain=="Homo_sapiens", ]
-h = h[ h$hHostNameFinal!="Homo_sapiens", ]
+## Transform and derive variables
 
-h = h[,-2]
-names(h)[2] = "NSharedWithHoSa"
-
-hx = merge(h,x)
-
-## Read in Host data
-b = read.csv("data/HP3.hostv42_FINAL.csv", as.is=T)
-b$HoSaSTPD = NULL 
-
-## Delete fields useless to analysis, and memory hogging for merges
-b$Authority = b$Synonyms = b$HoSaPDcytb = NULL
-b$Common.names_Spa = b$Common_names_Eng = b$Common_names_Fre = NULL
-
-## Read in separate host data
-p = read.csv("data/hp3_pop.csv",as.is=T)
-m = read.csv("data/PVR_cytb_hostmass.csv", as.is=T)
-
-x = read.csv("data/phylo/HP3-cytb_PDmatrix-12Mar2016.csv",
-             as.is=T, row.names = 1)
-dcb = data.frame(hHostNameFinal = row.names(x), 
-                 PdHoSa.cbCst = x$Homo_sapiens )
-
-x = read.csv("data/phylo/HP3-ST_PDmatrix-12Mar2016.csv",
-             as.is=T, row.names = 1)
-
-dst = data.frame(hHostNameFinal = row.names(x), 
-                 HoSaSTPD = x$Homo_sapiens )
-
-pd = merge(dcb, dst, by="hHostNameFinal" )
-pm = merge(p, m, by="hHostNameFinal")
-pn = merge(pd, pm, by="hHostNameFinal" )
-bp = merge(b, pn, by="hHostNameFinal")
-hb = merge(bp,hx, by="hHostNameFinal")
-
-## Exclude marine from analysis
-hb = hb[ with(hb, ("Terrestrial" == hMarOTerr) ), ]
-
-## Wild only
-hb = hb[ with(hb, ("wild" == hWildDomFAO) ), ]
-
-## No longer standardizing, easiest to change function
-Z = function(x) {
- return(x)
-}
-hh = hb[, 1:3]
-
-hh$LnTotNumVirus = log(hb$TotVirusPerHost) ## Is Poisson Offset, do NOT normalize, but do log
-hh$NSharedWithHoSa = hb$NSharedWithHoSa  ## Is Dependent variable
-
-hh$hDiseaseZACitesLn = Z( log(hb$hDiseaseZACites +1) ) # num 2.3 2.4 0 5.21
-hh$hAllZACitesLn = Z( log(hb$hAllZACites) ) # num 3.97 4.08 2.2 6.72
-hh$hAllZACites = Z( hb$hAllZACites )
-hh$hDiseaseZACites = Z( hb$hDiseaseZACites )
-
-hh$hOrder = as.factor(hb$hOrder)
-hh$hWildDomFAO = as.factor(hb$hWildDomFAO)
-hh$hHuntedIUCN = as.factor(hb$hHuntedIUCN)
-hh$hArtfclHbttUsrIUCN = as.factor(hb$hArtfclHbttUsrIUCN)
-hh$RedList_status = as.factor(hb$RedList_status)
-
-hh$hMassGramsPVR = hb$PVRcytb_resid
-  
-hh$PdHoSaSTPD = Z( hb$HoSaSTPD)
-hh$PdHoSaSTPDf = as.factor( hb$HoSaSTPD)
-hh$PdHoSa.cbCst = Z( hb$PdHoSa.cbCst )
-
-## hh$S100 = Z( hb$S100 )
-hh$S80  = Z( hb$S80 )
-hh$S50  = Z( hb$S50 )
-hh$S40  = Z( hb$S40 )
-hh$S20  = Z( hb$S20 )
-hh$S    = Z( hb$S )
-
-logp = function(x){
-    m = min(x[ x > 0], na.rm=T)/10
-    x = log( x + m )
-    return(x)
+logp = function(x){   # Fn to take log but make zeros less 10x less than min
+  x[is.na(x)] <- 0
+  m = min(x[ x > 0], na.rm=T)
+  x[x==0] <- m
+  x = log(x)
+  return(x)
 }
 
-hh$LnAreaHost = Z( logp( hb$AreaHost ) )
 
+hosts = hosts %>% 
+  mutate(LnTotNumVirus     = log(TotVirusPerHost),     # for poisson offset
+         hDiseaseZACitesLn = log(hDiseaseZACites + 1), # num 2.3 2.4 0 5.21
+         hAllZACitesLn     = log(hAllZACites + 1),         # num 3.97 4.08 2.2 6.72
+         LnAreaHost        = logp(AreaHost),
+         
+         TotHumPopLn       = logp(popc_2005AD),
+         RurTotHumPopLn    = logp(rurc_2005AD),
+         UrbTotHumPopLn    = logp(urbc_2005AD),
+         
+         TotHumPopChgLn    = logp(popc_2005AD) - logp(popc_1970AD),
+         RurTotHumPopChgLn = logp(rurc_2005AD) - logp(rurc_1970AD),
+         UrbTotHumPopChgLn = logp(urbc_2005AD) - logp(urbc_1970AD),
 
-replace_na_zero <- function(x) {
-  x[is.na(x) | x == 0 ] <- 1
-  x
-}
-hh$TotHumPopLn = log(    replace_na_zero(hb$popc_2005AD))
-hh$RurTotHumPopLn = log( replace_na_zero(hb$rurc_2005AD))
-hh$UrbTotHumPopLn = log( replace_na_zero(hb$urbc_2005AD))
+         HabAreaCropLn     = logp(p_crop2005  * AreaHost), 
+         HabAreaGrassLn    = logp(p_grass2005 * AreaHost), 
+         HabAreaUrbanLn    = logp(p_uopp2005  * AreaHost),
 
-hh$TotHumPopAEG    = ( log( replace_na_zero(hb$popc_2005AD) ) - log( replace_na_zero(hb$popc_1970AD )) )/35
-hh$RurTotHumPopAEG = ( log( replace_na_zero(hb$rurc_2005AD) ) - log( replace_na_zero(hb$rurc_1970AD )) )/35
-hh$UrbTotHumPopAEG = ( log( replace_na_zero(hb$urbc_2005AD) ) - log( replace_na_zero(hb$urbc_1970AD )) )/35
-
-hh$PrcntCrop  = hb$p_crop2005 
-hh$PrcntGrass = hb$p_grass2005 
-hh$PrcntUrban = hb$p_uopp2005 
-
-hh$PrcntChngCrop  = hb$p_crop2005  - hb$p_crop1970
-hh$PrcntChngGrass = hb$p_grass2005 - hb$p_grass1970
-hh$PrcntChngUrban = hb$p_uopp2005  - hb$p_uopp1970
-
-
-save(hh, file="FullData.RData")
-
-hp3ap = na.omit( hh )
-
-## Model fitting function
-lr = function(lbl, x, fn, ...) {
-    cat("\n ~~ Running model :",lbl,"\n\n")
-    
-    ## Poisson version
-    b = gam(x, data=hp3ap, family=poisson, ...)
-    a = AIC(b)
-    names(a) = paste( lbl, ".Psn", sep="")
-    write.table(a,fn,sep=",",append=T, col.names=F)
-
-## Negative binomial version
-##    b = try( glm.nb(x, data=hp3ap, control=glm.control(maxit=1000), ... ) )
-##    a = ifelse( exists("converged",b), ifelse(b$converged, AIC(b), Inf) , NA)
-##    names(a) = paste( lbl, ".NB", sep="")
-##    write.table(a,fn,sep=",",append=T, col.names=F)
-}
-
-save(hp3ap, lr, file='nshared.glm.RData')
+         HabAreaCropChgLn  = logp(p_crop2005  * AreaHost) - logp(p_crop1970  * AreaHost), 
+         HabAreaGrassChgLn = logp(p_grass2005 * AreaHost) - logp(p_grass1970 * AreaHost), 
+         HabAreaUrbanChgLn = logp(p_uopp2005  * AreaHost) - logp(p_uopp1970  * AreaHost),
+         
+         hOrder            = as.factor(hOrder),
+         hHuntedIUCN       = as.factor(hHuntedIUCN),
+         hArtfclHbttUsrIUCN= as.factor(hArtfclHbttUsrIUCN),
+         RedList_status    = as.factor(RedList_status)
+  )

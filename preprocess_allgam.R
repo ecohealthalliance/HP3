@@ -34,7 +34,7 @@ names(h)[2] = "NSharedWithHoSa"
 hx = merge(h,x)
 
 ## Read in Host data
-b = read.csv("data/HP3.hostv41_FINAL.csv", as.is=T)
+b = read.csv("data/HP3.hostv42_FINAL.csv", as.is=T)
 b$HoSaSTPD = NULL 
 
 ## Delete fields useless to analysis, and memory hogging for merges

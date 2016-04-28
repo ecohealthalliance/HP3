@@ -109,16 +109,18 @@ logp = function(x){
 
 hh$LnAreaHost = Z( logp( hb$AreaHost ) )
 
-hh$mean.pop = Z( logp( hb$mean.pop ) ) 
-hh$median.pop = Z( logp( hb$median.pop ) ) 
 
-hh$TotHumPopLn = log( hb$popc_2005AD )
-hh$RurTotHumPopLn = log( hb$rurc_2005AD )
-hh$UrbTotHumPopLn = log( hb$urbc_2005AD )
+replace_na_zero <- function(x) {
+  x[is.na(x) | x == 0 ] <- 1
+  x
+}
+hh$TotHumPopLn = log(    replace_na_zero(hb$popc_2005AD))
+hh$RurTotHumPopLn = log( replace_na_zero(hb$rurc_2005AD))
+hh$UrbTotHumPopLn = log( replace_na_zero(hb$urbc_2005AD))
 
-hh$TotHumPopAEG    = ( log( hb$popc_2005AD ) - log( hb$popc_1970AD ) )/35
-hh$RurTotHumPopAEG = ( log( hb$rurc_2005AD ) - log( hb$rurc_1970AD ) )/35
-hh$UrbTotHumPopAEG = ( log( hb$urbc_2005AD ) - log( hb$urbc_1970AD ) )/35
+hh$TotHumPopAEG    = ( log( replace_na_zero(hb$popc_2005AD) ) - log( replace_na_zero(hb$popc_1970AD )) )/35
+hh$RurTotHumPopAEG = ( log( replace_na_zero(hb$rurc_2005AD) ) - log( replace_na_zero(hb$rurc_1970AD )) )/35
+hh$UrbTotHumPopAEG = ( log( replace_na_zero(hb$urbc_2005AD) ) - log( replace_na_zero(hb$urbc_1970AD )) )/35
 
 hh$PrcntCrop  = hb$p_crop2005 
 hh$PrcntGrass = hb$p_grass2005 

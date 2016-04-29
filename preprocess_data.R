@@ -7,7 +7,14 @@ library(assertr)
 ## Read the data files
 associations = read_csv("data/HP3.assocV41_FINAL.csv")
 hosts  = read_csv("data/HP3.hostv42_FINAL.csv")
+
 viruses = read_csv("data/HP3.virusv41_FINAL_withRevZoon.csv")
+
+# Temporary fix
+hosts = hosts %>% 
+  filter(hHostNameFinal != "Felis_concolor")
+associations = associations %>% 
+  filter(hHostNameFinal != "Felis_concolor")
 
 ## Add viruses per host (total and strict) to host data
 hosts = associations %>% 
@@ -19,7 +26,6 @@ hosts = associations %>%
 
 
 ## Add viruses shared with humans to host data
-
 human_viruses = associations %>% 
   filter(hHostNameFinal == "Homo_sapiens") %>% 
   use_series("vVirusNameCorrected")
@@ -70,11 +76,17 @@ logp = function(x){   # Fn to take log but make zeros less 10x less than min
   return(x)
 }
 
+is_real <- function(x) {
+  !(is.nan(x) | is.na(x) | is.infinite(x))
+}
+
+#TODO: add some suffix to calculated variables to designated them, make easier
+#for verification calls.
 
 hosts = hosts %>% 
   mutate(LnTotNumVirus     = log(TotVirusPerHost),     # for poisson offset
          hDiseaseZACitesLn = log(hDiseaseZACites + 1), # num 2.3 2.4 0 5.21
-         hAllZACitesLn     = log(hAllZACites),         # num 3.97 4.08 2.2 6.72
+         hAllZACitesLn     = log(hAllZACites + 1),         # num 3.97 4.08 2.2 6.72
          LnAreaHost        = logp(AreaHost),
          
          TotHumPopLn       = logp(popc_2005AD),
@@ -91,4 +103,25 @@ hosts = hosts %>%
 
          HabAreaCropChgLn     = logp(p_crop2005  * AreaHost) - logp(p_crop1970  * AreaHost), 
          HabAreaGrassChgLn    = logp(p_grass2005 * AreaHost) - logp(p_grass1970 * AreaHost), 
-         HabAreaUrbanChgLn    = logp(p_uopp2005  * AreaHost) - logp(p_uopp1970  * AreaHost))
+         HabAreaUrbanChgLn    = logp(p_uopp2005  * AreaHost) - logp(p_uopp1970  * AreaHost),
+         Population_trend = factor(Population_trend, 
+                                   levels=sort(unique(Population_trend),decreasing = T))) %>% 
+         assert(is_real,
+                LnTotNumVirus,
+                hDiseaseZACitesLn,
+                hAllZACitesLn, 
+                LnAreaHost,  
+                TotHumPopLn,  
+                RurTotHumPopLn, 
+                UrbTotHumPopLn, 
+                TotHumPopChgLn, 
+                RurTotHumPopChgLn,
+                UrbTotHumPopChgLn,
+                HabAreaCropLn, 
+                HabAreaGrassLn, 
+                HabAreaUrbanLn, 
+                HabAreaCropChgLn,
+                HabAreaGrassChgLn,
+                HabAreaUrbanChgLn) %>% 
+        lapply(function(x) if(is.character(x)) as.factor(x) else x) %>% 
+        as.data.frame %>% tbl_df

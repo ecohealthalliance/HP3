@@ -15,7 +15,7 @@ data_set = hosts %>%
   filter(hMarOTerr == "Terrestrial",
          hWildDomFAO == "wild")
 
-outcome_variable = "NSharedWithHoSa"
+outcome_variable = "NSharedWithHoSa_strict"
 
 model_family = poisson
 
@@ -35,7 +35,7 @@ terms_grid = expand.grid(
     "s(PdHoSaSTPD, bs = 'ts', k=7)"),
   f1 = c( "hHuntedIUCN +", ""),
   f2 = c( "hArtfclHbttUsrIUCN", ""),
- # f3 = c( "RedList_status", ""),
+  # f3 = c( "RedList_status", ""),
   pop1 =  "s(RurTotHumPopChgLn, bs = 'ts', k=7)",
   pop2 = "s(RurTotHumPopLn, bs = 'ts', k=7)",
   pop3 = "s(UrbTotHumPopChgLn, bs = 'ts', k=7)",
@@ -66,7 +66,7 @@ fit_gam = function(frm) {
 }
 
 models = models %>% 
-   mutate(model = mclapply(formula, fit_gam))
+  mutate(model = mclapply(formula, fit_gam))
 
 
 # Calculate models
@@ -85,6 +85,7 @@ models_reduced = models %>%
 
 
 n_cores_use = round(nrow(models_reduced) / (nrow(models) %/% n_cores + 1))
+
 options(mc.cores = n_cores_use)
 message("Using ", n_cores_use, " cores to fit ", nrow(models_reduced), " reduced models")
 
@@ -101,4 +102,6 @@ models_reduced = models_reduced %>%
   filter(daic < 2) %>% 
   mutate(relweight = weight/sum(weight))
 
-models_reduced %>% select(terms, relweight) %>% print
+models_reduced %>% select(terms) %>% print
+plot(models_reduced$model[[1]], all.terms=TRUE, pages=1)
+

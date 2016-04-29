@@ -7,15 +7,8 @@ library(purrr)
 source('R/model_reduction.R')
 set.seed(0)
 
-# TODO:
-# Make area, pop, and change in area and pop variables (including those in rural, urb, etc) on sensible scales
-# Check co-linearity of rural/urban values and change.
-# Use both order and one measure of phylogenetic distiance
-# Make order a categorical variable (plot order-level effects)
-# Get some nice viz going.
-
 # Source the processed data
-source("preprocess_allgam.R")
+source("preprocess_data.R")
 
 # Set up the model
 data_set = hosts %>% 
@@ -109,5 +102,3 @@ models_reduced = models_reduced %>%
   mutate(relweight = weight/sum(weight))
 
 models_reduced %>% select(terms) %>% print
-
-hosts %>% filter(hHostNameFinal=="Puma_concolor") %>% as.data.frame

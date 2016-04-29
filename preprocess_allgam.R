@@ -1,20 +1,20 @@
 library(dplyr)
 library(magrittr)
 library(readr)
-
-# Notes:
-# Felis_concolor is an incorrect species name and is largely empty. It should be Puma_concolor.
-
+library(assertr)
 ## Read the data files
 associations = read_csv("data/HP3.assocV41_FINAL.csv")
-hosts  = read_csv("data/HP3.hostv41_FINAL.csv"); hosts[[1]] <- NULL
+hosts  = read_csv("data/HP3.hostv42_FINAL.csv")
 viruses = read_csv("data/HP3.virusv41_FINAL_withRevZoon.csv")
 
-## Add viruses per host to host data
+## Add viruses per host (total and strict) to host data
 hosts = associations %>% 
   group_by(hHostNameFinal) %>% 
-  summarise(TotVirusPerHost = n()) %>% 
-  full_join(hosts, by="hHostNameFinal")
+  summarise(TotVirusPerHost = n(),
+            TotVirusPerHost_strict = sum(DetectionQuality02 == 2)) %>% 
+  full_join(hosts, by="hHostNameFinal") %>% 
+  verify(TotVirusPerHost == vir_rich)  # check against prev values
+
 
 ## Add viruses shared with humans to host data
 
@@ -22,10 +22,18 @@ human_viruses = associations %>%
   filter(hHostNameFinal == "Homo_sapiens") %>% 
   use_series("vVirusNameCorrected")
 
+human_viruses_strict = associations %>% 
+  filter(hHostNameFinal == "Homo_sapiens", DetectionQuality02 == 2) %>% 
+  use_series("vVirusNameCorrected")
+
 hosts = associations %>% 
   group_by(hHostNameFinal) %>% 
-  summarise(NSharedWithHoSa = sum(vVirusNameCorrected %in% human_viruses)) %>% 
-  full_join(hosts, by="hHostNameFinal")
+  summarise(NSharedWithHoSa = sum(vVirusNameCorrected %in% human_viruses),
+            NSharedWithHoSa_strict = sum(vVirusNameCorrected[DetectionQuality02 ==2] %in% human_viruses_strict)) %>% 
+  full_join(hosts, by="hHostNameFinal") %>% # check against prev values
+  verify(NSharedWithHoSa == vHoSaRich) %>% 
+  verify(NSharedWithHoSa_strict == vHoSaRich.stringent |
+         is.na(vHoSaRich.stringent) & NSharedWithHoSa_strict == 0)
 
 # Add additional host fields from other data files
 
@@ -55,9 +63,8 @@ hosts = read.csv("data/phylo/HP3-ST_PDmatrix-12Mar2016.csv",
 
 logp = function(x){   # Fn to take log but make zeros less 10x less than min
   x[is.na(x)] <- 0
-  m = min(x[ x > 0], na.rm=T)
-  x[x==0] <- m
-  x = log(x)
+  m = min(x[ x > 0], na.rm=T)/10
+  x = log( x + m )
   return(x)
 }
 
@@ -65,7 +72,7 @@ logp = function(x){   # Fn to take log but make zeros less 10x less than min
 hosts = hosts %>% 
   mutate(LnTotNumVirus     = log(TotVirusPerHost),     # for poisson offset
          hDiseaseZACitesLn = log(hDiseaseZACites + 1), # num 2.3 2.4 0 5.21
-         hAllZACitesLn     = log(hAllZACites + 1),         # num 3.97 4.08 2.2 6.72
+         hAllZACitesLn     = log(hAllZACites),         # num 3.97 4.08 2.2 6.72
          LnAreaHost        = logp(AreaHost),
          
          TotHumPopLn       = logp(popc_2005AD),
@@ -80,12 +87,6 @@ hosts = hosts %>%
          HabAreaGrassLn    = logp(p_grass2005 * AreaHost), 
          HabAreaUrbanLn    = logp(p_uopp2005  * AreaHost),
 
-         HabAreaCropChgLn  = logp(p_crop2005  * AreaHost) - logp(p_crop1970  * AreaHost), 
-         HabAreaGrassChgLn = logp(p_grass2005 * AreaHost) - logp(p_grass1970 * AreaHost), 
-         HabAreaUrbanChgLn = logp(p_uopp2005  * AreaHost) - logp(p_uopp1970  * AreaHost),
-         
-         hOrder            = as.factor(hOrder),
-         hHuntedIUCN       = as.factor(hHuntedIUCN),
-         hArtfclHbttUsrIUCN= as.factor(hArtfclHbttUsrIUCN),
-         RedList_status    = as.factor(RedList_status)
-  )
+         HabAreaCropChgLn     = logp(p_crop2005  * AreaHost) - logp(p_crop1970  * AreaHost), 
+         HabAreaGrassChgLn    = logp(p_grass2005 * AreaHost) - logp(p_grass1970 * AreaHost), 
+         HabAreaUrbanChgLn    = logp(p_uopp2005  * AreaHost) - logp(p_uopp1970  * AreaHost))

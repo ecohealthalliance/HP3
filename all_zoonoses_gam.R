@@ -35,7 +35,7 @@ terms_grid = expand.grid(
     "s(PdHoSaSTPD, bs = 'ts', k=7)"),
   f1 = c( "hHuntedIUCN +", ""),
   f2 = c( "hArtfclHbttUsrIUCN", ""),
- # f3 = c( "RedList_status", ""),
+  f3 = c("RedList_status", "Population_trend", ""),
   pop1 =  "s(RurTotHumPopChgLn, bs = 'ts', k=7)",
   pop2 = "s(RurTotHumPopLn, bs = 'ts', k=7)",
   pop3 = "s(UrbTotHumPopChgLn, bs = 'ts', k=7)",
@@ -96,9 +96,11 @@ models_reduced = models_reduced %>%
   mutate(aic = map_dbl(model, AIC),
          daic = aic - min(aic),
          weight = exp(-daic/2),
-         terms = shortform(map(model, ~ rearrange_formula(.$formula)))) %>%
-  arrange(aic) %>% 
-  filter(daic < 2) %>% 
-  mutate(relweight = weight/sum(weight))
+         terms = shortform(map(model, ~ rearrange_formula(.$formula))),
+         relweight = ifelse(daic > 2, 0, weight/sum(weight[daic < 2])),
+         relweight_all = weight/sum(weight),
+         cumweight = cumsum(relweight_all)) %>%
+  arrange(aic)
 
-models_reduced %>% select(terms, relweight) %>% print
+models_reduced %>% filter(daic < 5) %>% select(terms, daic, relweight, relweight_all, cumweight) %>% print
+plot(models_reduced$model[[1]], all.terms=TRUE, pages=1)

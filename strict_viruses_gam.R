@@ -13,38 +13,30 @@ source("preprocess_data.R")
 # Set up the model
 data_set = hosts %>% 
   filter(hMarOTerr == "Terrestrial",
-         hWildDomFAO == "wild")
+         hWildDomFAO == "wild") 
 
-outcome_variable = "NSharedWithHoSa_strict"
+outcome_variable = "TotVirusPerHost_strict"
 
 model_family = poisson
 
 ## Create data.frame of all possible models
 terms_grid = expand.grid(
-  s0 = "s(hMassGramsPVR, bs = 'ts', k=7)",
-  s1 = "s(LnAreaHost, bs = 'ts', k=7)",
-  s2 = "s(HabAreaCropLn, bs = 'ts', k=7)",
-  s3 = "s(HabAreaGrassLn, bs = 'ts', k=7)",
-  s4 = "s(HabAreaUrbanLn, bs = 'ts', k=7)",
-  s5 = "s(HabAreaCropChgLn, bs = 'ts', k=7)",
-  s6 = "s(HabAreaGrassChgLn, bs = 'ts', k=7)",
-  s7 = "s(HabAreaUrbanChgLn, bs = 'ts', k=7)",
-  order = c("hOrder", ""), 
-  pdo = c(
-    "s(PdHoSa.cbCst, bs = 'ts', k=7)",
-    "s(PdHoSaSTPD, bs = 'ts', k=7)"),
-  f1 = c( "hHuntedIUCN +", ""),
-  f2 = c( "hArtfclHbttUsrIUCN", ""),
-  f3 = c("RedList_status", "Population_trend", ""),
-  pop1 =  "s(RurTotHumPopChgLn, bs = 'ts', k=7)",
-  pop2 = "s(RurTotHumPopLn, bs = 'ts', k=7)",
-  pop3 = "s(UrbTotHumPopChgLn, bs = 'ts', k=7)",
-  pop4 = "s(UrbTotHumPopLn, bs = 'ts', k=7)",
+  s1 = "s(LnAreaHost, bs='cs', k = 7)",
+  s2 = "s(hMassGramsPVR, bs='cs', k = 7)",
+  s3 = c(
+    "s(S100, bs='cs', k = 7)",
+    "s(S80, bs='cs', k = 7)",
+    "s(S50, bs='cs', k = 7)",
+    "s(S40, bs='cs', k = 7)",
+    "s(S20, bs='cs', k = 7)",
+    "s(S, bs='cs', k = 7)"
+  ),
+  f1 = c("RedList_status", "Population_trend", ""),
+  pdo = c("hOrder", "" ),
   bias = c(
-    "s(hDiseaseZACitesLn, bs = 'ts', k=7)",
-    "s(hAllZACitesLn, bs = 'ts', k=7)" ),
-  vir = "offset(LnTotNumVirus)",
-  stringsAsFactors=FALSE)
+    "s(hDiseaseZACitesLn, bs='cs', k = 7)",
+    "s(hAllZACitesLn, bs='cs',k = 7)"),
+  stringsAsFactors = FALSE)
 
 #Create model forumulas from the grid
 formulas = apply(as.matrix(terms_grid), 1, function(row) paste(row, collapse = " + ")) %>% 
@@ -65,15 +57,16 @@ fit_gam = function(frm) {
   gam(formula=as.formula(frm), model_family, data_set) 
 }
 
+#plyr::llply(models$formula, fit_gam, .progress="time")
+
 models = models %>% 
   mutate(model = mclapply(formula, fit_gam))
-
 
 # Calculate models
 models = models %>% 
   mutate(aic = map_dbl(model, AIC),
          daic = aic - min(aic),
-         weight = exp(-daic/2)) %>%
+         weight = exp(-daic/2)) %>% 
   arrange(aic)
 
 # Remove unused terms from models and reduce to unique ones
@@ -85,9 +78,12 @@ models_reduced = models %>%
 
 
 n_cores_use = round(nrow(models_reduced) / (nrow(models) %/% n_cores + 1))
-
 options(mc.cores = n_cores_use)
 message("Using ", n_cores_use, " cores to fit ", nrow(models_reduced), " reduced models")
+
+# Reduce the remaining models
+models_reduced = models_reduced %>% 
+  mutate(model = mclapply(model, reduce_model))
 
 # Reduce the remaining models
 models_reduced = models_reduced %>% 

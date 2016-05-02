@@ -7,22 +7,15 @@ library(purrr)
 source('R/model_reduction.R')
 set.seed(0)
 
-# TODO:
-# Make area, pop, and change in area and pop variables (including those in rural, urb, etc) on sensible scales
-# Check co-linearity of rural/urban values and change.
-# Use both order and one measure of phylogenetic distiance
-# Make order a categorical variable (plot order-level effects)
-# Get some nice viz going.
-
 # Source the processed data
-source("preprocess_allgam.R")
+source("preprocess_data.R")
 
 # Set up the model
 data_set = hosts %>% 
   filter(hMarOTerr == "Terrestrial",
          hWildDomFAO == "wild")
 
-outcome_variable = "NSharedWithHoSa"
+outcome_variable = "NSharedWithHoSa_strict"
 
 model_family = poisson
 
@@ -42,7 +35,7 @@ terms_grid = expand.grid(
     "s(PdHoSaSTPD, bs = 'ts', k=7)"),
   f1 = c( "hHuntedIUCN +", ""),
   f2 = c( "hArtfclHbttUsrIUCN", ""),
- # f3 = c( "RedList_status", ""),
+  f3 = c("RedList_status", "Population_trend", ""),
   pop1 =  "s(RurTotHumPopChgLn, bs = 'ts', k=7)",
   pop2 = "s(RurTotHumPopLn, bs = 'ts', k=7)",
   pop3 = "s(UrbTotHumPopChgLn, bs = 'ts', k=7)",
@@ -50,7 +43,7 @@ terms_grid = expand.grid(
   bias = c(
     "s(hDiseaseZACitesLn, bs = 'ts', k=7)",
     "s(hAllZACitesLn, bs = 'ts', k=7)" ),
-  vir = "LnTotNumVirus",
+  vir = "offset(LnTotNumVirus)",
   stringsAsFactors=FALSE)
 
 #Create model forumulas from the grid
@@ -73,14 +66,14 @@ fit_gam = function(frm) {
 }
 
 models = models %>% 
-   mutate(model = mclapply(formula, fit_gam))
+  mutate(model = mclapply(formula, fit_gam))
 
 
 # Calculate models
 models = models %>% 
   mutate(aic = map_dbl(model, AIC),
          daic = aic - min(aic),
-         weight = exp(-daic/2)) %>% 
+         weight = exp(-daic/2)) %>%
   arrange(aic)
 
 # Remove unused terms from models and reduce to unique ones
@@ -92,22 +85,23 @@ models_reduced = models %>%
 
 
 n_cores_use = round(nrow(models_reduced) / (nrow(models) %/% n_cores + 1))
+
 options(mc.cores = n_cores_use)
 message("Using ", n_cores_use, " cores to fit ", nrow(models_reduced), " reduced models")
 
 # Reduce the remaining models
 models_reduced = models_reduced %>% 
-  mutate(model = mclapply(model, function(x) reduce_model(x)))
+  mutate(model = mclapply(model, reduce_model))
 
 models_reduced = models_reduced %>% 
   mutate(aic = map_dbl(model, AIC),
          daic = aic - min(aic),
          weight = exp(-daic/2),
-         terms = shortform(map(model, ~ rearrange_formula(.$formula)))) %>%
-  arrange(aic) %>% 
-  filter(daic < 2) %>% 
-  mutate(relweight = weight/sum(weight))
+         terms = shortform(map(model, ~ rearrange_formula(.$formula))),
+         relweight = ifelse(daic > 2, 0, weight/sum(weight[daic < 2])),
+         relweight_all = weight/sum(weight),
+         cumweight = cumsum(relweight_all)) %>%
+  arrange(aic)
 
-models_reduced %>% select(terms) %>% print
-
-hosts %>% filter(hHostNameFinal=="Puma_concolor") %>% as.data.frame
+models_reduced %>% filter(daic < 5) %>% select(terms, daic, relweight, relweight_all, cumweight) %>% print
+plot(models_reduced$model[[1]], all.terms=TRUE, pages=1)

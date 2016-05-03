@@ -6,9 +6,10 @@ rm_low_edf <- function(mod, edf_cutoff = 0.001) {
   rhs = fr[3]
   edfs = pen.edf(mod)
   low_edfs = edfs[edfs < edf_cutoff]
-  vars_to_remove = stri_extract_first_regex(names(low_edfs), "(?<=s\\()[\\w]+(?=\\))")
+  vars_to_remove = stri_replace_all_fixed(unique(stri_extract_first_regex(names(low_edfs), "(?<=s\\()[^\\)]+(?=\\))")), ",",", ")
   vars_regex = paste0("(", paste(vars_to_remove, collapse="|"), ")")
   new_rhs = stri_replace_all_regex(rhs, paste0("\\s*s\\(", vars_regex, "\\,[^\\)]+\\)\\s*\\+?"), "")
+  new_rhs= stri_replace_all_fixed(new_rhs, "+, k = 7) ", "")
   new_formula = paste(lhs, "~", new_rhs)
   new_formula = stri_replace_all_regex(new_formula, "[\\s\\n]+", " ")
   new_formula = stri_replace_all_regex(new_formula, "[+\\s]*$", "")

@@ -80,6 +80,10 @@ is_real <- function(x) {
   !(is.nan(x) | is.na(x) | is.infinite(x))
 }
 
+# Add variable for order-normalized host phylogenetic distance to humans
+hosts = hosts %>% 
+  group_by(hOrder) %>% 
+  mutate(PdHoSa.cbCst_order = PdHoSa.cbCst - mean(PdHoSa.cbCst, na.rm =TRUE))
 #TODO: add some suffix to calculated variables to designated them, make easier
 #for verification calls.
 

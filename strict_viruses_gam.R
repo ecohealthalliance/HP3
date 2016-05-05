@@ -102,10 +102,13 @@ models_reduced = models_reduced %>%
          relweight_all = weight/sum(weight),
          cumweight = cumsum(relweight_all))
 
-models_reduced %>% select(terms, daic, relweight, relweight_all, cumweight) %>% print(n=20)
-plot(models_reduced$model[[1]], all.terms=TRUE, pages=1, scale=-1)
+models_reduced %>% select(daic, relweight, relweight_all, cumweight) %>% print(n=20)
+plot(models_reduced$model[[1]], all.terms=TRUE, pages=1, scale=0, residuals = TRUE)
 
-# coefs = coef(models_reduced$model[[1]])
-# coefs[stri_detect_regex(names(coefs), "hOrder")]
-# coefs.se = sqrt(diag(vcov(models_reduced$model[[1]])))
-# coefs.se[stri_detect_regex(names(coefs.se), "hOrder")]
+coefs = coef(models_reduced$model[[1]])
+order_coefs = coefs[stri_detect_regex(names(coefs), "hOrder")]
+coefs.se = diag(vcov(models_reduced$model[[1]]))
+order_coefs.se = sqrt(coefs.se[stri_detect_regex(names(coefs.se), "hOrder")])
+edfs = pen.edf(models_reduced$model[[1]])
+edfs = edfs[stri_detect_regex(names(edfs), "hOrder")]
+data_frame(order = names(order_coefs), coef=order_coefs, se=order_coefs.se, edf=edfs)

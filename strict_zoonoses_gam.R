@@ -21,41 +21,28 @@ model_family = poisson
 
 #  Create dummy variables for orders to use as random effects
 dummys = as.data.frame(with(data_set, model.matrix(~hOrder))[,-1])
-#dummys = dummys[, colSums(dummys) > 1]
 data_set = cbind(data_set, dummys)
 dummy_terms = paste0("s(", names(dummys), ", bs = 're')")
 names(dummy_terms) <- names(dummys)
 
 ## Create data.frame of all possible models
 terms = list(
-  s0 = "s(hMassGramsPVR, bs = 'tp', k=7)",
-  s1 = "s(LnAreaHost, bs = 'tp', k=7)",
-  s2 = "s(HabAreaCropLn, bs = 'tp', k=7)",
-  s3 = "s(HabAreaGrassLn, bs = 'tp', k=7)",
-  s4 = "s(HabAreaUrbanLn, bs = 'tp', k=7)",
-  s5 = "s(HabAreaCropChgLn, bs = 'tp', k=7)",
-  s6 = "s(HabAreaGrassChgLn, bs = 'tp', k=7)",
-  s7 = "s(HabAreaUrbanChgLn, bs = 'tp', k=7)",
-  #  pd0 = c("hOrder", ""),
-  pd1 = "s(PdHoSa.cbCst, bs = 'tp', k=7)",
-  pd1_2 = "s(PdHoSaSTPD, bs = 'tp', k=7)",
-  pd2 = "s(PdHoSa.cbCst, hOrder, bs = c('fs'), k=7)",
-  #"s(PdHoSa.cbCst_order, bs = 'tp', by=hOrder)"
-  #  "s(PdHoSa.cbCst_order, hOrder, bs = 'fs')"
-  f1 = "s(hHuntedIUCN, bs='re')",
-  f2 = "s(hArtfclHbttUsrIUCN, bs='re')",
-  #f3 = c("RedList_status", "Population_trend", ""),
-  pop1 =  "s(RurTotHumPopChgLn, bs = 'tp', k=7)",
-  pop2 = "s(RurTotHumPopLn, bs = 'tp', k=7)",
-  pop3 = "s(UrbTotHumPopChgLn, bs = 'tp', k=7)",
-  pop4 = "s(UrbTotHumPopLn, bs = 'tp', k=7)",
-  bias1 = "s(hDiseaseZACitesLn, bs = 'tp', k=7)",
-  bias2 = "s(hAllZACitesLn, bs = 'tp', k=7)",
-  vir = "offset(LnTotNumVirus)",
+  mass = "s(hMassGramsPVR, bs = 'tp', k=7)",
+  interaction = c(
+    "s(HabAreaCropLn, bs = 'tp', k=7)   + s(HabAreaCropChgLn, bs = 'tp', k=7)",
+    "s(HabAreaGrassLn, bs = 'tp', k=7)  + s(HabAreaGrassChgLn, bs = 'tp', k=7)",
+    "s(HabAreaUrbanLn, bs = 'tp', k=7)  + s(HabAreaUrbanChgLn, bs = 'tp', k=7)",
+    "s(HabInhabitedLn, bs = 'tp', k=7)  + s(HabInhabitedChgLn, bs = 'tp', k=7)",
+    "s(TotHumPopLn, bs = 'tp', k=7) + s(TotHumPopChgLn, bs = 'tp', k=7) + s(UrbRurPopRatioLn, bs = 'tp', k=7) + s(UrbRurPopRatioChg, bs = 'tp', k=7)",
+    "s(HumPopDensLn, bs = 'tp', k=7) + s(HumPopDensLnChg, bs = 'tp', k=7) + s(UrbRurPopRatioLn, bs = 'tp', k=7) + s(UrbRurPopRatioChg, bs = 'tp', k=7)"),
+  interaction2 = "s(hHuntedIUCN, bs='re')",
+  interaction3 = "s(hArtfclHbttUsrIUCN, bs='re')",
+  phylo_distance = c("s(PdHoSa.cbCst, bs = 'tp', k=7)", "s(PdHoSaSTPD, bs = 'tp', k=7)"),
+  bias = c("s(hAllZACitesLn, bs = 'tp', k=7)", "s(hDiseaseZACitesLn, bs = 'tp', k=7)"),
+  offset = "offset(LnTotNumVirus)",
   stringsAsFactors=FALSE)
 
 terms = c(dummy_terms, terms)
-
 terms_grid = do.call(expand.grid, terms)
 
 #Create model forumulas from the grid
@@ -113,10 +100,55 @@ models_reduced = models_reduced %>%
          relweight_all = weight/sum(weight),
          cumweight = cumsum(relweight_all))
 
-models_reduced %>% select(terms, daic, relweight, relweight_all, cumweight) %>% print(n=20)
-plot(models_reduced$model[[1]], all.terms=TRUE, pages=1, scale=-1)
+models_reduced %>% select(daic, relweight, relweight_all, cumweight) %>% print(n=20)
+plot(models_reduced$model[[1]], all.terms=TRUE, pages=1, scale=-1, residuals = TRUE)
+summary(models_reduced$model[[1]])
+coefs = coef(models_reduced$model[[1]])
+order_coefs = coefs[stri_detect_regex(names(coefs), "hOrder")]
+coefs.se = diag(vcov(models_reduced$model[[1]]))
+order_coefs.se = sqrt(coefs.se[stri_detect_regex(names(coefs.se), "hOrder")])
+edfs = pen.edf(models_reduced$model[[1]])
+edfs = edfs[stri_detect_regex(names(edfs), "hOrder")]
+data_frame(order = names(order_coefs), coef=order_coefs, se=order_coefs.se, edf=edfs)
 
-# coefs = coef(models_reduced$model[[1]])
-# coefs[stri_detect_regex(names(coefs), "hOrder")]
-# coefs.se = sqrt(diag(vcov(models_reduced$model[[1]])))
-# coefs.se[stri_detect_regex(names(coefs.se), "hOrder")]
+
+#----
+
+# Cross validation
+
+# topmod = models_reduced$model[[1]]
+# newdat =topmod$model %>% 
+#   rename(LnTotNumVirus=`offset(LnTotNumVirus)`)
+# newdat_names <- names(newdat)
+# attributes(newdat) <- NULL
+# names(newdat) <- newdat_names
+# newdat <- as.data.frame(newdat)
+# 
+# n_folds = 7
+# newdat = newdat %>% 
+#   mutate(fold = sample(rep_len(1:n_folds, length.out = n()))) %>% 
+#   group_by(fold) %>% 
+#   tidyr::nest(.key = "fold_data") %>% 
+#   mutate(new_mod = map(fold_data, ~refit(topmod, .)))
+# 
+# 
+# refit <- function(model, data) {
+#   blank_cols = map_lgl(data, ~ all(. ==0))
+#   orig_names = names(data)
+#   if(length(blank_cols) > 0) {
+#     data <- data[!blank_cols]
+#     form = as.character(topmod$formula)
+#     vars_regex = paste0("(", paste(orig_names[blank_cols], collapse="|"), ")")
+#     new_rhs = stri_replace_all_regex(form[3], paste0("\\s*s\\(", vars_regex, "\\,[^\\)]+\\)\\s*\\+?"), "")
+#     new_rhs= stri_replace_all_fixed(new_rhs, "+, k = 7) ", "")
+#     form = as.formula(paste(form[2], form[1], new_rhs))
+#     newmod = update(model, formula=as.formula(form), data=data)
+#   } else {
+#     newmod = update(model, data=data)
+#   }
+#   return(newmod)
+# }
+#   
+# }
+# update(topmod, data = newdat$fold_data[[1]])
+# twelve = NULL

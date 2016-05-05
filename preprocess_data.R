@@ -71,7 +71,7 @@ hosts = read.csv("data/phylo/HP3-ST_PDmatrix-12Mar2016.csv",
 
 logp = function(x){   # Fn to take log but make zeros less 10x less than min
   x[is.na(x)] <- 0
-  m = min(x[ x > 0], na.rm=T)/10
+  m = min(x[ x > 0], na.rm=T)
   x = log( x + m )
   return(x)
 }
@@ -101,13 +101,27 @@ hosts = hosts %>%
          RurTotHumPopChgLn = logp(rurc_2005AD) - logp(rurc_1970AD),
          UrbTotHumPopChgLn = logp(urbc_2005AD) - logp(urbc_1970AD),
 
-         HabAreaCropLn     = logp(p_crop2005  * AreaHost), 
-         HabAreaGrassLn    = logp(p_grass2005 * AreaHost), 
-         HabAreaUrbanLn    = logp(p_uopp2005  * AreaHost),
-
-         HabAreaCropChgLn     = logp(p_crop2005  * AreaHost) - logp(p_crop1970  * AreaHost), 
-         HabAreaGrassChgLn    = logp(p_grass2005 * AreaHost) - logp(p_grass1970 * AreaHost), 
-         HabAreaUrbanChgLn    = logp(p_uopp2005  * AreaHost) - logp(p_uopp1970  * AreaHost),
+   #      TotHumPopChgPct    = (popc_2005AD - popc_1970AD)/(popc_1970AD + 1),
+   #      RurTotHumPopChgPct = (rurc_2005AD - rurc_1970AD)/(rurc_1970AD + 1),
+   #      UrbTotHumPopChgPct = (urbc_2005AD - urbc_1970AD)/(urbc_1970AD + 1),
+         
+         UrbRurPopRatioLn = logp((urbc_2005AD)/(rurc_2005AD)),
+         UrbRurPopRatioChg = logp((urbc_2005AD)/(rurc_2005AD)) - logp((urbc_1970AD)/(rurc_1970AD)),
+         
+         HumPopDensLn      = logp(popc_2005AD/AreaHost),
+         HumPopDensLnChg   = logp(popc_2005AD/AreaHost) - logp(popc_1970AD/AreaHost),
+         
+         HabAreaCropLn     = logp(p_crop2005  * AreaHost/100), 
+         HabAreaGrassLn    = logp(p_grass2005 * AreaHost/100), 
+         HabAreaUrbanLn    = logp(p_uopp2005  * AreaHost/100),
+         HabInhabitedLn    = logp((p_crop2005 + p_grass2005 + p_uopp2005)/100),
+        
+         
+         HabAreaCropChgLn     = logp(p_crop2005  * AreaHost/100) - logp(p_crop1970  * AreaHost/100), 
+         HabAreaGrassChgLn    = logp(p_grass2005 * AreaHost/100) - logp(p_grass1970 * AreaHost/100), 
+         HabAreaUrbanChgLn    = logp(p_uopp2005  * AreaHost/100) - logp(p_uopp1970  * AreaHost/100),
+         HabInhabitedChgLn    = logp((p_crop2005 + p_grass2005 + p_uopp2005) * AreaHost/100) -
+                                  logp((p_crop1970 + p_grass1970 + p_uopp1970) * AreaHost/100),
          Population_trend = factor(Population_trend, 
                                    levels=sort(unique(Population_trend),decreasing = T))) %>% 
          assert(is_real,

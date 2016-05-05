@@ -8,7 +8,7 @@ library(assertr)
 associations = read_csv("data/HP3.assocV41_FINAL.csv")
 hosts  = read_csv("data/HP3.hostv42_FINAL.csv")
 
-viruses = read_csv("data/HP3.virusv41_FINAL_withRevZoon.csv")
+viruses = read_csv("data/HP3.virus_v44.csv")
 
 # Temporary fix
 hosts = hosts %>% 

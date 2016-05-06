@@ -4,11 +4,11 @@ library(dplyr)
 library(magrittr)
 library(readr)
 library(assertr)
+library(readxl)
 ## Read the data files
 associations = read_csv("data/HP3.assocV41_FINAL.csv")
 hosts  = read_csv("data/HP3.hostv42_FINAL.csv")
-
-viruses = read_csv("data/HP3.virus_v44.csv")
+viruses = read_csv("data/HP3.virus_v45.csv")
 
 # Temporary fix
 hosts = hosts %>% 
@@ -65,7 +65,13 @@ hosts = read.csv("data/phylo/HP3-ST_PDmatrix-12Mar2016.csv",
   add_rownames("hHostNameFinal") %>% 
   select(hHostNameFinal, Homo_sapiens) %>% 
   rename(PdHoSaSTPD = Homo_sapiens) %>% 
-  full_join(hosts, by="hHostNameFinal")
+  full_join(hosts, by="hHostNameFinal") %>% 
+  arrange(hHostNameFinal)
+
+## Add domestic_categories
+#domestics = read_excel('data/HP3_domestic-categories.xlsx')
+#hosts  =  left_join(hosts, domestics) %>% arrange(hHostNameFinal)
+
 
 ## Transform and derive variables
 
@@ -143,3 +149,49 @@ hosts = hosts %>%
                 HabAreaUrbanChgLn) %>% 
         lapply(function(x) if(is.character(x)) as.factor(x) else x) %>% 
         as.data.frame %>% tbl_df
+
+# Calculate non-human phylogenetic distances
+
+trees <- list(
+  super = read_csv("data/phylo/HP3-ST_PDmatrix-12Mar2016.csv"),
+  cytb = read_csv("data/phylo/HP3-cytb_PDmatrix-12Mar2016.csv"))
+trees <- map(trees, function(tree) {
+  names(tree)[1] <- "species1"
+  tree <- gather(tree, "species2", "distance", -species1)
+  tree <- filter(tree, species1 != "Homo_sapiens" & species2 != "Homo_sapiens", species1 != species2)
+  return(tree)
+})
+
+# dists = associations %>% 
+#   group_by(vVirusNameCorrected) %>% 
+#   summarise(st_dist_noHoSa = list(trees$super$distance[trees$super$species1 %in% hHostNameFinal]),
+#             cb_dist_noHoSa = list(trees$cytb$distance[trees$cytb$species1 %in% hHostNameFinal])) %>% 
+#   mutate_each(funs(max=map_dbl(., max), mean=map_dbl(., mean), median = map_dbl(., median)), -vVirusNameCorrected) %>% 
+#   select(-st_dist_noHoSa, -cb_dist_noHoSa) %>% 
+#   mutate_each(funs(ifelse(is.infinite(.), 0, .)), -vVirusNameCorrected)
+
+
+viruses = viruses %>% 
+  dmap(function(x) {
+    if (is.integer(x) & all(x %in% c(0,1) | is.na(x))) {
+      return(as.logical(x))
+    } else {
+      return(x)
+    }
+  }) %>% 
+  mutate(NumHostsLn = logp(NumHosts),
+         NumHostsLn.stringent = logp(NumHosts.stringent),
+         vPubMedCitesLn = logp(vPubMedCites),
+         vWOKcitesLn = logp(vWOKcites),
+         RNA = as.numeric(vDNAoRNA == "RNA"),
+         SS = as.numeric(vSSoDS == "SS"),
+         Vector = as.numeric(vVectorYNna == "Y"),
+         Envelope = as.numeric(vEnvelope == "enveloped"),
+         vCytoReplicTF = as.numeric(vCytoReplicTF),
+         vGenomeAveLengthLn = logp(vGenomeAveLength)
+  )
+
+# viruses <- left_join(viruses, dists, by ="vVirusNameCorrected")
+
+
+

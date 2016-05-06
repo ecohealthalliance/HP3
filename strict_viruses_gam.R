@@ -73,7 +73,7 @@ models = models %>%
 
 # Calculate models
 models = models %>% 
-  mutate(aic = map_dbl(model, AIC),
+  mutate(aic = map_dbl(model,  MuMIn::AICc),
          daic = aic - min(aic),
          weight = exp(-daic/2)) %>% 
   arrange(aic)
@@ -93,7 +93,7 @@ models_reduced = models_reduced %>%
   mutate(model = mclapply(model, reduce_model))
 
 models_reduced = models_reduced %>% 
-  mutate(aic = map_dbl(model, AIC)) %>% 
+  mutate(aic = map_dbl(model,  MuMIn::AICc)) %>% 
   arrange(aic) %>% 
   mutate(daic = aic - min(aic),
          weight = exp(-daic/2),

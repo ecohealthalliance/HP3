@@ -12,8 +12,7 @@ source("preprocess_data.R")
 # Set up the model
 data_set = hosts %>% 
   filter(hMarOTerr == "Terrestrial",
-         hWildDomFAO == "wild",
-         !is.na(PdHoSa.cbCst_order))
+         hWildDomFAO == "domestic")
 
 outcome_variable = "NSharedWithHoSa"
 
@@ -29,12 +28,12 @@ names(dummy_terms) <- names(dummys)
 terms = list(
   mass = "s(hMassGramsPVR, bs = 'tp', k=7)",
   interaction = c(
-          "s(HabAreaCropLn, bs = 'tp', k=7)   + s(HabAreaCropChgLn, bs = 'tp', k=7)",
-          "s(HabAreaGrassLn, bs = 'tp', k=7)  + s(HabAreaGrassChgLn, bs = 'tp', k=7)",
-          "s(HabAreaUrbanLn, bs = 'tp', k=7)  + s(HabAreaUrbanChgLn, bs = 'tp', k=7)",
-          "s(HabInhabitedLn, bs = 'tp', k=7)  + s(HabInhabitedChgLn, bs = 'tp', k=7)",
-          "s(TotHumPopLn, bs = 'tp', k=7) + s(TotHumPopChgLn, bs = 'tp', k=7) + s(UrbRurPopRatioLn, bs = 'tp', k=7) + s(UrbRurPopRatioChg, bs = 'tp', k=7)",
-          "s(HumPopDensLn, bs = 'tp', k=7) + s(HumPopDensLnChg, bs = 'tp', k=7) + s(UrbRurPopRatioLn, bs = 'tp', k=7) + s(UrbRurPopRatioChg, bs = 'tp', k=7)"),
+    "s(HabAreaCropLn, bs = 'tp', k=7)   + s(HabAreaCropChgLn, bs = 'tp', k=7)",
+    "s(HabAreaGrassLn, bs = 'tp', k=7)  + s(HabAreaGrassChgLn, bs = 'tp', k=7)",
+    "s(HabAreaUrbanLn, bs = 'tp', k=7)  + s(HabAreaUrbanChgLn, bs = 'tp', k=7)",
+    "s(HabInhabitedLn, bs = 'tp', k=7)  + s(HabInhabitedChgLn, bs = 'tp', k=7)",
+    "s(TotHumPopLn, bs = 'tp', k=7) + s(TotHumPopChgLn, bs = 'tp', k=7) + s(UrbRurPopRatioLn, bs = 'tp', k=7) + s(UrbRurPopRatioChg, bs = 'tp', k=7)",
+    "s(HumPopDensLn, bs = 'tp', k=7) + s(HumPopDensLnChg, bs = 'tp', k=7) + s(UrbRurPopRatioLn, bs = 'tp', k=7) + s(UrbRurPopRatioChg, bs = 'tp', k=7)"),
   interaction2 = "s(hHuntedIUCN, bs='re')",
   interaction3 = "s(hArtfclHbttUsrIUCN, bs='re')",
   phylo_distance = c("s(PdHoSa.cbCst, bs = 'tp', k=7)", "s(PdHoSaSTPD, bs = 'tp', k=7)"),
@@ -113,9 +112,9 @@ data_frame(order = names(order_coefs), coef=order_coefs, se=order_coefs.se)
 
 
 #----
-  
-  # Cross validation
-  
+
+# Cross validation
+
 # topmod = models_reduced$model[[1]]
 # newdat =topmod$model %>% 
 #   rename(LnTotNumVirus=`offset(LnTotNumVirus)`)

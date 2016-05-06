@@ -1,48 +1,41 @@
-library(mgcv)
+library(readr)
 library(dplyr)
+library(mgcv)
+library(visdat)
+library(plotly)
+library(htmlwidgets)
+library(purrr)
 library(stringi)
 library(parallel)
-library(purrr)
 source('R/model_reduction.R')
-set.seed(0)
-
-# Source the processed data
 source("preprocess_data.R")
 
-# Set up the model
-data_set = hosts %>% 
-  filter(hMarOTerr == "Terrestrial",
-         hWildDomFAO == "wild",
-         !is.na(PdHoSa.cbCst_order))
+PD_centers = names(viruses)[stri_detect_regex(names(viruses), "vBrdth\\.(mean|median|max)PD\\..*(?<!stringent)$")]
+names(viruses)[names(viruses) %in% PD_centers] <- paste0(PD_centers, "Ln")
+PD_centers <- paste0(PD_centers, "Ln")
+viruses = viruses %>% 
+  mutate_each_(funs("logp"), vars=PD_centers)
+outcome_variable = "IsZoonotic"
+model_family = binomial
+data_set = viruses
 
-outcome_variable = "NSharedWithHoSa"
-
-model_family = poisson
-
-#  Create dummy variables for orders to use as random effects
-dummys = as.data.frame(with(data_set, model.matrix(~hOrder))[,-1])
+dummys = as.data.frame(with(viruses, model.matrix(~vFamily))[,-1])
 data_set = cbind(data_set, dummys)
 dummy_terms = paste0("s(", names(dummys), ", bs = 're')")
 names(dummy_terms) <- names(dummys)
 
-## Create data.frame of all possible models
+#data_set = data_set %>% filter(NumHosts > 1)
+
 terms = list(
-  mass = "s(hMassGramsPVR, bs = 'tp', k=7)",
-  interaction = c(
-          "s(HabAreaCropLn, bs = 'tp', k=7)   + s(HabAreaCropChgLn, bs = 'tp', k=7)",
-          "s(HabAreaGrassLn, bs = 'tp', k=7)  + s(HabAreaGrassChgLn, bs = 'tp', k=7)",
-          "s(HabAreaUrbanLn, bs = 'tp', k=7)  + s(HabAreaUrbanChgLn, bs = 'tp', k=7)",
-          "s(HabInhabitedLn, bs = 'tp', k=7)  + s(HabInhabitedChgLn, bs = 'tp', k=7)",
-          "s(TotHumPopLn, bs = 'tp', k=7) + s(TotHumPopChgLn, bs = 'tp', k=7) + s(UrbRurPopRatioLn, bs = 'tp', k=7) + s(UrbRurPopRatioChg, bs = 'tp', k=7)",
-          "s(HumPopDensLn, bs = 'tp', k=7) + s(HumPopDensLnChg, bs = 'tp', k=7) + s(UrbRurPopRatioLn, bs = 'tp', k=7) + s(UrbRurPopRatioChg, bs = 'tp', k=7)"),
-  interaction2 = "s(hHuntedIUCN, bs='re')",
-  interaction3 = "s(hArtfclHbttUsrIUCN, bs='re')",
-  phylo_distance = c("s(PdHoSa.cbCst, bs = 'tp', k=7)", "s(PdHoSaSTPD, bs = 'tp', k=7)"),
-  bias = c("s(hAllZACitesLn, bs = 'tp', k=7)", "s(hDiseaseZACitesLn, bs = 'tp', k=7)"),
-  offset = "offset(LnTotNumVirus)",
+  PD     = paste0("s(", PD_centers, ", bs='tp', k=7)"),
+  bias   = c("s(vPubMedCitesLn, bs='tp', k=7)", "s(vWOKcitesLn, bs='tp', k=7)"),
+  strand = c("s(RNA, bs='re')","s(SS, bs='re')", "s(vCytoReplicTF, bs='re')"),
+  vector = "s(Vector, bs='re')",
+  env = "s(Envelope, bs='re')",
+  genome = "s(vGenomeAveLengthLn, bs='tp', k=7)",
   stringsAsFactors=FALSE)
 
-terms = c(dummy_terms, terms)
+#terms = c(dummy_terms, terms)
 terms_grid = do.call(expand.grid, terms)
 
 #Create model forumulas from the grid
@@ -91,7 +84,7 @@ models_reduced = models_reduced %>%
   mutate(model = mclapply(model, reduce_model))
 
 models_reduced = models_reduced %>% 
-  mutate(aic = map_dbl(model,  MuMIn::AICc)) %>% 
+  mutate(aic = map_dbl(model, MuMIn::AICc)) %>% 
   arrange(aic) %>% 
   mutate(daic = aic - min(aic),
          weight = exp(-daic/2),
@@ -100,22 +93,22 @@ models_reduced = models_reduced %>%
          relweight_all = weight/sum(weight),
          cumweight = cumsum(relweight_all))
 
-models_reduced %>% select(daic, relweight, relweight_all, cumweight) %>% print(n=20)
-plot(models_reduced$model[[1]], all.terms=TRUE, pages=1, scale=0, residuals = TRUE)
+models_reduced %>% select(terms, daic, relweight, relweight_all, cumweight) %>% print(n=20)
+plot(models_reduced$model[[1]], all.terms=TRUE, pages=1, scale=0)
 summary(models_reduced$model[[1]])
-coefs = coef(models_reduced$model[[2]])
-order_coefs = coefs[stri_detect_regex(names(coefs), "(hOrder|Hunted)")]
-coefs.se = diag(vcov(models_reduced$model[[2]]))
+coefs = coef(models_reduced$model[[1]])
+order_coefs = coefs[stri_detect_regex(names(coefs), "hOrder")]
+coefs.se = diag(vcov(models_reduced$model[[1]]))
+order_coefs.se = sqrt(coefs.se[stri_detect_regex(names(coefs.se), "hOrder")])
 edfs = pen.edf(models_reduced$model[[1]])
-
-order_coefs.se = sqrt(coefs.se[stri_detect_regex(names(coefs.se), "hOrder|Hunted")])
-data_frame(order = names(order_coefs), coef=order_coefs, se=order_coefs.se)
+edfs = edfs[stri_detect_regex(names(edfs), "hOrder")]
+data_frame(order = names(order_coefs), coef=order_coefs, se=order_coefs.se, edf=edfs)
 
 
 #----
-  
-  # Cross validation
-  
+
+# Cross validation
+
 # topmod = models_reduced$model[[1]]
 # newdat =topmod$model %>% 
 #   rename(LnTotNumVirus=`offset(LnTotNumVirus)`)

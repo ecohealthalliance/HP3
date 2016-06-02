@@ -12,8 +12,6 @@ fit_all_gams <- function(data_set, outcome_variable, model_family, terms) {
     rearrange_formula %>% 
     unique
   
-  
-  
   models = data_frame(formula = formulas)
   
   n_cores = detectCores()
@@ -50,7 +48,10 @@ fit_all_gams <- function(data_set, outcome_variable, model_family, terms) {
   
   
   models_reduced = models_reduced %>% 
+    filter(map_lgl(model, ~ !("try-error" %in% class(.) | is.null(.)))) %>% 
     mutate(aic = map_dbl(model, MuMIn::AICc)) %>% 
+    mutate(formula = map_chr(model, ~rearrange_formula(rm_low_edf(.)))) %>% 
+    distinct(formula) %>% 
     arrange(aic) %>% 
     mutate(daic = aic - min(aic),
            weight = exp(-daic/2),

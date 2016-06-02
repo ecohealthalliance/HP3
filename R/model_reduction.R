@@ -44,8 +44,9 @@ rearrange_formula = function(formula) {
   new_formula = mapply(function(lhs, terms) {paste(lhs, "~", paste(terms, collapse = " + "))}, lhs, terms)
   new_formula = stri_replace_all_regex(new_formula, "[\\s\\n]+", " ")
   new_formula = stri_replace_all_fixed(new_formula, "+ +s", "+ s")
+  new_formula = stri_replace_all_fixed(new_formula, "+ +", "+")
   names(new_formula) <- NULL
-  return(new_formula)
+  return(stri_trim(new_formula))
 }
 
 # Re-fits a gam model, dropping terms that have been selected out

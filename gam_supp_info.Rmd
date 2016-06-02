@@ -441,3 +441,92 @@ Summary of top model:
 summary(domestic_zoonoses_strict$model[[1]])
 ```
 
+# All Viruses in Domestic Animals GAM - All Associations
+
+```{r dom-vir-fit, cache=TRUE}
+#  Create dummy variables for orders to use as random effects
+dummys = as.data.frame(with(data_set, model.matrix(~hOrder))[,-1])
+dummys2 = as.data.frame(with(data_set, model.matrix(~domestic_category))[,-1])
+data_set = cbind(data_set, dummys, dummys2)
+dummy_terms = as.list(paste0("s(", c(names(dummys), names(dummys2)), ", bs = 're')")) %>% 
+  map(~ c(., ""))
+names(dummy_terms) <- c(names(dummys), names(dummys2))
+
+## Create data.frame of all possible models
+terms = list(
+  mass = c("s(hMassGramsPVR, bs = 'tp', k = 7)", ""),
+  domestication = c("s(LnDOMYearBP, bs = 'tp', k = 7)",""),
+  cont = c("s(hContinents, bs = 'tp', k = 7)", ""),
+  category = c("s(domestic_category, bs = 're')", ""),
+  bias = c("s(hAllZACitesLn, bs = 'tp', k = 7)", "s(hDiseaseZACitesLn, bs = 'tp', k = 7)", ""),
+  stringsAsFactors=FALSE)
+
+terms = c(dummy_terms, terms)
+
+domestic_viruses = fit_all_gams(data_set,
+                       outcome_variable = "TotVirusPerHost",
+                       poisson,
+                       terms)
+```
+
+
+Terms in models with ΔAIC < 2.  All continuous terms effects are represented
+as splines, all discrete terms as random effects:
+
+```{r dom-vir-table, cache=FALSE}
+domestic_viruses %>%
+  filter(daic <= 2) %>%
+  select(daic, terms) %>% 
+  mutate(terms = stri_replace_all_regex(terms, "s\\(([^\\)]*)\\)", "$1")) %>%
+  rename(ΔAIC = daic, `Terms in Model`=terms) %>% 
+  kable()
+```
+
+Partial effect plots of all terms in top model:
+
+```{r dom-vir-plot, fig.width=10, fig.height=10, cache=FALSE}
+plot(domestic_viruses$model[[1]], all.terms=TRUE, pages=1, scale=0, residuals = TRUE)
+```
+
+Summary of top model:
+
+```{r dom-vir-summary, cache=FALSE}
+summary(domestic_viruses$model[[1]])
+```
+
+
+
+# All Viruses in Domestic Animals GAM - Stringent Associations
+
+```{r dom-vir-strict-fit, cache=TRUE}
+domestic_viruses_strict = fit_all_gams(data_set,
+                       outcome_variable = "TotVirusPerHost_strict",
+                       poisson,
+                       terms)
+```
+
+
+Terms in models with ΔAIC < 2.  All continuous terms effects are represented
+as splines, all discrete terms as random effects:
+
+```{r dom-vir-strict-table, cache=FALSE}
+domestic_viruses_strict %>%
+  filter(daic <= 2) %>%
+  select(daic, terms) %>% 
+  mutate(terms = stri_replace_all_regex(terms, "s\\(([^\\)]*)\\)", "$1")) %>%
+  rename(ΔAIC = daic, `Terms in Model`=terms) %>% 
+  kable()
+```
+
+Partial effect plots of all terms in top model:
+
+```{r dom-vir-strict-plot, fig.width=10, fig.height=10, cache=FALSE}
+plot(domestic_viruses_strict$model[[1]], all.terms=TRUE, pages=1, scale=0, residuals = TRUE)
+```
+
+Summary of top model:
+
+```{r dom-vir-strict-summary, cache=FALSE}
+summary(domestic_viruses_strict$model[[1]])
+```
+

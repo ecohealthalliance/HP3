@@ -10,7 +10,7 @@ set.seed(0)
 source("preprocess_data.R")
 
 # Set up the model
-data_set = hosts %>% 
+data_set = hosts %>% # Do Stict IsZoonotic, 
   filter(hMarOTerr == "Terrestrial",
          hWildDomFAO == "wild",
          !is.na(PdHoSa.cbCst_order))
@@ -92,7 +92,7 @@ models_reduced = models_reduced %>%
 
 models_reduced = models_reduced %>% 
   mutate(aic = map_dbl(model,  MuMIn::AICc)) %>% 
-  arrange(aic) %>% 
+  arrange(aic) %>%
   mutate(daic = aic - min(aic),
          weight = exp(-daic/2),
          terms = shortform(map(model, ~ rearrange_formula(.$formula))),
@@ -110,6 +110,12 @@ edfs = pen.edf(models_reduced$model[[1]])
 
 order_coefs.se = sqrt(coefs.se[stri_detect_regex(names(coefs.se), "hOrder|Hunted")])
 data_frame(order = names(order_coefs), coef=order_coefs, se=order_coefs.se)
+
+bgam = models_reduced$model[[1]]
+output = cbind(bgam$model, prediction = predict(bgam, type="response")) %>% 
+  inner_join(data_set) %>%
+  select(hHostNameFinal, hOrder, NSharedWithHoSa, prediction)
+write_csv(output, "all_zoonoses_gam_predictions.csv")
 
 
 #----

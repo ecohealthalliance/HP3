@@ -1,23 +1,26 @@
 library(readr)
 library(dplyr)
 library(mgcv)
-library(visdat)
-library(plotly)
-library(htmlwidgets)
 library(purrr)
 library(stringi)
 library(parallel)
 source('R/model_reduction.R')
 source("preprocess_data.R")
 
-PD_centers = names(viruses)[stri_detect_regex(names(viruses), "vBrdth\\.(mean|median|max)PD\\..*(?<!stringent)$")]
-names(viruses)[names(viruses) %in% PD_centers] <- paste0(PD_centers, "Ln")
-PD_centers <- paste0(PD_centers, "Ln")
-viruses = viruses %>% 
+
+#PD_centers = names(viruses)[stri_detect_regex(names(viruses), "vBrdth\\.(mean|median|max)PD\\..*(?<!stringent)$")]
+#PD_centers = names(viruses)[stri_detect_regex(names(viruses), "vBrdth\\.(mean|median|max)PD\\..*stringent$")]
+#PD_centers = names(viruses)[stri_detect_regex(names(viruses), "^(cb|st)_.*(?<!stringent)$")]
+PD_centers = names(viruses)[stri_detect_regex(names(viruses), "^(cb|st)_.*stringent$")]
+
+data_set = viruses %>% 
   mutate_each_(funs("logp"), vars=PD_centers)
-outcome_variable = "IsZoonotic"
+names(data_set)[names(data_set) %in% PD_centers] <- paste0(PD_centers, "Ln")
+PD_centers <- paste0(PD_centers, "Ln")
+
+outcome_variable = "IsZoonotic.stringent"
 model_family = binomial
-data_set = viruses
+
 
 dummys = as.data.frame(with(viruses, model.matrix(~vFamily))[,-1])
 data_set = cbind(data_set, dummys)
@@ -29,7 +32,7 @@ names(dummy_terms) <- names(dummys)
 terms = list(
   PD     = paste0("s(", PD_centers, ", bs='tp', k=7)"),
   bias   = c("s(vPubMedCitesLn, bs='tp', k=7)", "s(vWOKcitesLn, bs='tp', k=7)"),
-  strand = c("s(RNA, bs='re')","s(SS, bs='re')", "s(vCytoReplicTF, bs='re')"),
+  strand = c("s(RNA, bs='re')", "s(SS, bs='re')", "s(vCytoReplicTF, bs='re')"),
   vector = "s(Vector, bs='re')",
   env = "s(Envelope, bs='re')",
   genome = "s(vGenomeAveLengthLn, bs='tp', k=7)",
@@ -104,44 +107,10 @@ edfs = pen.edf(models_reduced$model[[1]])
 edfs = edfs[stri_detect_regex(names(edfs), "hOrder")]
 data_frame(order = names(order_coefs), coef=order_coefs, se=order_coefs.se, edf=edfs)
 
-
-#----
-
-# Cross validation
-
-# topmod = models_reduced$model[[1]]
-# newdat =topmod$model %>% 
-#   rename(LnTotNumVirus=`offset(LnTotNumVirus)`)
-# newdat_names <- names(newdat)
-# attributes(newdat) <- NULL
-# names(newdat) <- newdat_names
-# newdat <- as.data.frame(newdat)
-# 
-# n_folds = 7
-# newdat = newdat %>% 
-#   mutate(fold = sample(rep_len(1:n_folds, length.out = n()))) %>% 
-#   group_by(fold) %>% 
-#   tidyr::nest(.key = "fold_data") %>% 
-#   mutate(new_mod = map(fold_data, ~refit(topmod, .)))
-# 
-# 
-# refit <- function(model, data) {
-#   blank_cols = map_lgl(data, ~ all(. ==0))
-#   orig_names = names(data)
-#   if(length(blank_cols) > 0) {
-#     data <- data[!blank_cols]
-#     form = as.character(topmod$formula)
-#     vars_regex = paste0("(", paste(orig_names[blank_cols], collapse="|"), ")")
-#     new_rhs = stri_replace_all_regex(form[3], paste0("\\s*s\\(", vars_regex, "\\,[^\\)]+\\)\\s*\\+?"), "")
-#     new_rhs= stri_replace_all_fixed(new_rhs, "+, k = 7) ", "")
-#     form = as.formula(paste(form[2], form[1], new_rhs))
-#     newmod = update(model, formula=as.formula(form), data=data)
-#   } else {
-#     newmod = update(model, data=data)
-#   }
-#   return(newmod)
-# }
-#   
-# }
-# update(topmod, data = newdat$fold_data[[1]])
-# twelve = NULL
+viruses %>% select(vBrdth.maxPD.ST, st_dist_noHoSa_max, IsZoonotic) %>% 
+  gather("variable", "value", -IsZoonotic) %>% 
+  mutate(IsZoonotic = ifelse(IsZoonotic, "Zoonotic", "Not Zoonotic")) %>% 
+  mutate(variable = ifelse(variable == "vBrdth.maxPD.ST", "With Humans", "Without Humans")) %>% 
+  mutate(value = logp(value)) %>% 
+  ggplot(aes(x=value, fill=IsZoonotic)) + geom_histogram(position="stack", alpha=0.5) + xlab("Log Supertree Max Host Breadth") +
+  facet_wrap(~variable, ncol=1) + ggtitle("The Problem With Humans")

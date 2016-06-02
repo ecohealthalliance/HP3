@@ -109,4 +109,12 @@ coefs.se = diag(vcov(models_reduced$model[[1]]))
 order_coefs.se = sqrt(coefs.se[stri_detect_regex(names(coefs.se), "hOrder")])
 edfs = pen.edf(models_reduced$model[[1]])
 edfs = edfs[stri_detect_regex(names(edfs), "hOrder")]
-data_frame(order = names(order_coefs), coef=order_coefs, se=order_coefs.se, edf=edfs)
+data_frame
+
+bgam = models_reduced$model[[1]]
+
+output = cbind(bgam$model, prediction = predict(bgam, type="response")) %>% 
+  inner_join(data_set) %>%
+  select(hHostNameFinal, hOrder, TotVirusPerHost, prediction)
+write_csv(output, "all_viruses_gam_predictions.csv")
+

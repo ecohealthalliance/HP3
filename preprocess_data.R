@@ -5,6 +5,7 @@ library(magrittr)
 library(readr)
 library(assertr)
 library(readxl)
+library(tidyr)
 ## Read the data files
 associations = read_csv("data/HP3.assocV41_FINAL.csv")
 hosts  = read_csv("data/HP3.hostv42_FINAL.csv")
@@ -76,7 +77,7 @@ hosts = read.csv("data/phylo/HP3-ST_PDmatrix-12Mar2016.csv",
 ## Transform and derive variables
 
 logp = function(x){   # Fn to take log but make zeros less 10x less than min
-  x[is.na(x)] <- 0
+  # x[is.na(x)] <- 0
   m = min(x[ x > 0], na.rm=T)
   x = log( x + m )
   return(x)
@@ -130,23 +131,23 @@ hosts = hosts %>%
                                   logp((p_crop1970 + p_grass1970 + p_uopp1970) * AreaHost/100),
          Population_trend = factor(Population_trend, 
                                    levels=sort(unique(Population_trend),decreasing = T))) %>% 
-         assert(is_real,
-                LnTotNumVirus,
-                hDiseaseZACitesLn,
-                hAllZACitesLn, 
-                LnAreaHost,  
-                TotHumPopLn,  
-                RurTotHumPopLn, 
-                UrbTotHumPopLn, 
-                TotHumPopChgLn, 
-                RurTotHumPopChgLn,
-                UrbTotHumPopChgLn,
-                HabAreaCropLn, 
-                HabAreaGrassLn, 
-                HabAreaUrbanLn, 
-                HabAreaCropChgLn,
-                HabAreaGrassChgLn,
-                HabAreaUrbanChgLn) %>% 
+         # assert(is_real,
+         #        LnTotNumVirus,
+         #        hDiseaseZACitesLn,
+         #        hAllZACitesLn, 
+         #        LnAreaHost,  
+         #        TotHumPopLn,  
+         #        RurTotHumPopLn, 
+         #        UrbTotHumPopLn, 
+         #        TotHumPopChgLn, 
+         #        RurTotHumPopChgLn,
+         #        UrbTotHumPopChgLn,
+         #        HabAreaCropLn, 
+         #        HabAreaGrassLn, 
+         #        HabAreaUrbanLn, 
+         #        HabAreaCropChgLn,
+         #        HabAreaGrassChgLn,
+         #        HabAreaUrbanChgLn) %>% 
         lapply(function(x) if(is.character(x)) as.factor(x) else x) %>% 
         as.data.frame %>% tbl_df
 
@@ -162,14 +163,37 @@ trees <- map(trees, function(tree) {
   return(tree)
 })
 
-# dists = associations %>% 
-#   group_by(vVirusNameCorrected) %>% 
-#   summarise(st_dist_noHoSa = list(trees$super$distance[trees$super$species1 %in% hHostNameFinal]),
-#             cb_dist_noHoSa = list(trees$cytb$distance[trees$cytb$species1 %in% hHostNameFinal])) %>% 
-#   mutate_each(funs(max=map_dbl(., max), mean=map_dbl(., mean), median = map_dbl(., median)), -vVirusNameCorrected) %>% 
-#   select(-st_dist_noHoSa, -cb_dist_noHoSa) %>% 
-#   mutate_each(funs(ifelse(is.infinite(.), 0, .)), -vVirusNameCorrected)
+super_species = unique(trees$super$species1)
+cytb_species = unique(trees$cytb$species1)
 
+dists = associations %>%
+  filter(hHostNameFinal != "Homo_sapiens") %>% 
+  group_by(vVirusNameCorrected) %>%
+  summarise(n_noHoSa_hosts = n(),
+            n_noHoSa_hosts_super = sum(hHostNameFinal %in% super_species),
+            n_noHoSa_hosts_cytb = sum(hHostNameFinal %in% cytb_species),
+            st_dist_noHoSa = list(trees$super$distance[trees$super$species1 %in% hHostNameFinal & trees$super$species2 %in% hHostNameFinal]),
+            cb_dist_noHoSa = list(trees$cytb$distance[trees$cytb$species1 %in% hHostNameFinal  & trees$cytb$species2 %in% hHostNameFinal])) %>%
+  mutate_each(funs(max=map_dbl(., max), mean=map_dbl(., mean), median = map_dbl(., median)), -vVirusNameCorrected, -n_noHoSa_hosts, -n_noHoSa_hosts_super, -n_noHoSa_hosts_cytb) %>%
+  select(-st_dist_noHoSa, -cb_dist_noHoSa) %>%
+  mutate_each(funs(ifelse(is.infinite(.) | is.na(.) | is.nan(.), 0, .)), -vVirusNameCorrected, -n_noHoSa_hosts, -n_noHoSa_hosts_super, -n_noHoSa_hosts_cytb) %>% 
+  mutate_each(funs(ifelse(n_noHoSa_hosts > 1 & n_noHoSa_hosts_cytb == 1, NA, .)), starts_with("cb_"))
+
+dists_strict = associations %>%
+  filter(DetectionQuality02 == 2) %>% 
+  filter(hHostNameFinal != "Homo_sapiens") %>% 
+  group_by(vVirusNameCorrected) %>%
+  summarise(n_noHoSa_hosts = n(),
+            n_noHoSa_hosts_super = sum(hHostNameFinal %in% super_species),
+            n_noHoSa_hosts_cytb = sum(hHostNameFinal %in% cytb_species),
+            st_dist_noHoSa = list(trees$super$distance[trees$super$species1 %in% hHostNameFinal & trees$super$species2 %in% hHostNameFinal]),
+            cb_dist_noHoSa = list(trees$cytb$distance[trees$cytb$species1 %in% hHostNameFinal  & trees$cytb$species2 %in% hHostNameFinal])) %>%
+  mutate_each(funs(max=map_dbl(., max), mean=map_dbl(., mean), median = map_dbl(., median)), -vVirusNameCorrected, -n_noHoSa_hosts, -n_noHoSa_hosts_super, -n_noHoSa_hosts_cytb) %>%
+  select(-st_dist_noHoSa, -cb_dist_noHoSa) %>%
+  mutate_each(funs(ifelse(is.infinite(.) | is.na(.) | is.nan(.), 0, .)), -vVirusNameCorrected, -n_noHoSa_hosts, -n_noHoSa_hosts_super, -n_noHoSa_hosts_cytb) %>% 
+  mutate_each(funs(ifelse(n_noHoSa_hosts > 1 & n_noHoSa_hosts_cytb == 1, NA, .)), starts_with("cb_"))
+
+names(dists_strict)[-1] <- paste0(names(dists_strict)[-1], ".stringent")
 
 viruses = viruses %>% 
   dmap(function(x) {
@@ -191,7 +215,10 @@ viruses = viruses %>%
          vGenomeAveLengthLn = logp(vGenomeAveLength)
   )
 
-# viruses <- left_join(viruses, dists, by ="vVirusNameCorrected")
+viruses <- left_join(viruses, dists, by ="vVirusNameCorrected")
+viruses <- left_join(viruses, dists_strict, by ="vVirusNameCorrected")
 
-
+log2 <- function(x) {
+  ifelse(x == 0 | is.na(x), NA, log(x))
+}
 

@@ -10,6 +10,21 @@ rm_low_edf <- function(mod, edf_cutoff = 0.001) {
   vars_regex = paste0("(", paste(vars_to_remove, collapse="|"), ")")
   new_rhs = stri_replace_all_regex(rhs, paste0("\\s*s\\(", vars_regex, "\\,[^\\)]+\\)\\s*\\+?"), "")
   new_rhs= stri_replace_all_fixed(new_rhs, "+, k = 7) ", "")
+  new_rhs= stri_replace_all_fixed(new_rhs, "+ +s", "+ s")
+  new_formula = paste(lhs, "~", new_rhs)
+  new_formula = stri_replace_all_regex(new_formula, "[\\s\\n]+", " ")
+  new_formula = stri_replace_all_regex(new_formula, "[+\\s]*$", "")
+  return(new_formula)
+}
+
+rm_terms <- function(mod, terms) {
+  fr = as.character(formula(mod))
+  lhs = fr[2]
+  rhs = fr[3]
+  vars_regex = paste0("(", paste(terms, collapse="|"), ")")
+  new_rhs = stri_replace_all_regex(rhs, paste0("\\s*s\\(", vars_regex, "\\,[^\\)]+\\)\\s*\\+?"), "")
+  new_rhs= stri_replace_all_fixed(new_rhs, "+, k = 7) ", "")
+  new_rhs= stri_replace_all_fixed(new_rhs, "+ +s", "+ s")
   new_formula = paste(lhs, "~", new_rhs)
   new_formula = stri_replace_all_regex(new_formula, "[\\s\\n]+", " ")
   new_formula = stri_replace_all_regex(new_formula, "[+\\s]*$", "")
@@ -28,6 +43,7 @@ rearrange_formula = function(formula) {
   terms = lapply(terms, sort)
   new_formula = mapply(function(lhs, terms) {paste(lhs, "~", paste(terms, collapse = " + "))}, lhs, terms)
   new_formula = stri_replace_all_regex(new_formula, "[\\s\\n]+", " ")
+  new_formula = stri_replace_all_fixed(new_formula, "+ +s", "+ s")
   names(new_formula) <- NULL
   return(new_formula)
 }
@@ -52,6 +68,7 @@ reduce_model <- function(mod, edf_cutoff = 0.001, recursive=TRUE) {
 shortform = function(formula) {
   rhs = stri_replace_first_regex(formula, "[^~]+~\\s+", "")
   rhs = stri_replace_all_regex(rhs, "s\\(([^\\,]+)\\,[^\\)]+\\)", "s($1)")
+  rhs= stri_replace_all_fixed(rhs, "+ +s", "+ s")
   stri_replace_all_fixed(rhs, "(1 + | + 1)", "")
 }
 

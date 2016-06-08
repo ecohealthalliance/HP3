@@ -1,8 +1,9 @@
-fit_gam = function(frm) {
-  try(gam(formula=as.formula(frm), model_family, data_set, select=TRUE), silent=TRUE)
-}
-
 fit_all_gams <- function(data_set, outcome_variable, model_family, terms) {
+  
+  fit_gam = function(frm) {
+    try(gam(formula=as.formula(frm), model_family, data_set, select=TRUE), silent=TRUE)
+  }
+  
   terms_grid = do.call(expand.grid, terms)
   
   #Create model forumulas from the grid

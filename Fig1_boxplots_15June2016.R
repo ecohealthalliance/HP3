@@ -34,7 +34,7 @@ h2 <- h2 %>%
   arrange(desc(prop_human_mean_order))  # arrange by mean proportion zoonotic by order
 
 order_propshared
-h2Order <- ordered(h2$hOrder, levels=c( "CINGULATA", "PILOSA","DIDELPHIMORPHIA", "EULIPOTYPHLA", 
+h2$hOrder <- ordered(h2$hOrder, levels=c( "CINGULATA", "PILOSA","DIDELPHIMORPHIA", "EULIPOTYPHLA", 
                 "CHIROPTERA", "PRIMATES", "RODENTIA", "CARNIVORA", "LAGOMORPHA", "PROBOSCIDEA", "DIPROTODONTIA",
                  "CETARTIODACTYLA", "PERISSODACTYLA",  "PERAMELEMORPHIA", "SCANDENTIA"))
 

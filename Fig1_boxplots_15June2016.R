@@ -55,7 +55,7 @@ unique(h3d$hOrder)  #NOT WORKING, still dropping levels
 #par(mar=c(10,3,3,3))
 ## FIG 1A
 par(mar=c(14,4.2,4,2))
-boxplot(vir_rich ~ hOrder, data=h2, vertical = TRUE, ylab="Viral richness per species",
+boxplot(vir_rich ~ h2Order, data=h2, vertical = TRUE, ylab="Viral richness per species",
         col="lightgray", main="", outcol=NA, las=3)
 #one stripchart for wild values
 stripchart(vir_rich ~ hOrder, data=h3w, 

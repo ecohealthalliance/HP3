@@ -1,5 +1,7 @@
 #load mvpd data from Parviez (number shared for all host combos and PD)
 #Revised from code-26april2013.R and Heatmap-20March2016.R
+
+#15 June 2016 revision for just main Heatmap figure, plus a couple other figures not used (can delete before making public)
 rm(list=ls()) 
 options(stringsAsFactors=F)
 require(ggplot2)
@@ -12,12 +14,11 @@ require(RColorBrewer)
 require(pheatmap)
 #require(gtools)
 
+set.seed(0)
 
-setwd("/Users/KJO1/Dropbox (EHA)/Manuscripts/HP3_2015/HP3_June2016/HP3/data")
-
-asc <- read.csv(file="HP3.assocV41_FINAL.csv", header=T, strip.white = T)
-h <- read.csv(file="HP3.hostv42_FINAL.csv", header=T, strip.white = T)
-v <- read.csv(file="HP3.virus_v45.csv", header=T, strip.white = T)
+asc <- read.csv("data/HP3.assocV41_FINAL.csv", header=T, strip.white = T)
+h <- read.csv("data/HP3.hostv42_FINAL.csv", header=T, strip.white = T)
+v <- read.csv("data/HP3.virus_v45.csv", header=T, strip.white = T)
 asc_noHoSa <- asc[asc$hHostNameFinal!="Homo_sapiens", ]
 
 

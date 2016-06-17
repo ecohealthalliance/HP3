@@ -47,34 +47,34 @@ h3d <- subset(h2, hWildDomFAO=="domestic")
 ## FIG 1A
 par(mar=c(14,4.2,4,2))
 boxplot(vir_rich ~ hOrder, data=h2, vertical = TRUE, ylab="Total Viral Richness",
-        col="lightgray", main="", outcol=NA, las=3)
+        col="lightgray", main="", outcol=NA, las=3,cex.axis=1.3, cex.lab=1.3)
 #one stripchart for wild values
 stripchart(vir_rich ~ hOrder, data=h3w, 
            vertical = TRUE, method = "jitter", jitter=0.15,
            pch = 21, col = "black", bg = "lightgrey", 
-           add = T, cex=1.2) 
+           add = T, cex=1.3) 
 #another for domestic
 stripchart(vir_rich ~ hOrder, data=h3d, 
            vertical = TRUE, method = "jitter", jitter=0.15,
            pch = 21, col = "black", bg = "red", 
-           add = T, cex=1.2) 
+           add = T, cex=1.3) 
 #mtext("1A", 2, adj=5, las=1) #not set right
 
 ##FIG 1B
 par(mar=c(14,4,4,2)+0.1)
 
 boxplot(prop_human ~ hOrder, data=h2, vertical = TRUE, ylab="Proportion Zoonotic Viruses",
-        col="lightgray", main="", outcol=NA, las=3)
+        col="lightgray", main="", outcol=NA, las=3, cex.axis=1.3, cex.lab=1.3)
 
 stripchart(prop_human ~ hOrder, data=h3w, 
            vertical = TRUE, method = "jitter", jitter=0.15,
            pch = 21, col = "black", bg = "lightgrey", 
-           add = T, cex=1.2) 
+           add = T, cex=1.3) 
 
 stripchart(prop_human ~ hOrder, data=h3d, 
            vertical = TRUE, method = "jitter", jitter=0.15,
            pch = 21, col = "black", bg = "red", 
-           add = T, cex=1.2) 
+           add = T, cex=1.3) 
 
 ## Viral richness with wild and dom stripplot, ordered by proportion shared - 15 Dec 2014
 

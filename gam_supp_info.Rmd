@@ -601,7 +601,7 @@ summary(domestic_viruses_strict$model[[1]])
 
 <!-- # Publication plots -->
 
-```{r}
+```{r, include=FALSE}
 #svglite(file="rplot.svg", width = convertr::convert(113, "mm", "in"), convertr::convert(180, "mm", "in"), pointsize=7)
 vir_plotdata = viruses %>% 
   filter(!is.na(vFamily), vFamily != "Unassigned") %>% 
@@ -671,4 +671,5 @@ allplots = cowplot::plot_grid(vir_fam_plot, gamplots, nrow=1, rel_widths=c(1.3, 
 svglite(file="Figure02-viral-traits.svg", width = convertr::convert(183, "mm", "in"), convertr::convert(117, "mm", "in"), pointsize=7)
 allplots# + cowplot::draw_grob(legend, x=0.1, y=0.1)
 dev.off()
+source('plot_best_gam_all_vir.R')
 ```

@@ -38,61 +38,49 @@ h2$hOrder <- ordered(h2$hOrder, levels=c( "CINGULATA", "PILOSA","DIDELPHIMORPHIA
                 "CHIROPTERA", "PRIMATES", "RODENTIA", "CARNIVORA", "LAGOMORPHA", "PROBOSCIDEA", "DIPROTODONTIA",
                  "CETARTIODACTYLA", "PERISSODACTYLA",  "PERAMELEMORPHIA", "SCANDENTIA"))
 
-h2w <- h2[h2$hWildDomFAO=="wild", ] 
-h2d <- h2[h2$hWildDomFAO=="domestic", ] 
 
-unique(h2w$hOrder)
-unique(h2d$hOrder)
-
-h3w <- subset(h2, hWildDomFAO=="wild", drop=F) 
-h3d <- subset(h2, hWildDomFAO=="domestic", drop=F)
-?subset
-levels(h3w$hOrder)
-unique(h3w$hOrder)  
-unique(h3d$hOrder)  #NOT WORKING, still dropping levels
+h3w <- subset(h2, hWildDomFAO=="wild") 
+h3d <- subset(h2, hWildDomFAO=="domestic")
 
 #par(mfrow=c(2, 1))
 #par(mar=c(10,3,3,3))
 ## FIG 1A
 par(mar=c(14,4.2,4,2))
-boxplot(vir_rich ~ hOrder, data=h2, vertical = TRUE, ylab="Viral richness per species",
-        col="lightgray", main="", outcol=NA, las=3)
+boxplot(vir_rich ~ hOrder, data=h2, vertical = TRUE, ylab="Total Viral Richness",
+        col="lightgray", main="", outcol=NA, las=3,cex.axis=1.3, cex.lab=1.3)
 #one stripchart for wild values
 stripchart(vir_rich ~ hOrder, data=h3w, 
            vertical = TRUE, method = "jitter", jitter=0.15,
            pch = 21, col = "black", bg = "lightgrey", 
-           add = T, cex=1.2) 
+           add = T, cex=1.3) 
 #another for domestic
 stripchart(vir_rich ~ hOrder, data=h3d, 
            vertical = TRUE, method = "jitter", jitter=0.15,
            pch = 21, col = "black", bg = "red", 
-           add = T, cex=1.2) 
+           add = T, cex=1.3) 
 #mtext("1A", 2, adj=5, las=1) #not set right
 
 ##FIG 1B
 par(mar=c(14,4,4,2)+0.1)
 
-boxplot(propHoSa ~ hOrder, data=h, vertical = TRUE, ylab="Proportion human viruses",
-        col="lightgray", main="", outcol=NA, las=3)
+boxplot(prop_human ~ hOrder, data=h2, vertical = TRUE, ylab="Proportion Zoonotic Viruses",
+        col="lightgray", main="", outcol=NA, las=3, cex.axis=1.3, cex.lab=1.3)
 
-stripchart(propHoSa ~ hOrder, data=hw, 
+stripchart(prop_human ~ hOrder, data=h3w, 
            vertical = TRUE, method = "jitter", jitter=0.15,
            pch = 21, col = "black", bg = "lightgrey", 
-           add = T, cex=1.2) 
+           add = T, cex=1.3) 
 
-stripchart(propHoSa ~ hOrder, data=hd, 
+stripchart(prop_human ~ hOrder, data=h3d, 
            vertical = TRUE, method = "jitter", jitter=0.15,
-           pch = 21, col = "black", bg = col, 
-           add = T, cex=1.2) 
+           pch = 21, col = "black", bg = "red", 
+           add = T, cex=1.3) 
 
 ## Viral richness with wild and dom stripplot, ordered by proportion shared - 15 Dec 2014
 
 ## post hoc test of significance for proportion zoonotic viruses
 
-a2 <- aov(propHoSa ~ hOrder, data=h)
+a2 <- aov(prop_human ~ hOrder, data=h2)
 summary(a2) #hOrder is signif
 pairwise.t.test(h$propHoSa, h$hOrder, p.adj = "bonf")
 TukeyHSD(a2)
-
-
-#### END HP3 FIG 1

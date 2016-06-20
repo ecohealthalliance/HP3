@@ -25,7 +25,6 @@ hosts = associations %>%
   full_join(hosts, by="hHostNameFinal") %>% 
   verify(TotVirusPerHost == vir_rich)  # check against prev values
 
-
 ## Add viruses shared with humans to host data
 human_viruses = associations %>% 
   filter(hHostNameFinal == "Homo_sapiens") %>% 
@@ -35,14 +34,22 @@ human_viruses_strict = associations %>%
   filter(hHostNameFinal == "Homo_sapiens", DetectionQuality02 == 2) %>% 
   use_series("vVirusNameCorrected")
 
+human_viruses_no_rev = associations %>% 
+  filter(hHostNameFinal == "Homo_sapiens") %>% 
+  filter(!(vVirusNameCorrected %in% viruses$vVirusNameCorrected[viruses$ReverseZoonoses==1])) %>% 
+  use_series("vVirusNameCorrected")
+
 hosts = associations %>% 
   group_by(hHostNameFinal) %>% 
   summarise(NSharedWithHoSa = sum(vVirusNameCorrected %in% human_viruses),
-            NSharedWithHoSa_strict = sum(vVirusNameCorrected[DetectionQuality02 ==2] %in% human_viruses_strict)) %>% 
+            NSharedWithHoSa_strict = sum(vVirusNameCorrected[DetectionQuality02 ==2] %in% human_viruses_strict),
+            NSharedWithHoSa_norev = sum(vVirusNameCorrected %in% human_viruses_no_rev)) %>% 
   full_join(hosts, by="hHostNameFinal") %>% # check against prev values
+  #hosts %>% 
   verify(NSharedWithHoSa == vHoSaRich) %>% 
   verify(NSharedWithHoSa_strict == vHoSaRich.stringent |
-         is.na(vHoSaRich.stringent) & NSharedWithHoSa_strict == 0)
+         is.na(vHoSaRich.stringent) & NSharedWithHoSa_strict == 0) %>% 
+  verify(NSharedWithHoSa_norev <= NSharedWithHoSa)
 
 # Add additional host fields from other data files
 

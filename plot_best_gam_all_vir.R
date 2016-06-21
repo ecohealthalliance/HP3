@@ -65,7 +65,7 @@ partials <- as.data.frame(lapply(1:ncol(preds$fit), function(cl) {
 }))
 names(partials) <- names(preds$fit)
 
-smooth_titles = list("disease\ncitations (log)", "“PVR, body mass\n(log kg)", bquote('range (log' ~ km^{2} ~ ')'), "mammal\nsympatry")
+smooth_titles = list("disease\ncitations (log)", "PVR, body mass\n(log kg)", bquote('range (log' ~ km^{2} ~ ')'), "mammal\nsympatry")
 names(smooth_titles) = names(smooth_data_vir)
 smooth_plots_vir = map(names(smooth_data_vir), function(smooth_term_vir) {
   pl =  ggplot() +

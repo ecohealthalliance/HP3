@@ -113,7 +113,8 @@ bin_plot = ggplot() +
   scale_y_continuous(limits=c(-10,10), oob=scales::rescale_none, name="") +
   partials_theme + theme(axis.title.x=element_blank(), axis.ticks.x=element_blank(),
                          axis.text.x = element_text(color="black", lineheight = 1.2,
-                                                    vjust=0.5, margin=margin(t=0)))
+                                                    vjust=0.5, margin=margin(t=0), family="Helvetica", size=7),
+                         axis.text.y = element_text(family="Helvetica", size=7))
 
  
 

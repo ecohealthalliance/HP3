@@ -65,7 +65,7 @@ partials <- as.data.frame(lapply(1:ncol(preds$fit), function(cl) {
 }))
 names(partials) <- names(preds$fit)
 
-smooth_titles = list("disease\ncitations (log)", "PVR, body mass\n(log kg)", bquote('range (log' ~ km^{2} ~ ')'), "mammal\nsympatry")
+smooth_titles = list("disease\ncitations (log)", "PVR body mass", bquote('range (log' ~ km^{2} ~ ')'), "mammal\nsympatry")
 names(smooth_titles) = names(smooth_data_vir)
 smooth_plots_vir = map(names(smooth_data_vir), function(smooth_term_vir) {
   pl =  ggplot() +
@@ -261,7 +261,7 @@ zoo_plots <- plot_grid(plot_grid(plotlist = smooth_plots_zoo, nrow=1, align="h",
                                     bin_plot_zoo, blankPlot, nrow=1, rel_widths = c(3.22,1.35, 1),
                        labels = c("", "i"), label_size = 7, hjust=0)
   
-svglite(file="Figure01-all-gams.svg", width = convertr::convert(183, "mm", "in"), convertr::convert(100, "mm", "in"), pointsize=7)
+svglite(file="Figure02-all-gams.svg", width = convertr::convert(183, "mm", "in"), convertr::convert(100, "mm", "in"), pointsize=7)
 cowplot::plot_grid(vir_plots, zoo_plots, nrow=2, rel_widths = c(5.3, 4.35))
 dev.off()
 

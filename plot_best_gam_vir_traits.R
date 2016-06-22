@@ -8,6 +8,7 @@ partials_theme = theme(text = element_text(family="Helvetica", size=7),
                        axis.ticks.x = element_line(size=0.3),
                        axis.ticks.y = element_blank(),
                        axis.text.y = element_text(color="black"),
+                       axis.title.x = element_text(lineheight=1.2),
                        legend.position="none")
 
 bgam = vtraits$model[[1]]
@@ -53,7 +54,7 @@ partials <- as.data.frame(lapply(1:ncol(preds$fit), function(cl) {
 }))
 names(partials) <- names(preds$fit)
 
-smooth_titles = c("max PHB (log Myr)", "genome length (log BP)", "PubMed citations (log)")
+smooth_titles = c("max phylogenetic\nhost breadth", "genome length (log BP)", "PubMed citations (log)")
 names(smooth_titles) = names(smooth_data)
 smooth_plots = map(names(smooth_data), function(smooth_term) {
   pl =  ggplot() +
@@ -113,8 +114,8 @@ bin_plot = ggplot() +
   scale_y_continuous(limits=c(-10,10), oob=scales::rescale_none, name="") +
   partials_theme + theme(axis.title.x=element_blank(), axis.ticks.x=element_blank(),
                          axis.text.x = element_text(color="black", lineheight = 1.2,
-                                                    vjust=0.5, margin=margin(t=0), family="Helvetica", size=7),
-                         axis.text.y = element_text(family="Helvetica", size=7))
+                                                    vjust=0.5, margin=margin(t=0), family="Helvetica", size=5.6),
+                         axis.text.y = element_text(family="Helvetica", size=5.6))
 
  
 

@@ -12,11 +12,11 @@ Terms in models with ΔAIC < 2.  All continuous terms effects are represented
 as splines, all discrete terms as random effects:
 
 
-      ΔAIC  Terms in Model                                                                                                                                                                                                               
-----------  -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
- 0.0000000  offset(LnTotNumVirus) + hAllZACitesLn + hHuntedIUCN + hOrderCETARTIODACTYLA + hOrderCHIROPTERA + hOrderDIPROTODONTIA + hOrderPERAMELEMORPHIA + hOrderPERISSODACTYLA + hOrderSCANDENTIA + PdHoSa.cbCst + UrbRurPopRatioLn     
- 0.4928126  offset(LnTotNumVirus) + hAllZACitesLn + hOrderCETARTIODACTYLA + hOrderCHIROPTERA + hOrderDIPROTODONTIA + hOrderPERAMELEMORPHIA + hOrderPERISSODACTYLA + hOrderSCANDENTIA + HumPopDensLnChg + PdHoSaSTPD + UrbRurPopRatioLn   
- 1.5419086  offset(LnTotNumVirus) + hDiseaseZACitesLn + hHuntedIUCN + hOrderCETARTIODACTYLA + hOrderCHIROPTERA + hOrderDIPROTODONTIA + hOrderPERAMELEMORPHIA + hOrderPERISSODACTYLA + hOrderSCANDENTIA + PdHoSa.cbCst + UrbRurPopRatioLn 
+     ΔAIC  Terms in Model                                                                                                                                                                                                                           
+---------  -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ 0.000000  offset(LnTotNumVirus) + hAllZACitesLn + hHuntedIUCN + hOrderCETARTIODACTYLA + hOrderCHIROPTERA + hOrderDIPROTODONTIA + hOrderPERAMELEMORPHIA + hOrderPERISSODACTYLA + hOrderSCANDENTIA + PdHoSa.cbCst + UrbRurPopRatioLn                 
+ 0.051505  offset(LnTotNumVirus) + hAllZACitesLn + hHuntedIUCN + hOrderCETARTIODACTYLA + hOrderCHIROPTERA + hOrderDIPROTODONTIA + hOrderPERAMELEMORPHIA + hOrderPERISSODACTYLA + hOrderSCANDENTIA + HumPopDensLnChg + PdHoSaSTPD + UrbRurPopRatioLn 
+ 1.262928  offset(LnTotNumVirus) + hDiseaseZACitesLn + hHuntedIUCN + hOrderCETARTIODACTYLA + hOrderCHIROPTERA + hOrderDIPROTODONTIA + hOrderPERAMELEMORPHIA + hOrderPERISSODACTYLA + hOrderSCANDENTIA + PdHoSa.cbCst + UrbRurPopRatioLn             
 
 Partial effect plots of all terms in top model:
 
@@ -40,27 +40,27 @@ Summary of top model:
 ## 
 ## Parametric coefficients:
 ##             Estimate Std. Error z value Pr(>|z|)    
-## (Intercept) -0.35144    0.03922   -8.96   <2e-16 ***
+## (Intercept) -0.34078    0.03976  -8.572   <2e-16 ***
 ## ---
 ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 ## 
 ## Approximate significance of smooth terms:
-##                              edf Ref.df Chi.sq  p-value    
-## s(hAllZACitesLn)         1.60480      6  9.183 0.004625 ** 
-## s(hHuntedIUCN)           0.05738      1  0.073 0.259633    
-## s(hOrderCETARTIODACTYLA) 0.89453      1 26.091 1.13e-07 ***
-## s(hOrderCHIROPTERA)      0.73008      1  4.825 0.013462 *  
-## s(hOrderDIPROTODONTIA)   0.51444      1  0.957 0.172999    
-## s(hOrderPERAMELEMORPHIA) 0.78099      1  0.756 0.325013    
-## s(hOrderPERISSODACTYLA)  0.74243      1  2.950 0.046660 *  
-## s(hOrderSCANDENTIA)      0.78219      1  0.812 0.308369    
-## s(PdHoSa.cbCst)          1.99407      6 15.387 0.000329 ***
-## s(UrbRurPopRatioLn)      1.26905      6 10.652 0.001563 ** 
+##                             edf Ref.df Chi.sq  p-value    
+## s(hAllZACitesLn)         1.4994      6  7.458 0.009885 ** 
+## s(hHuntedIUCN)           0.2423      1  0.415 0.202430    
+## s(hOrderCETARTIODACTYLA) 0.8896      1 26.998 8.91e-08 ***
+## s(hOrderCHIROPTERA)      0.7121      1  4.446 0.016082 *  
+## s(hOrderDIPROTODONTIA)   0.5222      1  1.001 0.166705    
+## s(hOrderPERAMELEMORPHIA) 0.7799      1  0.760 0.323662    
+## s(hOrderPERISSODACTYLA)  0.7462      1  3.030 0.044351 *  
+## s(hOrderSCANDENTIA)      0.7841      1  0.811 0.309212    
+## s(PdHoSa.cbCst)          1.9705      6 14.498 0.000673 ***
+## s(UrbRurPopRatioLn)      1.2568      6 10.278 0.001822 ** 
 ## ---
 ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 ## 
-## R-sq.(adj) =  0.895   Deviance explained = 34.1%
-## UBRE = -0.60478  Scale est. = 1         n = 584
+## R-sq.(adj) =  0.894   Deviance explained = 33.7%
+## UBRE = -0.60157  Scale est. = 1         n = 584
 ```
 
 
@@ -134,7 +134,7 @@ as splines, all discrete terms as random effects:
      ΔAIC  Terms in Model                                                                                                                                                                                                                             
 ---------  -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
  0.000000  offset(LnTotNumVirus) + hAllZACitesLn + hHuntedIUCN + hOrderCETARTIODACTYLA + hOrderCHIROPTERA + hOrderDIPROTODONTIA + hOrderPERAMELEMORPHIA + hOrderPERISSODACTYLA + hOrderSCANDENTIA + HumPopDensLnChg + PdHoSa.cbCst + UrbRurPopRatioLn 
- 1.861192  offset(LnTotNumVirus) + hAllZACitesLn + hOrderCETARTIODACTYLA + hOrderCHIROPTERA + hOrderDIPROTODONTIA + hOrderPERAMELEMORPHIA + hOrderPERISSODACTYLA + hOrderSCANDENTIA + HumPopDensLnChg + PdHoSaSTPD + UrbRurPopRatioLn                 
+ 1.486322  offset(LnTotNumVirus) + hAllZACitesLn + hHuntedIUCN + hOrderCETARTIODACTYLA + hOrderCHIROPTERA + hOrderDIPROTODONTIA + hOrderPERAMELEMORPHIA + hOrderPERISSODACTYLA + hOrderSCANDENTIA + HumPopDensLnChg + PdHoSaSTPD + UrbRurPopRatioLn   
 
 Partial effect plots of all terms in top model:
 
@@ -159,28 +159,28 @@ Summary of top model:
 ## 
 ## Parametric coefficients:
 ##             Estimate Std. Error z value Pr(>|z|)    
-## (Intercept) -0.35794    0.03935  -9.097   <2e-16 ***
+## (Intercept) -0.34696    0.03983  -8.711   <2e-16 ***
 ## ---
 ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 ## 
 ## Approximate significance of smooth terms:
 ##                             edf Ref.df Chi.sq  p-value    
-## s(hAllZACitesLn)         1.7011      6  9.812  0.00314 ** 
-## s(hHuntedIUCN)           0.1146      1  0.165  0.23214    
-## s(hOrderCETARTIODACTYLA) 0.8808      1 24.733 1.82e-07 ***
-## s(hOrderCHIROPTERA)      0.6878      1  4.293  0.01529 *  
-## s(hOrderDIPROTODONTIA)   0.5497      1  1.056  0.16611    
-## s(hOrderPERAMELEMORPHIA) 0.7809      1  0.753  0.32600    
-## s(hOrderPERISSODACTYLA)  0.7236      1  2.739  0.05205 .  
-## s(hOrderSCANDENTIA)      0.7849      1  0.804  0.31136    
-## s(HumPopDensLnChg)       0.5637      6  0.857  0.20308    
-## s(PdHoSa.cbCst)          1.9849      6 10.598  0.00353 ** 
-## s(UrbRurPopRatioLn)      1.0754      6  7.484  0.00305 ** 
+## s(hAllZACitesLn)         1.6689      6  8.980  0.00481 ** 
+## s(hHuntedIUCN)           0.2775      1  0.537  0.17674    
+## s(hOrderCETARTIODACTYLA) 0.8738      1 25.214 1.64e-07 ***
+## s(hOrderCHIROPTERA)      0.6705      1  3.940  0.01852 *  
+## s(hOrderDIPROTODONTIA)   0.5605      1  1.108  0.16020    
+## s(hOrderPERAMELEMORPHIA) 0.7801      1  0.755  0.32514    
+## s(hOrderPERISSODACTYLA)  0.7233      1  2.773  0.05058 .  
+## s(hOrderSCANDENTIA)      0.7866      1  0.805  0.31186    
+## s(HumPopDensLnChg)       0.6403      6  1.182  0.15112    
+## s(PdHoSa.cbCst)          2.0565      6 10.147  0.00608 ** 
+## s(UrbRurPopRatioLn)      1.0286      6  6.819  0.00402 ** 
 ## ---
 ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 ## 
-## R-sq.(adj) =  0.883   Deviance explained = 32.6%
-## UBRE = -0.58201  Scale est. = 1         n = 583
+## R-sq.(adj) =  0.883   Deviance explained = 32.3%
+## UBRE = -0.57891  Scale est. = 1         n = 583
 ```
 
 # Zoonoses GAM - All Associations without Primates
@@ -191,10 +191,9 @@ Terms in models with ΔAIC < 2.  All continuous terms effects are represented
 as splines, all discrete terms as random effects:
 
 
-     ΔAIC  Terms in Model                                                                                                                                                                                                                                                     
----------  -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
- 0.000000  offset(LnTotNumVirus) + hAllZACitesLn + hHuntedIUCN + hOrderCETARTIODACTYLA + hOrderCHIROPTERA + hOrderDIDELPHIMORPHIA + hOrderDIPROTODONTIA + hOrderPERAMELEMORPHIA + hOrderPERISSODACTYLA + hOrderSCANDENTIA + HumPopDensLnChg + PdHoSa.cbCst + UrbRurPopRatioLn 
- 1.723904  offset(LnTotNumVirus) + hAllZACitesLn + hHuntedIUCN + hOrderCETARTIODACTYLA + hOrderCHIROPTERA + hOrderDIPROTODONTIA + hOrderPERAMELEMORPHIA + hOrderPERISSODACTYLA + hOrderSCANDENTIA + PdHoSa.cbCst + TotHumPopLn + UrbRurPopRatioLn                             
+ ΔAIC  Terms in Model                                                                                                                                                                                                                                                                    
+-----  ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+    0  offset(LnTotNumVirus) + HabAreaGrassLn + hDiseaseZACitesLn + hHuntedIUCN + hMassGramsPVR + hOrderCETARTIODACTYLA + hOrderCHIROPTERA + hOrderDIDELPHIMORPHIA + hOrderDIPROTODONTIA + hOrderPERAMELEMORPHIA + hOrderPERISSODACTYLA + hOrderPILOSA + hOrderSCANDENTIA + PdHoSa.cbCst 
 
 Partial effect plots of all terms in top model:
 
@@ -209,39 +208,41 @@ Summary of top model:
 ## Link function: log 
 ## 
 ## Formula:
-## NSharedWithHoSa ~ s(hAllZACitesLn, bs = "tp", k = 7) + s(hHuntedIUCN, 
-##     bs = "re") + s(hOrderCETARTIODACTYLA, bs = "re") + s(hOrderCHIROPTERA, 
-##     bs = "re") + s(hOrderDIDELPHIMORPHIA, bs = "re") + s(hOrderDIPROTODONTIA, 
-##     bs = "re") + s(hOrderPERAMELEMORPHIA, bs = "re") + s(hOrderPERISSODACTYLA, 
-##     bs = "re") + s(hOrderSCANDENTIA, bs = "re") + s(HumPopDensLnChg, 
-##     bs = "tp", k = 7) + s(PdHoSa.cbCst, bs = "tp", k = 7) + s(UrbRurPopRatioLn, 
+## NSharedWithHoSa ~ s(HabAreaGrassLn, bs = "tp", k = 7) + s(hDiseaseZACitesLn, 
+##     bs = "tp", k = 7) + s(hHuntedIUCN, bs = "re") + s(hMassGramsPVR, 
+##     bs = "tp", k = 7) + s(hOrderCETARTIODACTYLA, bs = "re") + 
+##     s(hOrderCHIROPTERA, bs = "re") + s(hOrderDIDELPHIMORPHIA, 
+##     bs = "re") + s(hOrderDIPROTODONTIA, bs = "re") + s(hOrderPERAMELEMORPHIA, 
+##     bs = "re") + s(hOrderPERISSODACTYLA, bs = "re") + s(hOrderPILOSA, 
+##     bs = "re") + s(hOrderSCANDENTIA, bs = "re") + s(PdHoSa.cbCst, 
 ##     bs = "tp", k = 7) + offset(LnTotNumVirus)
 ## 
 ## Parametric coefficients:
 ##             Estimate Std. Error z value Pr(>|z|)    
-## (Intercept) -0.35657    0.04459  -7.996 1.29e-15 ***
+## (Intercept) -0.34036    0.04473  -7.609 2.76e-14 ***
 ## ---
 ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 ## 
 ## Approximate significance of smooth terms:
-##                             edf Ref.df Chi.sq  p-value    
-## s(hAllZACitesLn)         1.4641      6  7.629  0.00786 ** 
-## s(hHuntedIUCN)           0.4817      1  1.903  0.06388 .  
-## s(hOrderCETARTIODACTYLA) 0.8454      1 21.111 3.61e-06 ***
-## s(hOrderCHIROPTERA)      0.6845      1  5.057  0.00901 ** 
-## s(hOrderDIDELPHIMORPHIA) 0.1737      1  0.236  0.23765    
-## s(hOrderDIPROTODONTIA)   0.5713      1  1.152  0.15707    
-## s(hOrderPERAMELEMORPHIA) 0.7831      1  0.761  0.32442    
-## s(hOrderPERISSODACTYLA)  0.6729      1  2.213  0.07114 .  
-## s(hOrderSCANDENTIA)      0.7880      1  0.794  0.31557    
-## s(HumPopDensLnChg)       0.9159      6  1.709  0.15037    
-## s(PdHoSa.cbCst)          0.3305      6  0.851  0.11573    
-## s(UrbRurPopRatioLn)      0.7208      6  8.424  0.00143 ** 
+##                              edf Ref.df Chi.sq  p-value    
+## s(HabAreaGrassLn)        1.48741      6  3.979   0.0749 .  
+## s(hDiseaseZACitesLn)     0.88610      6  3.192   0.0515 .  
+## s(hHuntedIUCN)           0.53249      1  2.854   0.0439 *  
+## s(hMassGramsPVR)         0.05471      6  0.073   0.2493    
+## s(hOrderCETARTIODACTYLA) 0.90445      1 32.910 4.86e-08 ***
+## s(hOrderCHIROPTERA)      0.68345      1  4.565   0.0137 *  
+## s(hOrderDIDELPHIMORPHIA) 0.16012      1  0.214   0.2448    
+## s(hOrderDIPROTODONTIA)   0.16343      1  0.198   0.2705    
+## s(hOrderPERAMELEMORPHIA) 0.76409      1  0.758   0.3192    
+## s(hOrderPERISSODACTYLA)  0.79130      1  3.808   0.0288 *  
+## s(hOrderPILOSA)          0.25929      1  0.381   0.2256    
+## s(hOrderSCANDENTIA)      0.79898      1  0.793   0.3190    
+## s(PdHoSa.cbCst)          0.60396      6  3.189   0.0480 *  
 ## ---
 ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 ## 
-## R-sq.(adj) =   0.88   Deviance explained = 36.4%
-## UBRE = -0.59838  Scale est. = 1         n = 510
+## R-sq.(adj) =  0.868   Deviance explained = 33.6%
+## UBRE = -0.57925  Scale est. = 1         n = 505
 ```
 
 
@@ -373,10 +374,11 @@ Terms in models with ΔAIC < 2.  All continuous terms effects are represented
 as splines, all discrete terms as random effects:
 
 
-      ΔAIC  Terms in Model                                                                                 
-----------  -----------------------------------------------------------------------------------------------
- 0.0000000  Envelope + st_dist_noHoSa_maxLn + vCytoReplicTF + Vector + vGenomeAveLengthLn + vWOKcitesLn    
- 0.7123169  Envelope + st_dist_noHoSa_maxLn + vCytoReplicTF + Vector + vGenomeAveLengthLn + vPubMedCitesLn 
+      ΔAIC  Terms in Model                                                                         
+----------  ---------------------------------------------------------------------------------------
+ 0.0000000  st_dist_noHoSa_maxLn + vCytoReplicTF + Vector + vGenomeAveLengthLn + vWOKcitesLn       
+ 0.0193961  st_dist_noHoSa_maxLn + Vector + vGenomeAveLengthLn + vPubMedCitesLn                    
+ 1.1537255  cb_dist_noHoSa_medianLn + vCytoReplicTF + Vector + vGenomeAveLengthLn + vPubMedCitesLn 
 
 Partial effect plots of all terms in top model:
 
@@ -391,30 +393,28 @@ Summary of top model:
 ## Link function: logit 
 ## 
 ## Formula:
-## IsZoonotic ~ s(Envelope, bs = "re") + s(st_dist_noHoSa_maxLn, 
-##     bs = "tp", k = 7) + s(vCytoReplicTF, bs = "re") + s(Vector, 
-##     bs = "re") + s(vGenomeAveLengthLn, bs = "tp", k = 7) + s(vWOKcitesLn, 
-##     bs = "tp", k = 7)
+## IsZoonotic ~ s(st_dist_noHoSa_maxLn, bs = "tp", k = 7) + s(vCytoReplicTF, 
+##     bs = "re") + s(Vector, bs = "re") + s(vGenomeAveLengthLn, 
+##     bs = "tp", k = 7) + s(vWOKcitesLn, bs = "tp", k = 7)
 ## 
 ## Parametric coefficients:
 ##             Estimate Std. Error z value Pr(>|z|)    
-## (Intercept)  -1.2265     0.3101  -3.955 7.64e-05 ***
+## (Intercept)  -0.5519     0.1593  -3.464 0.000531 ***
 ## ---
 ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 ## 
 ## Approximate significance of smooth terms:
-##                            edf Ref.df Chi.sq  p-value    
-## s(Envelope)             0.7720      1  3.399   0.0370 *  
-## s(st_dist_noHoSa_maxLn) 3.9972      6 41.831 2.46e-08 ***
-## s(vCytoReplicTF)        0.5080      1  1.689   0.0723 .  
-## s(Vector)               0.7199      1  4.191   0.0171 *  
-## s(vGenomeAveLengthLn)   1.2807      6  2.560   0.1745    
-## s(vWOKcitesLn)          3.4948      6 26.178 1.40e-05 ***
+##                              edf Ref.df Chi.sq  p-value    
+## s(st_dist_noHoSa_maxLn) 4.094387      6 32.810 7.11e-07 ***
+## s(vCytoReplicTF)        0.001515      1  0.002   0.2680    
+## s(Vector)               0.668423      1  2.521   0.0509 .  
+## s(vGenomeAveLengthLn)   4.671009      6 13.862   0.0149 *  
+## s(vWOKcitesLn)          3.472280      6 24.774 1.15e-05 ***
 ## ---
 ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 ## 
-## R-sq.(adj) =  0.343   Deviance explained = 30.3%
-## UBRE = 0.015372  Scale est. = 1         n = 348
+## R-sq.(adj) =  0.331   Deviance explained =   29%
+## UBRE = 0.043109  Scale est. = 1         n = 361
 ```
 
 
@@ -428,10 +428,12 @@ Terms in models with ΔAIC < 2.  All continuous terms effects are represented
 as splines, all discrete terms as random effects:
 
 
-      ΔAIC  Terms in Model                                                                                              
-----------  ------------------------------------------------------------------------------------------------------------
- 0.0000000  cb_dist_noHoSa_mean.stringentLn + Envelope + vCytoReplicTF + Vector + vGenomeAveLengthLn + vPubMedCitesLn   
- 0.2059789  cb_dist_noHoSa_median.stringentLn + Envelope + vCytoReplicTF + Vector + vGenomeAveLengthLn + vPubMedCitesLn 
+      ΔAIC  Terms in Model                                                                                           
+----------  ---------------------------------------------------------------------------------------------------------
+ 0.0000000  cb_dist_noHoSa_max.stringentLn + Envelope + vCytoReplicTF + Vector + vGenomeAveLengthLn + vWOKcitesLn    
+ 0.7416454  cb_dist_noHoSa_mean.stringentLn + Envelope + vCytoReplicTF + Vector + vGenomeAveLengthLn + vWOKcitesLn   
+ 0.8475136  cb_dist_noHoSa_median.stringentLn + Envelope + vCytoReplicTF + Vector + vGenomeAveLengthLn + vWOKcitesLn 
+ 0.9731882  cb_dist_noHoSa_max.stringentLn + Envelope + vCytoReplicTF + Vector + vGenomeAveLengthLn + vPubMedCitesLn 
 
 Partial effect plots of all terms in top model:
 
@@ -446,30 +448,28 @@ Summary of top model:
 ## Link function: logit 
 ## 
 ## Formula:
-## IsZoonotic.stringent ~ s(cb_dist_noHoSa_mean.stringentLn, bs = "tp", 
+## IsZoonotic.stringent ~ s(cb_dist_noHoSa_max.stringentLn, bs = "tp", 
 ##     k = 7) + s(Envelope, bs = "re") + s(vCytoReplicTF, bs = "re") + 
 ##     s(Vector, bs = "re") + s(vGenomeAveLengthLn, bs = "tp", k = 7) + 
-##     s(vPubMedCitesLn, bs = "tp", k = 7)
+##     s(vWOKcitesLn, bs = "tp", k = 7)
 ## 
 ## Parametric coefficients:
-##             Estimate Std. Error z value Pr(>|z|)    
-## (Intercept)  -1.7863     0.3513  -5.085 3.67e-07 ***
-## ---
-## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+##             Estimate Std. Error z value Pr(>|z|)
+## (Intercept)  -0.4798     0.4147  -1.157    0.247
 ## 
 ## Approximate significance of smooth terms:
 ##                                       edf Ref.df Chi.sq  p-value    
-## s(cb_dist_noHoSa_mean.stringentLn) 0.9319      6 11.836 0.000402 ***
-## s(Envelope)                        0.3590      1  0.453 0.262487    
-## s(vCytoReplicTF)                   0.6943      1  3.178 0.042513 *  
-## s(Vector)                          0.7710      1  3.671 0.033527 *  
-## s(vGenomeAveLengthLn)              1.4642      6  2.119 0.253498    
-## s(vPubMedCitesLn)                  3.9631      6 24.536 3.17e-05 ***
+## s(cb_dist_noHoSa_max.stringentLn) 0.84540      6  6.199  0.00673 ** 
+## s(Envelope)                       0.98634      1  7.757  0.00418 ** 
+## s(vCytoReplicTF)                  0.07209      1  0.081  0.28828    
+## s(Vector)                         0.53133      1  1.311  0.11611    
+## s(vGenomeAveLengthLn)             4.93709      6 29.322  0.00101 ** 
+## s(vWOKcitesLn)                    4.49331      6 35.949 2.68e-07 ***
 ## ---
 ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 ## 
-## R-sq.(adj) =  0.222   Deviance explained = 22.6%
-## UBRE = -0.033645  Scale est. = 1         n = 289
+## R-sq.(adj) =  0.277   Deviance explained = 27.2%
+## UBRE = -0.052053  Scale est. = 1         n = 295
 ```
 
 

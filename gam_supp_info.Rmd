@@ -4,6 +4,7 @@ output:
   html_document:
     toc: TRUE
     code_download: TRUE
+    keep_md: TRUE
 ---
 
 ```{r setup, include=FALSE, cache=FALSE}
@@ -99,6 +100,8 @@ summary(all_zoonoses$model[[1]])
 # Zoonoses GAM - Strict Associations
 
 ```{r fit-all-zoo-strict, cache=TRUE}
+model_family = poisson
+
 all_zoonoses_strict = fit_all_gams(data_set,
                             outcome_variable = "NSharedWithHoSa_strict",
                             poisson,
@@ -146,6 +149,9 @@ dummys = as.data.frame(with(data_set, model.matrix(~hOrder))[,-1])
 data_set = cbind(data_set, dummys)
 dummy_terms = paste0("s(", names(dummys), ", bs = 're')")
 names(dummy_terms) <- names(dummys)
+
+model_family = poisson
+
 
 ## Create data.frame of all possible models
 terms = list(
@@ -269,6 +275,13 @@ summary(all_zoonoses_noprim$model[[1]])
 # All Viruses GAM - All Associations
 
 ```{r fit-all-vir, cache=TRUE}
+data_set = hosts %>% 
+  filter(hMarOTerr == "Terrestrial",
+         hWildDomFAO == "wild",
+         !is.na(PdHoSa.cbCst_order))
+
+model_family = poisson
+
 #  Create dummy variables for orders to use as random effects
 dummys = as.data.frame(with(data_set, model.matrix(~hOrder))[,-1])
 #dummys = dummys[, colSums(dummys) > 1]
@@ -328,6 +341,9 @@ summary(all_viruses$model[[1]])
 # All Viruses GAM - Strict Associations
 
 ```{r all-vir-strict-fit, cache=TRUE}
+
+model_family = poisson
+
 all_viruses_strict = fit_all_gams(data_set,
                             outcome_variable = "TotVirusPerHost_strict",
                             poisson,
@@ -365,6 +381,9 @@ summary(all_viruses_strict$model[[1]])
 ```{r vtraits-fit, cache=TRUE}
 PD_centers = names(viruses)[stri_detect_regex(names(viruses), "^(cb|st)_.*(?<!stringent)$")]
 
+model_family = binomial
+
+
 data_set = viruses %>% 
   mutate_each_(funs("logp"), vars=PD_centers)
 names(data_set)[names(data_set) %in% PD_centers] <- paste0(PD_centers, "Ln")
@@ -375,7 +394,6 @@ data_set = cbind(data_set, dummys)
 dummy_terms = paste0("s(", names(dummys), ", bs = 're')")
 names(dummy_terms) <- names(dummys)
 
-#data_set = data_set %>% filter(NumHosts > 1)
 
 terms = list(
   PD     = paste0("s(", PD_centers, ", bs='tp', k=7)"),
@@ -388,7 +406,7 @@ terms = list(
 
 vtraits = fit_all_gams(data_set,
                        outcome_variable = "IsZoonotic",
-                       binomial,
+                       model_family = binomial,
                        terms)
 
 ```
@@ -434,6 +452,8 @@ dummys = as.data.frame(with(viruses, model.matrix(~vFamily))[,-1])
 data_set = cbind(data_set, dummys)
 dummy_terms = paste0("s(", names(dummys), ", bs = 're')")
 names(dummy_terms) <- names(dummys)
+
+model_family = binomial
 
 #data_set = data_set %>% filter(NumHosts > 1)
 
@@ -492,6 +512,8 @@ data_set = left_join(data_set, domestics, by = "hHostNameFinal") %>%
   mutate(domestic_category = ifelse(is.na(domestic_category), "Other", domestic_category)) %>% 
   droplevels()
 
+model_family = poisson
+
 #  Create dummy variables for orders to use as random effects
 dummys = as.data.frame(with(data_set, model.matrix(~hOrder))[,-1])
 dummys2 = as.data.frame(with(data_set, model.matrix(~domestic_category))[,-1])
@@ -523,6 +545,7 @@ Terms in models with ΔAIC < 2.  All continuous terms effects are represented
 as splines, all discrete terms as random effects:
 
 ```{r dom-table, cache=FALSE}
+
 domestic_zoonoses %>%
   filter(daic <= 2) %>%
   select(daic, terms) %>% 
@@ -549,6 +572,7 @@ summary(domestic_zoonoses$model[[1]])
 # Zoonoses in Domestic Animals GAM - Strict Associations
 
 ```{r dom-strict-fit, cache=TRUE}
+model_family = poisson
 domestic_zoonoses_strict = fit_all_gams(data_set,
                        outcome_variable = "NSharedWithHoSa_strict",
                        poisson,
@@ -582,6 +606,7 @@ summary(domestic_zoonoses_strict$model[[1]])
 # All Viruses in Domestic Animals GAM - All Associations
 
 ```{r dom-vir-fit, cache=TRUE}
+model_family = poisson
 #  Create dummy variables for orders to use as random effects
 dummys = as.data.frame(with(data_set, model.matrix(~hOrder))[,-1])
 dummys2 = as.data.frame(with(data_set, model.matrix(~domestic_category))[,-1])
@@ -612,6 +637,7 @@ Terms in models with ΔAIC < 2.  All continuous terms effects are represented
 as splines, all discrete terms as random effects:
 
 ```{r dom-vir-table, cache=FALSE}
+model_family = poisson
 domestic_viruses %>%
   filter(daic <= 2) %>%
   select(daic, terms) %>% 
@@ -637,6 +663,7 @@ summary(domestic_viruses$model[[1]])
 # All Viruses in Domestic Animals GAM - Stringent Associations
 
 ```{r dom-vir-strict-fit, cache=TRUE}
+model_family = poisson
 domestic_viruses_strict = fit_all_gams(data_set,
                        outcome_variable = "TotVirusPerHost_strict",
                        poisson,
@@ -670,7 +697,7 @@ summary(domestic_viruses_strict$model[[1]])
 
 <!-- # Publication plots -->
 
-```{r, include=FALSE}
+```{r make-svg-plot, eval=FALSE, include=FALSE}
 #svglite(file="rplot.svg", width = convertr::convert(113, "mm", "in"), convertr::convert(180, "mm", "in"), pointsize=7)
 vir_plotdata = viruses %>% 
   filter(!is.na(vFamily), vFamily != "Unassigned") %>% 
@@ -683,7 +710,7 @@ vir_plotdata = viruses %>%
   mutate(vHostType = ifelse(IsHoSa & IsZoonotic, "Zoonotic", ifelse(IsHoSa, "Human Only", "Non-Human Only"))) %>% 
   mutate(st_dist_noHoSa_max = ifelse(is.na(st_dist_noHoSa_max), 0, st_dist_noHoSa_max)) %>% 
   arrange(prop_fam_zoonotic) %>% 
-  mutate(vFamily = factor(vFamily, vFamily)) %>% 
+  mutate(vFamily = factor(vFamily, unique(vFamily))) %>% 
   droplevels() %>%
   mutate(jitter_fams= as.numeric(vFamily) + (rnorm(n(), mean=0, sd=0.075))*as.numeric(n_in_fam != 1))
 

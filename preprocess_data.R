@@ -7,9 +7,9 @@ library(assertr)
 library(readxl)
 library(tidyr)
 ## Read the data files
-associations = read_csv("data/HP3.assocV41_FINAL.csv")
+associations = read_csv("data/HP3.assoc_v50.csv")
 hosts  = read_csv("data/HP3.hostv42_FINAL.csv")
-viruses = read_csv("data/HP3.virus_v45.csv")
+viruses = read_csv("data/HP3.virus_v50.csv")
 
 # Temporary fix
 hosts = hosts %>% 
@@ -22,8 +22,8 @@ hosts = associations %>%
   group_by(hHostNameFinal) %>% 
   summarise(TotVirusPerHost = n(),
             TotVirusPerHost_strict = sum(DetectionQuality02 == 2)) %>% 
-  full_join(hosts, by="hHostNameFinal") %>% 
-  verify(TotVirusPerHost == vir_rich)  # check against prev values
+  full_join(hosts, by="hHostNameFinal")# %>% 
+  #verify(TotVirusPerHost == vir_rich)  # check against prev values
 
 ## Add viruses shared with humans to host data
 human_viruses = associations %>% 
@@ -46,9 +46,9 @@ hosts = associations %>%
             NSharedWithHoSa_norev = sum(vVirusNameCorrected %in% human_viruses_no_rev)) %>% 
   full_join(hosts, by="hHostNameFinal") %>% # check against prev values
   #hosts %>% 
-  verify(NSharedWithHoSa == vHoSaRich) %>% 
-  verify(NSharedWithHoSa_strict == vHoSaRich.stringent |
-         is.na(vHoSaRich.stringent) & NSharedWithHoSa_strict == 0) %>% 
+ # verify(NSharedWithHoSa == vHoSaRich) %>% 
+  #verify(NSharedWithHoSa_strict == vHoSaRich.stringent |
+  #       is.na(vHoSaRich.stringent) & NSharedWithHoSa_strict == 0) %>% 
   verify(NSharedWithHoSa_norev <= NSharedWithHoSa)
 
 # Add additional host fields from other data files

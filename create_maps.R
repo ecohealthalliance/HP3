@@ -14,18 +14,19 @@ rm(list=ls())
 
 unzip('~/dropbox/repos/Mammals/IUCN2013/MAMMTERR.zip', exdir = '~/Documents/hp3/data/')
 
-terr = shapefile('data/Mammals_Terrestrial.shp', verbose = T)
+terr1 = shapefile('data/Mammals_Terrestrial.shp', verbose = T)
 terr@data$BINOMIAL = str_replace(terr@data$BINOMIAL, " ", "_")
 
-# select only extant areas
-
+# select only extant species
 terr = subset(terr, PRESENCE == 1)
-#al = subset(terr, BINOMIAL == 'Miniopterus_fuliginosus')
 
 # Read HP3 results
 # all viruses
 hp3_all = read.csv('~/dropbox/tmp_dbox/gam_prediction/all_viruses_gam_predictions.csv')
-hp3_all = mutate(hp3_all, pred_obs = prediction - TotVirusPerHost)
+hp3_all = hp3_all %>%
+    mutate(pred_obs_all = prediction - TotVirusPerHost,
+           pred_all = prediction) %>%
+           select(-prediction, obs_all = TotVirusPerHost)
 
 # just zoonotic viruses
 hp3_zoo = read.csv('~/dropbox/tmp_dbox/gam_prediction/all_zoonoses_gam_predictions.csv')
@@ -47,45 +48,25 @@ terr@data = data.frame(terr@data, hp3_zoo[match(terr@data[, "BINOMIAL"], hp3_zoo
 # Remove NA (i.e., species with no data available)
 data.hp3 = terr[!is.na(terr$hHostNameFinal),]
 
-# Create richness maps
-template <- raster(resolution = 1/6)
 
-all_viruses_obs = rasterize(data.hp3, template, 'TotVirusPerHost', fun = 'sum', silent = F)
-writeRaster(all_viruses_obs, filename = "all_viruses_obs.tif", format = "GTiff", overwrite = T)
-
-all_viruses_pred = rasterize(data.hp3, template, 'prediction', fun = 'sum', silent = F, na.rm=T )
-writeRaster(all_viruses_pred, filename = "all_viruses_pred.tif", format = "GTiff", overwrite = T)
-
-all_viruses_pred_obs = rasterize(data.hp3, template, 'pred_obs', fun = 'sum', silent = F )
-writeRaster(all_viruses_pred_obs, filename = "all_viruses_pred_obs.tif", format = "GTiff", overwrite = T)
-
-
-# Zoonotic viruses
-
-zoo_viruses_obs = rasterize(data.hp3, template, 'obs_zoo', fun = 'sum', silent = F)
-writeRaster(zoo_viruses_obs, filename = "output/tif/zoo_viruses_obs.tif", format = "GTiff", overwrite = T)
-
-zoo_viruses_pred = rasterize(data.hp3, template, 'pred_zoo', fun = 'sum', silent = F, na.rm=T )
-writeRaster(zoo_viruses_pred, filename = "output/tif/zoo_viruses_pred.tif", format = "GTiff", overwrite = T)
-
-zoo_viruses_pred_obs = rasterize(data.hp3, template, 'pred_obs_zoo', fun = 'sum', silent = F )
-writeRaster(zoo_viruses_pred_obs, filename = "output/tif/zoo_viruses_pred_obs.tif", format = "GTiff", overwrite = T)
 
 # Auxilliary functions
 # get world administrative borders. Requires maptools
 data(wrld_simpl)
 
+wrld_simpl = subset(wrld_simpl, NAME != 'Antarctica')
+
 # Create color palette. Requires rasterVis and RColorBrewer
 myTheme = rasterTheme(region = rev(brewer.pal(11, 'RdYlGn')))
 
-# Function to create a png. raster::trim removes Antarctica region
+# Function to create a png. xlim & ylim removes Antarctica
 plot_png = function(raster, out_dir, res, theme){
+  require(stringr)
   require(rasterVis)
   name = deparse(substitute(raster))
   out_file = paste0(out_dir, name, '.png')
-  raster = trim(raster)
   png(out_file, width = ncol(raster), height = nrow(raster), res = res)
-  print(levelplot(raster, layers = 1, par.settings = theme, margin = F, ylab = '', xlab = '', maxpixels = ncell(raster)) +
+  print(levelplot(raster, layers = 1, par.settings = theme, margin = F, ylab = '', xlab = '', maxpixels = ncell(raster), xlim = c(-180, 180), ylim = c(-58, 90)) +
           layer(sp.polygons(wrld_simpl, lwd = 0.5, col = 'gray50')))
   dev.off()
 }
@@ -93,74 +74,194 @@ plot_png = function(raster, out_dir, res, theme){
 
 # Read .tif files from directory and create maps. Needs maptools data(wrld_simpl) to draw the global borders
 read_print = function(in_dir, out_dir, res, theme){
+  require(stringr)
+  require(rasterVis)
   list_tif = dir(in_dir, '.tif')
   for (i in list_tif) {
     raster = raster(paste0(in_dir, i))
-    raster = trim(raster)
     out_file = paste0(out_dir, str_sub(i, 1, -4), 'png')
     png(out_file, width = ncol(raster), height = nrow(raster), res = res)
-    print(levelplot(raster, layers = 1, par.settings = theme, margin = F, ylab = '', xlab = '', maxpixels = ncell(raster)) +
+    print(levelplot(raster, layers = 1, par.settings = theme, margin = F, ylab = '', xlab = '', maxpixels = ncell(raster), xlim = c(-180, 180), ylim = c(-58, 90)) +
           layer(sp.polygons(wrld_simpl, lwd = 0.5, col = 'gray50')))
     dev.off()
     print(paste('Done!!', i))
   }
 }
 
-2
-# Function to create species richness maps. in this case viral species richness. Resolution can be defined as 1/6
 
-spp_rich = function(shapefile, colname, order = NULL, res, out_dir, ...) {
+# Function to create viral species richness maps. Resolution can be defined as 1/6
+
+spp_rich_virus = function(shapefile, colname, order = NULL, res, out_dir, ...) {
+  require(rgdal)
   template <- raster(resolution = res)
   if (is.null(order)){
     for(i in colname){
       out_file = paste0(out_dir, i)
-      extension(out_file) = 'grd'
+      extension(out_file) = 'tif'
       print(paste('Processing', i, sep = ' '))
       temp = raster()
-      temp = rasterize(shapefile, template, i, fun = 'sum', silent = F)
-      writeRaster(temp, filename = out_file, format = "raster", overwrite = T, progress = 'text')
+      temp = rasterize(shapefile, template, i, fun = 'sum', silent = F, progress = 'text')
+      writeRaster(temp, filename = out_file, format = "GTiff", overwrite = T, progress = 'text')
       }
     } else {
+      template <- raster(resolution = res)
       for(j in order){
         tmp_pol = subset(shapefile, hOrder == j)
+        print(dim(tmp_pol))
         for(i in colname){
-          #tmp_pol =  subset(shapefile, hOrder == order)
-          out_file = paste0(out_dir, j, '_', colname)
-          extension(out_file) = 'grd'
+          out_file = paste0(out_dir, j, '_', i)
+          extension(out_file) = 'tif'
           print(paste('Processing', j, i, sep = ' '))
-          #temp = rasterize(tmp_pol, template, i, fun = 'sum', silent = F)
-          #writeRaster(temp, filename = out_file, overwrite = T, progress = 'text')
-          temp = raster()
-          temp = rasterize(shapefile, template, i, fun = 'sum', silent = F)
-          writeRaster(temp, filename = out_file, format = "raster", overwrite = T, progress = 'text')
+          temp0 = raster()
+          temp0 = rasterize(tmp_pol, template, i, fun = 'sum', silent = F)
+          writeRaster(temp0, filename = out_file, format = "GTiff", overwrite = T, progress = 'text')
         }
       }
     }
 }
 
 
+# Function to calculate host species richness
 
-# print
+spp_rich_host = function(shapefile, order = NULL, file_name, res, out_dir, ...) {
+  require(rgdal)
+  template <- raster(resolution = res)
+  if (is.null(order)){
+      out_file = paste0(out_dir, file_name)
+      extension(out_file) = 'tif'
+      print(paste('Processing ALL mammals'))
+      temp = raster()
+      temp = rasterize(shapefile, template, 1, fun = 'sum', silent = F, progress = 'text')
+      writeRaster(temp, filename = out_file, format = "GTiff", overwrite = T, progress = 'text')
+  } else {
+    for(j in order){
+      tmp_pol = subset(shapefile, hOrder == j)
+      print(dim(tmp_pol))
+      out_file = paste0(out_dir, j, '_', file_name)
+      extension(out_file) = 'tif'
+      print(paste('Processing just', j, sep = ' '))
+      temp0 = raster()
+      temp0 = rasterize(tmp_pol, template, 1, fun = 'sum', silent = F, progress = 'text')
+      writeRaster(temp0, filename = out_file, format = "GTiff", overwrite = T, progress = 'text')
+    }
+  }
+}
 
-plot_png(all_viruses_obs, 'output/png/all_viruses/', 200, myTheme)
-plot_png(all_viruses_pred, 'output/png/all_viruses/', 200, myTheme)
-plot_png(all_viruses_pred_obs, 'output/png/all_viruses/', 200, myTheme)
 
 
-# Zoonotic only
+
+##########
+# Generate the tif files for all mammals and by order
+
+list_vars_all = c('obs_all', 'pred_all', 'pred_obs_all')
 
 list_vars_zoo = c('obs_zoo', 'pred_zoo', 'pred_obs_zoo')
 
 list_orders = c('CARNIVORA', 'CETARTIODACTYLA', 'CHIROPTERA', 'PRIMATES', 'RODENTIA')
 
-spp_rich(data.hp3, list_vars_zoo, NULL, 1/6, 'output/tif/zoonoses/')
 
-spp_rich(data.hp3, list_vars_zoo, list_orders, 1/6, 'output/tif/zoonoses/')
+# Zoonoses
+spp_rich_virus(data.hp3, list_vars_zoo, NULL, 1/6, 'output/tif/zoonoses/')
+spp_rich_virus(data.hp3, list_vars_zoo, list_orders, 1/6, 'output/tif/zoonoses/')
+
+# All viruses
+spp_rich_virus(data.hp3, list_vars_all, NULL, 1/6, 'output/tif/all_viruses/')
+spp_rich_virus(data.hp3, list_vars_all, list_orders, 1/6, 'output/tif/all_viruses/')
+
+# Species richness maps for data in database
+
+spp_rich_host(data.hp3, NULL, 'spp_richness', 1/6,'output/tif/host/')
+spp_rich_host(data.hp3, list_orders, 'spp_richness', 1/6,'output/tif/host/')
+
+# Species richness maps for ALL mammals
+
+spp_rich_host(terr, NULL, 'all_spp_richness', 1/6,'output/tif/host/')
+spp_rich_host(terr, list_orders, 'all_spp_richness', 1/6,'output/tif/host/')
+
+read_print('output/tif/host/', 'output/png/host/', 200, myTheme)
 
 
 
+# Read all viruses tif rasters and create png's.
+read_print('output/tif/all_viruses/', 'output/png/all_viruses/', 200, myTheme)
 
-png('output/png/zoo_viruses_obs.png', width = ncol(zoo_viruses_obs), height = nrow(zoo_viruses_obs), res = 200)
+# Read zoonoses tif rasters and create png's.
+read_print('output/tif/zoonoses/', 'output/png/zoonoses/', 200, myTheme)
+
+
+
+####
+
+tif_path = function(direc, ext){
+  list_files = dir(direc, ext)
+  for(i in list_files){
+    s = paste0(direc, list_files)
+    return(s)
+  }
+  
+}
+
+miss_zoo = stack(str_subset(s, 'pred_obs'))
+
+#s0 = stack(s)
+nl <- nlayers(miss_zoo)
+m <- matrix(1:nl, nrow=3)
+
+png('output/png/panel_res.png', width = ncol(miss_zoo), height = nrow(miss_zoo), res = 200)
+for (i in 1:nl){
+  p <- levelplot(miss_zoo, layers = i, 
+                 par.settings = myTheme, 
+                 margin = F, 
+                 ylab = '', 
+                 xlab = '', 
+                 maxpixels = ncell(miss_zoo), 
+                 xlim=c(-180,180), ylim=c(-56,90),
+                 scales=list(draw=FALSE)) +
+       layer(sp.polygons(wrld_simpl, lwd = 0.5, col = 'gray50'))
+  print(p, split = c(col(m)[i], row(m)[i], ncol(m), nrow(m)), more=(i<nl))
+}
+dev.off()
+
+pl = levelplot(miss_zoo,
+               par.settings = myTheme,
+               col.regions = myTheme, 
+               colorkey = list(space = "bottom"), 
+               margin = F, 
+               ylab = '', 
+               xlab = '', 
+               xlim = c(-180,180), 
+               ylim = c(-56,90),
+               scales = list(draw=FALSE)) +
+  layer(sp.polygons(wrld_simpl, lwd = 0.5, col = 'gray50'))
+
+
+png('output/png/panel_res.png', width = ncol(miss_zoo), height = nrow(miss_zoo), res = 200)
+print(levelplot(miss_zoo, par.settings = myTheme, xlim=c(-180,180), ylim=c(-60,90), names.attr = letters[seq(1:6)]) +
+  layer(sp.polygons(wrld_simpl, lwd = 0.5, col = 'gray50')))
+dev.off()
+
+levelplot(s0, layers = 1, par.settings = myTheme, margin = F, ylab = '', xlab = '', maxpixels = ncell(s0), xlim=c(-180,180), ylim=c(-56,90)) +
+  layer(sp.polygons(wrld_simpl, lwd = 0.5, col = 'gray50'))
+
+grid.arrange(p1, p2, p3, p4, ncol=2)
+
+p <- levelplot(miss_zoo, layers = i,
+               par.settings=myTheme,
+               margin=FALSE,
+               #between = list(x=0, y=0),
+               xlab='',
+               ylab='',
+               scales=list(draw=FALSE)
+)
+c(p1, p2, merge.legends = T, layout = 1:2)
+
+####
+
+read_print('output/tif/zoonones/', 'output/png/zoonoses/', 200, myTheme)
+
+
+
+svglite('output/png/zoo_viruses_obs.svg')
 print(levelplot(zoo_viruses_obs, layers = 1, par.settings = myTheme, margin = F, ylab = '', xlab = '', maxpixels = ncell(zoo_viruses_obs)))
 dev.off()
 
@@ -174,32 +275,10 @@ dev.off()
 
 # Create maps by order
 
-list_vars = c('TotVirusPerHost', 'prediction', 'pred_obs')
-
-list_vars_zoo = c('obs_zoo', 'pred_zoo', 'pred_obs_zoo')
-
-list_orders = c('CARNIVORA', 'CETARTIODACTYLA', 'CHIROPTERA', 'PRIMATES', 'RODENTIA')
-
-list_vars_zoo = c('obs_zoo', 'pred_zoo', 'pred_obs_zoo')
-
-i = c('RODENTIA')
 
 
 
-for (i in list_orders) {
-  tmp_pol =  subset(data.hp3, hOrder == i)
-  #tmp_pol = data.hp3[data.hp3$hOrder == i,]
-  for (j in list_vars_zoo){
-    print(paste('Processing', i, j, sep = ' '))
-    tmp_ras = rasterize(tmp_pol, template, j, fun = 'sum', silent = F )
-    assign("output/png/tmp_name", paste(i, j, sep = '_'))
-    png(tmp_name, width = ncol(tmp_ras), height = nrow(tmp_ras), res = 200)
-    print(levelplot(tmp_ras, layers = 1, par.settings = myTheme, margin = F, ylab = '', xlab = '', maxpixels = ncell(tmp_ras)))
-    dev.off()
-    writeRaster(tmp_ras, tmp_name, format = "GTiff", overwrite = T)
-    print(paste('Writing', tmp_name, sep = ' '))
-  }
-}
+
 
 
 png('output/png/zoo_RODENTIA_pred_obs.png', width = ncol(tmp_ras), height = nrow(tmp_ras), res = 200)

@@ -2,4 +2,11 @@
 .Rhistory
 .RData
 .Ruserdata
+<<<<<<< HEAD
 Fig1A_revised-16June2016.pdf
+=======
+.DS_Store
+.dropbox
+*_cache/
+Icon
+>>>>>>> d4afa77c1b102eef416e51223bae242cae8e3a9f

@@ -13,7 +13,7 @@ library(maptools)
 rm(list=ls())
 # Load the Mammals' shapefile TERRESTRIAL_MAMMALS
 
-unzip('~/dropbox/repos/Mammals/IUCN2013/MAMMTERR.zip', exdir = '~/Documents/hp3/data/')
+#unzip('~/dropbox/repos/Mammals/IUCN2013/MAMMTERR.zip', exdir = '~/Documents/hp3/data/')
 
 terr = shapefile('data/iucn_data/Mammals_Terrestrial.shp', verbose = T)
 terr@data$BINOMIAL = str_replace(terr@data$BINOMIAL, " ", "_")
@@ -22,36 +22,37 @@ terr@data$BINOMIAL = str_replace(terr@data$BINOMIAL, " ", "_")
 terr = subset(terr, PRESENCE == 1)
 
 # Read taxonomic information.
-
 taxa = read_csv('data/IUCN_taxonomy_23JUN2016.csv') %>%
-       select(-c(7:23))
+  dplyr::select(-c(7:23), spp_ID = `Species ID`)
 
+# Join taxonomic information to spatial data
+terr@data = left_join(terr@data, taxa, by = c("ID_NO" = 'spp_ID'))
 
 # Read HP3 results
 # all viruses
 hp3_all = read_csv('data/all_viruses_gam_predictions.csv') %>%
-    mutate(pred_obs_all = prediction - TotVirusPerHost,
-           pred_all = prediction) %>%
-           select(-prediction, obs_all = TotVirusPerHost)
+  mutate(pred_obs_all = prediction - TotVirusPerHost,
+         pred_all = prediction) %>%
+  dplyr::select(-prediction, -hOrder, obs_all = TotVirusPerHost)
 
 # just zoonotic viruses
 hp3_zoo = read_csv('data/all_zoonoses_gam_predictions.csv') %>%
   mutate(pred_obs_zoo = prediction - NSharedWithHoSa,
          pred_zoo = prediction) %>%
-  select(-prediction, -hOrder, obs_zoo = NSharedWithHoSa)
+  dplyr::select(-prediction, -hOrder, obs_zoo = NSharedWithHoSa)
 
 
-# Join tables
+# Create spatial polygons for all_viruses & all_zoonoses
+data_hp3_all <- terr
+data_hp3_zoo <- terr
 
-#terr@data = semi_join(terr@data, hp3_all, by = c("binomial" = 'hHostNameFinal'))
-
-terr@data = data.frame(terr@data, hp3_all[match(terr@data[, "BINOMIAL"], hp3_all[, 'hHostNameFinal']),])
-
-terr@data = data.frame(terr@data, hp3_zoo[match(terr@data[, "BINOMIAL"], hp3_zoo[, 'hHostNameFinal']),])
+# Join spatial polygons and hp3 data frames
+data_hp3_all@data = full_join(data_hp3_all@data, hp3_all, by = c("BINOMIAL" = 'hHostNameFinal'))
+data_hp3_zoo@data = full_join(data_hp3_zoo@data, hp3_zoo, by = c("BINOMIAL" = 'hHostNameFinal'))
 
 # Remove NA (i.e., species with no data available)
-data.hp3 = terr[!is.na(terr$hHostNameFinal),]
-
+data_hp3_all = data_hp3_all[!is.na(data_hp3_all$obs_all),]
+data_hp3_zoo = data_hp3_zoo[!is.na(data_hp3_zoo$obs_zoo),]
 
 
 # Auxilliary functions
@@ -117,7 +118,7 @@ spp_rich_virus = function(shapefile, colname, order = NULL, res, out_dir, ...) {
           extension(out_file) = 'tif'
           print(paste('Processing', j, i, sep = ' '))
           temp0 = raster()
-          temp0 = rasterize(tmp_pol, template, i, fun = 'sum', silent = F)
+          temp0 = rasterize(tmp_pol, template, i, fun = 'sum', silent = F, progress ='text')
           writeRaster(temp0, filename = out_file, format = "GTiff", overwrite = T, progress = 'text')
         }
       }
@@ -164,16 +165,15 @@ list_vars_zoo = c('obs_zoo', 'pred_zoo', 'pred_obs_zoo')
 list_orders = c('CARNIVORA', 'CETARTIODACTYLA', 'CHIROPTERA', 'PRIMATES', 'RODENTIA')
 
 
-# Zoonoses
-spp_rich_virus(data.hp3, list_vars_zoo, NULL, 1/6, 'output/tif/zoonoses/')
-spp_rich_virus(data.hp3, list_vars_zoo, list_orders, 1/6, 'output/tif/zoonoses/')
-
 # All viruses
-spp_rich_virus(data.hp3, list_vars_all, NULL, 1/6, 'output/tif/all_viruses/')
-spp_rich_virus(data.hp3, list_vars_all, list_orders, 1/6, 'output/tif/all_viruses/')
+spp_rich_virus(data_hp3_all, list_vars_all, NULL, 1/6, 'output/tif/all_viruses/')
+spp_rich_virus(data_hp3_all, list_vars_all, list_orders, 1/6, 'output/tif/all_viruses/')
+
+# All Zoonoses
+spp_rich_virus(data_hp3_all, list_vars_zoo, NULL, 1/6, 'output/tif/zoonoses/')
+spp_rich_virus(data_hp3_all, list_vars_zoo, list_orders, 1/6, 'output/tif/zoonoses/')
 
 # Species richness maps for data in database
-
 spp_rich_host(data.hp3, NULL, 'spp_richness', 1/6,'output/tif/host/')
 spp_rich_host(data.hp3, list_orders, 'spp_richness', 1/6,'output/tif/host/')
 

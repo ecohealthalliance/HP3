@@ -1,4 +1,5 @@
 library(sp)
+library(readr)
 library(rgdal)
 library(stringr)
 library(dplyr)
@@ -14,24 +15,27 @@ rm(list=ls())
 
 unzip('~/dropbox/repos/Mammals/IUCN2013/MAMMTERR.zip', exdir = '~/Documents/hp3/data/')
 
-terr1 = shapefile('data/Mammals_Terrestrial.shp', verbose = T)
+terr = shapefile('data/iucn_data/Mammals_Terrestrial.shp', verbose = T)
 terr@data$BINOMIAL = str_replace(terr@data$BINOMIAL, " ", "_")
 
 # select only extant species
 terr = subset(terr, PRESENCE == 1)
 
+# Read taxonomic information.
+
+taxa = read_csv('data/IUCN_taxonomy_23JUN2016.csv') %>%
+       select(-c(7:23))
+
+
 # Read HP3 results
 # all viruses
-hp3_all = read.csv('~/dropbox/tmp_dbox/gam_prediction/all_viruses_gam_predictions.csv')
-hp3_all = hp3_all %>%
+hp3_all = read_csv('data/all_viruses_gam_predictions.csv') %>%
     mutate(pred_obs_all = prediction - TotVirusPerHost,
            pred_all = prediction) %>%
            select(-prediction, obs_all = TotVirusPerHost)
 
 # just zoonotic viruses
-hp3_zoo = read.csv('~/dropbox/tmp_dbox/gam_prediction/all_zoonoses_gam_predictions.csv')
-
-hp3_zoo = hp3_zoo %>%
+hp3_zoo = read_csv('data/all_zoonoses_gam_predictions.csv') %>%
   mutate(pred_obs_zoo = prediction - NSharedWithHoSa,
          pred_zoo = prediction) %>%
   select(-prediction, -hOrder, obs_zoo = NSharedWithHoSa)

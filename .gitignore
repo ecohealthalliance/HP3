@@ -10,3 +10,9 @@
 ._.DS_Store
 *.zip
 *.Rproj
+*.prj
+*.shp
+*.dbf
+*.shx
+*.sbn
+*.xml

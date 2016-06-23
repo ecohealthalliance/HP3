@@ -2,27 +2,27 @@
 #Revised from code-26april2013.R and Heatmap-20March2016.R
 
 #15 June 2016 revision for just main Heatmap figure, plus a couple other figures not used (can delete before making public)
-rm(list=ls()) 
 options(stringsAsFactors=F)
 require(ggplot2)
 #library(gplots)
 #library(scales)
 require(reshape)
-require(graphics) 
+require(graphics)
 require(grDevices)
 require(RColorBrewer)
 require(pheatmap)
 #require(gtools)
+P <- rprojroot::find_rstudio_root_file
 
 set.seed(0)
 
-asc <- read.csv("data/HP3.assocV41_FINAL.csv", header=T, strip.white = T)
-h <- read.csv("data/HP3.hostv42_FINAL.csv", header=T, strip.white = T)
-v <- read.csv("data/HP3.virus_v45.csv", header=T, strip.white = T)
+asc <- read.csv(P("data/HP3.assoc_v50.csv"), header=T, strip.white = T)
+h <- read.csv(P("data/HP3.hostv42_FINAL.csv"), header=T, strip.white = T)
+v <- read.csv(P("data/HP3.virus_v50.csv"), header=T, strip.white = T)
 asc_noHoSa <- asc[asc$hHostNameFinal!="Homo_sapiens", ]
 
 
-## Get matrix with nubmer of viruses infecting each host family by viral family 
+## Get matrix with nubmer of viruses infecting each host family by viral family
 # For Heatmap, using asc without humans
 vfam <- unique(v$vFamily)
 hfam <- unique(h$hFamily)
@@ -52,13 +52,13 @@ vricho <- as.data.frame(vricho)
 
 
 #15 June 2016 - Extended Data Figure 1, Unique viral richness by host Order and viral Family heatmap
-pheatmap(z2, col=c("white", col=brewer.pal(9, "YlOrRd")), 
+pheatmap(z2, col=c("white", col=brewer.pal(9, "YlOrRd")),
          breaks=c(0, 0.5,1,2,5,10,15,20,30,50), cluster_rows=T, cluster_cols=T,
          clustering_method = "complete", scale="none", fontsize_row = 12, display_numbers=T, number_format = "%.0f",
          treeheight_col=0, treeheight_row=0,
-         fontsize_col = 12, fontsize_number=10, margins=c(13,5))  
+         fontsize_col = 12, fontsize_number=10, margins=c(13,5))
 ## Different picutre when scale="row" vs. scale="none"
 ## Different clustering methods give different picture than above. e.g. "centroid" vs "complete"
-## Different clustering_distance methods give different picture than above. 
+## Different clustering_distance methods give different picture than above.
   #e.g. "correlation" vs. "euclidean" vs. "manhattan" v. "maximum"
 

@@ -3,6 +3,9 @@ library(tidyr)
 library(purrr)
 library(stringi)
 library(cowplot)
+set.seed(0)
+P <- rprojroot::find_rstudio_root_file
+
 
 partials_theme = theme(text = element_text(family="Helvetica", size=7),
                        panel.border=element_blank(),
@@ -18,12 +21,12 @@ partials_theme = theme(text = element_text(family="Helvetica", size=7),
                        #plot.margin=margin(l=0)
                       )
 
-blankPlot <- ggplot()+geom_blank(aes(1,1)) + 
+blankPlot <- ggplot()+geom_blank(aes(1,1)) +
   cowplot::theme_nothing()
 
-bgam = all_viruses$model[[1]]
+bgam = readRDS(P("supplement/all_viruses_model.rds"))
 
-# Zoonoses plot
+# All Viruses Plot
 binary_vars = c("hOrder")
 
 preds <- predict(bgam, type="iterms", se.fit=TRUE)
@@ -78,11 +81,11 @@ smooth_plots_vir = map(names(smooth_data_vir), function(smooth_term_vir) {
                 alpha = 0.5, fill=viridis(5)[4]) +
     geom_line(mapping = aes(x = smooth_ranges[[smooth_term_vir]], y = (smooth_preds$fit[[smooth_term_vir]])), size=0.3) +
     #  geom_rug(mapping = aes(x =model_data_vir[[smooth_term]]), alpha=0.3) +
-    xlab(smooth_titles[[smooth_term_vir]]) + 
+    xlab(smooth_titles[[smooth_term_vir]]) +
     scale_y_continuous(limits=c(-2.2,2.2), oob=scales::rescale_none) +
     theme_bw() + partials_theme
   return(pl)
-  
+
 })
 
 smooth_plots_vir[[1]] = smooth_plots_vir[[1]] + ylab("strength of effect on\nviruses per host") +
@@ -105,8 +108,8 @@ bin_vir_data$response = bin_vir_data$response
 bin_vir_data$labels = stri_replace_first_regex(bin_vir_data$variable, "hOrder", "")
 #bin_vir_data$labels = stri_replace_first_regex(bin_vir_data$labels, "hHuntedIUCN", "Hunted")
 bin_vir_data$signif = summary(bgam)$s.table[stri_detect_regex(rownames(summary(bgam)$s.table), paste0("(", paste0(binary_vars, collapse="|"), ")")), "p-value"] < 0.05
-bin_vir_data = bin_vir_data %>% 
-  arrange(desc(signif), response) %>% 
+bin_vir_data = bin_vir_data %>%
+  arrange(desc(signif), response) %>%
   mutate(no = 1:nrow(bin_vir_data))
 
 bin_vir_partials = lapply(binary_terms, function(x) {
@@ -115,21 +118,21 @@ bin_vir_partials = lapply(binary_terms, function(x) {
   data_frame(variable=variable, partial=vals, no=bin_vir_data$no[bin_vir_data$variable == variable])
 }) %>% bind_rows
 
-bin_vir_data = bin_vir_partials %>% 
-  group_by(variable) %>% 
-  summarize(minval = min(partial)) %>% 
-  inner_join(bin_vir_data, by="variable") %>% 
+bin_vir_data = bin_vir_partials %>%
+  group_by(variable) %>%
+  summarize(minval = min(partial)) %>%
+  inner_join(bin_vir_data, by="variable") %>%
   mutate(minval = pmin(minval, response - 2*se))
-bin_plot_vir = ggplot() + 
+bin_plot_vir = ggplot() +
   geom_hline(yintercept = 0, size=0.1, col="grey50") +
   geom_point(data=bin_vir_partials, mapping=aes(x=no, y=(partial)), position=position_jitter(width=0.5),
              shape=21, fill="#DA006C", col="black", alpha=0.25, size=0.75, stroke=0.2) +
   geom_rect(data = bin_vir_data, mapping=aes(xmin = no - 0.35, xmax  = no + 0.35, ymin=(response-2*se), ymax=(response+2*se), fill=signif), alpha = 0.5) +
   geom_segment(data = bin_vir_data, mapping=aes(x=no - 0.35, xend = no + 0.35, y=(response), yend=(response)), col="black", size=0.3) +
-  
+
   geom_text(data = bin_vir_data, mapping=aes(x=no, y=(minval - 0.4), label = stri_trans_totitle(labels)),
             color="black", family="Lato", size=1.5, angle =90, hjust=1, vjust =0.5) +
-  scale_fill_manual(breaks = c(TRUE, FALSE), values=c(viridis(5)[4]), "grey") + 
+  scale_fill_manual(breaks = c(TRUE, FALSE), values=c(viridis(5)[4]), "grey") +
   scale_x_continuous(breaks = bin_vir_data$no, labels = stri_trans_totitle(bin_vir_data$labels)) +
   scale_y_continuous(limits=c(-3.8,2.2), breaks=seq(-2,2, by=1), oob=scales::rescale_none, name="") +
   theme_bw() + partials_theme +
@@ -139,12 +142,12 @@ bin_plot_vir = ggplot() +
 vir_plots <- plot_grid(plot_grid(plotlist = smooth_plots_vir, nrow=1, align="h", rel_widths = c(1.22,1,1,1),
                                  labels=c("a", "b", "c", "d"), label_size=7, hjust=0),
                        bin_plot_vir, nrow=1, rel_widths = c(4.22,1.3), labels=c("", "e"), label_size=7, hjust=0)
-                                 
+
 
 #---
 
 # Zoonoses plot
-bgam = all_zoonoses$model[[1]]
+bgam = readRDS(P("supplement/all_zoonoses_model.rds"))
 
 binary_vars = c("hOrder", "hHuntedIUCN")
 
@@ -203,7 +206,7 @@ smooth_plots_zoo = map(names(smooth_data), function(smooth_term) {
     xlab(smooth_titles[smooth_term]) + #ylim(0,2.2) +
     theme_bw() + partials_theme
   return(pl)
-  
+
 })
 
 smooth_plots_zoo[[1]] = smooth_plots_zoo[[1]] + ylab("strength of effect on\nfraction zoonotic") +
@@ -225,8 +228,8 @@ bin_zoo_data$response = bin_zoo_data$response
 bin_zoo_data$labels = stri_replace_first_regex(bin_zoo_data$variable, "hOrder", "")
 bin_zoo_data$labels = stri_replace_first_regex(bin_zoo_data$labels, "hHuntedIUCN", "Hunted")
 bin_zoo_data$signif = summary(bgam)$s.table[stri_detect_regex(rownames(summary(bgam)$s.table), paste0("(", paste0(binary_vars, collapse="|"), ")")), "p-value"] < 0.05
-bin_zoo_data = bin_zoo_data %>% 
-  arrange(desc(signif), response) %>% 
+bin_zoo_data = bin_zoo_data %>%
+  arrange(desc(signif), response) %>%
   mutate(no = 1:nrow(bin_zoo_data))
 
 bin_zoo_partials = lapply(binary_terms, function(x) {
@@ -235,18 +238,18 @@ bin_zoo_partials = lapply(binary_terms, function(x) {
   data_frame(variable=variable, partial=vals, no=bin_zoo_data$no[bin_zoo_data$variable == variable])
 }) %>% bind_rows
 
-bin_zoo_data = bin_zoo_partials %>% 
-  group_by(variable) %>% 
-  summarize(minval = min(partial[!is.infinite(partial)])) %>% 
-  mutate(minval = ifelse(is.infinite(minval), -1, minval)) %>% 
+bin_zoo_data = bin_zoo_partials %>%
+  group_by(variable) %>%
+  summarize(minval = min(partial[!is.infinite(partial)])) %>%
+  mutate(minval = ifelse(is.infinite(minval), -1, minval)) %>%
   inner_join(bin_zoo_data, by="variable")
-bin_plot_zoo = ggplot() + 
+bin_plot_zoo = ggplot() +
   geom_point(data=bin_zoo_partials, mapping=aes(x=no, y=(partial)), position=position_jitter(width=0.5),
              shape=21, fill=viridis(4)[2], col="black", alpha=0.25, size=0.75, stroke=0.2) +
   geom_rect(data = bin_zoo_data, mapping=aes(xmin = no - 0.35, xmax  = no + 0.35, ymin=(response-2*se), ymax=(response+2*se), fill=signif), alpha = 0.5) +
   geom_hline(yintercept = 0, size=0.1, col="grey50") +
   geom_segment(data = bin_zoo_data, mapping=aes(x=no - 0.35, xend = no + 0.35, y=(response), yend=(response)), col="black", size=0.3) +
-  
+
   geom_text(data = bin_zoo_data, mapping=aes(x=no, y=(minval - 0.5), label = stri_trans_totitle(labels)),
             color="black", family="Lato", size=1.5, angle =90, hjust=1, vjust =0.5) +
   scale_fill_manual(values=c("grey", "#FD9825")) +
@@ -260,9 +263,8 @@ zoo_plots <- plot_grid(plot_grid(plotlist = smooth_plots_zoo, nrow=1, align="h",
                                  labels=c("f", "g", "h"), label_size=7, hjust=0),
                                     bin_plot_zoo, blankPlot, nrow=1, rel_widths = c(3.22,1.35, 1),
                        labels = c("", "i"), label_size = 7, hjust=0)
-  
-svglite(file="Figure02-all-gams.svg", width = convertr::convert(183, "mm", "in"), convertr::convert(100, "mm", "in"), pointsize=7)
+
+svglite(file=P("figures/Figure02-all-gams.svg"), width = convertr::convert(183, "mm", "in"), convertr::convert(100, "mm", "in"), pointsize=7)
 cowplot::plot_grid(vir_plots, zoo_plots, nrow=2, rel_widths = c(5.3, 4.35))
 dev.off()
 
-# 

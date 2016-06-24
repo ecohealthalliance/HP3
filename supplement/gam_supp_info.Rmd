@@ -21,6 +21,7 @@ P <- rprojroot::find_rstudio_root_file
 source(P("R/model_reduction.R"))
 source(P("R/fit_gam.R"))
 source(P("R/relative_contributions.R"))
+source(P("R/cross_validation.R"))
 set.seed(0)
 opts_chunk$set(echo = FALSE, message=FALSE, warning = FALSE, autodep=TRUE)
 ```
@@ -105,6 +106,14 @@ get_relative_contribs(all_zoonoses$model[[1]]) %>%
   kable(align=c("l","r"))
 ```
 
+Deviance explained in each fold of 7-fold cross-validation:
+
+```{r all-zoo-cv, cache=FALSE}
+cv_gam(all_zoonoses$model[[1]]) %>%
+  mutate(deviance_explained = paste0(signif(deviance_explained*100, digits=3), "%")) %>% 
+  rename(Fold = fold, Observations=n, `Deviance Explained` = deviance_explained) %>%
+  kable(align=c("l","r", "r"))
+```
 
 # Zoonoses GAM - Strict Associations
 
@@ -148,6 +157,15 @@ get_relative_contribs(all_zoonoses_strict$model[[1]]) %>%
   mutate(rel_deviance_explained = paste0(signif(rel_deviance_explained*100, digits=3), "%")) %>% 
   rename(Term = term, `Relative Deviance Explained` = rel_deviance_explained) %>% 
   kable(align=c("l","r"))
+```
+
+Deviance explained in each fold of 7-fold cross-validation:
+
+```{r all-zoo-strict-cv, cache=FALSE}
+cv_gam(all_zoonoses_strict$model[[1]]) %>%
+  mutate(deviance_explained = paste0(signif(deviance_explained*100, digits=3), "%")) %>% 
+  rename(Fold = fold, Observations=n, `Deviance Explained` = deviance_explained) %>%
+  kable(align=c("l","r", "r"))
 ```
 
 # Zoonoses GAM - All Associations without Reverse Zoonoses
@@ -229,6 +247,14 @@ get_relative_contribs(all_zoonoses_norev$model[[1]]) %>%
   kable(align=c("l","r"))
 ```
 
+Deviance explained in each fold of 7-fold cross-validation:
+
+```{r all-zoo-norev-cv, cache=FALSE}
+cv_gam(all_zoonoses_norev$model[[1]]) %>%
+  mutate(deviance_explained = paste0(signif(deviance_explained*100, digits=3), "%")) %>% 
+  rename(Fold = fold, Observations=n, `Deviance Explained` = deviance_explained) %>%
+  kable(align=c("l","r", "r"))
+```
 
 # All Viruses GAM - All Associations
 
@@ -304,6 +330,14 @@ get_relative_contribs(all_viruses$model[[1]]) %>%
   kable(align=c("l","r"))
 ```
 
+Deviance explained in each fold of 7-fold cross-validation:
+
+```{r all-vir-cv, cache=FALSE}
+cv_gam(all_viruses$model[[1]]) %>%
+  mutate(deviance_explained = paste0(signif(deviance_explained*100, digits=3), "%")) %>% 
+  rename(Fold = fold, Observations=n, `Deviance Explained` = deviance_explained) %>%
+  kable(align=c("l","r", "r"))
+```
 
 # All Viruses GAM - Strict Associations
 
@@ -350,6 +384,14 @@ get_relative_contribs(all_viruses_strict$model[[1]]) %>%
   kable(align=c("l","r"))
 ```
 
+Deviance explained in each fold of 7-fold cross-validation:
+
+```{r all-vir-stict-cv, cache=FALSE}
+cv_gam(all_viruses_strict$model[[1]]) %>%
+  mutate(deviance_explained = paste0(signif(deviance_explained*100, digits=3), "%")) %>% 
+  rename(Fold = fold, Observations=n, `Deviance Explained` = deviance_explained) %>%
+  kable(align=c("l","r", "r"))
+```
 
 # Viral Traits GAM - All Associations
 
@@ -417,6 +459,15 @@ get_relative_contribs(vtraits$model[[1]]) %>%
   mutate(rel_deviance_explained = paste0(signif(rel_deviance_explained*100, digits=3), "%")) %>% 
   rename(Term = term, `Relative Deviance Explained` = rel_deviance_explained) %>% 
   kable(align=c("l","r"))
+```
+
+Deviance explained in each fold of 7-fold cross-validation:
+
+```{r vtraits-cv, cache=FALSE}
+cv_gam(vtraits$model[[1]]) %>%
+  mutate(deviance_explained = paste0(signif(deviance_explained*100, digits=3), "%")) %>% 
+  rename(Fold = fold, Observations=n, `Deviance Explained` = deviance_explained) %>%
+  kable(align=c("l","r", "r"))
 ```
 
 
@@ -489,6 +540,14 @@ get_relative_contribs(vtraits_strict$model[[1]]) %>%
   kable(align=c("l","r"))
 ```
 
+Deviance explained in each fold of 7-fold cross-validation:
+
+```{r vtraits-strict-cv, cache=FALSE}
+cv_gam(vtraits_strict$model[[1]]) %>%
+  mutate(deviance_explained = paste0(signif(deviance_explained*100, digits=3), "%")) %>% 
+  rename(Fold = fold, Observations=n, `Deviance Explained` = deviance_explained) %>%
+  kable(align=c("l","r", "r"))
+```
 
 # Zoonoses in Domestic Animals GAM - All Associations
 
@@ -566,6 +625,14 @@ get_relative_contribs(domestic_zoonoses$model[[1]]) %>%
   kable(align=c("l","r"))
 ```
 
+Deviance explained in each fold of 7-fold cross-validation:
+
+```{r dom-cv, cache=FALSE}
+cv_gam(domestic_zoonoses$model[[1]]) %>%
+  mutate(deviance_explained = paste0(signif(deviance_explained*100, digits=3), "%")) %>% 
+  rename(Fold = fold, Observations=n, `Deviance Explained` = deviance_explained) %>%
+  kable(align=c("l","r", "r"))
+```
 
 
 # Zoonoses in Domestic Animals GAM - Strict Associations
@@ -611,6 +678,14 @@ get_relative_contribs(domestic_zoonoses_strict$model[[1]]) %>%
   kable(align=c("l","r"))
 ```
 
+Deviance explained in each fold of 7-fold cross-validation:
+
+```{r dom-strict-cv, cache=FALSE}
+cv_gam(domestic_zoonoses_strict$model[[1]]) %>%
+  mutate(deviance_explained = paste0(signif(deviance_explained*100, digits=3), "%")) %>% 
+  rename(Fold = fold, Observations=n, `Deviance Explained` = deviance_explained) %>%
+  kable(align=c("l","r", "r"))
+```
 
 # All Viruses in Domestic Animals GAM - All Associations
 
@@ -676,6 +751,14 @@ get_relative_contribs(domestic_viruses$model[[1]]) %>%
   kable(align=c("l","r"))
 ```
 
+Deviance explained in each fold of 7-fold cross-validation:
+
+```{r dom-vir-cv, cache=FALSE}
+cv_gam(domestic_viruses$model[[1]]) %>%
+  mutate(deviance_explained = paste0(signif(deviance_explained*100, digits=3), "%")) %>% 
+  rename(Fold = fold, Observations=n, `Deviance Explained` = deviance_explained) %>%
+  kable(align=c("l","r", "r"))
+```
 
 # All Viruses in Domestic Animals GAM - Stringent Associations
 
@@ -719,6 +802,15 @@ get_relative_contribs(domestic_viruses_strict$model[[1]]) %>%
   mutate(rel_deviance_explained = paste0(signif(rel_deviance_explained*100, digits=3), "%")) %>% 
   rename(Term = term, `Relative Deviance Explained` = rel_deviance_explained) %>% 
   kable(align=c("l","r"))
+```
+
+Deviance explained in each fold of 7-fold cross-validation:
+
+```{r dom-vir-strict-cv, cache=FALSE}
+cv_gam(domestic_viruses_strict$model[[1]]) %>%
+  mutate(deviance_explained = paste0(signif(deviance_explained*100, digits=3), "%")) %>% 
+  rename(Fold = fold, Observations=n, `Deviance Explained` = deviance_explained) %>%
+  kable(align=c("l","r", "r"))
 ```
 
 <!-- # Publication plots -->

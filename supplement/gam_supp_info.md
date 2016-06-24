@@ -79,6 +79,20 @@ hOrderSCANDENTIA                               4.85%
 PdHoSa.cbCst                                   18.6%
 UrbRurPopRatioLn                               12.2%
 
+Deviance explained in each fold of 7-fold cross-validation:
+
+
+Fold        Observations   Deviance Explained
+---------  -------------  -------------------
+1                    500                  36%
+2                    500                33.9%
+3                    500                33.4%
+4                    501                31.9%
+5                    501                32.2%
+6                    501                32.4%
+7                    501                34.7%
+mean                  NA                33.5%
+original             584                33.7%
 
 # Zoonoses GAM - Strict Associations
 
@@ -153,6 +167,21 @@ hOrderPRIMATES                                0.103%
 HumPopDensLnChg                                 4.3%
 PdHoSa.cbCst                                   34.5%
 UrbRurPopRatioChg                              19.5%
+
+Deviance explained in each fold of 7-fold cross-validation:
+
+
+Fold        Observations   Deviance Explained
+---------  -------------  -------------------
+1                    493                22.3%
+2                    493                24.6%
+3                    494                25.9%
+4                    494                22.5%
+5                    494                22.7%
+6                    494                  24%
+7                    494                24.8%
+mean                  NA                23.8%
+original             576                23.6%
 
 # Zoonoses GAM - All Associations without Reverse Zoonoses
 
@@ -231,6 +260,20 @@ HumPopDensLnChg                                3.55%
 PdHoSa.cbCst                                   18.4%
 UrbRurPopRatioLn                               7.09%
 
+Deviance explained in each fold of 7-fold cross-validation:
+
+
+Fold        Observations   Deviance Explained
+---------  -------------  -------------------
+1                    499                32.8%
+2                    499                  31%
+3                    500                31.9%
+4                    500                30.5%
+5                    500                31.6%
+6                    500                32.6%
+7                    500                34.3%
+mean                  NA                32.1%
+original             583                32.3%
 
 # All Viruses GAM - All Associations
 
@@ -306,6 +349,20 @@ hOrderRODENTIA                                  4.8%
 LnAreaHost                                      1.6%
 S20                                              10%
 
+Deviance explained in each fold of 7-fold cross-validation:
+
+
+Fold        Observations   Deviance Explained
+---------  -------------  -------------------
+1                    493                46.6%
+2                    493                53.8%
+3                    494                48.1%
+4                    494                47.5%
+5                    494                49.1%
+6                    494                50.5%
+7                    494                51.2%
+mean                  NA                49.6%
+original             576                49.3%
 
 # All Viruses GAM - Strict Associations
 
@@ -383,6 +440,20 @@ hOrderSCANDENTIA                              0.286%
 LnAreaHost                                     1.53%
 S20                                             3.9%
 
+Deviance explained in each fold of 7-fold cross-validation:
+
+
+Fold        Observations   Deviance Explained
+---------  -------------  -------------------
+1                    492                30.6%
+2                    493                38.3%
+3                    493                38.8%
+4                    493                34.6%
+5                    493                34.5%
+6                    493                37.3%
+7                    493                36.7%
+mean                  NA                35.8%
+original             575                35.8%
 
 # Viral Traits GAM - All Associations
 
@@ -447,6 +518,21 @@ Vector                                        4.61%
 vGenomeAveLengthLn                           0.946%
 vWOKcitesLn                                   37.4%
 
+Deviance explained in each fold of 7-fold cross-validation:
+
+
+Fold        Observations   Deviance Explained
+---------  -------------  -------------------
+1                    397                26.2%
+2                    397                28.6%
+3                    398                27.6%
+4                    398                27.9%
+5                    398                26.6%
+6                    398                27.6%
+7                    398                  28%
+mean                  NA                27.5%
+original             464                27.2%
+
 
 # Viral Traits GAM - Strict Associations
 
@@ -509,6 +595,20 @@ vCytoReplicTF                                           17.5%
 Vector                                                  3.88%
 vWOKcitesLn                                             53.1%
 
+Deviance explained in each fold of 7-fold cross-validation:
+
+
+Fold        Observations   Deviance Explained
+---------  -------------  -------------------
+1                    349                  22%
+2                    349                22.4%
+3                    350                23.1%
+4                    350                19.2%
+5                    350                18.2%
+6                    350                20.3%
+7                    350                22.5%
+mean                  NA                21.1%
+original             408                21.1%
 
 # Zoonoses in Domestic Animals GAM - All Associations
 
@@ -564,6 +664,20 @@ Term                                    Relative Deviance Explained
 domestic_categoryLivestockProduction                            43%
 hOrderCETARTIODACTYLA                                           57%
 
+Deviance explained in each fold of 7-fold cross-validation:
+
+
+Fold        Observations   Deviance Explained
+---------  -------------  -------------------
+1                     27                35.8%
+2                     27                43.2%
+3                     27                36.6%
+4                     27                38.5%
+5                     28                36.7%
+6                     28                  41%
+7                     28                  37%
+mean                  NA                38.4%
+original              32                  38%
 
 
 # Zoonoses in Domestic Animals GAM - Strict Associations
@@ -645,6 +759,20 @@ hOrderLAGOMORPHA                           56.8%
 hOrderPROBOSCIDEA                          28.8%
 hOrderRODENTIA                             14.5%
 
+Deviance explained in each fold of 7-fold cross-validation:
+
+
+Fold        Observations   Deviance Explained
+---------  -------------  -------------------
+1                     27                10.3%
+2                     27                5.81%
+3                     27                12.9%
+4                     27                15.5%
+5                     28                20.6%
+6                     28                14.1%
+7                     28                12.9%
+mean                  NA                13.1%
+original              32                12.6%
 
 # All Viruses in Domestic Animals GAM - All Associations
 
@@ -712,6 +840,20 @@ hDiseaseZACitesLn                                             72.4%
 hOrderLAGOMORPHA                                              1.61%
 hOrderPERISSODACTYLA                                            16%
 
+Deviance explained in each fold of 7-fold cross-validation:
+
+
+Fold        Observations   Deviance Explained
+---------  -------------  -------------------
+1                     27                94.3%
+2                     27                95.4%
+3                     27                94.5%
+4                     27                93.6%
+5                     28                  95%
+6                     28                91.3%
+7                     28                94.8%
+mean                  NA                94.2%
+original              32                94.2%
 
 # All Viruses in Domestic Animals GAM - Stringent Associations
 
@@ -782,6 +924,21 @@ domestic_categoryOther                                        1.85%
 hDiseaseZACitesLn                                             68.4%
 hOrderPERISSODACTYLA                                            15%
 hOrderRODENTIA                                                3.47%
+
+Deviance explained in each fold of 7-fold cross-validation:
+
+
+Fold        Observations   Deviance Explained
+---------  -------------  -------------------
+1                     27                93.2%
+2                     27                  93%
+3                     27                92.4%
+4                     27                92.3%
+5                     28                92.2%
+6                     28                87.3%
+7                     28                92.6%
+mean                  NA                91.9%
+original              32                91.8%
 
 <!-- # Publication plots -->
 

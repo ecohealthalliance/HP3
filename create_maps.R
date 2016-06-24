@@ -11,9 +11,7 @@ library(maptools)
 
 
 rm(list=ls())
-# Load the Mammals' shapefile TERRESTRIAL_MAMMALS
-
-#unzip('~/dropbox/repos/Mammals/IUCN2013/MAMMTERR.zip', exdir = '~/Documents/hp3/data/')
+# Load the Mammals' shapefile TERRESTRIAL_MAMMALS, downloaded from: http://www.iucnredlist.org/technical-documents/spatial-data#mammals
 
 terr = shapefile('data/iucn_data/Mammals_Terrestrial.shp', verbose = T)
 terr@data$BINOMIAL = str_replace(terr@data$BINOMIAL, " ", "_")
@@ -41,30 +39,36 @@ hp3_zoo = read_csv('data/all_zoonoses_gam_predictions.csv') %>%
          pred_zoo = prediction) %>%
   dplyr::select(-prediction, -hOrder, obs_zoo = NSharedWithHoSa)
 
+# Read HP3 database
+hp3 = read_csv('data/HP3.hostv42_FINAL.csv') %>%
+  filter(hWildDomFAO == 'wild', hMarOTerr == 'Terrestrial') %>%
+  dplyr::select(hHostNameFinal) %>%
+  mutate(hp3 = 1)
 
 # Create spatial polygons for all_viruses & all_zoonoses
 data_hp3_all <- terr
 data_hp3_zoo <- terr
+data_host <- terr
 
 # Join spatial polygons and hp3 data frames
 data_hp3_all@data = full_join(data_hp3_all@data, hp3_all, by = c("BINOMIAL" = 'hHostNameFinal'))
 data_hp3_zoo@data = full_join(data_hp3_zoo@data, hp3_zoo, by = c("BINOMIAL" = 'hHostNameFinal'))
+data_host@data = left_join(data_host@data, hp3, by = c("BINOMIAL" = 'hHostNameFinal')) %>%
+  subset(hp3 == 1)
 
-# Remove NA (i.e., species with no data available)
+# Remove NAs (i.e., species with no data available)
 data_hp3_all = data_hp3_all[!is.na(data_hp3_all$obs_all),]
 data_hp3_zoo = data_hp3_zoo[!is.na(data_hp3_zoo$obs_zoo),]
-
 
 # Auxilliary functions
 # get world administrative borders. Requires maptools
 data(wrld_simpl)
-
 wrld_simpl = subset(wrld_simpl, NAME != 'Antarctica')
 
 # Create color palette. Requires rasterVis and RColorBrewer
 myTheme = rasterTheme(region = rev(brewer.pal(11, 'RdYlGn')))
 
-# Function to create a png. xlim & ylim removes Antarctica
+# Function to create .png maps from 'in memory' rasters. The xlim & ylim removes Antarctica
 plot_png = function(raster, out_dir, res, theme){
   require(stringr)
   require(rasterVis)
@@ -76,8 +80,7 @@ plot_png = function(raster, out_dir, res, theme){
   dev.off()
 }
 
-
-# Read .tif files from directory and create maps. Needs maptools data(wrld_simpl) to draw the global borders
+# Read .tif files from directory and create .png maps. Requires maptools data(wrld_simpl) to draw the global borders
 read_print = function(in_dir, out_dir, res, theme){
   require(stringr)
   require(rasterVis)
@@ -87,15 +90,14 @@ read_print = function(in_dir, out_dir, res, theme){
     out_file = paste0(out_dir, str_sub(i, 1, -4), 'png')
     png(out_file, width = ncol(raster), height = nrow(raster), res = res)
     print(levelplot(raster, layers = 1, par.settings = theme, margin = F, ylab = '', xlab = '', maxpixels = ncell(raster), xlim = c(-180, 180), ylim = c(-58, 90)) +
-          layer(sp.polygons(wrld_simpl, lwd = 0.5, col = 'gray50')))
+            layer(sp.polygons(wrld_simpl, lwd = 0.5, col = 'gray50')))
     dev.off()
     print(paste('Done!!', i))
   }
 }
 
 
-# Function to create viral species richness maps. Resolution can be defined as 1/6
-
+# Function to create the missing zoonoses maps. Resolution can be defined as 1/6
 spp_rich_virus = function(shapefile, colname, order = NULL, res, out_dir, ...) {
   require(rgdal)
   template <- raster(resolution = res)
@@ -107,22 +109,22 @@ spp_rich_virus = function(shapefile, colname, order = NULL, res, out_dir, ...) {
       temp = raster()
       temp = rasterize(shapefile, template, i, fun = 'sum', silent = F, progress = 'text')
       writeRaster(temp, filename = out_file, format = "GTiff", overwrite = T, progress = 'text')
-      }
-    } else {
-      template <- raster(resolution = res)
-      for(j in order){
-        tmp_pol = subset(shapefile, hOrder == j)
-        print(dim(tmp_pol))
-        for(i in colname){
-          out_file = paste0(out_dir, j, '_', i)
-          extension(out_file) = 'tif'
-          print(paste('Processing', j, i, sep = ' '))
-          temp0 = raster()
-          temp0 = rasterize(tmp_pol, template, i, fun = 'sum', silent = F, progress ='text')
-          writeRaster(temp0, filename = out_file, format = "GTiff", overwrite = T, progress = 'text')
-        }
+    }
+  } else {
+    template <- raster(resolution = res)
+    for(j in order){
+      tmp_pol = subset(shapefile, Order == j)
+      print(dim(tmp_pol))
+      for(i in colname){
+        out_file = paste0(out_dir, j, '_', i)
+        extension(out_file) = 'tif'
+        print(paste('Processing', j, i, sep = ' '))
+        temp0 = raster()
+        temp0 = rasterize(tmp_pol, template, i, fun = 'sum', silent = F, progress ='text')
+        writeRaster(temp0, filename = out_file, format = "GTiff", overwrite = T, progress = 'text')
       }
     }
+  }
 }
 
 
@@ -132,15 +134,15 @@ spp_rich_host = function(shapefile, order = NULL, file_name, res, out_dir, ...) 
   require(rgdal)
   template <- raster(resolution = res)
   if (is.null(order)){
-      out_file = paste0(out_dir, file_name)
-      extension(out_file) = 'tif'
-      print(paste('Processing ALL mammals'))
-      temp = raster()
-      temp = rasterize(shapefile, template, 1, fun = 'sum', silent = F, progress = 'text')
-      writeRaster(temp, filename = out_file, format = "GTiff", overwrite = T, progress = 'text')
+    out_file = paste0(out_dir, file_name)
+    extension(out_file) = 'tif'
+    print(paste('Processing ALL mammals'))
+    temp = raster()
+    temp = rasterize(shapefile, template, 1, fun = 'sum', silent = F, progress = 'text')
+    writeRaster(temp, filename = out_file, format = "GTiff", overwrite = T, progress = 'text')
   } else {
     for(j in order){
-      tmp_pol = subset(shapefile, hOrder == j)
+      tmp_pol = subset(shapefile, Order == j)
       print(dim(tmp_pol))
       out_file = paste0(out_dir, j, '_', file_name)
       extension(out_file) = 'tif'
@@ -157,40 +159,35 @@ spp_rich_host = function(shapefile, order = NULL, file_name, res, out_dir, ...) 
 
 ##########
 # Generate the tif files for all mammals and by order
-
 list_vars_all = c('obs_all', 'pred_all', 'pred_obs_all')
-
 list_vars_zoo = c('obs_zoo', 'pred_zoo', 'pred_obs_zoo')
-
 list_orders = c('CARNIVORA', 'CETARTIODACTYLA', 'CHIROPTERA', 'PRIMATES', 'RODENTIA')
 
-
-# All viruses
+# Create all_viruses .tif rasters 
 spp_rich_virus(data_hp3_all, list_vars_all, NULL, 1/6, 'output/tif/all_viruses/')
 spp_rich_virus(data_hp3_all, list_vars_all, list_orders, 1/6, 'output/tif/all_viruses/')
 
-# All Zoonoses
-spp_rich_virus(data_hp3_all, list_vars_zoo, NULL, 1/6, 'output/tif/zoonoses/')
-spp_rich_virus(data_hp3_all, list_vars_zoo, list_orders, 1/6, 'output/tif/zoonoses/')
+# Create all_zoonoses .tif rasters 
+spp_rich_virus(data_hp3_zoo, list_vars_zoo, NULL, 1/6, 'output/tif/zoonoses/')
+spp_rich_virus(data_hp3_zoo, list_vars_zoo, list_orders, 1/6, 'output/tif/zoonoses/')
 
 # Species richness maps for data in database
-spp_rich_host(data.hp3, NULL, 'spp_richness', 1/6,'output/tif/host/')
-spp_rich_host(data.hp3, list_orders, 'spp_richness', 1/6,'output/tif/host/')
+spp_rich_host(data_host, NULL, 'hp3', 1/6,'output/tif/host/')
+spp_rich_host(data_host, list_orders, 'hp3', 1/6,'output/tif/host/')
 
 # Species richness maps for ALL mammals
+spp_rich_host(terr, NULL, 'hosts', 1/6,'output/tif/host/')
+spp_rich_host(terr, list_orders, 'hosts', 1/6,'output/tif/host/')
 
-spp_rich_host(terr, NULL, 'all_spp_richness', 1/6,'output/tif/host/')
-spp_rich_host(terr, list_orders, 'all_spp_richness', 1/6,'output/tif/host/')
-
-read_print('output/tif/host/', 'output/png/host/', 200, myTheme)
-
-
-
-# Read all viruses tif rasters and create png's.
+# Generate beatiful maps
+# Read all_viruses .tif rasters and create .png maps.
 read_print('output/tif/all_viruses/', 'output/png/all_viruses/', 200, myTheme)
 
-# Read zoonoses tif rasters and create png's.
+# Read all_zoonoses .tif rasters and create .png maps.
 read_print('output/tif/zoonoses/', 'output/png/zoonoses/', 200, myTheme)
+
+# Read all host .tif rasters and create .png maps
+read_print('output/tif/host/', 'output/png/host/', 200, myTheme)
 
 
 
@@ -221,7 +218,7 @@ for (i in 1:nl){
                  maxpixels = ncell(miss_zoo), 
                  xlim=c(-180,180), ylim=c(-56,90),
                  scales=list(draw=FALSE)) +
-       layer(sp.polygons(wrld_simpl, lwd = 0.5, col = 'gray50'))
+    layer(sp.polygons(wrld_simpl, lwd = 0.5, col = 'gray50'))
   print(p, split = c(col(m)[i], row(m)[i], ncol(m), nrow(m)), more=(i<nl))
 }
 dev.off()
@@ -241,7 +238,7 @@ pl = levelplot(miss_zoo,
 
 png('output/png/panel_res.png', width = ncol(miss_zoo), height = nrow(miss_zoo), res = 200)
 print(levelplot(miss_zoo, par.settings = myTheme, xlim=c(-180,180), ylim=c(-60,90), names.attr = letters[seq(1:6)]) +
-  layer(sp.polygons(wrld_simpl, lwd = 0.5, col = 'gray50')))
+        layer(sp.polygons(wrld_simpl, lwd = 0.5, col = 'gray50')))
 dev.off()
 
 levelplot(s0, layers = 1, par.settings = myTheme, margin = F, ylab = '', xlab = '', maxpixels = ncell(s0), xlim=c(-180,180), ylim=c(-56,90)) +
@@ -265,138 +262,29 @@ read_print('output/tif/zoonones/', 'output/png/zoonoses/', 200, myTheme)
 
 
 
-svglite('output/png/zoo_viruses_obs.svg')
-print(levelplot(zoo_viruses_obs, layers = 1, par.settings = myTheme, margin = F, ylab = '', xlab = '', maxpixels = ncell(zoo_viruses_obs)))
-dev.off()
 
-png('output/png/zoo_viruses_pred.png', width = ncol(zoo_viruses_obs), height = nrow(zoo_viruses_obs), res = 200)
-print(levelplot(zoo_viruses_pred, layers = 1, par.settings = myTheme, margin = F, ylab = '', xlab = '', maxpixels = ncell(zoo_viruses_obs)))
-dev.off()
+# As we want to create one shapefile for each species, we will choose the 'BINOMIAL' vector. In that way, we first determine the names and the number of species we are using.
 
-png('output/png/zoo_viruses_pred_obs.png', width = ncol(zoo_viruses_obs), height = nrow(zoo_viruses_obs), res = 200)
-print(levelplot(zoo_viruses_pred_obs, layers = 1, par.settings = myTheme, margin = F, ylab = '', xlab = '', maxpixels = ncell(zoo_viruses_obs)))
-dev.off()
-
-# Create maps by order
+un = unique(data@data$BINOMIAL)
 
 
+z = as.data.frame(data) %>%
+  select(order_name, family_nam, binomial) %>%
+  distinct() %>%
+  group_by(order_name) %>%
+  summarise(species = n()) %>%
+  mutate(freq = species / sum(species))
 
+mutate(percent_rank(species))
 
 
 
-
-png('output/png/zoo_RODENTIA_pred_obs.png', width = ncol(tmp_ras), height = nrow(tmp_ras), res = 200)
-print(levelplot(tmp_ras, layers = 1, par.settings = myTheme, margin = F, ylab = '', xlab = '', maxpixels = ncell(tmp_ras)))
-dev.off()
-
-
-
+for (i in 1:length(unique)) {
+  tmp <- data[data$BINOMIAL == unique[i], ] 
+  writeOGR(tmp, dsn=getwd(), unique[i], driver="ESRI Shapefile",
+           overwrite_layer=TRUE)
+}
 
 
 
-
-all_viruses_pred = rasterize(data.hp3, template, 'NShared.pfln', fun = 'sum', silent = F )
-
-writeRaster(map.shared.pred, filename = "map_shared_pred.tif", format = "GTiff", overwrite = T)
-
-map.res.all = rasterize(data.hp3, template, 'PredictedMinusReal', fun = 'sum', silent = F )
-
-writeRaster(map.res.all, filename = "map_res_all.tif", format = "GTiff", overwrite = T)
-
-map.rich = rasterize(data.hp3, template, 1, fun = 'sum', silent = F )
-
-writeRaster(map.rich, filename = "map_richness.tif", format = "GTiff", overwrite = T)
-
-
-#data.hp3 = data[data$hMassGramsLn > 0 & !is.na(data$hMassGramsLn),]
-
-
-data.hp3_pos = data.hp3[data.hp3$PredictedMinusReal > 0, ]
-
-map.res.pos = rasterize(data.hp3_pos, template, 'PredictedMinusReal', fun = 'sum', silent = F )
-
-writeRaster(map.res.pos, filename = "map_res_pos.tif", format = "GTiff", overwrite = T)
-
-data.hp3_neg = data.hp3[data.hp3$PredictedMinusReal < 0, ]
-
-map.res.neg = rasterize(data.hp3_neg, template, 'PredictedMinusReal', fun = 'sum', silent = F )
-
-writeRaster(map.res.neg, filename = "map_res_neg.tif", format = "GTiff", overwrite = T)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-cl <- classIntervals(map.res.all[], style='kmeans')
-cl
-breaks <- cl$brks
-
-
-
-
-#myTheme = rasterTheme(region = spectral)
-
-levelplot(res_all, par.settings=myTheme)
-
-
-levelplot(map1, par.settings=my, contour=TRUE)
-
-
-unique.host = unique(data.hp3$BINOMIAL)
-
-
-tmp <- readOGR(dsn = dire
-               
-               # Observe that "MAMMTERR" is an argument specific for this file we are using (it represents the layer's name). You can usually rename this argument with the name of the file you are loading.
-               
-               # Ok, we need to choose what we want to separate. Type:
-               
-               names(data)
-               
-               
-               # Add a unique ID to
-               
-               curr.obs = spCbind(curr.obs, rep(3, nrow(curr.obs)))
-               
-               # rename the new column
-               curr.obs = rename(curr.obs, c(rep.3..nrow.curr.obs.. = 'Value'))
-               
-               
-               
-               
-               # As we want to create one shapefile for each species, we will choose the 'BINOMIAL' vector. In that way, we first determine the names and the number of species we are using.
-               
-               un = unique(data@data$BINOMIAL)
-               
-               
-               z = as.data.frame(data) %>%
-                 select(order_name, family_nam, binomial) %>%
-                 distinct() %>%
-                 group_by(order_name) %>%
-                 summarise(species = n()) %>%
-                 mutate(freq = species / sum(species))
-               
-               mutate(percent_rank(species))
-               
-               
-               filter(family_nam == 'CHIROPTERA') %>%
-                 n_distinct()
-               
-               # Finally, we use a loop to save shapefiles for each species. It will take a lot of time to generate files, so do not type this now, just observe:
-               
-               
-               for (i in 1:length(unique)) {
-                 tmp <- data[data$BINOMIAL == unique[i], ] 
-                 writeOGR(tmp, dsn=getwd(), unique[i], driver="ESRI Shapefile",
-                          overwrite_layer=TRUE)
-               }
-               
+temp = rasterize(data_host, template, 1, fun = 'sum', silent = F, progress = 'text')

@@ -63,6 +63,21 @@ Summary of top model:
 ## UBRE = -0.60157  Scale est. = 1         n = 584
 ```
 
+Relative fraction of deviance explained by each variable in the top model:
+
+
+Term                     Relative Deviance Explained
+----------------------  ----------------------------
+hAllZACitesLn                                  10.6%
+hHuntedIUCN                                   0.788%
+hOrderCETARTIODACTYLA                          34.7%
+hOrderCHIROPTERA                               5.93%
+hOrderDIPROTODONTIA                            2.25%
+hOrderPERAMELEMORPHIA                          4.59%
+hOrderPERISSODACTYLA                           5.58%
+hOrderSCANDENTIA                               4.85%
+PdHoSa.cbCst                                   18.6%
+UrbRurPopRatioLn                               12.2%
 
 
 # Zoonoses GAM - Strict Associations
@@ -122,6 +137,22 @@ Summary of top model:
 ## R-sq.(adj) =  0.654   Deviance explained = 23.6%
 ## UBRE = -0.15735  Scale est. = 1         n = 576
 ```
+
+Relative fraction of deviance explained by each variable in the top model:
+
+
+Term                     Relative Deviance Explained
+----------------------  ----------------------------
+hDiseaseZACitesLn                              3.82%
+hMassGramsPVR                                   1.1%
+hOrderCETARTIODACTYLA                            28%
+hOrderDIPROTODONTIA                            2.75%
+hOrderLAGOMORPHA                              0.876%
+hOrderPERISSODACTYLA                           5.01%
+hOrderPRIMATES                                0.103%
+HumPopDensLnChg                                 4.3%
+PdHoSa.cbCst                                   34.5%
+UrbRurPopRatioChg                              19.5%
 
 # Zoonoses GAM - All Associations without Reverse Zoonoses
 
@@ -183,67 +214,22 @@ Summary of top model:
 ## UBRE = -0.57891  Scale est. = 1         n = 583
 ```
 
-# Zoonoses GAM - All Associations without Primates
+Relative fraction of deviance explained by each variable in the top model:
 
 
-
-Terms in models with ΔAIC < 2.  All continuous terms effects are represented
-as splines, all discrete terms as random effects:
-
-
- ΔAIC  Terms in Model                                                                                                                                                                                                                                                                    
------  ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-    0  offset(LnTotNumVirus) + HabAreaGrassLn + hDiseaseZACitesLn + hHuntedIUCN + hMassGramsPVR + hOrderCETARTIODACTYLA + hOrderCHIROPTERA + hOrderDIDELPHIMORPHIA + hOrderDIPROTODONTIA + hOrderPERAMELEMORPHIA + hOrderPERISSODACTYLA + hOrderPILOSA + hOrderSCANDENTIA + PdHoSa.cbCst 
-
-Partial effect plots of all terms in top model:
-
-![](gam_supp_info_files/figure-html/all-zoo-noprim-plot-1.png)<!-- -->
-
-Summary of top model:
-
-
-```
-## 
-## Family: poisson 
-## Link function: log 
-## 
-## Formula:
-## NSharedWithHoSa ~ s(HabAreaGrassLn, bs = "tp", k = 7) + s(hDiseaseZACitesLn, 
-##     bs = "tp", k = 7) + s(hHuntedIUCN, bs = "re") + s(hMassGramsPVR, 
-##     bs = "tp", k = 7) + s(hOrderCETARTIODACTYLA, bs = "re") + 
-##     s(hOrderCHIROPTERA, bs = "re") + s(hOrderDIDELPHIMORPHIA, 
-##     bs = "re") + s(hOrderDIPROTODONTIA, bs = "re") + s(hOrderPERAMELEMORPHIA, 
-##     bs = "re") + s(hOrderPERISSODACTYLA, bs = "re") + s(hOrderPILOSA, 
-##     bs = "re") + s(hOrderSCANDENTIA, bs = "re") + s(PdHoSa.cbCst, 
-##     bs = "tp", k = 7) + offset(LnTotNumVirus)
-## 
-## Parametric coefficients:
-##             Estimate Std. Error z value Pr(>|z|)    
-## (Intercept) -0.34036    0.04473  -7.609 2.76e-14 ***
-## ---
-## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
-## 
-## Approximate significance of smooth terms:
-##                              edf Ref.df Chi.sq  p-value    
-## s(HabAreaGrassLn)        1.48741      6  3.979   0.0749 .  
-## s(hDiseaseZACitesLn)     0.88610      6  3.192   0.0515 .  
-## s(hHuntedIUCN)           0.53249      1  2.854   0.0439 *  
-## s(hMassGramsPVR)         0.05471      6  0.073   0.2493    
-## s(hOrderCETARTIODACTYLA) 0.90445      1 32.910 4.86e-08 ***
-## s(hOrderCHIROPTERA)      0.68345      1  4.565   0.0137 *  
-## s(hOrderDIDELPHIMORPHIA) 0.16012      1  0.214   0.2448    
-## s(hOrderDIPROTODONTIA)   0.16343      1  0.198   0.2705    
-## s(hOrderPERAMELEMORPHIA) 0.76409      1  0.758   0.3192    
-## s(hOrderPERISSODACTYLA)  0.79130      1  3.808   0.0288 *  
-## s(hOrderPILOSA)          0.25929      1  0.381   0.2256    
-## s(hOrderSCANDENTIA)      0.79898      1  0.793   0.3190    
-## s(PdHoSa.cbCst)          0.60396      6  3.189   0.0480 *  
-## ---
-## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
-## 
-## R-sq.(adj) =  0.868   Deviance explained = 33.6%
-## UBRE = -0.57925  Scale est. = 1         n = 505
-```
+Term                     Relative Deviance Explained
+----------------------  ----------------------------
+hAllZACitesLn                                  14.9%
+hHuntedIUCN                                   0.813%
+hOrderCETARTIODACTYLA                          31.9%
+hOrderCHIROPTERA                               5.25%
+hOrderDIPROTODONTIA                            2.67%
+hOrderPERAMELEMORPHIA                          4.95%
+hOrderPERISSODACTYLA                           5.17%
+hOrderSCANDENTIA                               5.34%
+HumPopDensLnChg                                3.55%
+PdHoSa.cbCst                                   18.4%
+UrbRurPopRatioLn                               7.09%
 
 
 # All Viruses GAM - All Associations
@@ -261,6 +247,7 @@ as splines, all discrete terms as random effects:
 Partial effect plots of all terms in top model:
 
 ![](gam_supp_info_files/figure-html/all-vir-plot-1.png)<!-- -->
+
 
 Summary of top model:
 
@@ -303,6 +290,21 @@ Summary of top model:
 ## UBRE = 0.36401  Scale est. = 1         n = 576
 ```
 
+Relative fraction of deviance explained by each variable in the top model:
+
+
+Term                     Relative Deviance Explained
+----------------------  ----------------------------
+hDiseaseZACitesLn                              64.9%
+hMassGramsPVR                                   1.9%
+hOrderCETARTIODACTYLA                          1.84%
+hOrderCHIROPTERA                               9.92%
+hOrderEULIPOTYPHLA                             1.08%
+hOrderPERISSODACTYLA                           1.41%
+hOrderPRIMATES                                 2.51%
+hOrderRODENTIA                                  4.8%
+LnAreaHost                                      1.6%
+S20                                              10%
 
 
 # All Viruses GAM - Strict Associations
@@ -364,6 +366,22 @@ Summary of top model:
 ## UBRE =   0.38  Scale est. = 1         n = 575
 ```
 
+Relative fraction of deviance explained by each variable in the top model:
+
+
+Term                     Relative Deviance Explained
+----------------------  ----------------------------
+hDiseaseZACitesLn                              53.6%
+hMassGramsPVR                                  2.76%
+hOrderCHIROPTERA                               12.2%
+hOrderCINGULATA                               0.563%
+hOrderEULIPOTYPHLA                             0.37%
+hOrderPERAMELEMORPHIA                         0.362%
+hOrderPRIMATES                                 11.8%
+hOrderRODENTIA                                 12.6%
+hOrderSCANDENTIA                              0.286%
+LnAreaHost                                     1.53%
+S20                                             3.9%
 
 
 # Viral Traits GAM - All Associations
@@ -374,11 +392,9 @@ Terms in models with ΔAIC < 2.  All continuous terms effects are represented
 as splines, all discrete terms as random effects:
 
 
-      ΔAIC  Terms in Model                                                                         
-----------  ---------------------------------------------------------------------------------------
- 0.0000000  st_dist_noHoSa_maxLn + vCytoReplicTF + Vector + vGenomeAveLengthLn + vWOKcitesLn       
- 0.0193961  st_dist_noHoSa_maxLn + Vector + vGenomeAveLengthLn + vPubMedCitesLn                    
- 1.1537255  cb_dist_noHoSa_medianLn + vCytoReplicTF + Vector + vGenomeAveLengthLn + vPubMedCitesLn 
+ ΔAIC  Terms in Model                                                                              
+-----  --------------------------------------------------------------------------------------------
+    0  cb_dist_noHoSa_maxLn + Envelope + vCytoReplicTF + Vector + vGenomeAveLengthLn + vWOKcitesLn 
 
 Partial effect plots of all terms in top model:
 
@@ -393,30 +409,43 @@ Summary of top model:
 ## Link function: logit 
 ## 
 ## Formula:
-## IsZoonotic ~ s(st_dist_noHoSa_maxLn, bs = "tp", k = 7) + s(vCytoReplicTF, 
-##     bs = "re") + s(Vector, bs = "re") + s(vGenomeAveLengthLn, 
-##     bs = "tp", k = 7) + s(vWOKcitesLn, bs = "tp", k = 7)
+## IsZoonotic ~ s(cb_dist_noHoSa_maxLn, bs = "tp", k = 7) + s(Envelope, 
+##     bs = "re") + s(vCytoReplicTF, bs = "re") + s(Vector, bs = "re") + 
+##     s(vGenomeAveLengthLn, bs = "tp", k = 7) + s(vWOKcitesLn, 
+##     bs = "tp", k = 7)
 ## 
 ## Parametric coefficients:
 ##             Estimate Std. Error z value Pr(>|z|)    
-## (Intercept)  -0.5519     0.1593  -3.464 0.000531 ***
+## (Intercept)  -1.5864     0.2786  -5.693 1.24e-08 ***
 ## ---
 ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 ## 
 ## Approximate significance of smooth terms:
-##                              edf Ref.df Chi.sq  p-value    
-## s(st_dist_noHoSa_maxLn) 4.094387      6 32.810 7.11e-07 ***
-## s(vCytoReplicTF)        0.001515      1  0.002   0.2680    
-## s(Vector)               0.668423      1  2.521   0.0509 .  
-## s(vGenomeAveLengthLn)   4.671009      6 13.862   0.0149 *  
-## s(vWOKcitesLn)          3.472280      6 24.774 1.15e-05 ***
+##                             edf Ref.df Chi.sq  p-value    
+## s(cb_dist_noHoSa_maxLn) 2.94210      6 44.910 7.48e-10 ***
+## s(Envelope)             0.45964      1  0.884 0.166460    
+## s(vCytoReplicTF)        0.85868      1 10.956 0.000854 ***
+## s(Vector)               0.75131      1  4.901 0.014258 *  
+## s(vGenomeAveLengthLn)   0.09239      6  0.117 0.265718    
+## s(vWOKcitesLn)          3.28464      6 35.828 3.98e-07 ***
 ## ---
 ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 ## 
-## R-sq.(adj) =  0.331   Deviance explained =   29%
-## UBRE = 0.043109  Scale est. = 1         n = 361
+## R-sq.(adj) =  0.313   Deviance explained = 27.2%
+## UBRE = 0.002481  Scale est. = 1         n = 464
 ```
 
+Relative fraction of deviance explained by each variable in the top model:
+
+
+Term                    Relative Deviance Explained
+---------------------  ----------------------------
+cb_dist_noHoSa_maxLn                          45.6%
+Envelope                                      2.32%
+vCytoReplicTF                                 9.15%
+Vector                                        4.61%
+vGenomeAveLengthLn                           0.946%
+vWOKcitesLn                                   37.4%
 
 
 # Viral Traits GAM - Strict Associations
@@ -428,12 +457,11 @@ Terms in models with ΔAIC < 2.  All continuous terms effects are represented
 as splines, all discrete terms as random effects:
 
 
-      ΔAIC  Terms in Model                                                                                           
-----------  ---------------------------------------------------------------------------------------------------------
- 0.0000000  cb_dist_noHoSa_max.stringentLn + Envelope + vCytoReplicTF + Vector + vGenomeAveLengthLn + vWOKcitesLn    
- 0.7416454  cb_dist_noHoSa_mean.stringentLn + Envelope + vCytoReplicTF + Vector + vGenomeAveLengthLn + vWOKcitesLn   
- 0.8475136  cb_dist_noHoSa_median.stringentLn + Envelope + vCytoReplicTF + Vector + vGenomeAveLengthLn + vWOKcitesLn 
- 0.9731882  cb_dist_noHoSa_max.stringentLn + Envelope + vCytoReplicTF + Vector + vGenomeAveLengthLn + vPubMedCitesLn 
+     ΔAIC  Terms in Model                                                           
+---------  -------------------------------------------------------------------------
+ 0.000000  cb_dist_noHoSa_max.stringentLn + vCytoReplicTF + Vector + vWOKcitesLn    
+ 1.715608  cb_dist_noHoSa_mean.stringentLn + vCytoReplicTF + Vector + vWOKcitesLn   
+ 1.742713  cb_dist_noHoSa_median.stringentLn + vCytoReplicTF + Vector + vWOKcitesLn 
 
 Partial effect plots of all terms in top model:
 
@@ -449,29 +477,37 @@ Summary of top model:
 ## 
 ## Formula:
 ## IsZoonotic.stringent ~ s(cb_dist_noHoSa_max.stringentLn, bs = "tp", 
-##     k = 7) + s(Envelope, bs = "re") + s(vCytoReplicTF, bs = "re") + 
-##     s(Vector, bs = "re") + s(vGenomeAveLengthLn, bs = "tp", k = 7) + 
+##     k = 7) + s(vCytoReplicTF, bs = "re") + s(Vector, bs = "re") + 
 ##     s(vWOKcitesLn, bs = "tp", k = 7)
 ## 
 ## Parametric coefficients:
-##             Estimate Std. Error z value Pr(>|z|)
-## (Intercept)  -0.4798     0.4147  -1.157    0.247
-## 
-## Approximate significance of smooth terms:
-##                                       edf Ref.df Chi.sq  p-value    
-## s(cb_dist_noHoSa_max.stringentLn) 0.84540      6  6.199  0.00673 ** 
-## s(Envelope)                       0.98634      1  7.757  0.00418 ** 
-## s(vCytoReplicTF)                  0.07209      1  0.081  0.28828    
-## s(Vector)                         0.53133      1  1.311  0.11611    
-## s(vGenomeAveLengthLn)             4.93709      6 29.322  0.00101 ** 
-## s(vWOKcitesLn)                    4.49331      6 35.949 2.68e-07 ***
+##             Estimate Std. Error z value Pr(>|z|)    
+## (Intercept)  -2.2312     0.2969  -7.514 5.72e-14 ***
 ## ---
 ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 ## 
-## R-sq.(adj) =  0.277   Deviance explained = 27.2%
-## UBRE = -0.052053  Scale est. = 1         n = 295
+## Approximate significance of smooth terms:
+##                                      edf Ref.df Chi.sq  p-value    
+## s(cb_dist_noHoSa_max.stringentLn) 2.5254      6 15.750 0.000556 ***
+## s(vCytoReplicTF)                  0.8781      1 10.328 0.001101 ** 
+## s(Vector)                         0.6035      1  1.873 0.085405 .  
+## s(vWOKcitesLn)                    2.6374      6 29.513  4.3e-07 ***
+## ---
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+## 
+## R-sq.(adj) =  0.225   Deviance explained = 21.1%
+## UBRE = -0.092089  Scale est. = 1         n = 408
 ```
 
+Relative fraction of deviance explained by each variable in the top model:
+
+
+Term                              Relative Deviance Explained
+-------------------------------  ----------------------------
+cb_dist_noHoSa_max.stringentLn                          25.5%
+vCytoReplicTF                                           17.5%
+Vector                                                  3.88%
+vWOKcitesLn                                             53.1%
 
 
 # Zoonoses in Domestic Animals GAM - All Associations
@@ -520,6 +556,13 @@ Summary of top model:
 ## UBRE = -0.17089  Scale est. = 1         n = 32
 ```
 
+Relative fraction of deviance explained by each variable in the top model:
+
+
+Term                                    Relative Deviance Explained
+-------------------------------------  ----------------------------
+domestic_categoryLivestockProduction                            43%
+hOrderCETARTIODACTYLA                                           57%
 
 
 
@@ -593,6 +636,16 @@ Summary of top model:
 ## UBRE = 0.065353  Scale est. = 1         n = 32
 ```
 
+Relative fraction of deviance explained by each variable in the top model:
+
+
+Term                 Relative Deviance Explained
+------------------  ----------------------------
+hOrderLAGOMORPHA                           56.8%
+hOrderPROBOSCIDEA                          28.8%
+hOrderRODENTIA                             14.5%
+
+
 # All Viruses in Domestic Animals GAM - All Associations
 
 
@@ -649,6 +702,15 @@ Summary of top model:
 ## UBRE = 0.47854  Scale est. = 1         n = 32
 ```
 
+Relative fraction of deviance explained by each variable in the top model:
+
+
+Term                                    Relative Deviance Explained
+-------------------------------------  ----------------------------
+domestic_categoryLivestockProduction                          9.98%
+hDiseaseZACitesLn                                             72.4%
+hOrderLAGOMORPHA                                              1.61%
+hOrderPERISSODACTYLA                                            16%
 
 
 # All Viruses in Domestic Animals GAM - Stringent Associations
@@ -709,6 +771,17 @@ Summary of top model:
 ## R-sq.(adj) =  0.908   Deviance explained = 91.8%
 ## UBRE = 0.62949  Scale est. = 1         n = 32
 ```
+
+Relative fraction of deviance explained by each variable in the top model:
+
+
+Term                                    Relative Deviance Explained
+-------------------------------------  ----------------------------
+domestic_categoryLivestockProduction                          11.3%
+domestic_categoryOther                                        1.85%
+hDiseaseZACitesLn                                             68.4%
+hOrderPERISSODACTYLA                                            15%
+hOrderRODENTIA                                                3.47%
 
 <!-- # Publication plots -->
 

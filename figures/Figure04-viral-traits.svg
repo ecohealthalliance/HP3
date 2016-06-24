@@ -1410,7 +1410,7 @@
   </clipPath>
 </defs>
 <g clip-path='url(#cp34)'><text x='263.37' y='146.38' style='font-size: 7.00pt; font-family: Helvetica;'>max phylogenetic</text></g>
-<g clip-path='url(#cp34)'><text x='273.74' y='156.46' style='font-size: 7.00pt; font-family: Helvetica;'>host breadth</text></g>
+<g clip-path='url(#cp34)'><text x='263.11' y='156.46' style='font-size: 7.00pt; font-family: Helvetica;'>host breadth (log)</text></g>
 <defs>
   <clipPath id='cp35'>
     <rect x='204.35' y='0.00' width='314.39' height='331.65' />
@@ -3432,11 +3432,11 @@
     <rect x='0.00' y='0.00' width='518.74' height='331.65' />
   </clipPath>
 </defs>
-<g clip-path='url(#cp80)'><text x='411.07' y='292.11' style='font-size: 5.60pt; font-family: Helvetica;'>vector-</text></g>
-<g clip-path='url(#cp80)'><text x='412.93' y='300.18' style='font-size: 5.60pt; font-family: Helvetica;'>borne</text></g>
-<g clip-path='url(#cp80)'><text x='437.40' y='292.11' style='font-size: 5.60pt; font-family: Helvetica;'>cytoplasmic</text></g>
-<g clip-path='url(#cp80)'><text x='439.88' y='300.18' style='font-size: 5.60pt; font-family: Helvetica;'>replication</text></g>
-<g clip-path='url(#cp80)'><text x='476.16' y='296.14' style='font-size: 5.60pt; font-family: Helvetica;'>envelope</text></g>
+<g clip-path='url(#cp80)'><text x='410.03' y='292.11' style='font-size: 5.60pt; font-family: Helvetica;'>vector- </text></g>
+<g clip-path='url(#cp80)'><text x='411.89' y='300.18' style='font-size: 5.60pt; font-family: Helvetica;'>borne </text></g>
+<g clip-path='url(#cp80)'><text x='436.36' y='292.11' style='font-size: 5.60pt; font-family: Helvetica;'>cytoplasmic </text></g>
+<g clip-path='url(#cp80)'><text x='438.85' y='300.18' style='font-size: 5.60pt; font-family: Helvetica;'>replication </text></g>
+<g clip-path='url(#cp80)'><text x='475.12' y='296.14' style='font-size: 5.60pt; font-family: Helvetica;'> envelope</text></g>
 <defs>
   <clipPath id='cp81'>
     <rect x='204.35' y='0.00' width='314.39' height='331.65' />

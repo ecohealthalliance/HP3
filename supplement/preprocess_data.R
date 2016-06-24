@@ -11,7 +11,7 @@ P <- rprojroot::find_rstudio_root_file
 ## Read the data files
 associations = read_csv(P("data/HP3.assoc_v50.csv"))
 hosts  = read_csv(P("data/HP3.hostv42_FINAL.csv"))
-viruses = read_csv(P("data/HP3.virus_v50.csv"))
+viruses = read_csv(P("data/HP3.virus_v51.csv"))
 
 # Temporary fix
 hosts = hosts %>%

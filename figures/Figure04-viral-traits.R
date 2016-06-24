@@ -18,7 +18,7 @@ partials_theme = theme(text = element_text(family="Helvetica", size=7),
 bgam = readRDS(P("supplement/viral_traits_model.rds"))
 viruses <- readRDS(P("supplement/virus_data_processed.rds"))
 
-binary_vars = c("vCytoReplicTF", "Vector")
+binary_vars = c("Envelope", "vCytoReplicTF", "Vector")
 
 preds <- predict(bgam, type="iterms", se.fit=TRUE)
 intercept <- attributes(preds)$constant
@@ -59,7 +59,7 @@ partials <- as.data.frame(lapply(1:ncol(preds$fit), function(cl) {
 }))
 names(partials) <- names(preds$fit)
 
-smooth_titles = c("max phylogenetic\nhost breadth", "genome length (log BP)", "PubMed citations (log)")
+smooth_titles = c("max phylogenetic\nhost breadth", "genome length (log)", "PubMed citations (log)")
 names(smooth_titles) = names(smooth_data)
 smooth_plots = map(names(smooth_data), function(smooth_term) {
   pl =  ggplot() +
@@ -69,7 +69,7 @@ smooth_plots = map(names(smooth_data), function(smooth_term) {
     geom_ribbon(mapping = aes(x = smooth_ranges[[smooth_term]],
                               ymin = (smooth_preds$fit[[smooth_term]] - 2 * smooth_preds$se.fit[[smooth_term]]),
                               ymax = (smooth_preds$fit[[smooth_term]] + 2 * smooth_preds$se.fit[[smooth_term]])),
-                alpha = 0.75, fill=ifelse(smooth_term=="blah", "grey", viridis(5)[4])) +
+                alpha = 0.75, fill=ifelse(smooth_term=="vGenomeAveLengthLn", "grey", viridis(5)[4])) +
     geom_line(mapping = aes(x = smooth_ranges[[smooth_term]], y = (smooth_preds$fit[[smooth_term]])), size=0.3) +
     #  geom_rug(mapping = aes(x =model_data[[smooth_term]]), alpha=0.3) +
     xlab(smooth_titles[smooth_term]) +
@@ -94,7 +94,7 @@ bin_data = binary_preds %>% map(function(x) {
 bin_data$fit$se = bin_data$se.fit$response
 bin_data = bin_data$fit
 bin_data$response = bin_data$response
-bin_data$labels = c("cytoplasmic\nreplication", "vector-\nborne")
+bin_data$labels = c("envelope", "cytoplasmic\nreplication", "vector-\nborne")
 #bin_data$labels = stri_replace_first_regex(bin_data$labels, "hHuntedIUCN", "Hunted")
 bin_data$signif = summary(bgam)$s.table[stri_detect_regex(rownames(summary(bgam)$s.table), paste0("(", paste0(binary_vars, collapse="|"), ")")), "p-value"] < 0.05
 bin_data = bin_data %>%

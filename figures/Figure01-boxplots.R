@@ -7,7 +7,7 @@ P <- rprojroot::find_rstudio_root_file
 
 asc <- read.csv(P("data/HP3.assoc_v50.csv"), header=T, strip.white = T)
 h <- read.csv("data/HP3.hostv42_FINAL.csv", header=T, strip.white = T)
-v <- read.csv("data/HP3.virus_v50.csv", header=T, strip.white = T)
+v <- read.csv("data/HP3.virus_v51.csv", header=T, strip.white = T)
 asc_noHoSa <- asc[asc$hHostNameFinal!="Homo_sapiens", ]
 
 h <- h[h$hHostNameFinal != "Homo_sapiens",]  #drop humans

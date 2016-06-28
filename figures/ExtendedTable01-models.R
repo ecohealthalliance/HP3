@@ -4,6 +4,8 @@ library(stringi)
 library(dplyr)
 library(ztable)
 library(purrr)
+library(htmlwidgets)
+library(htmlTable)
 top_models <- readRDS(P("supplement/top_models.rds"))
 
 model_names = c("Zoonoses Model",
@@ -42,11 +44,16 @@ model_rows = map_int(model_tables, nrow)
 model_tables2 = model_tables %>%
   bind_rows %>%
   mutate_each(funs(signif(., digits=3)), -Term, -model) %>%
-  group_by(model) %>%
-  arrange(Term !="Intercept") %>%
-  group_by() %>%
+  #arrange(model, Term !="Intercept") %>%
   select(-model)
 
-class(model_tables2) <- "data.frame"
-ztable(model_tables2) %>%
+
+
+tables = ztable(model_tables2) %>%
   addrgroup(rgroup = model_names, n.rgroup = model_rows)
+
+htmlTable(model_tables2, rnames=FALSE, rgroup = model_names, n.rgroup=model_rows,
+          align = "lcccccc") %>%
+  cat(file=P("figures/ExtendedTable01-models.html"))
+
+

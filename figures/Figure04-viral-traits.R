@@ -1,6 +1,7 @@
 library(ggplot2)
 library(dplyr)
 library(svglite)
+library(viridis)
 set.seed(0)
 P <- rprojroot::find_rstudio_root_file
 
@@ -148,10 +149,11 @@ famnames = vir_plotdata %>%
 n_families = length(levels(vir_plotdata$vFamily))
 jitter_vals = rnorm(nrow(vir_plotdata), mean=0, sd=0.1)
 
-legendpts = data_frame(fill=c(viridis(5)[5], viridis(5)[4], "#1F7DDC"), x = 3:5 + 0.4, y = rep(240,3), vFamily = 1,
+legendpts = data_frame(fill=c(viridis(5)[5], viridis(5)[4], "#1F7DDC"), x = 2:4 + 0.4, y = rep(233,3), vFamily = 1,
                        label = c("Human", "Non-human", "Zoonotic"))
 
 vir_fam_plot = ggplot(vir_plotdata, aes(x=as.numeric(vFamily) + jitter_vals, y=st_dist_noHoSa_max, group=vFamily)) +
+  annotate("rect", xmin=1.7, xmax=5, ymin=217, ymax=349, fill=NA, col="black", size=.1) +
   geom_boxplot(mapping=aes(fill=prop_fam_zoonotic, x=as.numeric(vFamily), y=st_dist_noHoSa_max2), outlier.shape=NA, width=0.7, size=0.3) +
   geom_point(mapping=aes(col=vHostType, x = jitter_fams), shape=21, size = 1, fill="#1F7DDC", col="black", stroke=0.3,
              data = filter(vir_plotdata, vHostType == "Non-Human Only")) +
@@ -186,10 +188,10 @@ vir_fam_plot = ggplot(vir_plotdata, aes(x=as.numeric(vFamily) + jitter_vals, y=s
 
 grobs <- ggplotGrob(vir_fam_plot)$grobs
 legend <- grobs[[which(sapply(grobs, function(x) x$name) == "guide-box")]]
-vir_fam_plot = cowplot::ggdraw(vir_fam_plot + theme(legend.position = "none")) + cowplot::draw_grob(legend, x=0.2, y=0.05)
+vir_fam_plot = cowplot::ggdraw(vir_fam_plot + theme(legend.position = "none"))
 
 gamplots = cowplot::plot_grid(plotlist = c(smooth_plots, list(bin_plot)), nrow=2, labels=c("b", "c", "d", "e"), label_size=7, align="hv")
-allplots = cowplot::plot_grid(vir_fam_plot, gamplots, nrow=1, rel_widths=c(1.3, 2), labels=c("a", ""), label_size=7)
+allplots = cowplot::plot_grid(vir_fam_plot, gamplots, nrow=1, rel_widths=c(1.3, 2), labels=c("a", ""), label_size=7)  + cowplot::draw_grob(legend, x=-0.5, y=-0.06)
 svglite(file=P("figures/Figure04-viral-traits.svg"), width = convertr::convert(183, "mm", "in"), convertr::convert(117, "mm", "in"), pointsize=7)
 allplots
 dev.off()

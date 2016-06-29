@@ -2,10 +2,8 @@ P <- rprojroot::find_rstudio_root_file
 library(mgcv)
 library(stringi)
 library(dplyr)
-library(ztable)
 library(purrr)
-library(htmlwidgets)
-library(htmlTable)
+library(ReporteRs)
 top_models <- readRDS(P("supplement/top_models.rds"))
 
 model_names = c("Zoonoses Model",
@@ -27,7 +25,7 @@ model_tables = map2(top_models, model_names, function(modd, model_name) {
                        `Chi-sq statistic` = NA,
                        `P-value` = summ$p.table[,4],
                        `Effective Degrees of Freedom` = NA,
-                       `Relative Deviance Explained` = NA,
+                       `Fraction Dev. Explained` = NA,
                        model = model_name),
             data_frame(Term = stri_extract_first_regex(rownames(summ$s.table), "(?<=s\\()[^\\)]+(?=\\))"),
                        Value = NA,
@@ -35,25 +33,44 @@ model_tables = map2(top_models, model_names, function(modd, model_name) {
                        `Chi-sq statistic` = summ$s.table[,3],
                        `P-value` = summ$s.table[,4],
                        `Effective Degrees of Freedom` = summ$s.table[,1],
-                       `Relative Deviance Explained`= rel_dev$rel_deviance_explained,
+                       `Fraction Dev. Explained`= rel_dev$rel_deviance_explained,
                        model=model_name))
 
 })
 
 model_rows = map_int(model_tables, nrow)
 model_tables2 = model_tables %>%
+  map(~ rbind(.[1,], .)) %>%
+  map(function(x) {
+    x$model = c(x$model[1], rep(NA, nrow(x) -1))
+    return(x)
+  }) %>%
   bind_rows %>%
-  mutate_each(funs(signif(., digits=3)), -Term, -model) %>%
+  mutate_each(funs(as.character(signif(., digits=3))), -Term, -model) %>%
   #arrange(model, Term !="Intercept") %>%
-  select(-model)
+  select(8, 1:7)
+
+names(model_tables2)[1] <- ""
+
+word_table <- vanilla.table(model_tables2) %>%
+  spanFlexTableColumns(i = which(!is.na(model_tables2[[1]])), from = 1, to = ncol(model_tables2)) %>%
+  setFlexTableWidths(widths = c( .1, 2.1, rep(0.65,ncol(model_tables2)-3), 1, 1))
+word_table[] <- parProperties(text.align="center", padding.bottom=0, padding.top=0)
+word_table[] <- textProperties(font.size = 10)
+word_table[which(!is.na(model_tables2[[1]])),] <- textBold()
+#word_table[] <- cellProperties(padding.top=0, padding.bottom = 0)
+# word_table[] <- cellProperties(padding.top=0, padding.bottom = 0)
+word_table[, to = "header"] <- parCenter(padding.left=2)
+word_table[,2] <- parLeft()
+word_table[,1] <- parLeft()
 
 
+# print in the viewer
+#print(word_table)
 
-tables = ztable(model_tables2) %>%
-  addrgroup(rgroup = model_names, n.rgroup = model_rows)
-
-htmlTable(model_tables2, rnames=FALSE, rgroup = model_names, n.rgroup=model_rows,
-          align = "lcccccc") %>%
-  cat(file=P("figures/ExtendedTable01-models.html"))
+# create word file
+docx() %>%
+  addFlexTable(word_table) %>%
+  writeDoc(file = P("figures/ExtendedTable01-models.docx"))
 
 

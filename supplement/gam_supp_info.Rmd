@@ -21,6 +21,7 @@ P <- rprojroot::find_rstudio_root_file
 source(P("R/model_reduction.R"))
 source(P("R/fit_gam.R"))
 source(P("R/relative_contributions.R"))
+source(P("R/cross_validation.R"))
 set.seed(0)
 opts_chunk$set(echo = FALSE, message=FALSE, warning = FALSE, autodep=TRUE)
 ```
@@ -79,7 +80,7 @@ as splines, all discrete terms as random effects:
 all_zoonoses %>%
   filter(daic <= 2) %>%
   select(daic, terms) %>% 
-  mutate(terms = stri_replace_all_regex(terms, "s\\(([^\\)]*)\\)", "$1")) %>%
+    mutate(terms = stri_replace_all_regex(terms, "s\\(([^\\)]*)\\)", "$1")) %>%
   rename(ΔAIC = daic, `Terms in Model`=terms) %>% 
   kable()
 ```
@@ -100,11 +101,20 @@ Relative fraction of deviance explained by each variable in the top model:
 
 ```{r all-zoo-contrib, cache=FALSE}
 get_relative_contribs(all_zoonoses$model[[1]]) %>%
-  mutate(rel_deviance_explained = paste0(signif(rel_deviance_explained*100, digits=3), "%")) %>% 
+    mutate(rel_deviance_explained = paste0(signif(rel_deviance_explained*100, digits=3), "%")) %>% 
   rename(Term = term, `Relative Deviance Explained` = rel_deviance_explained) %>% 
   kable(align=c("l","r"))
 ```
 
+10-fold cross-validation.  Good fit indicated by *non*-significant p-values:
+
+```{r all-zoo-cv, cache=TRUE}
+cv_gam(all_zoonoses$model[[1]]) %>%
+    mutate(p_value = round(p_value, digits=3)) %>% 
+  rename(Fold = fold, `Observations Fit`=n_fit, `Obervations Held Out` = n_validate,
+         `P-value`=p_value) %>%
+  kable(align=c("l","r", "r", "r", "r"))
+```
 
 # Zoonoses GAM - Strict Associations
 
@@ -124,7 +134,7 @@ as splines, all discrete terms as random effects:
 all_zoonoses_strict %>%
   filter(daic <= 2) %>%
   select(daic, terms) %>% 
-  mutate(terms = stri_replace_all_regex(terms, "s\\(([^\\)]*)\\)", "$1")) %>%
+    mutate(terms = stri_replace_all_regex(terms, "s\\(([^\\)]*)\\)", "$1")) %>%
   rename(ΔAIC = daic, `Terms in Model`=terms) %>% 
   kable()
 ```
@@ -145,9 +155,19 @@ Relative fraction of deviance explained by each variable in the top model:
 
 ```{r all-zoo-strict-contrib, cache=FALSE}
 get_relative_contribs(all_zoonoses_strict$model[[1]]) %>%
-  mutate(rel_deviance_explained = paste0(signif(rel_deviance_explained*100, digits=3), "%")) %>% 
+    mutate(rel_deviance_explained = paste0(signif(rel_deviance_explained*100, digits=3), "%")) %>% 
   rename(Term = term, `Relative Deviance Explained` = rel_deviance_explained) %>% 
   kable(align=c("l","r"))
+```
+
+10-fold cross-validation.  Good fit indicated by *non*-significant p-values:
+
+```{r all-zoo-strict-cv, cache=TRUE}
+cv_gam(all_zoonoses_strict$model[[1]]) %>%
+    mutate(p_value = round(p_value, digits=3)) %>% 
+  rename(Fold = fold, `Observations Fit`=n_fit, `Obervations Held Out` = n_validate,
+         `P-value`=p_value) %>%
+  kable(align=c("l","r", "r", "r", "r"))
 ```
 
 # Zoonoses GAM - All Associations without Reverse Zoonoses
@@ -203,7 +223,7 @@ as splines, all discrete terms as random effects:
 all_zoonoses_norev %>%
   filter(daic <= 2) %>%
   select(daic, terms) %>% 
-  mutate(terms = stri_replace_all_regex(terms, "s\\(([^\\)]*)\\)", "$1")) %>%
+    mutate(terms = stri_replace_all_regex(terms, "s\\(([^\\)]*)\\)", "$1")) %>%
   rename(ΔAIC = daic, `Terms in Model`=terms) %>% 
   kable()
 ```
@@ -224,11 +244,20 @@ Relative fraction of deviance explained by each variable in the top model:
 
 ```{r all-zoo-norev-contrib, cache=FALSE}
 get_relative_contribs(all_zoonoses_norev$model[[1]]) %>%
-  mutate(rel_deviance_explained = paste0(signif(rel_deviance_explained*100, digits=3), "%")) %>% 
+    mutate(rel_deviance_explained = paste0(signif(rel_deviance_explained*100, digits=3), "%")) %>% 
   rename(Term = term, `Relative Deviance Explained` = rel_deviance_explained) %>% 
   kable(align=c("l","r"))
 ```
 
+10-fold cross-validation.  Good fit indicated by *non*-significant p-values:
+
+```{r all-zoo-norev-cv, cache=TRUE}
+cv_gam(all_zoonoses_norev$model[[1]]) %>%
+    mutate(p_value = round(p_value, digits=3)) %>% 
+  rename(Fold = fold, `Observations Fit`=n_fit, `Obervations Held Out` = n_validate,
+         `P-value`=p_value) %>%
+  kable(align=c("l","r", "r", "r", "r"))
+```
 
 # All Viruses GAM - All Associations
 
@@ -277,7 +306,7 @@ as splines, all discrete terms as random effects:
 all_viruses %>%
   filter(daic <= 2) %>%
   select(daic, terms) %>% 
-  mutate(terms = stri_replace_all_regex(terms, "s\\(([^\\)]*)\\)", "$1")) %>%
+    mutate(terms = stri_replace_all_regex(terms, "s\\(([^\\)]*)\\)", "$1")) %>%
   rename(ΔAIC = daic, `Terms in Model`=terms) %>% 
   kable()
 ```
@@ -299,11 +328,20 @@ Relative fraction of deviance explained by each variable in the top model:
 
 ```{r all-vir-contrib, cache=FALSE}
 get_relative_contribs(all_viruses$model[[1]]) %>%
-  mutate(rel_deviance_explained = paste0(signif(rel_deviance_explained*100, digits=3), "%")) %>% 
+    mutate(rel_deviance_explained = paste0(signif(rel_deviance_explained*100, digits=3), "%")) %>% 
   rename(Term = term, `Relative Deviance Explained` = rel_deviance_explained) %>% 
   kable(align=c("l","r"))
 ```
 
+10-fold cross-validation.  Good fit indicated by *non*-significant p-values:
+
+```{r all-vir-cv, cache=TRUE}
+cv_gam(all_viruses$model[[1]]) %>%
+    mutate(p_value = round(p_value, digits=3)) %>% 
+  rename(Fold = fold, `Observations Fit`=n_fit, `Obervations Held Out` = n_validate,
+         `P-value`=p_value) %>%
+  kable(align=c("l","r", "r", "r", "r"))
+```
 
 # All Viruses GAM - Strict Associations
 
@@ -324,7 +362,7 @@ as splines, all discrete terms as random effects:
 all_viruses_strict %>%
   filter(daic <= 2) %>%
   select(daic, terms) %>% 
-  mutate(terms = stri_replace_all_regex(terms, "s\\(([^\\)]*)\\)", "$1")) %>%
+    mutate(terms = stri_replace_all_regex(terms, "s\\(([^\\)]*)\\)", "$1")) %>%
   rename(ΔAIC = daic, `Terms in Model`=terms) %>% 
   kable()
 ```
@@ -345,11 +383,20 @@ Relative fraction of deviance explained by each variable in the top model:
 
 ```{r all-vir-strict-contrib, cache=FALSE}
 get_relative_contribs(all_viruses_strict$model[[1]]) %>%
-  mutate(rel_deviance_explained = paste0(signif(rel_deviance_explained*100, digits=3), "%")) %>% 
+    mutate(rel_deviance_explained = paste0(signif(rel_deviance_explained*100, digits=3), "%")) %>% 
   rename(Term = term, `Relative Deviance Explained` = rel_deviance_explained) %>% 
   kable(align=c("l","r"))
 ```
 
+10-fold cross-validation.  Good fit indicated by *non*-significant p-values:
+
+```{r all-vir-stict-cv, cache=TRUE}
+cv_gam(all_viruses_strict$model[[1]]) %>%
+    mutate(p_value = round(p_value, digits=3)) %>% 
+  rename(Fold = fold, `Observations Fit`=n_fit, `Obervations Held Out` = n_validate,
+         `P-value`=p_value) %>%
+  kable(align=c("l","r", "r", "r", "r"))
+```
 
 # Viral Traits GAM - All Associations
 
@@ -393,7 +440,7 @@ as splines, all discrete terms as random effects:
 vtraits %>%
   filter(daic <= 2) %>%
   select(daic, terms) %>% 
-  mutate(terms = stri_replace_all_regex(terms, "s\\(([^\\)]*)\\)", "$1")) %>%
+    mutate(terms = stri_replace_all_regex(terms, "s\\(([^\\)]*)\\)", "$1")) %>%
   rename(ΔAIC = daic, `Terms in Model`=terms) %>% 
   kable()
 ```
@@ -414,9 +461,19 @@ Relative fraction of deviance explained by each variable in the top model:
 
 ```{r vtraits-contrib, cache=FALSE}
 get_relative_contribs(vtraits$model[[1]]) %>%
-  mutate(rel_deviance_explained = paste0(signif(rel_deviance_explained*100, digits=3), "%")) %>% 
+    mutate(rel_deviance_explained = paste0(signif(rel_deviance_explained*100, digits=3), "%")) %>% 
   rename(Term = term, `Relative Deviance Explained` = rel_deviance_explained) %>% 
   kable(align=c("l","r"))
+```
+
+10-fold cross-validation.  Good fit indicated by *non*-significant p-values:
+
+```{r vtraits-cv, cache=TRUE}
+cv_gam(vtraits$model[[1]]) %>%
+    mutate(p_value = round(p_value, digits=3)) %>% 
+  rename(Fold = fold, `Observations Fit`=n_fit, `Obervations Held Out` = n_validate,
+         `P-value`=p_value) %>%
+  kable(align=c("l","r", "r", "r", "r"))
 ```
 
 
@@ -463,7 +520,7 @@ as splines, all discrete terms as random effects:
 vtraits_strict %>%
   filter(daic <= 2) %>%
   select(daic, terms) %>% 
-  mutate(terms = stri_replace_all_regex(terms, "s\\(([^\\)]*)\\)", "$1")) %>%
+    mutate(terms = stri_replace_all_regex(terms, "s\\(([^\\)]*)\\)", "$1")) %>%
   rename(ΔAIC = daic, `Terms in Model`=terms) %>% 
   kable()
 ```
@@ -484,11 +541,20 @@ Relative fraction of deviance explained by each variable in the top model:
 
 ```{r vtraits-strict-contrib, cache=FALSE}
 get_relative_contribs(vtraits_strict$model[[1]]) %>%
-  mutate(rel_deviance_explained = paste0(signif(rel_deviance_explained*100, digits=3), "%")) %>% 
+    mutate(rel_deviance_explained = paste0(signif(rel_deviance_explained*100, digits=3), "%")) %>% 
   rename(Term = term, `Relative Deviance Explained` = rel_deviance_explained) %>% 
   kable(align=c("l","r"))
 ```
 
+10-fold cross-validation.  Good fit indicated by *non*-significant p-values:
+
+```{r vtraits-strict-cv, cache=TRUE}
+cv_gam(vtraits_strict$model[[1]]) %>%
+    mutate(p_value = round(p_value, digits=3)) %>% 
+  rename(Fold = fold, `Observations Fit`=n_fit, `Obervations Held Out` = n_validate,
+         `P-value`=p_value) %>%
+  kable(align=c("l","r", "r", "r", "r"))
+```
 
 # Zoonoses in Domestic Animals GAM - All Associations
 
@@ -499,8 +565,8 @@ data_set = hosts %>%
   filter(hMarOTerr == "Terrestrial",
          hWildDomFAO == "domestic")
 data_set = left_join(data_set, domestics, by = "hHostNameFinal") %>% 
-  mutate(hHostNameFinal = as.factor(hHostNameFinal)) %>% 
-  mutate(domestic_category = ifelse(is.na(domestic_category), "Other", domestic_category)) %>% 
+    mutate(hHostNameFinal = as.factor(hHostNameFinal)) %>% 
+    mutate(domestic_category = ifelse(is.na(domestic_category), "Other", domestic_category)) %>% 
   droplevels()
 
 model_family = poisson
@@ -540,7 +606,7 @@ as splines, all discrete terms as random effects:
 domestic_zoonoses %>%
   filter(daic <= 2) %>%
   select(daic, terms) %>% 
-  mutate(terms = stri_replace_all_regex(terms, "s\\(([^\\)]*)\\)", "$1")) %>%
+    mutate(terms = stri_replace_all_regex(terms, "s\\(([^\\)]*)\\)", "$1")) %>%
   rename(ΔAIC = daic, `Terms in Model`=terms) %>% 
   kable()
 ```
@@ -561,11 +627,20 @@ Relative fraction of deviance explained by each variable in the top model:
 
 ```{r dom-contrib, cache=FALSE}
 get_relative_contribs(domestic_zoonoses$model[[1]]) %>%
-  mutate(rel_deviance_explained = paste0(signif(rel_deviance_explained*100, digits=3), "%")) %>% 
+    mutate(rel_deviance_explained = paste0(signif(rel_deviance_explained*100, digits=3), "%")) %>% 
   rename(Term = term, `Relative Deviance Explained` = rel_deviance_explained) %>% 
   kable(align=c("l","r"))
 ```
 
+10-fold cross-validation.  Good fit indicated by *non*-significant p-values:
+
+```{r dom-cv, cache=TRUE}
+cv_gam(domestic_zoonoses$model[[1]]) %>%
+    mutate(p_value = round(p_value, digits=3)) %>% 
+  rename(Fold = fold, `Observations Fit`=n_fit, `Obervations Held Out` = n_validate,
+         `P-value`=p_value) %>%
+  kable(align=c("l","r", "r", "r", "r"))
+```
 
 
 # Zoonoses in Domestic Animals GAM - Strict Associations
@@ -585,7 +660,7 @@ as splines, all discrete terms as random effects:
 domestic_zoonoses_strict %>%
   filter(daic <= 2) %>%
   select(daic, terms) %>% 
-  mutate(terms = stri_replace_all_regex(terms, "s\\(([^\\)]*)\\)", "$1")) %>%
+    mutate(terms = stri_replace_all_regex(terms, "s\\(([^\\)]*)\\)", "$1")) %>%
   rename(ΔAIC = daic, `Terms in Model`=terms) %>% 
   kable()
 ```
@@ -606,11 +681,20 @@ Relative fraction of deviance explained by each variable in the top model:
 
 ```{r dom-strict-contrib, cache=FALSE}
 get_relative_contribs(domestic_zoonoses_strict$model[[1]]) %>%
-  mutate(rel_deviance_explained = paste0(signif(rel_deviance_explained*100, digits=3), "%")) %>% 
+    mutate(rel_deviance_explained = paste0(signif(rel_deviance_explained*100, digits=3), "%")) %>% 
   rename(Term = term, `Relative Deviance Explained` = rel_deviance_explained) %>% 
   kable(align=c("l","r"))
 ```
 
+10-fold cross-validation.  Good fit indicated by *non*-significant p-values:
+
+```{r dom-strict-cv, cache=TRUE}
+cv_gam(domestic_zoonoses_strict$model[[1]]) %>%
+    mutate(p_value = round(p_value, digits=3)) %>% 
+  rename(Fold = fold, `Observations Fit`=n_fit, `Obervations Held Out` = n_validate,
+         `P-value`=p_value) %>%
+  kable(align=c("l","r", "r", "r", "r"))
+```
 
 # All Viruses in Domestic Animals GAM - All Associations
 
@@ -650,7 +734,7 @@ model_family = poisson
 domestic_viruses %>%
   filter(daic <= 2) %>%
   select(daic, terms) %>% 
-  mutate(terms = stri_replace_all_regex(terms, "s\\(([^\\)]*)\\)", "$1")) %>%
+    mutate(terms = stri_replace_all_regex(terms, "s\\(([^\\)]*)\\)", "$1")) %>%
   rename(ΔAIC = daic, `Terms in Model` = terms) %>% 
   kable()
 ```
@@ -671,11 +755,20 @@ Relative fraction of deviance explained by each variable in the top model:
 
 ```{r dom-vir-contrib, cache=FALSE}
 get_relative_contribs(domestic_viruses$model[[1]]) %>%
-  mutate(rel_deviance_explained = paste0(signif(rel_deviance_explained*100, digits=3), "%")) %>% 
+    mutate(rel_deviance_explained = paste0(signif(rel_deviance_explained*100, digits=3), "%")) %>% 
   rename(Term = term, `Relative Deviance Explained` = rel_deviance_explained) %>% 
   kable(align=c("l","r"))
 ```
 
+10-fold cross-validation.  Good fit indicated by *non*-significant p-values:
+
+```{r dom-vir-cv, cache=TRUE}
+cv_gam(domestic_viruses$model[[1]]) %>%
+    mutate(p_value = round(p_value, digits=3)) %>% 
+  rename(Fold = fold, `Observations Fit`=n_fit, `Obervations Held Out` = n_validate,
+         `P-value`=p_value) %>%
+  kable(align=c("l","r", "r", "r", "r"))
+```
 
 # All Viruses in Domestic Animals GAM - Stringent Associations
 
@@ -695,7 +788,7 @@ as splines, all discrete terms as random effects:
 domestic_viruses_strict %>%
   filter(daic <= 2) %>%
   select(daic, terms) %>% 
-  mutate(terms = stri_replace_all_regex(terms, "s\\(([^\\)]*)\\)", "$1")) %>%
+    mutate(terms = stri_replace_all_regex(terms, "s\\(([^\\)]*)\\)", "$1")) %>%
   rename(ΔAIC = daic, `Terms in Model`=terms) %>% 
   kable()
 ```
@@ -716,9 +809,19 @@ Relative fraction of deviance explained by each variable in the top model:
 
 ```{r dom-vir-strict-contrib, cache=FALSE}
 get_relative_contribs(domestic_viruses_strict$model[[1]]) %>%
-  mutate(rel_deviance_explained = paste0(signif(rel_deviance_explained*100, digits=3), "%")) %>% 
+    mutate(rel_deviance_explained = paste0(signif(rel_deviance_explained*100, digits=3), "%")) %>% 
   rename(Term = term, `Relative Deviance Explained` = rel_deviance_explained) %>% 
   kable(align=c("l","r"))
+```
+
+10-fold cross-validation.  Good fit indicated by *non*-significant p-values:
+
+```{r dom-vir-strict-cv, cache=TRUE}
+cv_gam(domestic_viruses_strict$model[[1]]) %>%
+    mutate(p_value = round(p_value, digits=3)) %>% 
+  rename(Fold = fold, `Observations Fit`=n_fit, `Obervations Held Out` = n_validate,
+         `P-value`=p_value) %>%
+  kable(align=c("l","r", "r", "r", "r"))
 ```
 
 <!-- # Publication plots -->

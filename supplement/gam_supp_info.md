@@ -79,6 +79,21 @@ hOrderSCANDENTIA                               4.85%
 PdHoSa.cbCst                                   18.6%
 UrbRurPopRatioLn                               12.2%
 
+10-fold cross-validation.  Good fit indicated by *non*-significant p-values:
+
+
+Fold    Observations Fit   Obervations Held Out   P-value
+-----  -----------------  ---------------------  --------
+1                    525                     59     0.873
+2                    525                     59     0.735
+3                    525                     59     0.280
+4                    525                     59     0.236
+5                    526                     58     0.604
+6                    526                     58     0.068
+7                    526                     58     0.078
+8                    526                     58     0.146
+9                    526                     58     0.377
+10                   526                     58     0.443
 
 # Zoonoses GAM - Strict Associations
 
@@ -153,6 +168,22 @@ hOrderPRIMATES                                0.103%
 HumPopDensLnChg                                 4.3%
 PdHoSa.cbCst                                   34.5%
 UrbRurPopRatioChg                              19.5%
+
+10-fold cross-validation.  Good fit indicated by *non*-significant p-values:
+
+
+Fold    Observations Fit   Obervations Held Out   P-value
+-----  -----------------  ---------------------  --------
+1                    518                     58     0.049
+2                    518                     58     0.018
+3                    518                     58     0.084
+4                    518                     58     0.866
+5                    518                     58     0.709
+6                    518                     58     0.158
+7                    519                     57     0.418
+8                    519                     57     0.580
+9                    519                     57     0.964
+10                   519                     57     0.550
 
 # Zoonoses GAM - All Associations without Reverse Zoonoses
 
@@ -231,6 +262,21 @@ HumPopDensLnChg                                3.55%
 PdHoSa.cbCst                                   18.4%
 UrbRurPopRatioLn                               7.09%
 
+10-fold cross-validation.  Good fit indicated by *non*-significant p-values:
+
+
+Fold    Observations Fit   Obervations Held Out   P-value
+-----  -----------------  ---------------------  --------
+1                    524                     59     0.167
+2                    524                     59     0.146
+3                    524                     59     0.468
+4                    525                     58     0.950
+5                    525                     58     0.716
+6                    525                     58     0.240
+7                    525                     58     0.267
+8                    525                     58     0.765
+9                    525                     58     0.799
+10                   525                     58     0.278
 
 # All Viruses GAM - All Associations
 
@@ -306,6 +352,21 @@ hOrderRODENTIA                                  4.8%
 LnAreaHost                                      1.6%
 S20                                              10%
 
+10-fold cross-validation.  Good fit indicated by *non*-significant p-values:
+
+
+Fold    Observations Fit   Obervations Held Out   P-value
+-----  -----------------  ---------------------  --------
+1                    518                     58     0.901
+2                    518                     58     0.416
+3                    518                     58     0.734
+4                    518                     58     0.474
+5                    518                     58     0.327
+6                    518                     58     0.155
+7                    519                     57     0.153
+8                    519                     57     0.912
+9                    519                     57     0.174
+10                   519                     57     0.391
 
 # All Viruses GAM - Strict Associations
 
@@ -383,6 +444,21 @@ hOrderSCANDENTIA                              0.286%
 LnAreaHost                                     1.53%
 S20                                             3.9%
 
+10-fold cross-validation.  Good fit indicated by *non*-significant p-values:
+
+
+Fold    Observations Fit   Obervations Held Out   P-value
+-----  -----------------  ---------------------  --------
+1                    517                     58     0.558
+2                    517                     58     0.067
+3                    517                     58     0.524
+4                    517                     58     0.918
+5                    517                     58     0.376
+6                    518                     57     0.477
+7                    518                     57     0.301
+8                    518                     57     0.414
+9                    518                     57     0.644
+10                   518                     57     0.930
 
 # Viral Traits GAM - All Associations
 
@@ -447,6 +523,22 @@ Vector                                        4.61%
 vGenomeAveLengthLn                           0.946%
 vWOKcitesLn                                   37.4%
 
+10-fold cross-validation.  Good fit indicated by *non*-significant p-values:
+
+
+Fold    Observations Fit   Obervations Held Out   P-value
+-----  -----------------  ---------------------  --------
+1                    417                     47     0.420
+2                    417                     47     0.718
+3                    417                     47     0.709
+4                    417                     47     0.876
+5                    418                     46     0.715
+6                    418                     46     0.143
+7                    418                     46     0.383
+8                    418                     46     0.233
+9                    418                     46     0.852
+10                   418                     46     0.347
+
 
 # Viral Traits GAM - Strict Associations
 
@@ -509,6 +601,21 @@ vCytoReplicTF                                           17.5%
 Vector                                                  3.88%
 vWOKcitesLn                                             53.1%
 
+10-fold cross-validation.  Good fit indicated by *non*-significant p-values:
+
+
+Fold    Observations Fit   Obervations Held Out   P-value
+-----  -----------------  ---------------------  --------
+1                    367                     41     0.621
+2                    367                     41     0.439
+3                    367                     41     0.013
+4                    367                     41     0.301
+5                    367                     41     0.424
+6                    367                     41     0.852
+7                    367                     41     0.824
+8                    367                     41     0.532
+9                    368                     40     0.544
+10                   368                     40     0.425
 
 # Zoonoses in Domestic Animals GAM - All Associations
 
@@ -564,6 +671,21 @@ Term                                    Relative Deviance Explained
 domestic_categoryLivestockProduction                            43%
 hOrderCETARTIODACTYLA                                           57%
 
+10-fold cross-validation.  Good fit indicated by *non*-significant p-values:
+
+
+Fold    Observations Fit   Obervations Held Out   P-value
+-----  -----------------  ---------------------  --------
+1                     28                      4     0.000
+2                     28                      4     0.750
+3                     29                      3     0.748
+4                     29                      3     0.248
+5                     29                      3     0.000
+6                     29                      3     0.750
+7                     29                      3     0.497
+8                     29                      3     0.501
+9                     29                      3     0.251
+10                    29                      3     0.000
 
 
 # Zoonoses in Domestic Animals GAM - Strict Associations
@@ -645,6 +767,21 @@ hOrderLAGOMORPHA                           56.8%
 hOrderPROBOSCIDEA                          28.8%
 hOrderRODENTIA                             14.5%
 
+10-fold cross-validation.  Good fit indicated by *non*-significant p-values:
+
+
+Fold    Observations Fit   Obervations Held Out   P-value
+-----  -----------------  ---------------------  --------
+1                     28                      4     0.874
+2                     28                      4     0.499
+3                     29                      3     0.502
+4                     29                      3     0.000
+5                     29                      3     0.252
+6                     29                      3     0.249
+7                     29                      3     0.252
+8                     29                      3     0.748
+9                     29                      3     0.247
+10                    29                      3     0.500
 
 # All Viruses in Domestic Animals GAM - All Associations
 
@@ -712,6 +849,21 @@ hDiseaseZACitesLn                                             72.4%
 hOrderLAGOMORPHA                                              1.61%
 hOrderPERISSODACTYLA                                            16%
 
+10-fold cross-validation.  Good fit indicated by *non*-significant p-values:
+
+
+Fold    Observations Fit   Obervations Held Out   P-value
+-----  -----------------  ---------------------  --------
+1                     28                      4     0.875
+2                     28                      4     0.504
+3                     29                      3     0.501
+4                     29                      3     0.498
+5                     29                      3     0.749
+6                     29                      3     0.000
+7                     29                      3     0.499
+8                     29                      3     0.000
+9                     29                      3     0.750
+10                    29                      3     0.000
 
 # All Viruses in Domestic Animals GAM - Stringent Associations
 
@@ -782,6 +934,22 @@ domestic_categoryOther                                        1.85%
 hDiseaseZACitesLn                                             68.4%
 hOrderPERISSODACTYLA                                            15%
 hOrderRODENTIA                                                3.47%
+
+10-fold cross-validation.  Good fit indicated by *non*-significant p-values:
+
+
+Fold    Observations Fit   Obervations Held Out   P-value
+-----  -----------------  ---------------------  --------
+1                     28                      4     0.625
+2                     28                      4     0.125
+3                     29                      3     0.498
+4                     29                      3     0.500
+5                     29                      3     0.750
+6                     29                      3     0.250
+7                     29                      3     0.247
+8                     29                      3     0.751
+9                     29                      3     0.749
+10                    29                      3     0.749
 
 <!-- # Publication plots -->
 

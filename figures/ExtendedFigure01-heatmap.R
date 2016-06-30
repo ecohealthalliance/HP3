@@ -18,7 +18,7 @@ set.seed(0)
 
 asc <- read.csv(P("data/HP3.assoc_v50.csv"), header=T, strip.white = T)
 h <- read.csv(P("data/HP3.hostv42_FINAL.csv"), header=T, strip.white = T)
-v <- read.csv(P("data/HP3.virus_v50.csv"), header=T, strip.white = T)
+v <- read.csv(P("data/HP3.virus_v51.csv"), header=T, strip.white = T)
 asc_noHoSa <- asc[asc$hHostNameFinal!="Homo_sapiens", ]
 
 

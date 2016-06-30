@@ -4,6 +4,7 @@ library(stringi)
 library(dplyr)
 library(purrr)
 library(ReporteRs)
+source(P("R/relative_contributions.R"))
 top_models <- readRDS(P("supplement/top_models.rds"))
 
 model_names = c("Zoonoses Model",
@@ -54,7 +55,7 @@ names(model_tables2)[1] <- ""
 
 word_table <- vanilla.table(model_tables2) %>%
   spanFlexTableColumns(i = which(!is.na(model_tables2[[1]])), from = 1, to = ncol(model_tables2)) %>%
-  setFlexTableWidths(widths = c( .1, 2.1, rep(0.65,ncol(model_tables2)-3), 1, 1))
+  setFlexTableWidths(widths = c( .1, 2.1, rep(0.65,ncol(model_tables2)-4), 1, 1))
 word_table[] <- parProperties(text.align="center", padding.bottom=0, padding.top=0)
 word_table[] <- textProperties(font.size = 10)
 word_table[which(!is.na(model_tables2[[1]])),] <- textBold()

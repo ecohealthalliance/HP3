@@ -52,7 +52,9 @@ data_host <- terr
 
 # Join spatial polygons and hp3 data frames
 data_hp3_all@data = full_join(data_hp3_all@data, hp3_all, by = c("BINOMIAL" = 'hHostNameFinal'))
+
 data_hp3_zoo@data = full_join(data_hp3_zoo@data, hp3_zoo, by = c("BINOMIAL" = 'hHostNameFinal'))
+
 data_host@data = left_join(data_host@data, hp3, by = c("BINOMIAL" = 'hHostNameFinal')) %>%
   subset(hp3 == 1)
 
@@ -155,10 +157,22 @@ spp_rich_host = function(shapefile, order = NULL, file_name, res, out_dir, ...) 
 }
 
 
+# Calculate residuals and write tif files
+
+res_pred_obs = function(prediction, observed, in_dir, out_dir, file_name){
+  out_file = paste0(out_dir, file_name)
+  extension(out_file) = 'tif'
+  cat('Processing', out_file)
+  pred = raster(paste0(in_dir, prediction, '.tif'))
+  obs = raster(paste0(in_dir, observed, '.tif'))
+  temp = pred - obs
+  writeRaster(temp, filename = out_file, format = "GTiff", overwrite = T, progress = 'text')
+}
+
 
 
 ##########
-# Generate the tif files for all mammals and by order
+# Generate .tif files for all mammals and by order
 list_vars_all = c('obs_all', 'pred_all', 'pred_obs_all')
 list_vars_zoo = c('obs_zoo', 'pred_zoo', 'pred_obs_zoo')
 list_orders = c('CARNIVORA', 'CETARTIODACTYLA', 'CHIROPTERA', 'PRIMATES', 'RODENTIA')
@@ -171,13 +185,13 @@ spp_rich_virus(data_hp3_all, list_vars_all, list_orders, 1/6, 'output/tif/all_vi
 spp_rich_virus(data_hp3_zoo, list_vars_zoo, NULL, 1/6, 'output/tif/zoonoses/')
 spp_rich_virus(data_hp3_zoo, list_vars_zoo, list_orders, 1/6, 'output/tif/zoonoses/')
 
-# Species richness maps for data in database
-spp_rich_host(data_host, NULL, 'hp3', 1/6,'output/tif/host/')
-spp_rich_host(data_host, list_orders, 'hp3', 1/6,'output/tif/host/')
+# Species richness .tif files for species in HP3 database
+spp_rich_host(data_hp3_all, NULL, 'hp3_viruses', 1/6,'output/tif/host/')
+spp_rich_host(data_hp3_all, list_orders, 'hp3_viruses', 1/6,'output/tif/host/')
 
 # Species richness maps for ALL mammals
-spp_rich_host(terr, NULL, 'hosts', 1/6,'output/tif/host/')
-spp_rich_host(terr, list_orders, 'hosts', 1/6,'output/tif/host/')
+spp_rich_host(terr, NULL, 'all_mammals', 1/6,'output/tif/host/')
+spp_rich_host(terr, list_orders, 'all_mammals', 1/6,'output/tif/host/')
 
 # Generate beatiful maps
 # Read all_viruses .tif rasters and create .png maps.
@@ -187,7 +201,18 @@ read_print('output/tif/all_viruses/', 'output/png/all_viruses/', 200, myTheme)
 read_print('output/tif/zoonoses/', 'output/png/zoonoses/', 200, myTheme)
 
 # Read all host .tif rasters and create .png maps
-read_print('output/tif/host/', 'output/png/host/', 200, myTheme)
+read_print('output/tif/host/', 'output/png/host/', 200, rev(myTheme))
+
+
+# Calculate residuals (pred - obs) for mammals vs hp3 mammals data
+res_pred_obs('CARNIVORA_hp3_viruses', 'CARNIVORA_hosts', 'output/tif/host/', 'output/tif/host/', 'CARNIVORA_pred_obs_richness' )
+res_pred_obs('RODENTIA_hp3_viruses', 'RODENTIA_hosts', 'output/tif/host/', 'output/tif/host/', 'RODENTIA_pred_obs_richness' )
+res_pred_obs('CHIROPTERA_hp3_viruses', 'CHIROPTERA_hosts', 'output/tif/host/', 'output/tif/host/', 'CHIROPTERA_pred_obs_richness' )
+res_pred_obs('CETARTIODACTYLA_hp3_viruses', 'CETARTIODACTYLA_hosts', 'output/tif/host/', 'output/tif/host/', 'CETARTIODACTYLA_pred_obs_richness' )
+res_pred_obs('PRIMATES_hp3_viruses', 'PRIMATES_hosts', 'output/tif/host/', 'output/tif/host/', 'PRIMATES_pred_obs_richness' )
+res_pred_obs('hp3_viruses', 'hp3', 'output/tif/host/', 'output/tif/host/', 'mammals_pred_obs_richness' )
+
+
 
 
 

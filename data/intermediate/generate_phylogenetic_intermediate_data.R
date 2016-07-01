@@ -20,8 +20,8 @@ ha <- unique(asc$hHostNameFinal)
 #setdiff(va, v$vVirusNameCorrected) #all viruses in asc file are in v file,
 
 #load in phylogenetic trees, cytb and Supertree (ST)
-cytb <- read.tree(P("data/665spp-RaxML-constrained_STtopol-FINAL-4June2014.tree"))
-ST <- read.tree(P("data/ST_HP3_woutg-3April2014-7taxaADDED.tree")) #improved ST, fixed all taxa plus added monotremes 3 april 2014 (NEW ST w/outg)
+cytb <- read.tree(P("data/cytb_supertree.tree"))
+ST <- read.tree(P("data/supertree_mammals.tree")) #improved ST, fixed all taxa plus added monotremes 3 april 2014 (NEW ST w/outg)
 
 #drop tips from trees for hosts dropped from most recent host-virus association file
 #cytb$tip.label[sort.list(cytb$tip.label)] #665 spp in original cytb

@@ -77,12 +77,20 @@ plot_png = function(raster, out_dir, res, theme){
   name = deparse(substitute(raster))
   out_file = paste0(out_dir, name, '.png')
   png(out_file, width = ncol(raster), height = nrow(raster), res = res)
-  print(levelplot(raster, layers = 1, par.settings = theme, margin = F, ylab = '', xlab = '', maxpixels = ncell(raster), xlim = c(-180, 180), ylim = c(-58, 90)) +
+  print(levelplot(raster, layers = 1, 
+                  par.settings = theme, 
+                  margin = F, 
+                  ylab = '', 
+                  xlab = '', 
+                  maxpixels = ncell(raster), 
+                  xlim = c(-180, 180), 
+                  ylim = c(-58, 90)) +
           layer(sp.polygons(wrld_simpl, lwd = 0.5, col = 'gray50')))
   dev.off()
 }
 
-# Read .tif files from directory and create .png maps. Requires maptools data(wrld_simpl) to draw the global borders
+# Read .tif files from directory and create .png maps. 
+# Requires maptools::data(wrld_simpl) to draw the global borders
 read_print = function(in_dir, out_dir, res, theme){
   require(stringr)
   require(rasterVis)
@@ -91,7 +99,14 @@ read_print = function(in_dir, out_dir, res, theme){
     raster = raster(paste0(in_dir, i))
     out_file = paste0(out_dir, str_sub(i, 1, -4), 'png')
     png(out_file, width = ncol(raster), height = nrow(raster), res = res)
-    print(levelplot(raster, layers = 1, par.settings = theme, margin = F, ylab = '', xlab = '', maxpixels = ncell(raster), xlim = c(-180, 180), ylim = c(-58, 90)) +
+    print(levelplot(raster, layers = 1, 
+                    par.settings = theme, 
+                    margin = F, 
+                    ylab = '', 
+                    xlab = '', 
+                    maxpixels = ncell(raster), 
+                    xlim = c(-180, 180), 
+                    ylim = c(-58, 90)) +
             layer(sp.polygons(wrld_simpl, lwd = 0.5, col = 'gray50')))
     dev.off()
     print(paste('Done!!', i))
@@ -169,7 +184,37 @@ res_pred_obs = function(prediction, observed, in_dir, out_dir, file_name){
   writeRaster(temp, filename = out_file, format = "GTiff", overwrite = T, progress = 'text')
 }
 
+# Function to list all files in directory with a given extension
+tif_path = function(directory, ext){
+  list_files = dir(directory, ext)
+  for(i in list_files){
+    s = paste0(directory, list_files)
+    return(s)
+  }
+}
 
+
+# Function to create maps from a raster stack
+
+png_maps = function(raster_stack, out_dir, res, theme){
+  nl = nlayers(raster_stack)
+  for (i in 1:nl){
+    png(paste0(names(raster_stack)[i], '.png'), width = ncol(raster_stack), height = nrow(raster_stack), res = res)
+    p <- levelplot(raster_stack, layers = i, 
+                   par.settings = theme, 
+                   margin = F, 
+                   ylab = '', 
+                   xlab = '', 
+                   maxpixels = ncell(raster_stack), 
+                   xlim = c(-180, 180), 
+                   ylim = c(-58, 90)) +
+      layer(sp.polygons(wrld_simpl, lwd = 0.5, 
+                        col = 'gray50'))
+    print(p)
+    cat('Printed', names(raster_stack)[i], sep="\n")
+    dev.off()
+  }
+}
 
 ##########
 # Generate .tif files for all mammals and by order
@@ -212,104 +257,12 @@ res_pred_obs('CETARTIODACTYLA_hp3_viruses', 'CETARTIODACTYLA_hosts', 'output/tif
 res_pred_obs('PRIMATES_hp3_viruses', 'PRIMATES_hosts', 'output/tif/host/', 'output/tif/host/', 'PRIMATES_pred_obs_richness' )
 res_pred_obs('hp3_viruses', 'hp3', 'output/tif/host/', 'output/tif/host/', 'mammals_pred_obs_richness' )
 
+# get list of files with .tif extension
+mammals = tif_path('output/tif/host/', 'tif')
 
+# Create raster stack for those files that onclude the words 'pred_obs'
+mammals = stack(str_subset(mammals, 'pred_obs'))
 
+# Create residual maps for species with different color paletter
+png_maps(mammals, 'output/png/host/', 200, 'RdBuTheme')
 
-
-####
-
-tif_path = function(direc, ext){
-  list_files = dir(direc, ext)
-  for(i in list_files){
-    s = paste0(direc, list_files)
-    return(s)
-  }
-  
-}
-
-miss_zoo = stack(str_subset(s, 'pred_obs'))
-
-#s0 = stack(s)
-nl <- nlayers(miss_zoo)
-m <- matrix(1:nl, nrow=3)
-
-png('output/png/panel_res.png', width = ncol(miss_zoo), height = nrow(miss_zoo), res = 200)
-for (i in 1:nl){
-  p <- levelplot(miss_zoo, layers = i, 
-                 par.settings = myTheme, 
-                 margin = F, 
-                 ylab = '', 
-                 xlab = '', 
-                 maxpixels = ncell(miss_zoo), 
-                 xlim=c(-180,180), ylim=c(-56,90),
-                 scales=list(draw=FALSE)) +
-    layer(sp.polygons(wrld_simpl, lwd = 0.5, col = 'gray50'))
-  print(p, split = c(col(m)[i], row(m)[i], ncol(m), nrow(m)), more=(i<nl))
-}
-dev.off()
-
-pl = levelplot(miss_zoo,
-               par.settings = myTheme,
-               col.regions = myTheme, 
-               colorkey = list(space = "bottom"), 
-               margin = F, 
-               ylab = '', 
-               xlab = '', 
-               xlim = c(-180,180), 
-               ylim = c(-56,90),
-               scales = list(draw=FALSE)) +
-  layer(sp.polygons(wrld_simpl, lwd = 0.5, col = 'gray50'))
-
-
-png('output/png/panel_res.png', width = ncol(miss_zoo), height = nrow(miss_zoo), res = 200)
-print(levelplot(miss_zoo, par.settings = myTheme, xlim=c(-180,180), ylim=c(-60,90), names.attr = letters[seq(1:6)]) +
-        layer(sp.polygons(wrld_simpl, lwd = 0.5, col = 'gray50')))
-dev.off()
-
-levelplot(s0, layers = 1, par.settings = myTheme, margin = F, ylab = '', xlab = '', maxpixels = ncell(s0), xlim=c(-180,180), ylim=c(-56,90)) +
-  layer(sp.polygons(wrld_simpl, lwd = 0.5, col = 'gray50'))
-
-grid.arrange(p1, p2, p3, p4, ncol=2)
-
-p <- levelplot(miss_zoo, layers = i,
-               par.settings=myTheme,
-               margin=FALSE,
-               #between = list(x=0, y=0),
-               xlab='',
-               ylab='',
-               scales=list(draw=FALSE)
-)
-c(p1, p2, merge.legends = T, layout = 1:2)
-
-####
-
-read_print('output/tif/zoonones/', 'output/png/zoonoses/', 200, myTheme)
-
-
-
-
-# As we want to create one shapefile for each species, we will choose the 'BINOMIAL' vector. In that way, we first determine the names and the number of species we are using.
-
-un = unique(data@data$BINOMIAL)
-
-
-z = as.data.frame(data) %>%
-  select(order_name, family_nam, binomial) %>%
-  distinct() %>%
-  group_by(order_name) %>%
-  summarise(species = n()) %>%
-  mutate(freq = species / sum(species))
-
-mutate(percent_rank(species))
-
-
-
-for (i in 1:length(unique)) {
-  tmp <- data[data$BINOMIAL == unique[i], ] 
-  writeOGR(tmp, dsn=getwd(), unique[i], driver="ESRI Shapefile",
-           overwrite_layer=TRUE)
-}
-
-
-
-temp = rasterize(data_host, template, 1, fun = 'sum', silent = F, progress = 'text')

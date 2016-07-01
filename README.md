@@ -6,11 +6,11 @@ This repository contains code and data to replicate analyses in Olival et. al.
 -  `data/` contains data used in these analyses, including
     -   our primary database of host-viral associations (`associations.csv`)
     -   databases of host (`hosts.csv`) and viral (`viruses.csv`) traits
-    -   phylogenetic tree files in Newick format (`*.tree`) for, derived
-        from the mammallian supertree (Bininda-Evans et. al. 2007), for the
-        subset of mammals in our database.  One (`supertree_mammals.tree`)
-        uses supertree branch lengths, the other uses Cyt-B-based branch lengths
-        (see supplementary methods.)
+    -   2 phylogenetic tree files in Newick format (`*.tree`) format. One (`supertree_mammals.tree`) is a
+        pruned version of the mammallian supertree (Bininda-Emonds et. al. 2007), for the
+        subset of mammals in our database.  The other (`cytb-supertree.tree`) is a custom-built
+        cytochrome-B phylogeny constrained to the order-level topology of the mammalian supertree
+        (see supplementary methods).
     -   full references for all associations in our database (`references.txt`)
     -   An `intermediates/` directory with derived data (species phylogenetic
         distance matrices and PVR-corrected host mass), and a script to generate

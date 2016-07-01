@@ -23,7 +23,7 @@ associations = associations %>%
 hosts = associations %>%
   group_by(hHostNameFinal) %>%
   summarise(TotVirusPerHost = n(),
-            TotVirusPerHost_strict = sum(DetectionQuality02 == 2)) %>%
+            TotVirusPerHost_strict = sum(DetectionQuality == 2)) %>%
   full_join(hosts, by="hHostNameFinal")# %>%
   #verify(TotVirusPerHost == vir_rich)  # check against prev values
 
@@ -33,7 +33,7 @@ human_viruses = associations %>%
   use_series("vVirusNameCorrected")
 
 human_viruses_strict = associations %>%
-  filter(hHostNameFinal == "Homo_sapiens", DetectionQuality02 == 2) %>%
+  filter(hHostNameFinal == "Homo_sapiens", DetectionQuality == 2) %>%
   use_series("vVirusNameCorrected")
 
 human_viruses_no_rev = associations %>%
@@ -44,7 +44,7 @@ human_viruses_no_rev = associations %>%
 hosts = associations %>%
   group_by(hHostNameFinal) %>%
   summarise(NSharedWithHoSa = sum(vVirusNameCorrected %in% human_viruses),
-            NSharedWithHoSa_strict = sum(vVirusNameCorrected[DetectionQuality02 ==2] %in% human_viruses_strict),
+            NSharedWithHoSa_strict = sum(vVirusNameCorrected[DetectionQuality ==2] %in% human_viruses_strict),
             NSharedWithHoSa_norev = sum(vVirusNameCorrected %in% human_viruses_no_rev)) %>%
   full_join(hosts, by="hHostNameFinal") %>% # check against prev values
   #hosts %>%
@@ -184,7 +184,7 @@ dists = associations %>%
   mutate_each(funs(ifelse(n_noHoSa_hosts > 1 & n_noHoSa_hosts_cytb == 1, NA, .)), starts_with("cb_"))
 
 dists_strict = associations %>%
-  filter(DetectionQuality02 == 2) %>%
+  filter(DetectionQuality == 2) %>%
   filter(hHostNameFinal != "Homo_sapiens") %>%
   group_by(vVirusNameCorrected) %>%
   summarise(n_noHoSa_hosts = n(),

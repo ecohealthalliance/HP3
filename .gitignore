@@ -2,10 +2,10 @@
 .Rhistory
 .RData
 .Ruserdata
-*.png
-*.tif
-*.grd
-*.gri
+**.png
+**.tif
+**.grd
+**.gri
 .DS_Store
 ._.DS_Store
 *.zip

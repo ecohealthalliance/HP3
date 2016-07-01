@@ -4,7 +4,7 @@ P <- rprojroot::find_rstudio_root_file
 library(mgcv)
 library(dplyr)
 library(MASS)
-gam_model <- readRDS(P("supplement/all_zoonoses_model.rds"))
+gam_model <- readRDS(P("model_fitting/all_zoonoses_model.rds"))
 gam(formula = formula(gam_model), sp = gam_model$sp, data=model_data, family=gam_model$family, select=FALSE)
 
 library(MASS)

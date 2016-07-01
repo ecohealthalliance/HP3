@@ -5,7 +5,7 @@ library(dplyr)
 library(purrr)
 library(ReporteRs)
 source(P("R/relative_contributions.R"))
-top_models <- readRDS(P("supplement/top_models.rds"))
+top_models <- readRDS(P("model_fitting/top_models.rds"))
 
 model_names = c("Zoonoses Model",
                 "Zoonoses Model (strict)",

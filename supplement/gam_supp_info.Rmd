@@ -27,7 +27,7 @@ opts_chunk$set(echo = FALSE, message=FALSE, warning = FALSE, autodep=TRUE)
 ```
 
 ```{r preprocess-data, cache=TRUE}
-source(P("supplement/preprocess_data.R"))
+source(P("model_fitting/preprocess_data.R"))
 ```
 
 # Zoonoses GAM - All Associations
@@ -825,15 +825,15 @@ cv_gam(domestic_viruses_strict$model[[1]]) %>%
 <!-- # Publication plots -->
 
 ```{r export-for-plots, include=FALSE}
-saveRDS(vtraits$model[[1]], P("supplement/viral_traits_model.rds"))
-saveRDS(viruses, P("supplement/virus_data_processed.rds"))
-saveRDS(all_viruses$model[[1]], P("supplement/all_viruses_model.rds"))
-saveRDS(all_zoonoses$model[[1]], P("supplement/all_zoonoses_model.rds"))
+saveRDS(vtraits$model[[1]], P("model_fitting/viral_traits_model.rds"))
+saveRDS(viruses, P("model_fitting/virus_data_processed.rds"))
+saveRDS(all_viruses$model[[1]], P("model_fitting/all_viruses_model.rds"))
+saveRDS(all_zoonoses$model[[1]], P("model_fitting/all_zoonoses_model.rds"))
 saveRDS(list(all_zoonoses = all_zoonoses$model[[1]],
              all_zoonoses_strict = all_zoonoses_strict$model[[1]],
              all_viruses = all_viruses$model[[1]],
              all_viruses_strict = all_viruses_strict$model[[1]],
              vtraits = vtraits$model[[1]],
              vtraits_strict = vtraits_strict$model[[1]]),
-        P("supplement/top_models.rds"))
+        P("model_fitting/top_models.rds"))
 ```

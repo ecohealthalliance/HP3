@@ -559,14 +559,12 @@ cv_gam(vtraits_strict$model[[1]]) %>%
 # Zoonoses in Domestic Animals GAM - All Associations
 
 ```{r dom-fit, cache=TRUE}
-domestics = read_excel(P("data/HP3_domestic-categories.xlsx")) %>% 
-  select(hHostNameFinal, domestic_category)
+
 data_set = hosts %>% 
   filter(hMarOTerr == "Terrestrial",
          hWildDomFAO == "domestic")
-data_set = left_join(data_set, domestics, by = "hHostNameFinal") %>% 
-    mutate(hHostNameFinal = as.factor(hHostNameFinal)) %>% 
-    mutate(domestic_category = ifelse(is.na(domestic_category), "Other", domestic_category)) %>% 
+   mutate(hHostNameFinal = as.factor(hHostNameFinal)) %>% 
+   mutate(domestic_category = ifelse(is.na(domestic_category), "Other", domestic_category)) %>% 
   droplevels()
 
 model_family = poisson

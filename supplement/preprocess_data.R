@@ -9,9 +9,9 @@ library(tidyr)
 library(purrr)
 P <- rprojroot::find_rstudio_root_file
 ## Read the data files
-associations = read_csv(P("data/HP3.assoc_v50.csv"))
-hosts  = read_csv(P("data/HP3.hostv42_FINAL.csv"))
-viruses = read_csv(P("data/HP3.virus_v51.csv"))
+associations = read_csv(P("data/associations.csv"))
+hosts  = read_csv(P("data/hosts.csv"))
+viruses = read_csv(P("data/viruses.csv"))
 
 # Temporary fix
 hosts = hosts %>%
@@ -103,6 +103,7 @@ hosts = hosts %>%
          hDiseaseZACitesLn = log(hDiseaseZACites + 1), # num 2.3 2.4 0 5.21
          hAllZACitesLn     = log(hAllZACites + 1),         # num 3.97 4.08 2.2 6.72
          LnAreaHost        = logp(AreaHost),
+         LnDOMYearBP       = logp(DOMYearBP),
 
          TotHumPopLn       = logp(popc_2005AD),
          RurTotHumPopLn    = logp(rurc_2005AD),
@@ -207,9 +208,7 @@ viruses = viruses %>%
       return(x)
     }
   }) %>%
-  mutate(NumHostsLn = logp(NumHosts),
-         NumHostsLn.stringent = logp(NumHosts.stringent),
-         vPubMedCitesLn = logp(vPubMedCites),
+  mutate(vPubMedCitesLn = logp(vPubMedCites),
          vWOKcitesLn = logp(vWOKcites),
          RNA = as.numeric(vDNAoRNA == "RNA"),
          SS = as.numeric(vSSoDS == "SS"),

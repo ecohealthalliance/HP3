@@ -16,8 +16,8 @@ partials_theme = theme(text = element_text(family="Helvetica", size=7),
                        axis.title.x = element_text(lineheight=1.2),
                        legend.position="none")
 
-bgam = readRDS(P("supplement/viral_traits_model.rds"))
-viruses <- readRDS(P("supplement/virus_data_processed.rds"))
+bgam = readRDS(P("model_fitting/viral_traits_model.rds"))
+viruses <- readRDS(P("model_fitting/virus_data_processed.rds"))
 
 binary_vars = c("Envelope", "vCytoReplicTF", "Vector")
 

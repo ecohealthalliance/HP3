@@ -5,7 +5,7 @@ options(stringsAsFactors=F)
 set.seed(0)
 P <- rprojroot::find_rstudio_root_file
 
-source('supplement/preprocess_data.R')
+source('model_fitting/preprocess_data.R')
 
 asc <- associations
 h <- hosts

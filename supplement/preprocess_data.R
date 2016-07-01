@@ -56,7 +56,7 @@ hosts = associations %>%
 # Add additional host fields from other data files
 
 #phylo-corrected mass
-hosts = read_csv(P("data/PVR_cytb_hostmass.csv")) %>%
+hosts = read_csv(P("data/intermediates/PVR_cytb_hostmass.csv")) %>%
   select(-hMassGramsLn) %>%
   rename(hMassGramsPVR = PVRcytb_resid) %>%
   full_join(hosts, by="hHostNameFinal")
@@ -159,8 +159,8 @@ hosts = hosts %>%
 # Calculate non-human phylogenetic distances
 
 trees <- list(
-  super = read_csv(P("data/HP3-ST_PDmatrix-12Mar2016.csv")),
-  cytb = read_csv(P("data/HP3-cytb_PDmatrix-12Mar2016.csv")))
+  super = read_csv(P("data/intermediates/HP3-ST_PDmatrix-12Mar2016.csv")),
+  cytb = read_csv(P("data/intermediates/HP3-cytb_PDmatrix-12Mar2016.csv")))
 trees <- map(trees, function(tree) {
   names(tree)[1] <- "species1"
   tree <- gather(tree, "species2", "distance", -species1)

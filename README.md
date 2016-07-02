@@ -16,14 +16,16 @@ This repository contains code and data to replicate analyses in Olival et. al.
         distance matrices and PVR-corrected host mass), and a script to generate
         these values
     -   A `metadata.csv` file that describes variables in our database and derived
-        variables used in model-fitting.
+        variables used in model-fitting
 -  `model_fitting/` contains an R markdown document which fits all the GAMs in
     the paper, and its output HTML document which includes tables comparing model
     AIC, plot and summaries of top models, relative influence of variables, and
     cross-validation results. Compiling this document runs all the
     models referred to in the paper, and saves the R objects needed for the 
-    figures in `figures/`.
+    figures in `figures/` and `maps/`.
 -  `figures/` contains figures and tables in the paper and extended data and
-    the scripts to generate them. 
+    the scripts to generate them, except for maps.
+-  `maps` contains a script to generate the map outputs in the paper and extended
+    data.
 -   `R/` contains files with functions used in other scripts.    
 -   `misc/` contains small scripts used for other calculations

@@ -22,17 +22,17 @@ if(file.exists(P("maps/TERRESTRIAL_MAMMALS.zip")) &
 }
 
 terr = shapefile(P("maps/iucn_data/TERRESTRIAL_MAMMALS.shp"), verbose = T)
-terr@data$BINOMIAL = str_replace(terr@data$BINOMIAL, " ", "_")
+terr@data$binomial = str_replace(terr@data$binomial, " ", "_")
 
 # select only extant species
-terr = subset(terr, PRESENCE == 1)
+terr = subset(terr, presence == 1)
 
 # Read taxonomic information.
 taxa = read_csv(P("data/IUCN_taxonomy_23JUN2016.csv")) %>%
   dplyr::select(-c(7:23), spp_ID = `Species ID`)
 
 # Join taxonomic information to spatial data
-terr@data = left_join(terr@data, taxa, by = c("ID_NO" = 'spp_ID'))
+terr@data = left_join(terr@data, taxa, by = c("id_no" = 'spp_ID'))
 
 
 # Read HP3 results
@@ -40,7 +40,8 @@ terr@data = left_join(terr@data, taxa, by = c("ID_NO" = 'spp_ID'))
 all_viruses_gam <- readRDS(P("model_fitting/all_viruses_model.rds"))
 hp3_hosts <- readRDS(P("model_fitting/postprocessed_database.rds"))$hosts
 hp3_all = left_join(all_viruses_gam$model, hp3_hosts)
-hp3_all = mutate(hp3_all, prediction = predict(all_viruses_gam, hp3_all, type="response")) %>%
+hp3_all = mutate(hp3_all, prediction = as.vector(unname(predict(all_viruses_gam, hp3_all, type="response"))),
+                 hHostNameFinal = as.character(hHostNameFinal)) %>%
   dplyr::select(hHostNameFinal, hOrder, TotVirusPerHost, prediction) %>%
   mutate(pred_obs_all = prediction - TotVirusPerHost,
          pred_all = prediction) %>%
@@ -48,12 +49,14 @@ hp3_all = mutate(hp3_all, prediction = predict(all_viruses_gam, hp3_all, type="r
 
 # just zoonotic viruses
 zoo_viruses_gam <- readRDS(P("model_fitting/all_zoonoses_model.rds"))
-hp3_zoo = left_join(zoo_viruses_gam$model, hp3_hosts)
-hp3_zoo = mutate(hp3_all, prediction = predict(zoo_viruses_gam, hp3_all, type="response")) %>%
+hp3_zoo = left_join(zoo_viruses_gam$model, hp3_hosts) %>%
+  dplyr::rename(LnTotNumVirus=`offset(LnTotNumVirus)`)
+hp3_zoo = mutate(hp3_zoo, prediction = as.vector(unname(predict(zoo_viruses_gam, hp3_zoo, type="response"))),
+                 hHostNameFinal = as.character(hHostNameFinal)) %>%
   dplyr::select(hHostNameFinal, hOrder, NSharedWithHoSa, prediction) %>%
-  mutate(pred_obs_all = prediction - NSharedWithHoSa,
-         pred_all = prediction) %>%
-  dplyr::select(-prediction, -hOrder, obs_all = NSharedWithHoSa)
+  mutate(pred_obs_zoo = prediction - NSharedWithHoSa,
+         pred_zoo = prediction) %>%
+  dplyr::select(-prediction, -hOrder, obs_zoo = NSharedWithHoSa)
 
 hp3 = read_csv(P('data/hosts.csv')) %>%
   filter(hWildDomFAO == 'wild', hMarOTerr == 'Terrestrial') %>%
@@ -66,16 +69,16 @@ data_hp3_zoo <- terr
 data_host <- terr
 
 # Join spatial polygons and hp3 data frames
-data_hp3_all@data = full_join(data_hp3_all@data, hp3_all, by = c("BINOMIAL" = 'hHostNameFinal'))
+data_hp3_all@data = full_join(data_hp3_all@data, hp3_all, by = c("binomial" = 'hHostNameFinal'))
 
-data_hp3_zoo@data = full_join(data_hp3_zoo@data, hp3_zoo, by = c("BINOMIAL" = 'hHostNameFinal'))
+data_hp3_zoo@data = full_join(data_hp3_zoo@data, hp3_zoo, by = c("binomial" = 'hHostNameFinal'))
 
-data_host@data = left_join(data_host@data, hp3, by = c("BINOMIAL" = 'hHostNameFinal')) %>%
+data_host@data = left_join(data_host@data, hp3, by = c("binomial" = 'hHostNameFinal')) %>%
   subset(hp3 == 1)
 
 # Remove NAs (i.e., species with no data available)
-data_hp3_all = data_hp3_all[!is.na(data_hp3_all$obs_all),]
-data_hp3_zoo = data_hp3_zoo[!is.na(data_hp3_zoo$obs_zoo),]
+data_hp3_all@data = data_hp3_all@data[!is.na(data_hp3_all@data$obs_all),]
+data_hp3_zoo@data = data_hp3_zoo@data[!is.na(data_hp3_zoo@data$obs_zoo),]
 
 # Auxilliary functions
 # get world administrative borders. Requires maptools
@@ -238,46 +241,46 @@ list_vars_zoo = c('obs_zoo', 'pred_zoo', 'pred_obs_zoo')
 list_orders = c('CARNIVORA', 'CETARTIODACTYLA', 'CHIROPTERA', 'PRIMATES', 'RODENTIA')
 
 # Create all_viruses .tif rasters
-spp_rich_virus(data_hp3_all, list_vars_all, NULL, 1/6, 'output/tif/all_viruses/')
-spp_rich_virus(data_hp3_all, list_vars_all, list_orders, 1/6, 'output/tif/all_viruses/')
+spp_rich_virus(data_hp3_all, list_vars_all, NULL, 1/6, P('maps/output/tif/all_viruses/'))
+spp_rich_virus(data_hp3_all, list_vars_all, list_orders, 1/6, P('maps/output/tif/all_viruses/'))
 
 # Create all_zoonoses .tif rasters
-spp_rich_virus(data_hp3_zoo, list_vars_zoo, NULL, 1/6, 'output/tif/zoonoses/')
-spp_rich_virus(data_hp3_zoo, list_vars_zoo, list_orders, 1/6, 'output/tif/zoonoses/')
+spp_rich_virus(data_hp3_zoo, list_vars_zoo, NULL, 1/6, P('maps/output/tif/zoonoses/'))
+spp_rich_virus(data_hp3_zoo, list_vars_zoo, list_orders, 1/6, P('maps/output/tif/zoonoses/'))
 
 # Species richness .tif files for species in HP3 database
-spp_rich_host(data_hp3_all, NULL, 'hp3_viruses', 1/6,'output/tif/host/')
-spp_rich_host(data_hp3_all, list_orders, 'hp3_viruses', 1/6,'output/tif/host/')
+spp_rich_host(data_hp3_all, NULL, 'hp3_viruses', 1/6, P('maps/output/tif/host/'))
+spp_rich_host(data_hp3_all, list_orders, 'hp3_viruses', 1/6, P('maps/output/tif/host/'))
 
 # Species richness maps for ALL mammals
-spp_rich_host(terr, NULL, 'all_mammals', 1/6,'output/tif/host/')
-spp_rich_host(terr, list_orders, 'all_mammals', 1/6,'output/tif/host/')
+spp_rich_host(terr, NULL, 'all_mammals', 1/6, P('maps/output/tif/host/'))
+spp_rich_host(terr, list_orders, 'all_mammals', 1/6, P('maps/output/tif/host/'))
 
 # Generate beatiful maps
 # Read all_viruses .tif rasters and create .png maps.
-read_print('output/tif/all_viruses/', 'output/png/all_viruses/', 200, myTheme)
+read_print(P('maps/output/tif/all_viruses/'), P('maps/output/png/all_viruses/'), 200, myTheme)
 
 # Read all_zoonoses .tif rasters and create .png maps.
-read_print('output/tif/zoonoses/', 'output/png/zoonoses/', 200, myTheme)
+read_print(P('maps/output/tif/zoonoses/'), P('maps/output/png/zoonoses/'), 200, myTheme)
 
 # Read all host .tif rasters and create .png maps
-read_print('output/tif/host/', 'output/png/host/', 200, rev(myTheme))
+read_print(P('maps/output/tif/host/'), P('maps/output/png/host/'), 200, rev(myTheme))
 
 
 # Calculate residuals (pred - obs) for mammals vs hp3 mammals data
-res_pred_obs('CARNIVORA_hp3_viruses', 'CARNIVORA_hosts', 'output/tif/host/', 'output/tif/host/', 'CARNIVORA_pred_obs_richness' )
-res_pred_obs('RODENTIA_hp3_viruses', 'RODENTIA_hosts', 'output/tif/host/', 'output/tif/host/', 'RODENTIA_pred_obs_richness' )
-res_pred_obs('CHIROPTERA_hp3_viruses', 'CHIROPTERA_hosts', 'output/tif/host/', 'output/tif/host/', 'CHIROPTERA_pred_obs_richness' )
-res_pred_obs('CETARTIODACTYLA_hp3_viruses', 'CETARTIODACTYLA_hosts', 'output/tif/host/', 'output/tif/host/', 'CETARTIODACTYLA_pred_obs_richness' )
-res_pred_obs('PRIMATES_hp3_viruses', 'PRIMATES_hosts', 'output/tif/host/', 'output/tif/host/', 'PRIMATES_pred_obs_richness' )
-res_pred_obs('hp3_viruses', 'hp3', 'output/tif/host/', 'output/tif/host/', 'mammals_pred_obs_richness' )
+res_pred_obs('CARNIVORA_hp3_viruses', 'CARNIVORA_hosts', P('maps/output/tif/host/'), P('maps/output/tif/host/'), 'CARNIVORA_pred_obs_richness' )
+res_pred_obs('RODENTIA_hp3_viruses', 'RODENTIA_hosts', P('maps/output/tif/host/'), P('maps/output/tif/host/'), 'RODENTIA_pred_obs_richness' )
+res_pred_obs('CHIROPTERA_hp3_viruses', 'CHIROPTERA_hosts', P('maps/output/tif/host/'), P('maps/output/tif/host/'), 'CHIROPTERA_pred_obs_richness' )
+res_pred_obs('CETARTIODACTYLA_hp3_viruses', 'CETARTIODACTYLA_hosts', P('maps/output/tif/host/'), P('maps/output/tif/host/'), 'CETARTIODACTYLA_pred_obs_richness' )
+res_pred_obs('PRIMATES_hp3_viruses', 'PRIMATES_hosts', P('maps/output/tif/host/'), P('maps/output/tif/host/'), 'PRIMATES_pred_obs_richness' )
+res_pred_obs('hp3_viruses', 'hp3', P('maps/output/tif/host/'), P('maps/output/tif/host/'), 'mammals_pred_obs_richness' )
 
 # get list of files with .tif extension
-mammals = tif_path('output/tif/host/', 'tif')
+mammals = tif_path(P('maps/output/tif/host/'), 'tif')
 
 # Create raster stack for those files that onclude the words 'pred_obs'
 mammals = stack(str_subset(mammals, 'pred_obs'))
 
 # Create residual maps for species with different color paletter
-png_maps(mammals, 'output/png/host/', 200, 'RdBuTheme')
+png_maps(mammals, P('maps/output/png/host/'), 200, 'RdBuTheme')
 

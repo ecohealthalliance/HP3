@@ -49,7 +49,7 @@ model_tables2 = model_tables %>%
   bind_rows %>%
   mutate_each(funs(as.character), -Term, -model) %>%
   #arrange(model, Term !="Intercept") %>%
-  select(8, 1:7)
+  dplyr::select(8, 1:7)
 
 names(model_tables2)[1] <- ""
 

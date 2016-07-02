@@ -6,8 +6,8 @@
 .dropbox
 .Rapp.history
 *_cache/
-maps/output/
 maps/iucn_data/
+maps/output/tif
 *.tif
 *.grd
 *.gri

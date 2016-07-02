@@ -87,6 +87,12 @@ wrld_simpl = subset(wrld_simpl, NAME != 'Antarctica')
 
 # Create color palette. Requires rasterVis and RColorBrewer
 myTheme = rasterTheme(region = rev(brewer.pal(11, 'RdYlGn')))
+myTheme$fontsize$text <- 5.6
+myTheme$axis.line$lwd <- 0.2
+
+myTheme2 = RdBuTheme()
+myTheme2$fontsize$text <- 5.6
+myTheme2$axis.line$lwd <- 0.2
 
 # Function to create .png maps from 'in memory' rasters. The xlim & ylim removes Antarctica
 plot_png = function(raster, out_dir, res, theme){
@@ -94,7 +100,7 @@ plot_png = function(raster, out_dir, res, theme){
   require(rasterVis)
   name = deparse(substitute(raster))
   out_file = paste0(out_dir, name, '.png')
-  png(out_file, width = ncol(raster), height = nrow(raster), res = res)
+  png(out_file, width = ncol(raster), height = nrow(raster), res = res, )
   print(levelplot(raster, layers = 1,
                   par.settings = theme,
                   margin = F,
@@ -119,15 +125,17 @@ read_print = function(in_dir, out_dir, res, theme){
     out_file = paste0(out_dir, str_sub(i, 1, -4), 'png')
     png(out_file, width = ncol(raster), height = nrow(raster), res = res)
     print(levelplot(raster, layers = 1,
-                    par.settings = theme,
+                    par.settings = myTheme,
                     margin = F,
                     ylab = '',
                     xlab = '',
                     scales = list(draw=FALSE),
+                    colorkey=list(width = 1,
+                                  axis.text = list(fontfamily="Helvetica", fontsize=5.6)),
                     maxpixels = ncell(raster),
                     xlim = c(-180, 180),
                     ylim = c(-58, 90)) +
-            layer(sp.polygons(wrld_simpl, lwd = 0.5, col = 'gray50')))
+            layer(sp.polygons(wrld_simpl, lwd = 0.2, col = 'gray50')))
     dev.off()
     print(paste('Done!!', i))
   }
@@ -219,17 +227,19 @@ tif_path = function(directory, ext){
 png_maps = function(raster_stack, out_dir, res, theme){
   nl = nlayers(raster_stack)
   for (i in 1:nl){
-    png(paste0(names(raster_stack)[i], '.png'), width = ncol(raster_stack), height = nrow(raster_stack), res = res)
+    png(paste0(out_dir, names(raster_stack)[i], '.png'), width = ncol(raster_stack), height = nrow(raster_stack), res = res)
     p <- levelplot(raster_stack, layers = i,
-                   par.settings = theme,
+                   par.settings = myTheme2,
                    margin = F,
                    ylab = '',
                    xlab = '',
                    scales = list(draw=FALSE),
+                   colorkey=list(width = 1,
+                                 axis.text = list(fontfamily="Helvetica", fontsize=5.6)),
                    maxpixels = ncell(raster_stack),
                    xlim = c(-180, 180),
                    ylim = c(-58, 90)) +
-      layer(sp.polygons(wrld_simpl, lwd = 0.5,
+      layer(sp.polygons(wrld_simpl, lwd = 0.2,
                         col = 'gray50'))
     print(p)
     cat('Printed', names(raster_stack)[i], sep="\n")
@@ -261,13 +271,13 @@ spp_rich_host(terr, list_orders, 'all_mammals', 1/6, P('maps/output/tif/host/'))
 
 # Generate beatiful maps
 # Read all_viruses .tif rasters and create .png maps.
-read_print(P('maps/output/tif/all_viruses/'), P('maps/output/png/all_viruses/'), 200, myTheme)
+read_print(P('maps/output/tif/all_viruses/'), P('maps/output/png/all_viruses/'), 900, myTheme)
 
 # Read all_zoonoses .tif rasters and create .png maps.
-read_print(P('maps/output/tif/zoonoses/'), P('maps/output/png/zoonoses/'), 200, myTheme)
+read_print(P('maps/output/tif/zoonoses/'), P('maps/output/png/zoonoses/'), 900, myTheme)
 
 # Read all host .tif rasters and create .png maps
-read_print(P('maps/output/tif/host/'), P('maps/output/png/host/'), 200, rev(myTheme))
+read_print(P('maps/output/tif/host/'), P('maps/output/png/host/'), 900, rev(myTheme))
 
 
 # Calculate residuals (pred - obs) for mammals vs hp3 mammals data
@@ -284,6 +294,7 @@ mammals = tif_path(P('maps/output/tif/host/'), 'tif')
 # Create raster stack for those files that onclude the words 'pred_obs'
 mammals = stack(str_subset(mammals, 'pred_obs'))
 
-# Create residual maps for species with different color paletter
-png_maps(mammals, P('maps/output/png/host/'), 200, 'RdBuTheme')
+
+# Create residual maps for species with different color palette
+png_maps(mammals, P('maps/output/png/host/'), 900,  MyTheme2)
 

@@ -28,6 +28,7 @@ opts_chunk$set(echo = FALSE, message=FALSE, warning = FALSE, autodep=TRUE)
 
 ```{r preprocess-data, cache=TRUE}
 source(P("model_fitting/preprocess_data.R"))
+saveRDS(list(hosts=hosts, viruses=viruses, association=associations), "model_fitting/postprocessed_database.rds")
 ```
 
 # Zoonoses GAM - All Associations

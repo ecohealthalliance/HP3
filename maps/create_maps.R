@@ -100,6 +100,7 @@ plot_png = function(raster, out_dir, res, theme){
                   margin = F,
                   ylab = '',
                   xlab = '',
+                  scales = list(draw=FALSE),
                   maxpixels = ncell(raster),
                   xlim = c(-180, 180),
                   ylim = c(-58, 90)) +
@@ -122,6 +123,7 @@ read_print = function(in_dir, out_dir, res, theme){
                     margin = F,
                     ylab = '',
                     xlab = '',
+                    scales = list(draw=FALSE),
                     maxpixels = ncell(raster),
                     xlim = c(-180, 180),
                     ylim = c(-58, 90)) +
@@ -223,6 +225,7 @@ png_maps = function(raster_stack, out_dir, res, theme){
                    margin = F,
                    ylab = '',
                    xlab = '',
+                   scales = list(draw=FALSE),
                    maxpixels = ncell(raster_stack),
                    xlim = c(-180, 180),
                    ylim = c(-58, 90)) +

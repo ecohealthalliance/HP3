@@ -3,6 +3,9 @@ library(tidyr)
 library(purrr)
 library(stringi)
 library(cowplot)
+library(viridis)
+library(dplyr)
+library(svglite)
 set.seed(0)
 P <- rprojroot::find_rstudio_root_file
 

@@ -28,7 +28,7 @@ opts_chunk$set(echo = FALSE, message=FALSE, warning = FALSE, autodep=TRUE)
 
 ```{r preprocess-data, cache=TRUE}
 source(P("model_fitting/preprocess_data.R"))
-saveRDS(list(hosts=hosts, viruses=viruses, association=associations), "model_fitting/postprocessed_database.rds")
+saveRDS(list(hosts=hosts, viruses=viruses, associations=associations), P("model_fitting/postprocessed_database.rds"))
 ```
 
 # Zoonoses GAM - All Associations
@@ -563,7 +563,7 @@ cv_gam(vtraits_strict$model[[1]]) %>%
 
 data_set = hosts %>% 
   filter(hMarOTerr == "Terrestrial",
-         hWildDomFAO == "domestic")
+         hWildDomFAO == "domestic") %>% 
    mutate(hHostNameFinal = as.factor(hHostNameFinal)) %>% 
    mutate(domestic_category = ifelse(is.na(domestic_category), "Other", domestic_category)) %>% 
   droplevels()

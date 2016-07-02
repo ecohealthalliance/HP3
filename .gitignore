@@ -8,12 +8,9 @@
 *_cache/
 maps/output/
 maps/iucn_data/
-*.png
 *.tif
 *.grd
 *.gri
-.DS_Store
-._.DS_Store
 *.zip
 *.prj
 *.shp
@@ -23,4 +20,5 @@ maps/iucn_data/
 *.xml
 *.sbx
 *.cpg
-Icon
+Icon
+

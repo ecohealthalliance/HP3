@@ -11,13 +11,17 @@ library(maptools)
 P <- rprojroot::find_rstudio_root_file
 
 # Load the Mammals' shapefile TERRESTRIAL_MAMMALS, downloaded from: http://www.iucnredlist.org/technical-documents/spatial-data#mammals
+if(!file.exists(P("maps/TERRESTRIAL_MAMMALS.zip"))) {
+  download.file("http://spatial-data.s3.amazonaws.com/groups/TERRESTRIAL_MAMMALS.zip",
+                destfile = P("maps/TERRESTRIAL_MAMMALS.zip"))
+}
 
 if(file.exists(P("maps/TERRESTRIAL_MAMMALS.zip")) &
    !dir.exists(P("maps/iucn_data"))) {
   unzip(P("maps/TERRESTRIAL_MAMMALS.zip"), exdir=P("maps/iucn_data/"))
 }
 
-terr = shapefile(P("maps/iucn_data/Mammals_Terrestrial.shp"), verbose = T)
+terr = shapefile(P("maps/iucn_data/TERRESTRIAL_MAMMALS.shp"), verbose = T)
 terr@data$BINOMIAL = str_replace(terr@data$BINOMIAL, " ", "_")
 
 # select only extant species

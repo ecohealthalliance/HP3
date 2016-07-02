@@ -5,11 +5,11 @@ options(stringsAsFactors=F)
 set.seed(0)
 P <- rprojroot::find_rstudio_root_file
 
-source('model_fitting/preprocess_data.R')
+postprocessed_data <- readRDS(P('model_fitting/postprocessed_database.rds'))
 
-asc <- associations
-h <- hosts
-v <- viruses
+asc <- postprocessed_data$associations
+h <- postprocessed_data$hosts
+v <- postprocessed_data$viruses
 asc_noHoSa <- asc[asc$hHostNameFinal!="Homo_sapiens", ]
 
 h <- h[h$hHostNameFinal != "Homo_sapiens",]  #drop humans

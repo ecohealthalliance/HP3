@@ -8,39 +8,50 @@ library(classInt)
 library(rasterVis)
 library(plyr)
 library(maptools)
+P <- rprojroot::find_rstudio_root_file
 
-
-rm(list=ls())
 # Load the Mammals' shapefile TERRESTRIAL_MAMMALS, downloaded from: http://www.iucnredlist.org/technical-documents/spatial-data#mammals
 
-terr = shapefile('data/iucn_data/Mammals_Terrestrial.shp', verbose = T)
+if(file.exists(P("maps/TERRESTRIAL_MAMMALS.zip")) &
+   !dir.exists(P("maps/iucn_data"))) {
+  unzip(P("maps/TERRESTRIAL_MAMMALS.zip"), exdir=P("maps/iucn_data/"))
+}
+
+terr = shapefile(P("maps/iucn_data/Mammals_Terrestrial.shp"), verbose = T)
 terr@data$BINOMIAL = str_replace(terr@data$BINOMIAL, " ", "_")
 
 # select only extant species
 terr = subset(terr, PRESENCE == 1)
 
 # Read taxonomic information.
-taxa = read_csv('data/IUCN_taxonomy_23JUN2016.csv') %>%
+taxa = read_csv(P("data/IUCN_taxonomy_23JUN2016.csv")) %>%
   dplyr::select(-c(7:23), spp_ID = `Species ID`)
 
 # Join taxonomic information to spatial data
 terr@data = left_join(terr@data, taxa, by = c("ID_NO" = 'spp_ID'))
 
+
 # Read HP3 results
-# all viruses
-hp3_all = read_csv('data/all_viruses_gam_predictions.csv') %>%
+# Get HP3 all virus predictions
+all_viruses_gam <- readRDS(P("model_fitting/all_viruses_model.rds"))
+hp3_hosts <- readRDS(P("model_fitting/postprocessed_database.rds"))$hosts
+hp3_all = left_join(all_viruses_gam$model, hp3_hosts)
+hp3_all = mutate(hp3_all, prediction = predict(all_viruses_gam, hp3_all, type="response")) %>%
+  dplyr::select(hHostNameFinal, hOrder, TotVirusPerHost, prediction) %>%
   mutate(pred_obs_all = prediction - TotVirusPerHost,
          pred_all = prediction) %>%
   dplyr::select(-prediction, -hOrder, obs_all = TotVirusPerHost)
 
 # just zoonotic viruses
-hp3_zoo = read_csv('data/all_zoonoses_gam_predictions.csv') %>%
-  mutate(pred_obs_zoo = prediction - NSharedWithHoSa,
-         pred_zoo = prediction) %>%
-  dplyr::select(-prediction, -hOrder, obs_zoo = NSharedWithHoSa)
+zoo_viruses_gam <- readRDS(P("model_fitting/all_zoonoses_model.rds"))
+hp3_zoo = left_join(zoo_viruses_gam$model, hp3_hosts)
+hp3_zoo = mutate(hp3_all, prediction = predict(zoo_viruses_gam, hp3_all, type="response")) %>%
+  dplyr::select(hHostNameFinal, hOrder, NSharedWithHoSa, prediction) %>%
+  mutate(pred_obs_all = prediction - NSharedWithHoSa,
+         pred_all = prediction) %>%
+  dplyr::select(-prediction, -hOrder, obs_all = NSharedWithHoSa)
 
-# Read HP3 database
-hp3 = read_csv('data/HP3.hostv42_FINAL.csv') %>%
+hp3 = read_csv(P('data/hosts.csv')) %>%
   filter(hWildDomFAO == 'wild', hMarOTerr == 'Terrestrial') %>%
   dplyr::select(hHostNameFinal) %>%
   mutate(hp3 = 1)
@@ -77,19 +88,19 @@ plot_png = function(raster, out_dir, res, theme){
   name = deparse(substitute(raster))
   out_file = paste0(out_dir, name, '.png')
   png(out_file, width = ncol(raster), height = nrow(raster), res = res)
-  print(levelplot(raster, layers = 1, 
-                  par.settings = theme, 
-                  margin = F, 
-                  ylab = '', 
-                  xlab = '', 
-                  maxpixels = ncell(raster), 
-                  xlim = c(-180, 180), 
+  print(levelplot(raster, layers = 1,
+                  par.settings = theme,
+                  margin = F,
+                  ylab = '',
+                  xlab = '',
+                  maxpixels = ncell(raster),
+                  xlim = c(-180, 180),
                   ylim = c(-58, 90)) +
           layer(sp.polygons(wrld_simpl, lwd = 0.5, col = 'gray50')))
   dev.off()
 }
 
-# Read .tif files from directory and create .png maps. 
+# Read .tif files from directory and create .png maps.
 # Requires maptools::data(wrld_simpl) to draw the global borders
 read_print = function(in_dir, out_dir, res, theme){
   require(stringr)
@@ -99,13 +110,13 @@ read_print = function(in_dir, out_dir, res, theme){
     raster = raster(paste0(in_dir, i))
     out_file = paste0(out_dir, str_sub(i, 1, -4), 'png')
     png(out_file, width = ncol(raster), height = nrow(raster), res = res)
-    print(levelplot(raster, layers = 1, 
-                    par.settings = theme, 
-                    margin = F, 
-                    ylab = '', 
-                    xlab = '', 
-                    maxpixels = ncell(raster), 
-                    xlim = c(-180, 180), 
+    print(levelplot(raster, layers = 1,
+                    par.settings = theme,
+                    margin = F,
+                    ylab = '',
+                    xlab = '',
+                    maxpixels = ncell(raster),
+                    xlim = c(-180, 180),
                     ylim = c(-58, 90)) +
             layer(sp.polygons(wrld_simpl, lwd = 0.5, col = 'gray50')))
     dev.off()
@@ -200,15 +211,15 @@ png_maps = function(raster_stack, out_dir, res, theme){
   nl = nlayers(raster_stack)
   for (i in 1:nl){
     png(paste0(names(raster_stack)[i], '.png'), width = ncol(raster_stack), height = nrow(raster_stack), res = res)
-    p <- levelplot(raster_stack, layers = i, 
-                   par.settings = theme, 
-                   margin = F, 
-                   ylab = '', 
-                   xlab = '', 
-                   maxpixels = ncell(raster_stack), 
-                   xlim = c(-180, 180), 
+    p <- levelplot(raster_stack, layers = i,
+                   par.settings = theme,
+                   margin = F,
+                   ylab = '',
+                   xlab = '',
+                   maxpixels = ncell(raster_stack),
+                   xlim = c(-180, 180),
                    ylim = c(-58, 90)) +
-      layer(sp.polygons(wrld_simpl, lwd = 0.5, 
+      layer(sp.polygons(wrld_simpl, lwd = 0.5,
                         col = 'gray50'))
     print(p)
     cat('Printed', names(raster_stack)[i], sep="\n")
@@ -222,11 +233,11 @@ list_vars_all = c('obs_all', 'pred_all', 'pred_obs_all')
 list_vars_zoo = c('obs_zoo', 'pred_zoo', 'pred_obs_zoo')
 list_orders = c('CARNIVORA', 'CETARTIODACTYLA', 'CHIROPTERA', 'PRIMATES', 'RODENTIA')
 
-# Create all_viruses .tif rasters 
+# Create all_viruses .tif rasters
 spp_rich_virus(data_hp3_all, list_vars_all, NULL, 1/6, 'output/tif/all_viruses/')
 spp_rich_virus(data_hp3_all, list_vars_all, list_orders, 1/6, 'output/tif/all_viruses/')
 
-# Create all_zoonoses .tif rasters 
+# Create all_zoonoses .tif rasters
 spp_rich_virus(data_hp3_zoo, list_vars_zoo, NULL, 1/6, 'output/tif/zoonoses/')
 spp_rich_virus(data_hp3_zoo, list_vars_zoo, list_orders, 1/6, 'output/tif/zoonoses/')
 

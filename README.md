@@ -15,6 +15,8 @@ This repository contains code and data to replicate analyses in Olival et. al.
     -   An `intermediates/` directory with derived data (species phylogenetic
         distance matrices and PVR-corrected host mass), and a script to generate
         these values
+    -   A `metadata.csv` file that describes variables in our database and derived
+        variables used in model-fitting.
 -  `model_fitting/` contains an R markdown document which fits all the GAMs in
     the paper, and its output HTML document which includes tables comparing model
     AIC, plot and summaries of top models, relative influence of variables, and

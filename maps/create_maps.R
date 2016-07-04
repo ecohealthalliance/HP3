@@ -11,6 +11,7 @@ library(maptools)
 P <- rprojroot::find_rstudio_root_file
 
 # Load the Mammals' shapefile TERRESTRIAL_MAMMALS, downloaded from: http://www.iucnredlist.org/technical-documents/spatial-data#mammals
+# This study uses version 2015-2
 if(!file.exists(P("maps/TERRESTRIAL_MAMMALS.zip"))) {
   download.file("http://spatial-data.s3.amazonaws.com/groups/TERRESTRIAL_MAMMALS.zip",
                 destfile = P("maps/TERRESTRIAL_MAMMALS.zip"))

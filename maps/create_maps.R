@@ -21,18 +21,18 @@ if(file.exists(P("maps/TERRESTRIAL_MAMMALS.zip")) &
   unzip(P("maps/TERRESTRIAL_MAMMALS.zip"), exdir=P("maps/iucn_data/"))
 }
 
-terr = shapefile(P("maps/iucn_data/TERRESTRIAL_MAMMALS.shp"), verbose = T)
-terr@data$binomial = str_replace(terr@data$binomial, " ", "_")
+terr = shapefile(P("maps/iucn_data2/Mammals_Terrestrial.shp"), verbose = T)
+terr@data$BINOMIAL = str_replace(terr@data$BINOMIAL, " ", "_")
 
 # select only extant species
-terr = subset(terr, presence == 1)
+terr = subset(terr, PRESENCE == 1)
 
 # Read taxonomic information.
 taxa = read_csv(P("data/IUCN_taxonomy_23JUN2016.csv")) %>%
   dplyr::select(-c(7:23), spp_ID = `Species ID`)
 
 # Join taxonomic information to spatial data
-terr@data = left_join(terr@data, taxa, by = c("id_no" = 'spp_ID'))
+terr@data = left_join(terr@data, taxa, by = c("ID_NO" = 'spp_ID'))
 
 
 # Read HP3 results
@@ -69,17 +69,16 @@ data_hp3_zoo <- terr
 data_host <- terr
 
 # Join spatial polygons and hp3 data frames
-data_hp3_all@data = full_join(data_hp3_all@data, hp3_all, by = c("binomial" = 'hHostNameFinal'))
+data_hp3_all@data = full_join(data_hp3_all@data, hp3_all, by = c("BINOMIAL" = 'hHostNameFinal'))
 
-data_hp3_zoo@data = full_join(data_hp3_zoo@data, hp3_zoo, by = c("binomial" = 'hHostNameFinal'))
+data_hp3_zoo@data = full_join(data_hp3_zoo@data, hp3_zoo, by = c("BINOMIAL" = 'hHostNameFinal'))
 
-data_host@data = left_join(data_host@data, hp3, by = c("binomial" = 'hHostNameFinal')) %>%
+data_host@data = left_join(data_host@data, hp3, by = c("BINOMIAL" = 'hHostNameFinal')) %>%
   subset(hp3 == 1)
 
 # Remove NAs (i.e., species with no data available)
-data_hp3_all@data = data_hp3_all@data[!is.na(data_hp3_all@data$obs_all),]
-data_hp3_zoo@data = data_hp3_zoo@data[!is.na(data_hp3_zoo@data$obs_zoo),]
-
+data_hp3_all = data_hp3_all[!is.na(data_hp3_all$obs_all),]
+data_hp3_zoo = data_hp3_zoo[!is.na(data_hp3_zoo$obs_zoo),]
 # Auxilliary functions
 # get world administrative borders. Requires maptools
 data(wrld_simpl)

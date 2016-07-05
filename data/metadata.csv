@@ -1,0 +1,123 @@
+variable,description,file_or_calculated,category,data_source,data_source_url
+AreaHost,total area of host range (km2),hosts.csv,host trait,IUCN spatial database 2015.2,
+Authority,taxonomic authority for host,hosts.csv,taxonomy,IUCN Red List,
+cb_dist_noHoSa_maxLn,non-human cytB phylogenetic host breadth (max),calculated,viral trait,This study,
+cb_dist_noHoSa_mean,non-human cytB phylogenetic host breadth (mean),calculated,viral trait,This study,
+cb_dist_noHoSa_median,non-human cytB phylogenetic host breadth (median),calculated,viral trait,This study,
+Common_names_Eng,"Common names, English",hosts.csv,taxonomy,IUCN Red List,
+Common_names_Fre,"Commone names, Frnech",hosts.csv,taxonomy,IUCN Red List,
+Common.names_Spa,"Common names, Spanish",hosts.csv,taxonomy,IUCN Red List,
+DetectionMethod,Test method used to detect virus in host,associations.csv,association trait,Association source ,
+DetectionQuality,"0 = serology, 1 = viral neutralization test (SNT, VNT, PRNT, etc.), 2 = PCR or virus isolation; Only 2 = ""stringent data""",associations.csv,association trait,Association source ,
+domestic_category,"categorical classification of production type: large-scale production, small-scale exotic farming, or companion animal",hosts.csv,contact measure,Literature review,
+DOMYearBP,years before present that domestication occurred for domesticated hosts,hosts.csv,contact measure,Literature review,
+GenusGenomeLength,TF. T = virus genus average genome length used. F = virus species average genome length used,viruses.csv,viral trait,NCBI,http://www.ncbi.nlm.nih.gov/genomes/GenomesGroup.cgi?taxid=10239
+HabAreaCropChgLn,"Change in host range covered by crops, 1970-2005 (log)",calculated,contact measure,This study,
+HabAreaCropLn,Area of host range overlapping with cropland (log),calculated,contact measure,HYDE database; Goldewijk et al. 2011,http://themasites.pbl.nl/tridion/en/themasites/hyde/download/index-2.html
+HabAreaGrassChgLn,"Change in host range overlapping pasture, 1970-2005 (log)",calculated,contact measure,This study,
+HabAreaGrassLn,Area of Host range overlapping with grassland (log),calculated,contact measure,HYDE database; Goldewijk et al. 2011,http://themasites.pbl.nl/tridion/en/themasites/hyde/download/index-2.html
+HabAreaUrbanChgLn,"Change in host range overlapping with urban areas, 1970-2005 (log)",calculated,contact measure,This study,
+HabAreaUrbanLn,Area of Host range overlapping with by urban areas (log),calculated,contact measure,HYDE database; Goldewijk et al. 2011,http://themasites.pbl.nl/tridion/en/themasites/hyde/download/index-2.html
+HabInhabitedChgLn,"change in area of host range, 1970-2005 (log)",calculated,contact measure,HYDE database; Goldewijk et al. 2011,http://themasites.pbl.nl/tridion/en/themasites/hyde/download/index-2.html
+HabInhabitedLn,area of host range (log),calculated,contact measure,IUCN spatial database 2015.2,
+hAllZACites,Number of Zoological Abstracts citations for mammal species,hosts.csv,research effort,Zoological Abstract search,
+hAllZACitesLn,"Number of Zoological Abstracts citations for mammal species, log",calculated,research effort,Zoological Abstract search,
+hArtfclHabttUsrIUCN,Is host classified by IUCN as Artificial Habitat User or not,host.csv,contact measure,IUCN Red List,http://www.iucnredlist.org/
+hContinents,Number of Continents on which domesticated animal is found,hosts.csv,contact measure,Global Biodiversity Information Facility (GBIF),http://www.gbif.org/
+hDiseaseZACites,Zoological Abstracts Citations for Mammal Species + Disease keywords,hosts.csv,research effort,Zoological Abstract search,
+hDiseaseZACitesLn,"Zoological Abstracts Citations for Mammal Species + Disease keywords, log",calculated,research effort,Zoological Abstract search,
+hFamily,host family,hosts.csv,taxonomy,IUCN Red List,http://www.iucnredlist.org/
+hGenus,host genus,hosts.csv,taxonomy,IUCN Red List,http://www.iucnredlist.org/
+hHostNameFinal,host genus and species,hosts.csv,taxonomy,IUCN Red List,http://www.iucnredlist.org/
+hHostNameFinal,host genus and species,associations.csv,taxonomy,IUCN Red List,http://www.iucnredlist.org/
+hHuntedIUCN,Is host classified by IUCN as Hunted or not,hosts.csv,contact measure,IUCN Red List,http://www.iucnredlist.org/
+hMarOTerr,If host is marine or terrestrial ,hosts.csv,host trait,IUCN Red List,http://www.iucnredlist.org/
+hMassGrams,"average mass of individuals of species, grams",hosts.csv,life-history,"PanTHERIA database (Jones et al. 2009), AnAge database (de Magalhaes et al. 2009)",
+hMassGramsPVR,phylogenetically corrected log-mass of average individuals of species,calculated,life-history,"PanTHERIA database (Jones et al. 2009), AnAge database (de Magalhaes et al. 2009)","http://dx,doi.org.10.1890/08-1494.1  https://dx.doi.org/10.1093/bioinformatics/btp073"
+hOrder,host order,hosts.csv,taxonomy,IUCN Red List,http://www.iucnredlist.org/
+hSpecies,host species name,hosts.csv,taxonomy,IUCN Red List,http://www.iucnredlist.org/
+HumPopDensLnChg,"Change in human population density (log) across host range, 1970-2005",calculated,contact measure,This study,
+hWildDomFAO,Is host classified by FAO as wild or domestic,hosts.csv,categorical,FAO; Scherf et al. 2000,
+IsHoSa,whether virus is known to infect humans using any criteria,viruses.csv,viral trait,This study,
+IsHoSa.stringent,whether virus is known to infect humans using strict criteria of PCR or viral isolation,viruses.csv,viral trait,This study,
+IsZoonotic,Virus detected in both human and non-human mammal species,viruses.csv,derived,This study,
+IsZoonotic.stringent,Virus detected by isolation or PCR in both human and non-human mammal,viruses.csv,derived,This study,
+IUCN_Species_ID,IUCN species ID,hosts.csv,taxonomy,IUCN Red List,http://www.iucnredlist.org/
+LnDOMYearBP,Years before present (2014) that animal has been domesticated (both arithmetic and log),calculated,contact measure,Literature review,
+LnTotNumVirus,"Number of Total Virus for each Mammal Species (log transformed, considered offset variable)",calculated,offset,This study,
+p_crop1970,"percentage of host range that overlaps cropland, 1970",hosts.csv,contact measure,HYDE database; Goldewijk et al. 2011,http://themasites.pbl.nl/tridion/en/themasites/hyde/download/index-2.html
+p_crop1980,"percentage of host range that overlaps cropland, 1980",hosts.csv,contact measure,HYDE database; Goldewijk et al. 2011,http://themasites.pbl.nl/tridion/en/themasites/hyde/download/index-2.html
+p_crop1990,"percentage of host range that overlaps cropland, 1990",hosts.csv,contact measure,HYDE database; Goldewijk et al. 2011,http://themasites.pbl.nl/tridion/en/themasites/hyde/download/index-2.html
+p_crop2000,"percentage of host range that overlaps cropland, 200",hosts.csv,contact measure,HYDE database; Goldewijk et al. 2011,http://themasites.pbl.nl/tridion/en/themasites/hyde/download/index-2.html
+p_crop2005,"percentage of host range that overlaps cropland, 2005",hosts.csv,contact measure,HYDE database; Goldewijk et al. 2011,http://themasites.pbl.nl/tridion/en/themasites/hyde/download/index-2.html
+p_grass1970,"percentage of host range that overlaps grassland, 1970",hosts.csv,contact measure,HYDE database; Goldewijk et al. 2011,http://themasites.pbl.nl/tridion/en/themasites/hyde/download/index-2.html
+p_grass1980,"percentage of host range that overlaps grassland, 1980",hosts.csv,contact measure,HYDE database; Goldewijk et al. 2011,http://themasites.pbl.nl/tridion/en/themasites/hyde/download/index-2.html
+p_grass1990,"percentage of host range that overlaps grassland, 1990",hosts.csv,contact measure,HYDE database; Goldewijk et al. 2011,http://themasites.pbl.nl/tridion/en/themasites/hyde/download/index-2.html
+p_grass2000,"percentage of host range that overlaps grassland, 200",hosts.csv,contact measure,HYDE database; Goldewijk et al. 2011,http://themasites.pbl.nl/tridion/en/themasites/hyde/download/index-2.html
+p_grass2005,"percentage of host range that overlaps grassland, 2005",hosts.csv,contact measure,HYDE database; Goldewijk et al. 2011,http://themasites.pbl.nl/tridion/en/themasites/hyde/download/index-2.html
+p_uopp1970,"percentage of host range that overlaps urban areas, 1970",hosts.csv,contact measure,HYDE database; Goldewijk et al. 2011,http://themasites.pbl.nl/tridion/en/themasites/hyde/download/index-2.html
+p_uopp1980,"percentage of host range that overlaps urban areas, 1980",hosts.csv,contact measure,HYDE database; Goldewijk et al. 2011,http://themasites.pbl.nl/tridion/en/themasites/hyde/download/index-2.html
+p_uopp1990,"percentage of host range that overlaps urban areas, 1990",hosts.csv,contact measure,HYDE database; Goldewijk et al. 2011,http://themasites.pbl.nl/tridion/en/themasites/hyde/download/index-2.html
+p_uopp2000,"percentage of host range that overlaps urban areas, 200",hosts.csv,contact measure,HYDE database; Goldewijk et al. 2011,http://themasites.pbl.nl/tridion/en/themasites/hyde/download/index-2.html
+p_uopp2005,"percentage of host range that overlaps urban areas, 2005",hosts.csv,contact measure,HYDE database; Goldewijk et al. 2011,http://themasites.pbl.nl/tridion/en/themasites/hyde/download/index-2.html
+PdHoSa.cbCst,"Phylogenetic distance to humans based on maximum likelihood cytB tree, constrained by Super Tree",calculated,host phylogenetic distance,"This study, GenBank data",See Supplementary Data table with Genbank Accession numbers
+PdHoSaStPD,"Phylogenetic distance to humans based on Super Tree, continuous",calculated,host phylogenetic distance,Fritz et al. 2009,https://dx.doi.org/10.1111/j.1461-0248.2009.01307.x
+Petitioned,whether species has been petitioned for IUCN endangered status,hosts.csv,not used in analysis,IUCN Red List,http://www.iucnredlist.org/
+popc_1970AD,"human population in host range, 1970",hosts.csv,contact measure,HYDE database; Goldewijk et al. 2011,http://themasites.pbl.nl/tridion/en/themasites/hyde/download/index-2.html
+popc_1980AD,"human population in host range, 1980",hosts.csv,contact measure,HYDE database; Goldewijk et al. 2011,http://themasites.pbl.nl/tridion/en/themasites/hyde/download/index-2.html
+popc_1990AD,"human population in host range, 1990",hosts.csv,contact measure,HYDE database; Goldewijk et al. 2011,http://themasites.pbl.nl/tridion/en/themasites/hyde/download/index-2.html
+popc_2000AD,"human population in host range, 2000",hosts.csv,contact measure,HYDE database; Goldewijk et al. 2011,http://themasites.pbl.nl/tridion/en/themasites/hyde/download/index-2.html
+popc_2005AD,"human population in host range, 2005",hosts.csv,contact measure,HYDE database; Goldewijk et al. 2011,http://themasites.pbl.nl/tridion/en/themasites/hyde/download/index-2.html
+Population_trend,IUCN current population trend of host species,hosts.csv,not used in analysis,IUCN Red List,http://www.iucnredlist.org/
+RedList_criteria,criteria used to establish IUCN redlist status,hosts.csv,not used in analysis,IUCN Red List,http://www.iucnredlist.org/
+RedList_criteria_version,version of redlist criteria used to establish status,hosts.csv,not used in analysis,IUCN Red List,http://www.iucnredlist.org/
+RedList_status,IUCN RedList status,hosts.csv,not used in analysis,IUCN Red List,http://www.iucnredlist.org/
+Reference,Source of host-viral association,associations.csv,association trait,This study,See full list of Supplementary References provided
+ReverseZoonoses,Known to be human to non-human mammal transmission,viruses.csv,viral trait,Literature review,See Supplementary Methods for details
+rurc_1970AD,"human population in rural area of host habitat, 1970",hosts.csv,contact measure,HYDE database; Goldewijk et al. 2011,http://themasites.pbl.nl/tridion/en/themasites/hyde/download/index-2.html
+rurc_1980AD,"human population in rural area of host habitat, 1980",hosts.csv,contact measure,HYDE database; Goldewijk et al. 2011,http://themasites.pbl.nl/tridion/en/themasites/hyde/download/index-2.html
+rurc_1990AD,"human population in rural area of host habitat, 1990",hosts.csv,contact measure,HYDE database; Goldewijk et al. 2011,http://themasites.pbl.nl/tridion/en/themasites/hyde/download/index-2.html
+rurc_2000AD,"human population in rural area of host habitat, 2000",hosts.csv,contact measure,HYDE database; Goldewijk et al. 2011,http://themasites.pbl.nl/tridion/en/themasites/hyde/download/index-2.html
+rurc_2005AD,"human population in rural area of host habitat, 2005",hosts.csv,contact measure,HYDE database; Goldewijk et al. 2011,http://themasites.pbl.nl/tridion/en/themasites/hyde/download/index-2.html
+S,number of mammalian species with any overlapping host range,hosts.csv,contact measure,IUCN spatial database 2015.2,
+S100,number of mammalian species with 100% overlapping host range,hosts.csv,contact measure,IUCN spatial database 2015.2,
+S20,number of mammalian species with >20% overlapping host range,hosts.csv,contact measure,IUCN spatial database 2015.2,
+S40,number of mammalian species with >40% overlapping host range,hosts.csv,contact measure,IUCN spatial database 2015.2,
+S50,number of mammalian species with >50% overlapping host range,hosts.csv,contact measure,IUCN spatial database 2015.2,
+S80,number of mammalian species with >80% overlapping host range,hosts.csv,contact measure,IUCN spatial database 2015.2,
+st_dist_noHoSa_maxLn,phylogenetic host breadth of all non-human hosts from Supertree (max),calculated,viral trait,This study,
+st_dist_noHoSa_mean,non-human Supertree phylogenetic host breadth (mean),calculated,viral trait,This study,
+st_dist_noHoSa_median,non-human Supertree phylogenetic host breadth (median),calculated,viral trait,This study,
+Synonyms,alternative genus/species names for host,hosts.csv,taxonomy,IUCN Red List,http://www.iucnredlist.org/
+TotHumPopChgLn,Change in Total Human Population across host range between 1970 - 2005,calculated,contact measure,This study,
+TotHumPopLn,Total Human Population across host range,calculated,contact measure,HYDE database; Goldewijk et al. 2011,http://themasites.pbl.nl/tridion/en/themasites/hyde/download/index-2.html
+urbc_1970AD,"human population in urban area of host habitat, 1970",hosts.csv,contact measure,HYDE database; Goldewijk et al. 2011,http://themasites.pbl.nl/tridion/en/themasites/hyde/download/index-2.html
+urbc_1980AD,"human population in urban area of host habitat, 1980",hosts.csv,contact measure,HYDE database; Goldewijk et al. 2011,http://themasites.pbl.nl/tridion/en/themasites/hyde/download/index-2.html
+urbc_1990AD,"human population in urban area of host habitat, 1990",hosts.csv,contact measure,HYDE database; Goldewijk et al. 2011,http://themasites.pbl.nl/tridion/en/themasites/hyde/download/index-2.html
+urbc_2000AD,"human population in urban area of host habitat, 2000",hosts.csv,contact measure,HYDE database; Goldewijk et al. 2011,http://themasites.pbl.nl/tridion/en/themasites/hyde/download/index-2.html
+urbc_2005AD,"human population in urban area of host habitat, 2005",hosts.csv,contact measure,HYDE database; Goldewijk et al. 2011,http://themasites.pbl.nl/tridion/en/themasites/hyde/download/index-2.html
+UrbRurPopRatioLn,Urban to Rural human population ratio across host range,calculated,contact measure,HYDE database; Goldewijk et al. 2011,http://themasites.pbl.nl/tridion/en/themasites/hyde/download/index-2.html
+vCytoReplicTF,Does virus replicate in cytoplasm,viruses.csv,viral trait,Literature review; ICTV,
+vDNAoRNA,Is virus RNA or DNA,viruses.csv,viral trait,ICTV,
+vEnvelope,Is virus enveloped,viruses.csv,viral trait,ICTV,
+vFamily,virus family ,viruses.csv,viral trait,ICTV,
+vGenomeAveLength,Average genome length of viral species ,viruses.csv,viral trait,NCBI; Literature review; ICTV; ViralZone,http://www.ncbi.nlm.nih.gov/genomes/GenomesGroup.cgi?taxid=10239
+vGenomeAveLengthLn,"Average genome length of viral species, log",calculated,viral trait,NCBI; Literature review; ICTV; ViralZone,http://viralzone.expasy.org/
+vGenomeMaxLength,Maximum reported genome length of viral species,viruses.csv,not used in analysis,Literature review; ICTV,
+vGenomeMinLength,Minimum reported genome length of viral species,viruses.csv,not used in analysis,Literature review; ICTV,
+vGenus,virus genus ,viruses.csv,viral trait,ICTV,
+vICTVnumber,virus ICTV number,viruses.csv,not used in analysis,ICTV,
+vIsTypeSpecies,whether or not the virus is the OCTV type species for its genus,viruses.csv,not used in analysis,ICTV,
+vOrder,virus order ,viruses.csv,viral trait,ICTV,
+vPubMedCites,PubMed Number of Citations for Virus,viruses.csv,research effort,PubMed search,http://www.ncbi.nlm.nih.gov/pubmed/
+vPubMedCitesLn,PubMed Number of Citations for Virus (log),calculated,research effort,,
+vSegmentedTF,Is virus segmented or monopartite,viruses.csv,viral trait,ICTV,
+vSSoDS,Is virus single or double stranded ,viruses.csv,viral trait,ICTV,
+vSubfamily,virus subfamily ,viruses.csv,taxonomy,ICTV,
+vVectorYNna,Is virus vector-borne,viruses.csv,viral trait,Literature review; ICTV,
+vVirusNameCorrected,virus species scientific name,viruses.csv,taxonomy,ICTV,
+vVirusNameCorrected,virus species scientific name,associations.csv,taxonomy,ICTV,
+vWOKcites,Web of Knowledge Number of Citations for Virus,viruses.csv,research effort,Web of Science search,www.webofknowledge.com
+vWOKcitesLn,Web of Knowledge Number of Citations for Virus (log),calculated,research effort,Web of Science search,www.webofknowledge.com
+WildDomInReference,"In the association source, whether hosts were wild or domestic as certain species can be both (Sus scrofa)",associations.csv,host trait,Association source ,
+Year_assessed,Year species was assessed for IUCN redlist status,hosts.csv,not used in analysis,IUCN Red List,http://www.iucnredlist.org/

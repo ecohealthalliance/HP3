@@ -3,6 +3,9 @@ library(tidyr)
 library(purrr)
 library(stringi)
 library(cowplot)
+library(viridis)
+library(dplyr)
+library(svglite)
 set.seed(0)
 P <- rprojroot::find_rstudio_root_file
 
@@ -24,7 +27,7 @@ partials_theme = theme(text = element_text(family="Helvetica", size=7),
 blankPlot <- ggplot()+geom_blank(aes(1,1)) +
   cowplot::theme_nothing()
 
-bgam = readRDS(P("supplement/all_viruses_model.rds"))
+bgam = readRDS(P("model_fitting/all_viruses_model.rds"))
 
 # All Viruses Plot
 binary_vars = c("hOrder")
@@ -147,7 +150,7 @@ vir_plots <- plot_grid(plot_grid(plotlist = smooth_plots_vir, nrow=1, align="h",
 #---
 
 # Zoonoses plot
-bgam = readRDS(P("supplement/all_zoonoses_model.rds"))
+bgam = readRDS(P("model_fitting/all_zoonoses_model.rds"))
 
 binary_vars = c("hOrder", "hHuntedIUCN")
 

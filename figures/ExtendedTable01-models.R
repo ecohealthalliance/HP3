@@ -5,7 +5,7 @@ library(dplyr)
 library(purrr)
 library(ReporteRs)
 source(P("R/relative_contributions.R"))
-top_models <- readRDS(P("supplement/top_models.rds"))
+top_models <- readRDS(P("model_fitting/top_models.rds"))
 
 model_names = c("Zoonoses Model",
                 "Zoonoses Model (strict)",
@@ -49,7 +49,7 @@ model_tables2 = model_tables %>%
   bind_rows %>%
   mutate_each(funs(as.character), -Term, -model) %>%
   #arrange(model, Term !="Intercept") %>%
-  select(8, 1:7)
+  dplyr::select(8, 1:7)
 
 names(model_tables2)[1] <- ""
 

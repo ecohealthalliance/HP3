@@ -5,11 +5,11 @@ options(stringsAsFactors=F)
 set.seed(0)
 P <- rprojroot::find_rstudio_root_file
 
-source('supplement/preprocess_data.R')
+postprocessed_data <- readRDS(P('model_fitting/postprocessed_database.rds'))
 
-asc <- associations
-h <- hosts
-v <- viruses
+asc <- postprocessed_data$associations
+h <- postprocessed_data$hosts
+v <- postprocessed_data$viruses
 asc_noHoSa <- asc[asc$hHostNameFinal!="Homo_sapiens", ]
 
 h <- h[h$hHostNameFinal != "Homo_sapiens",]  #drop humans
@@ -29,7 +29,7 @@ hd <- h[h$hWildDomFAO=="domestic", ]
 
 order_propshared <- h %>%
   group_by(hOrder) %>%
-  summarize(prop_human_mean_order = mean(prop_human)) %>%
+  dplyr::summarize(prop_human_mean_order = mean(prop_human)) %>%
   arrange(desc(prop_human_mean_order))
 
 h2 <- merge(h, order_propshared, by="hOrder")
@@ -52,15 +52,15 @@ h3d <- subset(h2, hWildDomFAO=="domestic")
 pdf(file=P("figures/Figure01A-boxplots.pdf"), width=11, height=8.5)
 
 par(mar=c(14,4.2,4,2))
-boxplot(vir_rich ~ hOrder, data=h2, vertical = TRUE, ylab="Total Viral Richness",
+boxplot(TotVirusPerHost ~ hOrder, data=h2, vertical = TRUE, ylab="Total Viral Richness",
         col="#EEEEEE", main="", outcol=NA, las=3,cex.axis=1.3, cex.lab=1.3)
 #one stripchart for wild values
-stripchart(vir_rich ~ hOrder, data=h3w,
+stripchart(TotVirusPerHost ~ hOrder, data=h3w,
            vertical = TRUE, method = "jitter", jitter=0.15,
            pch = 21, col = "black", bg = "grey70",
            add = T, cex=1.3)
 #another for domestic
-stripchart(vir_rich ~ hOrder, data=h3d,
+stripchart(TotVirusPerHost ~ hOrder, data=h3d,
            vertical = TRUE, method = "jitter", jitter=0.15,
            pch = 21, col = "black", bg = "maroon",
            add = T, cex=1.3)

@@ -27,6 +27,6 @@ This repository contains code and data to replicate analyses in Olival et. al.
 -  `figures/` contains figures and tables in the paper and extended data and
     the scripts to generate them, except for maps.
 -  `maps/` contains a script to generate the map outputs in the paper and extended
-    data.
+    data, and the final outputs of all maps used in multi-panel map figures in the paper and Extended Data.
 -   `R/` contains files with functions used in other scripts.    
 -   `misc/` contains small scripts used for other calculations

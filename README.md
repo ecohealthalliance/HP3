@@ -36,59 +36,59 @@ This repository contains code and data to replicate analyses in Olival et. al.
 ### Listing of all files
 
 ```
-├── README.md
-├── HP3.Rproj
-├── data
-│   ├── associations.csv
-│   ├── cytb_supertree.tree
-│   ├── hosts.csv
-│   ├── intermediate
-│   │   ├── generate_phylogenetic_intermediate_data.R
-│   │   ├── HP3-cytb_PDmatrix-12Mar2016.csv
-│   │   ├── HP3-ST_PDmatrix-12Mar2016.csv
-│   │   └── PVR_cytb_hostmass.csv
-│   ├── IUCN_taxonomy_23JUN2016.csv
-│   ├── metadata.csv
-│   ├── references.txt
-│   ├── supertree_mammals.tree
-│   └── viruses.csv
-├── figures
-│   ├── ExtendedFigure01-heatmap.R
-│   ├── ExtendedTable01-models.docx
-│   ├── ExtendedTable01-models.R
-│   ├── Figure01A-boxplots.pdf
-│   ├── Figure01B-boxplots.pdf
-│   ├── Figure01-boxplots.R
-│   ├── Figure02-all-gams.R
-│   ├── Figure02-all-gams.svg
-│   ├── Figure04-viral-traits.R
-│   └── Figure04-viral-traits.svg
-├── maps
-│   ├── create_maps.R
-│   └── output
-│       └── png
-│           ├── all_viruses/
-│           ├── host/
-│           └── zoonoses/
-├── misc
-│   ├── calc-bat-special.R
-│   └── zoonotic_dev_explained_w_offset.R
-├── model_fitting
-│   ├── gam_supp_info.Rmd
-│   ├── gam_supp_info.md
-│   ├── gam_supp_info.html
-│   ├── gam_supp_info_files/figure-html/
-│   ├── postprocessed_database.rds
-│   ├── preprocess_data.R
-│   ├── all_viruses_model.rds
-│   ├── all_zoonoses_model.rds
-│   ├── top_models.rds
-│   ├── viral_traits_model.rds
-│   └── virus_data_processed.rds
-├── R
-│   ├── avg_gam_vis.R
-│   ├── cross_validation.R
-│   ├── fit_gam.R
-│   ├── model_reduction.R
-│   └── relative_contributions.R
+├── README.md                                         | This file
+├── HP3.Rproj                                         | Rstudio project organization file
+├── data                                              | 
+│   ├── associations.csv                              | 
+│   ├── cytb_supertree.tree                           | 
+│   ├── hosts.csv                                     | 
+│   ├── intermediate                                  | 
+│   │   ├── generate_phylogenetic_intermediate_data.R | 
+│   │   ├── HP3-cytb_PDmatrix-12Mar2016.csv           | 
+│   │   ├── HP3-ST_PDmatrix-12Mar2016.csv             | 
+│   │   └── PVR_cytb_hostmass.csv                     | 
+│   ├── IUCN_taxonomy_23JUN2016.csv                   | 
+│   ├── metadata.csv                                  | 
+│   ├── references.txt                                | 
+│   ├── supertree_mammals.tree                        | 
+│   └── viruses.csv                                   | 
+├── figures                                           | 
+│   ├── ExtendedFigure01-heatmap.R                    | 
+│   ├── ExtendedTable01-models.docx                   | 
+│   ├── ExtendedTable01-models.R                      | 
+│   ├── Figure01A-boxplots.pdf                        | 
+│   ├── Figure01B-boxplots.pdf                        | 
+│   ├── Figure01-boxplots.R                           | 
+│   ├── Figure02-all-gams.R                           | 
+│   ├── Figure02-all-gams.svg                         | 
+│   ├── Figure04-viral-traits.R                       | 
+│   └── Figure04-viral-traits.svg                     | 
+├── maps                                              | 
+│   ├── create_maps.R                                 | 
+│   └── output                                        | 
+│       └── png                                       | 
+│           ├── all_viruses/                          | 
+│           ├── host/                                 | 
+│           └── zoonoses/                             | 
+├── misc                                              | 
+│   ├── calc-bat-special.R                            | 
+│   └── zoonotic_dev_explained_w_offset.R             | 
+├── model_fitting                                     | 
+│   ├── gam_supp_info.Rmd                             | 
+│   ├── gam_supp_info.md                              | 
+│   ├── gam_supp_info.html                            | 
+│   ├── gam_supp_info_files/figure-html/              | 
+│   ├── postprocessed_database.rds                    | 
+│   ├── preprocess_data.R                             | 
+│   ├── all_viruses_model.rds                         | 
+│   ├── all_zoonoses_model.rds                        | 
+│   ├── top_models.rds                                | 
+│   ├── viral_traits_model.rds                        | 
+│   └── virus_data_processed.rds                      | 
+└── R                                                 | 
+├── avg_gam_vis.R                                     | 
+├── cross_validation.R                                | 
+├── fit_gam.R                                         | 
+├── model_reduction.R                                 | 
+└── relative_contributions.R                          | 
 ```

@@ -17,7 +17,8 @@ This repository contains code and data to replicate analyses in Olival et. al.
         these values
     -   A `metadata.csv` file that describes variables in our database and derived
         variables used in model-fitting
-    -   `IUCN_taxonomy_23JUN2016.csv` is data from IUCN used to harmonize our data with IUCN spatial data (see Supplementary Methods)
+    -   `IUCN_taxonomy_23JUN2016.csv`, data from IUCN used to harmonize our data with IUCN spatial data (see Supplementary Methods)
+    -   `Genbank_accession_cytb.csv`, Genbank accession numbers used in constructing the Cyt-B constrained tree
 -  `model_fitting/` contains an R markdown document which fits all the GAMs in
     the paper, and its output HTML document which includes tables comparing model
     AIC, plot and summaries of top models, relative influence of variables, and
@@ -46,7 +47,8 @@ This repository contains code and data to replicate analyses in Olival et. al.
 │   ├── metadata.csv                                  | listing of variables in hosts, viruses, and associations databases
 │   ├── references.txt                                | listing of reference sources for associations database
 │   ├── supertree_mammals.tree                        | tree file for mammal supertree
-│   └── viruses.csv                                   | viruses database
+│   ├── viruses.csv                                   | viruses database
+│   └── Genbank_accession_cytb.csv                    | Genbank accession numbers used for calculating the Cyt-b constrained tree
 │   └── intermediate                                  | 
 │       ├── generate_phylogenetic_intermediate_data.R | Script to generate intermediate data failes
 │       ├── HP3-cytb_PDmatrix-12Mar2016.csv           | distance matrix generated from Cyt-b constrained mammal supertree (generated)

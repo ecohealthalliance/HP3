@@ -460,33 +460,33 @@ Palyam_virus,Capra_hircus,domestic,PCR,2,Aradaib et al. 2009
 Peste-des-petits-ruminants_virus,Capra_hircus,domestic,Isolation,2,Taylor and Abegunde 1978
 Rabies_virus,Capra_hircus,domestic,PCR,2,Kuzmin et al. 2004
 Rift_Valley_fever_virus,Capra_hircus,domestic,PCR,2,Andriamandimby et al. 2010
-Rinderpest_virus,Capra_hircus,domestic,PCR,2,"Title: SURVEILLANCE AND MONITORING PROGRAMS IN THE CONTROL OF RINDERPEST - A REVIEW Author(s): ROSSITER, PB; WAMWAYI, HM Source: TROPICAL ANIMAL HEALTH AND PRODUCTION  Volume: 21   Issue: 2   Pages: 89-99   DOI: 10.1007/BF02236185   Published: MAY 1989 Times Cited: 5 (from Web of Science)"
+Rinderpest_virus,Capra_hircus,domestic,PCR,2,Rossiter et al. 1989
 Sepik_virus,Capra_hircus,domestic,Antibodies,0,Olson et al. 1984
 Sheeppox_virus,Capra_hircus,domestic,PCR,2,Bhanuprakash et al. 2010
 Suid_herpesvirus_1,Capra_hircus,domestic,"Cell culture, PCR",2,Salwa 2004
 Trubanaman_virus,Capra_hircus,domestic,Antibodies,0,Johansen et al. 2005
-Wad_Medani_virus,Capra_hircus,domestic,Antibodies,0,"Darwish et al. 1983, RSTMH 77:4"
+Wad_Medani_virus,Capra_hircus,domestic,Antibodies,0,Darwish et al. 1983
 Wesselsbron_virus,Capra_hircus,domestic,Antibodies,0,Baba et al. 1994
-Bovine_herpesvirus_1,Capra_ibex,wild,Antibodies,0,"Thiry et al. 1988, JWD"
-Cervid_herpesvirus_1,Capra_ibex,wild,Antibodies,0,"Thiry et al. 1988, JWD"
-Goat_adenovirus,Capra_ibex,domestic,Isolation,2,"Olson et al. 2004, J Vet Diagn Invest"
+Bovine_herpesvirus_1,Capra_ibex,wild,Antibodies,0,Thiry et al. 1988
+Cervid_herpesvirus_1,Capra_ibex,wild,Antibodies,0,Thiry et al. 1988
+Goat_adenovirus,Capra_ibex,domestic,Isolation,2,Olson et al. 2004
 Bluetongue_virus,Capra_pyrenaica,wild,ELISA,0,Lorca-Oro et al. 2011
 Bluetongue_virus,Capreolus_capreolus,wild,Antibodies,0,Ruiz-Fons et al. 2008
-Bovine_herpesvirus_1,Capreolus_capreolus,wild,PCR,2,"Kalman and Egyed 2005, JWD"
-Bovine_herpesvirus_2,Capreolus_capreolus,wild,PCR,2,"Kalman and Egyed 2005, JWD"
-Bovine_herpesvirus_4,Capreolus_capreolus,wild,PCR,2,"Kalman and Egyed 2005, JWD"
+Bovine_herpesvirus_1,Capreolus_capreolus,wild,PCR,2,Kalman & Egyed 2005
+Bovine_herpesvirus_2,Capreolus_capreolus,wild,PCR,2,Kalman & Egyed 2005
+Bovine_herpesvirus_4,Capreolus_capreolus,wild,PCR,2,Kalman & Egyed 2005
 Bovine_viral_diarrhea_virus_1,Capreolus_capreolus,wild,Isolation,2,Becher et al. 1999
-Caprine_herpesvirus_1,Capreolus_capreolus,domestic,Antibodies,0,"Fr_lich K, Hamblin C, Parida S, Tuppurainen E, Schettler E. Serological survey for potential disease agents of free-ranging cervids in six selected national parks from Germany. J Wildl Dis. 2006 Oct;42(4):836-43. PubMed PMID: 17255452."
-Cervid_herpesvirus_1,Capreolus_capreolus,wild,Antibodies,0,"Thiry et al. 1988, JWD"
+Caprine_herpesvirus_1,Capreolus_capreolus,domestic,Antibodies,0,Frolich et al. 2006
+Cervid_herpesvirus_1,Capreolus_capreolus,wild,Antibodies,0,Thiry et al. 1988
 Foot-and-mouth_disease_virus,Capreolus_capreolus,wild,Antibodies,0,Weaver et al. 2013
 Ovine_herpesvirus_2,Capreolus_capreolus,wild,PCR,2,Vikoren et al. 2006
 Bovine_viral_diarrhea_virus_1,Capricornis_crispus,wild,PCR,2,Harasawa et al. 2006
 Feline_calicivirus,Caracal_caracal,wild,Antibodies,0,Thalwitzer et al. 2010
 Feline_coronavirus,Caracal_caracal,wild,Antibodies,0,Thalwitzer et al. 2010
-Puma_lentivirus,Caracal_caracal,wild,Antibodies,0,"Thalwitzer S, Wachter B, Robert N, Wibbelt G, M_ller T, Lonzer J, Meli ML, Bay G, Hofer H, Lutz H. Seroprevalences to viral pathogens in free-ranging and captive cheetahs (Acinonyx jubatus) on Namibian Farmland. Clin Vaccine Immunol. 2010 Feb;17(2):232-8. doi: 10.1128/CVI.00345-09. Epub 2009 Dec 2. PubMed PMID: 19955325; PubMed Central PMCID: PMC2815525."
+Puma_lentivirus,Caracal_caracal,wild,Antibodies,0,Thalwitzer et al. 2010
 Dengue_virus,Carollia_brevicauda,wild,PCR,2,Aguilar-Setien et al. 2008
-Rio_Bravo_virus,Carollia_brevicauda,wild,Antibodies,0,Ubico and McClean 1995
-Venezuelan_equine_encephalitis_virus,Carollia_brevicauda,wild,Antibodies,0,Ubico and McClean 1995
+Rio_Bravo_virus,Carollia_brevicauda,wild,Antibodies,0,Ubico & McClean 1995
+Venezuelan_equine_encephalitis_virus,Carollia_brevicauda,wild,Antibodies,0,Ubico & McClean 1995
 Bimiti_virus,Carollia_perspicillata,wild,Antibodies,0,Price 1978
 Catu_virus,Carollia_perspicillata,wild,Antibodies,0,Price 1978
 Dengue_virus,Carollia_perspicillata,wild,Antibodies,0,Price 1978
@@ -505,14 +505,14 @@ Yellow_fever_virus,Carollia_perspicillata,wild,Antibodies,0,Price 1978
 Venezuelan_equine_encephalitis_virus,Carollia_subrufa,wild,Antibodies,0,Ubico and McClean 1995
 Cowpox_virus,Castor_fiber,captive,PCR,2,Hentschke et al. 1999
 Caviid_herpesvirus_1,Cavia_porcellus,captive,Isolation,2,Hsiun & Kaplow 1969; Roizman & Baines 1991
-Caviid_herpesvirus_2,Cavia_porcellus,captive,Isolation,2,"Griffith BP, Hsiung GD. Cytomegalovirus infection in guinea pigs. IV. Maternal infection at different stages of gestation. J Infect Dis. 1980 Jun;141(6):787-93. PubMed PMID: 6248603."
+Caviid_herpesvirus_2,Cavia_porcellus,captive,Isolation,2,Griffith & Hsiungection 1980
 Caviid_herpesvirus_3,Cavia_porcellus,captive,Isolation,2,Bia et al. 1980
 Equid_herpesvirus_1,Cavia_porcellus,captive,PCR,2,Wohlsein et al. 2011
 Guinea_pig_adenovirus,Cavia_porcellus,captive,PCR,2,Pring-Akerblom et al. 1997
-Guinea_pig_type-C_oncovirus,Cavia_porcellus,captive,Isolation,2,Hsiung GD. Activation of guinea pig C-type virus in cultured spleen cells by 5-bromo-2'-deoxyuridine. J Natl Cancer Inst. 1972 Aug;49(2):567-70. PubMed PMID: 4342620.
+Guinea_pig_type-C_oncovirus,Cavia_porcellus,captive,Isolation,2,Hsiung 1972
 Murine_pneumonia_virus,Cavia_porcellus,wild,Antibodies,0,Hansen et al. 1997
 Sendai_virus,Cavia_porcellus,domestic,Antibodies,0,Hansen et al. 1997
-Simian_virus_10,Cavia_porcellus,domestic,Antibodies,0,"Mahy, BJ The Dictionary of Virology,  Academic Press 2009"
+Simian_virus_10,Cavia_porcellus,domestic,Antibodies,0,Mahy 2009
 Caraparu_virus,Cebus_apella,wild,Isolation,2,de Brito Magalhaes et al. 2007
 Tacaiuma_virus,Cebus_apella,wild,Antibodies,0,Nunes et al. 2006
 Torque_Teno_virus,Cebus_apella,wild,PCR,2,Catroxo et al. 2008
@@ -520,10 +520,10 @@ Vesicular_stomatitis_Indiana_virus,Cebus_capucinus,wild,plaque reduction neutral
 Zaire_ebolavirus,Cephalophus_callipygus,wild,PCR,2,Lahm et al. 2007
 Bluetongue_virus,Cephalophus_dorsalis,wild,agar gel immunodiffusion,0,Karesh et al. 1995
 Bovine_herpesvirus_1,Cephalophus_dorsalis,wild,VNT,1,Karesh et al. 1995
-O'nyong-nyong_virus,Cephalophus_dorsalis,wild,plaque reduction neutralization,1,"Kading et al. 2012, JWD"
+O'nyong-nyong_virus,Cephalophus_dorsalis,wild,plaque reduction neutralization,1,Kading et al. 2012
 Bluetongue_virus,Cephalophus_leucogaster,wild,agar gel immunodiffusion,0,Karesh et al. 1995
 Bovine_herpesvirus_1,Cephalophus_leucogaster,wild,VNT,1,Karesh et al. 1995
-O'nyong-nyong_virus,Cephalophus_leucogaster,wild,plaque reduction neutralization,1,"Kading et al. 2012, JWD"
+O'nyong-nyong_virus,Cephalophus_leucogaster,wild,plaque reduction neutralization,1,Kading et al. 2012
 Bluetongue_virus,Cephalophus_nigrifrons,wild,agar gel immunodiffusion,0,Karesh et al. 1995
 Bovine_herpesvirus_1,Cephalophus_nigrifrons,wild,VNT,1,Karesh et al. 1995
 Bluetongue_virus,Cephalophus_weynsi,wild,agar gel immunodiffusion,0,Karesh et al. 1995
@@ -533,25 +533,25 @@ Bluetongue_virus,Ceratotherium_simum,wild,ELISA,0,Fischer-Tenhagen et al. 2000
 Bovine_viral_diarrhea_virus_1,Ceratotherium_simum,wild,ELISA,0,Fischer-Tenhagen et al. 2000
 Crimean-Congo_hemorrhagic_fever_virus,Ceratotherium_simum,wild,Antibodies,0,Shepherd et al. 1987
 Rift_Valley_fever_virus,Ceratotherium_simum,wild,Antibodies,0,Anderson & Rowe 1998
-Primate_T-lymphotropic_virus_1,Cercocebus_agilis,wild,PCR,2,Sintasatah et al. 2009. EID
-Primate_T-lymphotropic_virus_3,Cercocebus_agilis,wild,PCR,2,Sintasatah et al. 2009. EID
+Primate_T-lymphotropic_virus_1,Cercocebus_agilis,wild,PCR,2,Sintasatah et al. 2009
+Primate_T-lymphotropic_virus_3,Cercocebus_agilis,wild,PCR,2,Sintasatah et al. 2009
 Simian_foamy_virus,Cercocebus_atys,wild,PCR,2,Hussain et al. 2003
 Simian_immunodeficiency_virus,Cercocebus_atys,wild,Isolation,2,Fultz et al. 1989
 Simian_foamy_virus,Cercocebus_chrysogaster,wild,PCR,2,Schweizer et al. 1995
 Simian_immunodeficiency_virus,Cercocebus_galeritus,wild,Antibodies,0,Peeters et al. 2002
 Simian_foamy_virus,Cercocebus_torquatus,wild,PCR,2,Hussain et al. 2003
-Chikungunya_virus,Cercopithecus_ascanius,wild,Antibodies,0,"Feigin, Ralph D Textbook of pediatric infectious diseases, Volume 2, Chapter 178, pg.2179. 1998, Saunders.  Full Text Unavailable. Unable to access bibliography online"
-Hepatitis_B_virus,Cercopithecus_ascanius,wild,Antibodies,0,Mutanda and Mufson 1974
-Human_coronavirus_229E,Cercopithecus_ascanius,wild,Antibodies,0,Mutanda and Mufson 1974
-Human_parainfluenza_virus_1,Cercopithecus_ascanius,wild,Antibodies,0,Mutanda and Mufson 1974
-Human_parainfluenza_virus_2,Cercopithecus_ascanius,wild,Antibodies,0,Mutanda and Mufson 1974
-Human_parainfluenza_virus_3,Cercopithecus_ascanius,wild,Antibodies,0,Mutanda and Mufson 1974
-Human_respiratory_syncytial_virus,Cercopithecus_ascanius,wild,Antibodies,0,Mutanda and Mufson 1974
-Influenza_A_virus,Cercopithecus_ascanius,wild,Antibodies,0,Mutanda and Mufson 1974
-Influenza_B_virus,Cercopithecus_ascanius,wild,Antibodies,0,Mutanda and Mufson 1974
-Mumps_virus,Cercopithecus_ascanius,wild,Antibodies,0,Mutanda and Mufson 1974
+Chikungunya_virus,Cercopithecus_ascanius,wild,Antibodies,0,Feigi 1998
+Hepatitis_B_virus,Cercopithecus_ascanius,wild,Antibodies,0,Mutanda & Mufson 1974
+Human_coronavirus_229E,Cercopithecus_ascanius,wild,Antibodies,0,Mutanda & Mufson 1974
+Human_parainfluenza_virus_1,Cercopithecus_ascanius,wild,Antibodies,0,Mutanda & Mufson 1974
+Human_parainfluenza_virus_2,Cercopithecus_ascanius,wild,Antibodies,0,Mutanda & Mufson 1974
+Human_parainfluenza_virus_3,Cercopithecus_ascanius,wild,Antibodies,0,Mutanda & Mufson 1974
+Human_respiratory_syncytial_virus,Cercopithecus_ascanius,wild,Antibodies,0,Mutanda & Mufson 1974
+Influenza_A_virus,Cercopithecus_ascanius,wild,Antibodies,0,Mutanda & Mufson 1974
+Influenza_B_virus,Cercopithecus_ascanius,wild,Antibodies,0,Mutanda & Mufson 1974
+Mumps_virus,Cercopithecus_ascanius,wild,Antibodies,0,Mutanda & Mufson 1974
 Semliki_Forest_virus,Cercopithecus_ascanius,wild,Antibodies,0,Haddow 1952
-Simian_hemorrhagic_fever_virus,Cercopithecus_ascanius,wild,PCR,2,"Lauck, M., S. D. Sibley, D. Hyeroba, A. Tumukunde, G. Weny, C. A. Chapman, N. Ting, W. M. Switzer, J. H. Kuhn, T. C. Friedrich, D. H. O'Connor, and T. L. Goldberg. 2013. Exceptional simian hemorrhagic Fever virus diversity in a wild african primate community. Journal of Virology 87:688-691."
+Simian_hemorrhagic_fever_virus,Cercopithecus_ascanius,wild,PCR,2,Lauck et al. 2013
 Uganda_S_virus,Cercopithecus_ascanius,wild,Antibodies,0,Haddow 1952
 Yellow_fever_virus,Cercopithecus_ascanius,wild,Antibodies,0,Haddow 1952
 Simian_foamy_virus,Cercopithecus_campbelli,wild,PCR,2,Schweizer et al. 1995
@@ -561,35 +561,35 @@ Simian_foamy_virus,Cercopithecus_diana,wild,PCR,2,Hussain et al. 2003
 Simian_foamy_virus,Cercopithecus_erythrotis,wild,PCR,2,Hussain et al. 2003
 Simian_foamy_virus,Cercopithecus_lhoesti,wild,PCR,2,Hussain et al. 2003
 Simian_foamy_virus,Cercopithecus_mitis,wild,PCR,2,Hussain et al. 2003
-Simian_virus_10,Cercopithecus_mitis,wild,Isolation,2,"Mahy, BJ The Dictionary of Virology,  Academic Press 2009"
-Monkeypox_virus,Cercopithecus_mona,wild,Antibodies,0,Brack 1987. Agents transmissible from simians to man. Heidelberg: Springer Verlag
+Simian_virus_10,Cercopithecus_mitis,wild,Isolation,2,Mahy 2009
+Monkeypox_virus,Cercopithecus_mona,wild,Antibodies,0,Brack 1987
 Primate_T-lymphotropic_virus_1,Cercopithecus_mona,wild,PCR,2,NA
-Primate_T-lymphotropic_virus_3,Cercopithecus_mona,wild,PCR,2,Sintasatah et al. 2009. EID
+Primate_T-lymphotropic_virus_3,Cercopithecus_mona,wild,PCR,2,Sintasatah et al. 2009
 Simian_immunodeficiency_virus,Cercopithecus_mona,wild,PCR,2,Peeters et al. 2002
 Yellow_fever_virus,Cercopithecus_mona,wild,Antibodies,0,Bauer et al. 1930
 Simian_foamy_virus,Cercopithecus_neglectus,wild,PCR,2,Hussain et al. 2003
 Simian_immunodeficiency_virus,Cercopithecus_neglectus,wild,PCR,2,Peeters et al. 2002
-Primate_T-lymphotropic_virus_1,Cercopithecus_nictitans,wild,PCR,2,Sintasatah et al. 2009. EID
-Primate_T-lymphotropic_virus_3,Cercopithecus_nictitans,wild,PCR,2,Sintasatah et al. 2009. EID
+Primate_T-lymphotropic_virus_1,Cercopithecus_nictitans,wild,PCR,2,Sintasatah et al. 2009
+Primate_T-lymphotropic_virus_3,Cercopithecus_nictitans,wild,PCR,2,Sintasatah et al. 2009
 Simian_foamy_virus,Cercopithecus_nictitans,wild,PCR,2,Schweizer et al. 1995
 Simian_immunodeficiency_virus,Cercopithecus_nictitans,wild,PCR,2,Peeters et al. 2002
-Monkeypox_virus,Cercopithecus_petaurista,wild,Antibodies,0,Brack 1987. Agents transmissible from simians to man. Heidelberg: Springer Verlag
+Monkeypox_virus,Cercopithecus_petaurista,wild,Antibodies,0,Brack 1987
 Semliki_Forest_virus,Cercopithecus_pogonias,wild,Antibodies,0,Haddow 1952
 Simian_foamy_virus,Cercopithecus_pogonias,wild,PCR,2,Schweizer et al. 1995
 Simian_foamy_virus,Cercopithecus_solatus,wild,PCR,2,Schweizer et al. 1995
-Canine_distemper_virus,Cerdocyon_thous,wild,PCR,2,"Megid, Jane, et al. 2009. J of Widllfie Disease 45(2), pp. 527-530."
+Canine_distemper_virus,Cerdocyon_thous,wild,PCR,2,Megid et al. 2009
 Bluetongue_virus,Cervus_elaphus,wild,Antibodies,0,Ruiz-Fons et al. 2008
-Bovine_herpesvirus_1,Cervus_elaphus,wild,PCR,2,"Kalman and Egyed 2005, JWD"
-Bovine_herpesvirus_2,Cervus_elaphus,wild,PCR,2,"Kalman and Egyed 2005, JWD"
-Bovine_herpesvirus_4,Cervus_elaphus,wild,PCR,2,"Kalman and Egyed 2005, JWD"
+Bovine_herpesvirus_1,Cervus_elaphus,wild,PCR,2,Kalman & Egyed 2005
+Bovine_herpesvirus_2,Cervus_elaphus,wild,PCR,2,Kalman & Egyed 2005
+Bovine_herpesvirus_4,Cervus_elaphus,wild,PCR,2,Kalman & Egyed 2005
 Bovine_viral_diarrhea_virus_1,Cervus_elaphus,domestic,PCR,2,Glawishnig et al. 2010
-Caprine_herpesvirus_1,Cervus_elaphus,domestic,Antibodies,0,"Fr_lich K, Hamblin C, Parida S, Tuppurainen E, Schettler E. Serological survey for potential disease agents of free-ranging cervids in six selected national parks from Germany. J Wildl Dis. 2006 Oct;42(4):836-43. PubMed PMID: 17255452."
-Cervid_herpesvirus_1,Cervus_elaphus,domestic,PCR,2,"Squires RA 2012, N Z Vet J"
+Caprine_herpesvirus_1,Cervus_elaphus,domestic,Antibodies,0,Frolich et al. 2006
+Cervid_herpesvirus_1,Cervus_elaphus,domestic,PCR,2,Squires 2012
 Deer_adenovirus,Cervus_elaphus,domestic,micropsy,0,Horner & Read 1982
 Epizootic_hemorrhagic_disease_virus,Cervus_elaphus,domestic,Antibodies,0,Nol et al. 2010
 Ovine_herpesvirus_2,Cervus_elaphus,wild,PCR,2,Vikoren et al. 2006
-Parapoxvirus_of_red_deer_in_New_Zealand,Cervus_elaphus,domestic,DNA RFLP,2,"Horner GW, Robinson AJ, Hunter R, Cox BT, Smith R. Parapoxvirus infections in New Zealand farmed red deer (Cervus elaphus). N Z Vet J. 1987 Apr;35(4):41-5. PubMed PMID: 16031369."
-Thiafora_virus,Cervus_elaphus,wild,Antibodies,0,"Chastel 1989, Acta virologica 33(3) 270-, ""Erve virus, a probable member of Bunyaviridae family isolated from shrews (Crocidura russula) in France"""
+Parapoxvirus_of_red_deer_in_New_Zealand,Cervus_elaphus,domestic,DNA RFLP,2,Horner et al. 1987
+Thiafora_virus,Cervus_elaphus,wild,Antibodies,0,Chastel 1989
 Vesicular_stomatitis_Indiana_virus,Cervus_elaphus,wild,SNT,1,Webb et al. 1987
 Bluetongue_virus,Cervus_nippon,domestic,Antibodies,0,Williams et al. 2001
 Bovine_viral_diarrhea_virus_1,Cervus_nippon,domestic,SNT,1,Lawman et al. 1978
@@ -601,20 +601,20 @@ Human_picobirnavirus,Chaetophractus_vellerosus,captive,PAGE,0,Masachessi et al. 
 Lymphocytic_choriomeningitis_virus,Chionomys_roberti,wild,Antibodies,0,Laakkonen et al. 2006
 Vesicular_stomatitis_Indiana_virus,Chironectes_minimus,wild,plaque reduction neutralization,1,Tesh et al. 1969
 Adeno-associated_virus-1,Chlorocebus_aethiops,captive,Antibodies,0,Parks et al. 1970
-African_green_monkey_polyomavirus,Chlorocebus_aethiops,captive,Isolation,2,"zur Hausen H., Gissmann L.. 1979. Lymphotropic papovaviruses isolated from African green monkey and human cells. Med. Microbiol. Immunol. 167:137_153."
+African_green_monkey_polyomavirus,Chlorocebus_aethiops,captive,Isolation,2,zur Hausen et al. 1979
 African_green_monkey_simian_foamy_virus,Chlorocebus_aethiops,wild,Antibodies,0,Brooks et al.
-Cercopithecine_herpesvirus_5,Chlorocebus_aethiops,captive,isolation,2,"BLACK PH, HARTLEY JW, ROWE WP. Isolation of a cytomegalovirus from African green monkey. Proc Soc Exp Biol Med. 1963 Mar;112:601-5. PubMed PMID: 13971371."
-Cercopithecine_herpesvirus_9,Chlorocebus_aethiops,captive,Isolation,2,"Clarkson,M.J.,E.Thorpe,andK.McCarthy.1967.A  virus disease ofcaptive vervet monkeys (Cercopithecus aethiops) caused by a herpesvirus. Arch. Virus- forsch. 22:219-234."
+Cercopithecine_herpesvirus_5,Chlorocebus_aethiops,captive,isolation,2,Black et al. 1963
+Cercopithecine_herpesvirus_9,Chlorocebus_aethiops,captive,Isolation,2,Clarkson et al. 1967
 Chikungunya_virus,Chlorocebus_aethiops,wild,Isolation,2,Diallo et al. 1999
 Lake_Victoria_marburgvirus,Chlorocebus_aethiops,wild,Isolation,2,Luby et al. 1969
-Simian_hemorrhagic_fever_virus,Chlorocebus_aethiops,captive,Isolation,2,"Gravell M, London WT, Leon ME, Palmer AE, Hamilton RS (1986) Differences among isolates of simian hemorrhagic fever (SHF) virus. Proceedings of the Society for Experimental Biology and Medicine 181: 112_119."
+Simian_hemorrhagic_fever_virus,Chlorocebus_aethiops,captive,Isolation,2,Gravell et al. 1986
 Yaba_monkey_tumor_virus,Chlorocebus_aethiops,wild,Antibodies,0,Downie 1974
 Yellow_fever_virus,Chlorocebus_aethiops,wild,Isolation,2,Deubel et al. 1985
-Human_parainfluenza_virus_3,Chlorocebus_pygerythrus,wild,Antibodies,1,"Sasaki et al. 2013, EID"
+Human_parainfluenza_virus_3,Chlorocebus_pygerythrus,wild,Antibodies,1,Sasaki et al. 2013
 Simian_foamy_virus,Chlorocebus_pygerythrus,wild,PCR,2,Hussain et al. 2003
 Yaba_monkey_tumor_virus,Chlorocebus_pygerythrus,wild,PCR,2,Brettschneider et al. 2003
 Cercopithecine_herpesvirus_14,Chlorocebus_sabaeus,captive,isolation,2,Bocker et al. 1980
-Cercopithecine_herpesvirus_2,Chlorocebus_sabaeus,wild,Isolation,2,"Malherbe, H., Harwin, R., 1958. Neurotropic virus in African Monkeys. Lancet 2, 530."
+Cercopithecine_herpesvirus_2,Chlorocebus_sabaeus,wild,Isolation,2,Malherbe & Harwin 1958
 Measles_virus,Chlorocebus_sabaeus,wild,Isolation,2,Fowler & Miller. 2003
 Borna_disease_virus,Choeropsis_liberiensis,wild,Antibodies,0,Shuppel et al. 1994
 Borna_disease_virus,Choloepus_didactylus,wild,Antibodies,0,Shuppel et al. 1994
@@ -636,23 +636,23 @@ Lumpy_skin_disease_virus,Connochaetes_gnou,wild,SNT,1,Barnard 1997
 Akabane_virus,Connochaetes_taurinus,wild,Antibodies,0,Davies et al. 1985
 Alcelaphine_herpesvirus_1,Connochaetes_taurinus,wild,Isolation,2,Plowright et al. 1960
 Alcelaphine_herpesvirus_2,Connochaetes_taurinus,wild,Antibodies,0,Reid et al. 1973
-Bluetongue_virus,Connochaetes_taurinus,wild,Antibodies,0,Hamblin et al.
-Bovine_viral_diarrhea_virus_1,Connochaetes_taurinus,wild,SNT,1,Hamblin and Hedger 1979
+Bluetongue_virus,Connochaetes_taurinus,wild,Antibodies,0,Hamblin et al. 1990
+Bovine_viral_diarrhea_virus_1,Connochaetes_taurinus,wild,SNT,1,Hamblin & Hedger 1979
 Foot-and-mouth_disease_virus,Connochaetes_taurinus,wild,Antibodies,0,Hamblin et al. 1990
 Lumpy_skin_disease_virus,Connochaetes_taurinus,wild,SNT,1,Barnard 1997
-Rift_Valley_fever_virus,Connochaetes_taurinus,wild,Antibodies,0,"Capobianco Dondona, A. 2016"
-Rinderpest_virus,Connochaetes_taurinus,wild,Antibodies,0,"Taylor, W. P., and R. M. Watson. 1967. Studies on the epizootiology of rinderpest in blue wildebeest and other game species of Northern Tanzania and Southern Kenya, 1965_67. Journal of Hygiene 65: 537_545."
+Rift_Valley_fever_virus,Connochaetes_taurinus,wild,Antibodies,0,Capobianco Dondona 2016
+Rinderpest_virus,Connochaetes_taurinus,wild,Antibodies,0,Taylor & Watson 1967
 Rabies_virus,Corynorhinus_townsendii,wild,Isolation,2,Strieker et al. 2010
-Monkeypox_virus,Cricetomys_emini,wild,Antibodies,0,"Hutin YJF, Williams RJ, Malfait P, et al. Outbreak of human monkeypox, Democratic Republic of Congo, 1996--1997. Emerg Infect Dis 2001;7:434--8."
+Monkeypox_virus,Cricetomys_emini,wild,Antibodies,0,Hutin et al. 2001
 Dugbe_virus,Cricetomys_gambianus,wild,Isolation,2,Beran 1994; Kemp 1975; Kemp et al. 1974; ArboCat
 Ife_virus,Cricetomys_gambianus,wild,Antibodies,0,Ezefeika et al. 1987
-Kotonkan_virus,Cricetomys_gambianus,wild,Antibodies,0,Kemp et al.1973
-Monkeypox_virus,Cricetomys_gambianus,wild,PCR,2,"CDC, http://www.cdc.gov/ncidod/monkeypox/qa.htm"
-Qalyub_virus,Cricetomys_gambianus,wild,Isolation,2,[229]
+Kotonkan_virus,Cricetomys_gambianus,wild,Antibodies,0,Kemp et al 1973
+Monkeypox_virus,Cricetomys_gambianus,wild,PCR,2,CDC
+Qalyub_virus,Cricetomys_gambianus,wild,Isolation,2,Saluzzo et al. 1986
 Uganda_S_virus,Cricetomys_gambianus,wild,Isolation,2,Kemp 1975; Kemp et al. 1974
 Sendai_virus,Cricetus_cricetus,captive,Isolation,2,Parker et al. 1968
 Borna_disease_virus,Crocidura_leucodon,wild,PCR,2,Hilbe et al. 2006
-Thiafora_virus,Crocidura_russula,wild,Isolation,2,"Chastel 1989, Acta virologica 33(3) 270-, ""Erve virus, a probable member of Bunyaviridae family isolated from shrews (Crocidura russula) in France"""
+Thiafora_virus,Crocidura_russula,wild,Isolation,2,Chastel 1989
 African_horse_sickness_virus,Crocuta_crocuta,wild,Antibodies,0,Binepal et al. 1992
 Bluetongue_virus,Crocuta_crocuta,wild,Antibodies,0,"Alexander, MacLachlan et al. 1994"
 Canine_distemper_virus,Crocuta_crocuta,domestic,Antibodies,0,Prager et al. 2013
@@ -669,7 +669,7 @@ Dengue_virus,Cynopterus_brachyotis,wild,Antibodies,0,Geevarghese & Banerjee 1990
 Issyk-Kul_virus,Cynopterus_brachyotis,wild,Isolation,2,Calisher et al. 2006
 Jugra_virus,Cynopterus_brachyotis,wild,Isolation,2,Calisher et al. 2006
 Nipah_virus,Cynopterus_brachyotis,wild,Isolation,2,WHO
-Phnom_Penh_bat_virus,Cynopterus_brachyotis,wild,Isolation,2,"Beran & Steele  Handbook of Zoonoses: Viral, CRC Press 1994 pg. 253-254"
+Phnom_Penh_bat_virus,Cynopterus_brachyotis,wild,Isolation,2,Beran & Steele 1994
 Rabies_virus,Cynopterus_brachyotis,wild,Isolation,2,Smith et al. 1967
 Wesselsbron_virus,Cynopterus_brachyotis,wild,Antibodies,0,Geevarghese & Banerjee 1990
 Bunyamwera_virus,Cynopterus_sphinx,wild,Antibodies,0,CDC Arbocat Report 1984
@@ -684,13 +684,13 @@ Phocine_distemper_virus,Cystophora_cristata,wild,Antibodies,0,Stuen et al. 1994
 Bluetongue_virus,Dama_dama,domestic,Antibodies,0,Ruiz-Fons et al. 2008
 Bovine_adenovirus_A,Dama_dama,domestic,Antibodies,0,Morse et al. 2009
 Bovine_ephemeral_fever_virus,Dama_dama,wild*,SNT,1,Aziz-Boaran et al. 2013
-Bovine_herpesvirus_1,Dama_dama,wild,PCR,2,"Kalman and Egyed 2005, JWD"
-Bovine_herpesvirus_2,Dama_dama,wild,PCR,2,"Kalman and Egyed 2005, JWD"
-Bovine_herpesvirus_4,Dama_dama,wild,PCR,2,"Kalman and Egyed 2005, JWD"
+Bovine_herpesvirus_1,Dama_dama,wild,PCR,2,Kalman & Egyed 2005
+Bovine_herpesvirus_2,Dama_dama,wild,PCR,2,"Kalman & Egyed 2005
+Bovine_herpesvirus_4,Dama_dama,wild,PCR,2,"Kalman & Egyed 2005
 Epizootic_hemorrhagic_disease_virus,Dama_dama,domestic,Antibodies,0,OIE Report 2006
 Akabane_virus,Damaliscus_lunatus,wild,Antibodies,0,Davies et al. 1985
-Bluetongue_virus,Damaliscus_lunatus,wild,Antibodies,0,Hamblin et al.
-Bovine_viral_diarrhea_virus_1,Damaliscus_lunatus,wild,SNT,1,Hamblin and Hedger 1979
+Bluetongue_virus,Damaliscus_lunatus,wild,Antibodies,0,Hamblin et al. 1990
+Bovine_viral_diarrhea_virus_1,Damaliscus_lunatus,wild,SNT,1,Hamblin & Hedger 1979
 Foot-and-mouth_disease_virus,Damaliscus_lunatus,wild,Antibodies,0,Hamblin et al. 1990
 Crimean-Congo_hemorrhagic_fever_virus,Damaliscus_pygargus,wild,Antibodies,0,Shepherd et al. 1987
 Bunyamwera_virus,Dasymys_incomtus,wild,Isolation,2,Johnson et al. 1977
@@ -698,34 +698,34 @@ Witwatersrand_virus,Dasymys_incomtus,wild,Antibodies,0,Henderson et al. 1972
 Dengue_virus,Dasyprocta_leporina,wild,Antibodies,0,de Thouisy et al. 2004
 Mayaro_virus,Dasyprocta_leporina,wild,Antibodies,0,de Thoisy et al. 2003
 Yellow_fever_virus,Dasyprocta_leporina,wild,Antibodies,0,de Thoisy et al. 2004; McIntosh 1961
-Mayaro_virus,Dasyprocta_punctata,wild,Antibodies,0,Seymour et al. 1983 AJTMH
+Mayaro_virus,Dasyprocta_punctata,wild,Antibodies,0,Seymour et al. 1983
 Vesicular_stomatitis_Indiana_virus,Dasyprocta_punctata,wild,plaque reduction neutralization,1,Tesh et al. 1969
 Eastern_equine_encephalitis_virus,Dasypus_novemcinctus,wild,Antibodies,0,Deem et al. 2009
 Mayaro_virus,Dasypus_novemcinctus,wild,Antibodies,0,de Thoisy et al. 2003
 St._Louis_encephalitis_virus,Dasypus_novemcinctus,wild,Antibodies,0,Day et al. 1995
 Vesicular_stomatitis_Indiana_virus,Dasypus_novemcinctus,wild,plaque reduction neutralization,1,Tesh et al. 1969
-Cetacean_morbillivirus_virus,Delphinus_delphis,wild,PCR,2,"Birkun Jr., A., Kuiken, T., Krivokhizhin, S., Haines, D.M., Osterhaus, A.D., van de Bildt, M.W., Joiris, C.R., Siebert, U., 1999. Epizootic of morbilliviral disease in common dolphins (Delphinus delphis ponticus) from the Black sea. Vet. Rec. 144, 85_92."
+Cetacean_morbillivirus_virus,Delphinus_delphis,wild,PCR,2,Birkun et al. 1999
 Wesselsbron_virus,Desmodillus_auricularis,wild,Isolation,2,Beran 1994
 Dengue_virus,Desmodus_rotundus,wild,Antibodies,0,Price 1978
 Ilheus_virus,Desmodus_rotundus,wild,Antibodies,0,Price 1978
 Rabies_virus,Desmodus_rotundus,wild,Isolation,2,Kobayashi et al. 2005
-Rio_Bravo_virus,Desmodus_rotundus,wild,Antibodies,0,Ubico and McClean 1995
+Rio_Bravo_virus,Desmodus_rotundus,wild,Antibodies,0,Ubico & McClean 1995
 Tacaribe_virus,Desmodus_rotundus,wild,Antibodies,0,Price et al. 1978
 Tamana_bat_virus,Desmodus_rotundus,wild,Antibodies,0,Price 1978
 Venezuelan_equine_encephalitis_virus,Desmodus_rotundus,wild,Isolation,2,Calisher et al. 2006
 Vesicular_stomatitis_Indiana_virus,Desmodus_rotundus,wild,plaque reduction neutralization,1,Ubico & McClean 1995
-Vesicular_stomatitis_New_Jersey_virus,Desmodus_rotundus,wild,Antibodies,0,Ubico and McClean 1995
+Vesicular_stomatitis_New_Jersey_virus,Desmodus_rotundus,wild,Antibodies,0,Ubico & McClean 1995
 Rabies_virus,Diaemus_youngi,wild,Isolation,2,Castilho et al. 2008
 African_horse_sickness_virus,Diceros_bicornis,wild,ELISA,0,Fischer-Tenhagen et al. 2000
 Bluetongue_virus,Diceros_bicornis,wild,ELISA,0,Fischer-Tenhagen et al. 2000
 Bovine_viral_diarrhea_virus_1,Diceros_bicornis,wild,ELISA,0,Fischer-Tenhagen et al. 2000
 Crimean-Congo_hemorrhagic_fever_virus,Diceros_bicornis,wild,Antibodies,0,Shepherd et al. 1987
-Rabies_virus,Diclidurus_albus,wild,Isolation,2,"Goodwin & Greenhall 1961 ) A review of the bats of Trinidad and Tobago: descriptions, rabies infection and ecology. Bulletin of the AMNH v. 122, article 3. ISI  search yields no results."
-Catu_virus,Didelphis_marsupialis,wild,Isolation,2,"Shope, R. E., J. P. Woodall, and A. P. A. Travassos da Rosa. 1988. The epidemiology of disease caused by viruses in group C and Guam_ (Bunyaviridae), p. 37-52. In T. P. Monath (ed.), The arboviruses: epidemiology and ecology. CRC Press, Inc., Boca Raton, Fla."
-Guama_virus,Didelphis_marsupialis,wild,Isolation,2,"Shope, R. E., J. P. Woodall, and A. P. A. Travassos da Rosa. 1988. The epidemiology of disease caused by viruses in group C and Guam_ (Bunyaviridae), p. 37-52. In T. P. Monath (ed.), The arboviruses: epidemiology and ecology. CRC Press, Inc., Boca Raton, Fla."
-Marituba_virus,Didelphis_marsupialis,wild,Isolation,2,"Shope, R. E., J. P. Woodall, and A. P. A. Travassos da Rosa. 1988. The epidemiology of disease caused by viruses in group C and Guam_ (Bunyaviridae), p. 37-52. In T. P. Monath (ed.), The arboviruses: epidemiology and ecology. CRC Press, Inc., Boca Raton, Fla."
+Rabies_virus,Diclidurus_albus,wild,Isolation,2,Goodwin & Greenhall 1961
+Catu_virus,Didelphis_marsupialis,wild,Isolation,2,Shope et al. 1988
+Guama_virus,Didelphis_marsupialis,wild,Isolation,2,Shope et al. 1988
+Marituba_virus,Didelphis_marsupialis,wild,Isolation,2,Shope et al. 1988
 Mayaro_virus,Didelphis_marsupialis,wild,Antibodies,0,de Thoisy et al. 2003
-Oriboca_virus,Didelphis_marsupialis,wild,Isolation,2,"Shope, R. E., J. P. Woodall, and A. P. A. Travassos da Rosa. 1988. The epidemiology of disease caused by viruses in group C and Guam_ (Bunyaviridae), p. 37-52. In T. P. Monath (ed.), The arboviruses: epidemiology and ecology. CRC Press, Inc., Boca Raton, Fla."
+Oriboca_virus,Didelphis_marsupialis,wild,Isolation,2,Shopeet al. 1988
 Patois_virus,Didelphis_marsupialis,wild,Antibodies,0,Scherer et al. 1972
 St._Louis_encephalitis_virus,Didelphis_marsupialis,wild,Isolation,2,Kramer et al. 2001
 Venezuelan_equine_encephalitis_virus,Didelphis_marsupialis,wild,Antibodies,0,Estrada-Franco et al. 2004
@@ -742,7 +742,7 @@ Modoc_virus,Dipodomys_nitratoides,wild,Antibodies,0,Hardy et al. 1974
 St._Louis_encephalitis_virus,Dipodomys_nitratoides,wild,Antibodies,0,Hardy et al. 1974
 Hendra_virus,Dobsonia_anderseni,wild,Antibodies,0,Field et al. unpub in Mackenzie 1999
 Hendra_virus,Dobsonia_moluccensis,wild,Antibodies,0,Halpin unpub in Mackenzie 1999
-Macropodid_herpesvirus_2,Dorcopsis_muelleri,wild,Isolation,2,"Johnson MA, Whalley JM, Littlejohns IR, Dickson J, Smith VW, Wilks CR, Reisner AH. Macropodid herpesviruses 1 and 2: two herpesviruses from Australian marsupials differentiated by restriction endonucleases, DNA composition and hybridization. Brief report. Arch Virol. 1985;85(3-4):313-9. PubMed PMID: 2992421."
+Macropodid_herpesvirus_2,Dorcopsis_muelleri,wild,Isolation,2,Johnson et al. 1985
 Hendra_virus,Eidolon_dupreanum,wild,Antibodies,0,Iehle et al. 2007
 Nipah_virus,Eidolon_dupreanum,wild,Antibodies,0,Iehle et al. 2007
 Bunyamwera_virus,Eidolon_helvum,wild,Antibodies,0,Geevarghesse & Banerjee 1990
@@ -763,7 +763,7 @@ Australian_bat_lyssavirus,Eonycteris_spelaea,wild,Antibodies,0,Lumlertdacha et a
 Issyk-Kul_virus,Eonycteris_spelaea,wild,Isolation,2,Calisher et al. 2006
 Kyasanur_Forest_disease_virus,Eonycteris_spelaea,wild,Antibodies,0,Bhat et al. 1978
 Nipah_virus,Eonycteris_spelaea,wild,Isolation,2,Calisher et al. 2006
-Phnom_Penh_bat_virus,Eonycteris_spelaea,wild,Isolation,2,"Beran & Steele  Handbook of Zoonoses: Viral, CRC Press 1994 pg. 253-254"
+Phnom_Penh_bat_virus,Eonycteris_spelaea,wild,Isolation,2,Beran & Steele 1994
 Lagos_bat_virus,Epomophorus_gambianus,wild,Antibodies,0,Dzikwi et al. 2010
 Nipah_virus,Epomophorus_gambianus,wild,Antibodies,0,Hayman et al. 2008
 Shamonda_virus,Epomophorus_labiatus,wild,Isolation,2,Addy et al. 1979
@@ -774,7 +774,7 @@ Rift_Valley_fever_virus,Epomops_franqueti,wild,Isolation,2,Calisher et al. 2006
 Shamonda_virus,Epomops_franqueti,wild,Isolation,2,Addy et al. 1978
 Zaire_ebolavirus,Epomops_franqueti,wild,PCR,2,Leroy et al. 2004
 Rabies_virus,Eptesicus_brasiliensis,wild,Isolation,2,Paez et al. 2003
-Rabies_virus,Eptesicus_diminutus,wild,Isolation,2,"[414, 422]"
+Rabies_virus,Eptesicus_diminutus,wild,Isolation,2,Sodre et al. 2010; Favoretto et al. 2002
 Rabies_virus,Eptesicus_furinalis,wild,Isolation,2,Kobayashi et al. 2005
 Eastern_equine_encephalitis_virus,Eptesicus_fuscus,wild,Antibodies,0,Main 1979
 Rabies_virus,Eptesicus_fuscus,wild,PCR,2,Blanton et al. 2008
@@ -782,13 +782,13 @@ Rio_Bravo_virus,Eptesicus_fuscus,wild,Isolation,2,Calisher et al.  2006
 St._Louis_encephalitis_virus,Eptesicus_fuscus,wild,Antibodies,0,Herbold et al. 1983
 West_Nile_virus,Eptesicus_fuscus,wild,Antibodies,0,Davis et al. 2005
 European_bat_lyssavirus_1,Eptesicus_serotinus,wild,Isolation,2,Calisher et al. 2006
-Hantaan_virus,Eptesicus_serotinus,wild,Isolation,2,Taylor et al. (EID database); Calisher et al.
+Hantaan_virus,Eptesicus_serotinus,wild,Isolation,2,Calisher et al. 2006
 Issyk-Kul_virus,Eptesicus_serotinus,wild,Isolation,2,Calisher et al. 2006; Lvov et al. 1973
 African_horse_sickness_virus,Equus_asinus,domestic,Antibodies,0,Baba et al. 1993
 Borna_disease_virus,Equus_asinus,domestic,PCR,2,Zhang et al. 2014
-Bovine_papillomavirus_1,Equus_asinus,domestic,PCR,2,"Nasir, L., E. Gault, I. M. Morgan, G. Chambers, V. Ellsmore, and M. S. Campo, 2007: Identification and functional analysis of sequence variants in the long control region and the E2 open reading frame of bovine papillomavirus type 1 isolated from equine sarcoids. Virology364, 355_361."
-Equid_herpesvirus_7,Equus_asinus,domestic,isolation,2,"Bell SA, Pusterla N, Balasuriya UB, Mapes SM, Nyberg NL, MacLachlan NJ. Isolation of a gammaherpesvirus similar to asinine herpesvirus-2 (AHV-2) from a mule and a survey of mules and donkeys for AHV-2 infection by real-time PCR. Vet Microbiol. 2008 Jul 27;130(1-2):176-83. doi: 10.1016/j.vetmic.2007.12.013. Epub 2008 Jan 3. PubMed PMID: 18280676."
-Equid_herpesvirus_8,Equus_asinus,domestic,isolation,2,"Browning GF, Ficorilli N, Studdert MJ. Asinine herpesvirus genomes: comparison with those of the equine herpesviruses. Arch Virol. 1988;101(3-4):183-90. PubMed PMID: 2845891."
+Bovine_papillomavirus_1,Equus_asinus,domestic,PCR,2,Nasir et al. 2007
+Equid_herpesvirus_7,Equus_asinus,domestic,isolation,2,Bell et al. 2008
+Equid_herpesvirus_8,Equus_asinus,domestic,isolation,2,Browning et al. 1988
 Equine_arteritis_virus,Equus_asinus,domestic,PCR,2,Stadejek et al. 2006
 Equine_encephalosis_virus,Equus_asinus,domestic,Antibodies,0,Lord et al. 2002
 Human_picobirnavirus,Equus_asinus,captive,PAGE,0,Masachessi et al. 2007
@@ -804,30 +804,30 @@ Anopheles_A_virus,Equus_caballus,domestic,Isolation,2,NA
 Aura_virus,Equus_caballus,domestic,Hemagglutination inhibition assay; Neutralization test,0,Sabattini et al. 1965
 Barmah_Forest_virus,Equus_caballus,domestic,Antibodies,0,Kay et al. 2007
 Borna_disease_virus,Equus_caballus,domestic,PCR,2,Dauphin et al. 2001
-Bovine_papillomavirus_1,Equus_caballus,domestic,PCR,2,"Nasir, L., E. Gault, I. M. Morgan, G. Chambers, V. Ellsmore, and M. S. Campo, 2007: Identification and functional analysis of sequence variants in the long control region and the E2 open reading frame of bovine papillomavirus type 1 isolated from equine sarcoids. Virology364, 355_361."
-Bunyamwera_virus,Equus_caballus,domestic,Isolation,2,"Calisher et al. 1986, Am J. Trop. Med. Hyg 35(2): 429-443.""Distribution of Bunyamwera serogroup viruses in N. America, 1956-1984"""
+Bovine_papillomavirus_1,Equus_caballus,domestic,PCR,2,Nasir et al. 2007
+Bunyamwera_virus,Equus_caballus,domestic,Isolation,2,Calisher et al. 1986
 Cabassou_virus,Equus_caballus,domestic,Isolation,2,Digoutte et al. 1976
-California_encephalitis_virus,Equus_caballus,domestic,Isolation,2,"Mahy, BJ The Dictionary of Virology,  Academic Press 2009"
-Colorado_tick_fever_virus,Equus_caballus,domestic,Antibodies,0,"Emmons, 1994"
+California_encephalitis_virus,Equus_caballus,domestic,Isolation,2,Mahy 2009
+Colorado_tick_fever_virus,Equus_caballus,domestic,Antibodies,0,Emmons 1994
 Corriparta_virus,Equus_caballus,domestic,Antibodies,0,Doherty et al. 1970
 Eastern_equine_encephalitis_virus,Equus_caballus,domestic,Isolation,2,Chenier et al. 2010
 Encephalomyocarditis_virus,Equus_caballus,domestic,Isolation,2,Tesh and Wallace 1978
-Equid_herpesvirus_1,Equus_caballus,domestic,Antibodies,0,"Martinov, SP Chenchev, I Yordanov, S Nordengrahn, A AF Martinov, SP Chenchev, I Yordanov, S Nordengrahn, A Equine herpesvirus infections in Bulgaria  BIOTECHNOLOGY & BIOTECHNOLOGICAL EQUIPMENT  2000 VL 14 IS 1 60-62"
-Equid_herpesvirus_2,Equus_caballus,domestic,Antibodies,0,"Vengust M, Baird JD, van Dreumel T, Ackerley C, Bienzle D. Equid herpesvirus 2-associated oral and esophageal ulceration in a foal. J Vet Diagn Invest. 2008 Nov;20(6):811-5. PubMed PMID: 18987236."
-Equid_herpesvirus_3,Equus_caballus,domestic,PCR,2,"Barrandeguy M, Vissani A, Lezica FP, Salamone J, Heguy A, Becerra L, Olguin Perglione C, Thiry E. Subclinical infection and periodic shedding of equid herpesvirus 3. Theriogenology. 2010 Sep 1;74(4):576-80. doi: 10.1016/j.theriogenology.2010.03.014. Epub 2010 May 23. PubMed PMID: 20494427."
+Equid_herpesvirus_1,Equus_caballus,domestic,Antibodies,0,Martinov et al. 2000
+Equid_herpesvirus_2,Equus_caballus,domestic,Antibodies,0,Vengust et al. 2008
+Equid_herpesvirus_3,Equus_caballus,domestic,PCR,2,Barrandeguy et al. 2010
 Equid_herpesvirus_4,Equus_caballus,domestic,PCR,2,Gilkerson et al. 1994
-Equid_herpesvirus_5,Equus_caballus,domestic,PCR,2,"Fortier G, Pronost S, Miszczak F, Fortier C, L_on A, Richard E, Van Erck E, Thiry E, Lekeux P. Identification of equid herpesvirus-5 in respiratory liquids: a retrospective study of 785 samples taken in 2006-2007. Vet J. 2009 Nov;182(2):346-8. doi: 10.1016/j.tvjl.2008.07.004. Epub 2008 Aug 30. PubMed PMID: 18757217."
+Equid_herpesvirus_5,Equus_caballus,domestic,PCR,2,Fortier et al. 2009
 Equid_herpesvirus_9,Equus_caballus,domestic,Isolation,2,Borchers et al. 2005
 Equine_adenovirus_A,Equus_caballus,domestic,Antibodies,0,Giles et al. 2010
 Equine_adenovirus_B,Equus_caballus,domestic,Antibodies,0,Giles et al. 2010
 Equine_arteritis_virus,Equus_caballus,domestic,PCR,2,Pronost et al. 2010
 Equine_encephalosis_virus,Equus_caballus,domestic,Antibodies,0,Paweska et al. 2004
-Equine_foamy_virus,Equus_caballus,domestic,Isolation,2,"Tobaly-Tapiero J, Bittoun P, Neves M, Guillemin MC, Lecellier CH, Puvion-Dutilleul F, Gicquel B, Zientara S, Giron ML, de Th_ H, Sa_b A. Isolation and characterization of an equine foamy virus. J Virol. 2000 May;74(9):4064-73. PubMed PMID: 10756018; PubMed Central PMCID: PMC111920."
+Equine_foamy_virus,Equus_caballus,domestic,Isolation,2,Tobaly-Tapiero et al. 2000
 Equine_infectious_anemia_virus,Equus_caballus,domestic,PCR,2,Cappelli et al. 2011
-Equine_papillomavirus_1,Equus_caballus,domestic,Isolation,2,"M. Hamada, T. Oyamada, H. Yoshikawa, T. Yoshikawa, C. Itakura Histopathological development of equine cutaneous papillomas J. Comp. Pathol., 102 (1990), pp. 393_403"
+Equine_papillomavirus_1,Equus_caballus,domestic,Isolation,2,Hamada et al. 1990
 Equine_rhinitis_A_virus,Equus_caballus,domestic,Isolation,2,Plummer 1962
-Equine_rhinitis_B_virus,Equus_caballus,captive,Isolation,2,"Dynon K, Black WD, Ficorilli N, Hartley CA, Studdert MJ. Detection of viruses in nasal swab samples from horses with acute, febrile, respiratory disease using virus isolation, polymerase chain reaction and serology. Aust Vet J. 2007 Jan-Feb;85(1-2):46-50. Erratum in: Aust Vet J. 2007 Apr;85(4):165. PubMed PMID: 17300454."
-Equine_torovirus,Equus_caballus,domestic,Isolation,2,"Mahy, BJ The Dictionary of Virology,  Academic Press 2009"
+Equine_rhinitis_B_virus,Equus_caballus,captive,Isolation,2,Dynon et al. 2007
+Equine_torovirus,Equus_caballus,domestic,Isolation,2,Mahy 2009
 Gan_Gan_virus,Equus_caballus,domestic,Antibodies,0,Vale et al. 1991
 Getah_virus,Equus_caballus,domestic,Isolation,2,Attoui et al. 2007
 Hendra_virus,Equus_caballus,domestic,Isolation,2,Tulsiani et al. 2011
@@ -836,13 +836,13 @@ Human_picobirnavirus,Equus_caballus,domestic,PCR,2,Ganesh et al. 2011
 Ilheus_virus,Equus_caballus,domestic,PRNT,1,Pauvolid-Correa et al. 2014
 Kairi_virus,Equus_caballus,domestic,Isolation,2,"Calisher et al 1988, AJTMH"
 Kokobera_virus,Equus_caballus,domestic,Antibodies,0,Prow et al. 2013
-Main_Drain_virus,Equus_caballus,domestic,Isolation,2,Emmons et al. J Am Vet Med Assoc. 1983 Sep 1;183(5):555-8.
+Main_Drain_virus,Equus_caballus,domestic,Isolation,2,Emmons et al. 1983
 Middelburg_virus,Equus_caballus,domestic,PCR,2,Attoui et al. 2007
 Murray_Valley_encephalitis_virus,Equus_caballus,domestic,Antibodies,0,Prow et al. 2013
-Peruvian_horse_sickness_virus,Equus_caballus,domestic,Isolation,2,"Attoui H, Mendez-Lopez MR, Rao S, Hurtado-Alendes A, Lizaraso-Caparo F, Jaafar FM, Samuel AR, Belhouchet M, Pritchard LI, Melville L, Weir RP, Hyatt AD, Davis SS, Lunt R, Calisher CH, Tesh RB, Fujita R, Mertens PP. Peruvian horse sickness virus and Yunnan orbivirus, isolated from vertebrates and mosquitoes in Peru and Australia. Virology. 2009 Nov 25;394(2):298-310. doi: 10.1016/j.virol.2009.08.032."
+Peruvian_horse_sickness_virus,Equus_caballus,domestic,Isolation,2,Attoui et al. 2009
 Rabies_virus,Equus_caballus,domestic,Direct Fluorescent Antibody Testing,0,Kipar et al. 2010
-Salem_virus,Equus_caballus,domestic,Isolation,2,"Renshaw RW, Glaser AL, Van Campen H, Weiland F, Dubovi EJ. Identification and phylogenetic comparison of Salem virus, a novel paramyxovirus of horses. Virology. 2000 May 10;270(2):417-29. PubMed PMID: 10793001."
-Semliki_Forest_virus,Equus_caballus,domestic,Antibodies,0,"Krauss, H Zoonoses: infectious diseases transmissible from animals to humans, ASM Press 2003"
+Salem_virus,Equus_caballus,domestic,Isolation,2,"Renshaw RW, Glaser AL, Van Campen et al. 2000
+Semliki_Forest_virus,Equus_caballus,domestic,Antibodies,0,Krauss 2003
 Sepik_virus,Equus_caballus,domestic,Antibodies,0,Olson et al. 1983
 Shuni_virus,Equus_caballus,domestic,Isolation,2,van Eeden et al. 2012
 St._Louis_encephalitis_virus,Equus_caballus,domestic,Antibodies,0,Monath et al. 1985
@@ -851,11 +851,11 @@ Trubanaman_virus,Equus_caballus,domestic,Antibodies,0,Johansen et al. 2005
 Turlock_virus,Equus_caballus,domestic,Antibodies,0,Sabattini et al. 1965
 Una_virus,Equus_caballus,domestic,Antibodies,0,Diaz et al. 2003
 Vaccinia_virus,Equus_caballus,domestic,VNT,1,Peres et al. 2013
-Venezuelan_equine_encephalitis_virus,Equus_caballus,domestic,PCR,2,"Navarro, J-C et al. 2005"
+Venezuelan_equine_encephalitis_virus,Equus_caballus,domestic,PCR,2,Navarro et al. 2005
 Vesicular_stomatitis_Alagoas_virus,Equus_caballus,domestic,Isolation,2,Federer et al. 1967; Andrade et al. 1980
 Vesicular_stomatitis_Indiana_virus,Equus_caballus,domestic,Antibodies,0,Fletcher et al. 1985
 Wesselsbron_virus,Equus_caballus,domestic,Antibodies,0,Baba et al. 1994
-West_Nile_virus,Equus_caballus,domestic,PCR,2,"Ibarra-Juarez, L. et al 2012"
+West_Nile_virus,Equus_caballus,domestic,PCR,2,Ibarra-Juarez et al 2012
 Western_equine_encephalitis_virus,Equus_caballus,domestic,Antibodies,0,Calisher et al. 1983
 Equid_herpesvirus_9,Equus_hemionus,wild,Isolation,2,Kasem et al. 2008
 African_horse_sickness_virus,Equus_quagga,wild,Antibodies,0,Machlachlan et al. 2010
@@ -864,14 +864,14 @@ Crimean-Congo_hemorrhagic_fever_virus,Equus_quagga,wild,Antibodies,0,Shepherd et
 Equid_herpesvirus_4,Equus_quagga,wild,Antibodies,0,Borchers and Frolich 1997
 Equid_herpesvirus_9,Equus_quagga,wild,Antibodies,0,Borchers et al. 2005
 Equine_arteritis_virus,Equus_quagga,wild,Antibodies,0,Borchers et al. 2005
-Equine_encephalosis_virus,Equus_quagga,wild,Antibodies,0,"Barnard et al. 1993 Prevalence of Antibodies against some equine viruses in zebra (Zebra Burchelli) in the Kruger National Park, 1991-1992, Onderstepoort Journal of Veterinary Research 60 (3: 175-179 Full Text Unavailable"
+Equine_encephalosis_virus,Equus_quagga,wild,Antibodies,0,Barnard et al. 1993
 Colorado_tick_fever_virus,Erethizon_dorsatum,wild,Isolation,2,McLean et al. 1993
 Rabies_virus,Erethizon_dorsatum,wild,Antibodies,0,Childs et al. 1997
 Foot-and-mouth_disease_virus,Erinaceus_europaeus,wild,Isolation,2,McLauchlan et al. 1948
-Cercopithecine_herpesvirus_9,Erythrocebus_patas,captive,Isolation,2,"McCarthy, K., E. Thorpe, A. C. Laursen, C. S. Heymann, and A. J. Beale. 1968. Exanthematous disease in patas monkeys caused by a herpesvirus.Lancet2:856-857."
+Cercopithecine_herpesvirus_9,Erythrocebus_patas,captive,Isolation,2,McCarthy et al. 1968
 Chikungunya_virus,Erythrocebus_patas,wild,Isolation,2,Diallo et al. 1999
-Dugbe_virus,Erythrocebus_patas,wild,Isolation,2,"Med Parazitol (Mosk). 1996 Apr-Jun;(2):40-5. ""Arbovirus circulation in the Republic of Guinea"""
-Simian_hemorrhagic_fever_virus,Erythrocebus_patas,captive,Isolation,2,"Gravell M, London WT, Leon ME, Palmer AE, Hamilton RS (1986) Differences among isolates of simian hemorrhagic fever (SHF) virus. Proceedings of the Society for Experimental Biology and Medicine 181: 112_119."
+Dugbe_virus,Erythrocebus_patas,wild,Isolation,2,Butenko 1996
+Simian_hemorrhagic_fever_virus,Erythrocebus_patas,captive,Isolation,2,Gravell et al. 1986
 Yaba_monkey_tumor_virus,Erythrocebus_patas,wild,Antibodies,0,Downie 1974
 Yellow_fever_virus,Erythrocebus_patas,wild,Isolation,2,Deubel et al. 1985
 Vesicular_exanthema_of_swine_virus,Eschrichtius_robustus,wild,Antibodies,0,Smith et al. 1978
@@ -887,77 +887,77 @@ Encephalomyocarditis_virus,Eulemur_macaco,wild,Antibodies,0,Canelli et al. 2010
 Great_Island_virus,Eumetopias_jubatus,wild,Antibodies,0,Barlough et al. 1998
 Vesicular_exanthema_of_swine_virus,Eumetopias_jubatus,wild,Isolation,2,Barlough et al. 1998
 Rabies_virus,Eumops_auripendulus,wild,Isolation,2,Kobayashi et al. 2005
-Rabies_virus,Eumops_glaucinus,wild,Isolation,2,[427]
+Rabies_virus,Eumops_glaucinus,wild,Isolation,2,Cunha et al. 2006
 Rabies_virus,Eumops_patagonicus,wild,Isolation,2,Cisterna et al. 2005
 Rabies_virus,Eumops_perotis,wild,PCR,2,Castilho et al. 2008
 Barmah_Forest_virus,Felis_catus,domestic,Antibodies,0,Kay et al. 2007
 Borna_disease_virus,Felis_catus,domestic,Antibodies,0,Kamnieh et al. 2008
-Encephalomyocarditis_virus,Felis_catus,domestic,Antibodies,0,"Smith, Zimmerman et al. 1992"
+Encephalomyocarditis_virus,Felis_catus,domestic,Antibodies,0,Smith et al. 1992
 Feline_astrovirus,Felis_catus,domestic,PCR,2,Atkins at al. 2009
 Feline_calicivirus,Felis_catus,domestic,Isolation,2,Ohe et al. 2006
 Feline_coronavirus,Felis_catus,domestic,PCR,2,Kipar et al. 2010
-Feline_foamy_virus,Felis_catus,domestic,Isolation,2,"Winkler IG, L_chelt M, Flower RL. Epidemiology of feline foamy virus and feline immunodeficiency virus infections in domestic and feral cats: a seroepidemiological study. J Clin Microbiol. 1999 Sep;37(9):2848-51. PubMed PMID: 10449463; PubMed Central PMCID: PMC85393."
+Feline_foamy_virus,Felis_catus,domestic,Isolation,2,Winkler et al. 1999
 Feline_immunodeficiency_virus,Felis_catus,domestic,PCR,2,Fujimo et al. 2008
-Feline_leukemia_virus,Felis_catus,domestic,PCR,2,"Englert T, Lutz H, Sauter-Louis C, Hartmann K. Survey of the feline leukemia virus infection status of cats in Southern Germany. J Feline Med Surg. 2012 Jun;14(6):392-8. doi: 10.1177/1098612X12440531. Epub 2012 Mar 8. PubMed PMID: 22403413."
-Feline_papillomavirus,Felis_catus,domestic,PCR,2,"Terai M, Burk RD. Felis domesticus papillomavirus, isolated from a skin lesion, is related to canine oral papillomavirus and contains a 1.3 kb non-coding region between the E2 and L2 open reading frames. J Gen Virol. 2002 Sep;83(Pt 9):2303-7. PubMed PMID: 12185286."
+Feline_leukemia_virus,Felis_catus,domestic,PCR,2,Englert et al. 2012
+Feline_papillomavirus,Felis_catus,domestic,PCR,2,Terai & Burk 2002
 Human_herpesvirus_4,Felis_catus,domestic,Antibodies,0,Milman et al. 2010
-Human_norovirus-Alphatron,Felis_catus,domestic,Antibodies,0,"Di Martino B, Marsilio F, Di Profio F, Lorusso E, Friedrich KG, Buonavoglia C, Martella V. Detection of antibodies against norovirus genogroup GIV in carnivores. Clin Vaccine Immunol. 2010 Jan;17(1):180-2. doi: 10.1128/CVI.00312-09. Epub 2009 Nov 18. PubMed PMID: 19923574; PubMed Central PMCID: PMC2812098."
+Human_norovirus-Alphatron,Felis_catus,domestic,Antibodies,0,Di Martino et al. 2010
 Mokola_virus,Felis_catus,domestic,Isolation,2,Meredith et al. 1996
 Rabies_virus,Felis_catus,domestic,PCR,2,Nadin-Davies et al. 1994
-Racoonpox_virus,Felis_catus,domestic,PCR,2,"Yager JA, Hutchison L, Barrett JW. Raccoonpox in a Canadian cat. Vet Dermatol. 2006 Dec;17(6):443-8. PubMed PMID: 17083577."
+Racoonpox_virus,Felis_catus,domestic,PCR,2,Yager et al. 2006
 Suid_herpesvirus_1,Felis_catus,domestic,"Cell culture, PCR",2,Salwa 2004
 Vaccinia_virus,Felis_catus,domestic,VNT,1,Peres et al. 2013
 Suid_herpesvirus_1,Felis_concolor,wild,Isolation,2,Glass et al. 1994
 Rabies_virus,Felis_nigripes,wild,PCR,2,van Zyl et al. 2009
 Felid_herpesvirus_1,Felis_silvestris,wild,Antibodies,0,Leutenegger et al. 1999
-Feline_calicivirus,Felis_silvestris,wild,PCR,2,"Daniels MJ, Golder MC, Jarrett O, MacDonald DW. Feline viruses in wildcats from Scotland. J Wildl Dis. 1999 Jan;35(1):121-4. PubMed PMID: 10073361."
-Feline_coronavirus,Felis_silvestris,wild,Antibodies,0,"Daniels MJ, Golder MC, Jarrett O, MacDonald DW. Feline viruses in wildcats from Scotland. J Wildl Dis. 1999 Jan;35(1):121-4. PubMed PMID: 10073361."
-Feline_foamy_virus,Felis_silvestris,wild,Isolation,2,"Daniels MJ, Golder MC, Jarrett O, MacDonald DW. Feline viruses in wildcats from Scotland. J Wildl Dis. 1999 Jan;35(1):121-4. PubMed PMID: 10073361."
-Feline_leukemia_virus,Felis_silvestris,wild,PCR,2,"Willi B, Filoni C, Catao-Dias JL, Cattori V, Meli ML, Vargas A, Martinez F, Roelke ME, Ryser-Degiorgis MP, Leutenegger CM, Lutz H, Hofmann-Lehmann R (2007) Worldwide occurrence of feline hemoplasma infections in wild felid species. J Clin Microbiol 45:1159_1166 89. Woodman Z, Williamson C (2009) HIV molecular epidemiology: transmission and adaptation to human populations. Curr Opin HIV AIDS 4:247_252"
-Feline_panleukopenia_virus,Felis_silvestris,wild,Isolation,2,"Daniels MJ, Golder MC, Jarrett O, MacDonald DW. Feline viruses in wildcats from Scotland. J Wildl Dis. 1999 Jan;35(1):121-4. PubMed PMID: 10073361."
+Feline_calicivirus,Felis_silvestris,wild,PCR,2,Daniels et al. 1999
+Feline_coronavirus,Felis_silvestris,wild,Antibodies,0,Daniels et al. 1999
+Feline_foamy_virus,Felis_silvestris,wild,Isolation,2,Daniels et al. 1999
+Feline_leukemia_virus,Felis_silvestris,wild,PCR,2,Willi et al. 2009
+Feline_panleukopenia_virus,Felis_silvestris,wild,Isolation,2,Daniels et al. 1999
 Rabies_virus,Felis_silvestris,wild,PCR,2,Lembo et al. 2008
 Kyasanur_Forest_disease_virus,Funambulus_tristriatus,wild,Antibodies,0,Webb et al. 1965
 Monkeypox_virus,Funisciurus_anerythrus,wild,Isolation,2,Hutson et al.2007
-Monkeypox_virus,Funisciurus_congicus,wild,Isolation,2,"Khodakevich L, Jezek Z, Kinzana K. 1986 Isolation of monkeypox from a wild squirrel. Lancet 1986;1:98--9."
+Monkeypox_virus,Funisciurus_congicus,wild,Isolation,2,Khodakevich et al. 1986
 Chikungunya_virus,Galago_senegalensis,wild,Antibodies,0,Brack 1987
 Junin_virus,Galictis_cuja,wild,Antibodies,0,Mills et al. 1994
 Peste-des-petits-ruminants_virus,Gazella_dorcas,wild,Isolation,2,Abu Elzein et al. 2004
 Bluetongue_virus,Gazella_gazella,wild,Isolation,2,Barzilai 1971
 Bovine_ephemeral_fever_virus,Gazella_gazella,wild,SNT,1,Aziz-Boaran et al. 2013
-Foot-and-mouth_disease_virus,Gazella_gazella,wild,Isolation,2,"http://wildlife1.wildlifeinformation.org/S/virus/picornaviridae/picornaviridae_fmdvirus/FMDVSppDefinitiveHost.html, Primary Reference Unavailable Shimsony, A 1986 Malignant Foot-And-Mouth Disease in Mountain Gazelles, Veterinary Record 119 (8 175"
+Foot-and-mouth_disease_virus,Gazella_gazella,wild,Isolation,2,Shimsony 1986
 Bluetongue_virus,Gazella_subgutturosa,wild,ELISA,0,Gur 2008
 Epizootic_hemorrhagic_disease_virus,Gazella_subgutturosa,wild,Antibodies,0,Albayrak etl al. 2010
 Rabies_virus,Genetta_genetta,wild,PCR,2,Lembo et al. 2008
 African_horse_sickness_virus,Genetta_maculata,wild,bcELISA,0,Alexander et al. 1995
-Bluetongue_virus,Genetta_maculata,wild,Antibodies,0,"Alexander, MacLachlan et al. 1994"
+Bluetongue_virus,Genetta_maculata,wild,Antibodies,0,Alexander et al. 1994
 Crimean-Congo_hemorrhagic_fever_virus,Gerbilliscus_brantsii,wild,Antibodies,0,Shepherd et al. 1987
 Arumowot_virus,Gerbilliscus_kempi,wild,isolation,2,Kemp et al. 1974
 Keuraliba_virus,Gerbilliscus_kempi,wild,Isolation,2,Kemp 1975
 Koutango_virus,Gerbilliscus_kempi,wild,Isolation,2,Butenko AM et al. 1986
 Qalyub_virus,Gerbilliscus_kempi,wild,Isolation,2,[229]
 Saboya_virus,Gerbilliscus_kempi,wild,Isolation,2,Kemp 1975; Varelas-Wesley et al. 1982
-Taterapox_virus,Gerbilliscus_kempi,wild,Isolation,2,"Lourie B, Nakano JH, Kemp GE, Setzer HW (1975) Isolation of poxvirus from an African Rodent. J Infect Dis 132: 677_81."
+Taterapox_virus,Gerbilliscus_kempi,wild,Isolation,2,Lourie et al. 1975
 Crimean-Congo_hemorrhagic_fever_virus,Gerbilliscus_leucogaster,wild,Antibodies,0,Shepherd et al. 1987
 Bunyamwera_virus,Gerbilliscus_validus,wild,Antibodies,0,Henderson et al. 1972
-Bluetongue_virus,Giraffa_camelopardalis,wild,ELISA,0,"Kimber et al, 2002"
+Bluetongue_virus,Giraffa_camelopardalis,wild,ELISA,0,Kimber et al. 2002
 Crimean-Congo_hemorrhagic_fever_virus,Giraffa_camelopardalis,wild,Antibodies,0,Shepherd et al. 1987
 Equid_herpesvirus_9,Giraffa_camelopardalis,wild,Isolation,2,Kasem et al. 2008
 Foot-and-mouth_disease_virus,Giraffa_camelopardalis,wild,Antibodies,0,Hamblin et al. 1990
 Lumpy_skin_disease_virus,Giraffa_camelopardalis,wild,Antibodies,0,Hedger et al. 1983
-Rinderpest_virus,Giraffa_camelopardalis,wild,PCR,2,Roeder PL. Rinderpest: the end of cattle plague. Prev Vet Med. 2011 Nov 1;102(2):98-106. doi: 10.1016/j.prevetmed.2011.04.004. Epub 2011 Jul 23. Review. PubMed PMID: 21783268.
+Rinderpest_virus,Giraffa_camelopardalis,wild,PCR,2,Roeder 2011
 Rabies_virus,Glaucomys_volans,wild,Antibodies,0,Childs et al. 1997
 Rift_Valley_fever_virus,Glauconycteris_argentata,wild,Isolation,2,Calisher et al. 2006
 Encephalomyocarditis_virus,Glis_glis,wild,Isolation,2,Amaddeo et al. 1995
-Cetacean_morbillivirus_virus,Globicephala_melas,wild,PCR,2,"Bellire EN, Esper_n F, S_nchez-Vizcano JM. Genetic comparison among dolphin morbillivirus in the 1990-1992 and 2006-2008 Mediterranean outbreaks. Infect Genet Evol. 2011 Dec;11(8):1913-20. doi: 10.1016/j.meegid.2011.08.018. Epub 2011 Aug 26. PubMed PMID: 21888991."
+Cetacean_morbillivirus_virus,Globicephala_melas,wild,PCR,2,Belliere et al. 2011
 Influenza_A_virus,Globicephala_melas,wild,Isolation,2,Hinshaw et al. 1986
 Venezuelan_equine_encephalitis_virus,Glossophaga_commissarisi,wild,Antibodies,0,Seymour et al. 1978
 Rabies_virus,Glossophaga_longirostris,wild,Antibodies,0,Price and Everard 1977
 Rabies_virus,Glossophaga_morenoi,wild,Antibodies,0,[384]
-Eastern_equine_encephalitis_virus,Glossophaga_soricina,wild,Antibodies,0,Ubico and McClean 1995
+Eastern_equine_encephalitis_virus,Glossophaga_soricina,wild,Antibodies,0,Ubico & McClean 1995
 Ilheus_virus,Glossophaga_soricina,wild,Antibodies,0,Price et al. 1978
 Rabies_virus,Glossophaga_soricina,wild,Antibodies,0,Sodre et al. 2007
-Rio_Bravo_virus,Glossophaga_soricina,wild,Antibodies,0,Ubico and McClean 1995
-St._Louis_encephalitis_virus,Glossophaga_soricina,wild,Antibodies,0,Ubico and McClean 1995
+Rio_Bravo_virus,Glossophaga_soricina,wild,Antibodies,0,Ubico & McClean 1995
+St._Louis_encephalitis_virus,Glossophaga_soricina,wild,Antibodies,0,Ubico & McClean 1995
 Venezuelan_equine_encephalitis_virus,Glossophaga_soricina,wild,Isolation,2,Sulkin & Allen 1974; Sudia & Newhouse 1975
 Vesicular_stomatitis_Indiana_virus,Glossophaga_soricina,wild,Antibodies,0,Tesh et al. 1969
 Vesicular_stomatitis_New_Jersey_virus,Glossophaga_soricina,wild,Antibodies,0,Tesh et al. 1969
@@ -966,30 +966,30 @@ Hepatitis_B_virus,Gorilla_beringei,wild,Antibodies,0,Sa-Nguanmoo et al. 2009
 Human_adenovirus_B,Gorilla_beringei,wild,PCR,2,Roy et al. 2009
 Human_adenovirus_C,Gorilla_beringei,wild,PCR,2,Roy et al. 2009
 Human_herpesvirus_1,Gorilla_beringei,wild,Antibodies,0,Fowler & Miller. 2003
-Human_metapneumovirus,Gorilla_beringei,wild,PCR,2,"Palacios G, Lowenstine LJ, Cranfield MR, Gilardi KVK, Spelman L, Lukasik-Braum M, et al. Human metapneumovirus infection in wild mountain gorillas, Rwanda. Emerg Infect Dis [serial on the Internet]. 2011 Apr [date cited]."
+Human_metapneumovirus,Gorilla_beringei,wild,PCR,2,Palacios et al. 2011
 Hepatitis_B_virus,Gorilla_gorilla,wild,Antibodies,0,Sa-Nguanmoo et al. 2009
 Human_adenovirus_B,Gorilla_gorilla,wild,PCR,2,Roy et al. 2009
 Human_adenovirus_C,Gorilla_gorilla,wild,PCR,2,Roy et al. 2009
-Human_adenovirus_F,Gorilla_gorilla,wild,PCR,2,"Wevers et al. 2011, J of Virology"
+Human_adenovirus_F,Gorilla_gorilla,wild,PCR,2,Wevers et al. 2011
 Human_enterovirus_A,Gorilla_gorilla,wild,PCR,2,Sadeuh-Mba et al. 2014
 Human_enterovirus_D,Gorilla_gorilla,wild,PCR,2,Harvala et al. 2011
 Human_herpesvirus_1,Gorilla_gorilla,wild,Antibodies,0,Fowler & Miller. 2003
-Pongine_herpesvirus_3,Gorilla_gorilla,captive,isolation,2,"Neubauer RH, Rabin H, Strnad BC, Nonoyama M, Nelson-Rees WA. Establishment of a lymphoblastoid cell line and isolation of an Epstein-Barr-related virus of gorilla origin. J Virol. 1979 Sep;31(3):845-8. PubMed PMID: 92573; PubMed Central PMCID: PMC353513."
+Pongine_herpesvirus_3,Gorilla_gorilla,captive,isolation,2,Neubauer et al. 1979
 Simian_foamy_virus,Gorilla_gorilla,wild,PCR,2,Hussain et al. 2003
 Zaire_ebolavirus,Gorilla_gorilla,wild,PCR,2,Leroy et al. 2004
 Andes_virus,Graomys_griseoflavus,wild,Antibodies,0,Chu et al. 2003
 Phocine_distemper_virus,Halichoerus_grypus,wild,Antibodies,0,Duignan et al. 1995
 Venezuelan_equine_encephalitis_virus,Handleyomys_alfaroi,wild,Antibodies,0,Estrada-Franco et al. 2004
-Pichinde_virus,Handleyomys_fuscatus,wild,Isolation,2,[218]
+Pichinde_virus,Handleyomys_fuscatus,wild,Isolation,2,Trapido & Sanmartin 1971
 Monkeypox_virus,Heliosciurus_rufobrachium,wild,Antibodies,0,Khodakevich et al 1987
 Rabies_virus,Herpestes_sanguineus,wild,PCR,2,van Zyl et al. 2010
-Bimiti_virus,Heteromys_anomalus,wild,Isolation,2,"Shope, R. E., J. P. Woodall, and A. P. A. Travassos da Rosa. 1988. The epidemiology of disease caused by viruses in group C and Guam_ (Bunyaviridae), p. 37-52. In T. P. Monath (ed.), The arboviruses: epidemiology and ecology. CRC Press, Inc., Boca Raton, Fla."
-Caraparu_virus,Heteromys_anomalus,wild,Isolation,2,"Shope, R. E., J. P. Woodall, and A. P. A. Travassos da Rosa. 1988. The epidemiology of disease caused by viruses in group C and Guam_ (Bunyaviridae), p. 37-52. In T. P. Monath (ed.), The arboviruses: epidemiology and ecology. CRC Press, Inc., Boca Raton, Fla."
-Guama_virus,Heteromys_anomalus,wild,Isolation,2,"Shope, R. E., J. P. Woodall, and A. P. A. Travassos da Rosa. 1988. The epidemiology of disease caused by viruses in group C and Guam_ (Bunyaviridae), p. 37-52. In T. P. Monath (ed.), The arboviruses: epidemiology and ecology. CRC Press, Inc., Boca Raton, Fla."
+Bimiti_virus,Heteromys_anomalus,wild,Isolation,2,Shope et al. 1988
+Caraparu_virus,Heteromys_anomalus,wild,Isolation,2,Shope et al. 1988
+Guama_virus,Heteromys_anomalus,wild,Isolation,2,Shope et al. 1988
 Venezuelan_equine_encephalitis_virus,Heteromys_anomalus,wild,Isolation,2,Downs et al. 1963
 Rift_Valley_fever_virus,Hipposideros_abae,wild,Isolation,2,Calisher et al. 2006
-Japanese_encephalitis_virus,Hipposideros_armiger,wild,Isolation,2,Taylor et al. (EID database); Calisher et al.
-Nipah_virus,Hipposideros_armiger,wild,Antibodies,0,Li et al. 2008. EID
+Japanese_encephalitis_virus,Hipposideros_armiger,wild,Isolation,2,Calisher et al. 2006
+Nipah_virus,Hipposideros_armiger,wild,Antibodies,0,Li et al. 2008
 Japanese_encephalitis_virus,Hipposideros_bicolor,wild,Antibodies,0,Cui et al. 2008
 Chikungunya_virus,Hipposideros_caffer,wild,Isolation,2,Calisher et al. 2006
 Rift_Valley_fever_virus,Hipposideros_caffer,wild,Isolation,2,Konstantinov et al. 2006
@@ -998,12 +998,12 @@ Issyk-Kul_virus,Hipposideros_diadema,wild,Isolation,2,Calisher et al. 2006
 Kyasanur_Forest_disease_virus,Hipposideros_lankadiva,wild,Antibodies,0,Bhat et al. 1978
 Nipah_virus,Hipposideros_larvatus,wild,PCR,2,Wacharapluesadee et al. 2005
 Japanese_encephalitis_virus,Hipposideros_pomona,wild,Antibodies,0,Cui et al. 2008
-Nipah_virus,Hipposideros_pomona,wild,Antibodies,0,Li et al. 2008. EID
+Nipah_virus,Hipposideros_pomona,wild,Antibodies,0,Li et al. 2008
 Japanese_encephalitis_virus,Hipposideros_speoris,wild,Antibodies,0,Cui et al. 2008
 Kyasanur_Forest_disease_virus,Hipposideros_speoris,wild,Antibodies,0,Bhat et al. 1978
 Bovine_viral_diarrhea_virus_1,Hippotragus_equinus,wild,SNT,1,Depner et al. 1991
 Foot-and-mouth_disease_virus,Hippotragus_equinus,wild,Antibodies,0,"Condy et al., 1969; From Weaver and Karesh In Press"
-Hippotragine_herpesvirus_1,Hippotragus_equinus,zoo,Antibodies,0,"Reid HW, Bridgen A. Recovery of a herpesvirus from a roan antelope (Hippotragus equinus). Vet Microbiol. 1991 Aug 15;28(3):269-78. PubMed PMID: 1897131."
+Hippotragine_herpesvirus_1,Hippotragus_equinus,zoo,Antibodies,0,Reid & Bridge 1991
 Bluetongue_virus,Hippotragus_niger,wild,Antibodies,0,Anderson et al. 1998
 Bovine_viral_diarrhea_virus_1,Hippotragus_niger,wild,SNT,1,Hamblin and Hedger 1979
 Crimean-Congo_hemorrhagic_fever_virus,Hippotragus_niger,wild,Antibodies,0,Shepherd et al. 1987
@@ -1011,12 +1011,12 @@ Foot-and-mouth_disease_virus,Hippotragus_niger,wild,Antibodies,0,Hamblin et al. 
 Rift_Valley_fever_virus,Hippotragus_niger,wild,Antibodies,0,Anderson & Rowe 1998
 Rabies_virus,Histiotus_montanus,wild,Isolation,2,Cisterna et al. 2005
 Rabies_virus,Histiotus_velatus,wild,Antibodies,0,Scheffer et al. 2007
-Rio_Mamore_virus,Holochilus_sciureus,wild,PCR,2,"[24, 247]"
+Rio_Mamore_virus,Holochilus_sciureus,wild,PCR,2,Ramboni et al. 2009; Rosa et al. 2005
 Adeno-associated_virus-1,Homo_sapiens,human,Antibodies,0,Xiao et al. 1999
 Adeno-associated_virus-2,Homo_sapiens,human,Isolation,2,Gao et al. 2003
-Adeno-associated_virus-5,Homo_sapiens,human,Isolation,2,"Bantel-Schaal U., zur Hausen H. (1984) Characterization of the DNA of a defective human parvovirus isolated from a genital site. Virology 134:52_63."
-African_green_monkey_polyomavirus,Homo_sapiens,human,Antibodies,0,"Takemoto KK, Segawa K. A new monkey lymphotropic papovavirus: characterization of the virus and evidence of a related virus in humans. Prog Clin Biol Res. 1983;105:87-96. PubMed PMID: 6304774."
-Aichi_virus,Homo_sapiens,human,Isolation,2,Yamashita et al. 1991 or 1995?
+Adeno-associated_virus-5,Homo_sapiens,human,Isolation,2,Bantel-Schaal & zur Hausen 1984
+African_green_monkey_polyomavirus,Homo_sapiens,human,Antibodies,0,Takemoto & Segawa 1983
+Aichi_virus,Homo_sapiens,human,Isolation,2,Yamashita et al. 1995
 Aleutian_mink_disease_virus,Homo_sapiens,human,Antibodies,0,Jepsen et al. 2009
 Andes_virus,Homo_sapiens,human,PCR,2,Medina et al. 2009
 Anopheles_A_virus,Homo_sapiens,human,Isolation,2,NA
@@ -1029,7 +1029,7 @@ Banzi_virus,Homo_sapiens,human,Isolation,2,Smithburn et al. 1959
 Barmah_Forest_virus,Homo_sapiens,human,PCR,2,Attoui et al. 2007
 Bayou_virus,Homo_sapiens,human,PCR,2,Morzunov et al. 1995
 Bebaru_virus,Homo_sapiens,human,Isolation,2,Attoui et al. 2007
-Bhanja_virus,Homo_sapiens,human,Antibodies,0,Calisher et al. database
+Bhanja_virus,Homo_sapiens,human,Antibodies,0,Calisher et al. 2006
 BK_polyomavirus,Homo_sapiens,human,Isolation,2,Gardner et al. 1971
 Black_Creek_Canal_virus,Homo_sapiens,human,PCR,2,Ravkov et al. 1995
 Borna_disease_virus,Homo_sapiens,human,Antibodies,0,Kinnunen et al. 2007
@@ -1038,50 +1038,50 @@ Bovine_leukemia_virus,Homo_sapiens,human,Antibodies,0,Buehring et al. 2003
 Bovine_papular_stomatitis_virus,Homo_sapiens,human,Isolation,2,McEvoy 1972
 Bunyamwera_virus,Homo_sapiens,human,Isolation,2,Tauro et al. 2009
 Bwamba_virus,Homo_sapiens,human,Isolation,2,Bowen et al. 1973
-Cacipacore_virus,Homo_sapiens,human,Isolation,2,"Batista et al. 2011, Rev Soc Bras Med Trop. 2011 Jul-Aug;44(4):528-30. ""Notification of the first isolation of Cacipacore virus in a human in the State of Rond_nia, Brazil."""
+Cacipacore_virus,Homo_sapiens,human,Isolation,2,Batista et al. 2011
 California_encephalitis_virus,Homo_sapiens,human,Isolation,2,Taylor et al. 1985
 Camelpox_virus,Homo_sapiens,human,Antibodies,0,Bera et al. 2011
 Canine_distemper_virus,Homo_sapiens,human,PCR,2,Mee et al. 1998
 Caraparu_virus,Homo_sapiens,human,Isolation,2,de Brito Magalhaes et al. 2007
-Catu_virus,Homo_sapiens,human,Isolation,2,"Zuckerman et al. 2009 ""Principles and practice of clinical virology."""
+Catu_virus,Homo_sapiens,human,Isolation,2,Zuckerman et al. 2009
 Cercopithecine_herpesvirus_1,Homo_sapiens,human,Isolation,2,Huff et al. 2003
 Chagres_virus,Homo_sapiens,human,Isolation,2,Peralta et al. 1965
 Chandipura_virus,Homo_sapiens,human,Isolation,2,Bhatt and Rodriguez 1967
 Candiru_virus,Homo_sapiens,human,Isolation,2,da Rosa 1983
 Changuinola_virus,Homo_sapiens,human,Isolation,2,da Rosa et al. 1984
-Chikungunya_virus,Homo_sapiens,human,Isolation,2,Calisher et al. 1994; Bowen et al.
+Chikungunya_virus,Homo_sapiens,human,Isolation,2,Calisher et al. 1994
 Colorado_tick_fever_virus,Homo_sapiens,human,PCR,2,Lambert et al. 2007
 Corriparta_virus,Homo_sapiens,human,Antibodies,0,Doherty et al. 1970
 Cote_d'Ivoire_ebolavirus,Homo_sapiens,human,Isolation,2,Formenty et al. 1999
 Cowpox_virus,Homo_sapiens,human,Isolation,2,Davies et al. 1938
-Crimean-Congo_hemorrhagic_fever_virus,Homo_sapiens,human,PCR,2,"Mourya DT, Yadav PD, Shete AM, Gurav YK, Raut CG, et al. (2012) Detection, Isolation and Confirmation of Crimean-Congo Hemorrhagic Fever Virus in Human, Ticks and Animals in Ahmadabad, India, 2010_2011. PLoS Negl Trop Dis 6(5): e1653. doi:10.1371/journal.pntd.0001653"
+Crimean-Congo_hemorrhagic_fever_virus,Homo_sapiens,human,PCR,2,Mourya et al. 2012
 Dengue_virus,Homo_sapiens,human,Isolation,2,CDC Arbocat Report 1985
 Dera_Ghazi_Khan_virus,Homo_sapiens,human,Antibodies,0,Darwish et al. 1983
 Dhori_virus,Homo_sapiens,human,Antibodies,0,Darwish et al. 1983
 Dobrava-Belgrade_virus,Homo_sapiens,human,Isolation,2,Gligic et al. 1992
 Dugbe_virus,Homo_sapiens,human,Antibodies,0,Burt et al. 1996
-Duvenhage_virus,Homo_sapiens,human,Isolation,2,"Paweska et al. 2006, EID"
+Duvenhage_virus,Homo_sapiens,human,Isolation,2,Paweska et al. 2006
 Eastern_equine_encephalitis_virus,Homo_sapiens,human,Antibodies,0,Harvala et al. 2009
 Encephalomyocarditis_virus,Homo_sapiens,human,PCR,2,Oberste et al. 2009
-European_bat_lyssavirus_1,Homo_sapiens,human,PCR,2,"Fooks AR, Brookes SM, Johnson N, McElhinney LM, Hutson AM. European bat lyssa viruses: an emerging zoonosis. Epidemiol Infect. 2003;131(3):1029-39."
-European_bat_lyssavirus_2,Homo_sapiens,human,PCR,2,"Fooks AR, Brookes SM, Johnson N, McElhinney LM, Hutson AM. European bat lyssa viruses: an emerging zoonosis. Epidemiol Infect. 2003;131(3):1029-39."
+European_bat_lyssavirus_1,Homo_sapiens,human,PCR,2,Fooks et al. 2003
+European_bat_lyssavirus_2,Homo_sapiens,human,PCR,2,Fooks et al. 2003
 Everglades_virus,Homo_sapiens,human,Isolation,2,Calisher et al. 1980
 Flexal_virus,Homo_sapiens,human,Antibodies,0,CDC ArboCat
 Foot-and-mouth_disease_virus,Homo_sapiens,human,Isolation,2,Ghoneim et al. 2010
 Gan_Gan_virus,Homo_sapiens,human,Antibodies,0,Vale et al. 1986
 GB_virus_C,Homo_sapiens,human,PCR,2,Kao et al. 1999
 Getah_virus,Homo_sapiens,human,Isolation,2,Attoui et al. 2007
-Gibbon_ape_leukemia_virus,Homo_sapiens,human,Antibodies,0,"Aoki T, Walling MJ, Bushar GS, Liu M, Hsu KC. Natural antibodies in sera from healthy humans to antigens on surfaces of type C RNA viruses and cells from primates. Proc Natl Acad Sci U S A. 1976 Jul;73(7):2491-5. PubMed PMID: 181753; PubMed Central PMCID: PMC430620."
+Gibbon_ape_leukemia_virus,Homo_sapiens,human,Antibodies,0,Aoki et al. 1976
 Great_Island_virus,Homo_sapiens,human,Isolation,2,Belhouchet et al. 2010
-Guama_virus,Homo_sapiens,human,Isolation,2,"Zuckerman et al. 2009 ""Principles and practice of clinical virology."""
-Guanarito_virus,Homo_sapiens,human,Isolation,2,"Taylor et al. (EID database); Abraham J, Kwong JA, Albari_o CG, Lu JG, Radoshitzky SR, et al. 2009 Host-Species Transferrin Receptor 1 Orthologs Are Cellular Receptors for Nonpathogenic New World Clade B Arenaviruses. PLoS Pathog 5(4: e1000358. doi:10.1371/journal.ppat.1000358"
+Guama_virus,Homo_sapiens,human,Isolation,2,Zuckerman et al. 2009
+Guanarito_virus,Homo_sapiens,human,Isolation,2,Abraham et al. 2009
 Guaroa_virus,Homo_sapiens,human,Isolation,2,Groot et al. 1959
 Hantaan_virus,Homo_sapiens,human,Antibodies,0,Grygorczuk et al. 2008
 Hendra_virus,Homo_sapiens,human,Isolation,2,Tulsiani et al. 2011
 Hepatitis_A_virus,Homo_sapiens,human,Isolation,2,Braga et al. 2009
 Hepatitis_B_virus,Homo_sapiens,human,PCR,2,Ghosh et al. 2010
 Hepatitis_C_virus,Homo_sapiens,human,PCR,2,Abreha et al. 2011
-Hepatitis_delta_virus,Homo_sapiens,human,PCR,2,"Tedder et al. 2012, Clin Infect Dis. 2012 Dec 7. [Epub ahead of print], The Diversity and Management of Chronic Hepatitis B Virus Infections in the UK - A Wake up Call."
+Hepatitis_delta_virus,Homo_sapiens,human,PCR,2,Tedder et al. 2012
 Hepatitis_E_virus,Homo_sapiens,human,Antibodies,0,Al-Nasrawi et al. 2010
 Human_adenovirus_A,Homo_sapiens,human,PCR,2,Roy et al. 2009
 Human_adenovirus_B,Homo_sapiens,human,PCR,2,Roy et al. 2009
@@ -1090,14 +1090,14 @@ Human_adenovirus_D,Homo_sapiens,human,PCR,2,Roy et al. 2009
 Human_adenovirus_E,Homo_sapiens,human,PCR,2,Roy et al. 2009
 Human_adenovirus_F,Homo_sapiens,human,PCR,2,Roy et al. 2009
 Human_astrovirus,Homo_sapiens,human,PCR,2,Dai et al. 2010
-Human_coronavirus_229E,Homo_sapiens,human,Isolation,2,Hamre and Procknow 1966
+Human_coronavirus_229E,Homo_sapiens,human,Isolation,2,Hamre & Procknow 1966
 Human_coronavirus_OC43,Homo_sapiens,human,PCR,2,Risku et al. 2010
-Human_enterovirus_A,Homo_sapiens,human,PCR,2,"Oberste MS, 2004 JGV"
+Human_enterovirus_A,Homo_sapiens,human,PCR,2,Oberste 2004
 Human_enterovirus_B,Homo_sapiens,human,PCR,2,Gomes et al. 2009
-Human_enterovirus_C,Homo_sapiens,human,Isolation,2,Dalldorf and Sickles 1948
+Human_enterovirus_C,Homo_sapiens,human,Isolation,2,Dalldorf & Sickles 1948
 Human_enterovirus_D,Homo_sapiens,human,Isolation,2,Schieble et al. 1967
 Human_herpesvirus_1,Homo_sapiens,human,PCR,2,Mackay et al. 2003
-Human_herpesvirus_2,Homo_sapiens,human,Isolation,2,Nahmias and Dowdle 1968
+Human_herpesvirus_2,Homo_sapiens,human,Isolation,2,Nahmias & Dowdle 1968
 Human_herpesvirus_3,Homo_sapiens,human,PCR,2,Mackay et al. 2003
 Human_herpesvirus_4,Homo_sapiens,human,PCR,2,Mackay et al. 2003
 Human_herpesvirus_5,Homo_sapiens,human,PCR,2,Mackay et al. 2003
@@ -1107,7 +1107,7 @@ Human_herpesvirus_8,Homo_sapiens,human,Antibodies,0,Butler et al. 1996
 Human_immunodeficiency_virus_1,Homo_sapiens,human,Isolation,2,Dwyer et al. 2010
 Human_immunodeficiency_virus_2,Homo_sapiens,human,Isolation,2,Dwyer et al. 2010
 Human_metapneumovirus,Homo_sapiens,human,Isolation,2,van de Hoogen et al. 2001
-Human_norovirus-Alphatron,Homo_sapiens,human,Isolation,2,"Iritani, N., Y. Seto, H. Kubo, K. Haruki, M. Ayata, and H. Ogura. 2002. Prevalence of ""Norwalk-like virus"" infections in outbreaks of acute nonbacterial gastroenteritis observed during the 1999-2000 season in Osaka City, Japan. Journal of Medical Virology 66:131-138."
+Human_norovirus-Alphatron,Homo_sapiens,human,Isolation,2,Iritani et al. 2002
 Human_papillomavirus_1,Homo_sapiens,human,Isolation,2,Gissman et al. 1977
 Human_papillomavirus_10,Homo_sapiens,human,Isolation,2,Kremsdorf et al. 1983
 Human_papillomavirus_16,Homo_sapiens,human,Isolation,2,Durst et al. 1983
@@ -1142,11 +1142,11 @@ Human_parainfluenza_virus_4,Homo_sapiens,human,Isolation,2,Johnson et al. 1960
 Human_parechovirus,Homo_sapiens,human,Isolation,2,Ljubin-Sternak et al. 2011
 Human_parvovirus_B19,Homo_sapiens,human,Antibodies,0,Opaleye et al. 2011
 Human_picobirnavirus,Homo_sapiens,human,PCR,2,Bhattacharya et al. 2006
-Human_polyomavirus,Homo_sapiens,human,PCR,2,"Bogdanovic G, Ljungman P, Wang F, Dalianis T. Presence of human polyomavirus DNA in the peripheral circulation of bone marrow transplant patients with and without hemorrhagic cystitis. Bone Marrow Transplant. 1996 Apr;17(4):573-6. PubMed PMID: 8722357."
-Human_respiratory_syncytial_virus,Homo_sapiens,human,Isolation,2,Lu et al. 2011; many others
-Human_rhinovirus_A,Homo_sapiens,human,PCR,2,Kim SR et al. 2009
-Human_rhinovirus_B,Homo_sapiens,human,PCR,2,"Savolainen C, Laine P, Mulders MN, Hovi T. Sequence analysis of human rhinoviruses in the RNA-dependent RNA polymerase coding region reveals large within-species variation. J Gen Virol. 2004 Aug;85(Pt 8):2271-7. PubMed PMID: 15269368."
-Human_torovirus,Homo_sapiens,human,PCR,2,Duckmanton L. et al. 1997
+Human_polyomavirus,Homo_sapiens,human,PCR,2,Bogdanovic et al. 1996
+Human_respiratory_syncytial_virus,Homo_sapiens,human,Isolation,2,Lu et al. 2011
+Human_rhinovirus_A,Homo_sapiens,human,PCR,2,Kim et al. 2009
+Human_rhinovirus_B,Homo_sapiens,human,PCR,2,Savolainen et al. 2004
+Human_torovirus,Homo_sapiens,human,PCR,2,Duckmanton et al. 1997
 Ilheus_virus,Homo_sapiens,human,Isolation,2,Causey et al. 1961
 Influenza_A_virus,Homo_sapiens,human,PCR,2,Zhang et al. 2011
 Influenza_B_virus,Homo_sapiens,human,PCR,2,Do et al. 2011
@@ -1166,9 +1166,9 @@ Lake_Victoria_marburgvirus,Homo_sapiens,human,Isolation,2,Kuzmin et al. 2010
 Lassa_virus,Homo_sapiens,human,PCR,2,Panning et al. 2010
 Lebombo_virus,Homo_sapiens,human,Isolation,2,Moore et al. 1975
 Ljungan_virus,Homo_sapiens,human,PCR,2,Niklasson et al. 2009
-Louping_ill_virus,Homo_sapiens,human,Isolation,2,Leonova GN et al. 2015
+Louping_ill_virus,Homo_sapiens,human,Isolation,2,Leonova et al. 2015
 Lymphocytic_choriomeningitis_virus,Homo_sapiens,human,Isolation,2,Gonzalez et al. 2007
-Machupo_virus,Homo_sapiens,human,Antibodies,0,Huaman A et al 2010 ASTMH
+Machupo_virus,Homo_sapiens,human,Antibodies,0,Huaman A et al 2010
 Marituba_virus,Homo_sapiens,human,Isolation,2,Causey et al. 1961
 Mayaro_virus,Homo_sapiens,human,Isolation,2,Anderson CR et al 1957
 Measles_virus,Homo_sapiens,human,PCR,2,Ito et al. 2010
@@ -1179,18 +1179,18 @@ Molluscum_contagiosum_virus,Homo_sapiens,human,PCR,2,Trama et al. 2007
 Monkeypox_virus,Homo_sapiens,human,Isolation,2,Hutson et al.2007
 Mosso_das_Pedras_virus_78V3531,Homo_sapiens,human,Isolation,2,Attoui et al. 2007
 Mumps_virus,Homo_sapiens,human,Isolation,2,Krajden et al. 2011
-Murine_pneumonia_virus,Homo_sapiens,human,Antibodies,0,"Pringle CR, Eglin RP. Murine pneumonia virus: seroepidemiological evidence of widespread human infection. J Gen Virol. 1986 Jun;67 ( Pt 6):975-82. PubMed PMID: 3711866."
+Murine_pneumonia_virus,Homo_sapiens,human,Antibodies,0,Pringle & Eglin 1986
 Murray_Valley_encephalitis_virus,Homo_sapiens,human,Antibodies,0,Broom et al. 2000
 Ndumu_virus,Homo_sapiens,human,NT,1,Kokernot et al. 1961
 New_York_virus,Homo_sapiens,human,PCR,2,Hjelle et al. 1995
-Newcastle_disease_virus,Homo_sapiens,human,Isolation,2,Ingalls and Mahoney. 1949
+Newcastle_disease_virus,Homo_sapiens,human,Isolation,2,Ingalls & Mahoney 1949
 Nipah_virus,Homo_sapiens,human,Isolation,2,Calisher et al. 2006
-Norwalk_virus,Homo_sapiens,human,PCR,2,"Khan et al. 1994, JCM"
+Norwalk_virus,Homo_sapiens,human,PCR,2,Khan et al. 1994
 Ntaya_virus,Homo_sapiens,human,Antibodies,0,Woodruff et al. 1978
 Nyando_virus,Homo_sapiens,human,Isolation,2,Digoutte et al. 1972
 O'nyong-nyong_virus,Homo_sapiens,human,Isolation,2,Kiwanuka et al. 1999
 Okola_virus,Homo_sapiens,human,Antibodies,0,Brottes et al. 1969
-Omsk_hemorrhagic_fever_virus,Homo_sapiens,human,Isolation,2,Dobler. 2010
+Omsk_hemorrhagic_fever_virus,Homo_sapiens,human,Isolation,2,Dobler 2010
 Orf_virus,Homo_sapiens,human,Isolation,2,Peterkin 1937
 Oriboca_virus,Homo_sapiens,human,Antibodies,0,Causey et al. 1961
 Oropouche_virus,Homo_sapiens,human,Isolation,2,Nunes et al. 2005
@@ -1199,10 +1199,10 @@ Palyam_virus,Homo_sapiens,human,PCR,2,Aradaib et al. 2009
 Parainfluenza_virus_5,Homo_sapiens,human,Isolation,2,http://www.ncf-net.org/library/PIV5HostChallenge-0606.htm
 Patois_virus,Homo_sapiens,human,Antibodies,0,Scherer et al. 1972
 Pichinde_virus,Homo_sapiens,human,Antibodies,0,Buchmeier et al. 1974
-Piry_virus,Homo_sapiens,human,Isolation,2,Bergold and Munz 1970
+Piry_virus,Homo_sapiens,human,Isolation,2,Bergold & Munz 1970
 Pixuna_virus,Homo_sapiens,human,Antibodies,0,Pisano et al. 2013
 Poliovirus,Homo_sapiens,human,Isolation,2,Romanenkova et al. 2011
-Powassan_virus,Homo_sapiens,human,Isolation,2,McLean and Donohue 1959
+Powassan_virus,Homo_sapiens,human,Isolation,2,McLean & Donohue 1959
 Primate_T-lymphotropic_virus_1,Homo_sapiens,human,Antibodies,0,Wolfe et al. 2005
 Primate_T-lymphotropic_virus_2,Homo_sapiens,human,Isolation,2,Kalyanaraman et al. 1982
 Primate_T-lymphotropic_virus_3,Homo_sapiens,human,Isolation,2,Wolfe et al. 2005
@@ -1211,10 +1211,10 @@ Punta_Toro_virus,Homo_sapiens,human,Isolation,2,Perrone et al. 2007
 Puumala_virus,Homo_sapiens,human,Isolation,2,Juto et al. 1997
 Quaranfil_virus,Homo_sapiens,human,Isolation,2,Taylor et al. 1966
 Rabies_virus,Homo_sapiens,human,PCR,2,Carnieli et al. 2009
-Reston_ebolavirus,Homo_sapiens,human,Antibodies,0,Miranda and Miranda 2011
+Reston_ebolavirus,Homo_sapiens,human,Antibodies,0,Miranda & Miranda 2011
 Rift_Valley_fever_virus,Homo_sapiens,human,PCR,2,Andriamandimby et al. 2010
 Rio_Bravo_virus,Homo_sapiens,human,Antibodies,0,Price 1978
-Rio_Mamore_virus,Homo_sapiens,human,Isolation,2,"deOliveira et al. 2014, EID"
+Rio_Mamore_virus,Homo_sapiens,human,Isolation,2,de Oliveira et al. 2014
 Rio_Negro_virus,Homo_sapiens,human,neutralization test,1,Pisano et al. 2010
 Ross_River_virus,Homo_sapiens,human,PCR,2,Sellner et al. 1995
 Rotavirus_A,Homo_sapiens,human,PCR,2,Rigotto et al. 2010
@@ -1226,14 +1226,14 @@ Sandfly_fever_Naples_virus,Homo_sapiens,human,Isolation,2,Nicoletti et al. 1996
 Sandfly_fever_Sicilian_virus,Homo_sapiens,human,Isolation,2,Nicoletti et al. 1996
 Sapporo_virus,Homo_sapiens,human,PCR,2,Chiba et al. 2001
 Sealpox_virus,Homo_sapiens,human,Isolation,2,Dierauf et al. 2001
-Semliki_Forest_virus,Homo_sapiens,human,Antibodies,0,http://www.uniprot.org/uniprot/P03305; Bowen et al.
+Semliki_Forest_virus,Homo_sapiens,human,Antibodies,0,http://www.uniprot.org/uniprot/P03305
 Seoul_virus,Homo_sapiens,human,Antibodies,0,Weissenbacher et al. 1996
 Severe_acute_respiratory_syndrome-related_coronavirus,Homo_sapiens,human,Antibodies,0,Tu et al. 2004
 Shamonda_virus,Homo_sapiens,human,Isolation,2,Yanase et al. 2005
 Shuni_virus,Homo_sapiens,human,Isolation,2,Moore et al. 1975
 Simian_foamy_virus,Homo_sapiens,human,PCR,2,Wolfe et al. 2004
-Simian_parvovirus,Homo_sapiens,human,Antibodies,0,"Brown KE, Liu Z, Gallinella G, Wong S, Mills IP, O'Sullivan MG. Simian parvovirus infection: a potential zoonosis. J Infect Dis. 2004 Dec 1;190(11):1900-7. Epub 2004 Nov 3. PubMed PMID: 15529252."
-Simian_virus_10,Homo_sapiens,human,Antibodies,0,"Mahy, BJ The Dictionary of Virology,  Academic Press 2009"
+Simian_parvovirus,Homo_sapiens,human,Antibodies,0,Brown et al. 2004
+Simian_virus_10,Homo_sapiens,human,Antibodies,0,Mahy 2009
 Simian_virus_40,Homo_sapiens,human,PCR,2,Campello et al. 2010
 Sin_Nombre_virus,Homo_sapiens,human,PCR,2,Schwarz et al. 2004
 Sindbis_virus,Homo_sapiens,human,PCR,2,Attoui et al. 2007
@@ -1246,7 +1246,7 @@ Tamdy_virus,Homo_sapiens,human,Isolation,2,Lvov et al. 1984
 Tanapox_virus,Homo_sapiens,human,Isolation,2,Downie et al. 1971
 Tataguine_virus,Homo_sapiens,human,Isolation,2,Fagbami et al. 1981
 Tembusu_virus,Homo_sapiens,human,Antibodies,0,Wallace et al. 1977
-Thailand_virus,Homo_sapiens,human,Antibodies,0,"Gamage CD, Yasuda SP, Nishio S, Kularatne SA, Weerakoon K, Rajapakse J, Nwafor-Okoli C, Lee RB, Obayashi Y, Yoshimatsu K, Arikawa J, Tamashiro H. Serological evidence of Thailand virus-related hantavirus infection among suspected leptospirosis patients in Kandy, Sri Lanka. Jpn J Infect Dis. 2011;64(1):72-5. PubMed PMID: 21266762."
+Thailand_virus,Homo_sapiens,human,Antibodies,0,Gamage et al. 2011
 Thiafora_virus,Homo_sapiens,human,Antibodies,0,Woessner et al. 2000
 Thogoto_virus,Homo_sapiens,human,Isolation,2,Jones et al. 1987
 Tick-borne_encephalitis_virus,Homo_sapiens,human,Antibodies,0,Grzeszczuk et al. 2006
@@ -1261,38 +1261,38 @@ Uukuniemi_virus,Homo_sapiens,human,Antibodies,0,Traavik et al. 1977
 Vaccinia_virus,Homo_sapiens,human,PCR,2,Silve- Fernandes et al. 2009
 Variola_virus,Homo_sapiens,human,Isolation,2,Dumbell et al. 1999
 Venezuelan_equine_encephalitis_virus,Homo_sapiens,human,Isolation,2,Mangiafico et al. 2002
-Vesicular_stomatitis_Alagoas_virus,Homo_sapiens,human,Antibodies,0,"Tesh, RB et al 1987 AJTMH"
-Vesicular_stomatitis_Indiana_virus,Homo_sapiens,human,Antibodies,0,Fields and Hawkins 1967 NEJM
+Vesicular_stomatitis_Alagoas_virus,Homo_sapiens,human,Antibodies,0,Tesh et al. 1987
+Vesicular_stomatitis_Indiana_virus,Homo_sapiens,human,Antibodies,0,Fields & Hawkins 1967
 Vesicular_stomatitis_New_Jersey_virus,Homo_sapiens,human,PCR,1,Rodriguez et al. 2000
 Wanowrie_virus,Homo_sapiens,human,Isolation,2,Pavri et al. 1976
 Wesselsbron_virus,Homo_sapiens,human,Isolation,2,Smithburn et al. 1957
 West_Nile_virus,Homo_sapiens,human,PCR,2,Angelini et al. 2010
 Western_equine_encephalitis_virus,Homo_sapiens,human,Isolation,2,Calisher et al. 1994
 Whitewater_Arroyo_virus,Homo_sapiens,human,PCR,2,CDC Report
-Woolly_monkey_sarcoma_virus,Homo_sapiens,human,Antibodies,0,"Aoki T, Walling MJ, Bushar GS, Liu M, Hsu KC. Natural antibodies in sera from healthy humans to antigens on surfaces of type C RNA viruses and cells from primates. Proc Natl Acad Sci U S A. 1976 Jul;73(7):2491-5. PubMed PMID: 181753; PubMed Central PMCID: PMC430620."
-Wyeomyia_virus,Homo_sapiens,human,Isolation,2,Sirhongse and Johnson 1965
-Yaba_monkey_tumor_virus,Homo_sapiens,human,Antibodies,0,Grace and Mirand 1965
+Woolly_monkey_sarcoma_virus,Homo_sapiens,human,Antibodies,0,Aoki et al. 1976
+Wyeomyia_virus,Homo_sapiens,human,Isolation,2,Sirhongse & Johnson 1965
+Yaba_monkey_tumor_virus,Homo_sapiens,human,Antibodies,0,Grace & Mirand 1965
 Yellow_fever_virus,Homo_sapiens,human,Isolation,2,Pisano et al. 1997
 Zaire_ebolavirus,Homo_sapiens,human,Isolation,2,Georges et al. 1999
 Zika_virus,Homo_sapiens,human,PCR,2,Duffy et al. 2010
 Venezuelan_equine_encephalitis_virus,Hoplomys_gymnurus,wild,Antibodies,0,Grayson & Galido 1968
-Rabies_virus,Hydrochoerus_hydrochaeris,wild,Isolation,2,[233]
+Rabies_virus,Hydrochoerus_hydrochaeris,wild,Isolation,2,Delpietro et al. 2009
 Encephalomyocarditis_virus,Hydromys_chrysogaster,wild,Isolation,2,Tesh and Wallace 1978
 Sindbis_virus,Hydromys_chrysogaster,wild,Antibodies,0,Price 1978
-Bimiti_virus,Hylaeamys_laticeps,wild,Isolation,2,"Shope, R. E., J. P. Woodall, and A. P. A. Travassos da Rosa. 1988. The epidemiology of disease caused by viruses in group C and Guam_ (Bunyaviridae), p. 37-52. In T. P. Monath (ed.), The arboviruses: epidemiology and ecology. CRC Press, Inc., Boca Raton, Fla."
-Caraparu_virus,Hylaeamys_laticeps,wild,Isolation,2,"Shope, R. E., J. P. Woodall, and A. P. A. Travassos da Rosa. 1988. The epidemiology of disease caused by viruses in group C and Guam_ (Bunyaviridae), p. 37-52. In T. P. Monath (ed.), The arboviruses: epidemiology and ecology. CRC Press, Inc., Boca Raton, Fla."
-Catu_virus,Hylaeamys_laticeps,wild,Isolation,2,"Shope, R. E., J. P. Woodall, and A. P. A. Travassos da Rosa. 1988. The epidemiology of disease caused by viruses in group C and Guam_ (Bunyaviridae), p. 37-52. In T. P. Monath (ed.), The arboviruses: epidemiology and ecology. CRC Press, Inc., Boca Raton, Fla."
-Guama_virus,Hylaeamys_laticeps,wild,Isolation,2,"Shope, R. E., J. P. Woodall, and A. P. A. Travassos da Rosa. 1988. The epidemiology of disease caused by viruses in group C and Guam_ (Bunyaviridae), p. 37-52. In T. P. Monath (ed.), The arboviruses: epidemiology and ecology. CRC Press, Inc., Boca Raton, Fla."
+Bimiti_virus,Hylaeamys_laticeps,wild,Isolation,2,Shope et al. 1988
+Caraparu_virus,Hylaeamys_laticeps,wild,Isolation,2,Shope et al. 1988
+Catu_virus,Hylaeamys_laticeps,wild,Isolation,2,Shope et al. 1988
+Guama_virus,Hylaeamys_laticeps,wild,Isolation,2,Shope et al. 1988
 Venezuelan_equine_encephalitis_virus,Hylaeamys_laticeps,wild,Isolation,2,Downs et al. 1963
 Amapari_virus,Hylaeamys_megacephalus,wild,Isolation,2,Pinheiro et al. 1977
-Caraparu_virus,Hylaeamys_megacephalus,wild,Isolation,2,"Shope, R. E., J. P. Woodall, and A. P. A. Travassos da Rosa. 1988. The epidemiology of disease caused by viruses in group C and Guam_ (Bunyaviridae), p. 37-52. In T. P. Monath (ed.), The arboviruses: epidemiology and ecology. CRC Press, Inc., Boca Raton, Fla."
-Catu_virus,Hylaeamys_megacephalus,wild,Isolation,2,"Shope, R. E., J. P. Woodall, and A. P. A. Travassos da Rosa. 1988. The epidemiology of disease caused by viruses in group C and Guam_ (Bunyaviridae), p. 37-52. In T. P. Monath (ed.), The arboviruses: epidemiology and ecology. CRC Press, Inc., Boca Raton, Fla."
+Caraparu_virus,Hylaeamys_megacephalus,wild,Isolation,2,Shope et al. 1988
+Catu_virus,Hylaeamys_megacephalus,wild,Isolation,2,Shope et al. 1988
 Changuinola_virus,Hylaeamys_megacephalus,wild,Isolation,2,Silva et al. 2013
 Cupixi_virus,Hylaeamys_megacephalus,wild,Isolation,2,Charrel et al. 2002
 Flexal_virus,Hylaeamys_megacephalus,wild,Isolation,2,Gonzalez et al. 2007
-Guama_virus,Hylaeamys_megacephalus,wild,Isolation,2,"Shope, R. E., J. P. Woodall, and A. P. A. Travassos da Rosa. 1988. The epidemiology of disease caused by viruses in group C and Guam_ (Bunyaviridae), p. 37-52. In T. P. Monath (ed.), The arboviruses: epidemiology and ecology. CRC Press, Inc., Boca Raton, Fla."
-Marituba_virus,Hylaeamys_megacephalus,wild,Isolation,2,"Shope, R. E., J. P. Woodall, and A. P. A. Travassos da Rosa. 1988. The epidemiology of disease caused by viruses in group C and Guam_ (Bunyaviridae), p. 37-52. In T. P. Monath (ed.), The arboviruses: epidemiology and ecology. CRC Press, Inc., Boca Raton, Fla."
-Oriboca_virus,Hylaeamys_megacephalus,wild,Isolation,2,"Shope, R. E., J. P. Woodall, and A. P. A. Travassos da Rosa. 1988. The epidemiology of disease caused by viruses in group C and Guam_ (Bunyaviridae), p. 37-52. In T. P. Monath (ed.), The arboviruses: epidemiology and ecology. CRC Press, Inc., Boca Raton, Fla."
+Guama_virus,Hylaeamys_megacephalus,wild,Isolation,2,Shope et al. 1988
+Marituba_virus,Hylaeamys_megacephalus,wild,Isolation,2,Shope et al. 1988
+Oriboca_virus,Hylaeamys_megacephalus,wild,Isolation,2,Shope et al. 1988
 Gibbon_ape_leukemia_virus,Hylobates_lar,captive,Isolation,2,Kawakami et al. 1972
 Hepatitis_B_virus,Hylobates_lar,wild,Antibodies,0,Mimms et al . 1993
 Hepatitis_B_virus,Hylobates_moloch,wild,Antibodies,0,Payne et al. 2004
@@ -1308,18 +1308,18 @@ Koongol_virus,Isoodon_macrourus,wild,Antibodies,0,Doherty et al. 1970
 Akabane_virus,Kobus_ellipsiprymnus,wild,Antibodies,0,Davies et al. 1985
 Bluetongue_virus,Kobus_ellipsiprymnus,wild,Antibodies,0,Hamblin et al.
 Bovine_ephemeral_fever_virus,Kobus_ellipsiprymnus,wild,Antibodies,0,Davies et al. 1975
-Bovine_herpesvirus_2,Kobus_ellipsiprymnus,wild,Antibodies,0,"Hamblin and Hedger 1982, JWD"
-Bovine_viral_diarrhea_virus_1,Kobus_ellipsiprymnus,wild,SNT,1,Hamblin and Hedger 1979
+Bovine_herpesvirus_2,Kobus_ellipsiprymnus,wild,Antibodies,0,Hamblin & Hedger 1982
+Bovine_viral_diarrhea_virus_1,Kobus_ellipsiprymnus,wild,SNT,1,Hamblin & Hedger 1979
 Crimean-Congo_hemorrhagic_fever_virus,Kobus_ellipsiprymnus,wild,Antibodies,0,Shepherd et al. 1987
 Foot-and-mouth_disease_virus,Kobus_ellipsiprymnus,wild,Antibodies,0,Hamblin et al. 1990
 Lumpy_skin_disease_virus,Kobus_ellipsiprymnus,wild,Antibodies,0,Hedger et al. 1983
 Rift_Valley_fever_virus,Kobus_ellipsiprymnus,wild,Antibodies,0,Anderson & Rowe 1998
-Woolly_monkey_sarcoma_virus,Lagothrix_lagotricha,captive,Isolation,2,"Scolnick EM, Williams D, Parks WP. Purification and characterisation of viral RNA of a sarcoma virus isolated from a woolly monkey. Nature. 1976 Dec 23-30;264(5588):809-11. PubMed PMID: 189198."
+Woolly_monkey_sarcoma_virus,Lagothrix_lagotricha,captive,Isolation,2,Scolnick et al. 1976
 Foot-and-mouth_disease_virus,Lama_glama,domestic,Antibodies,0,Weaver et al. 2013
 Vesicular_stomatitis_Indiana_virus,Lama_glama,domestic,SNT,1,Webb et al. 1987b
 Borna_disease_virus,Lama_pacos,wild,PCR,2,Jacobsen et al. 2010
 Bovine_viral_diarrhea_virus_1,Lama_pacos,wild,PCR,2,Mattson et al. 2006
-Foot-and-mouth_disease_virus,Lama_pacos,domestic,Antibodies,0,"http://wildlife1.wildlifeinformation.org/S/virus/picornaviridae/picornaviridae_fmdvirus/FMDVSppDefinitiveHost.html, Primary Reference Unavailable (Rivera et al.) Serologic survey of viral antibodies in the Peruvian alpaca (Lama pacos) 48: 189"
+Foot-and-mouth_disease_virus,Lama_pacos,domestic,Antibodies,0,Rivera et al. 1987
 Rabies_virus,Lasionycteris_noctivagans,wild,PCR,2,Blanton et al. 2008
 Rabies_virus,Lasiurus_blossevillii,wild,PCR,2,[415]
 Rabies_virus,Lasiurus_borealis,wild,PCR,2,Blanton et al. 2008
@@ -1328,10 +1328,10 @@ Rabies_virus,Lasiurus_cinereus,wild,PCR,2,Blanton et al. 2008
 Rabies_virus,Lasiurus_ega,wild,PCR,2,Blanton et al. 2008
 Rabies_virus,Lasiurus_egregius,wild,IFA,0,Stutz et al. 2004
 Rabies_virus,Lasiurus_intermedius,wild,Isolation,2,Nadin-Davis et al. 2001
-Rabies_virus,Lasiurus_seminolus,wild,PCR,2,"[415, 421]"
+Rabies_virus,Lasiurus_seminolus,wild,PCR,2,Strieker et al. 2010; Constantine 1979
 Rabies_virus,Lasiurus_xanthinus,wild,PCR,2,Blanton et al. 2008
-Ljungan_virus,Lemmus_lemmus,wild,PCR,2,Hauffe et al. 2012; 13th Rodnt et Spatium conference abstracts
-Topografov_virus,Lemmus_sibiricus,wild,PCR,2,"Vapalahti O, Lundkvist A, Fedorov V, Conroy CJ, Hirvonen S, Plyusnina A, Nemirov K, Fredga K, Cook JA, Niemimaa J, Kaikusalo A, Henttonen H, Vaheri A, Plyusnin A. Isolation and characterization of a hantavirus from Lemmus sibiricus: evidence for host switch during hantavirus evolution. J Virol. 1999 Jul;73(7):5586-92. PubMed PMID: 10364307; PubMed Central PMCID: PMC112616."
+Ljungan_virus,Lemmus_lemmus,wild,PCR,2,Hauffe et al. 2012
+Topografov_virus,Lemmus_sibiricus,wild,PCR,2,Vapalahti et al. 1999
 Ippy_virus,Lemniscomys_rosalia,wild,PCR,2,de Bellocq et al. 2010
 Bunyamwera_virus,Lemniscomys_striatus,wild,Antibodies,0,Henderson et al. 1972
 Ippy_virus,Lemniscomys_striatus,wild,Isolation,2,Gonzalez et al. 2007
@@ -1343,32 +1343,32 @@ Torque_Teno_virus,Leontopithecus_chrysomelas,wild,PCR,2,Catroxo et al. 2008
 Feline_calicivirus,Leopardus_geoffroyi,wild,Antibodies,0,Fiorello et al. 2007
 Feline_panleukopenia_virus,Leopardus_geoffroyi,wild,Antibodies,0,Fiorello et al. 2007
 Human_picobirnavirus,Leopardus_geoffroyi,captive,PCR,2,Gillman et al. 2012
-Canine_distemper_virus,Leopardus_pardalis,wild,Antibodies,0,"Fiorello CV, Noss AJ, Deem SL, Maffei L, Dubovi EJ. Serosurvey of small carnivores in the Bolivian Chaco. J Wildl Dis. 2007 Jul;43(3):551-7. PubMed PMID: 17699100."
+Canine_distemper_virus,Leopardus_pardalis,wild,Antibodies,0,Fiorello et al. 2007
 Feline_calicivirus,Leopardus_pardalis,wild,Antibodies,0,Fiorello et al. 2007
 Canid_herpesvirus_1,Leptonychotes_weddellii,wild,Antibodies,0,Harder et al. 1991
 Felid_herpesvirus_1,Leptonychotes_weddellii,wild,Antibodies,0,Stenvers et al. 1992
 Phocid_herpesvirus_1,Leptonychotes_weddellii,wild,Antibodies,0,Harder et al. 1991
-Rabies_virus,Leptonycteris_curasoae,wild,Antibodies,0,[384]
-Rabies_virus,Leptonycteris_nivalis,wild,Isolation,2,[421]
+Rabies_virus,Leptonycteris_curasoae,wild,Antibodies,0,Salas-Rojas et al. 2004
+Rabies_virus,Leptonycteris_nivalis,wild,Isolation,2,Constantine 1979
 California_encephalitis_virus,Lepus_americanus,wild,Antibodies,0,Parkin et al. 1973
 St._Louis_encephalitis_virus,Lepus_americanus,wild,Antibodies,0,Williams et al. 2001
 Western_equine_encephalitis_virus,Lepus_americanus,wild,Antibodies,0,Yuill et al. 1964
-Bunyamwera_virus,Lepus_californicus,wild,Isolation,2,"Calisher et al. 1986, Am J. Trop. Med. Hyg 35(2): 429-443.""Distribution of Bunyamwera serogroup viruses in N. America, 1956-1984"""
-Main_Drain_virus,Lepus_californicus,wild,Isolation,2,"Calisher et al. 1986, Am J. Trop. Med. Hyg 35(2): 429-443.""Distribution of Bunyamwera serogroup viruses in N. America, 1956-1984"""
+Bunyamwera_virus,Lepus_californicus,wild,Isolation,2,Calisher et al. 1986
+Main_Drain_virus,Lepus_californicus,wild,Isolation,2,Calisher et al. 1986
 Simbu_virus,Lepus_californicus,wild,Isolation,2,Hardy et al.  1974
 St._Louis_encephalitis_virus,Lepus_californicus,wild,Antibodies,0,Aguirre et al. 1992
 Turlock_virus,Lepus_californicus,wild,Isolation,2,Scott et al. 1975
 Vesicular_stomatitis_Indiana_virus,Lepus_californicus,wild,plaque reduction neutralization,1,Aguirre et al. 1992
 Western_equine_encephalitis_virus,Lepus_californicus,wild,hemmaglutination,0,Hardy 1987
-Crimean-Congo_hemorrhagic_fever_virus,Lepus_capensis,wild,Antibodies,0,Taylor et al. (EID database) full text unavailable ; Lashley p 114;
-Hare_fibroma_virus,Lepus_capensis,wild,"histopath, e-microscopy",0,"Karstad L, Thorsen J, Davies G, Kaminjolo JS. Poxvirus fibromas on African hares. J Wildl Dis. 1977 Jul;13(3):245-7. PubMed PMID: 199751."
+Crimean-Congo_hemorrhagic_fever_virus,Lepus_capensis,wild,Antibodies,0,Taylor et al. 2001
+Hare_fibroma_virus,Lepus_capensis,wild,"histopath, e-microscopy",0,Karstad et al. 1977
 European_brown_hare_syndrome_virus,Lepus_europaeus,wild,PCR,2,Syrjalaet al. 2005
-Hare_fibroma_virus,Lepus_europaeus,domestic,"histopath, e-microscopy",0,"Grilli G, Piccirillo A, Pisoni AM, Cerioli M, Gallazzi D, Lavazza A. Re-emergence of fibromatosis in farmed game hares (Lepus europaeus) in Italy. Vet Rec. 2003 Aug 2;153(5):152-3. PubMed PMID: 12934800."
-Crimean-Congo_hemorrhagic_fever_virus,Lepus_saxatilis,wild,Antibodies,0,Taylor et al. (EID database) full text unavailable ; Lashley p 114;
-California_encephalitis_virus,Lepus_timidus,wild,Antibodies,0,http://wildlife1.wildlifeinformation.org/S/00dis/viral/Inkoo_virus_infection_lagomorphs.html; Antibodies against Inkoo which is a strain of CEV
+Hare_fibroma_virus,Lepus_europaeus,domestic,"histopath, e-microscopy",0,Grilli et al. 2003
+Crimean-Congo_hemorrhagic_fever_virus,Lepus_saxatilis,wild,Antibodies,0,Taylor et al. 2001
+California_encephalitis_virus,Lepus_timidus,wild,Antibodies,0,http://wildlife1.wildlifeinformation.org/S/00dis/viral/Inkoo_virus_infection_lagomorphs.html
 European_brown_hare_syndrome_virus,Lepus_timidus,wild,PCR,2,Syrjalaet al. 2005
 Vesicular_stomatitis_Indiana_virus,Liomys_adspersus,wild,plaque reduction neutralization,1,Tesh et al. 1969
-Canine_distemper_virus,Lobodon_carcinophaga,wild,Antibodies,0,"BENGSTON, J. L., P. BOVENG, U. FRANKZEN, P. HAVE, M. P. HEIDE-JORGENSE, AND R. HA _ RKO _ NEN. 1991. Antibodies to canine distemper virus in Antarctic seals. Marine Mammal Science 71: 85_88"
+Canine_distemper_virus,Lobodon_carcinophaga,wild,Antibodies,0,Bengston et al. 1991
 Phocid_herpesvirus_1,Lobodon_carcinophaga,wild,Antibodies,0,Harder et al. 1991
 Vesicular_stomatitis_Indiana_virus,Lonchophylla_robusta,wild,plaque reduction neutralization,1,Tesh et al. 1969
 Vesicular_stomatitis_New_Jersey_virus,Lonchophylla_robusta,wild,Antibodies,0,Tesh et al. 1969
@@ -1389,19 +1389,19 @@ Bunyamwera_virus,Lophuromys_sikapusi,wild,Isolation,2,Monath et al. 1972; Hender
 Mokola_virus,Lophuromys_sikapusi,wild,Isolation,2,Saluzzo et al. 1984
 Witwatersrand_virus,Lophuromys_sikapusi,wild,Antibodies,0,Henderson et al. 1972
 African_horse_sickness_virus,Loxodonta_africana,wild,Antibodies,0,Binepal et al. 1992
-Bluetongue_virus,Loxodonta_africana,wild,Antibodies,0,"Anderson & Rowe, 1998"
+Bluetongue_virus,Loxodonta_africana,wild,Antibodies,0,Anderson & Rowe 1998
 Crimean-Congo_hemorrhagic_fever_virus,Loxodonta_africana,wild,Antibodies,0,Shepherd et al. 1987
-Encephalomyocarditis_virus,Loxodonta_africana,wild,Isolation,2,Tesh and Wallace 1978
+Encephalomyocarditis_virus,Loxodonta_africana,wild,Isolation,2,Tesh & Wallace 1978
 Foot-and-mouth_disease_virus,Loxodonta_africana,wild,Isolation,2,http://wildlife1.wildlifeinformation.org/S/virus/picornaviridae/picornaviridae_fmdvirus/FMDVSppDefinitiveHost.html
-Andes_virus,Loxodontomys_micropus,wild,PCR,2,Informatics 2010; Medina et al 2009
+Andes_virus,Loxodontomys_micropus,wild,PCR,2,Informatics 2010; Medina et al. 2009
 Aleutian_mink_disease_virus,Lutra_lutra,wild,PCR,2,Manas et al. 2001
 African_horse_sickness_virus,Lycaon_pictus,wild,bcELISA,0,Alexander et al. 1995
 Bluetongue_virus,Lycaon_pictus,wild,Antibodies,0,"Alexander, MacLachlan et al. 1994"
-Canine_distemper_virus,Lycaon_pictus,wild,Isolation,2,"VAN DE BILDT, M. W. G., T. KUIKEN, A. M. VISEE, S. LEMA, T. R. FITZJOHN, AND A. D. M. E. OSTERHAUS. 2002. Distemper outbreak and its effect on African wild dog conservation. Emerg- ing Infectious Diseases 8: 211_213."
+Canine_distemper_virus,Lycaon_pictus,wild,Isolation,2,va de Bildt et al. 2002
 Rabies_virus,Lycaon_pictus,wild,PCR,2,Lembo et al. 2008
 Borna_disease_virus,Lynx_lynx,wild,PCR,2,Degiorgis et al. 2000
 Vaccinia_virus,Lynx_lynx,wild,Antibodies,0,Tryland et al. 2008
-Feline_leukemia_virus,Lynx_pardinus,wild,PCR,2,"Geret CP, Cattori V, Meli ML, Riond B, Martnez F, L_pez G, Vargas A, Sim_n MA, L_pez-Bao JV, Hofmann-Lehmann R, Lutz H. Feline leukemia virus outbreak in the critically endangered Iberian lynx (Lynx pardinus): high-throughput sequencing of envelope variable region A and experimental transmission. Arch Virol. 2011 May;156(5):839-54. doi: 10.1007/s00705-011-0925-z. Epub 2011 Feb 8. PubMed PMID: 21302124."
+Feline_leukemia_virus,Lynx_pardinus,wild,PCR,2,Geret et al. 2011
 Feline_immunodeficiency_virus,Lynx_rufus,wild,Antibodies,0,Brown et al. 2003
 Rabies_virus,Lynx_rufus,wild,Antibodies,0,Aranda et al. 1999
 Cercopithecine_herpesvirus_1,Macaca_arctoides,wild,Isolation,2,Huff et al. 2003
@@ -1409,25 +1409,25 @@ Simian_foamy_virus,Macaca_arctoides,wild,PCR,2,Hussain et al. 2003
 Cercopithecine_herpesvirus_1,Macaca_cyclopis,wild,Isolation,2,Huff et al. 2003
 Simian_foamy_virus,Macaca_cyclopis,wild,PCR,2,Schweizer et al. 1995
 Bakau_virus,Macaca_fascicularis,wild,Isolation,2,CDC ArboCat
-Canine_distemper_virus,Macaca_fascicularis,captive,Isolation,2,"Sakai, K., N. Nagata, Y. Ami, F. Seki, Y. Suzaki, N. Iwata-Yoshikawa, T. Suzuki, S. Fukushi, T. Mizutani, T. Yoshikawa, N. Otsuki, I. Kurane, K. Komase, R. Yamaguchi, H. Hasegawa, M. Saijo, M. Takeda, and S. Morikawa. 2013. Lethal Canine Distemper Virus Outbreak in Cynomolgus Monkeys in Japan in 2008. Journal of Virology 87:1105-1114."
+Canine_distemper_virus,Macaca_fascicularis,captive,Isolation,2,Sakai et al. 2013
 Cercopithecine_herpesvirus_1,Macaca_fascicularis,wild,Isolation,2,Huff et al. 2003
 Chikungunya_virus,Macaca_fascicularis,wild,Antibodies,0,Inoue et al. 2003
 Dengue_virus,Macaca_fascicularis,wild,Antibodies,0,Inoue et al. 2003
-Eastern_equine_encephalitis_virus,Macaca_fascicularis,wild,Antibodies,0,Fowler & Miller. 2003
+Eastern_equine_encephalitis_virus,Macaca_fascicularis,wild,Antibodies,0,Fowler & Miller 2003
 Hepatitis_A_virus,Macaca_fascicularis,wild,Antibodies,0,Sa-Nguanmoo et al. 2010
 Japanese_encephalitis_virus,Macaca_fascicularis,wild,Antibodies,0,Inoue et al. 2003
 Lassa_virus,Macaca_fascicularis,domestic,Isolation,2,Wulff et al. 1975
 Macaque_simian_foamy_virus,Macaca_fascicularis,wild,Antibodies,0,Brooks et al.
 Parainfluenza_virus_5,Macaca_fascicularis,wild,Isolation,2,Chatziandreou et al. 2004
 Reston_ebolavirus,Macaca_fascicularis,wild,Isolation,2,Miranda et al. 1991
-Rhesus_monkey_papillomavirus_1,Macaca_fascicularis,captive,Isolation,2,"Chan SY, Bernard HU, Ratterree M, Birkebak TA, Faras AJ, Ostrow RS. Genomic diversity and evolution of papillomaviruses in rhesus monkeys. J Virol. 1997 Jul;71(7):4938-43. PubMed PMID: 9188556; PubMed Central PMCID: PMC191724."
-Simian_enterovirus_A,Macaca_fascicularis,captive,Isolation,2,"Hoffert W. R., Bates M. E., Cheever F. S.. 1958. Study of enteric viruses of simian origin. Am. J. Hyg. (Lond.) 68:15_30."
+Rhesus_monkey_papillomavirus_1,Macaca_fascicularis,captive,Isolation,2,Chan et al. 1997
+Simian_enterovirus_A,Macaca_fascicularis,captive,Isolation,2,Hoffert et al. 1958
 Simian_foamy_virus,Macaca_fascicularis,wild,PCR,2,Webb et al. 1965
-Simian_parvovirus,Macaca_fascicularis,captive,Isolation,2,"O'Sullivan MG, Anderson DC, Fikes JD, Bain FT, Carlson CS, Green SW, Young NS, Brown KE. Identification of a novel simian parvovirus in cynomolgus monkeys with severe anemia. A paradigm of human B19 parvovirus infection. J Clin Invest. 1994 Apr;93(4):1571-6. PubMed PMID: 8163659; PubMed Central PMCID: PMC294181."
+Simian_parvovirus,Macaca_fascicularis,captive,Isolation,2,O'Sullivan et al. 1994
 Yaba_monkey_tumor_virus,Macaca_fascicularis,wild,Antibodies,0,Downie 1974
 Borna_disease_virus,Macaca_fuscata,wild,PCR,2,Hagiwara et al. 2008
 Cercopithecine_herpesvirus_1,Macaca_fuscata,wild,Isolation,2,Huff et al. 2003
-Hepatitis_E_virus,Macaca_fuscata,wild,Antibodies,0,Taylor et al. (EID database) ;http://www.uniprot.org/uniprot/Q2A069
+Hepatitis_E_virus,Macaca_fuscata,wild,Antibodies,0,Taylor et al. 2001
 Measles_virus,Macaca_fuscata,wild,Antigen,0,Choi et al. 1999
 Simian_foamy_virus,Macaca_fuscata,wild,PCR,2,Hussain et al. 2003
 Torque_Teno_virus,Macaca_fuscata,wild,PCR,2,Okamoto et al. 2000
@@ -1435,28 +1435,28 @@ Primate_T-lymphotropic_virus_1,Macaca_maura,wild,Isolation,2,Saksena et al. 1994
 Adeno-associated_virus-1,Macaca_mulatta,captive,Antibodies,0,Xiao et al. 1999
 Adeno-associated_virus-2,Macaca_mulatta,captive,Antibodies,0,Xiao et al. 1999
 Cercopithecine_herpesvirus_1,Macaca_mulatta,wild,Isolation,2,Huff et al. 2003
-Cercopithecine_herpesvirus_15,Macaca_mulatta,captive,isolation,2,"Habis A, Baskin G, Simpson L, Fortgang I, Murphey-Corb M, Levy LS. Rhesus lymphocryptovirus infection during the progression of SAIDS and SAIDS-associated lymphoma in the rhesus macaque. AIDS Res Hum Retroviruses. 2000 Jan 20;16(2):163-71. PubMed PMID: 10659055."
-Cercopithecine_herpesvirus_17,Macaca_mulatta,captive,isolation,2,"Desrosiers RC, Sasseville VG, Czajak SC, Zhang X, Mansfield KG, Kaur A, Johnson RP, Lackner AA, Jung JU. A herpesvirus of rhesus monkeys related to the human Kaposi's sarcoma-associated herpesvirus. J Virol. 1997 Dec;71(12):9764-9. PubMed PMID: 9371642; PubMed Central PMCID: PMC230286."
-Cercopithecine_herpesvirus_8,Macaca_mulatta,captive,isolation,2,"Asher DM, Gibbs CJ Jr, Lang DJ, Gajdusek DC, Chanock RM. Persistent shedding of cytomegalovirus in the urine of healthy Rhesus monkeys. Proc Soc Exp Biol Med. 1974 Mar;145(3):794-801. PubMed PMID: 4131945."
-Encephalomyocarditis_virus,Macaca_mulatta,wild,Isolation,2,Tesh and Wallace 1978
-Mason-Pfizer_monkey_virus,Macaca_mulatta,captive,Isolation,2,"Nowinski RC, Edynak E, Sarkar NH. Serological and structural properties of Mason-Pfizer monkey virus isolated from the mammary tumor of a Rhesus monkey. Proc Natl Acad Sci U S A. 1971 Jul;68(7):1608-12. PubMed PMID: 4997759; PubMed Central PMCID: PMC389251."
+Cercopithecine_herpesvirus_15,Macaca_mulatta,captive,isolation,2,Habis et al. 2000
+Cercopithecine_herpesvirus_17,Macaca_mulatta,captive,isolation,2,Desrosiers et al. 1997
+Cercopithecine_herpesvirus_8,Macaca_mulatta,captive,isolation,2,Asher et al. 1974
+Encephalomyocarditis_virus,Macaca_mulatta,wild,Isolation,2,Tesh & Wallace 1978
+Mason-Pfizer_monkey_virus,Macaca_mulatta,captive,Isolation,2,Nowinski et al. 1971
 Measles_virus,Macaca_mulatta,wild,Isolation,2,El Mubarak et al. 2007
-Minatitlan_virus,Macaca_mulatta,wild,Isolation,2,Subcomittee on Information Echange of The American Committee of Arthropod-Borne Viruses 1972
+Minatitlan_virus,Macaca_mulatta,wild,Isolation,2,Subcomittee on Information Exchange of The American Committee of Arthropod-Borne Viruses 1972
 Parainfluenza_virus_5,Macaca_mulatta,wild,Isolation,2,Chatziandreou et al. 2004
-Rhesus_macaque_parvovirus,Macaca_mulatta,captive,PCR,2,"Green SW, Malkovska I, O'Sullivan MG, Brown KE. Rhesus and pig-tailed macaque parvoviruses: identification of two new members of the erythrovirus genus in monkeys. Virology. 2000 Mar 30;269(1):105-12. PubMed PMID: 10725203."
-Rhesus_monkey_papillomavirus_1,Macaca_mulatta,captive,Isolation,2,"Ostrow RS, Coughlin SM, McGlennen RC, Johnson AN, Ratterree MS, Scheffler J, Yaegashi N, Galloway DA, Faras AJ. Serological and molecular evidence of rhesus papillomavirus type 1 infections in tissues from geographically distinct institutions. J Gen Virol. 1995 Feb;76 ( Pt 2):293-9. PubMed PMID: 7844551."
+Rhesus_macaque_parvovirus,Macaca_mulatta,captive,PCR,2,Green et al. 2000
+Rhesus_monkey_papillomavirus_1,Macaca_mulatta,captive,Isolation,2,Ostrow et al. 1995
 Simian_adenovirus,Macaca_mulatta,wild,Isolation,2,Kovacs et al. 2004
-Simian_enterovirus_A,Macaca_mulatta,wild,Isolation,2,"Suzuki M, Nishikawa F, Sasagawa A, Inayoshi T. Characterization of simian viruses isolated from wild cynomolgus monkeys. Acta Virol. 1984 Jul;28(4):267-76. PubMed PMID: 6148850."
+Simian_enterovirus_A,Macaca_mulatta,wild,Isolation,2,Suzuki et al. 1984
 Simian_foamy_virus,Macaca_mulatta,wild,PCR,2,Schweizer et al. 1995
-Simian_hemorrhagic_fever_virus,Macaca_mulatta,captive,Isolation,2,"London WT (1977) Epizootiology, transmission and approach to prevention of fatal simian haemorrhagic fever in rhesus monkeys. Nature 268: 344_345. Find this article online"
+Simian_hemorrhagic_fever_virus,Macaca_mulatta,captive,Isolation,2,London 1977
 Simian_immunodeficiency_virus,Macaca_mulatta,wild,Isolation,2,Hirsch et al. 1989
 Simian_virus_40,Macaca_mulatta,wild,PCR,2,Simon et al. 1999
 Simian_virus_5,Macaca_mulatta,wild,Antibodies,0,Verschoor et al. 2008
 Tanapox_virus,Macaca_mulatta,captive,Antibodies,0,Downie 1974
 Yaba_monkey_tumor_virus,Macaca_mulatta,wild,Isolation,2,Zimmerman et al. 2005
 Cercopithecine_herpesvirus_1,Macaca_nemestrina,wild,Isolation,2,Huff et al. 2003
-Cercopithecine_herpesvirus_9,Macaca_nemestrina,captive,Isolation,2,"Hukkanen RR, Gillen M, Grant R, Liggitt HD, Kiem HP, Kelley ST. Simian varicella virus in pigtailed macaques (Macaca nemestrina): clinical, pathologic, and virologic features. Comp Med. 2009 Oct;59(5):482-7. PubMed PMID: 19887033; PubMed Central PMCID: PMC2771606."
-Pig-tailed_macaque_parvovirus,Macaca_nemestrina,captive,PCR,2,"Green SW, Malkovska I, O'Sullivan MG, Brown KE. Rhesus and pig-tailed macaque parvoviruses: identification of two new members of the erythrovirus genus in monkeys. Virology. 2000 Mar 30;269(1):105-12. PubMed PMID: 10725203."
+Cercopithecine_herpesvirus_9,Macaca_nemestrina,captive,Isolation,2,Hukkanen et al. 2009
+Pig-tailed_macaque_parvovirus,Macaca_nemestrina,captive,PCR,2,Green et al. 2000
 Primate_T-lymphotropic_virus_1,Macaca_nigra,wild,Antibodies,0,Ishikawa et al. 1987
 Primate_T-lymphotropic_virus_1,Macaca_ochreata,wild,Antibodies,0,Ishikawa et al. 1987
 Cercopithecine_herpesvirus_1,Macaca_radiata,wild,Isolation,2,Huff et al. 2003
@@ -1478,23 +1478,23 @@ Murray_Valley_encephalitis_virus,Macropus_agilis,wild,Antibodies,0,Gonzalez et a
 Ross_River_virus,Macropus_agilis,wild,Isolation,2,Brooks et al. 2002
 Sindbis_virus,Macropus_agilis,wild,Antibodies,0,Tu et al. 2004
 Trubanaman_virus,Macropus_fuliginosus,wild,Antibodies,0,Johansen et al. 2005
-Wallal_virus,Macropus_fuliginosus,wild,PCR,2,"Hooper et al 1999, Aust Vet J"
-Warrego_virus,Macropus_fuliginosus,wild,Isolation,2,"Hooper PT, Lunt RA, Gould AR, Hyatt AD, Russell GM, Kattenbelt JA, Blacksell SD, Reddacliff LA, Kirkland PD, Davis RJ, Durham PJ, Bishop AL, Waddington J. Epidemic of blindness in kangaroos--evidence of a viral aetiology. Aust Vet J. 1999 Aug;77(8):529-36. PubMed PMID: 10494400."
+Wallal_virus,Macropus_fuliginosus,wild,PCR,2,Hooper et al. 1999
+Warrego_virus,Macropus_fuliginosus,wild,Isolation,2,Hooper et al. 1999
 Foot-and-mouth_disease_virus,Macropus_giganteus,wild,Isolation,2,Weaver et al. 2013
 Gan_Gan_virus,Macropus_giganteus,wild,Antibodies,0,Vale et al. 1991
-Macropodid_herpesvirus_1,Macropus_giganteus,wild,Isolation,2,"Guliani S, Smith GA, Young PL, Mattick JS, Mahony TJ. Reactivation of a macropodid herpesvirus from the eastern grey kangaroo (Macropus giganteus) following corticosteroid treatment. Vet Microbiol. 1999 Aug 16;68(1-2):59-69. PubMed PMID: 10501162."
-Macropodid_herpesvirus_2,Macropus_giganteus,wild,Isolation,2,"Vaz PK, Motha J, McCowan C, Ficorilli N, Whiteley PL, Wilks CR, Hartley CA, Gilkerson JR, Browning GF, Devlin JM. Isolation and characterization of a novel herpesvirus from a free-ranging eastern grey kangaroo (macropus giganteus). J Wildl Dis. 2013 Jan;49(1):143-51. doi: 10.7589/2012-01-027. PubMed PMID: 23307380."
+Macropodid_herpesvirus_1,Macropus_giganteus,wild,Isolation,2,Guliani et al. 1999
+Macropodid_herpesvirus_2,Macropus_giganteus,wild,Isolation,2,Vaz et al. 2013
 Murray_Valley_encephalitis_virus,Macropus_giganteus,wild,Antibodies,0,Levy 1993
 Sindbis_virus,Macropus_giganteus,wild,Antibodies,0,Gonzalez et al. 2007
-Wallal_virus,Macropus_giganteus,wild,PCR,2,"Hooper et al 1999, Aust Vet J"
-Warrego_virus,Macropus_giganteus,wild,Isolation,2,"Hooper PT, Lunt RA, Gould AR, Hyatt AD, Russell GM, Kattenbelt JA, Blacksell SD, Reddacliff LA, Kirkland PD, Davis RJ, Durham PJ, Bishop AL, Waddington J. Epidemic of blindness in kangaroos--evidence of a viral aetiology. Aust Vet J. 1999 Aug;77(8):529-36. PubMed PMID: 10494400."
-Macropodid_herpesvirus_1,Macropus_parma,wild,Isolation,2,"Johnson MA, Whalley JM, Littlejohns IR, Dickson J, Smith VW, Wilks CR, Reisner AH. Macropodid herpesviruses 1 and 2: two herpesviruses from Australian marsupials differentiated by restriction endonucleases, DNA composition and hybridization. Brief report. Arch Virol. 1985;85(3-4):313-9. PubMed PMID: 2992421."
+Wallal_virus,Macropus_giganteus,wild,PCR,2,Hooper et al. 1999
+Warrego_virus,Macropus_giganteus,wild,Isolation,2,Hooper et al. 1999
+Macropodid_herpesvirus_1,Macropus_parma,wild,Isolation,2,Johnson et al. 1985
 Ross_River_virus,Macropus_robustus,wild,Antibodies,0,Old et al. 2005
-Wallal_virus,Macropus_robustus,wild,PCR,2,"Hooper et al 1999, Aust Vet J"
+Wallal_virus,Macropus_robustus,wild,PCR,2,Hooper et al. 1999
 Gan_Gan_virus,Macropus_rufogriseus,wild,Antibodies,0,Vale et al. 1991
-Wallal_virus,Macropus_rufus,wild,PCR,2,"Hooper et al 1999, Aust Vet J"
-Warrego_virus,Macropus_rufus,wild,Isolation,2,"Hooper PT, Lunt RA, Gould AR, Hyatt AD, Russell GM, Kattenbelt JA, Blacksell SD, Reddacliff LA, Kirkland PD, Davis RJ, Durham PJ, Bishop AL, Waddington J. Epidemic of blindness in kangaroos--evidence of a viral aetiology. Aust Vet J. 1999 Aug;77(8):529-36. PubMed PMID: 10494400."
-Rabies_virus,Macrotus_californicus,wild,Isolation,2,[421]
+Wallal_virus,Macropus_rufus,wild,PCR,2,Hooper et al. 1999
+Warrego_virus,Macropus_rufus,wild,Isolation,2,Hooper et al. 1999
+Rabies_virus,Macrotus_californicus,wild,Isolation,2,Constantine 1979
 Kyasanur_Forest_disease_virus,Madromys_blanfordi,wild,Isolation,2,Williams et al. 2001
 Human_enterovirus_D,Mandrillus_leucophaeus,wild*,Antibodies,0,Harvala et al. 2012
 Simian_foamy_virus,Mandrillus_leucophaeus,wild,PCR,2,Hussain et al. 2003
@@ -1502,19 +1502,19 @@ Simian_immunodeficiency_virus,Mandrillus_leucophaeus,wild,Isolation,2,Hu et al. 
 Human_enterovirus_B,Mandrillus_sphinx,wild,PCR,2,Van Nguyen et al. 2014
 Simian_foamy_virus,Mandrillus_sphinx,wild,PCR,2,Hussain et al. 2003
 Simian_immunodeficiency_virus,Mandrillus_sphinx,wild,Isolation,2,Hu et al. 2003
-O'nyong-nyong_virus,Mandrillus_sphinx,wild,plaque reduction neutralization,1,"Kading et al. 2012, JWD"
-Oriboca_virus,Marmosa_murina,wild,Isolation,2,"Shope, R. E., J. P. Woodall, and A. P. A. Travassos da Rosa. 1988. The epidemiology of disease caused by viruses in group C and Guam_ (Bunyaviridae), p. 37-52. In T. P. Monath (ed.), The arboviruses: epidemiology and ecology. CRC Press, Inc., Boca Raton, Fla."
+O'nyong-nyong_virus,Mandrillus_sphinx,wild,plaque reduction neutralization,1,Kading et al. 2012
+Oriboca_virus,Marmosa_murina,wild,Isolation,2,Shope et al. 1988
 Colorado_tick_fever_virus,Marmota_flaviventris,wild,Antibodies,0,Eklund et al. 1958
-Powassan_virus,Marmota_flaviventris,wild,Antibodies,0,McLean et al. 1970 AMJE
+Powassan_virus,Marmota_flaviventris,wild,Antibodies,0,McLean et al. 1970
 St._Louis_encephalitis_virus,Marmota_flaviventris,wild,Antibodies,0,McClean et al. 1968
 Eastern_equine_encephalitis_virus,Marmota_monax,wild,Antibodies,0,Karstad et al. 1960
 Marmodid_herpesvirus_1,Marmota_monax,wild,Isolation,2,Buchen-Osmond 2003
-Powassan_virus,Marmota_monax,wild,Isolation,2,[224]
-Rabies_virus,Marmota_monax,wild,Isolation,2,[234]
+Powassan_virus,Marmota_monax,wild,Isolation,2, McLean et al. 1967
+Rabies_virus,Marmota_monax,wild,Isolation,2,Wang et al. 2009
 Woodchuck_hepatitis_virus,Marmota_monax,wild,"EM, DNA (i.e. more than just PCR)",2,Summers et al. 1978
 European_bat_lyssavirus_1,Martes_foina,wild,Antibodies,0,Muller et al. 2004
 Canine_adenovirus,Martes_pennanti,wild,Antibodies,0,Philippa 2004
-Mustelid_herpesvirus_1,Martes_pennanti,captive,PCR,2,"Gagnon CA, Tremblay J, Larochelle D, Music N, Tremblay D. Identification of a novel herpesvirus associated with cutaneous ulcers in a fisher (Martes pennanti). J Vet Diagn Invest. 2011 Sep;23(5):986-90. doi: 10.1177/1040638711418615. PubMed PMID: 21908360."
+Mustelid_herpesvirus_1,Martes_pennanti,captive,PCR,2,Gagnon et al. 2011
 Rabies_virus,Martes_pennanti,wild,Antibodies,0,Philippa et al. 2004
 Crimean-Congo_hemorrhagic_fever_virus,Mastomys_coucha,wild,Antibodies,0,Shepherd et al. 1987
 Koutango_virus,Mastomys_erythroleucus,wild,Isolation,2,Traore-Lamizana et al. 2001
@@ -1526,21 +1526,21 @@ Lassa_virus,Mastomys_huberti,wild,Isolation,2,Gonzalez et al. 2007
 Mopeia_virus,Mastomys_huberti,wild,Isolation,2,Gonzalez et al. 2007
 Rift_Valley_fever_virus,Mastomys_huberti,wild,Antibodies,0,Gora et al. 2000
 Banzi_virus,Mastomys_natalensis,wild,Isolation,2,McIntosh 1976
-Bluetongue_virus,Mastomys_natalensis,wild,Isolation,2,[49]
-Chikungunya_virus,Mastomys_natalensis,wild,Antibodies,0,"Konstantinov et al. 2006 The mammals of Guinea as reservoirs and carriers of arboviruses, Meditsinskaya Parazitologiya i Parazitarnye Bolezni, 1 34-39 Full Text Unavailable"
+Bluetongue_virus,Mastomys_natalensis,wild,Isolation,2,Howerth et al. 2001
+Chikungunya_virus,Mastomys_natalensis,wild,Antibodies,0,Konstantinov et al. 2006
 Dugbe_virus,Mastomys_natalensis,wild,Antibodies,0,Konstantinov et al. 2006
 Lassa_virus,Mastomys_natalensis,wild,PCR,2,Fichet-Calvet et al. 2007
-Mastomys_natalensis_papillomavirus,Mastomys_natalensis,captive,Isolation,2,"M_ller H, Gissmann L. Mastomys natalensis papilloma virus (MnPV), the causative agent of epithelial proliferations: characterization of the virus particle. J Gen Virol. 1978 Nov;41(2):315-23. PubMed PMID: 214519."
+Mastomys_natalensis_papillomavirus,Mastomys_natalensis,captive,Isolation,2,Muller & Gissman 1978
 Mopeia_virus,Mastomys_natalensis,wild,Isolation,2,Wulff et al. 1977
-Qalyub_virus,Mastomys_natalensis,wild,Isolation,2,[35]
+Qalyub_virus,Mastomys_natalensis,wild,Isolation,2,Kemp 1975
 Uganda_S_virus,Mastomys_natalensis,wild,Isolation,2,Kemp 1975; Kemp et al. 1974
 Witwatersrand_virus,Mastomys_natalensis,wild,Antibodies,0,McIntosh et al. 1976
-Bovine_respiratory_syncytial_virus,Mazama_gouazoubira,wild,Antibodies,0,"Deem SL, Noss AJ, Villarroel R, Uhart MM, Karesh WB. Disease survey of free-ranging grey brocket deer (Mazama gouazoubira) in the Gran Chaco, Bolivia. J Wildl Dis. 2004 Jan;40(1):92-8. PubMed PMID: 15137493."
+Bovine_respiratory_syncytial_virus,Mazama_gouazoubira,wild,Antibodies,0,Deem et al. 2004
 Influenza_A_virus,Megaderma_lyra,wild,Antibodies,0,Kelkar et al. 1981
 Amapari_virus,Megadontomys_nelsoni,wild,Antibodies,0,Milazzo et al. 2010
 Whitewater_Arroyo_virus,Megadontomys_nelsoni,wild,Antibodies,0,Milazzo et al. 2010
 Venezuelan_equine_encephalitis_virus,Melanomys_caliginosus,wild,Antibodies,0,Acha & Szyfres 2003; Grayson & Galido 1968
-Mustelid_herpesvirus_1,Meles_meles,wild,PCR,2,"King DR, Mutukwa N, Lesellier S, Cheeseman C, Chambers MA, Banks M. Detection of mustelid herpesvirus-1 infected European badgers (Meles meles) in the British Isles. J Wildl Dis. 2004 Jan;40(1):99-102. PubMed PMID: 15137494."
+Mustelid_herpesvirus_1,Meles_meles,wild,PCR,2,King et al. 2004
 Rabies_virus,Mellivora_capensis,wild,Isolation,2,Bingham et al. 2001
 Severe_acute_respiratory_syndrome-related_coronavirus,Melogale_moschata,wild,Antibodies,0,Tu et al. 2004
 Influenza_A_virus,Mephitis_mephitis,wild,PCR,2,Britton et al. 2010
@@ -1552,23 +1552,23 @@ Bakau_virus,Meriones_hurrianae,wild,Antibodies,0,Darwish et al. 1983
 Crimean-Congo_hemorrhagic_fever_virus,Meriones_hurrianae,domestic,Antibodies,0,Darwish et al. 1983
 Dera_Ghazi_Khan_virus,Meriones_hurrianae,domestic,Antibodies,0,Darwish et al. 1983
 Dhori_virus,Meriones_hurrianae,wild,Antibodies,0,Darwish et al. 1983
-Salehabad_virus,Meriones_hurrianae,wild,Antibodies,0,"Darwish et al. 1983, RSTMH 77:4"
-Wad_Medani_virus,Meriones_hurrianae,wild,Antibodies,0,"Darwish et al. 1983, RSTMH 77:4"
+Salehabad_virus,Meriones_hurrianae,wild,Antibodies,0,Darwish et al. 1983
+Wad_Medani_virus,Meriones_hurrianae,wild,Antibodies,0,Darwish et al. 1983
 Cowpox_virus,Meriones_libycus,wild,Isolation,2,Tsanava et al. 1989
 Cricetid_herpesvirus,Mesocricetus_auratus,wild,Isolation,2,Tomita & Jonas 1968 in Mahy 2008
-Hamster_oral_papillomavirus,Mesocricetus_auratus,captive,PCR,2,"Iwasaki T, Maeda H, Kameyama Y, Moriyama M, Kanai S, Kurata T. Presence of a novel hamster oral papillomavirus in dysplastic lesions of hamster lingual mucosa induced by application of dimethylbenzanthracene and excisional wounding: molecular cloning and complete nucleotide sequence. J Gen Virol. 1997 May;78 ( Pt 5):1087-93. PubMed PMID: 9152427."
+Hamster_oral_papillomavirus,Mesocricetus_auratus,captive,PCR,2,Iwasaki et al. 1997
 Hamster_parvovirus,Mesocricetus_auratus,wild,Isolation,2,Besselsen et al. 1999
-Hamster_polyomavirus,Mesocricetus_auratus,domestic,PCR,2,"Simmons JH, Riley LK, Franklin CL, Besch-Williford CL. Hamster polyomavirus infection in a pet Syrian hamster (Mesocricetus auratus). Vet Pathol. 2001 Jul;38(4):441-6. PubMed PMID: 11467479."
-Lymphocytic_choriomeningitis_virus,Mesocricetus_auratus,captive,Isolation,2,"[6, Parker et al. 1976"
-Minatitlan_virus,Mesocricetus_auratus,domestic,Isolation,2,"Mahy, BJ The Dictionary of Virology,  Academic Press 2009"
+Hamster_polyomavirus,Mesocricetus_auratus,domestic,PCR,2,Simmons et al. 2001
+Lymphocytic_choriomeningitis_virus,Mesocricetus_auratus,captive,Isolation,2,Acha & Szyfres; Parker et al. 1976
+Minatitlan_virus,Mesocricetus_auratus,domestic,Isolation,2,Mahy 2009
 Mobala_virus,Mesocricetus_auratus,wild,Isolation,2,Gonzalez et al. 2007
 Sendai_virus,Mesocricetus_auratus,captive,Isolation,2,Profeta et al. 1969
-Oriboca_virus,Metachirus_nudicaudatus,wild,Isolation,2,"Shope, R. E., J. P. Woodall, and A. P. A. Travassos da Rosa. 1988. The epidemiology of disease caused by viruses in group C and Guam_ (Bunyaviridae), p. 37-52. In T. P. Monath (ed.), The arboviruses: epidemiology and ecology. CRC Press, Inc., Boca Raton, Fla."
+Oriboca_virus,Metachirus_nudicaudatus,wild,Isolation,2,Shope et al. 1988
 Vesicular_stomatitis_Indiana_virus,Metachirus_nudicaudatus,wild,plaque reduction neutralization,1,Tesh et al. 1969
 Mayaro_virus,Mico_leucippe,wild,Antibodies,0,Hoch et al. 1981
 Yellow_fever_virus,Mico_leucippe,wild,Antibodies,0,Hoch et al. 1981
 Lymphocytic_choriomeningitis_virus,Micromys_minutus,wild,Antibodies,0,Tagliapietra et al. 2009
-Rabies_virus,Micronycteris_megalotis,wild,Antibodies,0,[384]
+Rabies_virus,Micronycteris_megalotis,wild,Antibodies,0,Salas-Rojas et al. 2004
 Lagos_bat_virus,Micropteropus_pusillus,wild,Isolation,2,Calisher et al. 2006
 Rift_Valley_fever_virus,Micropteropus_pusillus,wild,Isolation,2,Calisher et al. 2006
 Zaire_ebolavirus,Micropteropus_pusillus,wild,PCR,2,Leroy et al. 2004
@@ -1586,31 +1586,31 @@ California_encephalitis_virus,Microtus_arvalis,wild,Antibodies,0,Mitchell et al.
 Encephalomyocarditis_virus,Microtus_arvalis,wild,Antibodies,0,Billinis 2009
 Lymphocytic_choriomeningitis_virus,Microtus_arvalis,wild,Antibodies,0,Tagliapietra et al. 2009
 Murid_herpesvirus_1,Microtus_arvalis,wild,Antibodies,0,Mistrikova & Blaskovis 1985
-Tick-borne_encephalitis_virus,Microtus_arvalis,wild,PCR,2,Kozuch et al. 1990; Achazi et al. 201
-Tula_virus,Microtus_arvalis,wild,PCR,2,"Schlegel M, Kindler E, Essbauer SS, Wolf R, Thiel J, Groschup MH, Heckel G, Oehme RM, Ulrich RG. Tula virus infections in the Eurasian water vole in Central Europe. Vector Borne Zoonotic Dis. 2012 Jun;12(6):503-13. doi: 10.1089/vbz.2011.0784. Epub 2012 Jan 6. PubMed PMID: 22225425."
-Colorado_tick_fever_virus,Microtus_californicus,wild,Antibodies,0,"Emmons, 1994"
+Tick-borne_encephalitis_virus,Microtus_arvalis,wild,PCR,2,Kozuch et al. 1990; Achazi et al. 2011
+Tula_virus,Microtus_arvalis,wild,PCR,2,Schlegel et al. 2012
+Colorado_tick_fever_virus,Microtus_californicus,wild,Antibodies,0,Emmons 1994
 Isla_Vista_virus,Microtus_californicus,wild,PCR,2,Song et al. 1995
-Prospect_Hill_virus,Microtus_californicus,wild,Antibodies,0,"Yanagihara R, Daum CA, Lee PW, Baek LJ, Amyx HL, Gajdusek DC, Gibbs CJ Jr. Serological survey of Prospect Hill virus infection in indigenous wild rodents in the USA. Trans R Soc Trop Med Hyg. 1987;81(1):42-5. PubMed PMID: 2895510."
-Sin_Nombre_virus,Microtus_californicus,wild,Antibodies,0,"Bennett SG, Webb JP Jr, Madon MB, Childs JE, Ksiazek TG, Torrez-Martinez N, Hjelle B. Hantavirus (Bunyaviridae) infections in rodents from Orange and San Diego counties, California. Am J Trop Med Hyg. 1999 Jan;60(1):75-84. PubMed PMID: 9988327."
+Prospect_Hill_virus,Microtus_californicus,wild,Antibodies,0,Yanagihara et al. 1987
+Sin_Nombre_virus,Microtus_californicus,wild,Antibodies,0,Bennett et al. 1999
 St._Louis_encephalitis_virus,Microtus_californicus,wild,Antibodies,0,Hardy et al. 1974
-Volepox_virus,Microtus_californicus,wild,Isolation,2,Regnery DC (1987) Isolation and partial characterization of an orthopoxvirus from a California vole (Microtus californicus). Archieves of Virology 94: 159_162.
-Khabarovsk_virus,Microtus_fortis,wild,Isolation,2,"H_rling J, Chizhikov V, Lundkvist A, Jonsson M, Ivanov L, Dekonenko A, Niklasson B, Dzagurova T, Peters CJ, Tkachenko E, Nichol S. Khabarovsk virus: a phylogenetically and serologically distinct hantavirus isolated from Microtus fortis trapped in far-east Russia. J Gen Virol. 1996 Apr;77 ( Pt 4):687-94. PubMed PMID: 8627257."
-Seoul_virus,Microtus_fortis,wild,PCR,2,"Weng JQ, Xie RH, Yao PP, Li MH, Xu F, Lu YY, Zhu HP, Cui QR, Zhu ZY. [Molecular characterization of hantavirus Zhejiang isolate ZT10 strain from M. fartis]. Zhonghua Shi Yan He Lin Chuang Bing Du Xue Za Zhi. 2008 Feb;22(1):2-5. Chinese. PubMed PMID: 18414685."
+Volepox_virus,Microtus_californicus,wild,Isolation,2,Regnery 1987
+Khabarovsk_virus,Microtus_fortis,wild,Isolation,2,Horling et al. 1996
+Seoul_virus,Microtus_fortis,wild,PCR,2,Weng et al. 2008
 California_encephalitis_virus,Microtus_gregalis,wild,Antibodies,0,Mitchell et al. 1993
-Omsk_hemorrhagic_fever_virus,Microtus_gregalis,wild,Isolation,2,[34]
+Omsk_hemorrhagic_fever_virus,Microtus_gregalis,wild,Isolation,2,Shope 2003
 Lymphocytic_choriomeningitis_virus,Microtus_levis,wild,Antibodies,0,Tagliapietra et al. 2009
-Tula_virus,Microtus_levis,wild,PCR,2,"Schlegel M, Kindler E, Essbauer SS, Wolf R, Thiel J, Groschup MH, Heckel G, Oehme RM, Ulrich RG. Tula virus infections in the Eurasian water vole in Central Europe. Vector Borne Zoonotic Dis. 2012 Jun;12(6):503-13. doi: 10.1089/vbz.2011.0784. Epub 2012 Jan 6. PubMed PMID: 22225425."
-Khabarovsk_virus,Microtus_maximowiczii,wild,PCR,2,"Cong ML, Guo WP, Wang JB, Wang W, Zhou RH, Li MH, Zhang JN, Zhang YZ. [Genetic characteristics of hantaviruses carried by Microtus maximowixzii in Yakeshi of Inner Mongolia, China]. Zhonghua Liu Xing Bing Xue Za Zhi. 2012 Aug;33(8):832-5. Chinese. PubMed PMID: 22967339."
+Tula_virus,Microtus_levis,wild,PCR,2,Schlegel et al. 2012
+Khabarovsk_virus,Microtus_maximowiczii,wild,PCR,2,Cong et al. 2012
 Sin_Nombre_virus,Microtus_ochrogaster,wild,Antibodies,0,Torres-Perez 2010
 Borna_disease_virus,Microtus_oeconomus,wild,Antibodies,0,Kinnunen et al. 2007
 California_encephalitis_virus,Microtus_oeconomus,wild,Antibodies,0,Mitchell et al. 1993
 Cowpox_virus,Microtus_oeconomus,wild,Isolation,2,Lvov et al. 1988
 Khabarovsk_virus,Microtus_oeconomus,wild,PCR,2,Plyusnina et a; 2008
-Omsk_hemorrhagic_fever_virus,Microtus_oeconomus,wild,Isolation,2,[6]
+Omsk_hemorrhagic_fever_virus,Microtus_oeconomus,wild,Isolation,2,Acha & Szyfres 2003
 Eastern_equine_encephalitis_virus,Microtus_pennsylvanicus,wild,Antibodies,0,Karabatsos 1985 in Day et al. 1996
 Mammalian_orthoreovirus,Microtus_pennsylvanicus,wild,Antibodies,0,Descoteaux 1992 Rev Sci Tech
 Murid_herpesvirus_5,Microtus_pennsylvanicus,wild,Isolation,2,Melendez et al. 1967
-Prospect_Hill_virus,Microtus_pennsylvanicus,wild,Isolation,2,"Lee PW, Amyx HL, Yanagihara R, Gajdusek DC, Goldgaber D, Gibbs CJ Jr. Partial characterization of Prospect Hill virus isolated from meadow voles in the United States. J Infect Dis. 1985 Oct;152(4):826-9. PubMed PMID: 3930622."
+Prospect_Hill_virus,Microtus_pennsylvanicus,wild,Isolation,2,Lee et al. 1985
 Sin_Nombre_virus,Microtus_pennsylvanicus,wild,Antibodies,0,Torres-Perez 2010
 Theilovirus,Microtus_pennsylvanicus,wild,Antibodies,0,Descoteauz & Mihok 1986
 Tula_virus,Microtus_subterraneus,wild,PCR,2,Korva et al. 2009
@@ -1623,19 +1623,19 @@ Australian_bat_lyssavirus,Miniopterus_schreibersii,wild,Antibodies,0,Arguin et a
 Duvenhage_virus,Miniopterus_schreibersii,wild,Isolation,2,Calisher et al. 2006
 European_bat_lyssavirus_1,Miniopterus_schreibersii,wild,PCR,2,Serra-Cobo et al. 2002
 European_bat_lyssavirus_2,Miniopterus_schreibersii,wild,Isolation,2,Calisher et al. 2006
-Japanese_encephalitis_virus,Miniopterus_schreibersii,wild,Isolation,2,Taylor et al. (EID database); Calisher et al.
+Japanese_encephalitis_virus,Miniopterus_schreibersii,wild,Isolation,2,Taylor et al. 2001; Calisher et al. 2006
 Kyasanur_Forest_disease_virus,Miniopterus_schreibersii,wild,Antibodies,0,Bhat et al. 1978
 Rift_Valley_fever_virus,Miniopterus_schreibersii,wild,Isolation,2,Konstantinov et al. 2006
 West_Caucasian_bat_virus,Miniopterus_schreibersii,wild,Isolation,2,Calisher et al. 2006
 Yokose_virus,Miniopterus_schreibersii,wild,Isolation,2,Calishers et al. 2006; Gonzalez et al. 2008; Tajima et al. 2005; Wong et al. 2007
 Simian_immunodeficiency_virus,Miopithecus_talapoin,wild,Isolation,2,Peeters et al. 2002
-Southern_elephant_seal_virus,Mirounga_leonina,wild,Antibodies,0,"La Linn M, Gardner J, Warrilow D, Darnell GA, McMahon CR, Field I, Hyatt AD ,Slade RW, Suhrbier A. Arbovirus of marine mammals: a new alphavirus isolated from the elephant seal louse, Lepidophthirus macrorhini. J Virol. 2001. May;75(9):4103-9."
-Rabies_virus,Molossops_neglectus,arw,Antibodies,0,[433]
+Southern_elephant_seal_virus,Mirounga_leonina,wild,Antibodies,0,La Linn et al. 2001
+Rabies_virus,Molossops_neglectus,arw,Antibodies,0,de Rosa et al. 2011
 Catu_virus,Molossus_molossus,wild,Isolation,2,Calisher et al. 2006
 Dengue_virus,Molossus_molossus,wild,Antibodies,0,Price 1978
 Ilheus_virus,Molossus_molossus,wild,Antibodies,0,Price et al. 1978
 Rabies_virus,Molossus_molossus,wild,Isolation,2,"[417, 426]"
-Rio_Bravo_virus,Molossus_molossus,wild,Antibodies,0,[364]
+Rio_Bravo_virus,Molossus_molossus,wild,Antibodies,0,Price 1978
 St._Louis_encephalitis_virus,Molossus_molossus,wild,Antibodies,0,Price 1978
 Yellow_fever_virus,Molossus_molossus,wild,Antibodies,0,Price 1978
 Dengue_virus,Molossus_rufus,wild,Antibodies,0,Price 1978

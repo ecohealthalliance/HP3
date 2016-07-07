@@ -28,7 +28,7 @@ This repository contains code and data to replicate analyses in Olival et. al.
 -  `figures/` contains figures and tables in the paper and extended data and
     the scripts to generate them, except for maps.
 -  `maps/` contains a script to generate the map outputs in the paper and extended
-    data, and the final outputs of all maps used in multi-panel map figures in the paper and Extended Data.
+    data. Generated outputs are not included because of size constraints.
 -   `R/` contains files with functions used in other scripts.    
 -   `misc/` contains small scripts used for other calculations
 
@@ -66,12 +66,7 @@ This repository contains code and data to replicate analyses in Olival et. al.
 │   ├── Figure04-viral-traits.R                       | Script to generate Figure 4
 │   └── Figure04-viral-traits.svg                     | Figure 4 (generated)
 ├── maps                                              | 
-│   ├── create_maps.R                                 | Script to create maps for Figure 3 and Extended Data panels
-│   └── output                                        | 
-│       └── png                                       | 
-│           ├── all_viruses/                          | Maps of viral richness by host family and for all  mammals (observed/predicted/residuals) (generated)
-│           ├── host/                                 | Maps of host richness by host family and for all  mammals (observed/predicted/residuals) (generated)
-│           └── zoonoses/                             | Maps of zoonotic viral richness by host family and for all  mammals (observed/predicted/residuals) (generated)
+│   └── create_maps.R                                 | Script to create maps for Figure 3 and Extended Data panels
 ├── misc                                              | 
 │   ├── calc-bat-special.R                            | Script to calculate difference between bat and other family order effects
 │   └── zoonotic_dev_explained_w_offset.R             | Script to calculate deviance explained on zoonotic GAM when including offset

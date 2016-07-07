@@ -39,56 +39,55 @@ This repository contains code and data to replicate analyses in Olival et. al.
 ├── README.md                                         | This file
 ├── HP3.Rproj                                         | Rstudio project organization file
 ├── data                                              | 
-│   ├── associations.csv                              | 
-│   ├── cytb_supertree.tree                           | 
-│   ├── hosts.csv                                     | 
-│   ├── intermediate                                  | 
-│   │   ├── generate_phylogenetic_intermediate_data.R | 
-│   │   ├── HP3-cytb_PDmatrix-12Mar2016.csv           | 
-│   │   ├── HP3-ST_PDmatrix-12Mar2016.csv             | 
-│   │   └── PVR_cytb_hostmass.csv                     | 
-│   ├── IUCN_taxonomy_23JUN2016.csv                   | 
-│   ├── metadata.csv                                  | 
-│   ├── references.txt                                | 
-│   ├── supertree_mammals.tree                        | 
-│   └── viruses.csv                                   | 
+│   ├── associations.csv                              | associations database
+│   ├── cytb_supertree.tree                           | tree file for Cyt-b constrained version of mammal supertree
+│   ├── hosts.csv                                     | hosts database
+│   ├── IUCN_taxonomy_23JUN2016.csv                   | IUCN taxonomy to harmonize IUCN spatial data with hosts database
+│   ├── metadata.csv                                  | listing of variables in hosts, viruses, and associations databases
+│   ├── references.txt                                | listing of reference sources for associations database
+│   ├── supertree_mammals.tree                        | tree file for mammal supertree
+│   └── viruses.csv                                   | viruses database
+│   └── intermediate                                  | 
+│       ├── generate_phylogenetic_intermediate_data.R | Script to generate intermediate data failes
+│       ├── HP3-cytb_PDmatrix-12Mar2016.csv           | distance matrix generated from Cyt-b constrained mammal supertree (generated)
+│       ├── HP3-ST_PDmatrix-12Mar2016.csv             | distance matrix generated from mammal supertree (generated)
+│       └── PVR_cytb_hostmass.csv                     | Phylogeneticall-corrected host biomass values (generated)
 ├── figures                                           | 
-│   ├── ExtendedFigure01-heatmap.R                    | 
-│   ├── ExtendedTable01-models.docx                   | 
-│   ├── ExtendedTable01-models.R                      | 
-│   ├── Figure01A-boxplots.pdf                        | 
-│   ├── Figure01B-boxplots.pdf                        | 
-│   ├── Figure01-boxplots.R                           | 
-│   ├── Figure02-all-gams.R                           | 
-│   ├── Figure02-all-gams.svg                         | 
-│   ├── Figure04-viral-traits.R                       | 
-│   └── Figure04-viral-traits.svg                     | 
+│   ├── ExtendedFigure01-heatmap.R                    | Script to generate Extended Figure 2 heatmap
+│   ├── ExtendedTable01-models.docx                   | Tables for Extented Data Tables 1 and 2 (generated)
+│   ├── ExtendedTable01-models.R                      | Script to generate Extended Data Tables 1 and 2
+│   ├── Figure01A-boxplots.pdf                        | Boxplot used in Exented Figure 1A (generated)
+│   ├── Figure01B-boxplots.pdf                        | Boxplot used in Extended Data Figure 1B (generated)
+│   ├── Figure01-boxplots.R                           | Script to generate boxplots for Figure 1
+│   ├── Figure02-all-gams.R                           | Script to generate Figure 2
+│   ├── Figure02-all-gams.svg                         | Figure 2 (generated)
+│   ├── Figure04-viral-traits.R                       | Script to generate Figure 4
+│   └── Figure04-viral-traits.svg                     | Figure 4 (generated)
 ├── maps                                              | 
-│   ├── create_maps.R                                 | 
+│   ├── create_maps.R                                 | Script to create maps
 │   └── output                                        | 
 │       └── png                                       | 
-│           ├── all_viruses/                          | 
-│           ├── host/                                 | 
-│           └── zoonoses/                             | 
+│           ├── all_viruses/                          | Maps of viral richness by host family and for all  mammals (observed/predicted/residuals)
+│           ├── host/                                 | Maps of host richness by host family and for all  mammals (observed/predicted/residuals)
+│           └── zoonoses/                             | Maps of zoonotic viral richness by host family and for all  mammals (observed/predicted/residuals)
 ├── misc                                              | 
-│   ├── calc-bat-special.R                            | 
-│   └── zoonotic_dev_explained_w_offset.R             | 
+│   ├── calc-bat-special.R                            | Script to calculate difference between bat and other family order effects
+│   └── zoonotic_dev_explained_w_offset.R             | Script to calculate deviance explained on zoonotic GAM when including offset
 ├── model_fitting                                     | 
-│   ├── gam_supp_info.Rmd                             | 
-│   ├── gam_supp_info.md                              | 
-│   ├── gam_supp_info.html                            | 
-│   ├── gam_supp_info_files/figure-html/              | 
-│   ├── postprocessed_database.rds                    | 
-│   ├── preprocess_data.R                             | 
-│   ├── all_viruses_model.rds                         | 
-│   ├── all_zoonoses_model.rds                        | 
-│   ├── top_models.rds                                | 
-│   ├── viral_traits_model.rds                        | 
-│   └── virus_data_processed.rds                      | 
+│   ├── gam_supp_info.Rmd                             | R-markdown document fitting all GAM models and reporting results
+│   ├── gam_supp_info.md                              | Output of R-markdown document in markdown format
+│   ├── gam_supp_info.html                            | Output of R-markdown document in HTML format
+│   ├── gam_supp_info_files/figure-html/              | Image files of figres in R-markdown document
+│   ├── postprocessed_database.rds                    | Saved R object of data including all calulated variables (generated)
+│   ├── preprocess_data.R                             | Script to calculate derived variables from raw data
+│   ├── all_viruses_model.rds                         | Saved R object of all viruses GAM model (generated)
+│   ├── all_zoonoses_model.rds                        | Saved R object of all zoonoses GAM model (generated)
+│   ├── top_models.rds                                | Saved R object of list of all top models (generated)
+│   ├── viral_traits_model.rds                        | Saved R object of viral traits GAM model
+│   └── virus_data_processed.rds                      | Saved R object of virus data processed for creating Figure 4
 └── R                                                 | 
-├── avg_gam_vis.R                                     | 
-├── cross_validation.R                                | 
-├── fit_gam.R                                         | 
-├── model_reduction.R                                 | 
-└── relative_contributions.R                          | 
+    ├── cross_validation.R                            | R functions for cross-validation
+    ├── fit_gam.R                                     | R functions for fitting and selecting from a group of GAMS
+    ├── model_reduction.R                             | R functions for reducing GAM models low-edf variables
+    └── relative_contributions.R                      | R function for calculating relative contributions of variables in GAMs
 ```

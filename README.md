@@ -36,6 +36,8 @@ This repository contains code and data to replicate analyses in Olival et. al.
 ### Listing of all files
 
 ```
+├── README.md
+├── HP3.Rproj
 ├── data
 │   ├── associations.csv
 │   ├── cytb_supertree.tree
@@ -61,74 +63,13 @@ This repository contains code and data to replicate analyses in Olival et. al.
 │   ├── Figure02-all-gams.svg
 │   ├── Figure04-viral-traits.R
 │   └── Figure04-viral-traits.svg
-├── HP3.Rproj
 ├── maps
 │   ├── create_maps.R
 │   └── output
-│   │   └── png
-│           ├── all_viruses
-│           │   ├── CARNIVORA_obs_all.png
-│           │   ├── CARNIVORA_pred_all.png
-│           │   ├── CARNIVORA_pred_obs_all.png
-│           │   ├── CETARTIODACTYLA_obs_all.png
-│           │   ├── CETARTIODACTYLA_pred_all.png
-│           │   ├── CETARTIODACTYLA_pred_obs_all.png
-│           │   ├── CHIROPTERA_obs_all.png
-│           │   ├── CHIROPTERA_pred_all.png
-│           │   ├── CHIROPTERA_pred_obs_all.png
-│           │   ├── obs_all.png
-│           │   ├── pred_all.png
-│           │   ├── pred_obs_all.png
-│           │   ├── PRIMATES_obs_all.png
-│           │   ├── PRIMATES_pred_all.png
-│           │   ├── PRIMATES_pred_obs_all.png
-│           │   ├── RODENTIA_obs_all.png
-│           │   ├── RODENTIA_pred_all.png
-│           │   └── RODENTIA_pred_obs_all.png
-│           ├── host
-│           │   ├── all_mammals.png
-│           │   ├── CARNIVORA_all_mammals.png
-│           │   ├── CARNIVORA_hosts.png
-│           │   ├── CARNIVORA_hp3_viruses.png
-│           │   ├── CARNIVORA_pred_obs_richness.png
-│           │   ├── CETARTIODACTYLA_all_mammals.png
-│           │   ├── CETARTIODACTYLA_hosts.png
-│           │   ├── CETARTIODACTYLA_hp3_viruses.png
-│           │   ├── CETARTIODACTYLA_pred_obs_richness.png
-│           │   ├── CHIROPTERA_all_mammals.png
-│           │   ├── CHIROPTERA_hosts.png
-│           │   ├── CHIROPTERA_hp3_viruses.png
-│           │   ├── CHIROPTERA_pred_obs_richness.png
-│           │   ├── hp3.png
-│           │   ├── hp3_viruses.png
-│           │   ├── mammals_pred_obs_richness.png
-│           │   ├── PRIMATES_all_mammals.png
-│           │   ├── PRIMATES_hosts.png
-│           │   ├── PRIMATES_hp3_viruses.png
-│           │   ├── PRIMATES_pred_obs_richness.png
-│           │   ├── RODENTIA_all_mammals.png
-│           │   ├── RODENTIA_hosts.png
-│           │   ├── RODENTIA_hp3_viruses.png
-│           │   └── RODENTIA_pred_obs_richness.png
-│           └── zoonoses
-│               ├── CARNIVORA_obs_zoo.png
-│               ├── CARNIVORA_pred_obs_zoo.png
-│               ├── CARNIVORA_pred_zoo.png
-│               ├── CETARTIODACTYLA_obs_zoo.png
-│               ├── CETARTIODACTYLA_pred_obs_zoo.png
-│               ├── CETARTIODACTYLA_pred_zoo.png
-│               ├── CHIROPTERA_obs_zoo.png
-│               ├── CHIROPTERA_pred_obs_zoo.png
-│               ├── CHIROPTERA_pred_zoo.png
-│               ├── obs_zoo.png
-│               ├── pred_obs_zoo.png
-│               ├── pred_zoo.png
-│               ├── PRIMATES_obs_zoo.png
-│               ├── PRIMATES_pred_obs_zoo.png
-│               ├── PRIMATES_pred_zoo.png
-│               ├── RODENTIA_obs_zoo.png
-│               ├── RODENTIA_pred_obs_zoo.png
-│               └── RODENTIA_pred_zoo.png
+│       └── png
+│           ├── all_viruses/
+│           ├── host/
+│           └── zoonoses/
 ├── misc
 │   ├── calc-bat-special.R
 │   └── zoonotic_dev_explained_w_offset.R
@@ -150,5 +91,4 @@ This repository contains code and data to replicate analyses in Olival et. al.
 │   ├── fit_gam.R
 │   ├── model_reduction.R
 │   └── relative_contributions.R
-└── README.md
 ```

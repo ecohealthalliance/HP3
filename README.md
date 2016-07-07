@@ -64,17 +64,17 @@ This repository contains code and data to replicate analyses in Olival et. al.
 │   ├── Figure04-viral-traits.R                       | Script to generate Figure 4
 │   └── Figure04-viral-traits.svg                     | Figure 4 (generated)
 ├── maps                                              | 
-│   ├── create_maps.R                                 | Script to create maps
+│   ├── create_maps.R                                 | Script to create maps for Figure 3 and Extended Data panels
 │   └── output                                        | 
 │       └── png                                       | 
-│           ├── all_viruses/                          | Maps of viral richness by host family and for all  mammals (observed/predicted/residuals)
-│           ├── host/                                 | Maps of host richness by host family and for all  mammals (observed/predicted/residuals)
-│           └── zoonoses/                             | Maps of zoonotic viral richness by host family and for all  mammals (observed/predicted/residuals)
+│           ├── all_viruses/                          | Maps of viral richness by host family and for all  mammals (observed/predicted/residuals) (generated)
+│           ├── host/                                 | Maps of host richness by host family and for all  mammals (observed/predicted/residuals) (generated)
+│           └── zoonoses/                             | Maps of zoonotic viral richness by host family and for all  mammals (observed/predicted/residuals) (generated)
 ├── misc                                              | 
 │   ├── calc-bat-special.R                            | Script to calculate difference between bat and other family order effects
 │   └── zoonotic_dev_explained_w_offset.R             | Script to calculate deviance explained on zoonotic GAM when including offset
 ├── model_fitting                                     | 
-│   ├── gam_supp_info.Rmd                             | R-markdown document fitting all GAM models and reporting results
+│   ├── gam_supp_info.Rmd                             | R-markdown document fitting all GAM models, reporting models within 2 AIC, summaries, and diagnostics
 │   ├── gam_supp_info.md                              | Output of R-markdown document in markdown format (generated)
 │   ├── gam_supp_info.html                            | Output of R-markdown document in HTML format (generated)
 │   ├── gam_supp_info_files/figure-html/              | Image files of figres in R-markdown document (generated)

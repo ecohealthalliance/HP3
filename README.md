@@ -17,6 +17,7 @@ This repository contains code and data to replicate analyses in Olival et. al.
         these values
     -   A `metadata.csv` file that describes variables in our database and derived
         variables used in model-fitting
+    -   `IUCN_taxonomy_23JUN2016.csv` is data from IUCN used to harmonize our data with IUCN spatial data (see Supplementary Methods)
 -  `model_fitting/` contains an R markdown document which fits all the GAMs in
     the paper, and its output HTML document which includes tables comparing model
     AIC, plot and summaries of top models, relative influence of variables, and
@@ -25,8 +26,8 @@ This repository contains code and data to replicate analyses in Olival et. al.
     figures in `figures/` and `maps/`.
 -  `figures/` contains figures and tables in the paper and extended data and
     the scripts to generate them, except for maps.
--  `maps` contains a script to generate the map outputs in the paper and extended
-    data.
+-  `maps/` contains a script to generate the map outputs in the paper and extended
+    data, and the final outputs of all maps used in multi-panel map figures in the paper and Extended Data.
 -   `R/` contains files with functions used in other scripts.    
 -   `misc/` contains small scripts used for other calculations
 

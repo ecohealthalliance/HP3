@@ -75,16 +75,16 @@ This repository contains code and data to replicate analyses in Olival et. al.
 │   └── zoonotic_dev_explained_w_offset.R             | Script to calculate deviance explained on zoonotic GAM when including offset
 ├── model_fitting                                     | 
 │   ├── gam_supp_info.Rmd                             | R-markdown document fitting all GAM models and reporting results
-│   ├── gam_supp_info.md                              | Output of R-markdown document in markdown format
-│   ├── gam_supp_info.html                            | Output of R-markdown document in HTML format
-│   ├── gam_supp_info_files/figure-html/              | Image files of figres in R-markdown document
+│   ├── gam_supp_info.md                              | Output of R-markdown document in markdown format (generated)
+│   ├── gam_supp_info.html                            | Output of R-markdown document in HTML format (generated)
+│   ├── gam_supp_info_files/figure-html/              | Image files of figres in R-markdown document (generated)
 │   ├── postprocessed_database.rds                    | Saved R object of data including all calulated variables (generated)
 │   ├── preprocess_data.R                             | Script to calculate derived variables from raw data
 │   ├── all_viruses_model.rds                         | Saved R object of all viruses GAM model (generated)
 │   ├── all_zoonoses_model.rds                        | Saved R object of all zoonoses GAM model (generated)
 │   ├── top_models.rds                                | Saved R object of list of all top models (generated)
-│   ├── viral_traits_model.rds                        | Saved R object of viral traits GAM model
-│   └── virus_data_processed.rds                      | Saved R object of virus data processed for creating Figure 4
+│   ├── viral_traits_model.rds                        | Saved R object of viral traits GAM model (generated)
+│   └── virus_data_processed.rds                      | Saved R object of virus data processed for creating Figure 4 (generated)
 └── R                                                 | 
     ├── cross_validation.R                            | R functions for cross-validation
     ├── fit_gam.R                                     | R functions for fitting and selecting from a group of GAMS

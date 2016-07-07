@@ -4,11 +4,11 @@ P <- rprojroot::find_rstudio_root_file
 library(mgcv)
 library(dplyr)
 library(MASS)
-gam_model <- readRDS(P("model_fitting/all_zoonoses_model.rds"))
-gam(formula = formula(gam_model), sp = gam_model$sp, data=model_data, family=gam_model$family, select=FALSE)
+gam_model <- readRDS(P("model_fitting/all_viruses_model.rds"))
+#gam(formula = formula(gam_model), sp = gam_model$sp, data=, family=gam_model$family, select=FALSE)
 
 library(MASS)
-samps = mvrnorm(1e7, mu=coef(modd), Sigma=vcov(modd))
+samps = mvrnorm(1e6, mu=coef(gam_model), Sigma=vcov(gam_model))
 samps <- tbl_df(as.data.frame(samps))
 samps %>%
   mutate(bats_special = `s(hOrderCHIROPTERA).1` > pmax(`s(hOrderCETARTIODACTYLA).1`, `s(hOrderRODENTIA).1`, `s(hOrderPRIMATES).1`)) %>%

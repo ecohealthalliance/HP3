@@ -302,13 +302,13 @@ read_print(P('maps/output/tif/zoonoses/'), P('maps/output/png/zoonoses/'), 900, 
 read_print(P('maps/output/tif/host/'), P('maps/output/png/host/'), 900, rev(myTheme))
 
 
-# Calculate residuals (pred - obs) for mammals vs hp3 mammals data
-res_pred_obs('CARNIVORA_hp3_viruses', 'CARNIVORA_hosts', P('maps/output/tif/host/'), P('maps/output/tif/host/'), 'CARNIVORA_pred_obs_richness' )
-res_pred_obs('RODENTIA_hp3_viruses', 'RODENTIA_hosts', P('maps/output/tif/host/'), P('maps/output/tif/host/'), 'RODENTIA_pred_obs_richness' )
-res_pred_obs('CHIROPTERA_hp3_viruses', 'CHIROPTERA_hosts', P('maps/output/tif/host/'), P('maps/output/tif/host/'), 'CHIROPTERA_pred_obs_richness' )
-res_pred_obs('CETARTIODACTYLA_hp3_viruses', 'CETARTIODACTYLA_hosts', P('maps/output/tif/host/'), P('maps/output/tif/host/'), 'CETARTIODACTYLA_pred_obs_richness' )
-res_pred_obs('PRIMATES_hp3_viruses', 'PRIMATES_hosts', P('maps/output/tif/host/'), P('maps/output/tif/host/'), 'PRIMATES_pred_obs_richness' )
-res_pred_obs('hp3_viruses', 'hp3', P('maps/output/tif/host/'), P('maps/output/tif/host/'), 'mammals_pred_obs_richness' )
+#Calculate residuals (pred - obs) for mammals vs hp3 mammals data
+res_pred_obs('CARNIVORA_hp3_viruses', 'CARNIVORA_all_mammals', P('maps/output/tif/host/'), P('maps/output/tif/host/'), 'CARNIVORA_pred_obs_richness' )
+res_pred_obs('RODENTIA_hp3_viruses', 'RODENTIA_all_mammals', P('maps/output/tif/host/'), P('maps/output/tif/host/'), 'RODENTIA_pred_obs_richness' )
+res_pred_obs('CHIROPTERA_hp3_viruses', 'CHIROPTERA_all_mammals', P('maps/output/tif/host/'), P('maps/output/tif/host/'), 'CHIROPTERA_pred_obs_richness' )
+res_pred_obs('CETARTIODACTYLA_hp3_viruses', 'CETARTIODACTYLA_all_mammals', P('maps/output/tif/host/'), P('maps/output/tif/host/'), 'CETARTIODACTYLA_pred_obs_richness' )
+res_pred_obs('PRIMATES_hp3_viruses', 'PRIMATES_all_mammals', P('maps/output/tif/host/'), P('maps/output/tif/host/'), 'PRIMATES_pred_obs_richness' )
+res_pred_obs('hp3_viruses', 'all_mammals', P('maps/output/tif/host/'), P('maps/output/tif/host/'), 'mammals_pred_obs_richness' )
 
 # get list of files with .tif extension
 mammals = tif_path(P('maps/output/tif/host/'), 'tif')

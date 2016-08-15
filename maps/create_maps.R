@@ -2,12 +2,15 @@ library(sp)
 library(readr)
 library(rgdal)
 library(stringr)
-library(dplyr)
 library(raster)
 library(classInt)
+#library(plyr)
+library(dplyr)
 library(rasterVis)
-library(plyr)
 library(maptools)
+library(tibble)
+library(mgcv)
+
 P <- rprojroot::find_rstudio_root_file
 
 # Load the Mammals' shapefile TERRESTRIAL_MAMMALS, downloaded from: http://www.iucnredlist.org/technical-documents/spatial-data#mammals
@@ -40,24 +43,43 @@ terr@data = left_join(terr@data, taxa, by = c("ID_NO" = 'spp_ID'))
 # Get HP3 all virus predictions
 all_viruses_gam <- readRDS(P("model_fitting/all_viruses_model.rds"))
 hp3_hosts <- readRDS(P("model_fitting/postprocessed_database.rds"))$hosts
-hp3_all = left_join(all_viruses_gam$model, hp3_hosts)
-hp3_all = mutate(hp3_all, prediction = as.vector(unname(predict(all_viruses_gam, hp3_all, type="response"))),
-                 hHostNameFinal = as.character(hHostNameFinal)) %>%
-  dplyr::select(hHostNameFinal, hOrder, TotVirusPerHost, prediction) %>%
-  mutate(pred_obs_all = prediction - TotVirusPerHost,
-         pred_all = prediction) %>%
-  dplyr::select(-prediction, -hOrder, obs_all = TotVirusPerHost)
+hp3_all = as_tibble(left_join(all_viruses_gam$model, hp3_hosts))
+hp3_all_pred = within(hp3_all, {hDiseaseZACitesLn = max(hDiseaseZACitesLn)})
+hp3_all = mutate(hp3_all,
+                 prediction = as.vector(unname(predict(all_viruses_gam, hp3_all, type="response"))),
+                 prediction_max = as.vector(unname(predict(all_viruses_gam, hp3_all_pred, type="response"))),
+                 missing_vir = prediction_max - TotVirusPerHost,
+                 hHostNameFinal = as.character(hHostNameFinal)
+                 ) %>%
+  dplyr::select(hHostNameFinal, hOrder, TotVirusPerHost, prediction_max) %>%
+  mutate(pred_obs_all = prediction_max - TotVirusPerHost,
+         pred_all = prediction_max) %>%
+  dplyr::select(-prediction_max, -hOrder, obs_all = TotVirusPerHost)
+
+
+# Look at the top missing virus species
+#hp3_all %>% dplyr::select(hHostNameFinal, Common_names_Eng, hOrder, TotVirusPerHost, prediction, prediction_max, hDiseaseZACitesLn, missing_vir) %>% arrange(desc(missing_vir)) %>% print(n=100)
 
 # just zoonotic viruses
 zoo_viruses_gam <- readRDS(P("model_fitting/all_zoonoses_model.rds"))
 hp3_zoo = left_join(zoo_viruses_gam$model, hp3_hosts) %>%
-  dplyr::rename(LnTotNumVirus=`offset(LnTotNumVirus)`)
-hp3_zoo = mutate(hp3_zoo, prediction = as.vector(unname(predict(zoo_viruses_gam, hp3_zoo, type="response"))),
+  left_join(dplyr::select(hp3_all, hHostNameFinal, pred_all)) %>%
+  dplyr::rename(vir_prediction_max = pred_all) %>%
+  as_tibble()
+hp3_zoo_pred =  within(hp3_zoo, {hDiseaseZACites = max(hDiseaseZACites)
+                                 LnTotNumVirus = log(vir_prediction_max)})
+#hp3_zoo %>% dplyr::select(hHostNameFinal, Common_names_Eng, hOrder, NSharedWithHoSa, hAllZACitesLn) %>% arrange(desc(hAllZACitesLn))
+hp3_zoo = mutate(hp3_zoo,
+                 prediction = as.vector(unname(predict(zoo_viruses_gam, hp3_zoo, type="response"))),
+                 prediction_max = as.vector(unname(predict(zoo_viruses_gam, hp3_zoo_pred, type="response"))),
+                 missing_zoo = prediction_max - NSharedWithHoSa,
                  hHostNameFinal = as.character(hHostNameFinal)) %>%
-  dplyr::select(hHostNameFinal, hOrder, NSharedWithHoSa, prediction) %>%
-  mutate(pred_obs_zoo = prediction - NSharedWithHoSa,
-         pred_zoo = prediction) %>%
-  dplyr::select(-prediction, -hOrder, obs_zoo = NSharedWithHoSa)
+  #hp3_zoo %>% dplyr::select(hHostNameFinal, Common_names_Eng, hOrder, NSharedWithHoSa, hAllZACitesLn, prediction, prediction_max, LnTotNumVirus, vir_prediction_max, missing_zoo) %>% arrange(desc(missing_zoo)) %>% print(n=100)
+
+  dplyr::select(hHostNameFinal, hOrder, NSharedWithHoSa, prediction_max) %>%
+  mutate(pred_obs_zoo = prediction_max - NSharedWithHoSa,
+         pred_zoo = prediction_max) %>%
+  dplyr::select(-prediction_max, -hOrder, obs_zoo = NSharedWithHoSa)
 
 hp3 = read_csv(P('data/hosts.csv')) %>%
   filter(hWildDomFAO == 'wild', hMarOTerr == 'Terrestrial') %>%

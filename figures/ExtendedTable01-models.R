@@ -8,11 +8,11 @@ source(P("R/relative_contributions.R"))
 top_models <- readRDS(P("model_fitting/top_models.rds"))
 
 model_names = c("Zoonoses Model",
-                "Zoonoses Model (strict)",
+                "Zoonoses Model (stringent)",
                 "Viral Richness Model",
-                "Viral Richness Model (strict)",
+                "Viral Richness Model (stringent)",
                 "Viral Traits Model",
-                "Viral Traits Model (strict)")
+                "Viral Traits Model (stringent)")
 
 model_tables = map2(top_models, model_names, function(modd, model_name) {
   summ = summary(modd)

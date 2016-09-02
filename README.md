@@ -64,12 +64,14 @@ This repository contains code and data to replicate analyses in Olival et. al.
 │   ├── Figure02-all-gams.R                           | Script to generate Figure 2
 │   ├── Figure02-all-gams.svg                         | Figure 2 (generated)
 │   ├── Figure04-viral-traits.R                       | Script to generate Figure 4
-│   └── Figure04-viral-traits.svg                     | Figure 4 (generated)
+│   ├── Figure04-viral-traits.svg                     | Figure 4 (generated)
+|   └── SuppTable1-observed-predicted-missing.csv     | Supplemental Table 1 (generated)
 ├── maps                                              | 
 │   └── create_maps.R                                 | Script to create maps for Figure 3 and Extended Data panels
 ├── misc                                              | 
 │   ├── calc-bat-special.R                            | Script to calculate difference between bat and other family order effects
 │   └── zoonotic_dev_explained_w_offset.R             | Script to calculate deviance explained on zoonotic GAM when including offset
+│   └── generate_prediction_table.R                   | Script to generate Supplemental Table 1
 ├── model_fitting                                     | 
 │   ├── gam_supp_info.Rmd                             | R-markdown document fitting all GAM models, reporting models within 2 AIC, summaries, and diagnostics
 │   ├── gam_supp_info.md                              | Output of R-markdown document in markdown format (generated)

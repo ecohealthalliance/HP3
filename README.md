@@ -1,5 +1,9 @@
 # HP3 Analysis files
 
+***This branch (`with_tiffs`) contains the intermediate TIF files of species
+maps. They are stored using Git Large File System (https://git-lfs.github.com/),
+which you will need to install in order to use this.***
+
 This repository contains code and data to replicate analyses in Olival et. al.
 (2016) *Host and Viral Traits Predict Zoonotic Spillover from Mammals.*
 

@@ -8,8 +8,6 @@
 *_cache/
 
 maps/iucn_data/
-maps/output/tif
-*.tif
 *.grd
 *.gri
 *.zip

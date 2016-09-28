@@ -1,18 +1,24 @@
+
 cv_gam_by<-function(model, hp3_hosts, region_vector){
   df <- data.frame()
   for(i in 1:length(region_vector)){
-    temp <- cale_whale(model, hp3_hosts, region_vector[i])
+    temp <- cv_gam_each(model, hp3_hosts, region_vector[i])
     df <- rbind(df, temp)
   }
   df
 }
 
-#given model and data, removes any non complete cases (using model terms)
-filter_down<-function(model, data){}
+filter_down<-function(model, data, region){
+  variable_names <- stri_replace_first_regex(names(model$model), "offset\\(([^\\)]+)\\)", "$1")
+  variable_names <- c(variable_names, "hHostNameFinal", region)
+  reduced <- data %>%
+    select_if(colnames(.) %in% variable_names)
+  reduced <- reduced[complete.cases(reduced),]
+  reduced
+}
 
-
-
-cale_whale<- function(model, data, region){
+cv_gam_each<- function(model, data, region){
+  data <- filter_down(model,data, region)
   response_var <- names(model$model)[attributes(terms(model))$response]
   data$region_present = eval(parse(text = paste0("data$",region)))
   regional <- filter(data, region_present == 1)
@@ -31,15 +37,8 @@ cale_whale<- function(model, data, region){
                     n_fit = nrow(world),
                     n_validate = length(preds),
                     p_value=perm_p_adj))
-
-
 }
 
-regions <- c("africa", "americas", "australia", "eurussia", "asia")
 
 
-cv_gam_by(allz_gam, spatial_join, regions) %>%
-  mutate(p_value = round(p_value, digits =3)) %>%
-  rename(`Region Removed` = fold, `Observations Fit` = n_fit, `Observations Held Out` = n_validate,
-         `P-value` = p_value) %>%
-  kable()
+

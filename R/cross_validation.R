@@ -30,6 +30,7 @@ cv_gam <- function(mod, k=10, B=100000) {
     actuals = dat[dat$fold == x, names(dat)[attributes(terms(mod))$response]]
 
     diffs = actuals - preds
+    error_term = mean(diffs)
     mean_diff = abs(mean(diffs))
     rand_diff = abs(replicate(B, mean(sample(c(-1,1), length(preds), replace=TRUE)*diffs)))
     perm_p = sum(rand_diff > mean_diff)/B
@@ -42,7 +43,8 @@ cv_gam <- function(mod, k=10, B=100000) {
     return(data_frame(fold=as.character(x),
                       n_fit = nrow(dat) - length(preds),
                       n_validate = length(preds),
-                      p_value=perm_p))
+                      p_value=perm_p,
+                      mean_error=error_term))
   })
   cv_out$p_value = stats::p.adjust(cv_out$p_value, method="none")
   return(cv_out)

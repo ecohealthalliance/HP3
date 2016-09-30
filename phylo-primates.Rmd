@@ -1,0 +1,136 @@
+---
+title: "Phylogenetic Distance / Primates"
+output: 
+  html_document:
+    code_download: TRUE
+    keep_md: TRUE
+---
+
+```{r setup, include=FALSE}
+library(mgcv)
+library(dplyr)
+library(stringi)
+library(parallel)
+library(purrr)
+library(ggplot2)
+library(viridis)
+library(knitr)
+library(svglite)
+P <- rprojroot::find_rstudio_root_file
+source(P("R/model_reduction.R"))
+source(P("R/fit_gam.R"))
+source(P("R/relative_contributions.R"))
+source(P("R/cross_validation.R"))
+set.seed(0)
+opts_chunk$set(echo = FALSE, message=FALSE, warning = FALSE, autodep=TRUE, cache = TRUE)
+```
+
+### Reviewer Comments:
+
+The result on phylogenetic distance to humans (Fig 2g) is presented as a central finding, but still raises issues. First, it is described as approximating ‘an exponential decay to an asymptote, with some upward drift for very phylogenetically distant mammals’ (line 129-130). This is not accurate – the curve appears roughly parabolic, with a minimum that appears to come before the bulk of the data. Thus the curve is rising through most of the data points. The text attributes this rise either to oversampling of marsupials (which clearly can’t explain the broad pattern) or to the idea that distantly related species pose a uniquely high risk for zoonoses. The latter argument is interesting, but breaks down if extended further to reptiles or insects or plants.
+
+__Differences in choice of words to describe plots; differences in interpretation.__
+
+The authors have still not dispelled my previous critique that the meaningful pattern in this relationship (i.e. the downward slope for phylogenetic distance <0.5) is entirely due to non-human primates. Their response
+argues that the order Primates did not show an effect in this model (not shown in the ms, but I’ll take their word for it) and therefore the influence of phylogeny is ‘robust across all data, and not necessarily driven by primates alone’. To be convinced of this, I would like to see a partial effect plot from a model with the order Primates included, with a credible interpretation of whatever phylogenetic pattern remains. Until then I don’t find the broad conclusions about the ‘strong predictive power of phylogenetic relatedness’ (line 134) to be supported, beyond apes > monkeys > other mammals. 
+
+```{r model-setup}
+
+source(P("model_fitting/preprocess_data.R"))
+saveRDS(list(hosts=hosts, viruses=viruses, associations=associations), P("model_fitting/postprocessed_database.rds"))
+
+data_set = hosts %>% 
+  filter(hMarOTerr == "Terrestrial",
+         hWildDomFAO == "wild",
+         !is.na(PdHoSa.cbCst_order))
+
+outcome_variable = "NSharedWithHoSa"
+
+model_family = poisson
+
+#  Create dummy variables for orders to use as random effects
+dummys = as.data.frame(with(data_set, model.matrix(~hOrder))[,-1])
+data_set = cbind(data_set, dummys)
+dummy_terms = paste0("s(", names(dummys), ", bs = 're')")
+names(dummy_terms) <- names(dummys)
+
+## Create data.frame of all possible models
+terms = list(
+  mass = "s(hMassGramsPVR, bs = 'tp', k=7)",
+  interaction = c(
+    "s(HabAreaCropLn, bs = 'tp', k=7)   + s(HabAreaCropChgLn, bs = 'tp', k=7)",
+    "s(HabAreaGrassLn, bs = 'tp', k=7)  + s(HabAreaGrassChgLn, bs = 'tp', k=7)",
+    "s(HabAreaUrbanLn, bs = 'tp', k=7)  + s(HabAreaUrbanChgLn, bs = 'tp', k=7)",
+    "s(HabInhabitedLn, bs = 'tp', k=7)  + s(HabInhabitedChgLn, bs = 'tp', k=7)",
+    "s(TotHumPopLn, bs = 'tp', k=7) + s(TotHumPopChgLn, bs = 'tp', k=7) + s(UrbRurPopRatioLn, bs = 'tp', k=7) + s(UrbRurPopRatioChg, bs = 'tp', k=7)",
+    "s(HumPopDensLn, bs = 'tp', k=7) + s(HumPopDensLnChg, bs = 'tp', k=7) + s(UrbRurPopRatioLn, bs = 'tp', k=7) + s(UrbRurPopRatioChg, bs = 'tp', k=7)"),
+  interaction2 = "s(hHuntedIUCN, bs='re')",
+  interaction3 = "s(hArtfclHbttUsrIUCN, bs='re')",
+  phylo_distance = c("s(PdHoSa.cbCst, bs = 'tp', k=7)", "s(PdHoSaSTPD, bs = 'tp', k=7)"),
+  bias = c("s(hAllZACitesLn, bs = 'tp', k=7)", "s(hDiseaseZACitesLn, bs = 'tp', k=7)"),
+  offset = "offset(LnTotNumVirus)",
+  stringsAsFactors=FALSE)
+
+terms = c(dummy_terms, terms)
+
+all_zoonoses = fit_all_gams(data_set,
+                            outcome_variable,
+                            poisson,
+                            terms)
+
+allz_gam <- all_zoonoses$model[[1]]
+
+replicate_gam <- gam(NSharedWithHoSa ~ s(hAllZACitesLn, bs = "tp", k = 7) + s(hHuntedIUCN, bs = "re") + s(hOrderCETARTIODACTYLA, bs = "re") + 
+                       s(hOrderCHIROPTERA, bs = "re") + s(hOrderDIPROTODONTIA, bs = "re") + 
+                       s(hOrderPERAMELEMORPHIA, bs = "re") + s(hOrderPERISSODACTYLA, bs = "re") + 
+                       s(hOrderSCANDENTIA, bs = "re") + s(PdHoSa.cbCst, bs = "tp", k = 7) + 
+                       s(UrbRurPopRatioLn, bs = "tp", k = 7) + offset(LnTotNumVirus), poisson, data_set, select=TRUE)
+
+
+primate_re <- gam(NSharedWithHoSa ~ s(hAllZACitesLn, bs = "tp", k = 7) + s(hHuntedIUCN, bs = "re") + s(hOrderCETARTIODACTYLA, bs = "re") + 
+                    s(hOrderCHIROPTERA, bs = "re") + s(hOrderDIPROTODONTIA, bs = "re") + 
+                    s(hOrderPERAMELEMORPHIA, bs = "re") + s(hOrderPERISSODACTYLA, bs = "re") + 
+                    s(hOrderPRIMATES, bs = "re") +
+                    s(hOrderSCANDENTIA, bs = "re") + s(PdHoSa.cbCst, bs = "tp", k = 7) + 
+                    s(UrbRurPopRatioLn, bs = "tp", k = 7) + offset(LnTotNumVirus), poisson, data_set, select=TRUE)
+
+df <- cbind(pen.edf(primate_re))
+
+
+```
+
+
+__The variable Order Primates, when added to the best model as a random effect, has very low effective degrees of freedom: `r df[9,]`:__  
+  
+
+```{r primate-fe-model}
+primate_fe <- gam(NSharedWithHoSa ~ s(hAllZACitesLn, bs = "tp", k = 7) + s(hHuntedIUCN, bs = "re") + s(hOrderCETARTIODACTYLA, bs = "re") + 
+                    s(hOrderCHIROPTERA, bs = "re") + s(hOrderDIPROTODONTIA, bs = "re") + 
+                    s(hOrderPERAMELEMORPHIA, bs = "re") + s(hOrderPERISSODACTYLA, bs = "re") + 
+                    hOrderPRIMATES +
+                    s(hOrderSCANDENTIA, bs = "re") + s(PdHoSa.cbCst, bs = "tp", k = 7) + 
+                    s(UrbRurPopRatioLn, bs = "tp", k = 7) + offset(LnTotNumVirus), poisson, data_set, select=TRUE)
+
+```
+
+__The partial effect plot of phylogenetic distance with an Order Primates variable included as a Fixed Effect does not change substantially when compared to the partial effect plot in the original model__
+
+```{r plots}
+#primate_fe$aic
+#1519.172
+#allz_gam$aic
+#1517.584
+
+plot(allz_gam, select = 9)
+title("Best Model: Phylogenetic Distance Partial Effect Plot")
+
+#plot(primate_re, select = 10)
+#title("Primate RE Model: Phylogentic Distance Partial Effect Plot")
+
+plot(primate_fe, select = 9)
+title("Primate FE Model: Phylogenetic Distance Partial Effect Plot")
+```
+
+
+
+

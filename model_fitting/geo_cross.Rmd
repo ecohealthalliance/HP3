@@ -62,7 +62,6 @@ zgm <- zgm_reduced %>%
   filter(garea2 == area) %>%
   arrange(BINOMIAL)
 zgm <- unique(zgm)
-
 ```
 
 # Zoonoses GAM - All Associations
@@ -88,7 +87,8 @@ results<-cv_gam_by_zg(allz_gam, joined_dat,unique(joined_dat$mam_upgma_))
 zregions@data <- left_join(zregions@data, results, by=c("mam_upgma_"="fold"))
 
 data("wrld_simpl")
-plot(wrld_simpl)
+small_world <- subset(wrld_simpl, wrld_simpl@data$NAME != "Antarctica")
+plot(small_world)
 
 zregions %>%
   subset(zregions@data$p_value < 0.05 & zregions@data$n_validate > 10) %>%
@@ -137,8 +137,7 @@ vresults<-cv_gam_by_zg(allv_gam, temp,unique(temp$mam_upgma_))
 
 vregions@data <- left_join(vregions@data, vresults, by=c("mam_upgma_"="fold"))
 
-data("wrld_simpl")
-plot(wrld_simpl)
+plot(small_world)
 
 vregions %>%
   subset(vregions@data$p_value < 0.05 & vregions@data$n_validate > 10) %>%
@@ -187,8 +186,7 @@ szresults<-cv_gam_by_zg(strictz_gam, temp,unique(temp$mam_upgma_))
 
 szregions@data <- left_join(szregions@data, szresults, by=c("mam_upgma_"="fold"))
 
-data("wrld_simpl")
-plot(wrld_simpl)
+plot(small_world)
 
 szregions %>%
   subset(szregions@data$p_value < 0.05 & szregions@data$n_validate > 10) %>%
@@ -210,13 +208,15 @@ title("Strict Zoonoses: 31 Regions")
 ```
 
 Dark green indicates unbiased regions, while dark red indicates regions with evidence of biased predictions. Light green and light red represent the same distinction, but these regions contain very few (less than ten) assigned 
-species; blank areas were not assigned any hosts. 
+species; blank areas were not assigned any hosts.  
 
 ```{r sz-tables, results = "asis"}
 szresults %>% arrange(fold) %>%
   filter(n_validate > 10, p_value < 0.05) %>%
   kable(caption = "Biased Predictions Regions (n > 10)")
+```
 
+```{r sz-tables2}
 szresults %>% arrange(fold) %>%
   filter(n_validate > 10, p_value >= 0.05) %>%
   kable(caption = "Unbiased Prediction Regions (n > 10)")
@@ -237,8 +237,7 @@ svresults<-cv_gam_by_zg(strictv_gam, temp,unique(temp$mam_upgma_))
 
 svregions@data <- left_join(svregions@data, svresults, by=c("mam_upgma_"="fold"))
 
-data("wrld_simpl")
-plot(wrld_simpl)
+plot(small_world)
 
 svregions %>%
   subset(svregions@data$p_value < 0.05 & svregions@data$n_validate > 10) %>%

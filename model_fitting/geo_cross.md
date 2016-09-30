@@ -84,7 +84,7 @@ Table: Unbiased Prediction Regions (n > 10)
 ![](geo_cross_files/figure-html/strict-zoo-1.png)<!-- -->
 
 Dark green indicates unbiased regions, while dark red indicates regions with evidence of biased predictions. Light green and light red represent the same distinction, but these regions contain very few (less than ten) assigned 
-species; blank areas were not assigned any hosts. 
+species; blank areas were not assigned any hosts.  
 
 
 Table: Biased Predictions Regions (n > 10)
@@ -99,7 +99,6 @@ Table: Biased Predictions Regions (n > 10)
    14     542           34   0.03829    0.3685310
    25     540           36   0.01817    0.2887942
    26     542           34   0.00744   -0.5019819
-
 
 
 Table: Unbiased Prediction Regions (n > 10)

@@ -1,0 +1,274 @@
+---
+title: "geo_cross"
+author: "Cale Basaraba"
+date: "September 28, 2016"
+output:
+  html_document:
+    toc: TRUE
+    code_download: TRUE
+    keep_md: TRUE
+---
+
+```{r setup, include=FALSE, cache=FALSE}
+library(mgcv)
+library(raster)
+library(dplyr)
+library(stringi)
+library(parallel)
+library(purrr)
+library(ggplot2)
+library(viridis)
+library(knitr)
+library(svglite)
+library(sp)
+library(readr)
+library(rgdal)
+library(stringr)
+library(classInt)
+library(maptools)
+library(tibble)
+library(mgcv)
+P <- rprojroot::find_rstudio_root_file
+source(P("R/model_reduction.R"))
+source(P("R/fit_gam.R"))
+source(P("R/relative_contributions.R"))
+source(P("R/cross_validation.R"))
+source(P("R/cv_gam_by.R"))
+set.seed(0)
+opts_chunk$set(echo = FALSE, message=FALSE, warning = FALSE, autodep=TRUE)
+```
+
+```{r model-loading, cache = TRUE}
+source(P("model_fitting/preprocess_data.R"))
+saveRDS(list(hosts=hosts, viruses=viruses, associations=associations), P("model_fitting/postprocessed_database.rds"))
+```
+# Zoogeographic Cross-Validation
+
+In addition to randomly-selected k-fold cross-validation, we evaluated the robustness of our models via non-random geographic cross-validation: we systematically removed all observations from a zoogeographical region, re-fit the model using all observations from outside the region, then performed a non-parametric permutation test comparing the predicted values to the real values for that region.
+
+In order to meaningfully organize geographic areas, we utilized mammalian zoogeographic regions from *Holz et al (2013)*, which are defined by distributions of and phylogenetic relationships between species. Using QGIS, a shapefile of these regions was intersected with IUCN's host ranges, and each host was assigned to only the region which contained the greatest proportion of its range. Results of the non-parametric permutation test are shown below; non-significant results indicate that model predictions are unbiased.
+
+```{r map-setup, cache = TRUE, message=FALSE}
+zregions <- shapefile(P("maps/mam.shp"), verbose = FALSE)
+#Intersected with IUCN habitat shapefile in QGIS
+zoog_mammals <- shapefile(P("maps/host_zg_area.shp"), verbose = FALSE)
+zoog_mammals_data <- as_tibble(zoog_mammals@data)
+
+#Paring down the dataset
+zgm_reduced <- zoog_mammals_data %>%
+  select(BINOMIAL, mam_upgma_, garea2)
+#Assigning only largest areas
+zgm <- zgm_reduced %>%
+  group_by(BINOMIAL) %>%
+  mutate(area = max(garea2)) %>%
+  filter(garea2 == area) %>%
+  arrange(BINOMIAL)
+zgm <- unique(zgm)
+
+```
+
+# Zoonoses GAM - All Associations
+
+```{r all-zoo, cache=TRUE, out.width=1200, out.height=800}
+data_set = hosts %>% 
+  filter(hMarOTerr == "Terrestrial",
+         hWildDomFAO == "wild",
+         !is.na(PdHoSa.cbCst_order))
+
+#  Create dummy variables for orders to use as random effects
+dummys = as.data.frame(with(data_set, model.matrix(~hOrder))[,-1])
+data_set = cbind(data_set, dummys)
+
+###### ALL ZOONOSES
+allz_gam = readRDS(P("model_fitting/all_zoonoses_model.rds"))
+
+joined_dat <- left_join(data_set, zgm, by=c("hHostNameFinal"="BINOMIAL"))
+joined_dat <- filter_down(allz_gam, joined_dat, "mam_upgma_")
+
+results<-cv_gam_by_zg(allz_gam, joined_dat,unique(joined_dat$mam_upgma_))
+
+zregions@data <- left_join(zregions@data, results, by=c("mam_upgma_"="fold"))
+
+data("wrld_simpl")
+plot(wrld_simpl)
+
+zregions %>%
+  subset(zregions@data$p_value < 0.05 & zregions@data$n_validate > 10) %>%
+  plot(.,add=TRUE, col="red")
+
+zregions %>%
+  subset(zregions@data$p_value < 0.05 & zregions@data$n_validate < 10) %>%
+  plot(.,add=TRUE, col="pink")
+
+zregions %>%
+  subset(zregions@data$p_value >= 0.05 & zregions@data$n_validate > 10) %>%
+  plot(.,add=TRUE, col="darkgreen")
+
+zregions %>%
+  subset(zregions@data$p_value >= 0.05 & zregions@data$n_validate < 10) %>%
+  plot(.,add=TRUE, col="lightgreen")
+
+title("All Zoonoses: 31 Regions")
+```
+
+Dark green indicates unbiased regions, while dark red indicates regions with evidence of biased predictions. Light green and light red represent the same distinction, but these regions contain very few (less than ten) assigned species; blank areas were not assigned any hosts. 
+
+```{r all-zoo-tables}
+results %>% arrange(fold) %>%
+  filter(n_validate > 10, p_value < 0.05) %>%
+  kable(caption = "Biased Predictions Regions (n > 10)")
+
+results %>% arrange(fold) %>%
+  filter(n_validate > 10, p_value >= 0.05) %>%
+  kable(caption = "Unbiased Prediction Regions (n > 10)")
+
+```
+
+# All Viruses GAM - All Associations
+
+```{r all-viruses, cache = TRUE, out.width=1200, out.height=800}
+###### ALL VIRUSES
+allv_gam = readRDS(P("model_fitting/all_viruses_model.rds"))
+vregions <- shapefile(P("maps/mam.shp"), verbose = FALSE)
+
+
+temp <- left_join(data_set, zgm, by=c("hHostNameFinal"="BINOMIAL"))
+temp <- filter_down(allv_gam, temp, "mam_upgma_")
+
+vresults<-cv_gam_by_zg(allv_gam, temp,unique(temp$mam_upgma_))
+
+vregions@data <- left_join(vregions@data, vresults, by=c("mam_upgma_"="fold"))
+
+data("wrld_simpl")
+plot(wrld_simpl)
+
+vregions %>%
+  subset(vregions@data$p_value < 0.05 & vregions@data$n_validate > 10) %>%
+  plot(.,add=TRUE, col="red")
+
+vregions %>%
+  subset(vregions@data$p_value < 0.05 & vregions@data$n_validate < 10) %>%
+  plot(.,add=TRUE, col="pink")
+
+vregions %>%
+  subset(vregions@data$p_value >= 0.05 & vregions@data$n_validate > 10) %>%
+  plot(.,add=TRUE, col="darkgreen")
+
+vregions %>%
+  subset(vregions@data$p_value >= 0.05 & vregions@data$n_validate < 10) %>%
+  plot(.,add=TRUE, col="lightgreen")
+
+title("All Viruses: 31 Regions")
+```
+
+Dark green indicates unbiased regions, while dark red indicates regions with evidence of biased predictions. Light green and light red represent the same distinction, but these regions contain very few (less than ten) assigned species; blank areas were not assigned any hosts. 
+
+```{r all-virus-tables}
+vresults %>% arrange(fold) %>%
+  filter(n_validate > 10, p_value < 0.05) %>%
+  kable(caption = "Biased Predictions Regions (n > 10)")
+
+vresults %>% arrange(fold) %>%
+  filter(n_validate > 10, p_value >= 0.05) %>%
+  kable(caption = "Unbiased Prediction Regions (n > 10)")
+
+```
+
+# Zoonoses GAM - Strict Associations
+
+```{r strict-zoo, cache = TRUE, out.width=1200, out.height=800}
+model_list <- readRDS(P("model_fitting/top_models.rds"))
+strictz_gam <- model_list$all_zoonoses_strict
+
+szregions <- shapefile(P("maps/mam.shp"), verbose = FALSE)
+
+temp <- left_join(data_set, zgm, by=c("hHostNameFinal"="BINOMIAL"))
+temp <- filter_down(strictz_gam, temp, "mam_upgma_")
+
+szresults<-cv_gam_by_zg(strictz_gam, temp,unique(temp$mam_upgma_))
+
+szregions@data <- left_join(szregions@data, szresults, by=c("mam_upgma_"="fold"))
+
+data("wrld_simpl")
+plot(wrld_simpl)
+
+szregions %>%
+  subset(szregions@data$p_value < 0.05 & szregions@data$n_validate > 10) %>%
+  plot(.,add=TRUE, col="red")
+
+szregions %>%
+  subset(szregions@data$p_value < 0.05 & szregions@data$n_validate < 10) %>%
+  plot(.,add=TRUE, col="pink")
+
+szregions %>%
+  subset(szregions@data$p_value >= 0.05 & szregions@data$n_validate > 10) %>%
+  plot(.,add=TRUE, col="darkgreen")
+
+szregions %>%
+  subset(szregions@data$p_value >= 0.05 & szregions@data$n_validate < 10) %>%
+  plot(.,add=TRUE, col="lightgreen")
+
+title("Strict Zoonoses: 31 Regions")
+```
+
+Dark green indicates unbiased regions, while dark red indicates regions with evidence of biased predictions. Light green and light red represent the same distinction, but these regions contain very few (less than ten) assigned 
+species; blank areas were not assigned any hosts. 
+
+```{r sz-tables}
+szresults %>% arrange(fold) %>%
+  filter(n_validate > 10, p_value < 0.05) %>%
+  kable(caption = "Biased Predictions Regions (n > 10)")
+
+szresults %>% arrange(fold) %>%
+  filter(n_validate > 10, p_value >= 0.05) %>%
+  kable(caption = "Unbiased Prediction Regions (n > 10)")
+
+```
+
+# All Viruses GAM - Strict Associations
+
+```{r strict-viruses, cache = TRUE, out.width=1200, out.height=800}
+strictv_gam <- model_list$all_viruses_strict
+
+svregions <- shapefile(P("maps/mam.shp"), verbose = FALSE)
+
+temp <- left_join(data_set, zgm, by=c("hHostNameFinal"="BINOMIAL"))
+temp <- filter_down(strictv_gam, temp, "mam_upgma_")
+
+svresults<-cv_gam_by_zg(strictv_gam, temp,unique(temp$mam_upgma_))
+
+svregions@data <- left_join(svregions@data, svresults, by=c("mam_upgma_"="fold"))
+
+data("wrld_simpl")
+plot(wrld_simpl)
+
+svregions %>%
+  subset(svregions@data$p_value < 0.05 & svregions@data$n_validate > 10) %>%
+  plot(.,add=TRUE, col="red")
+
+svregions %>%
+  subset(svregions@data$p_value < 0.05 & svregions@data$n_validate < 10) %>%
+  plot(.,add=TRUE, col="pink")
+
+svregions %>%
+  subset(svregions@data$p_value >= 0.05 & svregions@data$n_validate > 10) %>%
+  plot(.,add=TRUE, col="darkgreen")
+
+svregions %>%
+  subset(svregions@data$p_value >= 0.05 & svregions@data$n_validate < 10) %>%
+  plot(.,add=TRUE, col="lightgreen")
+
+title("Strict Viruses: 31 Regions")
+```
+
+Dark green indicates unbiased regions, while dark red indicates regions with evidence of biased predictions. Light green and light red represent the same distinction, but these regions contain very few (less than ten) assigned species; blank areas were not assigned any hosts. 
+
+```{r strict-zoo-tables}
+svresults %>% arrange(fold) %>%
+  filter(n_validate > 10, p_value < 0.05) %>%
+  kable(caption = "Biased Predictions Regions (n > 10)")
+
+svresults %>% arrange(fold) %>%
+  filter(n_validate > 10, p_value >= 0.05) %>%
+  kable(caption = "Unbiased Prediction Regions (n > 10)")
+```

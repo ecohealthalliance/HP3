@@ -1,7 +1,5 @@
 ---
-title: "geo_cross"
-author: "Cale Basaraba"
-date: "September 28, 2016"
+title: "HP3: Zoogeographical Cross-Validation"
 output:
   html_document:
     toc: TRUE
@@ -69,7 +67,7 @@ zgm <- unique(zgm)
 
 # Zoonoses GAM - All Associations
 
-```{r all-zoo, cache=TRUE, out.width=1200, out.height=800}
+```{r all-zoo, cache=TRUE}
 data_set = hosts %>% 
   filter(hMarOTerr == "Terrestrial",
          hWildDomFAO == "wild",
@@ -113,7 +111,7 @@ title("All Zoonoses: 31 Regions")
 
 Dark green indicates unbiased regions, while dark red indicates regions with evidence of biased predictions. Light green and light red represent the same distinction, but these regions contain very few (less than ten) assigned species; blank areas were not assigned any hosts. 
 
-```{r all-zoo-tables}
+```{r all-zoo-tables, results = "asis"}
 results %>% arrange(fold) %>%
   filter(n_validate > 10, p_value < 0.05) %>%
   kable(caption = "Biased Predictions Regions (n > 10)")
@@ -126,7 +124,7 @@ results %>% arrange(fold) %>%
 
 # All Viruses GAM - All Associations
 
-```{r all-viruses, cache = TRUE, out.width=1200, out.height=800}
+```{r all-viruses, cache = TRUE}
 ###### ALL VIRUSES
 allv_gam = readRDS(P("model_fitting/all_viruses_model.rds"))
 vregions <- shapefile(P("maps/mam.shp"), verbose = FALSE)
@@ -163,7 +161,7 @@ title("All Viruses: 31 Regions")
 
 Dark green indicates unbiased regions, while dark red indicates regions with evidence of biased predictions. Light green and light red represent the same distinction, but these regions contain very few (less than ten) assigned species; blank areas were not assigned any hosts. 
 
-```{r all-virus-tables}
+```{r all-virus-tables, results = "asis"}
 vresults %>% arrange(fold) %>%
   filter(n_validate > 10, p_value < 0.05) %>%
   kable(caption = "Biased Predictions Regions (n > 10)")
@@ -176,7 +174,7 @@ vresults %>% arrange(fold) %>%
 
 # Zoonoses GAM - Strict Associations
 
-```{r strict-zoo, cache = TRUE, out.width=1200, out.height=800}
+```{r strict-zoo, cache = TRUE}
 model_list <- readRDS(P("model_fitting/top_models.rds"))
 strictz_gam <- model_list$all_zoonoses_strict
 
@@ -214,7 +212,7 @@ title("Strict Zoonoses: 31 Regions")
 Dark green indicates unbiased regions, while dark red indicates regions with evidence of biased predictions. Light green and light red represent the same distinction, but these regions contain very few (less than ten) assigned 
 species; blank areas were not assigned any hosts. 
 
-```{r sz-tables}
+```{r sz-tables, results = "asis"}
 szresults %>% arrange(fold) %>%
   filter(n_validate > 10, p_value < 0.05) %>%
   kable(caption = "Biased Predictions Regions (n > 10)")
@@ -227,7 +225,7 @@ szresults %>% arrange(fold) %>%
 
 # All Viruses GAM - Strict Associations
 
-```{r strict-viruses, cache = TRUE, out.width=1200, out.height=800}
+```{r strict-viruses, cache = TRUE}
 strictv_gam <- model_list$all_viruses_strict
 
 svregions <- shapefile(P("maps/mam.shp"), verbose = FALSE)
@@ -263,7 +261,7 @@ title("Strict Viruses: 31 Regions")
 
 Dark green indicates unbiased regions, while dark red indicates regions with evidence of biased predictions. Light green and light red represent the same distinction, but these regions contain very few (less than ten) assigned species; blank areas were not assigned any hosts. 
 
-```{r strict-zoo-tables}
+```{r strict-zoo-tables, results = "asis"}
 svresults %>% arrange(fold) %>%
   filter(n_validate > 10, p_value < 0.05) %>%
   kable(caption = "Biased Predictions Regions (n > 10)")

@@ -1,6 +1,4 @@
-# geo_cross
-Cale Basaraba  
-September 28, 2016  
+# HP3: Zoogeographical Cross-Validation
 
 
 
@@ -15,7 +13,7 @@ In order to meaningfully organize geographic areas, we utilized mammalian zoogeo
 
 # Zoonoses GAM - All Associations
 
-<img src="geo_cross_files/figure-html/all-zoo-1.png" width="1200" height="800" />
+![](geo_cross_files/figure-html/all-zoo-1.png)<!-- -->
 
 Dark green indicates unbiased regions, while dark red indicates regions with evidence of biased predictions. Light green and light red represent the same distinction, but these regions contain very few (less than ten) assigned species; blank areas were not assigned any hosts. 
 
@@ -49,7 +47,7 @@ Table: Unbiased Prediction Regions (n > 10)
 
 # All Viruses GAM - All Associations
 
-<img src="geo_cross_files/figure-html/all-viruses-1.png" width="1200" height="800" />
+![](geo_cross_files/figure-html/all-viruses-1.png)<!-- -->
 
 Dark green indicates unbiased regions, while dark red indicates regions with evidence of biased predictions. Light green and light red represent the same distinction, but these regions contain very few (less than ten) assigned species; blank areas were not assigned any hosts. 
 
@@ -83,7 +81,7 @@ Table: Unbiased Prediction Regions (n > 10)
 
 # Zoonoses GAM - Strict Associations
 
-<img src="geo_cross_files/figure-html/strict-zoo-1.png" width="1200" height="800" />
+![](geo_cross_files/figure-html/strict-zoo-1.png)<!-- -->
 
 Dark green indicates unbiased regions, while dark red indicates regions with evidence of biased predictions. Light green and light red represent the same distinction, but these regions contain very few (less than ten) assigned 
 species; blank areas were not assigned any hosts. 
@@ -118,7 +116,7 @@ Table: Unbiased Prediction Regions (n > 10)
 
 # All Viruses GAM - Strict Associations
 
-<img src="geo_cross_files/figure-html/strict-viruses-1.png" width="1200" height="800" />
+![](geo_cross_files/figure-html/strict-viruses-1.png)<!-- -->
 
 Dark green indicates unbiased regions, while dark red indicates regions with evidence of biased predictions. Light green and light red represent the same distinction, but these regions contain very few (less than ten) assigned species; blank areas were not assigned any hosts. 
 

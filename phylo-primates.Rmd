@@ -100,9 +100,6 @@ df <- cbind(pen.edf(primate_re))
 ```
 
 
-__The variable Order Primates, when added to the best model as a random effect, has very low effective degrees of freedom: `r df[9,]`:__  
-  
-
 ```{r primate-fe-model}
 primate_fe <- gam(NSharedWithHoSa ~ s(hAllZACitesLn, bs = "tp", k = 7) + s(hHuntedIUCN, bs = "re") + s(hOrderCETARTIODACTYLA, bs = "re") + 
                     s(hOrderCHIROPTERA, bs = "re") + s(hOrderDIPROTODONTIA, bs = "re") + 
@@ -113,7 +110,6 @@ primate_fe <- gam(NSharedWithHoSa ~ s(hAllZACitesLn, bs = "tp", k = 7) + s(hHunt
 
 ```
 
-__The partial effect plot of phylogenetic distance with an Order Primates variable included as a Fixed Effect does not change substantially when compared to the partial effect plot in the original model__
 
 ```{r plots}
 #primate_fe$aic
@@ -121,16 +117,24 @@ __The partial effect plot of phylogenetic distance with an Order Primates variab
 #allz_gam$aic
 #1517.584
 
-plot(allz_gam, select = 9)
-title("Best Model: Phylogenetic Distance Partial Effect Plot")
+par(mfrow = c(1,3))
 
-#plot(primate_re, select = 10)
-#title("Primate RE Model: Phylogentic Distance Partial Effect Plot")
+plot(allz_gam, select = 9, residuals = TRUE, ylab = "Strength of Effect", xlab = NULL)
+title("Best Model")
+mtext("AIC = 1517.584")
 
-plot(primate_fe, select = 9)
-title("Primate FE Model: Phylogenetic Distance Partial Effect Plot")
+plot(primate_re, select = 10, residuals = TRUE)
+title("Primates Random Effect ")
+mtext("AIC = 1517.584")
+
+plot(primate_fe, select = 9, residuals = TRUE)
+title("Primates Fixed Effect")
+mtext("AIC = 1519.172")
 ```
 
+__The variable Order Primates, when added to the best model as a random effect, has effective degrees of freedom of 0.0001 and is correctly removed from the   
 
+
+__The partial effect plot of phylogenetic distance with an Order Primates variable included as a Fixed Effect does not change substantially when compared to the partial effect plot in the original model__
 
 

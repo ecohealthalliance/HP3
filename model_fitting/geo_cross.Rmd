@@ -42,7 +42,7 @@ saveRDS(list(hosts=hosts, viruses=viruses, associations=associations), P("model_
 ```
 # Zoogeographic Cross-Validation
 
-In addition to randomly-selected k-fold cross-validation, we evaluated the robustness of our models via non-random geographic cross-validation: we systematically removed all observations from a zoogeographical region, re-fit the model using all observations from outside the region, then performed a non-parametric permutation test comparing the predicted values to the real values for that region.
+In addition to randomly-selected k-fold cross-validation, we evaluated the robustness of our models via non-random geographic cross-validation: we systematically removed all observations from a zoogeographical region, re-fit the model using all observations from outside the region, then performed a non-parametric permutation test comparing the predicted values to the observed values for that region.
 
 In order to meaningfully organize geographic areas, we utilized mammalian zoogeographic regions from *Holz et al (2013)*, which are defined by distributions of and phylogenetic relationships between species. Using QGIS, a shapefile of these regions was intersected with IUCN's host ranges, and each host was assigned to only the region which contained the greatest proportion of its range. Results of the non-parametric permutation test are shown below; non-significant results indicate that model predictions are unbiased.
 
@@ -62,6 +62,8 @@ zgm <- zgm_reduced %>%
   filter(garea2 == area) %>%
   arrange(BINOMIAL)
 zgm <- unique(zgm)
+
+region_names <- readRDS(P("data/region_names.rds"))
 ```
 
 # Zoonoses GAM - All Associations
@@ -112,13 +114,21 @@ title("All Zoonoses: 31 Regions")
 Dark green indicates unbiased regions, while dark red indicates regions with evidence of biased predictions. Light green and light red represent the same distinction, but these regions contain very few (less than ten) assigned species; blank areas were not assigned any hosts. 
 
 ```{r all-zoo-tables, results = "asis"}
+results<-left_join(results, region_names, by = "fold")
+
 results %>% arrange(fold) %>%
   filter(n_validate > 10, p_value < 0.05) %>%
-  kable(caption = "Biased Predictions Regions (n > 10)")
+  select(name, n_fit, n_validate, p_value, mean_diff) %>%
+  rename(Region = name, `Observations Fit` = n_fit, `Observations Held Out` = n_validate, 
+         `P-value` = p_value, `Mean Prediction Difference` = mean_diff) %>%
+  kable(caption = "Biased Predictions Regions (n > 10)", digits = 4)
 
 results %>% arrange(fold) %>%
   filter(n_validate > 10, p_value >= 0.05) %>%
-  kable(caption = "Unbiased Prediction Regions (n > 10)")
+  select(name, n_fit, n_validate, p_value, mean_diff) %>%
+  rename(Region = name, `Observations Fit` = n_fit, `Observations Held Out` = n_validate, 
+         `P-value` = p_value, `Mean Prediction Difference` = mean_diff) %>%
+  kable(caption = "Unbiased Prediction Regions (n > 10)", digits = 4)
 
 ```
 
@@ -161,13 +171,21 @@ title("All Viruses: 31 Regions")
 Dark green indicates unbiased regions, while dark red indicates regions with evidence of biased predictions. Light green and light red represent the same distinction, but these regions contain very few (less than ten) assigned species; blank areas were not assigned any hosts. 
 
 ```{r all-virus-tables, results = "asis"}
+vresults<-left_join(vresults, region_names, by = "fold")
+
 vresults %>% arrange(fold) %>%
   filter(n_validate > 10, p_value < 0.05) %>%
-  kable(caption = "Biased Predictions Regions (n > 10)")
+  select(name, n_fit, n_validate, p_value, mean_diff) %>%
+  rename(Region = name, `Observations Fit` = n_fit, `Observations Held Out` = n_validate, 
+         `P-value` = p_value, `Mean Prediction Difference` = mean_diff) %>%
+  kable(caption = "Biased Predictions Regions (n > 10)", digits = 4)
 
 vresults %>% arrange(fold) %>%
   filter(n_validate > 10, p_value >= 0.05) %>%
-  kable(caption = "Unbiased Prediction Regions (n > 10)")
+  select(name, n_fit, n_validate, p_value, mean_diff) %>%
+  rename(Region = name, `Observations Fit` = n_fit, `Observations Held Out` = n_validate, 
+         `P-value` = p_value, `Mean Prediction Difference` = mean_diff) %>%
+  kable(caption = "Unbiased Prediction Regions (n > 10)", digits = 4)
 
 ```
 
@@ -211,15 +229,23 @@ Dark green indicates unbiased regions, while dark red indicates regions with evi
 species; blank areas were not assigned any hosts.  
 
 ```{r sz-tables, results = "asis"}
+szresults<-left_join(szresults, region_names, by = "fold")
+
 szresults %>% arrange(fold) %>%
   filter(n_validate > 10, p_value < 0.05) %>%
-  kable(caption = "Biased Predictions Regions (n > 10)")
+  select(name, n_fit, n_validate, p_value, mean_diff) %>%
+  rename(Region = name, `Observations Fit` = n_fit, `Observations Held Out` = n_validate, 
+         `P-value` = p_value, `Mean Prediction Difference` = mean_diff) %>%
+  kable(caption = "Biased Predictions Regions (n > 10)", digits = 4)
 ```
 
 ```{r sz-tables2}
 szresults %>% arrange(fold) %>%
   filter(n_validate > 10, p_value >= 0.05) %>%
-  kable(caption = "Unbiased Prediction Regions (n > 10)")
+  select(name, n_fit, n_validate, p_value, mean_diff) %>%
+  rename(Region = name, `Observations Fit` = n_fit, `Observations Held Out` = n_validate, 
+         `P-value` = p_value, `Mean Prediction Difference` = mean_diff) %>%
+  kable(caption = "Unbiased Prediction Regions (n > 10)", digits = 4)
 
 ```
 
@@ -261,11 +287,19 @@ title("Strict Viruses: 31 Regions")
 Dark green indicates unbiased regions, while dark red indicates regions with evidence of biased predictions. Light green and light red represent the same distinction, but these regions contain very few (less than ten) assigned species; blank areas were not assigned any hosts. 
 
 ```{r strict-zoo-tables, results = "asis"}
+svresults<-left_join(svresults, region_names, by = "fold")
+
 svresults %>% arrange(fold) %>%
   filter(n_validate > 10, p_value < 0.05) %>%
-  kable(caption = "Biased Predictions Regions (n > 10)")
+  select(name, n_fit, n_validate, p_value, mean_diff) %>%
+  rename(Region = name, `Observations Fit` = n_fit, `Observations Held Out` = n_validate, 
+         `P-value` = p_value, `Mean Prediction Difference` = mean_diff) %>%
+  kable(caption = "Biased Predictions Regions (n > 10)", digits = 4)
 
 svresults %>% arrange(fold) %>%
   filter(n_validate > 10, p_value >= 0.05) %>%
-  kable(caption = "Unbiased Prediction Regions (n > 10)")
+  select(name, n_fit, n_validate, p_value, mean_diff) %>%
+  rename(Region = name, `Observations Fit` = n_fit, `Observations Held Out` = n_validate, 
+         `P-value` = p_value, `Mean Prediction Difference` = mean_diff) %>%
+  kable(caption = "Unbiased Prediction Regions (n > 10)", digits = 4)
 ```

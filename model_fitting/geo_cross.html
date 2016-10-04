@@ -148,7 +148,7 @@ $(document).ready(function () {
 
 <div id="zoogeographic-cross-validation" class="section level1">
 <h1>Zoogeographic Cross-Validation</h1>
-<p>In addition to randomly-selected k-fold cross-validation, we evaluated the robustness of our models via non-random geographic cross-validation: we systematically removed all observations from a zoogeographical region, re-fit the model using all observations from outside the region, then performed a non-parametric permutation test comparing the predicted values to the real values for that region.</p>
+<p>In addition to randomly-selected k-fold cross-validation, we evaluated the robustness of our models via non-random geographic cross-validation: we systematically removed all observations from a zoogeographical region, re-fit the model using all observations from outside the region, then performed a non-parametric permutation test comparing the predicted values to the observed values for that region.</p>
 <p>In order to meaningfully organize geographic areas, we utilized mammalian zoogeographic regions from <em>Holz et al (2013)</em>, which are defined by distributions of and phylogenetic relationships between species. Using QGIS, a shapefile of these regions was intersected with IUCN’s host ranges, and each host was assigned to only the region which contained the greatest proportion of its range. Results of the non-parametric permutation test are shown below; non-significant results indicate that model predictions are unbiased.</p>
 </div>
 <div id="zoonoses-gam---all-associations" class="section level1">
@@ -159,41 +159,41 @@ $(document).ready(function () {
 <caption>Biased Predictions Regions (n &gt; 10)</caption>
 <thead>
 <tr class="header">
-<th align="right">fold</th>
-<th align="right">n_fit</th>
-<th align="right">n_validate</th>
-<th align="right">p_value</th>
-<th align="right">mean_diff</th>
+<th align="left">Region</th>
+<th align="right">Observations Fit</th>
+<th align="right">Observations Held Out</th>
+<th align="right">P-value</th>
+<th align="right">Mean Prediction Difference</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="right">10</td>
+<td align="left">Southeastern South America</td>
 <td align="right">562</td>
 <td align="right">22</td>
-<td align="right">0.00204</td>
-<td align="right">0.2929411</td>
+<td align="right">0.0020</td>
+<td align="right">0.2929</td>
 </tr>
 <tr class="even">
-<td align="right">14</td>
+<td align="left">Central African Band</td>
 <td align="right">550</td>
 <td align="right">34</td>
-<td align="right">0.01195</td>
-<td align="right">-0.4762261</td>
+<td align="right">0.0120</td>
+<td align="right">-0.4762</td>
 </tr>
 <tr class="odd">
-<td align="right">25</td>
+<td align="left">Northern Eurussia</td>
 <td align="right">548</td>
 <td align="right">36</td>
-<td align="right">0.01309</td>
-<td align="right">0.3391528</td>
+<td align="right">0.0131</td>
+<td align="right">0.3392</td>
 </tr>
 <tr class="even">
-<td align="right">27</td>
+<td align="left">Southeastern China</td>
 <td align="right">569</td>
 <td align="right">15</td>
-<td align="right">0.00000</td>
-<td align="right">0.4006503</td>
+<td align="right">0.0000</td>
+<td align="right">0.4007</td>
 </tr>
 </tbody>
 </table>
@@ -201,90 +201,90 @@ $(document).ready(function () {
 <caption>Unbiased Prediction Regions (n &gt; 10)</caption>
 <thead>
 <tr class="header">
-<th align="right">fold</th>
-<th align="right">n_fit</th>
-<th align="right">n_validate</th>
-<th align="right">p_value</th>
-<th align="right">mean_diff</th>
+<th align="left">Region</th>
+<th align="right">Observations Fit</th>
+<th align="right">Observations Held Out</th>
+<th align="right">P-value</th>
+<th align="right">Mean Prediction Difference</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="right">1</td>
+<td align="left">Northern America</td>
 <td align="right">525</td>
 <td align="right">59</td>
-<td align="right">0.90648</td>
-<td align="right">-0.0133606</td>
+<td align="right">0.9065</td>
+<td align="right">-0.0134</td>
 </tr>
 <tr class="even">
-<td align="right">2</td>
+<td align="left">Southwestern North America</td>
 <td align="right">563</td>
 <td align="right">21</td>
-<td align="right">0.85646</td>
-<td align="right">-0.0208640</td>
+<td align="right">0.8565</td>
+<td align="right">-0.0209</td>
 </tr>
 <tr class="odd">
-<td align="right">4</td>
+<td align="left">Central / Eastern North America</td>
 <td align="right">562</td>
 <td align="right">22</td>
-<td align="right">0.13890</td>
-<td align="right">0.2514676</td>
+<td align="right">0.1389</td>
+<td align="right">0.2515</td>
 </tr>
 <tr class="even">
-<td align="right">5</td>
+<td align="left">Southern Central America</td>
 <td align="right">567</td>
 <td align="right">17</td>
-<td align="right">0.57670</td>
-<td align="right">0.1131187</td>
+<td align="right">0.5767</td>
+<td align="right">0.1131</td>
 </tr>
 <tr class="odd">
-<td align="right">9</td>
+<td align="left">Northern South America</td>
 <td align="right">485</td>
 <td align="right">99</td>
-<td align="right">0.62678</td>
-<td align="right">-0.0403560</td>
+<td align="right">0.6268</td>
+<td align="right">-0.0404</td>
 </tr>
 <tr class="even">
-<td align="right">13</td>
+<td align="left">West Central Africa</td>
 <td align="right">551</td>
 <td align="right">33</td>
-<td align="right">0.28016</td>
-<td align="right">0.0998548</td>
+<td align="right">0.2802</td>
+<td align="right">0.0999</td>
 </tr>
 <tr class="odd">
-<td align="right">15</td>
+<td align="left">Europe</td>
 <td align="right">546</td>
 <td align="right">38</td>
-<td align="right">0.05577</td>
-<td align="right">-0.3288683</td>
+<td align="right">0.0558</td>
+<td align="right">-0.3289</td>
 </tr>
 <tr class="even">
-<td align="right">16</td>
+<td align="left">South Africa</td>
 <td align="right">523</td>
 <td align="right">61</td>
-<td align="right">0.19072</td>
-<td align="right">-0.1695227</td>
+<td align="right">0.1907</td>
+<td align="right">-0.1695</td>
 </tr>
 <tr class="odd">
-<td align="right">22</td>
+<td align="left">India</td>
 <td align="right">563</td>
 <td align="right">21</td>
-<td align="right">0.74397</td>
-<td align="right">-0.0990603</td>
+<td align="right">0.7440</td>
+<td align="right">-0.0991</td>
 </tr>
 <tr class="even">
-<td align="right">26</td>
+<td align="left">Southeast Asia</td>
 <td align="right">550</td>
 <td align="right">34</td>
-<td align="right">0.68871</td>
-<td align="right">-0.0745897</td>
+<td align="right">0.6887</td>
+<td align="right">-0.0746</td>
 </tr>
 <tr class="odd">
-<td align="right">33</td>
+<td align="left">Southern Australia</td>
 <td align="right">573</td>
 <td align="right">11</td>
-<td align="right">0.28392</td>
-<td align="right">-0.2836694</td>
+<td align="right">0.2839</td>
+<td align="right">-0.2837</td>
 </tr>
 </tbody>
 </table>
@@ -297,41 +297,41 @@ $(document).ready(function () {
 <caption>Biased Predictions Regions (n &gt; 10)</caption>
 <thead>
 <tr class="header">
-<th align="right">fold</th>
-<th align="right">n_fit</th>
-<th align="right">n_validate</th>
-<th align="right">p_value</th>
-<th align="right">mean_diff</th>
+<th align="left">Region</th>
+<th align="right">Observations Fit</th>
+<th align="right">Observations Held Out</th>
+<th align="right">P-value</th>
+<th align="right">Mean Prediction Difference</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="right">14</td>
+<td align="left">Central African Band</td>
 <td align="right">542</td>
 <td align="right">34</td>
-<td align="right">0.02693</td>
-<td align="right">0.9721444</td>
+<td align="right">0.0269</td>
+<td align="right">0.9721</td>
 </tr>
 <tr class="even">
-<td align="right">15</td>
+<td align="left">Europe</td>
 <td align="right">539</td>
 <td align="right">37</td>
-<td align="right">0.00039</td>
-<td align="right">-1.5026007</td>
+<td align="right">0.0004</td>
+<td align="right">-1.5026</td>
 </tr>
 <tr class="odd">
-<td align="right">16</td>
+<td align="left">South Africa</td>
 <td align="right">515</td>
 <td align="right">61</td>
-<td align="right">0.00892</td>
-<td align="right">0.8336724</td>
+<td align="right">0.0089</td>
+<td align="right">0.8337</td>
 </tr>
 <tr class="even">
-<td align="right">27</td>
+<td align="left">Southeastern China</td>
 <td align="right">562</td>
 <td align="right">14</td>
-<td align="right">0.00075</td>
-<td align="right">-1.5620484</td>
+<td align="right">0.0008</td>
+<td align="right">-1.5620</td>
 </tr>
 </tbody>
 </table>
@@ -339,90 +339,90 @@ $(document).ready(function () {
 <caption>Unbiased Prediction Regions (n &gt; 10)</caption>
 <thead>
 <tr class="header">
-<th align="right">fold</th>
-<th align="right">n_fit</th>
-<th align="right">n_validate</th>
-<th align="right">p_value</th>
-<th align="right">mean_diff</th>
+<th align="left">Region</th>
+<th align="right">Observations Fit</th>
+<th align="right">Observations Held Out</th>
+<th align="right">P-value</th>
+<th align="right">Mean Prediction Difference</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="right">1</td>
+<td align="left">Northern America</td>
 <td align="right">517</td>
 <td align="right">59</td>
-<td align="right">0.81468</td>
-<td align="right">-0.0525084</td>
+<td align="right">0.8147</td>
+<td align="right">-0.0525</td>
 </tr>
 <tr class="even">
-<td align="right">2</td>
+<td align="left">Southwestern North America</td>
 <td align="right">555</td>
 <td align="right">21</td>
-<td align="right">0.81989</td>
-<td align="right">0.0850285</td>
+<td align="right">0.8199</td>
+<td align="right">0.0850</td>
 </tr>
 <tr class="odd">
-<td align="right">4</td>
+<td align="left">Central / Eastern North America</td>
 <td align="right">554</td>
 <td align="right">22</td>
-<td align="right">0.34162</td>
-<td align="right">0.9864253</td>
+<td align="right">0.3416</td>
+<td align="right">0.9864</td>
 </tr>
 <tr class="even">
-<td align="right">5</td>
+<td align="left">Southern Central America</td>
 <td align="right">560</td>
 <td align="right">16</td>
-<td align="right">0.58294</td>
-<td align="right">-0.4241775</td>
+<td align="right">0.5829</td>
+<td align="right">-0.4242</td>
 </tr>
 <tr class="odd">
-<td align="right">9</td>
+<td align="left">Northern South America</td>
 <td align="right">477</td>
 <td align="right">99</td>
-<td align="right">0.21720</td>
-<td align="right">0.3872965</td>
+<td align="right">0.2172</td>
+<td align="right">0.3873</td>
 </tr>
 <tr class="even">
-<td align="right">10</td>
+<td align="left">Southeastern South America</td>
 <td align="right">555</td>
 <td align="right">21</td>
-<td align="right">0.38281</td>
-<td align="right">-0.2898189</td>
+<td align="right">0.3828</td>
+<td align="right">-0.2898</td>
 </tr>
 <tr class="odd">
-<td align="right">13</td>
+<td align="left">West Central Africa</td>
 <td align="right">545</td>
 <td align="right">31</td>
-<td align="right">0.79006</td>
-<td align="right">0.0922787</td>
+<td align="right">0.7901</td>
+<td align="right">0.0923</td>
 </tr>
 <tr class="even">
-<td align="right">22</td>
+<td align="left">India</td>
 <td align="right">555</td>
 <td align="right">21</td>
-<td align="right">0.21781</td>
-<td align="right">1.1180907</td>
+<td align="right">0.2178</td>
+<td align="right">1.1181</td>
 </tr>
 <tr class="odd">
-<td align="right">25</td>
+<td align="left">Northern Eurussia</td>
 <td align="right">540</td>
 <td align="right">36</td>
-<td align="right">0.50059</td>
-<td align="right">-0.3674582</td>
+<td align="right">0.5006</td>
+<td align="right">-0.3675</td>
 </tr>
 <tr class="even">
-<td align="right">26</td>
+<td align="left">Southeast Asia</td>
 <td align="right">542</td>
 <td align="right">34</td>
-<td align="right">0.80541</td>
-<td align="right">-0.1238044</td>
+<td align="right">0.8054</td>
+<td align="right">-0.1238</td>
 </tr>
 <tr class="odd">
-<td align="right">33</td>
+<td align="left">Southern Australia</td>
 <td align="right">565</td>
 <td align="right">11</td>
-<td align="right">0.41377</td>
-<td align="right">0.6797741</td>
+<td align="right">0.4138</td>
+<td align="right">0.6798</td>
 </tr>
 </tbody>
 </table>
@@ -435,69 +435,69 @@ $(document).ready(function () {
 <caption>Biased Predictions Regions (n &gt; 10)</caption>
 <thead>
 <tr class="header">
-<th align="right">fold</th>
-<th align="right">n_fit</th>
-<th align="right">n_validate</th>
-<th align="right">p_value</th>
-<th align="right">mean_diff</th>
+<th align="left">Region</th>
+<th align="right">Observations Fit</th>
+<th align="right">Observations Held Out</th>
+<th align="right">P-value</th>
+<th align="right">Mean Prediction Difference</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="right">1</td>
+<td align="left">Northern America</td>
 <td align="right">517</td>
 <td align="right">59</td>
-<td align="right">0.04321</td>
-<td align="right">-0.1884559</td>
+<td align="right">0.0432</td>
+<td align="right">-0.1885</td>
 </tr>
 <tr class="even">
-<td align="right">5</td>
+<td align="left">Southern Central America</td>
 <td align="right">560</td>
 <td align="right">16</td>
-<td align="right">0.00000</td>
-<td align="right">-0.3820274</td>
+<td align="right">0.0000</td>
+<td align="right">-0.3820</td>
 </tr>
 <tr class="odd">
-<td align="right">9</td>
+<td align="left">Northern South America</td>
 <td align="right">477</td>
 <td align="right">99</td>
-<td align="right">0.03561</td>
-<td align="right">-0.2044080</td>
+<td align="right">0.0356</td>
+<td align="right">-0.2044</td>
 </tr>
 <tr class="even">
-<td align="right">10</td>
+<td align="left">Southeastern South America</td>
 <td align="right">555</td>
 <td align="right">21</td>
-<td align="right">0.00374</td>
-<td align="right">0.6149406</td>
+<td align="right">0.0037</td>
+<td align="right">0.6149</td>
 </tr>
 <tr class="odd">
-<td align="right">13</td>
+<td align="left">West Central Africa</td>
 <td align="right">545</td>
 <td align="right">31</td>
-<td align="right">0.00440</td>
-<td align="right">0.8319298</td>
+<td align="right">0.0044</td>
+<td align="right">0.8319</td>
 </tr>
 <tr class="even">
-<td align="right">14</td>
+<td align="left">Central African Band</td>
 <td align="right">542</td>
 <td align="right">34</td>
-<td align="right">0.03829</td>
-<td align="right">0.3685310</td>
+<td align="right">0.0383</td>
+<td align="right">0.3685</td>
 </tr>
 <tr class="odd">
-<td align="right">25</td>
+<td align="left">Northern Eurussia</td>
 <td align="right">540</td>
 <td align="right">36</td>
-<td align="right">0.01817</td>
-<td align="right">0.2887942</td>
+<td align="right">0.0182</td>
+<td align="right">0.2888</td>
 </tr>
 <tr class="even">
-<td align="right">26</td>
+<td align="left">Southeast Asia</td>
 <td align="right">542</td>
 <td align="right">34</td>
-<td align="right">0.00744</td>
-<td align="right">-0.5019819</td>
+<td align="right">0.0074</td>
+<td align="right">-0.5020</td>
 </tr>
 </tbody>
 </table>
@@ -505,62 +505,62 @@ $(document).ready(function () {
 <caption>Unbiased Prediction Regions (n &gt; 10)</caption>
 <thead>
 <tr class="header">
-<th align="right">fold</th>
-<th align="right">n_fit</th>
-<th align="right">n_validate</th>
-<th align="right">p_value</th>
-<th align="right">mean_diff</th>
+<th align="left">Region</th>
+<th align="right">Observations Fit</th>
+<th align="right">Observations Held Out</th>
+<th align="right">P-value</th>
+<th align="right">Mean Prediction Difference</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="right">2</td>
+<td align="left">Southwestern North America</td>
 <td align="right">555</td>
 <td align="right">21</td>
-<td align="right">0.76253</td>
-<td align="right">-0.0348445</td>
+<td align="right">0.7625</td>
+<td align="right">-0.0348</td>
 </tr>
 <tr class="even">
-<td align="right">4</td>
+<td align="left">Central / Eastern North America</td>
 <td align="right">554</td>
 <td align="right">22</td>
-<td align="right">0.12342</td>
-<td align="right">-0.3528833</td>
+<td align="right">0.1234</td>
+<td align="right">-0.3529</td>
 </tr>
 <tr class="odd">
-<td align="right">15</td>
+<td align="left">Europe</td>
 <td align="right">539</td>
 <td align="right">37</td>
-<td align="right">0.94864</td>
-<td align="right">0.0090656</td>
+<td align="right">0.9486</td>
+<td align="right">0.0091</td>
 </tr>
 <tr class="even">
-<td align="right">16</td>
+<td align="left">South Africa</td>
 <td align="right">515</td>
 <td align="right">61</td>
-<td align="right">0.77754</td>
-<td align="right">-0.0243799</td>
+<td align="right">0.7775</td>
+<td align="right">-0.0244</td>
 </tr>
 <tr class="odd">
-<td align="right">22</td>
+<td align="left">India</td>
 <td align="right">555</td>
 <td align="right">21</td>
-<td align="right">0.78485</td>
-<td align="right">0.0467531</td>
+<td align="right">0.7849</td>
+<td align="right">0.0468</td>
 </tr>
 <tr class="even">
-<td align="right">27</td>
+<td align="left">Southeastern China</td>
 <td align="right">562</td>
 <td align="right">14</td>
-<td align="right">0.62062</td>
-<td align="right">0.0876137</td>
+<td align="right">0.6206</td>
+<td align="right">0.0876</td>
 </tr>
 <tr class="odd">
-<td align="right">33</td>
+<td align="left">Southern Australia</td>
 <td align="right">565</td>
 <td align="right">11</td>
-<td align="right">0.70569</td>
-<td align="right">-0.0988195</td>
+<td align="right">0.7057</td>
+<td align="right">-0.0988</td>
 </tr>
 </tbody>
 </table>
@@ -573,48 +573,48 @@ $(document).ready(function () {
 <caption>Biased Predictions Regions (n &gt; 10)</caption>
 <thead>
 <tr class="header">
-<th align="right">fold</th>
-<th align="right">n_fit</th>
-<th align="right">n_validate</th>
-<th align="right">p_value</th>
-<th align="right">mean_diff</th>
+<th align="left">Region</th>
+<th align="right">Observations Fit</th>
+<th align="right">Observations Held Out</th>
+<th align="right">P-value</th>
+<th align="right">Mean Prediction Difference</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="right">1</td>
+<td align="left">Northern America</td>
 <td align="right">516</td>
 <td align="right">59</td>
-<td align="right">0.00094</td>
-<td align="right">-0.3823173</td>
+<td align="right">0.0009</td>
+<td align="right">-0.3823</td>
 </tr>
 <tr class="even">
-<td align="right">5</td>
+<td align="left">Southern Central America</td>
 <td align="right">559</td>
 <td align="right">16</td>
-<td align="right">0.00097</td>
-<td align="right">-1.0620662</td>
+<td align="right">0.0010</td>
+<td align="right">-1.0621</td>
 </tr>
 <tr class="odd">
-<td align="right">13</td>
+<td align="left">West Central Africa</td>
 <td align="right">545</td>
 <td align="right">30</td>
-<td align="right">0.03082</td>
-<td align="right">0.5589708</td>
+<td align="right">0.0308</td>
+<td align="right">0.5590</td>
 </tr>
 <tr class="even">
-<td align="right">14</td>
+<td align="left">Central African Band</td>
 <td align="right">541</td>
 <td align="right">34</td>
-<td align="right">0.00602</td>
-<td align="right">0.9742460</td>
+<td align="right">0.0060</td>
+<td align="right">0.9742</td>
 </tr>
 <tr class="odd">
-<td align="right">27</td>
+<td align="left">Southeastern China</td>
 <td align="right">561</td>
 <td align="right">14</td>
-<td align="right">0.00466</td>
-<td align="right">-0.5790510</td>
+<td align="right">0.0047</td>
+<td align="right">-0.5791</td>
 </tr>
 </tbody>
 </table>
@@ -622,89 +622,89 @@ $(document).ready(function () {
 <caption>Unbiased Prediction Regions (n &gt; 10)</caption>
 <thead>
 <tr class="header">
-<th align="right">fold</th>
-<th align="right">n_fit</th>
-<th align="right">n_validate</th>
-<th align="right">p_value</th>
-<th align="right">mean_diff</th>
+<th align="left">Region</th>
+<th align="right">Observations Fit</th>
+<th align="right">Observations Held Out</th>
+<th align="right">P-value</th>
+<th align="right">Mean Prediction Difference</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="right">2</td>
+<td align="left">Southwestern North America</td>
 <td align="right">554</td>
 <td align="right">21</td>
-<td align="right">0.48814</td>
-<td align="right">-0.1669841</td>
+<td align="right">0.4881</td>
+<td align="right">-0.1670</td>
 </tr>
 <tr class="even">
-<td align="right">4</td>
+<td align="left">Central / Eastern North America</td>
 <td align="right">553</td>
 <td align="right">22</td>
-<td align="right">0.68681</td>
-<td align="right">-0.3282123</td>
+<td align="right">0.6868</td>
+<td align="right">-0.3282</td>
 </tr>
 <tr class="odd">
-<td align="right">9</td>
+<td align="left">Northern South America</td>
 <td align="right">476</td>
 <td align="right">99</td>
-<td align="right">0.29357</td>
-<td align="right">-0.2082912</td>
+<td align="right">0.2936</td>
+<td align="right">-0.2083</td>
 </tr>
 <tr class="even">
-<td align="right">10</td>
+<td align="left">Southeastern South America</td>
 <td align="right">554</td>
 <td align="right">21</td>
-<td align="right">0.41621</td>
-<td align="right">0.3041615</td>
+<td align="right">0.4162</td>
+<td align="right">0.3042</td>
 </tr>
 <tr class="odd">
-<td align="right">15</td>
+<td align="left">Europe</td>
 <td align="right">538</td>
 <td align="right">37</td>
-<td align="right">0.24750</td>
-<td align="right">0.3711080</td>
+<td align="right">0.2475</td>
+<td align="right">0.3711</td>
 </tr>
 <tr class="even">
-<td align="right">16</td>
+<td align="left">South Africa</td>
 <td align="right">514</td>
 <td align="right">61</td>
-<td align="right">0.79504</td>
-<td align="right">-0.0413395</td>
+<td align="right">0.7950</td>
+<td align="right">-0.0413</td>
 </tr>
 <tr class="odd">
-<td align="right">22</td>
+<td align="left">India</td>
 <td align="right">554</td>
 <td align="right">21</td>
-<td align="right">0.50259</td>
-<td align="right">0.5320988</td>
+<td align="right">0.5026</td>
+<td align="right">0.5321</td>
 </tr>
 <tr class="even">
-<td align="right">25</td>
+<td align="left">Northern Eurussia</td>
 <td align="right">539</td>
 <td align="right">36</td>
-<td align="right">0.68994</td>
-<td align="right">-0.1171410</td>
+<td align="right">0.6899</td>
+<td align="right">-0.1171</td>
 </tr>
 <tr class="odd">
-<td align="right">26</td>
+<td align="left">Southeast Asia</td>
 <td align="right">541</td>
 <td align="right">34</td>
-<td align="right">0.53885</td>
-<td align="right">-0.1817830</td>
+<td align="right">0.5389</td>
+<td align="right">-0.1818</td>
 </tr>
 <tr class="even">
-<td align="right">33</td>
+<td align="left">Southern Australia</td>
 <td align="right">564</td>
 <td align="right">11</td>
-<td align="right">0.35462</td>
-<td align="right">0.5890869</td>
+<td align="right">0.3546</td>
+<td align="right">0.5891</td>
 </tr>
 </tbody>
 </table>
 </div>
 
-<div id="rmd-source-code">LS0tCnRpdGxlOiAiSFAzOiBab29nZW9ncmFwaGljYWwgQ3Jvc3MtVmFsaWRhdGlvbiIKb3V0cHV0OgogIGh0bWxfZG9jdW1lbnQ6CiAgICB0b2M6IFRSVUUKICAgIGNvZGVfZG93bmxvYWQ6IFRSVUUKICAgIGtlZXBfbWQ6IFRSVUUKLS0tCgpgYGB7ciBzZXR1cCwgaW5jbHVkZT1GQUxTRSwgY2FjaGU9RkFMU0V9CmxpYnJhcnkobWdjdikKbGlicmFyeShyYXN0ZXIpCmxpYnJhcnkoZHBseXIpCmxpYnJhcnkoc3RyaW5naSkKbGlicmFyeShwYXJhbGxlbCkKbGlicmFyeShwdXJycikKbGlicmFyeShnZ3Bsb3QyKQpsaWJyYXJ5KHZpcmlkaXMpCmxpYnJhcnkoa25pdHIpCmxpYnJhcnkoc3ZnbGl0ZSkKbGlicmFyeShzcCkKbGlicmFyeShyZWFkcikKbGlicmFyeShyZ2RhbCkKbGlicmFyeShzdHJpbmdyKQpsaWJyYXJ5KGNsYXNzSW50KQpsaWJyYXJ5KG1hcHRvb2xzKQpsaWJyYXJ5KHRpYmJsZSkKbGlicmFyeShtZ2N2KQpQIDwtIHJwcm9qcm9vdDo6ZmluZF9yc3R1ZGlvX3Jvb3RfZmlsZQpzb3VyY2UoUCgiUi9tb2RlbF9yZWR1Y3Rpb24uUiIpKQpzb3VyY2UoUCgiUi9maXRfZ2FtLlIiKSkKc291cmNlKFAoIlIvcmVsYXRpdmVfY29udHJpYnV0aW9ucy5SIikpCnNvdXJjZShQKCJSL2Nyb3NzX3ZhbGlkYXRpb24uUiIpKQpzb3VyY2UoUCgiUi9jdl9nYW1fYnkuUiIpKQpzZXQuc2VlZCgwKQpvcHRzX2NodW5rJHNldChlY2hvID0gRkFMU0UsIG1lc3NhZ2U9RkFMU0UsIHdhcm5pbmcgPSBGQUxTRSwgYXV0b2RlcD1UUlVFKQpgYGAKCmBgYHtyIG1vZGVsLWxvYWRpbmcsIGNhY2hlID0gVFJVRX0Kc291cmNlKFAoIm1vZGVsX2ZpdHRpbmcvcHJlcHJvY2Vzc19kYXRhLlIiKSkKc2F2ZVJEUyhsaXN0KGhvc3RzPWhvc3RzLCB2aXJ1c2VzPXZpcnVzZXMsIGFzc29jaWF0aW9ucz1hc3NvY2lhdGlvbnMpLCBQKCJtb2RlbF9maXR0aW5nL3Bvc3Rwcm9jZXNzZWRfZGF0YWJhc2UucmRzIikpCmBgYAojIFpvb2dlb2dyYXBoaWMgQ3Jvc3MtVmFsaWRhdGlvbgoKSW4gYWRkaXRpb24gdG8gcmFuZG9tbHktc2VsZWN0ZWQgay1mb2xkIGNyb3NzLXZhbGlkYXRpb24sIHdlIGV2YWx1YXRlZCB0aGUgcm9idXN0bmVzcyBvZiBvdXIgbW9kZWxzIHZpYSBub24tcmFuZG9tIGdlb2dyYXBoaWMgY3Jvc3MtdmFsaWRhdGlvbjogd2Ugc3lzdGVtYXRpY2FsbHkgcmVtb3ZlZCBhbGwgb2JzZXJ2YXRpb25zIGZyb20gYSB6b29nZW9ncmFwaGljYWwgcmVnaW9uLCByZS1maXQgdGhlIG1vZGVsIHVzaW5nIGFsbCBvYnNlcnZhdGlvbnMgZnJvbSBvdXRzaWRlIHRoZSByZWdpb24sIHRoZW4gcGVyZm9ybWVkIGEgbm9uLXBhcmFtZXRyaWMgcGVybXV0YXRpb24gdGVzdCBjb21wYXJpbmcgdGhlIHByZWRpY3RlZCB2YWx1ZXMgdG8gdGhlIHJlYWwgdmFsdWVzIGZvciB0aGF0IHJlZ2lvbi4KCkluIG9yZGVyIHRvIG1lYW5pbmdmdWxseSBvcmdhbml6ZSBnZW9ncmFwaGljIGFyZWFzLCB3ZSB1dGlsaXplZCBtYW1tYWxpYW4gem9vZ2VvZ3JhcGhpYyByZWdpb25zIGZyb20gKkhvbHogZXQgYWwgKDIwMTMpKiwgd2hpY2ggYXJlIGRlZmluZWQgYnkgZGlzdHJpYnV0aW9ucyBvZiBhbmQgcGh5bG9nZW5ldGljIHJlbGF0aW9uc2hpcHMgYmV0d2VlbiBzcGVjaWVzLiBVc2luZyBRR0lTLCBhIHNoYXBlZmlsZSBvZiB0aGVzZSByZWdpb25zIHdhcyBpbnRlcnNlY3RlZCB3aXRoIElVQ04ncyBob3N0IHJhbmdlcywgYW5kIGVhY2ggaG9zdCB3YXMgYXNzaWduZWQgdG8gb25seSB0aGUgcmVnaW9uIHdoaWNoIGNvbnRhaW5lZCB0aGUgZ3JlYXRlc3QgcHJvcG9ydGlvbiBvZiBpdHMgcmFuZ2UuIFJlc3VsdHMgb2YgdGhlIG5vbi1wYXJhbWV0cmljIHBlcm11dGF0aW9uIHRlc3QgYXJlIHNob3duIGJlbG93OyBub24tc2lnbmlmaWNhbnQgcmVzdWx0cyBpbmRpY2F0ZSB0aGF0IG1vZGVsIHByZWRpY3Rpb25zIGFyZSB1bmJpYXNlZC4KCmBgYHtyIG1hcC1zZXR1cCwgY2FjaGUgPSBUUlVFLCBtZXNzYWdlPUZBTFNFfQp6cmVnaW9ucyA8LSBzaGFwZWZpbGUoUCgibWFwcy9tYW0uc2hwIiksIHZlcmJvc2UgPSBGQUxTRSkKI0ludGVyc2VjdGVkIHdpdGggSVVDTiBoYWJpdGF0IHNoYXBlZmlsZSBpbiBRR0lTCnpvb2dfbWFtbWFscyA8LSBzaGFwZWZpbGUoUCgibWFwcy9ob3N0X3pnX2FyZWEuc2hwIiksIHZlcmJvc2UgPSBGQUxTRSkKem9vZ19tYW1tYWxzX2RhdGEgPC0gYXNfdGliYmxlKHpvb2dfbWFtbWFsc0BkYXRhKQoKI1BhcmluZyBkb3duIHRoZSBkYXRhc2V0CnpnbV9yZWR1Y2VkIDwtIHpvb2dfbWFtbWFsc19kYXRhICU+JQogIHNlbGVjdChCSU5PTUlBTCwgbWFtX3VwZ21hXywgZ2FyZWEyKQojQXNzaWduaW5nIG9ubHkgbGFyZ2VzdCBhcmVhcwp6Z20gPC0gemdtX3JlZHVjZWQgJT4lCiAgZ3JvdXBfYnkoQklOT01JQUwpICU+JQogIG11dGF0ZShhcmVhID0gbWF4KGdhcmVhMikpICU+JQogIGZpbHRlcihnYXJlYTIgPT0gYXJlYSkgJT4lCiAgYXJyYW5nZShCSU5PTUlBTCkKemdtIDwtIHVuaXF1ZSh6Z20pCmBgYAoKIyBab29ub3NlcyBHQU0gLSBBbGwgQXNzb2NpYXRpb25zCgpgYGB7ciBhbGwtem9vLCBjYWNoZT1UUlVFfQpkYXRhX3NldCA9IGhvc3RzICU+JSAKICBmaWx0ZXIoaE1hck9UZXJyID09ICJUZXJyZXN0cmlhbCIsCiAgICAgICAgIGhXaWxkRG9tRkFPID09ICJ3aWxkIiwKICAgICAgICAgIWlzLm5hKFBkSG9TYS5jYkNzdF9vcmRlcikpCgojICBDcmVhdGUgZHVtbXkgdmFyaWFibGVzIGZvciBvcmRlcnMgdG8gdXNlIGFzIHJhbmRvbSBlZmZlY3RzCmR1bW15cyA9IGFzLmRhdGEuZnJhbWUod2l0aChkYXRhX3NldCwgbW9kZWwubWF0cml4KH5oT3JkZXIpKVssLTFdKQpkYXRhX3NldCA9IGNiaW5kKGRhdGFfc2V0LCBkdW1teXMpCgojIyMjIyMgQUxMIFpPT05PU0VTCmFsbHpfZ2FtID0gcmVhZFJEUyhQKCJtb2RlbF9maXR0aW5nL2FsbF96b29ub3Nlc19tb2RlbC5yZHMiKSkKCmpvaW5lZF9kYXQgPC0gbGVmdF9qb2luKGRhdGFfc2V0LCB6Z20sIGJ5PWMoImhIb3N0TmFtZUZpbmFsIj0iQklOT01JQUwiKSkKam9pbmVkX2RhdCA8LSBmaWx0ZXJfZG93bihhbGx6X2dhbSwgam9pbmVkX2RhdCwgIm1hbV91cGdtYV8iKQoKcmVzdWx0czwtY3ZfZ2FtX2J5X3pnKGFsbHpfZ2FtLCBqb2luZWRfZGF0LHVuaXF1ZShqb2luZWRfZGF0JG1hbV91cGdtYV8pKQoKenJlZ2lvbnNAZGF0YSA8LSBsZWZ0X2pvaW4oenJlZ2lvbnNAZGF0YSwgcmVzdWx0cywgYnk9YygibWFtX3VwZ21hXyI9ImZvbGQiKSkKCmRhdGEoIndybGRfc2ltcGwiKQpzbWFsbF93b3JsZCA8LSBzdWJzZXQod3JsZF9zaW1wbCwgd3JsZF9zaW1wbEBkYXRhJE5BTUUgIT0gIkFudGFyY3RpY2EiKQpwbG90KHNtYWxsX3dvcmxkKQoKenJlZ2lvbnMgJT4lCiAgc3Vic2V0KHpyZWdpb25zQGRhdGEkcF92YWx1ZSA8IDAuMDUgJiB6cmVnaW9uc0BkYXRhJG5fdmFsaWRhdGUgPiAxMCkgJT4lCiAgcGxvdCguLGFkZD1UUlVFLCBjb2w9InJlZCIpCgp6cmVnaW9ucyAlPiUKICBzdWJzZXQoenJlZ2lvbnNAZGF0YSRwX3ZhbHVlIDwgMC4wNSAmIHpyZWdpb25zQGRhdGEkbl92YWxpZGF0ZSA8IDEwKSAlPiUKICBwbG90KC4sYWRkPVRSVUUsIGNvbD0icGluayIpCgp6cmVnaW9ucyAlPiUKICBzdWJzZXQoenJlZ2lvbnNAZGF0YSRwX3ZhbHVlID49IDAuMDUgJiB6cmVnaW9uc0BkYXRhJG5fdmFsaWRhdGUgPiAxMCkgJT4lCiAgcGxvdCguLGFkZD1UUlVFLCBjb2w9ImRhcmtncmVlbiIpCgp6cmVnaW9ucyAlPiUKICBzdWJzZXQoenJlZ2lvbnNAZGF0YSRwX3ZhbHVlID49IDAuMDUgJiB6cmVnaW9uc0BkYXRhJG5fdmFsaWRhdGUgPCAxMCkgJT4lCiAgcGxvdCguLGFkZD1UUlVFLCBjb2w9ImxpZ2h0Z3JlZW4iKQoKdGl0bGUoIkFsbCBab29ub3NlczogMzEgUmVnaW9ucyIpCmBgYAoKRGFyayBncmVlbiBpbmRpY2F0ZXMgdW5iaWFzZWQgcmVnaW9ucywgd2hpbGUgZGFyayByZWQgaW5kaWNhdGVzIHJlZ2lvbnMgd2l0aCBldmlkZW5jZSBvZiBiaWFzZWQgcHJlZGljdGlvbnMuIExpZ2h0IGdyZWVuIGFuZCBsaWdodCByZWQgcmVwcmVzZW50IHRoZSBzYW1lIGRpc3RpbmN0aW9uLCBidXQgdGhlc2UgcmVnaW9ucyBjb250YWluIHZlcnkgZmV3IChsZXNzIHRoYW4gdGVuKSBhc3NpZ25lZCBzcGVjaWVzOyBibGFuayBhcmVhcyB3ZXJlIG5vdCBhc3NpZ25lZCBhbnkgaG9zdHMuIAoKYGBge3IgYWxsLXpvby10YWJsZXMsIHJlc3VsdHMgPSAiYXNpcyJ9CnJlc3VsdHMgJT4lIGFycmFuZ2UoZm9sZCkgJT4lCiAgZmlsdGVyKG5fdmFsaWRhdGUgPiAxMCwgcF92YWx1ZSA8IDAuMDUpICU+JQogIGthYmxlKGNhcHRpb24gPSAiQmlhc2VkIFByZWRpY3Rpb25zIFJlZ2lvbnMgKG4gPiAxMCkiKQoKcmVzdWx0cyAlPiUgYXJyYW5nZShmb2xkKSAlPiUKICBmaWx0ZXIobl92YWxpZGF0ZSA+IDEwLCBwX3ZhbHVlID49IDAuMDUpICU+JQogIGthYmxlKGNhcHRpb24gPSAiVW5iaWFzZWQgUHJlZGljdGlvbiBSZWdpb25zIChuID4gMTApIikKCmBgYAoKIyBBbGwgVmlydXNlcyBHQU0gLSBBbGwgQXNzb2NpYXRpb25zCgpgYGB7ciBhbGwtdmlydXNlcywgY2FjaGUgPSBUUlVFfQojIyMjIyMgQUxMIFZJUlVTRVMKYWxsdl9nYW0gPSByZWFkUkRTKFAoIm1vZGVsX2ZpdHRpbmcvYWxsX3ZpcnVzZXNfbW9kZWwucmRzIikpCnZyZWdpb25zIDwtIHNoYXBlZmlsZShQKCJtYXBzL21hbS5zaHAiKSwgdmVyYm9zZSA9IEZBTFNFKQoKCnRlbXAgPC0gbGVmdF9qb2luKGRhdGFfc2V0LCB6Z20sIGJ5PWMoImhIb3N0TmFtZUZpbmFsIj0iQklOT01JQUwiKSkKdGVtcCA8LSBmaWx0ZXJfZG93bihhbGx2X2dhbSwgdGVtcCwgIm1hbV91cGdtYV8iKQoKdnJlc3VsdHM8LWN2X2dhbV9ieV96ZyhhbGx2X2dhbSwgdGVtcCx1bmlxdWUodGVtcCRtYW1fdXBnbWFfKSkKCnZyZWdpb25zQGRhdGEgPC0gbGVmdF9qb2luKHZyZWdpb25zQGRhdGEsIHZyZXN1bHRzLCBieT1jKCJtYW1fdXBnbWFfIj0iZm9sZCIpKQoKcGxvdChzbWFsbF93b3JsZCkKCnZyZWdpb25zICU+JQogIHN1YnNldCh2cmVnaW9uc0BkYXRhJHBfdmFsdWUgPCAwLjA1ICYgdnJlZ2lvbnNAZGF0YSRuX3ZhbGlkYXRlID4gMTApICU+JQogIHBsb3QoLixhZGQ9VFJVRSwgY29sPSJyZWQiKQoKdnJlZ2lvbnMgJT4lCiAgc3Vic2V0KHZyZWdpb25zQGRhdGEkcF92YWx1ZSA8IDAuMDUgJiB2cmVnaW9uc0BkYXRhJG5fdmFsaWRhdGUgPCAxMCkgJT4lCiAgcGxvdCguLGFkZD1UUlVFLCBjb2w9InBpbmsiKQoKdnJlZ2lvbnMgJT4lCiAgc3Vic2V0KHZyZWdpb25zQGRhdGEkcF92YWx1ZSA+PSAwLjA1ICYgdnJlZ2lvbnNAZGF0YSRuX3ZhbGlkYXRlID4gMTApICU+JQogIHBsb3QoLixhZGQ9VFJVRSwgY29sPSJkYXJrZ3JlZW4iKQoKdnJlZ2lvbnMgJT4lCiAgc3Vic2V0KHZyZWdpb25zQGRhdGEkcF92YWx1ZSA+PSAwLjA1ICYgdnJlZ2lvbnNAZGF0YSRuX3ZhbGlkYXRlIDwgMTApICU+JQogIHBsb3QoLixhZGQ9VFJVRSwgY29sPSJsaWdodGdyZWVuIikKCnRpdGxlKCJBbGwgVmlydXNlczogMzEgUmVnaW9ucyIpCmBgYAoKRGFyayBncmVlbiBpbmRpY2F0ZXMgdW5iaWFzZWQgcmVnaW9ucywgd2hpbGUgZGFyayByZWQgaW5kaWNhdGVzIHJlZ2lvbnMgd2l0aCBldmlkZW5jZSBvZiBiaWFzZWQgcHJlZGljdGlvbnMuIExpZ2h0IGdyZWVuIGFuZCBsaWdodCByZWQgcmVwcmVzZW50IHRoZSBzYW1lIGRpc3RpbmN0aW9uLCBidXQgdGhlc2UgcmVnaW9ucyBjb250YWluIHZlcnkgZmV3IChsZXNzIHRoYW4gdGVuKSBhc3NpZ25lZCBzcGVjaWVzOyBibGFuayBhcmVhcyB3ZXJlIG5vdCBhc3NpZ25lZCBhbnkgaG9zdHMuIAoKYGBge3IgYWxsLXZpcnVzLXRhYmxlcywgcmVzdWx0cyA9ICJhc2lzIn0KdnJlc3VsdHMgJT4lIGFycmFuZ2UoZm9sZCkgJT4lCiAgZmlsdGVyKG5fdmFsaWRhdGUgPiAxMCwgcF92YWx1ZSA8IDAuMDUpICU+JQogIGthYmxlKGNhcHRpb24gPSAiQmlhc2VkIFByZWRpY3Rpb25zIFJlZ2lvbnMgKG4gPiAxMCkiKQoKdnJlc3VsdHMgJT4lIGFycmFuZ2UoZm9sZCkgJT4lCiAgZmlsdGVyKG5fdmFsaWRhdGUgPiAxMCwgcF92YWx1ZSA+PSAwLjA1KSAlPiUKICBrYWJsZShjYXB0aW9uID0gIlVuYmlhc2VkIFByZWRpY3Rpb24gUmVnaW9ucyAobiA+IDEwKSIpCgpgYGAKCiMgWm9vbm9zZXMgR0FNIC0gU3RyaWN0IEFzc29jaWF0aW9ucwoKYGBge3Igc3RyaWN0LXpvbywgY2FjaGUgPSBUUlVFfQptb2RlbF9saXN0IDwtIHJlYWRSRFMoUCgibW9kZWxfZml0dGluZy90b3BfbW9kZWxzLnJkcyIpKQpzdHJpY3R6X2dhbSA8LSBtb2RlbF9saXN0JGFsbF96b29ub3Nlc19zdHJpY3QKCnN6cmVnaW9ucyA8LSBzaGFwZWZpbGUoUCgibWFwcy9tYW0uc2hwIiksIHZlcmJvc2UgPSBGQUxTRSkKCnRlbXAgPC0gbGVmdF9qb2luKGRhdGFfc2V0LCB6Z20sIGJ5PWMoImhIb3N0TmFtZUZpbmFsIj0iQklOT01JQUwiKSkKdGVtcCA8LSBmaWx0ZXJfZG93bihzdHJpY3R6X2dhbSwgdGVtcCwgIm1hbV91cGdtYV8iKQoKc3pyZXN1bHRzPC1jdl9nYW1fYnlfemcoc3RyaWN0el9nYW0sIHRlbXAsdW5pcXVlKHRlbXAkbWFtX3VwZ21hXykpCgpzenJlZ2lvbnNAZGF0YSA8LSBsZWZ0X2pvaW4oc3pyZWdpb25zQGRhdGEsIHN6cmVzdWx0cywgYnk9YygibWFtX3VwZ21hXyI9ImZvbGQiKSkKCnBsb3Qoc21hbGxfd29ybGQpCgpzenJlZ2lvbnMgJT4lCiAgc3Vic2V0KHN6cmVnaW9uc0BkYXRhJHBfdmFsdWUgPCAwLjA1ICYgc3pyZWdpb25zQGRhdGEkbl92YWxpZGF0ZSA+IDEwKSAlPiUKICBwbG90KC4sYWRkPVRSVUUsIGNvbD0icmVkIikKCnN6cmVnaW9ucyAlPiUKICBzdWJzZXQoc3pyZWdpb25zQGRhdGEkcF92YWx1ZSA8IDAuMDUgJiBzenJlZ2lvbnNAZGF0YSRuX3ZhbGlkYXRlIDwgMTApICU+JQogIHBsb3QoLixhZGQ9VFJVRSwgY29sPSJwaW5rIikKCnN6cmVnaW9ucyAlPiUKICBzdWJzZXQoc3pyZWdpb25zQGRhdGEkcF92YWx1ZSA+PSAwLjA1ICYgc3pyZWdpb25zQGRhdGEkbl92YWxpZGF0ZSA+IDEwKSAlPiUKICBwbG90KC4sYWRkPVRSVUUsIGNvbD0iZGFya2dyZWVuIikKCnN6cmVnaW9ucyAlPiUKICBzdWJzZXQoc3pyZWdpb25zQGRhdGEkcF92YWx1ZSA+PSAwLjA1ICYgc3pyZWdpb25zQGRhdGEkbl92YWxpZGF0ZSA8IDEwKSAlPiUKICBwbG90KC4sYWRkPVRSVUUsIGNvbD0ibGlnaHRncmVlbiIpCgp0aXRsZSgiU3RyaWN0IFpvb25vc2VzOiAzMSBSZWdpb25zIikKYGBgCgpEYXJrIGdyZWVuIGluZGljYXRlcyB1bmJpYXNlZCByZWdpb25zLCB3aGlsZSBkYXJrIHJlZCBpbmRpY2F0ZXMgcmVnaW9ucyB3aXRoIGV2aWRlbmNlIG9mIGJpYXNlZCBwcmVkaWN0aW9ucy4gTGlnaHQgZ3JlZW4gYW5kIGxpZ2h0IHJlZCByZXByZXNlbnQgdGhlIHNhbWUgZGlzdGluY3Rpb24sIGJ1dCB0aGVzZSByZWdpb25zIGNvbnRhaW4gdmVyeSBmZXcgKGxlc3MgdGhhbiB0ZW4pIGFzc2lnbmVkIApzcGVjaWVzOyBibGFuayBhcmVhcyB3ZXJlIG5vdCBhc3NpZ25lZCBhbnkgaG9zdHMuICAKCmBgYHtyIHN6LXRhYmxlcywgcmVzdWx0cyA9ICJhc2lzIn0Kc3pyZXN1bHRzICU+JSBhcnJhbmdlKGZvbGQpICU+JQogIGZpbHRlcihuX3ZhbGlkYXRlID4gMTAsIHBfdmFsdWUgPCAwLjA1KSAlPiUKICBrYWJsZShjYXB0aW9uID0gIkJpYXNlZCBQcmVkaWN0aW9ucyBSZWdpb25zIChuID4gMTApIikKYGBgCgpgYGB7ciBzei10YWJsZXMyfQpzenJlc3VsdHMgJT4lIGFycmFuZ2UoZm9sZCkgJT4lCiAgZmlsdGVyKG5fdmFsaWRhdGUgPiAxMCwgcF92YWx1ZSA+PSAwLjA1KSAlPiUKICBrYWJsZShjYXB0aW9uID0gIlVuYmlhc2VkIFByZWRpY3Rpb24gUmVnaW9ucyAobiA+IDEwKSIpCgpgYGAKCiMgQWxsIFZpcnVzZXMgR0FNIC0gU3RyaWN0IEFzc29jaWF0aW9ucwoKYGBge3Igc3RyaWN0LXZpcnVzZXMsIGNhY2hlID0gVFJVRX0Kc3RyaWN0dl9nYW0gPC0gbW9kZWxfbGlzdCRhbGxfdmlydXNlc19zdHJpY3QKCnN2cmVnaW9ucyA8LSBzaGFwZWZpbGUoUCgibWFwcy9tYW0uc2hwIiksIHZlcmJvc2UgPSBGQUxTRSkKCnRlbXAgPC0gbGVmdF9qb2luKGRhdGFfc2V0LCB6Z20sIGJ5PWMoImhIb3N0TmFtZUZpbmFsIj0iQklOT01JQUwiKSkKdGVtcCA8LSBmaWx0ZXJfZG93bihzdHJpY3R2X2dhbSwgdGVtcCwgIm1hbV91cGdtYV8iKQoKc3ZyZXN1bHRzPC1jdl9nYW1fYnlfemcoc3RyaWN0dl9nYW0sIHRlbXAsdW5pcXVlKHRlbXAkbWFtX3VwZ21hXykpCgpzdnJlZ2lvbnNAZGF0YSA8LSBsZWZ0X2pvaW4oc3ZyZWdpb25zQGRhdGEsIHN2cmVzdWx0cywgYnk9YygibWFtX3VwZ21hXyI9ImZvbGQiKSkKCnBsb3Qoc21hbGxfd29ybGQpCgpzdnJlZ2lvbnMgJT4lCiAgc3Vic2V0KHN2cmVnaW9uc0BkYXRhJHBfdmFsdWUgPCAwLjA1ICYgc3ZyZWdpb25zQGRhdGEkbl92YWxpZGF0ZSA+IDEwKSAlPiUKICBwbG90KC4sYWRkPVRSVUUsIGNvbD0icmVkIikKCnN2cmVnaW9ucyAlPiUKICBzdWJzZXQoc3ZyZWdpb25zQGRhdGEkcF92YWx1ZSA8IDAuMDUgJiBzdnJlZ2lvbnNAZGF0YSRuX3ZhbGlkYXRlIDwgMTApICU+JQogIHBsb3QoLixhZGQ9VFJVRSwgY29sPSJwaW5rIikKCnN2cmVnaW9ucyAlPiUKICBzdWJzZXQoc3ZyZWdpb25zQGRhdGEkcF92YWx1ZSA+PSAwLjA1ICYgc3ZyZWdpb25zQGRhdGEkbl92YWxpZGF0ZSA+IDEwKSAlPiUKICBwbG90KC4sYWRkPVRSVUUsIGNvbD0iZGFya2dyZWVuIikKCnN2cmVnaW9ucyAlPiUKICBzdWJzZXQoc3ZyZWdpb25zQGRhdGEkcF92YWx1ZSA+PSAwLjA1ICYgc3ZyZWdpb25zQGRhdGEkbl92YWxpZGF0ZSA8IDEwKSAlPiUKICBwbG90KC4sYWRkPVRSVUUsIGNvbD0ibGlnaHRncmVlbiIpCgp0aXRsZSgiU3RyaWN0IFZpcnVzZXM6IDMxIFJlZ2lvbnMiKQpgYGAKCkRhcmsgZ3JlZW4gaW5kaWNhdGVzIHVuYmlhc2VkIHJlZ2lvbnMsIHdoaWxlIGRhcmsgcmVkIGluZGljYXRlcyByZWdpb25zIHdpdGggZXZpZGVuY2Ugb2YgYmlhc2VkIHByZWRpY3Rpb25zLiBMaWdodCBncmVlbiBhbmQgbGlnaHQgcmVkIHJlcHJlc2VudCB0aGUgc2FtZSBkaXN0aW5jdGlvbiwgYnV0IHRoZXNlIHJlZ2lvbnMgY29udGFpbiB2ZXJ5IGZldyAobGVzcyB0aGFuIHRlbikgYXNzaWduZWQgc3BlY2llczsgYmxhbmsgYXJlYXMgd2VyZSBub3QgYXNzaWduZWQgYW55IGhvc3RzLiAKCmBgYHtyIHN0cmljdC16b28tdGFibGVzLCByZXN1bHRzID0gImFzaXMifQpzdnJlc3VsdHMgJT4lIGFycmFuZ2UoZm9sZCkgJT4lCiAgZmlsdGVyKG5fdmFsaWRhdGUgPiAxMCwgcF92YWx1ZSA8IDAuMDUpICU+JQogIGthYmxlKGNhcHRpb24gPSAiQmlhc2VkIFByZWRpY3Rpb25zIFJlZ2lvbnMgKG4gPiAxMCkiKQoKc3ZyZXN1bHRzICU+JSBhcnJhbmdlKGZvbGQpICU+JQogIGZpbHRlcihuX3ZhbGlkYXRlID4gMTAsIHBfdmFsdWUgPj0gMC4wNSkgJT4lCiAga2FibGUoY2FwdGlvbiA9ICJVbmJpYXNlZCBQcmVkaWN0aW9uIFJlZ2lvbnMgKG4gPiAxMCkiKQpgYGAK</div>
+<div id="rmd-source-code">LS0tCnRpdGxlOiAiSFAzOiBab29nZW9ncmFwaGljYWwgQ3Jvc3MtVmFsaWRhdGlvbiIKb3V0cHV0OgogIGh0bWxfZG9jdW1lbnQ6CiAgICB0b2M6IFRSVUUKICAgIGNvZGVfZG93bmxvYWQ6IFRSVUUKICAgIGtlZXBfbWQ6IFRSVUUKLS0tCgpgYGB7ciBzZXR1cCwgaW5jbHVkZT1GQUxTRSwgY2FjaGU9RkFMU0V9CmxpYnJhcnkobWdjdikKbGlicmFyeShyYXN0ZXIpCmxpYnJhcnkoZHBseXIpCmxpYnJhcnkoc3RyaW5naSkKbGlicmFyeShwYXJhbGxlbCkKbGlicmFyeShwdXJycikKbGlicmFyeShnZ3Bsb3QyKQpsaWJyYXJ5KHZpcmlkaXMpCmxpYnJhcnkoa25pdHIpCmxpYnJhcnkoc3ZnbGl0ZSkKbGlicmFyeShzcCkKbGlicmFyeShyZWFkcikKbGlicmFyeShyZ2RhbCkKbGlicmFyeShzdHJpbmdyKQpsaWJyYXJ5KGNsYXNzSW50KQpsaWJyYXJ5KG1hcHRvb2xzKQpsaWJyYXJ5KHRpYmJsZSkKbGlicmFyeShtZ2N2KQpQIDwtIHJwcm9qcm9vdDo6ZmluZF9yc3R1ZGlvX3Jvb3RfZmlsZQpzb3VyY2UoUCgiUi9tb2RlbF9yZWR1Y3Rpb24uUiIpKQpzb3VyY2UoUCgiUi9maXRfZ2FtLlIiKSkKc291cmNlKFAoIlIvcmVsYXRpdmVfY29udHJpYnV0aW9ucy5SIikpCnNvdXJjZShQKCJSL2Nyb3NzX3ZhbGlkYXRpb24uUiIpKQpzb3VyY2UoUCgiUi9jdl9nYW1fYnkuUiIpKQpzZXQuc2VlZCgwKQpvcHRzX2NodW5rJHNldChlY2hvID0gRkFMU0UsIG1lc3NhZ2U9RkFMU0UsIHdhcm5pbmcgPSBGQUxTRSwgYXV0b2RlcD1UUlVFKQpgYGAKCmBgYHtyIG1vZGVsLWxvYWRpbmcsIGNhY2hlID0gVFJVRX0Kc291cmNlKFAoIm1vZGVsX2ZpdHRpbmcvcHJlcHJvY2Vzc19kYXRhLlIiKSkKc2F2ZVJEUyhsaXN0KGhvc3RzPWhvc3RzLCB2aXJ1c2VzPXZpcnVzZXMsIGFzc29jaWF0aW9ucz1hc3NvY2lhdGlvbnMpLCBQKCJtb2RlbF9maXR0aW5nL3Bvc3Rwcm9jZXNzZWRfZGF0YWJhc2UucmRzIikpCmBgYAojIFpvb2dlb2dyYXBoaWMgQ3Jvc3MtVmFsaWRhdGlvbgoKSW4gYWRkaXRpb24gdG8gcmFuZG9tbHktc2VsZWN0ZWQgay1mb2xkIGNyb3NzLXZhbGlkYXRpb24sIHdlIGV2YWx1YXRlZCB0aGUgcm9idXN0bmVzcyBvZiBvdXIgbW9kZWxzIHZpYSBub24tcmFuZG9tIGdlb2dyYXBoaWMgY3Jvc3MtdmFsaWRhdGlvbjogd2Ugc3lzdGVtYXRpY2FsbHkgcmVtb3ZlZCBhbGwgb2JzZXJ2YXRpb25zIGZyb20gYSB6b29nZW9ncmFwaGljYWwgcmVnaW9uLCByZS1maXQgdGhlIG1vZGVsIHVzaW5nIGFsbCBvYnNlcnZhdGlvbnMgZnJvbSBvdXRzaWRlIHRoZSByZWdpb24sIHRoZW4gcGVyZm9ybWVkIGEgbm9uLXBhcmFtZXRyaWMgcGVybXV0YXRpb24gdGVzdCBjb21wYXJpbmcgdGhlIHByZWRpY3RlZCB2YWx1ZXMgdG8gdGhlIG9ic2VydmVkIHZhbHVlcyBmb3IgdGhhdCByZWdpb24uCgpJbiBvcmRlciB0byBtZWFuaW5nZnVsbHkgb3JnYW5pemUgZ2VvZ3JhcGhpYyBhcmVhcywgd2UgdXRpbGl6ZWQgbWFtbWFsaWFuIHpvb2dlb2dyYXBoaWMgcmVnaW9ucyBmcm9tICpIb2x6IGV0IGFsICgyMDEzKSosIHdoaWNoIGFyZSBkZWZpbmVkIGJ5IGRpc3RyaWJ1dGlvbnMgb2YgYW5kIHBoeWxvZ2VuZXRpYyByZWxhdGlvbnNoaXBzIGJldHdlZW4gc3BlY2llcy4gVXNpbmcgUUdJUywgYSBzaGFwZWZpbGUgb2YgdGhlc2UgcmVnaW9ucyB3YXMgaW50ZXJzZWN0ZWQgd2l0aCBJVUNOJ3MgaG9zdCByYW5nZXMsIGFuZCBlYWNoIGhvc3Qgd2FzIGFzc2lnbmVkIHRvIG9ubHkgdGhlIHJlZ2lvbiB3aGljaCBjb250YWluZWQgdGhlIGdyZWF0ZXN0IHByb3BvcnRpb24gb2YgaXRzIHJhbmdlLiBSZXN1bHRzIG9mIHRoZSBub24tcGFyYW1ldHJpYyBwZXJtdXRhdGlvbiB0ZXN0IGFyZSBzaG93biBiZWxvdzsgbm9uLXNpZ25pZmljYW50IHJlc3VsdHMgaW5kaWNhdGUgdGhhdCBtb2RlbCBwcmVkaWN0aW9ucyBhcmUgdW5iaWFzZWQuCgpgYGB7ciBtYXAtc2V0dXAsIGNhY2hlID0gVFJVRSwgbWVzc2FnZT1GQUxTRX0KenJlZ2lvbnMgPC0gc2hhcGVmaWxlKFAoIm1hcHMvbWFtLnNocCIpLCB2ZXJib3NlID0gRkFMU0UpCiNJbnRlcnNlY3RlZCB3aXRoIElVQ04gaGFiaXRhdCBzaGFwZWZpbGUgaW4gUUdJUwp6b29nX21hbW1hbHMgPC0gc2hhcGVmaWxlKFAoIm1hcHMvaG9zdF96Z19hcmVhLnNocCIpLCB2ZXJib3NlID0gRkFMU0UpCnpvb2dfbWFtbWFsc19kYXRhIDwtIGFzX3RpYmJsZSh6b29nX21hbW1hbHNAZGF0YSkKCiNQYXJpbmcgZG93biB0aGUgZGF0YXNldAp6Z21fcmVkdWNlZCA8LSB6b29nX21hbW1hbHNfZGF0YSAlPiUKICBzZWxlY3QoQklOT01JQUwsIG1hbV91cGdtYV8sIGdhcmVhMikKI0Fzc2lnbmluZyBvbmx5IGxhcmdlc3QgYXJlYXMKemdtIDwtIHpnbV9yZWR1Y2VkICU+JQogIGdyb3VwX2J5KEJJTk9NSUFMKSAlPiUKICBtdXRhdGUoYXJlYSA9IG1heChnYXJlYTIpKSAlPiUKICBmaWx0ZXIoZ2FyZWEyID09IGFyZWEpICU+JQogIGFycmFuZ2UoQklOT01JQUwpCnpnbSA8LSB1bmlxdWUoemdtKQoKcmVnaW9uX25hbWVzIDwtIHJlYWRSRFMoUCgiZGF0YS9yZWdpb25fbmFtZXMucmRzIikpCmBgYAoKIyBab29ub3NlcyBHQU0gLSBBbGwgQXNzb2NpYXRpb25zCgpgYGB7ciBhbGwtem9vLCBjYWNoZT1UUlVFfQpkYXRhX3NldCA9IGhvc3RzICU+JSAKICBmaWx0ZXIoaE1hck9UZXJyID09ICJUZXJyZXN0cmlhbCIsCiAgICAgICAgIGhXaWxkRG9tRkFPID09ICJ3aWxkIiwKICAgICAgICAgIWlzLm5hKFBkSG9TYS5jYkNzdF9vcmRlcikpCgojICBDcmVhdGUgZHVtbXkgdmFyaWFibGVzIGZvciBvcmRlcnMgdG8gdXNlIGFzIHJhbmRvbSBlZmZlY3RzCmR1bW15cyA9IGFzLmRhdGEuZnJhbWUod2l0aChkYXRhX3NldCwgbW9kZWwubWF0cml4KH5oT3JkZXIpKVssLTFdKQpkYXRhX3NldCA9IGNiaW5kKGRhdGFfc2V0LCBkdW1teXMpCgojIyMjIyMgQUxMIFpPT05PU0VTCmFsbHpfZ2FtID0gcmVhZFJEUyhQKCJtb2RlbF9maXR0aW5nL2FsbF96b29ub3Nlc19tb2RlbC5yZHMiKSkKCmpvaW5lZF9kYXQgPC0gbGVmdF9qb2luKGRhdGFfc2V0LCB6Z20sIGJ5PWMoImhIb3N0TmFtZUZpbmFsIj0iQklOT01JQUwiKSkKam9pbmVkX2RhdCA8LSBmaWx0ZXJfZG93bihhbGx6X2dhbSwgam9pbmVkX2RhdCwgIm1hbV91cGdtYV8iKQoKcmVzdWx0czwtY3ZfZ2FtX2J5X3pnKGFsbHpfZ2FtLCBqb2luZWRfZGF0LHVuaXF1ZShqb2luZWRfZGF0JG1hbV91cGdtYV8pKQoKenJlZ2lvbnNAZGF0YSA8LSBsZWZ0X2pvaW4oenJlZ2lvbnNAZGF0YSwgcmVzdWx0cywgYnk9YygibWFtX3VwZ21hXyI9ImZvbGQiKSkKCmRhdGEoIndybGRfc2ltcGwiKQpzbWFsbF93b3JsZCA8LSBzdWJzZXQod3JsZF9zaW1wbCwgd3JsZF9zaW1wbEBkYXRhJE5BTUUgIT0gIkFudGFyY3RpY2EiKQpwbG90KHNtYWxsX3dvcmxkKQoKenJlZ2lvbnMgJT4lCiAgc3Vic2V0KHpyZWdpb25zQGRhdGEkcF92YWx1ZSA8IDAuMDUgJiB6cmVnaW9uc0BkYXRhJG5fdmFsaWRhdGUgPiAxMCkgJT4lCiAgcGxvdCguLGFkZD1UUlVFLCBjb2w9InJlZCIpCgp6cmVnaW9ucyAlPiUKICBzdWJzZXQoenJlZ2lvbnNAZGF0YSRwX3ZhbHVlIDwgMC4wNSAmIHpyZWdpb25zQGRhdGEkbl92YWxpZGF0ZSA8IDEwKSAlPiUKICBwbG90KC4sYWRkPVRSVUUsIGNvbD0icGluayIpCgp6cmVnaW9ucyAlPiUKICBzdWJzZXQoenJlZ2lvbnNAZGF0YSRwX3ZhbHVlID49IDAuMDUgJiB6cmVnaW9uc0BkYXRhJG5fdmFsaWRhdGUgPiAxMCkgJT4lCiAgcGxvdCguLGFkZD1UUlVFLCBjb2w9ImRhcmtncmVlbiIpCgp6cmVnaW9ucyAlPiUKICBzdWJzZXQoenJlZ2lvbnNAZGF0YSRwX3ZhbHVlID49IDAuMDUgJiB6cmVnaW9uc0BkYXRhJG5fdmFsaWRhdGUgPCAxMCkgJT4lCiAgcGxvdCguLGFkZD1UUlVFLCBjb2w9ImxpZ2h0Z3JlZW4iKQoKdGl0bGUoIkFsbCBab29ub3NlczogMzEgUmVnaW9ucyIpCmBgYAoKRGFyayBncmVlbiBpbmRpY2F0ZXMgdW5iaWFzZWQgcmVnaW9ucywgd2hpbGUgZGFyayByZWQgaW5kaWNhdGVzIHJlZ2lvbnMgd2l0aCBldmlkZW5jZSBvZiBiaWFzZWQgcHJlZGljdGlvbnMuIExpZ2h0IGdyZWVuIGFuZCBsaWdodCByZWQgcmVwcmVzZW50IHRoZSBzYW1lIGRpc3RpbmN0aW9uLCBidXQgdGhlc2UgcmVnaW9ucyBjb250YWluIHZlcnkgZmV3IChsZXNzIHRoYW4gdGVuKSBhc3NpZ25lZCBzcGVjaWVzOyBibGFuayBhcmVhcyB3ZXJlIG5vdCBhc3NpZ25lZCBhbnkgaG9zdHMuIAoKYGBge3IgYWxsLXpvby10YWJsZXMsIHJlc3VsdHMgPSAiYXNpcyJ9CnJlc3VsdHM8LWxlZnRfam9pbihyZXN1bHRzLCByZWdpb25fbmFtZXMsIGJ5ID0gImZvbGQiKQoKcmVzdWx0cyAlPiUgYXJyYW5nZShmb2xkKSAlPiUKICBmaWx0ZXIobl92YWxpZGF0ZSA+IDEwLCBwX3ZhbHVlIDwgMC4wNSkgJT4lCiAgc2VsZWN0KG5hbWUsIG5fZml0LCBuX3ZhbGlkYXRlLCBwX3ZhbHVlLCBtZWFuX2RpZmYpICU+JQogIHJlbmFtZShSZWdpb24gPSBuYW1lLCBgT2JzZXJ2YXRpb25zIEZpdGAgPSBuX2ZpdCwgYE9ic2VydmF0aW9ucyBIZWxkIE91dGAgPSBuX3ZhbGlkYXRlLCAKICAgICAgICAgYFAtdmFsdWVgID0gcF92YWx1ZSwgYE1lYW4gUHJlZGljdGlvbiBEaWZmZXJlbmNlYCA9IG1lYW5fZGlmZikgJT4lCiAga2FibGUoY2FwdGlvbiA9ICJCaWFzZWQgUHJlZGljdGlvbnMgUmVnaW9ucyAobiA+IDEwKSIsIGRpZ2l0cyA9IDQpCgpyZXN1bHRzICU+JSBhcnJhbmdlKGZvbGQpICU+JQogIGZpbHRlcihuX3ZhbGlkYXRlID4gMTAsIHBfdmFsdWUgPj0gMC4wNSkgJT4lCiAgc2VsZWN0KG5hbWUsIG5fZml0LCBuX3ZhbGlkYXRlLCBwX3ZhbHVlLCBtZWFuX2RpZmYpICU+JQogIHJlbmFtZShSZWdpb24gPSBuYW1lLCBgT2JzZXJ2YXRpb25zIEZpdGAgPSBuX2ZpdCwgYE9ic2VydmF0aW9ucyBIZWxkIE91dGAgPSBuX3ZhbGlkYXRlLCAKICAgICAgICAgYFAtdmFsdWVgID0gcF92YWx1ZSwgYE1lYW4gUHJlZGljdGlvbiBEaWZmZXJlbmNlYCA9IG1lYW5fZGlmZikgJT4lCiAga2FibGUoY2FwdGlvbiA9ICJVbmJpYXNlZCBQcmVkaWN0aW9uIFJlZ2lvbnMgKG4gPiAxMCkiLCBkaWdpdHMgPSA0KQoKYGBgCgojIEFsbCBWaXJ1c2VzIEdBTSAtIEFsbCBBc3NvY2lhdGlvbnMKCmBgYHtyIGFsbC12aXJ1c2VzLCBjYWNoZSA9IFRSVUV9CiMjIyMjIyBBTEwgVklSVVNFUwphbGx2X2dhbSA9IHJlYWRSRFMoUCgibW9kZWxfZml0dGluZy9hbGxfdmlydXNlc19tb2RlbC5yZHMiKSkKdnJlZ2lvbnMgPC0gc2hhcGVmaWxlKFAoIm1hcHMvbWFtLnNocCIpLCB2ZXJib3NlID0gRkFMU0UpCgoKdGVtcCA8LSBsZWZ0X2pvaW4oZGF0YV9zZXQsIHpnbSwgYnk9YygiaEhvc3ROYW1lRmluYWwiPSJCSU5PTUlBTCIpKQp0ZW1wIDwtIGZpbHRlcl9kb3duKGFsbHZfZ2FtLCB0ZW1wLCAibWFtX3VwZ21hXyIpCgp2cmVzdWx0czwtY3ZfZ2FtX2J5X3pnKGFsbHZfZ2FtLCB0ZW1wLHVuaXF1ZSh0ZW1wJG1hbV91cGdtYV8pKQoKdnJlZ2lvbnNAZGF0YSA8LSBsZWZ0X2pvaW4odnJlZ2lvbnNAZGF0YSwgdnJlc3VsdHMsIGJ5PWMoIm1hbV91cGdtYV8iPSJmb2xkIikpCgpwbG90KHNtYWxsX3dvcmxkKQoKdnJlZ2lvbnMgJT4lCiAgc3Vic2V0KHZyZWdpb25zQGRhdGEkcF92YWx1ZSA8IDAuMDUgJiB2cmVnaW9uc0BkYXRhJG5fdmFsaWRhdGUgPiAxMCkgJT4lCiAgcGxvdCguLGFkZD1UUlVFLCBjb2w9InJlZCIpCgp2cmVnaW9ucyAlPiUKICBzdWJzZXQodnJlZ2lvbnNAZGF0YSRwX3ZhbHVlIDwgMC4wNSAmIHZyZWdpb25zQGRhdGEkbl92YWxpZGF0ZSA8IDEwKSAlPiUKICBwbG90KC4sYWRkPVRSVUUsIGNvbD0icGluayIpCgp2cmVnaW9ucyAlPiUKICBzdWJzZXQodnJlZ2lvbnNAZGF0YSRwX3ZhbHVlID49IDAuMDUgJiB2cmVnaW9uc0BkYXRhJG5fdmFsaWRhdGUgPiAxMCkgJT4lCiAgcGxvdCguLGFkZD1UUlVFLCBjb2w9ImRhcmtncmVlbiIpCgp2cmVnaW9ucyAlPiUKICBzdWJzZXQodnJlZ2lvbnNAZGF0YSRwX3ZhbHVlID49IDAuMDUgJiB2cmVnaW9uc0BkYXRhJG5fdmFsaWRhdGUgPCAxMCkgJT4lCiAgcGxvdCguLGFkZD1UUlVFLCBjb2w9ImxpZ2h0Z3JlZW4iKQoKdGl0bGUoIkFsbCBWaXJ1c2VzOiAzMSBSZWdpb25zIikKYGBgCgpEYXJrIGdyZWVuIGluZGljYXRlcyB1bmJpYXNlZCByZWdpb25zLCB3aGlsZSBkYXJrIHJlZCBpbmRpY2F0ZXMgcmVnaW9ucyB3aXRoIGV2aWRlbmNlIG9mIGJpYXNlZCBwcmVkaWN0aW9ucy4gTGlnaHQgZ3JlZW4gYW5kIGxpZ2h0IHJlZCByZXByZXNlbnQgdGhlIHNhbWUgZGlzdGluY3Rpb24sIGJ1dCB0aGVzZSByZWdpb25zIGNvbnRhaW4gdmVyeSBmZXcgKGxlc3MgdGhhbiB0ZW4pIGFzc2lnbmVkIHNwZWNpZXM7IGJsYW5rIGFyZWFzIHdlcmUgbm90IGFzc2lnbmVkIGFueSBob3N0cy4gCgpgYGB7ciBhbGwtdmlydXMtdGFibGVzLCByZXN1bHRzID0gImFzaXMifQp2cmVzdWx0czwtbGVmdF9qb2luKHZyZXN1bHRzLCByZWdpb25fbmFtZXMsIGJ5ID0gImZvbGQiKQoKdnJlc3VsdHMgJT4lIGFycmFuZ2UoZm9sZCkgJT4lCiAgZmlsdGVyKG5fdmFsaWRhdGUgPiAxMCwgcF92YWx1ZSA8IDAuMDUpICU+JQogIHNlbGVjdChuYW1lLCBuX2ZpdCwgbl92YWxpZGF0ZSwgcF92YWx1ZSwgbWVhbl9kaWZmKSAlPiUKICByZW5hbWUoUmVnaW9uID0gbmFtZSwgYE9ic2VydmF0aW9ucyBGaXRgID0gbl9maXQsIGBPYnNlcnZhdGlvbnMgSGVsZCBPdXRgID0gbl92YWxpZGF0ZSwgCiAgICAgICAgIGBQLXZhbHVlYCA9IHBfdmFsdWUsIGBNZWFuIFByZWRpY3Rpb24gRGlmZmVyZW5jZWAgPSBtZWFuX2RpZmYpICU+JQogIGthYmxlKGNhcHRpb24gPSAiQmlhc2VkIFByZWRpY3Rpb25zIFJlZ2lvbnMgKG4gPiAxMCkiLCBkaWdpdHMgPSA0KQoKdnJlc3VsdHMgJT4lIGFycmFuZ2UoZm9sZCkgJT4lCiAgZmlsdGVyKG5fdmFsaWRhdGUgPiAxMCwgcF92YWx1ZSA+PSAwLjA1KSAlPiUKICBzZWxlY3QobmFtZSwgbl9maXQsIG5fdmFsaWRhdGUsIHBfdmFsdWUsIG1lYW5fZGlmZikgJT4lCiAgcmVuYW1lKFJlZ2lvbiA9IG5hbWUsIGBPYnNlcnZhdGlvbnMgRml0YCA9IG5fZml0LCBgT2JzZXJ2YXRpb25zIEhlbGQgT3V0YCA9IG5fdmFsaWRhdGUsIAogICAgICAgICBgUC12YWx1ZWAgPSBwX3ZhbHVlLCBgTWVhbiBQcmVkaWN0aW9uIERpZmZlcmVuY2VgID0gbWVhbl9kaWZmKSAlPiUKICBrYWJsZShjYXB0aW9uID0gIlVuYmlhc2VkIFByZWRpY3Rpb24gUmVnaW9ucyAobiA+IDEwKSIsIGRpZ2l0cyA9IDQpCgpgYGAKCiMgWm9vbm9zZXMgR0FNIC0gU3RyaWN0IEFzc29jaWF0aW9ucwoKYGBge3Igc3RyaWN0LXpvbywgY2FjaGUgPSBUUlVFfQptb2RlbF9saXN0IDwtIHJlYWRSRFMoUCgibW9kZWxfZml0dGluZy90b3BfbW9kZWxzLnJkcyIpKQpzdHJpY3R6X2dhbSA8LSBtb2RlbF9saXN0JGFsbF96b29ub3Nlc19zdHJpY3QKCnN6cmVnaW9ucyA8LSBzaGFwZWZpbGUoUCgibWFwcy9tYW0uc2hwIiksIHZlcmJvc2UgPSBGQUxTRSkKCnRlbXAgPC0gbGVmdF9qb2luKGRhdGFfc2V0LCB6Z20sIGJ5PWMoImhIb3N0TmFtZUZpbmFsIj0iQklOT01JQUwiKSkKdGVtcCA8LSBmaWx0ZXJfZG93bihzdHJpY3R6X2dhbSwgdGVtcCwgIm1hbV91cGdtYV8iKQoKc3pyZXN1bHRzPC1jdl9nYW1fYnlfemcoc3RyaWN0el9nYW0sIHRlbXAsdW5pcXVlKHRlbXAkbWFtX3VwZ21hXykpCgpzenJlZ2lvbnNAZGF0YSA8LSBsZWZ0X2pvaW4oc3pyZWdpb25zQGRhdGEsIHN6cmVzdWx0cywgYnk9YygibWFtX3VwZ21hXyI9ImZvbGQiKSkKCnBsb3Qoc21hbGxfd29ybGQpCgpzenJlZ2lvbnMgJT4lCiAgc3Vic2V0KHN6cmVnaW9uc0BkYXRhJHBfdmFsdWUgPCAwLjA1ICYgc3pyZWdpb25zQGRhdGEkbl92YWxpZGF0ZSA+IDEwKSAlPiUKICBwbG90KC4sYWRkPVRSVUUsIGNvbD0icmVkIikKCnN6cmVnaW9ucyAlPiUKICBzdWJzZXQoc3pyZWdpb25zQGRhdGEkcF92YWx1ZSA8IDAuMDUgJiBzenJlZ2lvbnNAZGF0YSRuX3ZhbGlkYXRlIDwgMTApICU+JQogIHBsb3QoLixhZGQ9VFJVRSwgY29sPSJwaW5rIikKCnN6cmVnaW9ucyAlPiUKICBzdWJzZXQoc3pyZWdpb25zQGRhdGEkcF92YWx1ZSA+PSAwLjA1ICYgc3pyZWdpb25zQGRhdGEkbl92YWxpZGF0ZSA+IDEwKSAlPiUKICBwbG90KC4sYWRkPVRSVUUsIGNvbD0iZGFya2dyZWVuIikKCnN6cmVnaW9ucyAlPiUKICBzdWJzZXQoc3pyZWdpb25zQGRhdGEkcF92YWx1ZSA+PSAwLjA1ICYgc3pyZWdpb25zQGRhdGEkbl92YWxpZGF0ZSA8IDEwKSAlPiUKICBwbG90KC4sYWRkPVRSVUUsIGNvbD0ibGlnaHRncmVlbiIpCgp0aXRsZSgiU3RyaWN0IFpvb25vc2VzOiAzMSBSZWdpb25zIikKYGBgCgpEYXJrIGdyZWVuIGluZGljYXRlcyB1bmJpYXNlZCByZWdpb25zLCB3aGlsZSBkYXJrIHJlZCBpbmRpY2F0ZXMgcmVnaW9ucyB3aXRoIGV2aWRlbmNlIG9mIGJpYXNlZCBwcmVkaWN0aW9ucy4gTGlnaHQgZ3JlZW4gYW5kIGxpZ2h0IHJlZCByZXByZXNlbnQgdGhlIHNhbWUgZGlzdGluY3Rpb24sIGJ1dCB0aGVzZSByZWdpb25zIGNvbnRhaW4gdmVyeSBmZXcgKGxlc3MgdGhhbiB0ZW4pIGFzc2lnbmVkIApzcGVjaWVzOyBibGFuayBhcmVhcyB3ZXJlIG5vdCBhc3NpZ25lZCBhbnkgaG9zdHMuICAKCmBgYHtyIHN6LXRhYmxlcywgcmVzdWx0cyA9ICJhc2lzIn0Kc3pyZXN1bHRzPC1sZWZ0X2pvaW4oc3pyZXN1bHRzLCByZWdpb25fbmFtZXMsIGJ5ID0gImZvbGQiKQoKc3pyZXN1bHRzICU+JSBhcnJhbmdlKGZvbGQpICU+JQogIGZpbHRlcihuX3ZhbGlkYXRlID4gMTAsIHBfdmFsdWUgPCAwLjA1KSAlPiUKICBzZWxlY3QobmFtZSwgbl9maXQsIG5fdmFsaWRhdGUsIHBfdmFsdWUsIG1lYW5fZGlmZikgJT4lCiAgcmVuYW1lKFJlZ2lvbiA9IG5hbWUsIGBPYnNlcnZhdGlvbnMgRml0YCA9IG5fZml0LCBgT2JzZXJ2YXRpb25zIEhlbGQgT3V0YCA9IG5fdmFsaWRhdGUsIAogICAgICAgICBgUC12YWx1ZWAgPSBwX3ZhbHVlLCBgTWVhbiBQcmVkaWN0aW9uIERpZmZlcmVuY2VgID0gbWVhbl9kaWZmKSAlPiUKICBrYWJsZShjYXB0aW9uID0gIkJpYXNlZCBQcmVkaWN0aW9ucyBSZWdpb25zIChuID4gMTApIiwgZGlnaXRzID0gNCkKYGBgCgpgYGB7ciBzei10YWJsZXMyfQpzenJlc3VsdHMgJT4lIGFycmFuZ2UoZm9sZCkgJT4lCiAgZmlsdGVyKG5fdmFsaWRhdGUgPiAxMCwgcF92YWx1ZSA+PSAwLjA1KSAlPiUKICBzZWxlY3QobmFtZSwgbl9maXQsIG5fdmFsaWRhdGUsIHBfdmFsdWUsIG1lYW5fZGlmZikgJT4lCiAgcmVuYW1lKFJlZ2lvbiA9IG5hbWUsIGBPYnNlcnZhdGlvbnMgRml0YCA9IG5fZml0LCBgT2JzZXJ2YXRpb25zIEhlbGQgT3V0YCA9IG5fdmFsaWRhdGUsIAogICAgICAgICBgUC12YWx1ZWAgPSBwX3ZhbHVlLCBgTWVhbiBQcmVkaWN0aW9uIERpZmZlcmVuY2VgID0gbWVhbl9kaWZmKSAlPiUKICBrYWJsZShjYXB0aW9uID0gIlVuYmlhc2VkIFByZWRpY3Rpb24gUmVnaW9ucyAobiA+IDEwKSIsIGRpZ2l0cyA9IDQpCgpgYGAKCiMgQWxsIFZpcnVzZXMgR0FNIC0gU3RyaWN0IEFzc29jaWF0aW9ucwoKYGBge3Igc3RyaWN0LXZpcnVzZXMsIGNhY2hlID0gVFJVRX0Kc3RyaWN0dl9nYW0gPC0gbW9kZWxfbGlzdCRhbGxfdmlydXNlc19zdHJpY3QKCnN2cmVnaW9ucyA8LSBzaGFwZWZpbGUoUCgibWFwcy9tYW0uc2hwIiksIHZlcmJvc2UgPSBGQUxTRSkKCnRlbXAgPC0gbGVmdF9qb2luKGRhdGFfc2V0LCB6Z20sIGJ5PWMoImhIb3N0TmFtZUZpbmFsIj0iQklOT01JQUwiKSkKdGVtcCA8LSBmaWx0ZXJfZG93bihzdHJpY3R2X2dhbSwgdGVtcCwgIm1hbV91cGdtYV8iKQoKc3ZyZXN1bHRzPC1jdl9nYW1fYnlfemcoc3RyaWN0dl9nYW0sIHRlbXAsdW5pcXVlKHRlbXAkbWFtX3VwZ21hXykpCgpzdnJlZ2lvbnNAZGF0YSA8LSBsZWZ0X2pvaW4oc3ZyZWdpb25zQGRhdGEsIHN2cmVzdWx0cywgYnk9YygibWFtX3VwZ21hXyI9ImZvbGQiKSkKCnBsb3Qoc21hbGxfd29ybGQpCgpzdnJlZ2lvbnMgJT4lCiAgc3Vic2V0KHN2cmVnaW9uc0BkYXRhJHBfdmFsdWUgPCAwLjA1ICYgc3ZyZWdpb25zQGRhdGEkbl92YWxpZGF0ZSA+IDEwKSAlPiUKICBwbG90KC4sYWRkPVRSVUUsIGNvbD0icmVkIikKCnN2cmVnaW9ucyAlPiUKICBzdWJzZXQoc3ZyZWdpb25zQGRhdGEkcF92YWx1ZSA8IDAuMDUgJiBzdnJlZ2lvbnNAZGF0YSRuX3ZhbGlkYXRlIDwgMTApICU+JQogIHBsb3QoLixhZGQ9VFJVRSwgY29sPSJwaW5rIikKCnN2cmVnaW9ucyAlPiUKICBzdWJzZXQoc3ZyZWdpb25zQGRhdGEkcF92YWx1ZSA+PSAwLjA1ICYgc3ZyZWdpb25zQGRhdGEkbl92YWxpZGF0ZSA+IDEwKSAlPiUKICBwbG90KC4sYWRkPVRSVUUsIGNvbD0iZGFya2dyZWVuIikKCnN2cmVnaW9ucyAlPiUKICBzdWJzZXQoc3ZyZWdpb25zQGRhdGEkcF92YWx1ZSA+PSAwLjA1ICYgc3ZyZWdpb25zQGRhdGEkbl92YWxpZGF0ZSA8IDEwKSAlPiUKICBwbG90KC4sYWRkPVRSVUUsIGNvbD0ibGlnaHRncmVlbiIpCgp0aXRsZSgiU3RyaWN0IFZpcnVzZXM6IDMxIFJlZ2lvbnMiKQpgYGAKCkRhcmsgZ3JlZW4gaW5kaWNhdGVzIHVuYmlhc2VkIHJlZ2lvbnMsIHdoaWxlIGRhcmsgcmVkIGluZGljYXRlcyByZWdpb25zIHdpdGggZXZpZGVuY2Ugb2YgYmlhc2VkIHByZWRpY3Rpb25zLiBMaWdodCBncmVlbiBhbmQgbGlnaHQgcmVkIHJlcHJlc2VudCB0aGUgc2FtZSBkaXN0aW5jdGlvbiwgYnV0IHRoZXNlIHJlZ2lvbnMgY29udGFpbiB2ZXJ5IGZldyAobGVzcyB0aGFuIHRlbikgYXNzaWduZWQgc3BlY2llczsgYmxhbmsgYXJlYXMgd2VyZSBub3QgYXNzaWduZWQgYW55IGhvc3RzLiAKCmBgYHtyIHN0cmljdC16b28tdGFibGVzLCByZXN1bHRzID0gImFzaXMifQpzdnJlc3VsdHM8LWxlZnRfam9pbihzdnJlc3VsdHMsIHJlZ2lvbl9uYW1lcywgYnkgPSAiZm9sZCIpCgpzdnJlc3VsdHMgJT4lIGFycmFuZ2UoZm9sZCkgJT4lCiAgZmlsdGVyKG5fdmFsaWRhdGUgPiAxMCwgcF92YWx1ZSA8IDAuMDUpICU+JQogIHNlbGVjdChuYW1lLCBuX2ZpdCwgbl92YWxpZGF0ZSwgcF92YWx1ZSwgbWVhbl9kaWZmKSAlPiUKICByZW5hbWUoUmVnaW9uID0gbmFtZSwgYE9ic2VydmF0aW9ucyBGaXRgID0gbl9maXQsIGBPYnNlcnZhdGlvbnMgSGVsZCBPdXRgID0gbl92YWxpZGF0ZSwgCiAgICAgICAgIGBQLXZhbHVlYCA9IHBfdmFsdWUsIGBNZWFuIFByZWRpY3Rpb24gRGlmZmVyZW5jZWAgPSBtZWFuX2RpZmYpICU+JQogIGthYmxlKGNhcHRpb24gPSAiQmlhc2VkIFByZWRpY3Rpb25zIFJlZ2lvbnMgKG4gPiAxMCkiLCBkaWdpdHMgPSA0KQoKc3ZyZXN1bHRzICU+JSBhcnJhbmdlKGZvbGQpICU+JQogIGZpbHRlcihuX3ZhbGlkYXRlID4gMTAsIHBfdmFsdWUgPj0gMC4wNSkgJT4lCiAgc2VsZWN0KG5hbWUsIG5fZml0LCBuX3ZhbGlkYXRlLCBwX3ZhbHVlLCBtZWFuX2RpZmYpICU+JQogIHJlbmFtZShSZWdpb24gPSBuYW1lLCBgT2JzZXJ2YXRpb25zIEZpdGAgPSBuX2ZpdCwgYE9ic2VydmF0aW9ucyBIZWxkIE91dGAgPSBuX3ZhbGlkYXRlLCAKICAgICAgICAgYFAtdmFsdWVgID0gcF92YWx1ZSwgYE1lYW4gUHJlZGljdGlvbiBEaWZmZXJlbmNlYCA9IG1lYW5fZGlmZikgJT4lCiAga2FibGUoY2FwdGlvbiA9ICJVbmJpYXNlZCBQcmVkaWN0aW9uIFJlZ2lvbnMgKG4gPiAxMCkiLCBkaWdpdHMgPSA0KQpgYGAK</div>
 
 
 

@@ -14,14 +14,14 @@ argues that the order Primates did not show an effect in this model (not shown i
 
 
 
-__The variable Order Primates, when added to the best model as a random effect, has very low effective degrees of freedom: 1.252255\times 10^{-4}:__  
+__The variable Order Primates, when added to the best model as a random effect, has very low effective degrees of freedom: 1.3\times 10^{-4}:__  
   
 
 
 
 __The partial effect plot of phylogenetic distance with an Order Primates variable included as a Fixed Effect does not change substantially when compared to the partial effect plot in the original model__
 
-![](phylo-primates_files/figure-html/plots-1.png)<!-- -->![](phylo-primates_files/figure-html/plots-2.png)<!-- -->
+![](phylo-primates_files/figure-html/plots-1.png)<!-- -->
 
 
 

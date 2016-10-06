@@ -44,7 +44,7 @@ saveRDS(list(hosts=hosts, viruses=viruses, associations=associations), P("model_
 
 In addition to randomly-selected k-fold cross-validation, we evaluated the robustness of our models via non-random geographic cross-validation: we systematically removed all observations from a zoogeographical region, re-fit the model using all observations from outside the region, then performed a non-parametric permutation test comparing the predicted values to the observed values for that region.
 
-In order to meaningfully organize geographic areas, we utilized mammalian zoogeographic regions from *Holz et al (2013)*, which are defined by distributions of and phylogenetic relationships between species. Using QGIS, a shapefile of these regions was intersected with IUCN's host ranges, and each host was assigned to only the region which contained the greatest proportion of its range. Results of the non-parametric permutation test are shown below; non-significant results indicate that model predictions are unbiased.
+In order to meaningfully organize geographic areas, we utilized mammalian zoogeographic regions from [*Holt et al (2013)*](http://dx.doi.org/10.1126/science.1228282) which are defined by distributions of and phylogenetic relationships between species. Using QGIS, a mammal-specific zoogeographical shapefile provided by [Holt's group](http://macroecology.ku.dk/resources/wallace) at the University of Copenhagen was intersected (using QGIS Vector > Geoprocessing Tools > Intersect) with a shapefile of IUCN's host ranges. Areas of these intersections were then calculated using an equal-area projection, and each host was assigned to only the region which contained the greatest proportion of its range. Results of the non-parametric permutation test are shown below; non-significant results indicate that model predictions are unbiased.
 
 ```{r map-setup, cache = TRUE, message=FALSE}
 zregions <- shapefile(P("maps/mam.shp"), verbose = FALSE)
@@ -303,3 +303,25 @@ svresults %>% arrange(fold) %>%
          `P-value` = p_value, `Mean Prediction Difference` = mean_diff) %>%
   kable(caption = "Unbiased Prediction Regions (n > 10)", digits = 4)
 ```
+
+#Conclusions
+
+The reviewer articulated concerns about our models' ability to make out-of-sample predictions, arguing that cross-validation based on random folds does not adequately address this issue. This analysis shows that our models are robust to systematic cross-validation which truncates our data set by geography and phylogeny 
+
+geographical/phylogenetic 
+
+
+By systematically removing all species from zoogeographical regions, we 
+
+The removal of all species from a zoogeographical region during the fitting process should, and does, have an effect on our ability
+
+
+It is reasonable to expect that the systematic removal of all species from certain zoogeographical regions when fitting the model would have a substantial effect on the model's ability to predict zoonoses or viruses from those regions; however, in only a few regions in our
+
+
+
+
+
+To systematically remove all species from zoogeographic regions would 
+
+Even after the systematic removal of species from whole zoogeographic regions; for both All Zoonoses and All Virus GAM's there are 

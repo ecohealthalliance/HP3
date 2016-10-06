@@ -4,7 +4,6 @@ library(rgdal)
 library(stringr)
 library(raster)
 library(classInt)
-#library(plyr)
 library(dplyr)
 library(rasterVis)
 library(maptools)
@@ -14,8 +13,8 @@ library(rgeos)
 
 P <- rprojroot::find_rstudio_root_file
 
-# Load the Mammals' shapefile TERRESTRIAL_MAMMALS, downloaded from: http://www.iucnredlist.org/technical-documents/spatial-data#mammals
-# This study uses version 2015-2, which we provide as an attached file to our GitHub repository.
+# Load the Mammals' shapefile TERRESTRIAL_MAMMALS, originally downloaded from: http://www.iucnredlist.org/technical-documents/spatial-data#mammals
+# This study uses version 2015-2, which is stored on AWS S3.
 if(!file.exists(P("maps/TERRESTRIAL_MAMMALS.zip"))) {
   download.file("https://s3.amazonaws.com/hp3-shapefiles/TERRESTRIAL_MAMMALS.zip",
                 destfile = P("maps/TERRESTRIAL_MAMMALS.zip"))
@@ -30,12 +29,6 @@ terr = shapefile(P("maps/iucn_data/Mammals_Terrestrial.shp"), verbose = T)
 terr@data$BINOMIAL = str_replace(terr@data$BINOMIAL, " ", "_")
 terr = subset(terr, PRESENCE == 1)
 
-# Get World boundaries and figure out continents
-data("wrld_simpl")
-wrld_simpl@data
-table(wrld_simpl@data$REGION)
-table(wrld_simpl@data$SUBREGION)
-
 hp3 = read_csv(P('data/hosts.csv')) %>%
   filter(hWildDomFAO == 'wild', hMarOTerr == 'Terrestrial') %>%
   dplyr::select(hHostNameFinal) %>%
@@ -47,33 +40,8 @@ spatial_host <- terr
 spatial_host@data = left_join(spatial_host@data, hp3, by = c("BINOMIAL" = 'hHostNameFinal')) %>%
   subset(hp3 == 1)
 
+#output shape file for QGIS
 writeOGR(obj=spatial_host, dsn=P("maps/"), driver = "ESRI Shapefile", layer = "hosts")
-
-
-# Define and save continent-specific layers for joining in QGIS
-vAfrica <- subset(wrld_simpl,wrld_simpl@data$REGION ==2)
-vAfrica@data$Africa <- 1
-writeOGR(obj=vAfrica, dsn=P("maps/"), driver ="ESRI Shapefile", layer = "Africa")
-
-vEurussia <- subset(wrld_simpl, wrld_simpl@data$REGION == 150)
-vEurussia@data$Eurussia <- 1
-plot(vEurussia)
-writeOGR(obj = vEurussia, dsn=P("maps/"), driver = "ESRI Shapefile", layer = "Eurussia")
-
-vAmericas <- subset(wrld_simpl, wrld_simpl@data$REGION == 19)
-vAmericas@data$Americas <- 1
-plot(vAmericas)
-writeOGR(obj = vAmericas, dsn=P("maps/"), driver = "ESRI Shapefile", layer = "Americas")
-
-vAsia <- subset(wrld_simpl, wrld_simpl@data$REGION == 142)
-vAsia@data$Asia <- 1
-plot(vAsia)
-writeOGR(obj = vAsia, dsn=P("maps/"), driver = "ESRI Shapefile", layer = "Asia")
-
-vAustralia <- subset(wrld_simpl,wrld_simpl@data$REGION == 9)
-vAustralia@data$Australia <- 1
-plot(vAustralia)
-writeOGR(obj = vAustralia, dsn=P("maps/"), driver = "ESRI Shapefile", layer = "Australia")
 
 #   Complete host file generated from QGIS spatial joins
 host_complete = shapefile(P("maps/hosts-complete.shp"), verbose = T)
@@ -103,16 +71,40 @@ setdiff(hp3hostnames, iucnhostnames)
 host_cont <- host_cont %>%
   rename(africa = maxAfrica, eurussia = maxEurussia, asia = maxAsia,americas = maxAmericas,  australia = maxAustralia)
 
-
-#Javan Deer and Felis / Puma concolor
-"Cervus_timorensis" %in% iucnhostnames
-"Cervus_timorensis" %in% hp3hostnames
-"Rusa_timorensis" %in% iucnhostnames
-"Rusa_timorensis" %in% hp3hostnames
-
-"Felis_concolor" %in% iucnhostnames
-"Felis_concolor" %in% hp3hostnames
-"Puma_concolor" %in% hp3hostnames
-"Puma_concolor" %in% iucnhostnames
-
 saveRDS(host_cont, P("maps/host_continental.rds"))
+
+
+##This section used for continent-wide cross-validation, no longer used
+
+# Get World boundaries and figure out continents
+#data("wrld_simpl")
+#wrld_simpl@data
+#table(wrld_simpl@data$REGION)
+#table(wrld_simpl@data$SUBREGION)
+
+# Define and save continent-specific layers for joining in QGIS
+#vAfrica <- subset(wrld_simpl,wrld_simpl@data$REGION ==2)
+#vAfrica@data$Africa <- 1
+#writeOGR(obj=vAfrica, dsn=P("maps/"), driver ="ESRI Shapefile", layer = "Africa")
+
+#vEurussia <- subset(wrld_simpl, wrld_simpl@data$REGION == 150)
+#vEurussia@data$Eurussia <- 1
+#plot(vEurussia)
+#writeOGR(obj = vEurussia, dsn=P("maps/"), driver = "ESRI Shapefile", layer = "Eurussia")
+
+#vAmericas <- subset(wrld_simpl, wrld_simpl@data$REGION == 19)
+#vAmericas@data$Americas <- 1
+#plot(vAmericas)
+#writeOGR(obj = vAmericas, dsn=P("maps/"), driver = "ESRI Shapefile", layer = "Americas")
+
+#vAsia <- subset(wrld_simpl, wrld_simpl@data$REGION == 142)
+#vAsia@data$Asia <- 1
+#plot(vAsia)
+#writeOGR(obj = vAsia, dsn=P("maps/"), driver = "ESRI Shapefile", layer = "Asia")
+
+#vAustralia <- subset(wrld_simpl,wrld_simpl@data$REGION == 9)
+#vAustralia@data$Australia <- 1
+#plot(vAustralia)
+#writeOGR(obj = vAustralia, dsn=P("maps/"), driver = "ESRI Shapefile", layer = "Australia")
+
+

@@ -7,7 +7,7 @@
 
 In addition to randomly-selected k-fold cross-validation, we evaluated the robustness of our models via non-random geographic cross-validation: we systematically removed all observations from a zoogeographical region, re-fit the model using all observations from outside the region, then performed a non-parametric permutation test comparing the predicted values to the observed values for that region.
 
-In order to meaningfully organize geographic areas, we utilized mammalian zoogeographic regions from *Holz et al (2013)*, which are defined by distributions of and phylogenetic relationships between species. Using QGIS, a shapefile of these regions was intersected with IUCN's host ranges, and each host was assigned to only the region which contained the greatest proportion of its range. Results of the non-parametric permutation test are shown below; non-significant results indicate that model predictions are unbiased.
+In order to meaningfully organize geographic areas, we utilized mammalian zoogeographic regions from [*Holt et al (2013)*](http://dx.doi.org/10.1126/science.1228282) which are defined by distributions of and phylogenetic relationships between species. Using QGIS, a mammal-specific zoogeographical shapefile provided by [Holt's group](http://macroecology.ku.dk/resources/wallace) at the University of Copenhagen was intersected (using QGIS Vector > Geoprocessing Tools > Intersect) with a shapefile of IUCN's host ranges. Areas of these intersections were then calculated using an equal-area projection, and each host was assigned to only the region which contained the greatest proportion of its range. Results of the non-parametric permutation test are shown below; non-significant results indicate that model predictions are unbiased.
 
 
 
@@ -146,3 +146,6 @@ India                                           554                      21    0
 Northern Eurussia                               539                      36    0.6899                      -0.1171
 Southeast Asia                                  541                      34    0.5389                      -0.1818
 Southern Australia                              564                      11    0.3546                       0.5891
+
+#Conclusions
+

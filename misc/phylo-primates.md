@@ -15,7 +15,7 @@ argues that the order Primates did not show an effect in this model (not shown i
 
 
 #### Response:
-Below are partial effect plots comparing the effect of *Phylogenetic Distance from Humans* in the authors' original model (A), a model that includes *Order Primates* as a random effect (B), and a model that includes *Order Primates* as a fixed effect (C).__
+Below are partial effect plots comparing the effect of *Phylogenetic Distance from Humans* in the authors' original model (A), a model that includes *Order Primates* as a random effect (B), and a model that includes *Order Primates* as a fixed effect (C).
 
 The graphs below illustrate the minimal effect of including the *Order Primates* variable as a random effect; the *Order Primates* effect is heavily penalized in our GAM after applying shrinkage for model selection purposes, its EDF is ~ 0.0001. Thus, the models are equivalent - this is why the effect is removed in our best model. This is reflected in identical AIC for (A): 1517.584 and (B): 1517.584.
 

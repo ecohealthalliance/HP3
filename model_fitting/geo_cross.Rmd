@@ -306,22 +306,4 @@ svresults %>% arrange(fold) %>%
 
 #Conclusions
 
-The reviewer articulated concerns about our models' ability to make out-of-sample predictions, arguing that cross-validation based on random folds does not adequately address this issue. This analysis shows that our models are robust to systematic cross-validation which truncates our data set by geography and phylogeny 
-
-geographical/phylogenetic 
-
-
-By systematically removing all species from zoogeographical regions, we 
-
-The removal of all species from a zoogeographical region during the fitting process should, and does, have an effect on our ability
-
-
-It is reasonable to expect that the systematic removal of all species from certain zoogeographical regions when fitting the model would have a substantial effect on the model's ability to predict zoonoses or viruses from those regions; however, in only a few regions in our
-
-
-
-
-
-To systematically remove all species from zoogeographic regions would 
-
-Even after the systematic removal of species from whole zoogeographic regions; for both All Zoonoses and All Virus GAM's there are 
+Conclusions to follow. 

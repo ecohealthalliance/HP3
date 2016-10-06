@@ -112,8 +112,8 @@ get_relative_contribs(all_zoonoses$model[[1]]) %>%
 ```{r all-zoo-cv, cache=TRUE}
 cv_gam(all_zoonoses$model[[1]]) %>%
     mutate(p_value = round(p_value, digits=3)) %>% 
-  rename(Fold = fold, `Observations Fit`=n_fit, `Obervations Held Out` = n_validate,
-         `P-value`=p_value) %>%
+  rename(Fold = fold, `Observations Fit`=n_fit, `Observations Held Out` = n_validate,
+         `P-value`=p_value, `Mean Error` = mean_error) %>%
   kable(align=c("l","r", "r", "r", "r"))
 ```
 
@@ -166,8 +166,8 @@ get_relative_contribs(all_zoonoses_strict$model[[1]]) %>%
 ```{r all-zoo-strict-cv, cache=TRUE}
 cv_gam(all_zoonoses_strict$model[[1]]) %>%
     mutate(p_value = round(p_value, digits=3)) %>% 
-  rename(Fold = fold, `Observations Fit`=n_fit, `Obervations Held Out` = n_validate,
-         `P-value`=p_value) %>%
+  rename(Fold = fold, `Observations Fit`=n_fit, `Observations Held Out` = n_validate,
+         `P-value`=p_value, `Mean Error` = mean_error) %>%
   kable(align=c("l","r", "r", "r", "r"))
 ```
 
@@ -255,8 +255,8 @@ get_relative_contribs(all_zoonoses_norev$model[[1]]) %>%
 ```{r all-zoo-norev-cv, cache=TRUE}
 cv_gam(all_zoonoses_norev$model[[1]]) %>%
     mutate(p_value = round(p_value, digits=3)) %>% 
-  rename(Fold = fold, `Observations Fit`=n_fit, `Obervations Held Out` = n_validate,
-         `P-value`=p_value) %>%
+  rename(Fold = fold, `Observations Fit`=n_fit, `Observations Held Out` = n_validate,
+         `P-value`=p_value, `Mean Error` = mean_error) %>%
   kable(align=c("l","r", "r", "r", "r"))
 ```
 
@@ -339,8 +339,8 @@ get_relative_contribs(all_viruses$model[[1]]) %>%
 ```{r all-vir-cv, cache=TRUE}
 cv_gam(all_viruses$model[[1]]) %>%
     mutate(p_value = round(p_value, digits=3)) %>% 
-  rename(Fold = fold, `Observations Fit`=n_fit, `Obervations Held Out` = n_validate,
-         `P-value`=p_value) %>%
+  rename(Fold = fold, `Observations Fit`=n_fit, `Observations Held Out` = n_validate,
+         `P-value`=p_value, `Mean Error` = mean_error) %>%
   kable(align=c("l","r", "r", "r", "r"))
 ```
 
@@ -394,8 +394,8 @@ get_relative_contribs(all_viruses_strict$model[[1]]) %>%
 ```{r all-vir-stict-cv, cache=TRUE}
 cv_gam(all_viruses_strict$model[[1]]) %>%
     mutate(p_value = round(p_value, digits=3)) %>% 
-  rename(Fold = fold, `Observations Fit`=n_fit, `Obervations Held Out` = n_validate,
-         `P-value`=p_value) %>%
+  rename(Fold = fold, `Observations Fit`=n_fit, `Observations Held Out` = n_validate,
+         `P-value`=p_value, `Mean Error` = mean_error) %>%
   kable(align=c("l","r", "r", "r", "r"))
 ```
 
@@ -472,8 +472,8 @@ get_relative_contribs(vtraits$model[[1]]) %>%
 ```{r vtraits-cv, cache=TRUE}
 cv_gam(vtraits$model[[1]]) %>%
     mutate(p_value = round(p_value, digits=3)) %>% 
-  rename(Fold = fold, `Observations Fit`=n_fit, `Obervations Held Out` = n_validate,
-         `P-value`=p_value) %>%
+  rename(Fold = fold, `Observations Fit`=n_fit, `Observations Held Out` = n_validate,
+         `P-value`=p_value, `Mean Error` = mean_error) %>%
   kable(align=c("l","r", "r", "r", "r"))
 ```
 
@@ -552,8 +552,8 @@ get_relative_contribs(vtraits_strict$model[[1]]) %>%
 ```{r vtraits-strict-cv, cache=TRUE}
 cv_gam(vtraits_strict$model[[1]]) %>%
     mutate(p_value = round(p_value, digits=3)) %>% 
-  rename(Fold = fold, `Observations Fit`=n_fit, `Obervations Held Out` = n_validate,
-         `P-value`=p_value) %>%
+  rename(Fold = fold, `Observations Fit`=n_fit, `Observations Held Out` = n_validate,
+         `P-value`=p_value, `Mean Error` = mean_error) %>%
   kable(align=c("l","r", "r", "r", "r"))
 ```
 
@@ -636,8 +636,8 @@ get_relative_contribs(domestic_zoonoses$model[[1]]) %>%
 ```{r dom-cv, cache=TRUE}
 cv_gam(domestic_zoonoses$model[[1]]) %>%
     mutate(p_value = round(p_value, digits=3)) %>% 
-  rename(Fold = fold, `Observations Fit`=n_fit, `Obervations Held Out` = n_validate,
-         `P-value`=p_value) %>%
+  rename(Fold = fold, `Observations Fit`=n_fit, `Observations Held Out` = n_validate,
+         `P-value`=p_value, `Mean Error` = mean_error) %>%
   kable(align=c("l","r", "r", "r", "r"))
 ```
 
@@ -690,8 +690,8 @@ get_relative_contribs(domestic_zoonoses_strict$model[[1]]) %>%
 ```{r dom-strict-cv, cache=TRUE}
 cv_gam(domestic_zoonoses_strict$model[[1]]) %>%
     mutate(p_value = round(p_value, digits=3)) %>% 
-  rename(Fold = fold, `Observations Fit`=n_fit, `Obervations Held Out` = n_validate,
-         `P-value`=p_value) %>%
+  rename(Fold = fold, `Observations Fit`=n_fit, `Observations Held Out` = n_validate,
+         `P-value`=p_value, `Mean Error` = mean_error) %>%
   kable(align=c("l","r", "r", "r", "r"))
 ```
 
@@ -764,8 +764,8 @@ get_relative_contribs(domestic_viruses$model[[1]]) %>%
 ```{r dom-vir-cv, cache=TRUE}
 cv_gam(domestic_viruses$model[[1]]) %>%
     mutate(p_value = round(p_value, digits=3)) %>% 
-  rename(Fold = fold, `Observations Fit`=n_fit, `Obervations Held Out` = n_validate,
-         `P-value`=p_value) %>%
+  rename(Fold = fold, `Observations Fit`=n_fit, `Observations Held Out` = n_validate,
+         `P-value`=p_value, `Mean Error` = mean_error) %>%
   kable(align=c("l","r", "r", "r", "r"))
 ```
 
@@ -818,8 +818,8 @@ get_relative_contribs(domestic_viruses_strict$model[[1]]) %>%
 ```{r dom-vir-strict-cv, cache=TRUE}
 cv_gam(domestic_viruses_strict$model[[1]]) %>%
     mutate(p_value = round(p_value, digits=3)) %>% 
-  rename(Fold = fold, `Observations Fit`=n_fit, `Obervations Held Out` = n_validate,
-         `P-value`=p_value) %>%
+  rename(Fold = fold, `Observations Fit`=n_fit, `Observations Held Out` = n_validate,
+         `P-value`=p_value, `Mean Error` = mean_error) %>%
   kable(align=c("l","r", "r", "r", "r"))
 ```
 

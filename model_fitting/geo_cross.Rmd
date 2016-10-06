@@ -305,5 +305,9 @@ svresults %>% arrange(fold) %>%
 ```
 
 #Conclusions
+	
+The reviewer articulated concerns about our models' ability to make out-of-sample predictions, arguing that cross-validation based on random folds does not adequately address this issue. This analysis shows that our models (especially *Zoonoses*, *Viruses*, and *Strict Viruses*) are robust to a systematic cross-validation that creates folds based on geographical/phylogenetic region ~ a non-random method to approximate out-of-sample testing. For each of these three models, only 4-5 substantial (n > 10) folds show evidence of bias, while 10-11 substantial folds are well-predicted. For the *Strict Zoonoses* model the evidence is more equivocal, with 8 substantial regions that show evidence of bias and 7 substantial regions which are well-predicted. 
+ 
+KJO:
+A more explicit justification for why certain regions might be failing base on the actual character of the regions? CNB lacks expertise. 
 
-Conclusions to follow. 

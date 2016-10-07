@@ -65,6 +65,7 @@ names(smooth_titles) = names(smooth_data)
 smooth_plots = map(names(smooth_data), function(smooth_term) {
   pl =  ggplot() +
     #  geom_hline(yintercept = (intercept), size=0.5, col="red") +
+    geom_hline(yintercept = 0, size=0.1, col="grey50") +
     geom_point(mapping = aes(x=model_data[[smooth_term]], y = (partials[[smooth_term]])),
                shape=21, fill=viridis(4)[1], col="black", alpha=0.25, size=1, stroke=0.3) +
     geom_ribbon(mapping = aes(x = smooth_ranges[[smooth_term]],
@@ -107,14 +108,19 @@ bin_partials = lapply(binary_terms, function(x) {
   variable = names(model_data)[x]
   data_frame(variable=variable, partial=vals, no=bin_data$no[bin_data$variable == variable])
 }) %>% bind_rows
-bin_plot = ggplot() +
-  #  geom_hline(yintercept = (intercept), size=0.5, col="red") +
-  geom_point(data=bin_partials, mapping=aes(x=no, y=(partial)), position=position_jitter(width=0.8), shape=21, fill=viridis(4)[1], col="black", alpha=0.55, size=1, stroke=0.3) +
-  geom_rect(data = bin_data, mapping=aes(xmin = no - 0.45, xmax  = no + 0.45, ymin=(response-2*se), ymax=(response+2*se), fill=signif), alpha = 0.75) +
-  geom_segment(data = bin_data, mapping=aes(x=no - 0.45, xend = no + 0.45, y=(response), yend=(response)), col="black", size=0.3) +
 
+bin_partials %<>%
+  filter(variable %in% bin_data$variable[bin_data$signif])
+bin_data %<>%
+  filter(signif)
+
+bin_plot = ggplot() +
+  geom_hline(yintercept = 0, size=0.1, col="grey50") +
+  geom_point(data=bin_partials, mapping=aes(x=no, y=(partial)), position=position_jitter(width=0.8), shape=21, fill=viridis(4)[1], col="black", alpha=0.55, size=1, stroke=0.3) +
+  geom_rect(data = bin_data, mapping=aes(xmin = no - 0.45, xmax  = no + 0.45, ymin=(response-2*se), ymax=(response+2*se)), fill = viridis(5)[4], alpha = 0.75) +
+  geom_segment(data = bin_data, mapping=aes(x=no - 0.45, xend = no + 0.45, y=(response), yend=(response)), col="black", size=0.3) +
   # geom_text(data = bin_data, mapping=aes(x=no, y=(response+se) + 0.1 , label = labels), color="black", family="Lato", size=3, angle =90, hjust=0, vjust =0.5) +
-  scale_fill_manual(breaks = c(FALSE, TRUE), values=c("grey", viridis(5)[4])) +
+  #scale_fill_manual(breaks = c(FALSE, TRUE), values=c("grey", viridis(5)[4])) +
   scale_x_continuous(breaks = bin_data$no, labels = bin_data$labels) +
   noamtools::theme_nr +
   scale_y_continuous(limits=c(-10,10), oob=scales::rescale_none, name="") +
@@ -190,8 +196,17 @@ grobs <- ggplotGrob(vir_fam_plot)$grobs
 legend <- grobs[[which(sapply(grobs, function(x) x$name) == "guide-box")]]
 vir_fam_plot = cowplot::ggdraw(vir_fam_plot + theme(legend.position = "none"))
 
-gamplots = cowplot::plot_grid(plotlist = c(smooth_plots, list(bin_plot)), nrow=2, labels=c("b", "c", "d", "e"), label_size=7, align="hv")
-allplots = cowplot::plot_grid(vir_fam_plot, gamplots, nrow=1, rel_widths=c(1.3, 2), labels=c("a", ""), label_size=7)  + cowplot::draw_grob(legend, x=-0.5, y=-0.06)
+gamplots_top = cowplot::plot_grid(plotlist = smooth_plots[c(1,3)], nrow=1, labels=c("b", "c"), label_size=7, align="hv")
+gamplots_all = cowplot::plot_grid(gamplots_top, bin_plot, nrow = 2, labels = c("", "d"), label_size=7)
+allplots = cowplot::ggdraw() +
+  cowplot::draw_plot(vir_fam_plot, 0, 0, 13/33, 1) +
+  cowplot::draw_plot(smooth_plots[[1]], 13/33, 0.5, 10/33, 0.5) +
+  cowplot::draw_plot(smooth_plots[[3]], 23/33, 0.5, 10/33, 0.5) +
+  cowplot::draw_plot(bin_plot, 18/33, 0,  10/33, 0.5) +
+  cowplot::draw_plot_label(c("a", "b", "c", "d"), x = c(0, 13/33, 23/33, 18/33),
+                           y = c(1, 1, 1, 0.5), size = 7)
+
+#  cowplot::plot_grid(vir_fam_plot, gamplots_all, nrow=1, rel_widths=c(1.3, 2), labels=c("a", ""), label_size=7)  + cowplot::draw_grob(legend, x=-0.5, y=-0.06)
 svglite(file=P("figures/Figure04-viral-traits.svg"), width = convertr::convert(183, "mm", "in"), convertr::convert(117, "mm", "in"), pointsize=7)
 allplots
 dev.off()

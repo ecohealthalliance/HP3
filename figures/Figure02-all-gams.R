@@ -246,16 +246,23 @@ bin_zoo_data = bin_zoo_partials %>%
   summarize(minval = min(partial[!is.infinite(partial)])) %>%
   mutate(minval = ifelse(is.infinite(minval), -1, minval)) %>%
   inner_join(bin_zoo_data, by="variable")
+
+# Remove non-significant binary variables
+bin_zoo_partials %<>%
+  filter(variable %in% bin_zoo_data$variable[bin_zoo_data$signif])
+bin_zoo_data %<>%
+  filter(signif)
+
 bin_plot_zoo = ggplot() +
   geom_point(data=bin_zoo_partials, mapping=aes(x=no, y=(partial)), position=position_jitter(width=0.5),
              shape=21, fill=viridis(4)[2], col="black", alpha=0.25, size=0.75, stroke=0.2) +
-  geom_rect(data = bin_zoo_data, mapping=aes(xmin = no - 0.35, xmax  = no + 0.35, ymin=(response-2*se), ymax=(response+2*se), fill=signif), alpha = 0.5) +
+  geom_rect(data = bin_zoo_data, mapping=aes(xmin = no - 0.35, xmax  = no + 0.35, ymin=(response-2*se), ymax=(response+2*se)), fill = "#FD9825", alpha = 0.5) +
   geom_hline(yintercept = 0, size=0.1, col="grey50") +
   geom_segment(data = bin_zoo_data, mapping=aes(x=no - 0.35, xend = no + 0.35, y=(response), yend=(response)), col="black", size=0.3) +
 
   geom_text(data = bin_zoo_data, mapping=aes(x=no, y=(minval - 0.5), label = stri_trans_totitle(labels)),
             color="black", family="Lato", size=1.5, angle =90, hjust=1, vjust =0.5) +
-  scale_fill_manual(values=c("grey", "#FD9825")) +
+#  scale_fill_manual(values=c("grey", "#FD9825")) +
   scale_x_continuous(breaks = bin_zoo_data$no, labels = stri_trans_totitle(bin_zoo_data$labels)) +
   scale_y_continuous(limits=c(-4,1), name="", oob=scales::rescale_none, breaks = -3:1) + #
   theme_bw() + partials_theme +

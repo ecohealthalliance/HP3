@@ -29,6 +29,10 @@ blankPlot <- ggplot()+geom_blank(aes(1,1)) +
 
 bgam = readRDS(P("model_fitting/all_viruses_model.rds"))
 
+de_bgam =  get_relative_contribs(bgam) %>%
+  mutate(dev_explained = rel_deviance_explained * summary(bgam)$dev.expl) %>%
+  mutate(dev_explained = paste0(stri_trim_both(formatC(dev_explained*100, format = "fg", digits=2)), "%"))
+
 # All Viruses Plot
 binary_vars = c("hOrder")
 
@@ -77,12 +81,13 @@ smooth_plots_vir = map(names(smooth_data_vir), function(smooth_term_vir) {
   pl =  ggplot() +
     geom_hline(yintercept = 0, size=0.1, col="grey50") +
     geom_point(mapping = aes(x=model_data_vir[[smooth_term_vir]], y = (partials[[smooth_term_vir]])),
-               shape=21, fill="#DA006C", col="black", alpha=0.25, size=0.75, stroke=0.2) +
+               shape=21, fill="#DA006C", col="black", alpha=0.1, size=0.5, stroke=0.1) +
     geom_ribbon(mapping = aes(x = smooth_ranges[[smooth_term_vir]],
                               ymin = (smooth_preds$fit[[smooth_term_vir]] - 2 * smooth_preds$se.fit[[smooth_term_vir]]),
                               ymax = (smooth_preds$fit[[smooth_term_vir]] + 2 * smooth_preds$se.fit[[smooth_term_vir]])),
                 alpha = 0.5, fill=viridis(5)[4]) +
     geom_line(mapping = aes(x = smooth_ranges[[smooth_term_vir]], y = (smooth_preds$fit[[smooth_term_vir]])), size=0.3) +
+    annotate("label", x = max(model_data_vir[[smooth_term_vir]]), y = -2, label = paste0("DE = ", de_bgam$dev_explained[de_bgam$term == smooth_term_vir]), hjust = 1, size=1.5,  label.size=0, fill="#FFFFFF8C") +
     #  geom_rug(mapping = aes(x =model_data_vir[[smooth_term]]), alpha=0.3) +
     xlab(smooth_titles[[smooth_term_vir]]) +
     scale_y_continuous(limits=c(-2.2,2.2), oob=scales::rescale_none) +
@@ -125,16 +130,19 @@ bin_vir_data = bin_vir_partials %>%
   group_by(variable) %>%
   summarize(minval = min(partial)) %>%
   inner_join(bin_vir_data, by="variable") %>%
-  mutate(minval = pmin(minval, response - 2*se))
+  mutate(minval = pmin(minval, response - 2*se)) %>%
+  left_join(de_bgam, by=c('variable' = 'term'))
+
 bin_plot_vir = ggplot() +
   geom_hline(yintercept = 0, size=0.1, col="grey50") +
   geom_point(data=bin_vir_partials, mapping=aes(x=no, y=(partial)), position=position_jitter(width=0.5),
-             shape=21, fill="#DA006C", col="black", alpha=0.25, size=0.75, stroke=0.2) +
+             shape=21, fill="#DA006C", col="black", alpha=0.1, size=0.5, stroke=0.1) +
   geom_rect(data = bin_vir_data, mapping=aes(xmin = no - 0.35, xmax  = no + 0.35, ymin=(response-2*se), ymax=(response+2*se), fill=signif), alpha = 0.5) +
   geom_segment(data = bin_vir_data, mapping=aes(x=no - 0.35, xend = no + 0.35, y=(response), yend=(response)), col="black", size=0.3) +
 
   geom_text(data = bin_vir_data, mapping=aes(x=no, y=(minval - 0.4), label = stri_trans_totitle(labels)),
             color="black", family="Lato", size=1.5, angle =90, hjust=1, vjust =0.5) +
+  geom_label(data = bin_vir_data, mapping=aes(x=no, y = response + 2*se + 0.4, label=dev_explained), color="black", family="Lato", size=1.5, label.size=0, fill="#FFFFFF8C") +
   scale_fill_manual(breaks = c(TRUE, FALSE), values=c(viridis(5)[4]), "grey") +
   scale_x_continuous(breaks = bin_vir_data$no, labels = stri_trans_totitle(bin_vir_data$labels)) +
   scale_y_continuous(limits=c(-3.8,2.2), breaks=seq(-2,2, by=1), oob=scales::rescale_none, name="") +
@@ -146,11 +154,14 @@ vir_plots <- plot_grid(plot_grid(plotlist = smooth_plots_vir, nrow=1, align="h",
                                  labels=c("a", "b", "c", "d"), label_size=7, hjust=0),
                        bin_plot_vir, nrow=1, rel_widths = c(4.22,1.3), labels=c("", "e"), label_size=7, hjust=0)
 
-
 #---
 
 # Zoonoses plot
 bgam = readRDS(P("model_fitting/all_zoonoses_model.rds"))
+de_bgam =  get_relative_contribs(bgam) %>%
+  mutate(dev_explained = rel_deviance_explained * summary(bgam)$dev.expl) %>%
+  mutate(dev_explained = paste0(stri_trim_both(formatC(dev_explained*100, format = "fg", digits=2)), "%"))
+
 
 binary_vars = c("hOrder", "hHuntedIUCN")
 
@@ -199,12 +210,13 @@ smooth_plots_zoo = map(names(smooth_data), function(smooth_term) {
   pl =  ggplot() +
     geom_hline(yintercept = 0, size=0.1, col="grey50") +
     geom_point(mapping = aes(x=model_data[[smooth_term]], y = (partials[[smooth_term]])),
-               shape=21, fill=viridis(4)[2], col="black", alpha=0.25, size=0.75, stroke=0.2) +
+               shape=21, fill=viridis(4)[2], col="black", alpha=0.1, size=0.5, stroke=0.1) +
     geom_ribbon(mapping = aes(x = smooth_ranges[[smooth_term]],
                               ymin = (smooth_preds$fit[[smooth_term]] - 2 * smooth_preds$se.fit[[smooth_term]]),
                               ymax = (smooth_preds$fit[[smooth_term]] + 2 * smooth_preds$se.fit[[smooth_term]])),
                 alpha = 0.5, fill="#FD9825") +
     geom_line(mapping = aes(x = smooth_ranges[[smooth_term]], y = (smooth_preds$fit[[smooth_term]])), size=0.3) +
+    annotate("label", x = max(model_data[[smooth_term]]), y = -2, label = paste0("DE = ", de_bgam$dev_explained[de_bgam$term == smooth_term]), hjust = 1, size=1.5,  label.size=0, fill="#FFFFFF8C") +
     #  geom_rug(mapping = aes(x =model_data[[smooth_term]]), alpha=0.3) +
     xlab(smooth_titles[smooth_term]) + #ylim(0,2.2) +
     theme_bw() + partials_theme
@@ -251,17 +263,20 @@ bin_zoo_data = bin_zoo_partials %>%
 bin_zoo_partials %<>%
   filter(variable %in% bin_zoo_data$variable[bin_zoo_data$signif])
 bin_zoo_data %<>%
-  filter(signif)
+  filter(signif) %>%
+  left_join(de_bgam, by=c('variable'='term'))
 
 bin_plot_zoo = ggplot() +
   geom_point(data=bin_zoo_partials, mapping=aes(x=no, y=(partial)), position=position_jitter(width=0.5),
-             shape=21, fill=viridis(4)[2], col="black", alpha=0.25, size=0.75, stroke=0.2) +
+             shape=21, fill=viridis(4)[2], col="black", alpha=0.1, size=0.5, stroke=0.1) +
   geom_rect(data = bin_zoo_data, mapping=aes(xmin = no - 0.35, xmax  = no + 0.35, ymin=(response-2*se), ymax=(response+2*se)), fill = "#FD9825", alpha = 0.5) +
   geom_hline(yintercept = 0, size=0.1, col="grey50") +
   geom_segment(data = bin_zoo_data, mapping=aes(x=no - 0.35, xend = no + 0.35, y=(response), yend=(response)), col="black", size=0.3) +
 
   geom_text(data = bin_zoo_data, mapping=aes(x=no, y=(minval - 0.5), label = stri_trans_totitle(labels)),
             color="black", family="Lato", size=1.5, angle =90, hjust=1, vjust =0.5) +
+  geom_label(data = bin_zoo_data, mapping=aes(x=no, y = response + 2*se + 0.4, label=dev_explained), color="black", family="Lato", size=1.5, label.size=0, fill="#FFFFFF8C") +
+
 #  scale_fill_manual(values=c("grey", "#FD9825")) +
   scale_x_continuous(breaks = bin_zoo_data$no, labels = stri_trans_totitle(bin_zoo_data$labels)) +
   scale_y_continuous(limits=c(-4,1), name="", oob=scales::rescale_none, breaks = -3:1) + #
@@ -276,5 +291,10 @@ zoo_plots <- plot_grid(plot_grid(plotlist = smooth_plots_zoo, nrow=1, align="h",
 
 svglite(file=P("figures/Figure02-all-gams.svg"), width = convertr::convert(183, "mm", "in"), convertr::convert(100, "mm", "in"), pointsize=7)
 cowplot::plot_grid(vir_plots, zoo_plots, nrow=2, rel_widths = c(5.3, 4.35))
+dev.off()
+
+
+png(file=P("figures/Figure02-all-gams.png"), width = convertr::convert(183, "mm", "in"), convertr::convert(117, "mm", "in"), units="in", res=300,pointsize=7)
+allplots
 dev.off()
 

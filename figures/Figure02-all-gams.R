@@ -6,9 +6,13 @@ library(cowplot)
 library(viridis)
 library(dplyr)
 library(svglite)
+library(mgcv)
+library(magrittr)
 set.seed(0)
 P <- rprojroot::find_rstudio_root_file
+source(P('R/relative_contributions.R'))
 
+SHOW_DEV_EXPL = FALSE
 
 partials_theme = theme(text = element_text(family="Helvetica", size=7),
                        panel.border=element_blank(),
@@ -87,11 +91,13 @@ smooth_plots_vir = map(names(smooth_data_vir), function(smooth_term_vir) {
                               ymax = (smooth_preds$fit[[smooth_term_vir]] + 2 * smooth_preds$se.fit[[smooth_term_vir]])),
                 alpha = 0.5, fill=viridis(5)[4]) +
     geom_line(mapping = aes(x = smooth_ranges[[smooth_term_vir]], y = (smooth_preds$fit[[smooth_term_vir]])), size=0.3) +
-    annotate("label", x = max(model_data_vir[[smooth_term_vir]]), y = -2, label = paste0("DE = ", de_bgam$dev_explained[de_bgam$term == smooth_term_vir]), hjust = 1, size=1.5,  label.size=0, fill="#FFFFFF8C") +
-    #  geom_rug(mapping = aes(x =model_data_vir[[smooth_term]]), alpha=0.3) +
     xlab(smooth_titles[[smooth_term_vir]]) +
     scale_y_continuous(limits=c(-2.2,2.2), oob=scales::rescale_none) +
     theme_bw() + partials_theme
+
+#if (SHOW_DEV_EXPL) pl <- pl + annotate("label", x = max(model_data_vir[[smooth_term_vir]]), y = -2, label = paste0("DE = ", de_bgam$dev_explained[de_bgam$term == smooth_term_vir]), hjust = 1, size=1.5,  label.size=0, fill="#FFFFFF8C")
+    #  geom_rug(mapping = aes(x =model_data_vir[[smooth_term]]), alpha=0.3) +
+
   return(pl)
 
 })
@@ -142,13 +148,15 @@ bin_plot_vir = ggplot() +
 
   geom_text(data = bin_vir_data, mapping=aes(x=no, y=(minval - 0.4), label = stri_trans_totitle(labels)),
             color="black", family="Lato", size=1.5, angle =90, hjust=1, vjust =0.5) +
-  geom_label(data = bin_vir_data, mapping=aes(x=no, y = response + 2*se + 0.4, label=dev_explained), color="black", family="Lato", size=1.5, label.size=0, fill="#FFFFFF8C") +
   scale_fill_manual(breaks = c(TRUE, FALSE), values=c(viridis(5)[4]), "grey") +
   scale_x_continuous(breaks = bin_vir_data$no, labels = stri_trans_totitle(bin_vir_data$labels)) +
   scale_y_continuous(limits=c(-3.8,2.2), breaks=seq(-2,2, by=1), oob=scales::rescale_none, name="") +
   theme_bw() + partials_theme +
   theme(axis.ticks.x=element_blank(), axis.title.x=element_blank(), axis.text.x = element_blank(), legend.position="none",
         axis.title.y=element_blank())
+
+#if (SHOW_DEV_EXPL) bin_plot_vir = bin_plot_vir + geom_label(data = bin_vir_data, mapping=aes(x=no, y = response + 2*se + 0.4, label=dev_explained), color="black", family="Lato", size=1.5, label.size=0, fill="#FFFFFF8C") +
+
 
 vir_plots <- plot_grid(plot_grid(plotlist = smooth_plots_vir, nrow=1, align="h", rel_widths = c(1.22,1,1,1),
                                  labels=c("a", "b", "c", "d"), label_size=7, hjust=0),
@@ -216,10 +224,12 @@ smooth_plots_zoo = map(names(smooth_data), function(smooth_term) {
                               ymax = (smooth_preds$fit[[smooth_term]] + 2 * smooth_preds$se.fit[[smooth_term]])),
                 alpha = 0.5, fill="#FD9825") +
     geom_line(mapping = aes(x = smooth_ranges[[smooth_term]], y = (smooth_preds$fit[[smooth_term]])), size=0.3) +
-    annotate("label", x = max(model_data[[smooth_term]]), y = -2, label = paste0("DE = ", de_bgam$dev_explained[de_bgam$term == smooth_term]), hjust = 1, size=1.5,  label.size=0, fill="#FFFFFF8C") +
     #  geom_rug(mapping = aes(x =model_data[[smooth_term]]), alpha=0.3) +
     xlab(smooth_titles[smooth_term]) + #ylim(0,2.2) +
     theme_bw() + partials_theme
+
+#  if (SHOW_DEV_EXPL) pl = pl + annotate("label", x = max(model_data[[smooth_term]]), y = -2, label = paste0("DE = ", de_bgam$dev_explained[de_bgam$term == smooth_term]), hjust = 1, size=1.5,  label.size=0, fill="#FFFFFF8C")
+
   return(pl)
 
 })
@@ -275,8 +285,6 @@ bin_plot_zoo = ggplot() +
 
   geom_text(data = bin_zoo_data, mapping=aes(x=no, y=(minval - 0.5), label = stri_trans_totitle(labels)),
             color="black", family="Lato", size=1.5, angle =90, hjust=1, vjust =0.5) +
-  geom_label(data = bin_zoo_data, mapping=aes(x=no, y = response + 2*se + 0.4, label=dev_explained), color="black", family="Lato", size=1.5, label.size=0, fill="#FFFFFF8C") +
-
 #  scale_fill_manual(values=c("grey", "#FD9825")) +
   scale_x_continuous(breaks = bin_zoo_data$no, labels = stri_trans_totitle(bin_zoo_data$labels)) +
   scale_y_continuous(limits=c(-4,1), name="", oob=scales::rescale_none, breaks = -3:1) + #
@@ -284,13 +292,16 @@ bin_plot_zoo = ggplot() +
   theme(axis.ticks.x=element_blank(), axis.title.x=element_blank(), axis.text.x=element_blank(), legend.position="none",
         axis.title.y=element_blank())
 
+#if (SHOW_DEV_EXPL) bin_plot_zoo = bin_plot_zoo + geom_label(data = bin_zoo_data, mapping=aes(x=no, y = response + 2*se + 0.4, label=dev_explained), color="black", family="Lato", size=1.5, label.size=0, fill="#FFFFFF8C")
+
+
 zoo_plots <- plot_grid(plot_grid(plotlist = smooth_plots_zoo, nrow=1, align="h", rel_widths = c(1.22,1,1),
                                  labels=c("f", "g", "h"), label_size=7, hjust=0),
                                     bin_plot_zoo, blankPlot, nrow=1, rel_widths = c(3.22,1.35, 1),
                        labels = c("", "i"), label_size = 7, hjust=0)
-
+allplots = cowplot::plot_grid(vir_plots, zoo_plots, nrow=2, rel_widths = c(5.3, 4.35))
 svglite(file=P("figures/Figure02-all-gams.svg"), width = convertr::convert(183, "mm", "in"), convertr::convert(100, "mm", "in"), pointsize=7)
-cowplot::plot_grid(vir_plots, zoo_plots, nrow=2, rel_widths = c(5.3, 4.35))
+allplots
 dev.off()
 
 

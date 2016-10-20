@@ -78,7 +78,7 @@ smooth_plots = map(names(smooth_data), function(smooth_term) {
                               ymax = (smooth_preds$fit[[smooth_term]] + 2 * smooth_preds$se.fit[[smooth_term]])),
                 alpha = 0.75, fill=ifelse(smooth_term=="vGenomeAveLengthLn", "grey", viridis(5)[4])) +
     geom_line(mapping = aes(x = smooth_ranges[[smooth_term]], y = (smooth_preds$fit[[smooth_term]])), size=0.3) +
-    annotate("label", x = max(model_data[[smooth_term]]), y = -7.5, label = paste0("DE = ", de_bgam$dev_explained[de_bgam$term == smooth_term]), hjust = 1, size=1.5,  label.size=0, fill="#FFFFFF8C") +
+#    annotate("label", x = max(model_data[[smooth_term]]), y = -7.5, label = paste0("DE = ", de_bgam$dev_explained[de_bgam$term == smooth_term]), hjust = 1, size=1.5,  label.size=0, fill="#FFFFFF8C") +
     #  geom_rug(mapping = aes(x =model_data[[smooth_term]]), alpha=0.3) +
     xlab(smooth_titles[smooth_term]) +
     scale_y_continuous(limits=c(-10,10), oob=scales::rescale_none) +
@@ -127,7 +127,7 @@ bin_plot = ggplot() +
   geom_point(data=bin_partials, mapping=aes(x=no, y=(partial)), position=position_jitter(width=0.8), shape=21, fill=viridis(4)[1], col="black", alpha=0.15, size=0.5, stroke=0.1) +
   geom_rect(data = bin_data, mapping=aes(xmin = no - 0.45, xmax  = no + 0.45, ymin=(response-2*se), ymax=(response+2*se)), fill = viridis(5)[4], alpha = 0.75) +
   geom_segment(data = bin_data, mapping=aes(x=no - 0.45, xend = no + 0.45, y=(response), yend=(response)), col="black", size=0.3) +
-  geom_label(data = bin_data, mapping=aes(x=no, y = response + 2*se + 4, label=paste0("DE = ", dev_explained)), color="black", family="Lato", size=1.5, label.size=0, fill="#FFFFFF8C") +
+#  geom_label(data = bin_data, mapping=aes(x=no, y = response + 2*se + 4, label=paste0("DE = ", dev_explained)), color="black", family="Lato", size=1.5, label.size=0, fill="#FFFFFF8C") +
   # geom_text(data = bin_data, mapping=aes(x=no, y=(response+se) + 0.1 , label = labels), color="black", family="Lato", size=3, angle =90, hjust=0, vjust =0.5) +
   #scale_fill_manual(breaks = c(FALSE, TRUE), values=c("grey", viridis(5)[4])) +
   scale_x_continuous(breaks = bin_data$no, labels = bin_data$labels) +

@@ -107,7 +107,7 @@ vGenomeMaxLength,Maximum reported genome length of viral species,viruses.csv,not
 vGenomeMinLength,Minimum reported genome length of viral species,viruses.csv,not used in analysis,Literature review; ICTV,
 vGenus,virus genus ,viruses.csv,viral trait,ICTV,
 vICTVnumber,virus ICTV number,viruses.csv,not used in analysis,ICTV,
-vIsTypeSpecies,whether or not the virus is the OCTV type species for its genus,viruses.csv,not used in analysis,ICTV,
+vIsTypeSpecies,whether or not the virus is the ICTV type species for its genus,viruses.csv,not used in analysis,ICTV,
 vOrder,virus order ,viruses.csv,viral trait,ICTV,
 vPubMedCites,PubMed Number of Citations for Virus,viruses.csv,research effort,PubMed search,http://www.ncbi.nlm.nih.gov/pubmed/
 vPubMedCitesLn,PubMed Number of Citations for Virus (log),calculated,research effort,,

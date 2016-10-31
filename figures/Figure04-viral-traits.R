@@ -222,8 +222,3 @@ allplots
 dev.off()
 
 
-png(file=P("figures/Figure04-viral-traits.png"), width = convertr::convert(183, "mm", "in"), convertr::convert(117, "mm", "in"), units="in", res=300,pointsize=7)
-allplots
-dev.off()
-
-

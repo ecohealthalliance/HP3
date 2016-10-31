@@ -19,12 +19,13 @@ This repository contains code and data to replicate analyses in Olival et. al.
         variables used in model-fitting
     -   `IUCN_taxonomy_23JUN2016.csv`, data from IUCN used to harmonize our data with IUCN spatial data (see Supplementary Methods)
     -   `Genbank_accession_cytb.csv`, Genbank accession numbers used in constructing the Cyt-B constrained tree
--  `model_fitting/` contains an R markdown document which fits all the GAMs in
-    the paper, and its output HTML document which includes tables comparing model
+    -   `region_names.rds`, a list of zoogeographical region names used to describe cross-validation regions. 
+-  `model_fitting/` contains an R markdown document (`gam_supp_info.Rmd`) which fits all     the GAMs inthe paper, and its output HTML document which includes tables comparing model
     AIC, plot and summaries of top models, relative influence of variables, and
     cross-validation results. Compiling this document runs all the
     models referred to in the paper, and saves the R objects needed for the 
     figures in `figures/` and `maps/`.
+    -  `model-fitting/` also contains an R markdown document (`geo_cross.Rmd`) which details the zoogeographical cross-validation results, complete with generated maps. Shapefiles necessary for this procedure are omitted due to size constraints.
 -  `figures/` contains figures and tables in the paper and extended data and
     the scripts to generate them, except for maps.
 -  `maps/` contains a script to generate the map outputs in the paper and extended
@@ -46,6 +47,7 @@ This repository contains code and data to replicate analyses in Olival et. al.
 │   ├── IUCN_taxonomy_23JUN2016.csv                   | IUCN taxonomy to harmonize IUCN spatial data with hosts database
 │   ├── metadata.csv                                  | listing of variables in hosts, viruses, and associations databases
 │   ├── references.txt                                | listing of reference sources for associations database
+│   ├── region_names.rds                              | R object of zoogeographical region names for cross-validation
 │   ├── supertree_mammals.tree                        | tree file for mammal supertree
 │   ├── viruses.csv                                   | viruses database
 │   └── Genbank_accession_cytb.csv                    | Genbank accession numbers used for calculating the Cyt-b constrained tree
@@ -53,12 +55,12 @@ This repository contains code and data to replicate analyses in Olival et. al.
 │       ├── generate_phylogenetic_intermediate_data.R | Script to generate intermediate data failes
 │       ├── HP3-cytb_PDmatrix-12Mar2016.csv           | distance matrix generated from Cyt-b constrained mammal supertree (generated)
 │       ├── HP3-ST_PDmatrix-12Mar2016.csv             | distance matrix generated from mammal supertree (generated)
-│       └── PVR_cytb_hostmass.csv                     | Phylogeneticall-corrected host biomass values (generated)
+│       └── PVR_cytb_hostmass.csv                     | Phylogenetically-corrected host biomass values (generated)
 ├── figures                                           | 
 │   ├── ExtendedFigure01-heatmap.R                    | Script to generate Extended Figure 2 heatmap
 │   ├── ExtendedTable01-models.docx                   | Tables for Extented Data Tables 1 and 2 (generated)
 │   ├── ExtendedTable01-models.R                      | Script to generate Extended Data Tables 1 and 2
-│   ├── Figure01A-boxplots.pdf                        | Boxplot used in Exented Figure 1A (generated)
+│   ├── Figure01A-boxplots.pdf                        | Boxplot used in Extended Figure 1A (generated)
 │   ├── Figure01B-boxplots.pdf                        | Boxplot used in Extended Data Figure 1B (generated)
 │   ├── Figure01-boxplots.R                           | Script to generate boxplots for Figure 1
 │   ├── Figure02-all-gams.R                           | Script to generate Figure 2
@@ -76,7 +78,11 @@ This repository contains code and data to replicate analyses in Olival et. al.
 │   ├── gam_supp_info.Rmd                             | R-markdown document fitting all GAM models, reporting models within 2 AIC, summaries, and diagnostics
 │   ├── gam_supp_info.md                              | Output of R-markdown document in markdown format (generated)
 │   ├── gam_supp_info.html                            | Output of R-markdown document in HTML format (generated)
-│   ├── gam_supp_info_files/figure-html/              | Image files of figres in R-markdown document (generated)
+│   ├── gam_supp_info_files/figure-html/              | Image files of figures in R-markdown document (generated)
+│   ├── geo-cross.Rmd                                 | R-markdown document performing all zoogeographical cross-validations
+│   ├── geo-cross.md                                  | Output of R-markdown document in markdown format (generated)
+│   ├── geo-cross.html                                | Output of R-markdown document in HTML format (generated)
+│   ├── geo_cross_files/figure-html/                  | Image files of figures in R-markdown document (generated)
 │   ├── postprocessed_database.rds                    | Saved R object of data including all calulated variables (generated)
 │   ├── preprocess_data.R                             | Script to calculate derived variables from raw data
 │   ├── all_viruses_model.rds                         | Saved R object of all viruses GAM model (generated)
@@ -86,6 +92,7 @@ This repository contains code and data to replicate analyses in Olival et. al.
 │   └── virus_data_processed.rds                      | Saved R object of virus data processed for creating Figure 4 (generated)
 └── R                                                 | 
     ├── cross_validation.R                            | R functions for cross-validation
+    ├── cv_gam_by.R                                   | R functions for zoogeographical cross-validation
     ├── fit_gam.R                                     | R functions for fitting and selecting from a group of GAMS
     ├── model_reduction.R                             | R functions for reducing GAM models low-edf variables
     └── relative_contributions.R                      | R function for calculating relative contributions of variables in GAMs

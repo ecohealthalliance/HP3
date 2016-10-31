@@ -304,8 +304,3 @@ svglite(file=P("figures/Figure02-all-gams.svg"), width = convertr::convert(183, 
 allplots
 dev.off()
 
-
-png(file=P("figures/Figure02-all-gams.png"), width = convertr::convert(183, "mm", "in"), convertr::convert(117, "mm", "in"), units="in", res=300,pointsize=7)
-allplots
-dev.off()
-

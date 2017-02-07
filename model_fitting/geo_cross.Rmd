@@ -388,7 +388,7 @@ kable(wca, digits = 4)
 ```
 
 ### Central African Band:
-```{r wca, cache = TRUE}
+```{r cab3, cache = TRUE}
 cab3 <- create_pred_df(strictz_gam, temp, 14)
 cab3[12,1] <- "Kemp's Gerbil"
 kable(cab3, digits = 4)
@@ -473,14 +473,34 @@ na_sv <- create_pred_df_v(strictv_gam, temp, 1)
 kable(na_sv, digits = 4)
 ```
 
-### Southern Central America
+### Southern Central America""
 ```{r sca_sv, cache = TRUE}
 sca_sv <- create_pred_df_v(strictv_gam, temp, 5)
 
 kable(sca_sv, digits = 4)
 ```
 
-### 
+### West Central Africa:
+```{r wca_sv, cache = TRUE}
+wca_sv <- create_pred_df_v(strictv_gam, temp, 13)
+
+kable(wca_sv, digits = 4)
+```
+
+### Central African Band:
+```{r cab_sv, cache = TRUE}
+cab_sv <- create_pred_df_v(strictv_gam, temp, 14)
+cab_sv[4,1] <- "Kemp's Gerbil"
+kable(cab_sv, digits = 4)
+```
+
+### Southeastern China:
+```{r sec_sv, cache = TRUE}
+sec_sv <- create_pred_df_v(strictv_gam, temp, 27)
+sec_sv[13,1] <- "Francois's Langur"
+kable(sec_sv, digits = 4)
+```
+
 
 #Conclusions
 	

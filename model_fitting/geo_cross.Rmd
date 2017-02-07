@@ -26,6 +26,7 @@ library(classInt)
 library(maptools)
 library(tibble)
 library(mgcv)
+library(DT)
 P <- rprojroot::find_rstudio_root_file
 source(P("R/model_reduction.R"))
 source(P("R/fit_gam.R"))
@@ -155,13 +156,14 @@ create_pred_df <- function(model, data, region){
     mutate(species = str_replace(name, "_", " ")) %>%
     mutate(absdiff = abs(diff)) %>%
     arrange(desc(absdiff)) %>%
+    mutate(predicted = round(predicted,3), observed = round(observed,3), diff = round(diff,3)) %>%
     select(`Common Name` = Common_names_Eng, Species = species, `Predicted Zoonoses` = predicted, `Observed Zoonoses` = observed, `Difference Between Observed and Predicted` = diff)
   return(display_df)
 }
 
 se_sa <- create_pred_df(allz_gam, joined_dat, 10)
 se_sa[13,1] <- "Paraguayan rice rat"
-kable(se_sa, digits = 4)
+datatable(se_sa)
 ```
 
 ### Central African Band:
@@ -169,7 +171,7 @@ kable(se_sa, digits = 4)
 
 cab <- create_pred_df(allz_gam, joined_dat, 14)
 cab[1,1] <- "Kemp's Gerbil"
-kable(cab, digits = 4)
+datatable(cab)
 ```
 
 ### Northern Eurussia:
@@ -177,7 +179,7 @@ kable(cab, digits = 4)
 
 noruss <- create_pred_df(allz_gam, joined_dat, 25)
 
-kable(noruss, digits = 4)
+datatable(noruss)
 ```
 
 ### Southeastern China:
@@ -185,7 +187,7 @@ kable(noruss, digits = 4)
 
 se_china <- create_pred_df(allz_gam, joined_dat, 27)
 se_china[5,1] <- "Francois's Langur"
-kable(se_china, digits = 4)
+datatable(se_china)
 ```
 
 
@@ -257,12 +259,13 @@ create_pred_df_v <- function(model, data, region){
     mutate(species = str_replace(name, "_", " ")) %>%
     mutate(absdiff = abs(diff)) %>%
     arrange(desc(absdiff)) %>%
+    mutate(predicted = round(predicted,3), observed = round(observed,3), diff = round(diff,3)) %>%
     select(`Common Name` = Common_names_Eng, Species = species, `Predicted Viruses` = predicted, `Observed Viruses` = observed, `Difference Between Observed and Predicted` = diff)
   return(display_df)
 }
 cab2 <- create_pred_df_v(allv_gam, temp, 14)
 
-kable(cab2, digits = 4)
+datatable(cab2)
 ```
 
 ### Europe:
@@ -270,7 +273,7 @@ kable(cab2, digits = 4)
 
 eur <- create_pred_df_v(allv_gam, temp, 15)
 eur[31,1] <- "Montane Water Vole"
-kable(eur, digits = 4)
+datatable(eur)
 ```
 
 ### South Africa:
@@ -278,7 +281,7 @@ kable(eur, digits = 4)
 
 safrica <- create_pred_df_v(allv_gam, temp, 16)
 safrica[23,1] <- "Black-backed Jackal"
-kable(safrica, digits = 4)
+datatable(safrica)
 ```
 
 ### Southeastern China:
@@ -286,7 +289,7 @@ kable(safrica, digits = 4)
 
 se_china2 <- create_pred_df_v(allv_gam, temp, 27)
 se_china2[10,1] <- "Francois's Langur"
-kable(se_china2, digits = 4)
+datatable(se_china2)
 ```
 
 # Zoonoses GAM - Strict Associations
@@ -355,14 +358,14 @@ szresults %>% arrange(fold) %>%
 ```{r na, cache = TRUE}
 na <- create_pred_df(strictz_gam, temp, 1)
 
-kable(na, digits = 4)
+datatable(na)
 ```
 
 ### Southern Central America:
 ```{r sca, cache = TRUE}
 sca <- create_pred_df(strictz_gam, temp, 5)
 
-kable(sca, digits = 4)
+datatable(sca)
 ```
 
 ### Northern South America:
@@ -370,42 +373,42 @@ kable(sca, digits = 4)
 nsa <- create_pred_df(strictz_gam, temp, 9)
 nsa[17,1] <- "Large-headed rice rat"
 nsa[80,1] <- "Southern Long-nosed bat"
-kable(nsa, digits = 4)
+datatable(nsa)
 ```
 
 ### Southeastern South America:
 ```{r ssa, cache = TRUE}
 ssa <- create_pred_df(strictz_gam, temp, 10)
 
-kable(ssa, digits = 4)
+datatable(ssa)
 ```
 
 ### West Central Africa:
 ```{r wca, cache = TRUE}
 wca <- create_pred_df(strictz_gam, temp, 13)
 
-kable(wca, digits = 4)
+datatable(wca)
 ```
 
 ### Central African Band:
 ```{r cab3, cache = TRUE}
 cab3 <- create_pred_df(strictz_gam, temp, 14)
 cab3[12,1] <- "Kemp's Gerbil"
-kable(cab3, digits = 4)
+datatable(cab3)
 ```
 
 ### Northern Eurussia:
 ```{r neurussia, cache = TRUE}
 neurussia <- create_pred_df(strictz_gam, temp, 25)
 
-kable(neurussia, digits = 4)
+datatable(neurussia)
 ```
 
 ### Southeast Asia:
 ```{r se_asia, cache = TRUE}
 se_asia <- create_pred_df(strictz_gam, temp, 26)
 
-kable(se_asia, digits = 4)
+datatable(se_asia)
 ```
 
 
@@ -466,39 +469,39 @@ svresults %>% arrange(fold) %>%
 
 ## Biased Region Details -- Strict Viruses:
 
-### Northern America
+### Northern America:
 ```{r na_sv, cache = TRUE}
 na_sv <- create_pred_df_v(strictv_gam, temp, 1)
 
-kable(na_sv, digits = 4)
+datatable(na_sv)
 ```
 
-### Southern Central America""
+### Southern Central America:
 ```{r sca_sv, cache = TRUE}
 sca_sv <- create_pred_df_v(strictv_gam, temp, 5)
 
-kable(sca_sv, digits = 4)
+datatable(sca_sv)
 ```
 
 ### West Central Africa:
 ```{r wca_sv, cache = TRUE}
 wca_sv <- create_pred_df_v(strictv_gam, temp, 13)
 
-kable(wca_sv, digits = 4)
+datatable(wca_sv)
 ```
 
 ### Central African Band:
 ```{r cab_sv, cache = TRUE}
 cab_sv <- create_pred_df_v(strictv_gam, temp, 14)
 cab_sv[4,1] <- "Kemp's Gerbil"
-kable(cab_sv, digits = 4)
+datatable(cab_sv)
 ```
 
 ### Southeastern China:
 ```{r sec_sv, cache = TRUE}
 sec_sv <- create_pred_df_v(strictv_gam, temp, 27)
 sec_sv[13,1] <- "Francois's Langur"
-kable(sec_sv, digits = 4)
+datatable(sec_sv)
 ```
 
 

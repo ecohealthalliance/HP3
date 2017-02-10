@@ -26,6 +26,7 @@ library(classInt)
 library(maptools)
 library(tibble)
 library(mgcv)
+library(tidyr)
 library(DT)
 P <- rprojroot::find_rstudio_root_file
 source(P("R/model_reduction.R"))
@@ -97,6 +98,28 @@ joined_dat <- left_join(data_set, zgm, by=c("hHostNameFinal"="BINOMIAL"))
 joined_dat <- filter_down(allz_gam, joined_dat, "mam_upgma_")
 
 results<-cv_gam_by_zg(allz_gam, joined_dat,unique(joined_dat$mam_upgma_))
+
+###### ADDING 
+
+
+region_dat <- joined_dat %>%
+  mutate(zg_region = as.factor(mam_upgma_))
+
+region_gam <- gam(NSharedWithHoSa ~ s(hAllZACitesLn, bs = "tp", k = 7) + s(hHuntedIUCN, bs = "re") + s(hOrderCETARTIODACTYLA, bs = "re") + 
+                       s(hOrderCHIROPTERA, bs = "re") + s(hOrderDIPROTODONTIA, bs = "re") + 
+                       s(hOrderPERAMELEMORPHIA, bs = "re") + s(hOrderPERISSODACTYLA, bs = "re") + s(zg_region, bs = "re") +
+                       s(hOrderSCANDENTIA, bs = "re") + s(PdHoSa.cbCst, bs = "tp", k = 7) + 
+                       s(UrbRurPopRatioLn, bs = "tp", k = 7) + offset(LnTotNumVirus), poisson, region_dat, select=TRUE)
+
+rep_gam <- gam(NSharedWithHoSa ~ s(hAllZACitesLn, bs = "tp", k = 7) + s(hHuntedIUCN, bs = "re") + s(hOrderCETARTIODACTYLA, bs = "re") + 
+                       s(hOrderCHIROPTERA, bs = "re") + s(hOrderDIPROTODONTIA, bs = "re") + 
+                       s(hOrderPERAMELEMORPHIA, bs = "re") + s(hOrderPERISSODACTYLA, bs = "re") + 
+                       s(hOrderSCANDENTIA, bs = "re") + s(PdHoSa.cbCst, bs = "tp", k = 7) + 
+                       s(UrbRurPopRatioLn, bs = "tp", k = 7) + offset(LnTotNumVirus), poisson, region_dat, select=TRUE)
+
+gam.vcomp(region_gam)
+
+##############
 
 zregions@data <- left_join(zregions@data, results, by=c("mam_upgma_"="fold"))
 
@@ -302,6 +325,44 @@ szregions <- shapefile(P("maps/mam.shp"), verbose = FALSE)
 
 temp <- left_join(data_set, zgm, by=c("hHostNameFinal"="BINOMIAL"))
 temp <- filter_down(strictz_gam, temp, "mam_upgma_")
+
+region_dat <- temp %>%
+  mutate(zg_region = as.factor(mam_upgma_))
+
+########ASIDE
+sz_rep_gam <- gam(NSharedWithHoSa_strict ~ s(hDiseaseZACitesLn, bs = "tp", k = 7) + 
+    s(hMassGramsPVR, bs = "tp", k = 7) + s(hOrderCETARTIODACTYLA, 
+    bs = "re") + s(hOrderDIPROTODONTIA, bs = "re") + s(hOrderLAGOMORPHA, 
+    bs = "re") + s(hOrderPERISSODACTYLA, bs = "re") + s(hOrderPRIMATES, 
+    bs = "re") + s(HumPopDensLnChg, bs = "tp", k = 7) + s(PdHoSa.cbCst, 
+    bs = "tp", k = 7) + s(UrbRurPopRatioChg, bs = "tp", k = 7) + 
+    offset(LnTotNumVirus), poisson, region_dat, select = TRUE)
+
+sz_region_gam <- gam(NSharedWithHoSa_strict ~ s(hDiseaseZACitesLn, bs = "tp", k = 7) + 
+    s(hMassGramsPVR, bs = "tp", k = 7) + s(hOrderCETARTIODACTYLA, bs = "re") + 
+      s(hOrderDIPROTODONTIA, bs = "re") + s(hOrderLAGOMORPHA, bs = "re") + s(zg_region, bs = "re") +
+      s(hOrderPERISSODACTYLA, bs = "re") + s(hOrderPRIMATES, bs = "re") + 
+      s(HumPopDensLnChg, bs = "tp", k = 7) + s(PdHoSa.cbCst, bs = "tp", k = 7) + 
+      s(UrbRurPopRatioChg, bs = "tp", k = 7) + offset(LnTotNumVirus), poisson, region_dat, select = TRUE)
+
+order_cat <- left_join(data_set, zgm, by=c("hHostNameFinal"="BINOMIAL"))
+order_cat <- order_cat %>%
+  mutate(zg_region = as.factor(mam_upgma_))
+
+
+
+sz_order_region_gam <- gam(NSharedWithHoSa_strict ~ s(hDiseaseZACitesLn, bs = "tp", k = 7) + 
+    s(hMassGramsPVR, bs = "tp", k = 7) +  s(zg_region, bs = "re") + s(hOrder, bs = "re") +
+      s(HumPopDensLnChg, bs = "tp", k = 7) + s(PdHoSa.cbCst, bs = "tp", k = 7) + 
+      s(UrbRurPopRatioChg, bs = "tp", k = 7) + offset(LnTotNumVirus), poisson, order_cat, select = TRUE)
+
+sz_order_gam <- gam(NSharedWithHoSa_strict ~ s(hDiseaseZACitesLn, bs = "tp", k = 7) + 
+    s(hMassGramsPVR, bs = "tp", k = 7) + s(hOrder, bs = "re") +
+      s(HumPopDensLnChg, bs = "tp", k = 7) + s(PdHoSa.cbCst, bs = "tp", k = 7) + 
+      s(UrbRurPopRatioChg, bs = "tp", k = 7) + offset(LnTotNumVirus), poisson, order_cat, select = TRUE)
+
+
+#########
 
 szresults<-cv_gam_by_zg(strictz_gam, temp,unique(temp$mam_upgma_))
 

@@ -99,25 +99,7 @@ joined_dat <- filter_down(allz_gam, joined_dat, "mam_upgma_")
 
 results<-cv_gam_by_zg(allz_gam, joined_dat,unique(joined_dat$mam_upgma_))
 
-###### ADDING 
-
-
-region_dat <- joined_dat %>%
-  mutate(zg_region = as.factor(mam_upgma_))
-
-region_gam <- gam(NSharedWithHoSa ~ s(hAllZACitesLn, bs = "tp", k = 7) + s(hHuntedIUCN, bs = "re") + s(hOrderCETARTIODACTYLA, bs = "re") + 
-                       s(hOrderCHIROPTERA, bs = "re") + s(hOrderDIPROTODONTIA, bs = "re") + 
-                       s(hOrderPERAMELEMORPHIA, bs = "re") + s(hOrderPERISSODACTYLA, bs = "re") + s(zg_region, bs = "re") +
-                       s(hOrderSCANDENTIA, bs = "re") + s(PdHoSa.cbCst, bs = "tp", k = 7) + 
-                       s(UrbRurPopRatioLn, bs = "tp", k = 7) + offset(LnTotNumVirus), poisson, region_dat, select=TRUE)
-
-rep_gam <- gam(NSharedWithHoSa ~ s(hAllZACitesLn, bs = "tp", k = 7) + s(hHuntedIUCN, bs = "re") + s(hOrderCETARTIODACTYLA, bs = "re") + 
-                       s(hOrderCHIROPTERA, bs = "re") + s(hOrderDIPROTODONTIA, bs = "re") + 
-                       s(hOrderPERAMELEMORPHIA, bs = "re") + s(hOrderPERISSODACTYLA, bs = "re") + 
-                       s(hOrderSCANDENTIA, bs = "re") + s(PdHoSa.cbCst, bs = "tp", k = 7) + 
-                       s(UrbRurPopRatioLn, bs = "tp", k = 7) + offset(LnTotNumVirus), poisson, region_dat, select=TRUE)
-
-gam.vcomp(region_gam)
+allz_dat <- joined_dat
 
 ##############
 
@@ -221,9 +203,12 @@ datatable(se_china)
 allv_gam = readRDS(P("model_fitting/all_viruses_model.rds"))
 vregions <- shapefile(P("maps/mam.shp"), verbose = FALSE)
 
-
 temp <- left_join(data_set, zgm, by=c("hHostNameFinal"="BINOMIAL"))
 temp <- filter_down(allv_gam, temp, "mam_upgma_")
+
+
+
+allv_dat <- temp
 
 vresults<-cv_gam_by_zg(allv_gam, temp,unique(temp$mam_upgma_))
 
@@ -326,41 +311,7 @@ szregions <- shapefile(P("maps/mam.shp"), verbose = FALSE)
 temp <- left_join(data_set, zgm, by=c("hHostNameFinal"="BINOMIAL"))
 temp <- filter_down(strictz_gam, temp, "mam_upgma_")
 
-region_dat <- temp %>%
-  mutate(zg_region = as.factor(mam_upgma_))
-
-########ASIDE
-sz_rep_gam <- gam(NSharedWithHoSa_strict ~ s(hDiseaseZACitesLn, bs = "tp", k = 7) + 
-    s(hMassGramsPVR, bs = "tp", k = 7) + s(hOrderCETARTIODACTYLA, 
-    bs = "re") + s(hOrderDIPROTODONTIA, bs = "re") + s(hOrderLAGOMORPHA, 
-    bs = "re") + s(hOrderPERISSODACTYLA, bs = "re") + s(hOrderPRIMATES, 
-    bs = "re") + s(HumPopDensLnChg, bs = "tp", k = 7) + s(PdHoSa.cbCst, 
-    bs = "tp", k = 7) + s(UrbRurPopRatioChg, bs = "tp", k = 7) + 
-    offset(LnTotNumVirus), poisson, region_dat, select = TRUE)
-
-sz_region_gam <- gam(NSharedWithHoSa_strict ~ s(hDiseaseZACitesLn, bs = "tp", k = 7) + 
-    s(hMassGramsPVR, bs = "tp", k = 7) + s(hOrderCETARTIODACTYLA, bs = "re") + 
-      s(hOrderDIPROTODONTIA, bs = "re") + s(hOrderLAGOMORPHA, bs = "re") + s(zg_region, bs = "re") +
-      s(hOrderPERISSODACTYLA, bs = "re") + s(hOrderPRIMATES, bs = "re") + 
-      s(HumPopDensLnChg, bs = "tp", k = 7) + s(PdHoSa.cbCst, bs = "tp", k = 7) + 
-      s(UrbRurPopRatioChg, bs = "tp", k = 7) + offset(LnTotNumVirus), poisson, region_dat, select = TRUE)
-
-order_cat <- left_join(data_set, zgm, by=c("hHostNameFinal"="BINOMIAL"))
-order_cat <- order_cat %>%
-  mutate(zg_region = as.factor(mam_upgma_))
-
-
-
-sz_order_region_gam <- gam(NSharedWithHoSa_strict ~ s(hDiseaseZACitesLn, bs = "tp", k = 7) + 
-    s(hMassGramsPVR, bs = "tp", k = 7) +  s(zg_region, bs = "re") + s(hOrder, bs = "re") +
-      s(HumPopDensLnChg, bs = "tp", k = 7) + s(PdHoSa.cbCst, bs = "tp", k = 7) + 
-      s(UrbRurPopRatioChg, bs = "tp", k = 7) + offset(LnTotNumVirus), poisson, order_cat, select = TRUE)
-
-sz_order_gam <- gam(NSharedWithHoSa_strict ~ s(hDiseaseZACitesLn, bs = "tp", k = 7) + 
-    s(hMassGramsPVR, bs = "tp", k = 7) + s(hOrder, bs = "re") +
-      s(HumPopDensLnChg, bs = "tp", k = 7) + s(PdHoSa.cbCst, bs = "tp", k = 7) + 
-      s(UrbRurPopRatioChg, bs = "tp", k = 7) + offset(LnTotNumVirus), poisson, order_cat, select = TRUE)
-
+strictz_dat <- temp
 
 #########
 
@@ -483,6 +434,8 @@ svregions <- shapefile(P("maps/mam.shp"), verbose = FALSE)
 temp <- left_join(data_set, zgm, by=c("hHostNameFinal"="BINOMIAL"))
 temp <- filter_down(strictv_gam, temp, "mam_upgma_")
 
+strictv_dat <- temp
+
 svresults<-cv_gam_by_zg(strictv_gam, temp,unique(temp$mam_upgma_))
 
 svregions@data <- left_join(svregions@data, svresults, by=c("mam_upgma_"="fold"))
@@ -565,8 +518,111 @@ sec_sv[13,1] <- "Francois's Langur"
 datatable(sec_sv)
 ```
 
+#Cross-validation Results
+The reviewer articulated concerns about our models' ability to make out-of-sample predictions, arguing that cross-validation based on random folds does not adequately address this issue. This analysis suggests that our *All Zoonoses*, *All Viruses*, and *Strict Viruses* models are fairly robust to a systematic cross-validation that creates folds based on geographical/phylogenetic region ~ a non-random method to approximate out-of-sample testing. For each of these three models, only 4-5 substantial (n > 10) folds show evidence of bias, while 10-11 substantial folds are well-predicted. 
 
-#Conclusions
-	
-The reviewer articulated concerns about our models' ability to make out-of-sample predictions, arguing that cross-validation based on random folds does not adequately address this issue. This analysis shows that our models (especially *Zoonoses*, *Viruses*, and *Strict Viruses*) are robust to a systematic cross-validation that creates folds based on geographical/phylogenetic region ~ a non-random method to approximate out-of-sample testing. For each of these three models, only 4-5 substantial (n > 10) folds show evidence of bias, while 10-11 substantial folds are well-predicted. For the *Strict Zoonoses* model the evidence is more equivocal, with 8 substantial regions that show evidence of bias and 7 substantial regions which are well-predicted. 
+For the *Strict Zoonoses* model the evidence is more equivocal, with 8 substantial regions that show evidence of bias and 7 substantial regions which are well-predicted. This suggests that there might be some association between zoogeographical region and number of strictly-defined zoonoses present in animals. In order to further explore possibility of an association between region and our model outcomes, we included region as a random effect variable in each of our models below
 
+#Region as Random Effect
+## All Zoonoses GAM
+
+```{r non-sig-re}
+#All zoonoses
+allz_dat <- allz_dat %>%
+  mutate(zg_region = as.factor(mam_upgma_))
+
+allz_region_gam <- gam(NSharedWithHoSa ~ s(hAllZACitesLn, bs = "tp", k = 7) + s(hHuntedIUCN, bs = "re") + s(hOrderCETARTIODACTYLA, bs = "re") + 
+                       s(hOrderCHIROPTERA, bs = "re") + s(hOrderDIPROTODONTIA, bs = "re") + 
+                       s(hOrderPERAMELEMORPHIA, bs = "re") + s(hOrderPERISSODACTYLA, bs = "re") + s(zg_region, bs = "re") +
+                       s(hOrderSCANDENTIA, bs = "re") + s(PdHoSa.cbCst, bs = "tp", k = 7) + 
+                       s(UrbRurPopRatioLn, bs = "tp", k = 7) + offset(LnTotNumVirus), poisson, allz_dat, select=TRUE)
+
+allz_rep_gam <- gam(NSharedWithHoSa ~ s(hAllZACitesLn, bs = "tp", k = 7) + s(hHuntedIUCN, bs = "re") + s(hOrderCETARTIODACTYLA, bs = "re") + 
+                       s(hOrderCHIROPTERA, bs = "re") + s(hOrderDIPROTODONTIA, bs = "re") + 
+                       s(hOrderPERAMELEMORPHIA, bs = "re") + s(hOrderPERISSODACTYLA, bs = "re") +
+                       s(hOrderSCANDENTIA, bs = "re") + s(PdHoSa.cbCst, bs = "tp", k = 7) + 
+                       s(UrbRurPopRatioLn, bs = "tp", k = 7) + offset(LnTotNumVirus), poisson, allz_dat, select=TRUE)
+
+
+
+
+```
+Adding zoogeographical region as a random effect to our best-fit All Zoonoses GAM does not improve the model (AIC~region~: `r round(allz_region_gam$aic,3)` vs AIC~original~: `r round(allz_rep_gam$aic,3)`); the effective degrees of freedom for the region smooth is very low (`r round(summary(allz_region_gam)$edf[8],5)`), which supports removing the region variable from the All Zoonoses GAM.
+  
+## All Viruses GAM  
+```{r allv-region}
+#All viruses
+allv_dat <- allv_dat %>%
+  mutate(zg_region = as.factor(mam_upgma_))
+
+allv_rep_gam <-gam(TotVirusPerHost ~  s(hDiseaseZACitesLn, bs = "cs", k = 7) + s(hMassGramsPVR, bs = "cs", k = 7) + s(hOrderCETARTIODACTYLA, bs = "re") + 
+    s(hOrderCHIROPTERA, bs = "re") + s(hOrderEULIPOTYPHLA, bs = "re") + 
+    s(hOrderPERISSODACTYLA, bs = "re") + s(hOrderPRIMATES, bs = "re") + 
+    s(hOrderRODENTIA, bs = "re") + s(LnAreaHost, bs = "cs", k = 7) + 
+    s(S20, bs = "cs", k = 7), poisson, allv_dat, select = TRUE)
+
+allv_region_gam <- gam(TotVirusPerHost ~  s(hDiseaseZACitesLn, bs = "cs", k = 7) + s(hMassGramsPVR, bs = "cs", k = 7) + s(hOrderCETARTIODACTYLA, bs = "re") + 
+    s(hOrderCHIROPTERA, bs = "re") + s(hOrderEULIPOTYPHLA, bs = "re") + 
+    s(hOrderPERISSODACTYLA, bs = "re") + s(hOrderPRIMATES, bs = "re") + 
+    s(hOrderRODENTIA, bs = "re") + s(LnAreaHost, bs = "cs", k = 7) + s(zg_region, bs = "re") +
+    s(S20, bs = "cs", k = 7), poisson, allv_dat, select = TRUE)
+
+summary(allv_region_gam)
+
+```
+Adding zoogeographical region as a random effect to our best-fit All Viruses GAM significantly improves the model (AIC~region~: `r round(allv_region_gam$aic,3)` vs AIC~original~: `r round(allv_rep_gam$aic, 3)`). The smooth for region is significant, as seen in the model details above. The deviance explained by the original model was `r 1-round(allv_rep_gam$deviance/allv_rep_gam$null.deviance,3)`.
+
+# Strict Zoonoses GAM
+```{r strictz-region}
+# Strict Zoonoses
+strictz_dat <- strictz_dat %>%
+  mutate(zg_region = as.factor(mam_upgma_))
+
+sz_rep_gam <- gam(NSharedWithHoSa_strict ~ s(hDiseaseZACitesLn, bs = "tp", k = 7) + 
+    s(hMassGramsPVR, bs = "tp", k = 7) + s(hOrderCETARTIODACTYLA, 
+    bs = "re") + s(hOrderDIPROTODONTIA, bs = "re") + s(hOrderLAGOMORPHA, 
+    bs = "re") + s(hOrderPERISSODACTYLA, bs = "re") + s(hOrderPRIMATES, 
+    bs = "re") + s(HumPopDensLnChg, bs = "tp", k = 7) + s(PdHoSa.cbCst, 
+    bs = "tp", k = 7) + s(UrbRurPopRatioChg, bs = "tp", k = 7) + 
+    offset(LnTotNumVirus), poisson, strictz_dat, select = TRUE)
+
+sz_region_gam <- gam(NSharedWithHoSa_strict ~ s(hDiseaseZACitesLn, bs = "tp", k = 7) + 
+    s(hMassGramsPVR, bs = "tp", k = 7) + s(hOrderCETARTIODACTYLA, bs = "re") + 
+      s(hOrderDIPROTODONTIA, bs = "re") + s(hOrderLAGOMORPHA, bs = "re") + s(zg_region, bs = "re") +
+      s(hOrderPERISSODACTYLA, bs = "re") + s(hOrderPRIMATES, bs = "re") + 
+      s(HumPopDensLnChg, bs = "tp", k = 7) + s(PdHoSa.cbCst, bs = "tp", k = 7) + 
+      s(UrbRurPopRatioChg, bs = "tp", k = 7) + offset(LnTotNumVirus), poisson, strictz_dat, select = TRUE)
+
+summary(sz_region_gam)
+```
+Adding zoogeographical region as a random effect to our best-fit Strict Zoonoses GAM significantly improves the model (AIC~region~: `r round(sz_region_gam$aic,3)` vs AIC~original~: `r round(sz_rep_gam$aic, 3)`). The smooth for region is significant, as seen in the model details above. The deviance explained by the original model was `r 1-round(sz_rep_gam$deviance/sz_rep_gam$null.deviance,3)`.
+
+
+#Strict Viruses GAM
+```{r strictv-region}
+strictv_dat <- strictv_dat %>%
+  mutate(zg_region = as.factor(mam_upgma_))
+
+strictv_rep_gam <- gam(TotVirusPerHost_strict ~ s(hDiseaseZACitesLn, bs = "cs", k = 7) + 
+    s(hMassGramsPVR, bs = "cs", k = 7) + s(hOrderCHIROPTERA, bs = "re") + 
+    s(hOrderCINGULATA, bs = "re") + s(hOrderEULIPOTYPHLA, bs = "re") + 
+    s(hOrderPERAMELEMORPHIA, bs = "re") + s(hOrderPRIMATES, bs = "re") + 
+    s(hOrderRODENTIA, bs = "re") + s(hOrderSCANDENTIA, bs = "re") + 
+    s(LnAreaHost, bs = "cs", k = 7) + s(S20, bs = "cs", k = 7), poisson, strictv_dat, select=TRUE)
+
+strictv_region_gam <- gam(TotVirusPerHost_strict ~ s(hDiseaseZACitesLn, bs = "cs", k = 7) + 
+    s(hMassGramsPVR, bs = "cs", k = 7) + s(hOrderCHIROPTERA, bs = "re") + 
+    s(hOrderCINGULATA, bs = "re") + s(hOrderEULIPOTYPHLA, bs = "re") + 
+    s(hOrderPERAMELEMORPHIA, bs = "re") + s(hOrderPRIMATES, bs = "re") + s(zg_region, bs = "re") +
+    s(hOrderRODENTIA, bs = "re") + s(hOrderSCANDENTIA, bs = "re") + 
+    s(LnAreaHost, bs = "cs", k = 7) + s(S20, bs = "cs", k = 7), poisson, strictv_dat, select=TRUE)
+
+summary(strictv_region_gam)
+
+```
+Adding zoogeographical region as a random effect to our best-fit Strict Viruses GAM significantly improves the model (AIC~region~: `r round(strictv_region_gam$aic,3)` vs AIC~original~: `r round(strictv_rep_gam$aic, 3)`). The smooth for region is significant, as seen in the model details above. The deviance explained by the original model was `r 1-round(strictv_rep_gam$deviance/strictv_rep_gam$null.deviance,3)`.
+
+
+
+
+#Conclusions  

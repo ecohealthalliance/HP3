@@ -241,8 +241,148 @@ Southern Australia                              564                      11    0
 <!--html_preserve--><div id="htmlwidget-150ba18aa4d29ce6d7ff" style="width:100%;height:auto;" class="datatables html-widget"></div>
 <script type="application/json" data-for="htmlwidget-150ba18aa4d29ce6d7ff">{"x":{"filter":"none","data":[["1","2","3","4","5","6","7","8","9","10","11","12","13","14"],["Lesser Rice-field Rat, Losea Rat","Intermediate Horseshoe Bat, Intermediat Horseshoe Bat","Rickett's Big-footed Bat, Rickett's Big-footed Myotis","Bear Macaque, Stump-tailed Macaque, Stumptail Macaque","Japanese Pipistrelle, Japanese Pipistrelle","Oriental House Rat, Tanezumi Rat","Great Himalayan Leaf-nosed Bat, Great Leaf-nosed Bat, Great Roundleaf Bat","Formosan Rock Macaque, Taiwanese Macaque, Taiwan Macaque","Chinese Ferret-badger, Small-toothed Ferret-badger","Pearson's Horseshoe Bat","Big-eared Horseshoe Bat","Chinese Horseshoe Bat, Chinese Rufous Horseshoe Bat, Little Nepalese Horseshoe Bat","Francois's Langur","Gem-faced Civet, Masked Palm Civet"],["Rattus losea","Rhinolophus affinis","Myotis pilosus","Macaca arctoides","Pipistrellus abramus","Rattus tanezumi","Hipposideros armiger","Macaca cyclopis","Melogale moschata","Rhinolophus pearsonii","Rhinolophus macrotis","Rhinolophus sinicus","Trachypithecus francoisi","Paguma larvata"],[2.874,1.511,0.895,2.88,0.875,1.84,1.769,1.39,0.454,1.354,1.162,1.161,0.969,0.971],[1,0,0,2,0,1,1,2,0,1,1,1,1,1],[-1.874,-1.511,-0.895,-0.88,-0.875,-0.84,-0.769,0.61,-0.454,-0.354,-0.162,-0.161,0.031,0.029]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> \u003c/th>\n      <th>Common Name\u003c/th>\n      <th>Species\u003c/th>\n      <th>Predicted Viruses\u003c/th>\n      <th>Observed Viruses\u003c/th>\n      <th>Difference Between Observed and Predicted\u003c/th>\n    \u003c/tr>\n  \u003c/thead>\n\u003c/table>","options":{"columnDefs":[{"className":"dt-right","targets":[3,4,5]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script><!--/html_preserve-->
 
+#Cross-validation Results
+The reviewer articulated concerns about our models' ability to make out-of-sample predictions, arguing that cross-validation based on random folds does not adequately address this issue. This analysis suggests that our *All Zoonoses*, *All Viruses*, and *Strict Viruses* models are fairly robust to a systematic cross-validation that creates folds based on geographical/phylogenetic region ~ a non-random method to approximate out-of-sample testing. For each of these three models, only 4-5 substantial (n > 10) folds show evidence of bias, while 10-11 substantial folds are well-predicted. 
 
-#Conclusions
-	
-The reviewer articulated concerns about our models' ability to make out-of-sample predictions, arguing that cross-validation based on random folds does not adequately address this issue. This analysis shows that our models (especially *Zoonoses*, *Viruses*, and *Strict Viruses*) are robust to a systematic cross-validation that creates folds based on geographical/phylogenetic region ~ a non-random method to approximate out-of-sample testing. For each of these three models, only 4-5 substantial (n > 10) folds show evidence of bias, while 10-11 substantial folds are well-predicted. For the *Strict Zoonoses* model the evidence is more equivocal, with 8 substantial regions that show evidence of bias and 7 substantial regions which are well-predicted. 
+For the *Strict Zoonoses* model the evidence is more equivocal, with 8 substantial regions that show evidence of bias and 7 substantial regions which are well-predicted. This suggests that there might be some association between zoogeographical region and number of strictly-defined zoonoses present in animals. In order to further explore possibility of an association between region and our model outcomes, we included region as a random effect variable in each of our models below
 
+#Region as Random Effect
+## All Zoonoses GAM
+
+
+Adding zoogeographical region as a random effect to our best-fit All Zoonoses GAM does not improve the model (AIC~region~: 1517.584 vs AIC~original~: 1517.583); the effective degrees of freedom for the region smooth is very low (1.7\times 10^{-4}), which supports removing the region variable from the All Zoonoses GAM.
+  
+## All Viruses GAM  
+
+```
+## 
+## Family: poisson 
+## Link function: log 
+## 
+## Formula:
+## TotVirusPerHost ~ s(hDiseaseZACitesLn, bs = "cs", k = 7) + s(hMassGramsPVR, 
+##     bs = "cs", k = 7) + s(hOrderCETARTIODACTYLA, bs = "re") + 
+##     s(hOrderCHIROPTERA, bs = "re") + s(hOrderEULIPOTYPHLA, bs = "re") + 
+##     s(hOrderPERISSODACTYLA, bs = "re") + s(hOrderPRIMATES, bs = "re") + 
+##     s(hOrderRODENTIA, bs = "re") + s(LnAreaHost, bs = "cs", k = 7) + 
+##     s(zg_region, bs = "re") + s(S20, bs = "cs", k = 7)
+## 
+## Parametric coefficients:
+##             Estimate Std. Error z value Pr(>|z|)    
+## (Intercept)  0.45265    0.08493    5.33 9.83e-08 ***
+## ---
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+## 
+## Approximate significance of smooth terms:
+##                              edf Ref.df   Chi.sq  p-value    
+## s(hDiseaseZACitesLn)      5.4745      6 3523.425  < 2e-16 ***
+## s(hMassGramsPVR)          4.0770      6  673.951  0.00497 ** 
+## s(hOrderCETARTIODACTYLA)  0.8687      1   35.818  0.00261 ** 
+## s(hOrderCHIROPTERA)       1.0000      1  370.532  < 2e-16 ***
+## s(hOrderEULIPOTYPHLA)     0.7690      1    4.668  0.01898 *  
+## s(hOrderPERISSODACTYLA)   0.9999      1   12.526  0.00159 ** 
+## s(hOrderPRIMATES)         0.8829      1   44.972 3.55e-05 ***
+## s(hOrderRODENTIA)         1.0000      1  189.311 1.12e-08 ***
+## s(LnAreaHost)             3.8438      6   12.442  0.29000    
+## s(zg_region)             14.0850     30   62.004 1.67e-06 ***
+## s(S20)                    0.9793      6  180.418 7.26e-05 ***
+## ---
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+## 
+## R-sq.(adj) =  0.518   Deviance explained = 52.5%
+## UBRE = 0.31343  Scale est. = 1         n = 576
+```
+Adding zoogeographical region as a random effect to our best-fit All Viruses GAM significantly improves the model (AIC~region~: 2301.891 vs AIC~original~: 2330.176). The smooth for region is significant, as seen in the model details above. The deviance explained by the original model was 0.492.
+
+# Strict Zoonoses GAM
+
+```
+## 
+## Family: poisson 
+## Link function: log 
+## 
+## Formula:
+## NSharedWithHoSa_strict ~ s(hDiseaseZACitesLn, bs = "tp", k = 7) + 
+##     s(hMassGramsPVR, bs = "tp", k = 7) + s(hOrderCETARTIODACTYLA, 
+##     bs = "re") + s(hOrderDIPROTODONTIA, bs = "re") + s(hOrderLAGOMORPHA, 
+##     bs = "re") + s(zg_region, bs = "re") + s(hOrderPERISSODACTYLA, 
+##     bs = "re") + s(hOrderPRIMATES, bs = "re") + s(HumPopDensLnChg, 
+##     bs = "tp", k = 7) + s(PdHoSa.cbCst, bs = "tp", k = 7) + s(UrbRurPopRatioChg, 
+##     bs = "tp", k = 7) + offset(LnTotNumVirus)
+## 
+## Parametric coefficients:
+##             Estimate Std. Error z value Pr(>|z|)    
+## (Intercept) -1.35552    0.09893   -13.7   <2e-16 ***
+## ---
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+## 
+## Approximate significance of smooth terms:
+##                                edf Ref.df Chi.sq  p-value    
+## s(hDiseaseZACitesLn)     8.549e-01      6  3.055  0.04167 *  
+## s(hMassGramsPVR)         6.566e-01      6  1.709  0.12505    
+## s(hOrderCETARTIODACTYLA) 9.505e-01      1 27.082 8.79e-07 ***
+## s(hOrderDIPROTODONTIA)   8.180e-01      1  3.831  0.04622 *  
+## s(hOrderLAGOMORPHA)      2.885e-01      1  0.433  0.22928    
+## s(zg_region)             9.804e+00     30 25.363  0.00067 ***
+## s(hOrderPERISSODACTYLA)  8.160e-01      1  0.878  0.30007    
+## s(hOrderPRIMATES)        5.516e-01      1  1.990  0.04243 *  
+## s(HumPopDensLnChg)       6.751e-05      6  0.000  0.80643    
+## s(PdHoSa.cbCst)          2.601e+00      6 53.113  0.03283 *  
+## s(UrbRurPopRatioChg)     4.077e+00      6 27.372  0.05795 .  
+## ---
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+## 
+## R-sq.(adj) =  0.692   Deviance explained = 28.6%
+## UBRE = -0.17821  Scale est. = 1         n = 576
+```
+Adding zoogeographical region as a random effect to our best-fit Strict Zoonoses GAM significantly improves the model (AIC~region~: 1080.419 vs AIC~original~: 1092.285). The smooth for region is significant, as seen in the model details above. The deviance explained by the original model was 0.236.
+
+
+#Strict Viruses GAM
+
+```
+## 
+## Family: poisson 
+## Link function: log 
+## 
+## Formula:
+## TotVirusPerHost_strict ~ s(hDiseaseZACitesLn, bs = "cs", k = 7) + 
+##     s(hMassGramsPVR, bs = "cs", k = 7) + s(hOrderCHIROPTERA, 
+##     bs = "re") + s(hOrderCINGULATA, bs = "re") + s(hOrderEULIPOTYPHLA, 
+##     bs = "re") + s(hOrderPERAMELEMORPHIA, bs = "re") + s(hOrderPRIMATES, 
+##     bs = "re") + s(zg_region, bs = "re") + s(hOrderRODENTIA, 
+##     bs = "re") + s(hOrderSCANDENTIA, bs = "re") + s(LnAreaHost, 
+##     bs = "cs", k = 7) + s(S20, bs = "cs", k = 7)
+## 
+## Parametric coefficients:
+##             Estimate Std. Error z value Pr(>|z|)    
+## (Intercept)  -0.5622     0.1260  -4.464 8.06e-06 ***
+## ---
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+## 
+## Approximate significance of smooth terms:
+##                                edf Ref.df   Chi.sq  p-value    
+## s(hDiseaseZACitesLn)     4.994e+00      6 4113.344  < 2e-16 ***
+## s(hMassGramsPVR)         3.614e+00      6   14.583   0.0242 *  
+## s(hOrderCHIROPTERA)      1.000e+00      1  575.944 9.11e-16 ***
+## s(hOrderCINGULATA)       7.583e-01      1    0.831   0.2958    
+## s(hOrderEULIPOTYPHLA)    6.524e-01      1    1.783   0.1241    
+## s(hOrderPERAMELEMORPHIA) 7.525e-01      1    0.733   0.3249    
+## s(hOrderPRIMATES)        1.000e+00      1  209.193 2.68e-14 ***
+## s(zg_region)             1.588e+01     30   52.394 6.90e-06 ***
+## s(hOrderRODENTIA)        9.991e-01      1  382.497 4.26e-15 ***
+## s(hOrderSCANDENTIA)      5.444e-01      1    1.900   0.0832 .  
+## s(LnAreaHost)            1.706e-04      6    0.000   0.4649    
+## s(S20)                   1.081e+00      6   71.188   0.0172 *  
+## ---
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+## 
+## R-sq.(adj) =  0.422   Deviance explained = 39.9%
+## UBRE = 0.33243  Scale est. = 1         n = 575
+```
+Adding zoogeographical region as a random effect to our best-fit Strict Viruses GAM significantly improves the model (AIC~region~: 1703.647 vs AIC~original~: 1730.995). The smooth for region is significant, as seen in the model details above. The deviance explained by the original model was 0.358.
+
+
+
+
+#Conclusions  

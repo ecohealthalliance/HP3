@@ -543,10 +543,20 @@ allz_rep_gam <- gam(NSharedWithHoSa ~ s(hAllZACitesLn, bs = "tp", k = 7) + s(hHu
                        s(hOrderSCANDENTIA, bs = "re") + s(PdHoSa.cbCst, bs = "tp", k = 7) + 
                        s(UrbRurPopRatioLn, bs = "tp", k = 7) + offset(LnTotNumVirus), poisson, allz_dat, select=TRUE)
 
+summary(allz_region_gam)
+
+
+get_relative_contribs(allz_rep_gam) %>% kable(caption = "All Zoonoses: Original Model")
+```
+
+```{r kable-allz-contribs}
+get_relative_contribs(allz_region_gam) %>% kable(caption = "All Zoonoses: Region Model")
 
 
 
 ```
+  
+  
 Adding zoogeographical region as a random effect to our best-fit All Zoonoses GAM does not improve the model (AIC~region~: `r round(allz_region_gam$aic,3)` vs AIC~original~: `r round(allz_rep_gam$aic,3)`); the effective degrees of freedom for the region smooth is very low (`r round(summary(allz_region_gam)$edf[8],5)`), which supports removing the region variable from the All Zoonoses GAM.
   
 ## All Viruses GAM  
@@ -569,10 +579,17 @@ allv_region_gam <- gam(TotVirusPerHost ~  s(hDiseaseZACitesLn, bs = "cs", k = 7)
 
 summary(allv_region_gam)
 
+get_relative_contribs(allv_rep_gam) %>% kable(caption = "All Viruses: Original Model")
+
+get_relative_contribs(allv_region_gam) %>% kable(caption = "All Viruses: Region Model")
+
+
 ```
+  
+  
 Adding zoogeographical region as a random effect to our best-fit All Viruses GAM significantly improves the model (AIC~region~: `r round(allv_region_gam$aic,3)` vs AIC~original~: `r round(allv_rep_gam$aic, 3)`). The smooth for region is significant, as seen in the model details above. The deviance explained by the original model was `r 1-round(allv_rep_gam$deviance/allv_rep_gam$null.deviance,3)`.
 
-# Strict Zoonoses GAM
+## Strict Zoonoses GAM
 ```{r strictz-region}
 # Strict Zoonoses
 strictz_dat <- strictz_dat %>%
@@ -594,11 +611,19 @@ sz_region_gam <- gam(NSharedWithHoSa_strict ~ s(hDiseaseZACitesLn, bs = "tp", k 
       s(UrbRurPopRatioChg, bs = "tp", k = 7) + offset(LnTotNumVirus), poisson, strictz_dat, select = TRUE)
 
 summary(sz_region_gam)
+
+get_relative_contribs(sz_rep_gam) %>% kable(caption = "Strict Zoonoses: Original Model")
+
+get_relative_contribs(sz_region_gam) %>% kable(caption = "Strict Zoonoses: Region Model")
+
+
 ```
+  
+  
 Adding zoogeographical region as a random effect to our best-fit Strict Zoonoses GAM significantly improves the model (AIC~region~: `r round(sz_region_gam$aic,3)` vs AIC~original~: `r round(sz_rep_gam$aic, 3)`). The smooth for region is significant, as seen in the model details above. The deviance explained by the original model was `r 1-round(sz_rep_gam$deviance/sz_rep_gam$null.deviance,3)`.
 
 
-#Strict Viruses GAM
+##Strict Viruses GAM
 ```{r strictv-region}
 strictv_dat <- strictv_dat %>%
   mutate(zg_region = as.factor(mam_upgma_))
@@ -619,7 +644,13 @@ strictv_region_gam <- gam(TotVirusPerHost_strict ~ s(hDiseaseZACitesLn, bs = "cs
 
 summary(strictv_region_gam)
 
+get_relative_contribs(strictv_rep_gam) %>% kable(caption = "Strict Viruses: Original Model")
+
+get_relative_contribs(strictv_region_gam) %>% kable(caption = "Strict Viruses: Region Model")
+
 ```
+  
+  
 Adding zoogeographical region as a random effect to our best-fit Strict Viruses GAM significantly improves the model (AIC~region~: `r round(strictv_region_gam$aic,3)` vs AIC~original~: `r round(strictv_rep_gam$aic, 3)`). The smooth for region is significant, as seen in the model details above. The deviance explained by the original model was `r 1-round(strictv_rep_gam$deviance/strictv_rep_gam$null.deviance,3)`.
 
 

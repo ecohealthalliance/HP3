@@ -250,6 +250,81 @@ For the *Strict Zoonoses* model the evidence is more equivocal, with 8 substanti
 ## All Zoonoses GAM
 
 
+```
+## 
+## Family: poisson 
+## Link function: log 
+## 
+## Formula:
+## NSharedWithHoSa ~ s(hAllZACitesLn, bs = "tp", k = 7) + s(hHuntedIUCN, 
+##     bs = "re") + s(hOrderCETARTIODACTYLA, bs = "re") + s(hOrderCHIROPTERA, 
+##     bs = "re") + s(hOrderDIPROTODONTIA, bs = "re") + s(hOrderPERAMELEMORPHIA, 
+##     bs = "re") + s(hOrderPERISSODACTYLA, bs = "re") + s(zg_region, 
+##     bs = "re") + s(hOrderSCANDENTIA, bs = "re") + s(PdHoSa.cbCst, 
+##     bs = "tp", k = 7) + s(UrbRurPopRatioLn, bs = "tp", k = 7) + 
+##     offset(LnTotNumVirus)
+## 
+## Parametric coefficients:
+##             Estimate Std. Error z value Pr(>|z|)    
+## (Intercept) -0.34123    0.03973  -8.588   <2e-16 ***
+## ---
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+## 
+## Approximate significance of smooth terms:
+##                              edf Ref.df Chi.sq  p-value    
+## s(hAllZACitesLn)         1.51208      6  7.628 0.009189 ** 
+## s(hHuntedIUCN)           0.23250      1  0.391 0.205630    
+## s(hOrderCETARTIODACTYLA) 0.88970      1 26.937 9.05e-08 ***
+## s(hOrderCHIROPTERA)      0.71246      1  4.448 0.016087 *  
+## s(hOrderDIPROTODONTIA)   0.52135      1  0.997 0.167200    
+## s(hOrderPERAMELEMORPHIA) 0.78000      1  0.760 0.323730    
+## s(hOrderPERISSODACTYLA)  0.74609      1  3.026 0.044467 *  
+## s(zg_region)             0.00017     30  0.000 0.882367    
+## s(hOrderSCANDENTIA)      0.78404      1  0.811 0.309186    
+## s(PdHoSa.cbCst)          1.97262      6 14.588 0.000634 ***
+## s(UrbRurPopRatioLn)      1.25644      6 10.284 0.001812 ** 
+## ---
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+## 
+## R-sq.(adj) =  0.893   Deviance explained = 33.7%
+## UBRE = -0.60137  Scale est. = 1         n = 584
+```
+
+
+
+Table: All Zoonoses: Original Model
+
+term                     rel_deviance_explained
+----------------------  -----------------------
+hAllZACitesLn                         0.1078137
+hHuntedIUCN                           0.0074656
+hOrderCETARTIODACTYLA                 0.3453714
+hOrderCHIROPTERA                      0.0591182
+hOrderDIPROTODONTIA                   0.0223696
+hOrderPERAMELEMORPHIA                 0.0458438
+hOrderPERISSODACTYLA                  0.0555464
+hOrderSCANDENTIA                      0.0482336
+PdHoSa.cbCst                          0.1869414
+UrbRurPopRatioLn                      0.1212965
+
+
+Table: All Zoonoses: Region Model
+
+term                     rel_deviance_explained
+----------------------  -----------------------
+hAllZACitesLn                         0.1078140
+hHuntedIUCN                           0.0074651
+hOrderCETARTIODACTYLA                 0.3453724
+hOrderCHIROPTERA                      0.0591187
+hOrderDIPROTODONTIA                   0.0223696
+hOrderPERAMELEMORPHIA                 0.0458440
+hOrderPERISSODACTYLA                  0.0555464
+zg_region                             0.0000023
+hOrderSCANDENTIA                      0.0482336
+PdHoSa.cbCst                          0.1869400
+UrbRurPopRatioLn                      0.1212939
+  
+  
 Adding zoogeographical region as a random effect to our best-fit All Zoonoses GAM does not improve the model (AIC~region~: 1517.584 vs AIC~original~: 1517.583); the effective degrees of freedom for the region smooth is very low (1.7\times 10^{-4}), which supports removing the region variable from the All Zoonoses GAM.
   
 ## All Viruses GAM  
@@ -292,9 +367,46 @@ Adding zoogeographical region as a random effect to our best-fit All Zoonoses GA
 ## R-sq.(adj) =  0.518   Deviance explained = 52.5%
 ## UBRE = 0.31343  Scale est. = 1         n = 576
 ```
+
+
+
+Table: All Viruses: Original Model
+
+term                     rel_deviance_explained
+----------------------  -----------------------
+hDiseaseZACitesLn                     0.6481007
+hMassGramsPVR                         0.0190962
+hOrderCETARTIODACTYLA                 0.0185942
+hOrderCHIROPTERA                      0.0994140
+hOrderEULIPOTYPHLA                    0.0108464
+hOrderPERISSODACTYLA                  0.0141255
+hOrderPRIMATES                        0.0252128
+hOrderRODENTIA                        0.0479167
+LnAreaHost                            0.0158097
+S20                                   0.1008838
+
+
+
+Table: All Viruses: Region Model
+
+term                     rel_deviance_explained
+----------------------  -----------------------
+hDiseaseZACitesLn                     0.6512018
+hMassGramsPVR                         0.0206634
+hOrderCETARTIODACTYLA                 0.0112397
+hOrderCHIROPTERA                      0.1174452
+hOrderEULIPOTYPHLA                    0.0071505
+hOrderPERISSODACTYLA                  0.0147072
+hOrderPRIMATES                        0.0195596
+hOrderRODENTIA                        0.0497665
+LnAreaHost                            0.0111527
+zg_region                             0.0878964
+S20                                   0.0092169
+  
+  
 Adding zoogeographical region as a random effect to our best-fit All Viruses GAM significantly improves the model (AIC~region~: 2301.891 vs AIC~original~: 2330.176). The smooth for region is significant, as seen in the model details above. The deviance explained by the original model was 0.492.
 
-# Strict Zoonoses GAM
+## Strict Zoonoses GAM
 
 ```
 ## 
@@ -335,10 +447,47 @@ Adding zoogeographical region as a random effect to our best-fit All Viruses GAM
 ## R-sq.(adj) =  0.692   Deviance explained = 28.6%
 ## UBRE = -0.17821  Scale est. = 1         n = 576
 ```
+
+
+
+Table: Strict Zoonoses: Original Model
+
+term                     rel_deviance_explained
+----------------------  -----------------------
+hDiseaseZACitesLn                     0.0376082
+hMassGramsPVR                         0.0112017
+hOrderCETARTIODACTYLA                 0.2801874
+hOrderDIPROTODONTIA                   0.0275007
+hOrderLAGOMORPHA                      0.0088117
+hOrderPERISSODACTYLA                  0.0499548
+hOrderPRIMATES                        0.0010121
+HumPopDensLnChg                       0.0434312
+PdHoSa.cbCst                          0.3447580
+UrbRurPopRatioChg                     0.1955343
+
+
+
+Table: Strict Zoonoses: Region Model
+
+term                     rel_deviance_explained
+----------------------  -----------------------
+hDiseaseZACitesLn                     0.0199144
+hMassGramsPVR                         0.0190846
+hOrderCETARTIODACTYLA                 0.2366562
+hOrderDIPROTODONTIA                   0.0347912
+hOrderLAGOMORPHA                      0.0049198
+zg_region                             0.2506387
+hOrderPERISSODACTYLA                  0.0394316
+hOrderPRIMATES                        0.0105020
+HumPopDensLnChg                       0.0011502
+PdHoSa.cbCst                          0.2243002
+UrbRurPopRatioChg                     0.1586111
+  
+  
 Adding zoogeographical region as a random effect to our best-fit Strict Zoonoses GAM significantly improves the model (AIC~region~: 1080.419 vs AIC~original~: 1092.285). The smooth for region is significant, as seen in the model details above. The deviance explained by the original model was 0.236.
 
 
-#Strict Viruses GAM
+##Strict Viruses GAM
 
 ```
 ## 
@@ -380,6 +529,45 @@ Adding zoogeographical region as a random effect to our best-fit Strict Zoonoses
 ## R-sq.(adj) =  0.422   Deviance explained = 39.9%
 ## UBRE = 0.33243  Scale est. = 1         n = 575
 ```
+
+
+
+Table: Strict Viruses: Original Model
+
+term                     rel_deviance_explained
+----------------------  -----------------------
+hDiseaseZACitesLn                     0.5363064
+hMassGramsPVR                         0.0276347
+hOrderCHIROPTERA                      0.1223286
+hOrderCINGULATA                       0.0056323
+hOrderEULIPOTYPHLA                    0.0037040
+hOrderPERAMELEMORPHIA                 0.0036182
+hOrderPRIMATES                        0.1178037
+hOrderRODENTIA                        0.1257924
+hOrderSCANDENTIA                      0.0028642
+LnAreaHost                            0.0152701
+S20                                   0.0390455
+
+
+
+Table: Strict Viruses: Region Model
+
+term                     rel_deviance_explained
+----------------------  -----------------------
+hDiseaseZACitesLn                     0.4891541
+hMassGramsPVR                         0.0247310
+hOrderCHIROPTERA                      0.1218755
+hOrderCINGULATA                       0.0047543
+hOrderEULIPOTYPHLA                    0.0041093
+hOrderPERAMELEMORPHIA                 0.0044547
+hOrderPRIMATES                        0.1061770
+zg_region                             0.1151963
+hOrderRODENTIA                        0.1177081
+hOrderSCANDENTIA                      0.0039317
+LnAreaHost                            0.0000002
+S20                                   0.0079079
+  
+  
 Adding zoogeographical region as a random effect to our best-fit Strict Viruses GAM significantly improves the model (AIC~region~: 1703.647 vs AIC~original~: 1730.995). The smooth for region is significant, as seen in the model details above. The deviance explained by the original model was 0.358.
 
 

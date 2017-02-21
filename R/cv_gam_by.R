@@ -41,3 +41,23 @@ cv_gam_each_zg<- function(model, data, region){
 
 
 
+cv_get_zg_preds <- function(model, data, region){
+  data <- filter_down(model,data, "mam_upgma_")
+  response_var <- names(model$model)[attributes(terms(model))$response]
+  regional <- filter(data, mam_upgma_ == region)
+  world <- filter(data, mam_upgma_ != region)
+  zero_terms = names(world)[map_lgl(world, ~length(unique(.x)) == 1)]
+  new_formula = rm_terms(model, zero_terms)
+  new_model = gam(formula=as.formula(new_formula), data = world, family=model$family, select = TRUE)
+  preds = as.vector(predict(new_model, newdata = regional, type="response"))
+  actuals = regional[, response_var]
+  diffs = actuals - preds
+  pred_details <- data.frame(name = regional$hHostNameFinal, predicted = preds, observed = actuals, diff =diffs)
+  directional = mean(diffs)
+  mean_diff = abs(mean(diffs))
+  rand_diff = abs(replicate(100000, mean(sample(c(-1,1), length(preds), replace=TRUE)*diffs)))
+  perm_p = sum(rand_diff > mean_diff)/100000
+  perm_p_adj = stats::p.adjust(perm_p, method="none")
+  return(pred_details)
+}
+

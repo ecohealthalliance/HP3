@@ -79,7 +79,7 @@ sp_rng_lookup <- left_join(zgm, region_names, by = c("mam_upgma_" = "fold")) %>%
 
 ```
 
-# Zoonoses GAM - All Associations
+## Zoonoses GAM - All Associations
 
 ```{r all-zoo, cache=TRUE}
 data_set = hosts %>% 
@@ -137,66 +137,20 @@ results %>% arrange(fold) %>%
   filter(n_validate > 10, p_value < 0.05) %>%
   select(name, n_fit, n_validate, p_value, mean_diff) %>%
   rename(Region = name, `Observations Fit` = n_fit, `Observations Held Out` = n_validate, 
-         `P-value` = p_value, `Mean Prediction Difference` = mean_diff) %>%
+         `P-value` = p_value, `Mean Prediction Difference (Number of Zoonoses)` = mean_diff) %>%
   kable(caption = "Biased Predictions Regions (n > 10)", digits = 4)
 
 results %>% arrange(fold) %>%
   filter(n_validate > 10, p_value >= 0.05) %>%
   select(name, n_fit, n_validate, p_value, mean_diff) %>%
   rename(Region = name, `Observations Fit` = n_fit, `Observations Held Out` = n_validate, 
-         `P-value` = p_value, `Mean Prediction Difference` = mean_diff) %>%
+         `P-value` = p_value, `Mean Prediction Difference (Number of Zoonoses)` = mean_diff) %>%
   kable(caption = "Unbiased Prediction Regions (n > 10)", digits = 4)
 
 ```
 
-## Biased Region Details -- Zoonoses GAM: 
 
-### Southeastern South America:
-```{r se_sa, cache = TRUE}
-
-create_pred_df <- function(model, data, region){
-  r <- cv_get_zg_preds(model, data, region) %>%
-    left_join(host_names, by = c("name" = "hHostNameFinal"))
-  display_df <- r %>%
-    mutate(species = str_replace(name, "_", " ")) %>%
-    mutate(absdiff = abs(diff)) %>%
-    arrange(desc(absdiff)) %>%
-    mutate(predicted = round(predicted,3), observed = round(observed,3), diff = round(diff,3)) %>%
-    select(`Common Name` = Common_names_Eng, Species = species, `Predicted Zoonoses` = predicted, `Observed Zoonoses` = observed, `Difference Between Observed and Predicted` = diff)
-  return(display_df)
-}
-
-se_sa <- create_pred_df(allz_gam, joined_dat, 10)
-se_sa[13,1] <- "Paraguayan rice rat"
-datatable(se_sa)
-```
-
-### Central African Band:
-```{r cab, cache = TRUE}
-
-cab <- create_pred_df(allz_gam, joined_dat, 14)
-cab[1,1] <- "Kemp's Gerbil"
-datatable(cab)
-```
-
-### Northern Eurussia:
-```{r noruss, cache = TRUE}
-
-noruss <- create_pred_df(allz_gam, joined_dat, 25)
-
-datatable(noruss)
-```
-
-### Southeastern China:
-```{r se_china, cache = TRUE}
-
-se_china <- create_pred_df(allz_gam, joined_dat, 27)
-se_china[5,1] <- "Francois's Langur"
-datatable(se_china)
-```
-
-
-# All Viruses GAM - All Associations
+## All Viruses GAM - All Associations
 
 ```{r all-viruses, cache = TRUE}
 ###### ALL VIRUSES
@@ -244,63 +198,21 @@ vresults %>% arrange(fold) %>%
   filter(n_validate > 10, p_value < 0.05) %>%
   select(name, n_fit, n_validate, p_value, mean_diff) %>%
   rename(Region = name, `Observations Fit` = n_fit, `Observations Held Out` = n_validate, 
-         `P-value` = p_value, `Mean Prediction Difference` = mean_diff) %>%
+         `P-value` = p_value, `Mean Prediction Difference (Number of Viruses)` = mean_diff) %>%
   kable(caption = "Biased Predictions Regions (n > 10)", digits = 4)
 
 vresults %>% arrange(fold) %>%
   filter(n_validate > 10, p_value >= 0.05) %>%
   select(name, n_fit, n_validate, p_value, mean_diff) %>%
   rename(Region = name, `Observations Fit` = n_fit, `Observations Held Out` = n_validate, 
-         `P-value` = p_value, `Mean Prediction Difference` = mean_diff) %>%
+         `P-value` = p_value, `Mean Prediction Difference (Number of Viruses)` = mean_diff) %>%
   kable(caption = "Unbiased Prediction Regions (n > 10)", digits = 4)
 
 ```
 
-## Biased Region Details -- All Viruses GAM: 
 
-### Central African Band:
-```{r cab2, cache = TRUE}
-create_pred_df_v <- function(model, data, region){
-  r <- cv_get_zg_preds(model, data, region) %>%
-    left_join(host_names, by = c("name" = "hHostNameFinal"))
-  display_df <- r %>%
-    mutate(species = str_replace(name, "_", " ")) %>%
-    mutate(absdiff = abs(diff)) %>%
-    arrange(desc(absdiff)) %>%
-    mutate(predicted = round(predicted,3), observed = round(observed,3), diff = round(diff,3)) %>%
-    select(`Common Name` = Common_names_Eng, Species = species, `Predicted Viruses` = predicted, `Observed Viruses` = observed, `Difference Between Observed and Predicted` = diff)
-  return(display_df)
-}
-cab2 <- create_pred_df_v(allv_gam, temp, 14)
 
-datatable(cab2)
-```
-
-### Europe:
-```{r eur, cache = TRUE}
-
-eur <- create_pred_df_v(allv_gam, temp, 15)
-eur[31,1] <- "Montane Water Vole"
-datatable(eur)
-```
-
-### South Africa:
-```{r safrica, cache = TRUE}
-
-safrica <- create_pred_df_v(allv_gam, temp, 16)
-safrica[23,1] <- "Black-backed Jackal"
-datatable(safrica)
-```
-
-### Southeastern China:
-```{r se_china2, cache = TRUE}
-
-se_china2 <- create_pred_df_v(allv_gam, temp, 27)
-se_china2[10,1] <- "Francois's Langur"
-datatable(se_china2)
-```
-
-# Zoonoses GAM - Strict Associations
+## Zoonoses GAM - Strict Associations
 
 ```{r strict-zoo, cache = TRUE}
 model_list <- readRDS(P("model_fitting/top_models.rds"))
@@ -350,7 +262,7 @@ szresults %>% arrange(fold) %>%
   filter(n_validate > 10, p_value < 0.05) %>%
   select(name, n_fit, n_validate, p_value, mean_diff) %>%
   rename(Region = name, `Observations Fit` = n_fit, `Observations Held Out` = n_validate, 
-         `P-value` = p_value, `Mean Prediction Difference` = mean_diff) %>%
+         `P-value` = p_value, `Mean Prediction Difference (Number of Zoonoses)` = mean_diff) %>%
   kable(caption = "Biased Predictions Regions (n > 10)", digits = 4)
 ```
 
@@ -359,72 +271,13 @@ szresults %>% arrange(fold) %>%
   filter(n_validate > 10, p_value >= 0.05) %>%
   select(name, n_fit, n_validate, p_value, mean_diff) %>%
   rename(Region = name, `Observations Fit` = n_fit, `Observations Held Out` = n_validate, 
-         `P-value` = p_value, `Mean Prediction Difference` = mean_diff) %>%
+         `P-value` = p_value, `Mean Prediction Difference (Number of Zoonoses)` = mean_diff) %>%
   kable(caption = "Unbiased Prediction Regions (n > 10)", digits = 4)
 
 ```
 
-## Biased Region Details -- Strict Zoonoses GAM: 
 
-### Northern America:
-```{r na, cache = TRUE}
-na <- create_pred_df(strictz_gam, temp, 1)
-
-datatable(na)
-```
-
-### Southern Central America:
-```{r sca, cache = TRUE}
-sca <- create_pred_df(strictz_gam, temp, 5)
-
-datatable(sca)
-```
-
-### Northern South America:
-```{r nsa, cache = TRUE}
-nsa <- create_pred_df(strictz_gam, temp, 9)
-nsa[17,1] <- "Large-headed rice rat"
-nsa[80,1] <- "Southern Long-nosed bat"
-datatable(nsa)
-```
-
-### Southeastern South America:
-```{r ssa, cache = TRUE}
-ssa <- create_pred_df(strictz_gam, temp, 10)
-
-datatable(ssa)
-```
-
-### West Central Africa:
-```{r wca, cache = TRUE}
-wca <- create_pred_df(strictz_gam, temp, 13)
-
-datatable(wca)
-```
-
-### Central African Band:
-```{r cab3, cache = TRUE}
-cab3 <- create_pred_df(strictz_gam, temp, 14)
-cab3[12,1] <- "Kemp's Gerbil"
-datatable(cab3)
-```
-
-### Northern Eurussia:
-```{r neurussia, cache = TRUE}
-neurussia <- create_pred_df(strictz_gam, temp, 25)
-
-datatable(neurussia)
-```
-
-### Southeast Asia:
-```{r se_asia, cache = TRUE}
-se_asia <- create_pred_df(strictz_gam, temp, 26)
-
-datatable(se_asia)
-```
-
-
-# All Viruses GAM - Strict Associations
+## All Viruses GAM - Strict Associations
 
 ```{r strict-viruses, cache = TRUE}
 strictv_gam <- model_list$all_viruses_strict
@@ -470,61 +323,30 @@ svresults %>% arrange(fold) %>%
   filter(n_validate > 10, p_value < 0.05) %>%
   select(name, n_fit, n_validate, p_value, mean_diff) %>%
   rename(Region = name, `Observations Fit` = n_fit, `Observations Held Out` = n_validate, 
-         `P-value` = p_value, `Mean Prediction Difference` = mean_diff) %>%
+         `P-value` = p_value, `Mean Prediction Difference (Number of Viruses)` = mean_diff) %>%
   kable(caption = "Biased Predictions Regions (n > 10)", digits = 4)
 
 svresults %>% arrange(fold) %>%
   filter(n_validate > 10, p_value >= 0.05) %>%
   select(name, n_fit, n_validate, p_value, mean_diff) %>%
   rename(Region = name, `Observations Fit` = n_fit, `Observations Held Out` = n_validate, 
-         `P-value` = p_value, `Mean Prediction Difference` = mean_diff) %>%
+         `P-value` = p_value, `Mean Prediction Difference (Number of Viruses)` = mean_diff) %>%
   kable(caption = "Unbiased Prediction Regions (n > 10)", digits = 4)
 ```
 
-## Biased Region Details -- Strict Viruses:
+##Cross-validation Interpretation
+The reviewer articulated concerns about our models' ability to make out-of-sample predictions, arguing that cross-validation based on random folds does not adequately address this issue. Accordingly, we performed a non-random cross-validation using zoogeography to determine folds. The results of this procedure show that for the *All Zoonoses*, *All Viruses*, and *Strict Viruses* models, most regions do not show evidence of bias (that is, a systematic over- or under-prediction of model outcome greater than what one would expect due to chance). For each of these three models, only 4-5 substantial (n > 10) folds show evidence of bias, while 10-11 substantial folds do not. The mean size of these prediction differences are measured in units of each model outcome: for the All Zoonoses GAM in Zoonoses and in the Viruses GAMs in Viruses. It is important to note that the significance tests in this type of cross-validation are subject to multiple comparison concerns, just like those in the random cross-validation, so the occasional significant finding should not be over-interpreted. Nevertheless, to be conservative in the performance evaluation of our model we have made no correction for the many comparisons being made at the 5% significance level. 
 
-### Northern America:
-```{r na_sv, cache = TRUE}
-na_sv <- create_pred_df_v(strictv_gam, temp, 1)
+For the *Strict Zoonoses* model the evidence is more equivocal, with 8 substantial regions that show evidence of bias and 7 substantial regions which show no evidence of bias. This suggests that there might be some unaccounted-for association between zoogeographical region and number of strictly-defined zoonoses present in animals. We took a closer look at each biased region for each model, examining the over- or under-prediction patterns on a species-by-species level; however, no clear interpretable pattern (besides their region) was evident. 
 
-datatable(na_sv)
-```
-
-### Southern Central America:
-```{r sca_sv, cache = TRUE}
-sca_sv <- create_pred_df_v(strictv_gam, temp, 5)
-
-datatable(sca_sv)
-```
-
-### West Central Africa:
-```{r wca_sv, cache = TRUE}
-wca_sv <- create_pred_df_v(strictv_gam, temp, 13)
-
-datatable(wca_sv)
-```
-
-### Central African Band:
-```{r cab_sv, cache = TRUE}
-cab_sv <- create_pred_df_v(strictv_gam, temp, 14)
-cab_sv[4,1] <- "Kemp's Gerbil"
-datatable(cab_sv)
-```
-
-### Southeastern China:
-```{r sec_sv, cache = TRUE}
-sec_sv <- create_pred_df_v(strictv_gam, temp, 27)
-sec_sv[13,1] <- "Francois's Langur"
-datatable(sec_sv)
-```
-
-#Cross-validation Results
-The reviewer articulated concerns about our models' ability to make out-of-sample predictions, arguing that cross-validation based on random folds does not adequately address this issue. This analysis suggests that our *All Zoonoses*, *All Viruses*, and *Strict Viruses* models are fairly robust to a systematic cross-validation that creates folds based on geographical/phylogenetic region ~ a non-random method to approximate out-of-sample testing. For each of these three models, only 4-5 substantial (n > 10) folds show evidence of bias, while 10-11 substantial folds are well-predicted. 
-
-For the *Strict Zoonoses* model the evidence is more equivocal, with 8 substantial regions that show evidence of bias and 7 substantial regions which are well-predicted. This suggests that there might be some association between zoogeographical region and number of strictly-defined zoonoses present in animals. In order to further explore possibility of an association between region and our model outcomes, we included region as a random effect variable in each of our models below
+The presence of biased regions across the models suggested the possibility that there is some association between zoogeographical region and our outcomes of interest, but the cross-validation procedure is not the appropriate way to assess this relationship. To that end, we added zoogeographical region as a categorical random effect to the best-fit models for each of our four outcomes.
 
 #Region as Random Effect
+
+Below we add zoographical region as a categorical random effect to each of our best-fit GAMs. The model fit and variable relative deviance explained comparisons for each model follow:
+
 ## All Zoonoses GAM
+Adding zoogeographical region as a categorical random effect to our best-fit All Zoonoses GAM does not improve the model fit, as seen in the tables below:
 
 ```{r non-sig-re}
 #All zoonoses
@@ -543,23 +365,32 @@ allz_rep_gam <- gam(NSharedWithHoSa ~ s(hAllZACitesLn, bs = "tp", k = 7) + s(hHu
                        s(hOrderSCANDENTIA, bs = "re") + s(PdHoSa.cbCst, bs = "tp", k = 7) + 
                        s(UrbRurPopRatioLn, bs = "tp", k = 7) + offset(LnTotNumVirus), poisson, allz_dat, select=TRUE)
 
-summary(allz_region_gam)
+AICs <- c(allz_rep_gam$aic, allz_region_gam$aic)
+`Deviance Explained` <- c(1-allz_rep_gam$deviance/allz_rep_gam$null.deviance, 1-allz_region_gam$deviance/allz_region_gam$null.deviance )
 
+mc <- t(tibble(AICs,`Deviance Explained`))
+colnames(mc) <- c("Original Model", "Region Model")
 
-get_relative_contribs(allz_rep_gam) %>% kable(caption = "All Zoonoses: Original Model")
-```
+kable(mc, caption = "All Zoonoses Model Comparison", digits =4)
 
-```{r kable-allz-contribs}
-get_relative_contribs(allz_region_gam) %>% kable(caption = "All Zoonoses: Region Model")
+allz_relo <- get_relative_contribs(allz_rep_gam) %>% 
+  rename(original_rel = rel_deviance_explained)
 
+allz_relg <- get_relative_contribs(allz_region_gam) %>% 
+  rename(region_rel = rel_deviance_explained)
+  
+allz_com <- allz_relo %>%
+  full_join(allz_relg, by = "term") 
 
+allz_com %>% rename(`Term` = term, `Original Model Relative Deviance Explained` = original_rel, `Region Model Relative Deviance Explained` = region_rel) %>%
+  kable(caption = "All Zoonoses: Original vs. Region Model Relative Deviance Explained", digits = 4)
 
 ```
   
-  
-Adding zoogeographical region as a random effect to our best-fit All Zoonoses GAM does not improve the model (AIC~region~: `r round(allz_region_gam$aic,3)` vs AIC~original~: `r round(allz_rep_gam$aic,3)`); the effective degrees of freedom for the region smooth is very low (`r round(summary(allz_region_gam)$edf[8],5)`), which supports removing the region variable from the All Zoonoses GAM.
   
 ## All Viruses GAM  
+Adding zoogeographical region as a categorical random effect to our best-fit All Viruses GAM improves the model, as seen by the decrease in AIC and the increase in deviance explained.
+
 ```{r allv-region}
 #All viruses
 allv_dat <- allv_dat %>%
@@ -577,19 +408,33 @@ allv_region_gam <- gam(TotVirusPerHost ~  s(hDiseaseZACitesLn, bs = "cs", k = 7)
     s(hOrderRODENTIA, bs = "re") + s(LnAreaHost, bs = "cs", k = 7) + s(zg_region, bs = "re") +
     s(S20, bs = "cs", k = 7), poisson, allv_dat, select = TRUE)
 
-summary(allv_region_gam)
+AICs <- c(allv_rep_gam$aic, allv_region_gam$aic)
+`Deviance Explained` <- c(1-allv_rep_gam$deviance/allv_rep_gam$null.deviance, 1-allv_region_gam$deviance/allv_region_gam$null.deviance )
 
-get_relative_contribs(allv_rep_gam) %>% kable(caption = "All Viruses: Original Model")
+mc <- t(tibble(AICs,`Deviance Explained`))
+colnames(mc) <- c("Original Model", "Region Model")
 
-get_relative_contribs(allv_region_gam) %>% kable(caption = "All Viruses: Region Model")
+kable(mc, caption = "All Viruses Model Comparison", digits =4)
+
+allv_relo <- get_relative_contribs(allv_rep_gam) %>% 
+  rename(original_rel = rel_deviance_explained)
+
+allv_relg <- get_relative_contribs(allv_region_gam) %>% 
+  rename(region_rel = rel_deviance_explained)
+  
+allv_com <- allv_relo %>%
+  full_join(allv_relg, by = "term") 
+
+allv_com %>% rename(`Term` = term, `Original Model Relative Deviance Explained` = original_rel, `Region Model Relative Deviance Explained` = region_rel) %>%
+  kable(caption = "All Viruses: Original vs. Region Model Relative Deviance Explained", digits = 4)
 
 
 ```
   
-  
-Adding zoogeographical region as a random effect to our best-fit All Viruses GAM significantly improves the model (AIC~region~: `r round(allv_region_gam$aic,3)` vs AIC~original~: `r round(allv_rep_gam$aic, 3)`). The smooth for region is significant, as seen in the model details above. The deviance explained by the original model was `r 1-round(allv_rep_gam$deviance/allv_rep_gam$null.deviance,3)`.
 
 ## Strict Zoonoses GAM
+Adding zoogeographical region as a categorical random effect to our best-fit Strict Zoonoses GAM improves the model, as seen by the decrease in AIC and the increase in deviance explained.
+
 ```{r strictz-region}
 # Strict Zoonoses
 strictz_dat <- strictz_dat %>%
@@ -610,20 +455,33 @@ sz_region_gam <- gam(NSharedWithHoSa_strict ~ s(hDiseaseZACitesLn, bs = "tp", k 
       s(HumPopDensLnChg, bs = "tp", k = 7) + s(PdHoSa.cbCst, bs = "tp", k = 7) + 
       s(UrbRurPopRatioChg, bs = "tp", k = 7) + offset(LnTotNumVirus), poisson, strictz_dat, select = TRUE)
 
-summary(sz_region_gam)
+AICs <- c(sz_rep_gam$aic, sz_region_gam$aic)
+`Deviance Explained` <- c(1-sz_rep_gam$deviance/sz_rep_gam$null.deviance, 1-sz_region_gam$deviance/sz_region_gam$null.deviance )
 
-get_relative_contribs(sz_rep_gam) %>% kable(caption = "Strict Zoonoses: Original Model")
+mc <- t(tibble(AICs,`Deviance Explained`))
+colnames(mc) <- c("Original Model", "Region Model")
 
-get_relative_contribs(sz_region_gam) %>% kable(caption = "Strict Zoonoses: Region Model")
+kable(mc, caption = "Strict Zoonoses Model Comparison", digits =4)
+
+sz_relo <- get_relative_contribs(sz_rep_gam) %>% 
+  rename(original_rel = rel_deviance_explained)
+
+sz_relg <- get_relative_contribs(sz_region_gam) %>% 
+  rename(region_rel = rel_deviance_explained)
+  
+sz_com <- sz_relo %>%
+  full_join(sz_relg, by = "term") 
+
+sz_com %>% rename(`Term` = term, `Original Model Relative Deviance Explained` = original_rel, `Region Model Relative Deviance Explained` = region_rel) %>%
+  kable(caption = "Strict Zoonoses: Original vs. Region Model Relative Deviance Explained", digits = 4)
 
 
 ```
   
-  
-Adding zoogeographical region as a random effect to our best-fit Strict Zoonoses GAM significantly improves the model (AIC~region~: `r round(sz_region_gam$aic,3)` vs AIC~original~: `r round(sz_rep_gam$aic, 3)`). The smooth for region is significant, as seen in the model details above. The deviance explained by the original model was `r 1-round(sz_rep_gam$deviance/sz_rep_gam$null.deviance,3)`.
-
 
 ##Strict Viruses GAM
+Adding zoogeographical region as a categorical random effect to our best-fit Strict Viruses GAM improves the model, as seen by the decrease in AIC and the increase in deviance explained.
+
 ```{r strictv-region}
 strictv_dat <- strictv_dat %>%
   mutate(zg_region = as.factor(mam_upgma_))
@@ -642,18 +500,36 @@ strictv_region_gam <- gam(TotVirusPerHost_strict ~ s(hDiseaseZACitesLn, bs = "cs
     s(hOrderRODENTIA, bs = "re") + s(hOrderSCANDENTIA, bs = "re") + 
     s(LnAreaHost, bs = "cs", k = 7) + s(S20, bs = "cs", k = 7), poisson, strictv_dat, select=TRUE)
 
-summary(strictv_region_gam)
 
-get_relative_contribs(strictv_rep_gam) %>% kable(caption = "Strict Viruses: Original Model")
+AICs <- c(strictv_rep_gam$aic, strictv_region_gam$aic)
+`Deviance Explained` <- c(1-strictv_rep_gam$deviance/strictv_rep_gam$null.deviance, 1-strictv_region_gam$deviance/strictv_region_gam$null.deviance )
 
-get_relative_contribs(strictv_region_gam) %>% kable(caption = "Strict Viruses: Region Model")
+mc <- t(tibble(AICs,`Deviance Explained`))
+colnames(mc) <- c("Original Model", "Region Model")
+
+kable(mc, caption = "Strict Viruses Model Comparison", digits =4)
+
+strictv_relo <- get_relative_contribs(strictv_rep_gam) %>% 
+  rename(original_rel = rel_deviance_explained)
+
+strictv_relg <- get_relative_contribs(strictv_region_gam) %>% 
+  rename(region_rel = rel_deviance_explained)
+  
+strictv_com <- strictv_relo %>%
+  full_join(strictv_relg, by = "term") 
+
+strictv_com %>% rename(`Term` = term, `Original Model Relative Deviance Explained` = original_rel, `Region Model Relative Deviance Explained` = region_rel) %>%
+  kable(caption = "Strict Viruses: Original vs. Region Model Relative Deviance Explained", digits = 4)
 
 ```
   
-  
-Adding zoogeographical region as a random effect to our best-fit Strict Viruses GAM significantly improves the model (AIC~region~: `r round(strictv_region_gam$aic,3)` vs AIC~original~: `r round(strictv_rep_gam$aic, 3)`). The smooth for region is significant, as seen in the model details above. The deviance explained by the original model was `r 1-round(strictv_rep_gam$deviance/strictv_rep_gam$null.deviance,3)`.
 
+## Random Effect Model Interpretation  
+For three of our best-fit GAMS (*All Viruses*, *Strict Zoonoses*, and *Strict Viruses*) the addition of zoogeographical region as a categorical random effect decreased the model AIC and increased the deviance explained by 3-5%. These results support the reviewer's suggestion that there might be a stronger relationship between geography and our outcomes of interest than was previously accounted for in these models. The *All Zoonoses* model, which is used to create the series of maps in the main manuscript, does not improve with the inclusion of zoogeographical region.
 
+Taking a closer look at the change in relative deviance explained when we add zoogeographical region, we see most of the variables with substantial decreases in deviance explained when region is included are closely connected to geography: LnAreaHost (host area), S20 (species range 20% overlap), HumPopDensLnChg (human population density change). This is not surprising, since the inclusion of another (likely non-independent) geographic variable might be expected to siphon away the relative effect of these variables, although over-interpreting the specific changes in deviance explained by competing terms is inappropriate. We might have more deeply investigated the details of this zoogeographical variable by separating out the effect of each region during our model selection process (as we did with taxonomic Order); however, we felt that the improved predictive power of a model using region-specific terms was offset by the decreased interpretability of these terms -- especially when compared to the pre-existing geographical variables, such as host area or overlapping species range. The association between variables like host range or human population density change and our outcomes of interest are interpretable in relevant, biologically plausible ways; in pursuing our goal to both predict and understand, we choose to trade off some gains in prediction for interpretability in the case of zoogeographical region. 
 
+# Conclusion
+The zoogeographical cross-validation procedure and the subsequent inclusion of region into our GAMs reveals that for the *All Viruses*, *Strict Zoonoses*, and *Strict Viruses* models, the addition of a region term would improve deviance explained by 3-5%. However, this modest increase in predictive power does come with some cost in interpretation, so we decided not to include zoogeographical region in our final models. 
 
-#Conclusions  
+It is evident that at the core of the reviewer's astute questions regarding these models is an important concern about the translation of GAM predictions, whose parameter estimates' uncertainty and deviance explained can be clearly stated or visualized, into layered raster maps, whose uncertainty is more difficult to convey to readers. This point is well-taken, and we do not wish to invite over-interpretation of the regions identified by our maps: they are a result of imperfect models that only explain a portion of deviance in the data. In order to more explicitly express this fact, we have included additional maps that illustate this uncertainty. 

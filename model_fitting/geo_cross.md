@@ -11,7 +11,7 @@ In order to meaningfully organize geographic areas, we utilized mammalian zoogeo
 
 
 
-# Zoonoses GAM - All Associations
+## Zoonoses GAM - All Associations
 
 ![](geo_cross_files/figure-html/all-zoo-1.png)<!-- -->
 
@@ -20,51 +20,33 @@ Dark green indicates unbiased regions, while dark red indicates regions with evi
 
 Table: Biased Predictions Regions (n > 10)
 
-Region                        Observations Fit   Observations Held Out   P-value   Mean Prediction Difference
----------------------------  -----------------  ----------------------  --------  ---------------------------
-Southeastern South America                 562                      22    0.0020                       0.2929
-Central African Band                       550                      34    0.0120                      -0.4762
-Northern Eurussia                          548                      36    0.0131                       0.3392
-Southeastern China                         569                      15    0.0000                       0.4007
+Region                        Observations Fit   Observations Held Out   P-value   Mean Prediction Difference (Number of Zoonoses)
+---------------------------  -----------------  ----------------------  --------  ------------------------------------------------
+Southeastern South America                 562                      22    0.0020                                            0.2929
+Central African Band                       550                      34    0.0120                                           -0.4762
+Northern Eurussia                          548                      36    0.0131                                            0.3392
+Southeastern China                         569                      15    0.0000                                            0.4007
 
 
 
 Table: Unbiased Prediction Regions (n > 10)
 
-Region                             Observations Fit   Observations Held Out   P-value   Mean Prediction Difference
---------------------------------  -----------------  ----------------------  --------  ---------------------------
-Northern America                                525                      59    0.9064                      -0.0134
-Southwestern North America                      563                      21    0.8563                      -0.0209
-Central / Eastern North America                 562                      22    0.1389                       0.2515
-Southern Central America                        567                      17    0.5767                       0.1131
-Northern South America                          485                      99    0.6268                      -0.0404
-West Central Africa                             551                      33    0.2802                       0.0999
-Europe                                          546                      38    0.0558                      -0.3289
-South Africa                                    523                      61    0.1907                      -0.1695
-India                                           563                      21    0.7440                      -0.0991
-Southeast Asia                                  550                      34    0.6887                      -0.0746
-Southern Australia                              573                      11    0.2839                      -0.2837
-
-## Biased Region Details -- Zoonoses GAM: 
-
-### Southeastern South America:
-<!--html_preserve--><div id="htmlwidget-17391fc7020939519dec" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-17391fc7020939519dec">{"x":{"filter":"none","data":[["1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20","21","22"],["South American Water Rat","Brazilian Free-tailed Bat, Mexican Free-tailed Bat","Black-footed Pygmy Rice Rat, Delta Pygmy Rice Rat","Coypu, Nutria","Azara's Grass Mouse","Yellow Pygmy Rice Rat","Brown Brocket, Gray Brocket","Small Vesper Mouse","Montane Akodont","Dark Bolo Mouse","Geoffroy's Marmoset, Geoffroy's Tufted-ear Marmoset, Geoffroys Tufted-ear Marmoset, White-faced Marmoset, White-fronted Marmoset","Large-headed Rice Rat","Paraguayan rice rat","Chacoan Pygmy Rice Rat","Lesser Grison","Golden-headed Lion Tamarin","Azara's Fox, Azaras Fox, Azara's Zorro, Pampas Fox","Ihering's Spiny Rat","Red Hocicudo","Fringed Fruit-eating Bat","Diminutive Serotine","Yellowish Myotis"],["Nectomys squamipes","Tadarida brasiliensis","Oligoryzomys nigripes","Myocastor coypus","Akodon azarae","Oligoryzomys flavescens","Mazama gouazoubira","Calomys laucha","Akodon montensis","Necromys obscurus","Callithrix geoffroyi","Hylaeamys laticeps","Sooretamys angouya","Oligoryzomys chacoensis","Galictis cuja","Leontopithecus chrysomelas","Pseudalopex gymnocercus","Trinomys iheringi","Oxymycterus rufus","Artibeus fimbriatus","Eptesicus diminutus","Myotis levis"],[4.674,3.898,3.241,2.285,2.457,2.462,0.432,1.682,1.684,3.309,0.715,3.734,3.224,0.778,0.784,0.792,0.799,0.827,0.855,0.907,1.007,1.006],[6,5,4,3,3,3,0,2,2,3,1,4,3,1,1,1,1,1,1,1,1,1],[1.326,1.102,0.759,0.715,0.543,0.538,-0.432,0.318,0.316,-0.309,0.285,0.266,-0.224,0.222,0.216,0.208,0.201,0.173,0.145,0.093,-0.007,-0.006]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> \u003c/th>\n      <th>Common Name\u003c/th>\n      <th>Species\u003c/th>\n      <th>Predicted Zoonoses\u003c/th>\n      <th>Observed Zoonoses\u003c/th>\n      <th>Difference Between Observed and Predicted\u003c/th>\n    \u003c/tr>\n  \u003c/thead>\n\u003c/table>","options":{"columnDefs":[{"className":"dt-right","targets":[3,4,5]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script><!--/html_preserve-->
-
-### Central African Band:
-<!--html_preserve--><div id="htmlwidget-91f849c623a02f06825a" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-91f849c623a02f06825a">{"x":{"filter":"none","data":[["1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20","21","22","23","24","25","26","27","28","29","30","31","32","33","34"],["Kemp's Gerbil","African Grass Rat","Natal Mastomys, Natal Multimammate Mouse","Angolan Free-tailed Bat","Spotted Hyaena","African Lion, Lion","Cape Warthog, Desert Warthog, Somali Warthog","Thomson's Gazelle","Green Monkey","Guinea Baboon","Green Monkey, Grivet Monkey, Malbrouk Monkey, Tantalus, Vervet Monkey","Egyptian Fruit Bat, Egyptian Rousette, EGYPTIAN ROUSETTE","Typical Lemniscomys, Typical Striped Grass Mouse","Somali Grass Rat","White-tailed Mongoose","Ethiopian Wolf, Simien Fox, Simien Jackal","Eloquent Horseshoe Bat","Gambian Epauletted Fruit Bat","Hamadryas Baboon, Sacred Baboon","Guinea Multimammate Mouse, Reddish-white Mastomys","Geoffroy's Ground Squirrel, Striped Ground Squirrel","Lesser Bushbaby, Lesser Galago, Northern Lesser Galago, Senegal Galago, Senegal Lesser Galago","Common Genet, Ibiza Common Genet, Ibiza Genet","Oribi","Peter's Dwarf Epauletted Fruit Bat","Anubis Baboon, Olive Baboon","Slender Mongoose","Lesser Kudu","Gelada Baboon","Aba Roundleaf Bat","Hubert's Mastomys, Huberts Mastomys","Grant's Gazelle","Waterbuck","Roan Antelope"],["Gerbilliscus kempi","Arvicanthis niloticus","Mastomys natalensis","Tadarida condylura","Crocuta crocuta","Panthera leo","Phacochoerus aethiopicus","Eudorcas thomsonii","Chlorocebus sabaeus","Papio papio","Chlorocebus aethiops","Rousettus aegyptiacus","Lemniscomys striatus","Arvicanthis neumanni","Ichneumia albicauda","Canis simensis","Rhinolophus eloquens","Epomophorus gambianus","Papio hamadryas","Mastomys erythroleucus","Xerus erythropus","Galago senegalensis","Genetta genetta","Ourebia ourebi","Micropteropus pusillus","Papio anubis","Herpestes sanguineus","Tragelaphus imberbis","Theropithecus gelada","Hipposideros abae","Mastomys huberti","Nanger granti","Kobus ellipsiprymnus","Hippotragus equinus"],[4.555,7.112,6.281,4.795,3.497,4.495,0.671,2.257,2.155,2.1,6.803,6.212,2.726,0.711,1.392,2.594,1.566,1.557,3.498,3.415,1.408,0.635,0.655,0.343,2.334,3.322,0.697,0.7,0.704,0.803,2.097,1.078,3.022,0.999],[1,4,4,3,2,3,2,1,1,3,6,7,2,0,2,2,1,1,4,3,1,1,1,0,2,3,1,1,1,1,2,1,3,1],[-3.555,-3.112,-2.281,-1.795,-1.497,-1.495,1.329,-1.257,-1.155,0.9,-0.803,0.788,-0.726,-0.711,0.608,-0.594,-0.566,-0.557,0.502,-0.415,-0.408,0.365,0.345,-0.343,-0.334,-0.322,0.303,0.3,0.296,0.197,-0.097,-0.078,-0.022,0.001]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> \u003c/th>\n      <th>Common Name\u003c/th>\n      <th>Species\u003c/th>\n      <th>Predicted Zoonoses\u003c/th>\n      <th>Observed Zoonoses\u003c/th>\n      <th>Difference Between Observed and Predicted\u003c/th>\n    \u003c/tr>\n  \u003c/thead>\n\u003c/table>","options":{"columnDefs":[{"className":"dt-right","targets":[3,4,5]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script><!--/html_preserve-->
-
-### Northern Eurussia:
-<!--html_preserve--><div id="htmlwidget-20793e2fa174e3a55134" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-20793e2fa174e3a55134">{"x":{"filter":"none","data":[["1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20","21","22","23","24","25","26","27","28","29","30","31","32","33","34","35","36"],["Striped Field Mouse","Cross Fox, Red Fox, Silver Fox","Brown Rat","Northern Red-backed Vole, RED VOLE","Racoon Dog","Bank Vole","Field Vole","Eurasian Lynx","Root Vole, Tundra Vole","Polar Bear","European Mink","Particoloured Bat","Narrow-headed Vole","Dzeren, Mongolian Gazelle","Siberian Chipmunk","Maximowicz's Vole","Black-bellied Hamster, Common Hamster","Gray Red-backed Vole, Grey Red-backed Vole, GREY-SIDED VOLE","Daubenton's Bat, Daubenton's Myotis","Eurasian Water Vole, European Water Vole, Water Vole","Arctic Wolf, Common Wolf, Gray Wolf, Grey Wolf, Mexican Wolf, Plains Wolf, Timber Wolf, Tundra Wolf, Wolf","Brown Bear, Grizzly Bear, Mexican Grizzly Bear","Common Otter, Eurasian Otter, European Otter, European River Otter, Old World Otter","Eurasian Beaver","Eurasian Harvest Mouse, Harvest Mouse","Common Shrew, Eurasian Shrew","Arctic Fox, Polar Fox","Korean Field Mouse","Long-tailed Ground Squirrel","Herb Field Mouse, Pygmy Field Mouse, Ural Field Mouse","Arctic Hare, Mountain Hare","Reed Vole","Pond Bat, Pond Myotis","Eurasian Red Squirrel, Red Squirrel","Big-footed Myotis","Asian Particolored Bat"],["Apodemus agrarius","Vulpes vulpes","Rattus norvegicus","Myodes rutilus","Nyctereutes procyonoides","Myodes glareolus","Microtus agrestis","Lynx lynx","Microtus oeconomus","Ursus maritimus","Mustela lutreola","Vespertilio murinus","Microtus gregalis","Procapra gutturosa","Tamias sibiricus","Microtus maximowiczii","Cricetus cricetus","Myodes rufocanus","Myotis daubentonii","Arvicola amphibius","Canis lupus","Ursus arctos","Lutra lutra","Castor fiber","Micromys minutus","Sorex araneus","Alopex lagopus","Apodemus peninsulae","Spermophilus undulatus","Apodemus uralensis","Lepus timidus","Microtus fortis","Myotis dasycneme","Sciurus vulgaris","Myotis macrodactylus","Vespertilio sinensis"],[2.824,3.096,11.594,3.498,1.693,10.859,6.076,1.1,3.11,1.841,1.235,3.72,1.309,0.349,0.651,0.637,0.628,1.387,2.44,1.457,1.529,0.517,0.522,0.597,0.601,0.605,0.607,0.63,0.691,0.691,1.294,1.267,1.741,3.116,0.917,0.961],[5,5,10,5,3,12,7,2,4,1,2,3,2,1,0,0,0,2,3,2,1,1,1,1,1,1,1,1,1,1,1,1,2,3,1,1],[2.176,1.904,-1.594,1.502,1.307,1.141,0.924,0.9,0.89,-0.841,0.765,-0.72,0.691,0.651,-0.651,-0.637,-0.628,0.613,0.56,0.543,-0.529,0.483,0.478,0.403,0.399,0.395,0.393,0.37,0.309,0.309,-0.294,-0.267,0.259,-0.116,0.083,0.039]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> \u003c/th>\n      <th>Common Name\u003c/th>\n      <th>Species\u003c/th>\n      <th>Predicted Zoonoses\u003c/th>\n      <th>Observed Zoonoses\u003c/th>\n      <th>Difference Between Observed and Predicted\u003c/th>\n    \u003c/tr>\n  \u003c/thead>\n\u003c/table>","options":{"columnDefs":[{"className":"dt-right","targets":[3,4,5]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script><!--/html_preserve-->
-
-### Southeastern China:
-<!--html_preserve--><div id="htmlwidget-35c73289b3947526c201" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-35c73289b3947526c201">{"x":{"filter":"none","data":[["1","2","3","4","5","6","7","8","9","10","11","12","13","14","15"],["Gem-faced Civet, Masked Palm Civet","Bear Macaque, Stump-tailed Macaque, Stumptail Macaque","Great Himalayan Leaf-nosed Bat, Great Leaf-nosed Bat, Great Roundleaf Bat","Chinese Horseshoe Bat, Chinese Rufous Horseshoe Bat, Little Nepalese Horseshoe Bat","Francois's Langur","Chinese Ferret-badger, Small-toothed Ferret-badger","Lesser Rice-field Rat, Losea Rat","Chinese White-bellied Rat, Confucian Niviventer","Oriental House Rat, Tanezumi Rat","Big-eared Horseshoe Bat","Pearson's Horseshoe Bat","Intermediate Horseshoe Bat, Intermediat Horseshoe Bat","Rickett's Big-footed Bat, Rickett's Big-footed Myotis","Formosan Rock Macaque, Taiwanese Macaque, Taiwan Macaque","Japanese Pipistrelle, Japanese Pipistrelle"],["Paguma larvata","Macaca arctoides","Hipposideros armiger","Rhinolophus sinicus","Trachypithecus francoisi","Melogale moschata","Rattus losea","Niviventer confucianus","Rattus tanezumi","Rhinolophus macrotis","Rhinolophus pearsonii","Rhinolophus affinis","Myotis pilosus","Macaca cyclopis","Pipistrellus abramus"],[1.234,1.341,1.398,1.422,1.452,0.633,0.649,0.654,0.657,0.699,0.717,0.727,0.743,1.822,0.843],[2,2,2,2,2,1,1,1,1,1,1,1,1,2,1],[0.766,0.659,0.602,0.578,0.548,0.367,0.351,0.346,0.343,0.301,0.283,0.273,0.257,0.178,0.157]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> \u003c/th>\n      <th>Common Name\u003c/th>\n      <th>Species\u003c/th>\n      <th>Predicted Zoonoses\u003c/th>\n      <th>Observed Zoonoses\u003c/th>\n      <th>Difference Between Observed and Predicted\u003c/th>\n    \u003c/tr>\n  \u003c/thead>\n\u003c/table>","options":{"columnDefs":[{"className":"dt-right","targets":[3,4,5]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script><!--/html_preserve-->
+Region                             Observations Fit   Observations Held Out   P-value   Mean Prediction Difference (Number of Zoonoses)
+--------------------------------  -----------------  ----------------------  --------  ------------------------------------------------
+Northern America                                525                      59    0.9064                                           -0.0134
+Southwestern North America                      563                      21    0.8563                                           -0.0209
+Central / Eastern North America                 562                      22    0.1389                                            0.2515
+Southern Central America                        567                      17    0.5767                                            0.1131
+Northern South America                          485                      99    0.6268                                           -0.0404
+West Central Africa                             551                      33    0.2802                                            0.0999
+Europe                                          546                      38    0.0558                                           -0.3289
+South Africa                                    523                      61    0.1907                                           -0.1695
+India                                           563                      21    0.7440                                           -0.0991
+Southeast Asia                                  550                      34    0.6887                                           -0.0746
+Southern Australia                              573                      11    0.2839                                           -0.2837
 
 
-# All Viruses GAM - All Associations
+## All Viruses GAM - All Associations
 
 ![](geo_cross_files/figure-html/all-viruses-1.png)<!-- -->
 
@@ -73,50 +55,34 @@ Dark green indicates unbiased regions, while dark red indicates regions with evi
 
 Table: Biased Predictions Regions (n > 10)
 
-Region                  Observations Fit   Observations Held Out   P-value   Mean Prediction Difference
----------------------  -----------------  ----------------------  --------  ---------------------------
-Central African Band                 542                      34    0.0265                       0.9722
-Europe                               539                      37    0.0004                      -1.5026
-South Africa                         515                      61    0.0094                       0.8337
-Southeastern China                   562                      14    0.0008                      -1.5621
+Region                  Observations Fit   Observations Held Out   P-value   Mean Prediction Difference (Number of Viruses)
+---------------------  -----------------  ----------------------  --------  -----------------------------------------------
+Central African Band                 542                      34    0.0265                                           0.9722
+Europe                               539                      37    0.0004                                          -1.5026
+South Africa                         515                      61    0.0094                                           0.8337
+Southeastern China                   562                      14    0.0008                                          -1.5621
 
 
 
 Table: Unbiased Prediction Regions (n > 10)
 
-Region                             Observations Fit   Observations Held Out   P-value   Mean Prediction Difference
---------------------------------  -----------------  ----------------------  --------  ---------------------------
-Northern America                                517                      59    0.8139                      -0.0525
-Southwestern North America                      555                      21    0.8171                       0.0851
-Central / Eastern North America                 554                      22    0.2976                       1.0545
-Southern Central America                        560                      16    0.5848                      -0.4242
-Northern South America                          477                      99    0.2181                       0.3873
-Southeastern South America                      555                      21    0.3842                      -0.2899
-West Central Africa                             545                      31    0.7902                       0.0921
-India                                           555                      21    0.2203                       1.1181
-Northern Eurussia                               540                      36    0.5090                      -0.3578
-Southeast Asia                                  542                      34    0.8073                      -0.1238
-Southern Australia                              565                      11    0.4133                       0.6797
+Region                             Observations Fit   Observations Held Out   P-value   Mean Prediction Difference (Number of Viruses)
+--------------------------------  -----------------  ----------------------  --------  -----------------------------------------------
+Northern America                                517                      59    0.8139                                          -0.0525
+Southwestern North America                      555                      21    0.8171                                           0.0851
+Central / Eastern North America                 554                      22    0.2976                                           1.0545
+Southern Central America                        560                      16    0.5848                                          -0.4242
+Northern South America                          477                      99    0.2181                                           0.3873
+Southeastern South America                      555                      21    0.3842                                          -0.2899
+West Central Africa                             545                      31    0.7902                                           0.0921
+India                                           555                      21    0.2203                                           1.1181
+Northern Eurussia                               540                      36    0.5090                                          -0.3578
+Southeast Asia                                  542                      34    0.8073                                          -0.1238
+Southern Australia                              565                      11    0.4133                                           0.6797
 
-## Biased Region Details -- All Viruses GAM: 
 
-### Central African Band:
-<!--html_preserve--><div id="htmlwidget-dde36c28ad8885e6eea8" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-dde36c28ad8885e6eea8">{"x":{"filter":"none","data":[["1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20","21","22","23","24","25","26","27","28","29","30","31","32","33","34"],["Green Monkey, Grivet Monkey, Malbrouk Monkey, Tantalus, Vervet Monkey","Waterbuck","African Grass Rat","Thomson's Gazelle",null,"Angolan Free-tailed Bat","Ethiopian Wolf, Simien Fox, Simien Jackal","Spotted Hyaena","Hamadryas Baboon, Sacred Baboon","Egyptian Fruit Bat, Egyptian Rousette, EGYPTIAN ROUSETTE","Lesser Bushbaby, Lesser Galago, Northern Lesser Galago, Senegal Galago, Senegal Lesser Galago","Natal Mastomys, Natal Multimammate Mouse","Roan Antelope","Grant's Gazelle","Anubis Baboon, Olive Baboon","Hubert's Mastomys, Huberts Mastomys","Green Monkey","Aba Roundleaf Bat","Guinea Baboon","Common Genet, Ibiza Common Genet, Ibiza Genet","White-tailed Mongoose","Gelada Baboon","Oribi","Guinea Multimammate Mouse, Reddish-white Mastomys","Lesser Kudu","Somali Grass Rat","Cape Warthog, Desert Warthog, Somali Warthog","Typical Lemniscomys, Typical Striped Grass Mouse","Eloquent Horseshoe Bat","Peter's Dwarf Epauletted Fruit Bat","Gambian Epauletted Fruit Bat","Geoffroy's Ground Squirrel, Striped Ground Squirrel","African Lion, Lion","Slender Mongoose"],["Chlorocebus aethiops","Kobus ellipsiprymnus","Arvicanthis niloticus","Eudorcas thomsonii","Gerbilliscus kempi","Tadarida condylura","Canis simensis","Crocuta crocuta","Papio hamadryas","Rousettus aegyptiacus","Galago senegalensis","Mastomys natalensis","Hippotragus equinus","Nanger granti","Papio anubis","Mastomys huberti","Chlorocebus sabaeus","Hipposideros abae","Papio papio","Genetta genetta","Ichneumia albicauda","Theropithecus gelada","Ourebia ourebi","Mastomys erythroleucus","Tragelaphus imberbis","Arvicanthis neumanni","Phacochoerus aethiopicus","Lemniscomys striatus","Rhinolophus eloquens","Micropteropus pusillus","Epomophorus gambianus","Xerus erythropus","Panthera leo","Herpestes sanguineus"],[1.759,3.212,6.074,1.329,1.807,2.361,1.002,3.481,2.799,6.9,3.052,12.039,5.019,1.332,6.651,1.482,1.534,2.322,4.24,2.125,1.093,1.895,1.842,4.179,1.336,1.549,2.532,4.417,2.412,2.632,2.267,2.168,8.15,0.954],[10,9,11,6,6,6,4,6,5,9,1,10,3,3,5,3,3,1,3,1,2,1,1,5,2,1,2,4,2,3,2,2,8,1],[8.241,5.788,4.926,4.671,4.193,3.639,2.998,2.519,2.201,2.1,-2.052,-2.039,-2.019,1.668,-1.651,1.518,1.466,-1.322,-1.24,-1.125,0.907,-0.895,-0.842,0.821,0.664,-0.549,-0.532,-0.417,-0.412,0.368,-0.267,-0.168,-0.15,0.046]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> \u003c/th>\n      <th>Common Name\u003c/th>\n      <th>Species\u003c/th>\n      <th>Predicted Viruses\u003c/th>\n      <th>Observed Viruses\u003c/th>\n      <th>Difference Between Observed and Predicted\u003c/th>\n    \u003c/tr>\n  \u003c/thead>\n\u003c/table>","options":{"columnDefs":[{"className":"dt-right","targets":[3,4,5]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script><!--/html_preserve-->
 
-### Europe:
-<!--html_preserve--><div id="htmlwidget-3256874cbd07b30a0d71" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-3256874cbd07b30a0d71">{"x":{"filter":"none","data":[["1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20","21","22","23","24","25","26","27","28","29","30","31","32","33","34","35","36","37"],["Badger, Eurasian Badger","Common Vole","Brown Hare, European Brown Hare, European Hare","Long-tailed Field Mouse, Wood Mouse","Alpine Chamois, Balkan Chamois, Chamois, Northern Chamois","Greater Mouse-eared Bat, Large Mouse-eared Bat, Mouse-eared Bat, Mouse-eared Myotis","European Roe Deer, Roe Deer, Western Roe Deer","Common Bentwing Bat, Schreiber's Bent-winged Bat, Schreiber's Long-fingered Bat","Brown Big-eared Bat, Brown Long-eared Bat","Serotine","Whiskered Bat, Whiskered Myotis, WHISKERED MYOTIS","Common Pine Vole, European Pine Vole","Common Pipistrelle","Iberian Wild Goat, Pyrenean Ibex, Spanish Ibex","Natterer's Bat","Beech Marten, Pallas's Cat, Stone Marten, STONE MARTEN","European Bison, Wisent","European Ground Squirrel, European Souslik, European Squirrel","Barbastelle, Western Barbastelle","Alpine Ibex, Ibex","Yellow-necked Field Mouse","Mediterranean Horseshoe Bat","Nathusius' Pipistrelle","Greater Horseshoe Bat","Iberian Lynx, Pardel Lynx, Spanish Lynx","European Free-tailed Bat","Kuhl's Pipistrelle","Abruzzo Chamois, Apennine Chamois, Pyrenean Chamois, Southern Chamois","Northern Hedgehog, Western European Hedgehog, Western Hedgehog","Algerian Mouse, Western Mediterranean Mouse, WESTERN MEDITERRANEAN MOUSE","Montane Water Vole","Broad-toothed Field Mouse, Eastern Broad-toothed Field Mouse","Mound-building Mouse, Steppe Mouse","Golden Hamster","Greater White-toothed Shrew, White-toothed Shrew","Noctule","Bicolored Shrew, Bicoloured White-toothed Shrew"],["Meles meles","Microtus arvalis","Lepus europaeus","Apodemus sylvaticus","Rupicapra rupicapra","Myotis myotis","Capreolus capreolus","Miniopterus schreibersii","Plecotus auritus","Eptesicus serotinus","Myotis mystacinus","Microtus subterraneus","Pipistrellus pipistrellus","Capra pyrenaica","Myotis nattereri","Martes foina","Bison bonasus","Spermophilus citellus","Barbastella barbastellus","Capra ibex","Apodemus flavicollis","Rhinolophus euryale","Pipistrellus nathusii","Rhinolophus ferrumequinum","Lynx pardinus","Tadarida teniotis","Pipistrellus kuhlii","Rupicapra pyrenaica","Erinaceus europaeus","Mus spretus","Arvicola scherman","Apodemus mystacinus","Mus spicilegus","Mesocricetus auratus","Crocidura russula","Nyctalus noctula","Crocidura leucodon"],[8.728,12.446,7.213,12.899,6.08,6.388,13.257,4.803,5.127,5.763,4.563,3.479,5.279,2.746,3.685,2.664,3.474,3.328,3.275,4.266,10.196,2.061,2.014,7.088,1.91,1.905,1.874,2.784,1.742,2.619,1.48,1.503,1.395,8.307,1.179,6.117,0.963],[1,6,2,18,1,2,9,9,2,3,2,1,3,1,2,1,2,2,2,3,9,1,1,8,1,1,1,2,1,2,2,1,1,8,1,6,1],[-7.728,-6.446,-5.213,5.101,-5.08,-4.388,-4.257,4.197,-3.127,-2.763,-2.563,-2.479,-2.279,-1.746,-1.685,-1.664,-1.474,-1.328,-1.275,-1.266,-1.196,-1.061,-1.014,0.912,-0.91,-0.905,-0.874,-0.784,-0.742,-0.619,0.52,-0.503,-0.395,-0.307,-0.179,-0.117,0.037]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> \u003c/th>\n      <th>Common Name\u003c/th>\n      <th>Species\u003c/th>\n      <th>Predicted Viruses\u003c/th>\n      <th>Observed Viruses\u003c/th>\n      <th>Difference Between Observed and Predicted\u003c/th>\n    \u003c/tr>\n  \u003c/thead>\n\u003c/table>","options":{"columnDefs":[{"className":"dt-right","targets":[3,4,5]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script><!--/html_preserve-->
-
-### South Africa:
-<!--html_preserve--><div id="htmlwidget-c396f6266a91c56a3a98" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-c396f6266a91c56a3a98">{"x":{"filter":"none","data":[["1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20","21","22","23","24","25","26","27","28","29","30","31","32","33","34","35","36","37","38","39","40","41","42","43","44","45","46","47","48","49","50","51","52","53","54","55","56","57","58","59","60","61"],["Burchell's Zebra, Common Zebra, Painted Zebra, Plains Zebra","Yellow Baboon","Wildcat, Wild Cat","Chacma Baboon","Blue &amp; White-bearded Wildebeest, Blue Wildebeest, Common Wildebeest","Black-faced Impala, Impala","Straw-coloured Fruit Bat","Common Reedbuck, Southern Reedbuck","Northern White Rhinoceros, Square-lipped Rhinoceros, White Rhinoceros","Southern African Mastomys, Southern Multimammate Mouse","Greater Cane Rat","Hartebeest, Swayne's Hartebeest","Greater Kudu","Common Eland, Eland","Springbok","Giraffe","Tiang, Topi, Tsessebe","Gemsbok","Egyptian Slit-faced Bat","Black Rhinoceros, Hook-lipped Rhinoceros","Four-striped Grass Mouse, Four-striped Grass Rat","Southern African Vlei Rat, Vlei Rat","Black-backed Jackal","Giant House Bat, Schreber's Yellow Bat","Giant Sable Antelope, Sable Antelope","Vervet","Bushbuck","Hildebrandt's Horseshoe Bat","African Wild Dog, Cape Hunting Dog, Painted Hunting Dog","Leopard","Wahlberg's Epauletted Fruit Bat","Little Free-tailed Bat","Side-striped Jackal","Highveld Gerbil","Black Wildebeest, White-tailed Gnu","Central African Large-spotted Genet, Panther Genet, Rusty-spotted Genet","Bushveld Gerbil","Kaiser's Rock Rat","African Marsh Rat, Common Dasymys","Sundevall's Roundleaf Bat","Single-striped Grass Mouse, Single-striped Lemniscomys","Blue Duiker","Nyala","Cape Porcupine","Bat-eared Fox","Sharpe's Grysbok","Namaqua Rock Rat","Common Warthog, Eritrean Warthog, Warthog","Savannah Hare, Scrub Hare","Mountain Reedbuck, Western Mountain Reedbuck","Aardwolf","Cheetah, Hunting Leopard","Honey Badger","South African Ground Squirrel","Yellow Mongoose","Banded Mongoose","Meerkat, Slender-tailed Meerkat, Suricate","Cape Short-eared Gerbil","Common Duiker, Grey Duiker","Blesbok/bontebok, Bontebok","Marsh Mongoose, Water Mongoose"],["Equus quagga","Papio cynocephalus","Felis silvestris","Papio ursinus","Connochaetes taurinus","Aepyceros melampus","Eidolon helvum","Redunca arundinum","Ceratotherium simum","Mastomys coucha","Thryonomys swinderianus","Alcelaphus buselaphus","Tragelaphus strepsiceros","Tragelaphus oryx","Antidorcas marsupialis","Giraffa camelopardalis","Damaliscus lunatus","Oryx gazella","Nycteris thebaica","Diceros bicornis","Rhabdomys pumilio","Otomys irroratus","Canis mesomelas","Scotophilus nigrita","Hippotragus niger","Chlorocebus pygerythrus","Tragelaphus scriptus","Rhinolophus hildebrandti","Lycaon pictus","Panthera pardus","Epomophorus wahlbergi","Tadarida pumila","Canis adustus","Gerbilliscus brantsii","Connochaetes gnou","Genetta maculata","Gerbilliscus leucogaster","Aethomys kaiseri","Dasymys incomtus","Hipposideros caffer","Lemniscomys rosalia","Philantomba monticola","Tragelaphus angasii","Hystrix africaeaustralis","Otocyon megalotis","Raphicerus sharpei","Aethomys namaquensis","Phacochoerus africanus","Lepus saxatilis","Redunca fulvorufula","Proteles cristata","Acinonyx jubatus","Mellivora capensis","Xerus inauris","Cynictis penicillata","Mungos mungo","Suricata suricatta","Desmodillus auricularis","Sylvicapra grimmia","Damaliscus pygargus","Atilax paludinosus"],[1.051,6.422,1.613,4.768,3.81,4.21,5.268,1.322,0.755,5.216,5.125,3.081,3.245,3.624,2.119,3.4,1.57,2.598,3.401,1.685,3.184,2.977,3.062,2.932,3.205,1.381,3.586,2.52,2.57,3.403,2.395,2.718,1.914,2.05,1.005,1.061,1.882,1.773,2.767,2.762,1.637,1.407,1.436,1.533,1.465,1.451,2.414,1.394,1.389,1.617,1.27,6.243,0.769,1.217,1.204,1.201,0.814,1.171,3.101,0.919,1.068],[7,12,7,10,9,9,10,6,5,1,1,7,7,7,5,6,4,5,1,4,1,1,5,1,5,3,2,1,4,2,1,4,3,1,2,2,1,1,2,2,1,2,2,1,1,1,2,1,1,2,1,6,1,1,1,1,1,1,3,1,1],[5.949,5.578,5.387,5.232,5.19,4.79,4.732,4.678,4.245,-4.216,-4.125,3.919,3.755,3.376,2.881,2.6,2.43,2.402,-2.401,2.315,-2.184,-1.977,1.938,-1.932,1.795,1.619,-1.586,-1.52,1.43,-1.403,-1.395,1.282,1.086,-1.05,0.995,0.939,-0.882,-0.773,-0.767,-0.762,-0.637,0.593,0.564,-0.533,-0.465,-0.451,-0.414,-0.394,-0.389,0.383,-0.27,-0.243,0.231,-0.217,-0.204,-0.201,0.186,-0.171,-0.101,0.081,-0.068]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> \u003c/th>\n      <th>Common Name\u003c/th>\n      <th>Species\u003c/th>\n      <th>Predicted Viruses\u003c/th>\n      <th>Observed Viruses\u003c/th>\n      <th>Difference Between Observed and Predicted\u003c/th>\n    \u003c/tr>\n  \u003c/thead>\n\u003c/table>","options":{"columnDefs":[{"className":"dt-right","targets":[3,4,5]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script><!--/html_preserve-->
-
-### Southeastern China:
-<!--html_preserve--><div id="htmlwidget-145db9cc40ee9d24412e" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-145db9cc40ee9d24412e">{"x":{"filter":"none","data":[["1","2","3","4","5","6","7","8","9","10","11","12","13","14"],["Lesser Rice-field Rat, Losea Rat","Oriental House Rat, Tanezumi Rat","Bear Macaque, Stump-tailed Macaque, Stumptail Macaque","Intermediate Horseshoe Bat, Intermediat Horseshoe Bat","Great Himalayan Leaf-nosed Bat, Great Leaf-nosed Bat, Great Roundleaf Bat","Pearson's Horseshoe Bat","Big-eared Horseshoe Bat","Gem-faced Civet, Masked Palm Civet","Japanese Pipistrelle, Japanese Pipistrelle","Francois's Langur","Formosan Rock Macaque, Taiwanese Macaque, Taiwan Macaque","Rickett's Big-footed Bat, Rickett's Big-footed Myotis","Chinese Ferret-badger, Small-toothed Ferret-badger","Chinese Horseshoe Bat, Chinese Rufous Horseshoe Bat, Little Nepalese Horseshoe Bat"],["Rattus losea","Rattus tanezumi","Macaca arctoides","Rhinolophus affinis","Hipposideros armiger","Rhinolophus pearsonii","Rhinolophus macrotis","Paguma larvata","Pipistrellus abramus","Trachypithecus francoisi","Macaca cyclopis","Myotis pilosus","Melogale moschata","Rhinolophus sinicus"],[5.826,4.212,4.841,3.721,4.566,2.516,2.43,3.298,1.679,1.451,2.479,1.379,1.247,2.221],[1,1,2,1,2,1,1,2,1,2,2,1,1,2],[-4.826,-3.212,-2.841,-2.721,-2.566,-1.516,-1.43,-1.298,-0.679,0.549,-0.479,-0.379,-0.247,-0.221]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> \u003c/th>\n      <th>Common Name\u003c/th>\n      <th>Species\u003c/th>\n      <th>Predicted Viruses\u003c/th>\n      <th>Observed Viruses\u003c/th>\n      <th>Difference Between Observed and Predicted\u003c/th>\n    \u003c/tr>\n  \u003c/thead>\n\u003c/table>","options":{"columnDefs":[{"className":"dt-right","targets":[3,4,5]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script><!--/html_preserve-->
-
-# Zoonoses GAM - Strict Associations
+## Zoonoses GAM - Strict Associations
 
 ![](geo_cross_files/figure-html/strict-zoo-1.png)<!-- -->
 
@@ -126,66 +92,32 @@ species; blank areas were not assigned any hosts.
 
 Table: Biased Predictions Regions (n > 10)
 
-Region                        Observations Fit   Observations Held Out   P-value   Mean Prediction Difference
----------------------------  -----------------  ----------------------  --------  ---------------------------
-Northern America                           517                      59    0.0440                      -0.1885
-Southern Central America                   560                      16    0.0000                      -0.3820
-Northern South America                     477                      99    0.0357                      -0.2044
-Southeastern South America                 555                      21    0.0038                       0.6149
-West Central Africa                        545                      31    0.0046                       0.8319
-Central African Band                       542                      34    0.0395                       0.3685
-Northern Eurussia                          540                      36    0.0181                       0.2888
-Southeast Asia                             542                      34    0.0075                      -0.5020
+Region                        Observations Fit   Observations Held Out   P-value   Mean Prediction Difference (Number of Zoonoses)
+---------------------------  -----------------  ----------------------  --------  ------------------------------------------------
+Northern America                           517                      59    0.0440                                           -0.1885
+Southern Central America                   560                      16    0.0000                                           -0.3820
+Northern South America                     477                      99    0.0357                                           -0.2044
+Southeastern South America                 555                      21    0.0038                                            0.6149
+West Central Africa                        545                      31    0.0046                                            0.8319
+Central African Band                       542                      34    0.0395                                            0.3685
+Northern Eurussia                          540                      36    0.0181                                            0.2888
+Southeast Asia                             542                      34    0.0075                                           -0.5020
 
 
 Table: Unbiased Prediction Regions (n > 10)
 
-Region                             Observations Fit   Observations Held Out   P-value   Mean Prediction Difference
---------------------------------  -----------------  ----------------------  --------  ---------------------------
-Southwestern North America                      555                      21    0.7628                      -0.0347
-Central / Eastern North America                 554                      22    0.1219                      -0.3529
-Europe                                          539                      37    0.9494                       0.0091
-South Africa                                    515                      61    0.7743                      -0.0244
-India                                           555                      21    0.7854                       0.0468
-Southeastern China                              562                      14    0.6229                       0.0876
-Southern Australia                              565                      11    0.7047                      -0.0988
-
-## Biased Region Details -- Strict Zoonoses GAM: 
-
-### Northern America:
-<!--html_preserve--><div id="htmlwidget-c02300977b4dded11996" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-c02300977b4dded11996">{"x":{"filter":"none","data":[["1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20","21","22","23","24","25","26","27","28","29","30","31","32","33","34","35","36","37","38","39","40","41","42","43","44","45","46","47","48","49","50","51","52","53","54","55","56","57","58","59"],["North American Otter, North American River Otter, Northern River Otter","California Ground Squirrel","Amargosa Vole, California Vole","Chihuahua Vole, Meadow Vole","Pinyon Mouse","Deer Mouse, North American Deermouse","Yellow-bellied Marmot","Fisher","Little Brown Bat, Little Brown Myotis","Southern Marsh Harvest Mouse, Western Harvest Mouse","Muskox, Musk Ox","Heermann's Kangaroo Rat, Morro Bay Kangaroo-rat, Morro Bay Kangaroo Rat","Big Brown Bat","Mountain Weasel, Mount Graham Red Squirrel, Red Squirrel","Northern Myotis","Northern Raccoon","Snowshoe Hare, Snowshoe Rabbit, Varying Hare","Striped Skunk","Yellow-pine Chipmunk","Golden Mantled Ground Squirrel, Green River Basin Golden-mantled Ground Squirrel","Hidden Forest Chipmunk, Uinta Chipmunk","Least Chipmunk, New Mexico Least Chipmunk, Pe_asco Least Chipmunk, Selkirk Least Chipmunk","American Black Bear","American Bison","Big Horn Thirteen-lined Ground Squirrel, Spotted Skunk, Thirteen-lined Ground Squirrel","California Myotis, Californian Myotis","Dusky-footed Woodrat, San Joaquin Valley Woodrat","Brush Mouse","Columbian Ground Squirrel","Silver-haired Bat","Long-eared Myotis","Woodchuck","Black-tailed Deer, Cedros Island Black-tailed Deer, Cedros Island Mule Deer, Mule Deer","Spotted Bat","Desert Woodrat","Key Deer, Key Deer Toy Deer, White-tailed Deer","North American Porcupine","Bay Lynx, Bobcat","Northern Pocket Gopher, Vancouver Pocket Gopher","Great Basin Pocket Mouse","Bushy-tailed Woodrat, Bushy-talied Woodrat, Packrat, Woodrat","Mexican Pronghorn, Pronghorn","Long-legged Myotis","Fringed Myotis","Mountain Cottontail, Nuttall's Cottontail","Yuma Myotis","Arctic Ground Squirrel","Prairie Vole","Bighorn Sheep, Mountain Sheep","Northern Grasshopper Mouse","Keen's Myotis","Black-footed Ferret","American Badger","Mountain Goat, Rocky Mountain Goat","Dall's Sheep, Thinhorn Sheep","American Jackal, Brush Wolf, Coyote, Prairie Wolf","Hawaiian Hoary Bat, Hoary Bat","Revillagigedo Island Red-backed Vole, Southern Red-backed Vole","Richardson's Ground Squirrel"],["Lontra canadensis","Spermophilus beecheyi","Microtus californicus","Microtus pennsylvanicus","Peromyscus truei","Peromyscus maniculatus","Marmota flaviventris","Martes pennanti","Myotis lucifugus","Reithrodontomys megalotis","Ovibos moschatus","Dipodomys heermanni","Eptesicus fuscus","Tamiasciurus hudsonicus","Myotis septentrionalis","Procyon lotor","Lepus americanus","Mephitis mephitis","Tamias amoenus","Spermophilus lateralis","Tamias umbrinus","Tamias minimus","Ursus americanus","Bison bison","Spermophilus tridecemlineatus","Myotis californicus","Neotoma fuscipes","Peromyscus boylii","Spermophilus columbianus","Lasionycteris noctivagans","Myotis evotis","Marmota monax","Odocoileus hemionus","Euderma maculatum","Neotoma lepida","Odocoileus virginianus","Erethizon dorsatum","Lynx rufus","Thomomys talpoides","Perognathus parvus","Neotoma cinerea","Antilocapra americana","Myotis volans","Myotis thysanodes","Sylvilagus nuttallii","Myotis yumanensis","Spermophilus parryii","Microtus ochrogaster","Ovis canadensis","Onychomys leucogaster","Myotis keenii","Mustela nigripes","Taxidea taxus","Oreamnos americanus","Ovis dalli","Canis latrans","Lasiurus cinereus","Myodes gapperi","Spermophilus richardsonii"],[1.712,1.656,1.562,1.539,1.275,1.988,0.985,0.945,1.92,0.895,0.122,0.849,1.842,1.173,1.816,2.24,0.727,1.28,0.297,0.302,0.307,0.311,0.686,0.676,0.671,0.336,0.662,0.652,0.366,0.382,0.436,1.511,0.478,0.53,0.531,0.559,0.574,0.4,0.391,0.385,0.626,0.369,0.338,0.325,0.323,0.691,0.299,0.278,0.253,0.25,1.246,0.242,0.224,0.212,0.21,1.146,1.132,0.885,1.095],[0,0,0,0,0,3,0,0,1,0,1,0,1,2,1,3,0,2,1,1,1,1,0,0,0,1,0,0,1,1,1,2,0,1,1,1,1,0,0,0,1,0,0,0,0,1,0,0,0,0,1,0,0,0,0,1,1,1,1],[-1.712,-1.656,-1.562,-1.539,-1.275,1.012,-0.985,-0.945,-0.92,-0.895,0.878,-0.849,-0.842,0.827,-0.816,0.76,-0.727,0.72,0.703,0.698,0.693,0.689,-0.686,-0.676,-0.671,0.664,-0.662,-0.652,0.634,0.618,0.564,0.489,-0.478,0.47,0.469,0.441,0.426,-0.4,-0.391,-0.385,0.374,-0.369,-0.338,-0.325,-0.323,0.309,-0.299,-0.278,-0.253,-0.25,-0.246,-0.242,-0.224,-0.212,-0.21,-0.146,-0.132,0.115,-0.095]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> \u003c/th>\n      <th>Common Name\u003c/th>\n      <th>Species\u003c/th>\n      <th>Predicted Zoonoses\u003c/th>\n      <th>Observed Zoonoses\u003c/th>\n      <th>Difference Between Observed and Predicted\u003c/th>\n    \u003c/tr>\n  \u003c/thead>\n\u003c/table>","options":{"columnDefs":[{"className":"dt-right","targets":[3,4,5]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script><!--/html_preserve-->
-
-### Southern Central America:
-<!--html_preserve--><div id="htmlwidget-4382c43e4d1f2cfe126b" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-4382c43e4d1f2cfe126b">{"x":{"filter":"none","data":[["1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16"],["Black Howling Monkey, Guatemalan Black Howler Monkey, Guatemalan Howler, Guatemalan Howling Monkey, Lawrences Howler Monkey, Mexican Black Howler Monkey, Yucat_n Black Howler Monkey","Mexican Deer Mouse","Coues's Rice Rat","Black-handed Spider Monkey, Central American Spider Monkey, Geoffroy's Spider Monkey, Geoffroys Spider Monkey, Mono Colorado","Ecuadorian Mantled Howling Monkey, Mantled Howler Monkey, South Pacific Blackish Howling Monkey","Panamanian Spiny Pocket Mouse","Geoffroy's Tamarin, Geoffroys Tamarin, Red Crested Bare-face Tamarin","Peter's Climbing Rat, Peters's Climbing Rat","Armored Rat","Central American Woolly Opossum","Toltec Cotton Rat","Alfaro's Rice Rat","Gray Short-tailed Bat","Gorgona White-fronted Capuchin, White-throated Capuchin","Mexican Harvest Mouse","Jamaican Fruit-eating Bat"],["Alouatta pigra","Peromyscus mexicanus","Oryzomys couesi","Ateles geoffroyi","Alouatta palliata","Liomys adspersus","Saguinus geoffroyi","Tylomys nudicaudus","Hoplomys gymnurus","Caluromys derbianus","Sigmodon toltecus","Handleyomys alfaroi","Carollia subrufa","Cebus capucinus","Reithrodontomys mexicanus","Artibeus jamaicensis"],[0.718,0.596,0.567,0.539,0.533,0.417,0.416,0.326,0.316,0.297,0.269,0.265,0.263,0.242,0.233,3.114],[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3],[-0.718,-0.596,-0.567,-0.539,-0.533,-0.417,-0.416,-0.326,-0.316,-0.297,-0.269,-0.265,-0.263,-0.242,-0.233,-0.114]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> \u003c/th>\n      <th>Common Name\u003c/th>\n      <th>Species\u003c/th>\n      <th>Predicted Zoonoses\u003c/th>\n      <th>Observed Zoonoses\u003c/th>\n      <th>Difference Between Observed and Predicted\u003c/th>\n    \u003c/tr>\n  \u003c/thead>\n\u003c/table>","options":{"columnDefs":[{"className":"dt-right","targets":[3,4,5]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script><!--/html_preserve-->
-
-### Northern South America:
-<!--html_preserve--><div id="htmlwidget-adde1433d2b4512bbaa6" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-adde1433d2b4512bbaa6">{"x":{"filter":"none","data":[["1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20","21","22","23","24","25","26","27","28","29","30","31","32","33","34","35","36","37","38","39","40","41","42","43","44","45","46","47","48","49","50","51","52","53","54","55","56","57","58","59","60","61","62","63","64","65","66","67","68","69","70","71","72","73","74","75","76","77","78","79","80","81","82","83","84","85","86","87","88","89","90","91","92","93","94","95","96","97","98","99"],["Great Fruit-eating Bat","Little Yellow-shouldered Bat","Cayenne Spiny Rat","Geoffroy's Tailless Bat","Seba's Short-tailed Bat","Greater Spear-nosed Bat","Common Mustached Bat, Parnell's Mustached Bat","Pallas's Long-tongued Bat","Black Mastiff Bat","Gervais's Fruit-eating Bat","Gray Four-eyed Opossum, Guaiki","Trinidadian Funnel-eared Bat","Tent-making Bat","Black-eared Opossum, Common Opossum, Southern Opossum","Brazilian Agouti, Red-rumped Agouti","Heller's Broad-nosed Bat","Large-headed rice rat","Caribbean Spiny Pocket Mouse, Trinidad Spiny Pocket Mouse","Large Vesper Mouse","Black-capped Capuchin, Guianan/margarita Island Brown Capuchin, Margarita Island Capuchin","Black-and-gold Howler Monkey, Black Howler Monkey, Black Howling Monkey","Common Squirrel Monkey, South American Squirrel Monkey","Short-tailed Cane Mouse","Common Marmoset, White-tufted-ear Marmoset","Collared Anteater, Lesser Anteater, Northern Tamandua, Southern Tamandua, Tamandua","Red-bellied Tamarin, Red-chested Mustached Tamarin","Pale Spear-nosed Bat","Bicolored Arboreal Rice Rat","Black Myotis","Common Long-nosed Armadillo, Nine-banded Armadillo","White-throated Round-eared Bat","Big Free-tailed Bat","Brown Four-eyed Opossum","Wagner's Bonneted Bat","Northern Ghost Bat","Davy's Naked-backed Bat","Hairy-legged Vampire Bat","Bare-tailed Woolly Opossum","Broad-eared Bat, Broad-eared Free-tailed Bat","Greater Bonneted Bat, Western Bonneted Bat","Cinnamon Dog-faced Bat","Geoffroy's Monk Saki, Miller's Monk Saki","White-winged Vampire Bat","Big-eared Wooly Bat, Woolly False Vampire Bat","White-lined Bat, White-lined Broad-nosed Bat","Linn_'s Two-toed Sloth, Southern Two-toed Sloth","Pygmy Fruit-eating Bat","Cotton-headed Tamarin, Cotton-top Tamarin","Hoary Fox, Hoary Zorro, Small-toothed Dog","Tomes's Rice Rat","Flat-faced Fruit-eating Bat","Douroucouli, Night Monkey, Northern Night Monkey, Northern Owl Monkey, Owl Monkey","Kinkajou","Cougar, Deer Tiger, Mountain Lion, Puma, Red Tiger","Argentine Brown Bat, Argentinian Brown Bat","Delicate Vesper Mouse","Orange Nectar Bat","Riparian Myotis","Marsh Rat","Ocelot","Great Stripe-faced Bat","Hairy-tailed Bolo Mouse","Golden-handed Tamarin, Midas Tamarin, Red-handed Tamarin, Yellow-handed Tamarin","Fulvous Pygmy Rice Rat","Silver-tipped Myotis","Linnaeus's Mouse Opossum, Murine Mouse Opossum","Water Opossum, Yapok","Tilda Yellow-shouldered Bat","Greater Round-eared Bat","Brazilian Porcupine","Southern Yellow Bat","Brazilian Arboreal Rice Rat","Azara's Night Monkey, Azaras Night Monkey","Maned Wolf","Guiana Bristly Mouse","Bristly Mouse","Striped Hairy-nosed Bat","Little Big-eared Bat","Miller's Long-tongued Bat","Southern Long-nosed bat","Commissaris's Long-tongued Bat","Alston's Cotton Rat","Proboscis Bat","Black-chested Mustached Tamarin, Moustached Tamarin, Spix's Moustached Tamarin","Bolivian Three-toed Sloth, Brown-throated Sloth, Brown-throated Three-toed Sloth","Colombian Red Howler Monkey, Colombian Red Howling Monkey","Giant Anteater","Bushy-tailed Olingo, Olingo","Highland Yellow-shouldered Bat","Common Woolly Monkey, Humboldt's Woolly Monkey, Woolly Monkey","Black Mantle Tamarin, Hern_ndez-camacho's Black Mantle Tamarin","Pallas's Mastiff Bat","Pale-throated Sloth, Pale-throated Three-toed Sloth","Small-eared Pygmy Rice Rat","Marsh Deer","Fornes Colilargo","Common Vampire Bat, Vampire Bat","Silky Short-tailed Bat","Golden-white Bare-ear Marmoset"],["Artibeus lituratus","Sturnira lilium","Proechimys guyannensis","Anoura geoffroyi","Carollia perspicillata","Phyllostomus hastatus","Pteronotus parnellii","Glossophaga soricina","Molossus rufus","Artibeus cinereus","Philander opossum","Natalus tumidirostris","Uroderma bilobatum","Didelphis marsupialis","Dasyprocta leporina","Platyrrhinus helleri","Hylaeamys megacephalus","Heteromys anomalus","Calomys callosus","Cebus apella","Alouatta caraya","Saimiri sciureus","Zygodontomys brevicauda","Callithrix jacchus","Tamandua tetradactyla","Saguinus labiatus","Phyllostomus discolor","Oecomys bicolor","Myotis nigricans","Dasypus novemcinctus","Lophostoma silvicolum","Nyctinomops macrotis","Metachirus nudicaudatus","Eumops glaucinus","Diclidurus albus","Pteronotus davyi","Diphylla ecaudata","Caluromys philander","Nyctinomops laticaudatus","Eumops perotis","Cynomops abrasus","Pithecia monachus","Diaemus youngi","Chrotopterus auritus","Platyrrhinus lineatus","Choloepus didactylus","Artibeus phaeotis","Saguinus oedipus","Pseudalopex vetulus","Nephelomys albigularis","Artibeus planirostris","Aotus trivirgatus","Potos flavus","Puma concolor","Eptesicus furinalis","Calomys tener","Lonchophylla robusta","Myotis riparius","Holochilus sciureus","Leopardus pardalis","Vampyrodes caraccioli","Necromys lasiurus","Saguinus midas","Oligoryzomys fulvescens","Myotis albescens","Marmosa murina","Chironectes minimus","Sturnira tildae","Tonatia bidens","Coendou prehensilis","Lasiurus ega","Oecomys paricola","Aotus azarae","Chrysocyon brachyurus","Neacomys guianae","Neacomys spinosus","Mimon crenulatum","Micronycteris megalotis","Glossophaga longirostris","Leptonycteris curasoae","Glossophaga commissarisi","Sigmodon alstoni","Rhynchonycteris naso","Saguinus mystax","Bradypus variegatus","Alouatta seniculus","Myrmecophaga tridactyla","Bassaricyon gabbii","Sturnira ludovici","Lagothrix lagotricha","Saguinus nigricollis","Molossus molossus","Bradypus tridactylus","Oligoryzomys microtis","Blastocerus dichotomus","Oligoryzomys fornesi","Desmodus rotundus","Carollia brevicauda","Mico leucippe"],[5.49,2.951,4.257,2.166,4.131,4.114,1.94,2.751,2.72,1.7,1.512,1.495,1.672,2.776,1.188,1.163,3.852,1.853,2.141,0.891,1.063,1.979,4.031,2.054,0.897,0.12,0.876,0.765,1.241,0.729,0.708,0.298,0.702,0.298,0.306,1.691,0.323,1.666,0.334,0.349,0.352,0.358,0.364,0.369,0.385,0.606,1.604,0.397,0.409,0.573,0.429,2.43,0.57,1.55,0.457,0.461,0.535,0.466,0.466,0.529,0.514,0.488,0.509,0.545,0.448,0.444,0.421,0.403,0.395,0.39,0.622,0.374,0.37,0.359,0.352,0.35,0.349,0.346,0.33,0.327,0.313,1.309,0.3,0.284,1.28,0.275,0.256,0.245,0.243,0.24,0.226,1.799,0.813,0.853,0.088,0.916,1.943,1.013,0],[2,0,7,0,2,2,0,1,1,0,0,0,3,4,0,0,5,3,1,2,0,3,5,3,0,1,0,0,2,0,0,1,0,1,1,1,1,1,1,1,1,1,1,1,1,0,1,1,1,0,1,3,0,1,1,1,0,1,1,0,0,1,0,1,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,0,0,0,0,0,2,1,1,0,1,2,1,0],[-3.49,-2.951,2.743,-2.166,-2.131,-2.114,-1.94,-1.751,-1.72,-1.7,-1.512,-1.495,1.328,1.224,-1.188,-1.163,1.148,1.147,-1.141,1.109,-1.063,1.021,0.969,0.946,-0.897,0.88,-0.876,-0.765,0.759,-0.729,-0.708,0.702,-0.702,0.702,0.694,-0.691,0.677,-0.666,0.666,0.651,0.648,0.642,0.636,0.631,0.615,-0.606,-0.604,0.603,0.591,-0.573,0.571,0.57,-0.57,-0.55,0.543,0.539,-0.535,0.534,0.534,-0.529,-0.514,0.512,-0.509,0.455,-0.448,-0.444,-0.421,-0.403,-0.395,-0.39,0.378,-0.374,-0.37,-0.359,-0.352,-0.35,-0.349,-0.346,-0.33,-0.327,-0.313,-0.309,-0.3,-0.284,-0.28,-0.275,-0.256,-0.245,-0.243,-0.24,-0.226,0.201,0.187,0.147,-0.088,0.084,0.057,-0.013,-0]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> \u003c/th>\n      <th>Common Name\u003c/th>\n      <th>Species\u003c/th>\n      <th>Predicted Zoonoses\u003c/th>\n      <th>Observed Zoonoses\u003c/th>\n      <th>Difference Between Observed and Predicted\u003c/th>\n    \u003c/tr>\n  \u003c/thead>\n\u003c/table>","options":{"columnDefs":[{"className":"dt-right","targets":[3,4,5]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script><!--/html_preserve-->
-
-### Southeastern South America:
-<!--html_preserve--><div id="htmlwidget-938db9fa393c83042b5e" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-938db9fa393c83042b5e">{"x":{"filter":"none","data":[["1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20","21"],["Large-headed Rice Rat","South American Water Rat","Dark Bolo Mouse","Montane Akodont","Brazilian Free-tailed Bat, Mexican Free-tailed Bat","Yellow Pygmy Rice Rat","Coypu, Nutria","Golden-headed Lion Tamarin","Fringed Fruit-eating Bat","Chacoan Pygmy Rice Rat","Ihering's Spiny Rat","Black-footed Pygmy Rice Rat, Delta Pygmy Rice Rat","Diminutive Serotine","Yellowish Myotis","Small Vesper Mouse","Azara's Grass Mouse","Lesser Grison","Red Hocicudo","Azara's Fox, Azaras Fox, Azara's Zorro, Pampas Fox","Geoffroy's Marmoset, Geoffroy's Tufted-ear Marmoset, Geoffroys Tufted-ear Marmoset, White-faced Marmoset, White-fronted Marmoset","Brown Brocket, Gray Brocket"],["Hylaeamys laticeps","Nectomys squamipes","Necromys obscurus","Akodon montensis","Tadarida brasiliensis","Oligoryzomys flavescens","Myocastor coypus","Leontopithecus chrysomelas","Artibeus fimbriatus","Oligoryzomys chacoensis","Trinomys iheringi","Oligoryzomys nigripes","Eptesicus diminutus","Myotis levis","Calomys laucha","Akodon azarae","Galictis cuja","Oxymycterus rufus","Pseudalopex gymnocercus","Callithrix geoffroyi","Mazama gouazoubira"],[1.423,1.503,1.298,0.737,0.786,0.969,0.825,0.232,0.251,0.265,0.276,1.277,0.538,0.441,0.641,0.71,0.267,0.256,0.21,0.106,0.077],[4,4,3,2,2,2,0,1,1,1,1,2,1,0,1,1,0,0,0,0,0],[2.577,2.497,1.702,1.263,1.214,1.031,-0.825,0.768,0.749,0.735,0.724,0.723,0.462,-0.441,0.359,0.29,-0.267,-0.256,-0.21,-0.106,-0.077]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> \u003c/th>\n      <th>Common Name\u003c/th>\n      <th>Species\u003c/th>\n      <th>Predicted Zoonoses\u003c/th>\n      <th>Observed Zoonoses\u003c/th>\n      <th>Difference Between Observed and Predicted\u003c/th>\n    \u003c/tr>\n  \u003c/thead>\n\u003c/table>","options":{"columnDefs":[{"className":"dt-right","targets":[3,4,5]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script><!--/html_preserve-->
-
-### West Central Africa:
-<!--html_preserve--><div id="htmlwidget-d6e85dc5c8d280601337" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-d6e85dc5c8d280601337">{"x":{"filter":"none","data":[["1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20","21","22","23","24","25","26","27","28","29","30","31"],["Chimpanzee, Common Chimpanzee, Robust Chimpanzee","Bonobo, Dwarf Chimpanzee, Gracile Chimpanzee, Pygmy Chimpanzee","Lowland Gorilla, Western Gorilla","Franquet's Epauletted Fruit Bat","Rusty-bellied Brush-furred Rat","Eastern Black-and-white Colobus, Guereza, Magistrate Colobus","Peter's Duiker, Peters' Duiker","Gray-cheeked Mangabey, Grey-cheeked Mangabey, White-cheeked Mangabey","Little Collared Fruit Bat","Peter's Mouse","Greater Spot-nosed Guenon, Greater White-nosed Monkey, Putty-nosed Monkey, Spot-nosed Guenon, White-nosed Guenon","Tropical Vlei Rat","Greater Long-fingered Bat","Collared Mangabey, Red-capped Mangabey, Sooty Mangabey, White-collared Mangabey","Jackson's Praomys, Jackson's Soft-furred Mouse","Yellow-spotted Brush-furred Rat","African Buffalo","Mona Guenon, Mona Monkey","Drill","Mandrill","King Colobus, Ursine Black-and-white Colobus, Western Black-and-white Colobus, Western Pied Colobus","Crab-eating Mongoose, Isabelline Red-legged Sun Squirrel, Red-legged Sun Squirrel","Forest Giant Pouched Rat, Giant Rat","White-bellied Duiker","Bay Duiker","Weyn's Duiker, Weyns' Duiker","Black-fronted Duiker","Pygmy Hippopotamus","Bongo","Red River Hog","African Elephant"],["Pan troglodytes","Pan paniscus","Gorilla gorilla","Epomops franqueti","Lophuromys sikapusi","Colobus guereza","Cephalophus callipygus","Lophocebus albigena","Myonycteris torquata","Mus setulosus","Cercopithecus nictitans","Otomys tropicalis","Miniopterus inflatus","Cercocebus torquatus","Praomys jacksoni","Lophuromys flavopunctatus","Syncerus caffer","Cercopithecus mona","Mandrillus leucophaeus","Mandrillus sphinx","Colobus polykomos","Heliosciurus rufobrachium","Cricetomys emini","Cephalophus leucogaster","Cephalophus dorsalis","Cephalophus weynsi","Cephalophus nigrifrons","Choeropsis liberiensis","Tragelaphus eurycerus","Potamochoerus porcus","Loxodonta africana"],[5.87,2.287,4.042,0.811,0.553,0.781,0.095,1.1,0.192,0.203,1.214,0.673,0.338,0.346,0.611,0.413,0.477,1.467,0.535,1.594,0.249,0.229,0.21,0.2,0.187,0.177,0.151,0.093,0.058,0.056,1.998],[17,6,7,3,2,2,1,2,1,1,2,0,1,1,0,1,0,1,1,2,0,0,0,0,0,0,0,0,0,0,2],[11.13,3.713,2.958,2.189,1.447,1.219,0.905,0.9,0.808,0.797,0.786,-0.673,0.662,0.654,-0.611,0.587,-0.477,-0.467,0.465,0.406,-0.249,-0.229,-0.21,-0.2,-0.187,-0.177,-0.151,-0.093,-0.058,-0.056,0.002]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> \u003c/th>\n      <th>Common Name\u003c/th>\n      <th>Species\u003c/th>\n      <th>Predicted Zoonoses\u003c/th>\n      <th>Observed Zoonoses\u003c/th>\n      <th>Difference Between Observed and Predicted\u003c/th>\n    \u003c/tr>\n  \u003c/thead>\n\u003c/table>","options":{"columnDefs":[{"className":"dt-right","targets":[3,4,5]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script><!--/html_preserve-->
-
-### Central African Band:
-<!--html_preserve--><div id="htmlwidget-9d2f1fb77a2df981af3b" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-9d2f1fb77a2df981af3b">{"x":{"filter":"none","data":[["1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20","21","22","23","24","25","26","27","28","29","30","31","32","33","34"],["Egyptian Fruit Bat, Egyptian Rousette, EGYPTIAN ROUSETTE","Guinea Baboon","White-tailed Mongoose","African Lion, Lion","Angolan Free-tailed Bat","Peter's Dwarf Epauletted Fruit Bat","Anubis Baboon, Olive Baboon","Guinea Multimammate Mouse, Reddish-white Mastomys","Slender Mongoose","Common Genet, Ibiza Common Genet, Ibiza Genet","Aba Roundleaf Bat","Kemp's Gerbil","Hamadryas Baboon, Sacred Baboon","Gelada Baboon","Natal Mastomys, Natal Multimammate Mouse","Eloquent Horseshoe Bat","Waterbuck","Thomson's Gazelle","Green Monkey, Grivet Monkey, Malbrouk Monkey, Tantalus, Vervet Monkey","Hubert's Mastomys, Huberts Mastomys","Gambian Epauletted Fruit Bat","Geoffroy's Ground Squirrel, Striped Ground Squirrel","Typical Lemniscomys, Typical Striped Grass Mouse","African Grass Rat","Grant's Gazelle","Ethiopian Wolf, Simien Fox, Simien Jackal","Lesser Bushbaby, Lesser Galago, Northern Lesser Galago, Senegal Galago, Senegal Lesser Galago","Somali Grass Rat","Green Monkey","Roan Antelope","Lesser Kudu","Cape Warthog, Desert Warthog, Somali Warthog","Spotted Hyaena","Oribi"],["Rousettus aegyptiacus","Papio papio","Ichneumia albicauda","Panthera leo","Tadarida condylura","Micropteropus pusillus","Papio anubis","Mastomys erythroleucus","Herpestes sanguineus","Genetta genetta","Hipposideros abae","Gerbilliscus kempi","Papio hamadryas","Theropithecus gelada","Mastomys natalensis","Rhinolophus eloquens","Kobus ellipsiprymnus","Eudorcas thomsonii","Chlorocebus aethiops","Mastomys huberti","Epomophorus gambianus","Xerus erythropus","Lemniscomys striatus","Arvicanthis niloticus","Nanger granti","Canis simensis","Galago senegalensis","Arvicanthis neumanni","Chlorocebus sabaeus","Hippotragus equinus","Tragelaphus imberbis","Phacochoerus aethiopicus","Crocuta crocuta","Ourebia ourebi"],[1.885,0.78,0.379,1.499,1.441,0.564,1.242,0.871,0.188,0.19,0.201,1.775,1.327,0.355,1.442,0.444,0.549,0.526,2.475,0.553,0.376,0.372,0.677,1.715,0.259,0.755,0.234,0.228,0.773,0.171,0.145,0.109,0.902,0.068],[6,3,2,3,0,2,0,2,1,1,1,1,2,1,2,1,0,0,3,1,0,0,1,2,0,1,0,0,1,0,0,0,1,0],[4.115,2.22,1.621,1.501,-1.441,1.436,-1.242,1.129,0.812,0.81,0.799,-0.775,0.673,0.645,0.558,0.556,-0.549,-0.526,0.525,0.447,-0.376,-0.372,0.323,0.285,-0.259,0.245,-0.234,-0.228,0.227,-0.171,-0.145,-0.109,0.098,-0.068]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> \u003c/th>\n      <th>Common Name\u003c/th>\n      <th>Species\u003c/th>\n      <th>Predicted Zoonoses\u003c/th>\n      <th>Observed Zoonoses\u003c/th>\n      <th>Difference Between Observed and Predicted\u003c/th>\n    \u003c/tr>\n  \u003c/thead>\n\u003c/table>","options":{"columnDefs":[{"className":"dt-right","targets":[3,4,5]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script><!--/html_preserve-->
-
-### Northern Eurussia:
-<!--html_preserve--><div id="htmlwidget-da7ab3e102224f880b1d" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-da7ab3e102224f880b1d">{"x":{"filter":"none","data":[["1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20","21","22","23","24","25","26","27","28","29","30","31","32","33","34","35","36"],["Eurasian Red Squirrel, Red Squirrel","Gray Red-backed Vole, Grey Red-backed Vole, GREY-SIDED VOLE","Eurasian Water Vole, European Water Vole, Water Vole","Racoon Dog","Pond Bat, Pond Myotis","Root Vole, Tundra Vole","Daubenton's Bat, Daubenton's Myotis","Field Vole","Northern Red-backed Vole, RED VOLE","Eurasian Beaver","Arctic Fox, Polar Fox","Long-tailed Ground Squirrel","Polar Bear","Narrow-headed Vole","Arctic Wolf, Common Wolf, Gray Wolf, Grey Wolf, Mexican Wolf, Plains Wolf, Timber Wolf, Tundra Wolf, Wolf","Bank Vole","Asian Particolored Bat","European Mink","Eurasian Lynx","Particoloured Bat","Arctic Hare, Mountain Hare","Reed Vole","Brown Rat","Striped Field Mouse","Big-footed Myotis","Cross Fox, Red Fox, Silver Fox","Herb Field Mouse, Pygmy Field Mouse, Ural Field Mouse","Black-bellied Hamster, Common Hamster","Maximowicz's Vole","Korean Field Mouse","Common Shrew, Eurasian Shrew","Siberian Chipmunk","Eurasian Harvest Mouse, Harvest Mouse","Common Otter, Eurasian Otter, European Otter, European River Otter, Old World Otter","Brown Bear, Grizzly Bear, Mexican Grizzly Bear","Dzeren, Mongolian Gazelle"],["Sciurus vulgaris","Myodes rufocanus","Arvicola amphibius","Nyctereutes procyonoides","Myotis dasycneme","Microtus oeconomus","Myotis daubentonii","Microtus agrestis","Myodes rutilus","Castor fiber","Alopex lagopus","Spermophilus undulatus","Ursus maritimus","Microtus gregalis","Canis lupus","Myodes glareolus","Vespertilio sinensis","Mustela lutreola","Lynx lynx","Vespertilio murinus","Lepus timidus","Microtus fortis","Rattus norvegicus","Apodemus agrarius","Myotis macrodactylus","Vulpes vulpes","Apodemus uralensis","Cricetus cricetus","Microtus maximowiczii","Apodemus peninsulae","Sorex araneus","Tamias sibiricus","Micromys minutus","Lutra lutra","Ursus arctos","Procapra gutturosa"],[1.169,0.367,0.502,0.559,0.804,0.984,1.083,2.11,1.118,0.191,0.216,0.253,0.683,0.335,0.467,3.465,0.423,0.406,0.398,2.62,0.378,0.363,3.67,0.711,0.263,1.244,0.231,0.231,0.222,0.208,0.202,0.19,0.178,0.16,0.158,0.046],[3,2,2,2,2,2,2,3,2,1,1,1,0,1,1,3,0,0,0,3,0,0,4,1,0,1,0,0,0,0,0,0,0,0,0,0],[1.831,1.633,1.498,1.441,1.196,1.016,0.917,0.89,0.882,0.809,0.784,0.747,-0.683,0.665,0.533,-0.465,-0.423,-0.406,-0.398,0.38,-0.378,-0.363,0.33,0.289,-0.263,-0.244,-0.231,-0.231,-0.222,-0.208,-0.202,-0.19,-0.178,-0.16,-0.158,-0.046]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> \u003c/th>\n      <th>Common Name\u003c/th>\n      <th>Species\u003c/th>\n      <th>Predicted Zoonoses\u003c/th>\n      <th>Observed Zoonoses\u003c/th>\n      <th>Difference Between Observed and Predicted\u003c/th>\n    \u003c/tr>\n  \u003c/thead>\n\u003c/table>","options":{"columnDefs":[{"className":"dt-right","targets":[3,4,5]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script><!--/html_preserve-->
-
-### Southeast Asia:
-<!--html_preserve--><div id="htmlwidget-6b07eb2bc8456244eedf" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-6b07eb2bc8456244eedf">{"x":{"filter":"none","data":[["1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20","21","22","23","24","25","26","27","28","29","30","31","32","33","34"],["Bornean Orangutan","Javan Gibbon, Moloch Gibbon, Owa Jawa, Silvery Gibbon, Silvery Javan Gibbon","Least Horseshoe Bat","Black-bearded Tomb Bat","Horsfield's Leaf-nosed Bat, Intermediate Leaf-nosed Bat, Intermediate Roundleaf Bat, Intermediat Roundleaf Bat","Common Gibbon, Lar Gibbon, White-handed Gibbon","Bare-rumped Sheathtail-bat, Naked-rumped Pouched Bat, Pouch-bearing Bat, Pouched Bat","Crab-eating Macaque, Cynomolgus Monkey, Long-tailed Macaque","Red-shanked Douc, Red-shanked Douc Langur","Malayan Field Rat, Malaysian Field Rat","Polynesian Rat","Northern Treeshrew, Northern Tree Shrew","Mitred Leaf Monkey, Sumatran Surili","Northern White-cheeked Gibbon, White-cheeked Gibbon","Large Flying-fox, Large Flying Fox","Andersen's Leaf-nosed Bat, Pomona Leaf-nosed Bat, Pomona Roundleaf Bat","Common Rousette, Geoffroy's Rousette","Leopard Cat","Savile's Bandicoot Rat, Saviles Bandicoot Rat","Asiatic Lesser Yellow House Bat, Lesser Asian House Bat, Lesser Asiatic Yellow Bat, Lesser Asiatic Yellow House Bat","Bicolored Leaf-nosed Bat, Bicolored Roundleaf Bat","Silvered Langur, Silvered Leaf Monkey, Silvered Monkey, Silvery Lutung","Greater Slow Loris, Slow Loris, Sunda Slow Loris","Common Short-nosed Fruit Bat, Lesser Dog-faced Fruit Bat, Lesser Short-nosed Fruit Bat","Lyle's Flying Fox","Diadem Horseshoe-bat, Diadem Leafnosed-bat, Diadem Leaf-nosed Bat, Diadem Roundleaf Bat","Ashy Roundleaf Bat, Least Leaf-nosed Bat","Pig-tailed Macaque, Pigtail Macaque, Southern Pig-tailed Macaque, Sundaland Pigtail Macaque, Sunda Pig-tailed Macaque","Sumatran Orangutan","Java Mousedeer, Javan Chevrotain, Javan Mousedeer, Kanchil, Lesser Mouse Deer","Barking Deer, Bornean Red Muntjac, Indian Muntjac, Red Muntjac, Southern Red Muntjac, Sundaland Red Muntjac","Asian Buffalo, Asiatic Buffalo, Indian Buffalo, Indian Water Buffalo, Water Buffalo, Wild Asian Buffalo, Wild Water Buffalo","Capped Gibbon, Crowned Gibbon, Pileated Gibbon","Common Dawn Bat, Common Nectar Bat, Dawn Bat, Lesser Dawn Bat"],["Pongo pygmaeus","Hylobates moloch","Rhinolophus pusillus","Taphozous melanopogon","Hipposideros larvatus","Hylobates lar","Saccolaimus saccolaimus","Macaca fascicularis","Pygathrix nemaeus","Rattus tiomanicus","Rattus exulans","Tupaia belangeri","Presbytis melalophos","Nomascus leucogenys","Pteropus vampyrus","Hipposideros pomona","Rousettus amplexicaudatus","Prionailurus bengalensis","Bandicota savilei","Scotophilus kuhlii","Hipposideros bicolor","Trachypithecus cristatus","Nycticebus coucang","Cynopterus brachyotis","Pteropus lylei","Hipposideros diadema","Hipposideros cineraceus","Macaca nemestrina","Pongo abelii","Tragulus javanicus","Muntiacus muntjak","Bubalus arnee","Hylobates pileatus","Eonycteris spelaea"],[11.045,0.962,0.909,0.839,0.194,0.763,0.26,5.68,0.326,0.67,0.613,0.571,0.533,0.5,0.514,0.443,0.426,0.41,0.403,1.353,0.332,1.306,0.272,1.733,1.247,0.24,0.229,1.219,0.849,0.108,0.098,0.074,0.951,0.997],[1,0,0,0,1,0,1,5,1,0,0,0,0,1,1,0,0,0,0,1,0,1,0,2,1,0,0,1,1,0,0,0,1,1],[-10.045,-0.962,-0.909,-0.839,0.806,-0.763,0.74,-0.68,0.674,-0.67,-0.613,-0.571,-0.533,0.5,0.486,-0.443,-0.426,-0.41,-0.403,-0.353,-0.332,-0.306,-0.272,0.267,-0.247,-0.24,-0.229,-0.219,0.151,-0.108,-0.098,-0.074,0.049,0.003]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> \u003c/th>\n      <th>Common Name\u003c/th>\n      <th>Species\u003c/th>\n      <th>Predicted Zoonoses\u003c/th>\n      <th>Observed Zoonoses\u003c/th>\n      <th>Difference Between Observed and Predicted\u003c/th>\n    \u003c/tr>\n  \u003c/thead>\n\u003c/table>","options":{"columnDefs":[{"className":"dt-right","targets":[3,4,5]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script><!--/html_preserve-->
+Region                             Observations Fit   Observations Held Out   P-value   Mean Prediction Difference (Number of Zoonoses)
+--------------------------------  -----------------  ----------------------  --------  ------------------------------------------------
+Southwestern North America                      555                      21    0.7628                                           -0.0347
+Central / Eastern North America                 554                      22    0.1219                                           -0.3529
+Europe                                          539                      37    0.9494                                            0.0091
+South Africa                                    515                      61    0.7743                                           -0.0244
+India                                           555                      21    0.7854                                            0.0468
+Southeastern China                              562                      14    0.6229                                            0.0876
+Southern Australia                              565                      11    0.7047                                           -0.0988
 
 
-# All Viruses GAM - Strict Associations
+## All Viruses GAM - Strict Associations
 
 ![](geo_cross_files/figure-html/strict-viruses-1.png)<!-- -->
 
@@ -194,383 +126,169 @@ Dark green indicates unbiased regions, while dark red indicates regions with evi
 
 Table: Biased Predictions Regions (n > 10)
 
-Region                      Observations Fit   Observations Held Out   P-value   Mean Prediction Difference
--------------------------  -----------------  ----------------------  --------  ---------------------------
-Northern America                         516                      59    0.0006                      -0.3823
-Southern Central America                 559                      16    0.0009                      -1.0621
-West Central Africa                      545                      30    0.0300                       0.5590
-Central African Band                     541                      34    0.0069                       0.9742
-Southeastern China                       561                      14    0.0047                      -0.5791
+Region                      Observations Fit   Observations Held Out   P-value   Mean Prediction Difference (Number of Viruses)
+-------------------------  -----------------  ----------------------  --------  -----------------------------------------------
+Northern America                         516                      59    0.0006                                          -0.3823
+Southern Central America                 559                      16    0.0009                                          -1.0621
+West Central Africa                      545                      30    0.0300                                           0.5590
+Central African Band                     541                      34    0.0069                                           0.9742
+Southeastern China                       561                      14    0.0047                                          -0.5791
 
 
 
 Table: Unbiased Prediction Regions (n > 10)
 
-Region                             Observations Fit   Observations Held Out   P-value   Mean Prediction Difference
---------------------------------  -----------------  ----------------------  --------  ---------------------------
-Southwestern North America                      554                      21    0.4882                      -0.1670
-Central / Eastern North America                 553                      22    0.6846                      -0.3282
-Northern South America                          476                      99    0.2950                      -0.2083
-Southeastern South America                      554                      21    0.4198                       0.3042
-Europe                                          538                      37    0.2504                       0.3711
-South Africa                                    514                      61    0.7942                      -0.0413
-India                                           554                      21    0.5050                       0.5320
-Northern Eurussia                               539                      36    0.6909                      -0.1171
-Southeast Asia                                  541                      34    0.5390                      -0.1818
-Southern Australia                              564                      11    0.3557                       0.5891
+Region                             Observations Fit   Observations Held Out   P-value   Mean Prediction Difference (Number of Viruses)
+--------------------------------  -----------------  ----------------------  --------  -----------------------------------------------
+Southwestern North America                      554                      21    0.4882                                          -0.1670
+Central / Eastern North America                 553                      22    0.6846                                          -0.3282
+Northern South America                          476                      99    0.2950                                          -0.2083
+Southeastern South America                      554                      21    0.4198                                           0.3042
+Europe                                          538                      37    0.2504                                           0.3711
+South Africa                                    514                      61    0.7942                                          -0.0413
+India                                           554                      21    0.5050                                           0.5320
+Northern Eurussia                               539                      36    0.6909                                          -0.1171
+Southeast Asia                                  541                      34    0.5390                                          -0.1818
+Southern Australia                              564                      11    0.3557                                           0.5891
 
-## Biased Region Details -- Strict Viruses:
+##Cross-validation Interpretation
+The reviewer articulated concerns about our models' ability to make out-of-sample predictions, arguing that cross-validation based on random folds does not adequately address this issue. Accordingly, we performed a non-random cross-validation using zoogeography to determine folds. The results of this procedure show that for the *All Zoonoses*, *All Viruses*, and *Strict Viruses* models, most regions do not show evidence of bias (that is, a systematic over- or under-prediction of model outcome greater than what one would expect due to chance). For each of these three models, only 4-5 substantial (n > 10) folds show evidence of bias, while 10-11 substantial folds do not. The mean size of these prediction differences are measured in units of each model outcome: for the All Zoonoses GAM in Zoonoses and in the Viruses GAMs in Viruses. It is important to note that the significance tests in this type of cross-validation are subject to multiple comparison concerns, just like those in the random cross-validation, so the occasional significant finding should not be over-interpreted. Nevertheless, to be conservative in the performance evaluation of our model we have made no correction for the many comparisons being made at the 5% significance level. 
 
-### Northern America:
-<!--html_preserve--><div id="htmlwidget-04718ddffab8f5980db8" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-04718ddffab8f5980db8">{"x":{"filter":"none","data":[["1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20","21","22","23","24","25","26","27","28","29","30","31","32","33","34","35","36","37","38","39","40","41","42","43","44","45","46","47","48","49","50","51","52","53","54","55","56","57","58","59"],["Deer Mouse, North American Deermouse","American Jackal, Brush Wolf, Coyote, Prairie Wolf","Dusky-footed Woodrat, San Joaquin Valley Woodrat","Prairie Vole","Big Horn Thirteen-lined Ground Squirrel, Spotted Skunk, Thirteen-lined Ground Squirrel","Northern Grasshopper Mouse","Woodchuck","Mountain Goat, Rocky Mountain Goat","Brush Mouse","Bay Lynx, Bobcat","Big Brown Bat","Northern Pocket Gopher, Vancouver Pocket Gopher","Southern Marsh Harvest Mouse, Western Harvest Mouse","Yuma Myotis","Chihuahua Vole, Meadow Vole","Snowshoe Hare, Snowshoe Rabbit, Varying Hare","California Ground Squirrel","American Badger","Long-legged Myotis","Mexican Pronghorn, Pronghorn","Fringed Myotis","North American Porcupine","Mountain Weasel, Mount Graham Red Squirrel, Red Squirrel","Great Basin Pocket Mouse","Key Deer, Key Deer Toy Deer, White-tailed Deer","Pinyon Mouse","Black-tailed Deer, Cedros Island Black-tailed Deer, Cedros Island Mule Deer, Mule Deer","Yellow-bellied Marmot","Heermann's Kangaroo Rat, Morro Bay Kangaroo-rat, Morro Bay Kangaroo Rat","Northern Raccoon","Golden Mantled Ground Squirrel, Green River Basin Golden-mantled Ground Squirrel","Desert Woodrat","Bushy-tailed Woodrat, Bushy-talied Woodrat, Packrat, Woodrat","Amargosa Vole, California Vole","North American Otter, North American River Otter, Northern River Otter","Silver-haired Bat","American Black Bear","Little Brown Bat, Little Brown Myotis","Richardson's Ground Squirrel","Fisher","Mountain Cottontail, Nuttall's Cottontail","Black-footed Ferret","American Bison","Keen's Myotis","Striped Skunk","Columbian Ground Squirrel","Hawaiian Hoary Bat, Hoary Bat","Hidden Forest Chipmunk, Uinta Chipmunk","Revillagigedo Island Red-backed Vole, Southern Red-backed Vole","Bighorn Sheep, Mountain Sheep","Dall's Sheep, Thinhorn Sheep","Arctic Ground Squirrel","Least Chipmunk, New Mexico Least Chipmunk, Pe_asco Least Chipmunk, Selkirk Least Chipmunk","Long-eared Myotis","Yellow-pine Chipmunk","Muskox, Musk Ox","California Myotis, Californian Myotis","Spotted Bat","Northern Myotis"],["Peromyscus maniculatus","Canis latrans","Neotoma fuscipes","Microtus ochrogaster","Spermophilus tridecemlineatus","Onychomys leucogaster","Marmota monax","Oreamnos americanus","Peromyscus boylii","Lynx rufus","Eptesicus fuscus","Thomomys talpoides","Reithrodontomys megalotis","Myotis yumanensis","Microtus pennsylvanicus","Lepus americanus","Spermophilus beecheyi","Taxidea taxus","Myotis volans","Antilocapra americana","Myotis thysanodes","Erethizon dorsatum","Tamiasciurus hudsonicus","Perognathus parvus","Odocoileus virginianus","Peromyscus truei","Odocoileus hemionus","Marmota flaviventris","Dipodomys heermanni","Procyon lotor","Spermophilus lateralis","Neotoma lepida","Neotoma cinerea","Microtus californicus","Lontra canadensis","Lasionycteris noctivagans","Ursus americanus","Myotis lucifugus","Spermophilus richardsonii","Martes pennanti","Sylvilagus nuttallii","Mustela nigripes","Bison bison","Myotis keenii","Mephitis mephitis","Spermophilus columbianus","Lasiurus cinereus","Tamias umbrinus","Myodes gapperi","Ovis canadensis","Ovis dalli","Spermophilus parryii","Tamias minimus","Myotis evotis","Tamias amoenus","Ovibos moschatus","Myotis californicus","Euderma maculatum","Myotis septentrionalis"],[7.139,3.138,1.982,1.943,1.539,1.508,2.53,0.738,1.209,1.107,3.085,1.082,2.059,0.953,3.034,1.032,2.013,0.984,0.975,0.94,0.902,1.877,2.142,0.838,5.211,1.748,3.258,0.734,0.733,4.287,1.656,1.589,1.587,1.507,0.489,1.484,1.445,2.412,1.385,0.635,0.346,0.663,2.309,0.727,2.254,0.747,1.751,0.795,0.796,2.201,0.805,0.808,0.864,0.867,0.867,0.921,0.941,0.961,1.024],[5,1,0,0,0,0,4,2,0,0,2,0,1,2,2,0,1,0,0,0,0,1,3,0,6,1,4,0,0,5,1,1,1,2,0,1,1,2,1,1,0,1,2,1,2,1,2,1,1,2,1,1,1,1,1,1,1,1,1],[-2.139,-2.138,-1.982,-1.943,-1.539,-1.508,1.47,1.262,-1.209,-1.107,-1.085,-1.082,-1.059,1.047,-1.034,-1.032,-1.013,-0.984,-0.975,-0.94,-0.902,-0.877,0.858,-0.838,0.789,-0.748,0.742,-0.734,-0.733,0.713,-0.656,-0.589,-0.587,0.493,-0.489,-0.484,-0.445,-0.412,-0.385,0.365,-0.346,0.337,-0.309,0.273,-0.254,0.253,0.249,0.205,0.204,-0.201,0.195,0.192,0.136,0.133,0.133,0.079,0.059,0.039,-0.024]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> \u003c/th>\n      <th>Common Name\u003c/th>\n      <th>Species\u003c/th>\n      <th>Predicted Viruses\u003c/th>\n      <th>Observed Viruses\u003c/th>\n      <th>Difference Between Observed and Predicted\u003c/th>\n    \u003c/tr>\n  \u003c/thead>\n\u003c/table>","options":{"columnDefs":[{"className":"dt-right","targets":[3,4,5]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script><!--/html_preserve-->
+For the *Strict Zoonoses* model the evidence is more equivocal, with 8 substantial regions that show evidence of bias and 7 substantial regions which show no evidence of bias. This suggests that there might be some unaccounted-for association between zoogeographical region and number of strictly-defined zoonoses present in animals. We took a closer look at each biased region for each model, examining the over- or under-prediction patterns on a species-by-species level; however, no clear interpretable pattern (besides their region) was evident. 
 
-### Southern Central America:
-<!--html_preserve--><div id="htmlwidget-d6cde384713c4b7881f1" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-d6cde384713c4b7881f1">{"x":{"filter":"none","data":[["1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16"],["Gorgona White-fronted Capuchin, White-throated Capuchin","Ecuadorian Mantled Howling Monkey, Mantled Howler Monkey, South Pacific Blackish Howling Monkey","Geoffroy's Tamarin, Geoffroys Tamarin, Red Crested Bare-face Tamarin","Toltec Cotton Rat","Jamaican Fruit-eating Bat","Peter's Climbing Rat, Peters's Climbing Rat","Alfaro's Rice Rat","Mexican Deer Mouse","Armored Rat","Black Howling Monkey, Guatemalan Black Howler Monkey, Guatemalan Howler, Guatemalan Howling Monkey, Lawrences Howler Monkey, Mexican Black Howler Monkey, Yucat_n Black Howler Monkey","Coues's Rice Rat","Gray Short-tailed Bat","Panamanian Spiny Pocket Mouse","Central American Woolly Opossum","Black-handed Spider Monkey, Central American Spider Monkey, Geoffroy's Spider Monkey, Geoffroys Spider Monkey, Mono Colorado","Mexican Harvest Mouse"],["Cebus capucinus","Alouatta palliata","Saguinus geoffroyi","Sigmodon toltecus","Artibeus jamaicensis","Tylomys nudicaudus","Handleyomys alfaroi","Peromyscus mexicanus","Hoplomys gymnurus","Alouatta pigra","Oryzomys couesi","Carollia subrufa","Liomys adspersus","Caluromys derbianus","Ateles geoffroyi","Reithrodontomys mexicanus"],[2.766,2.111,1.741,1.664,2.504,1.297,1.263,1.238,1.175,1.175,1.104,1.074,0.995,0.475,2.457,0.954],[0,0,0,0,4,0,0,0,0,0,0,0,0,0,2,1],[-2.766,-2.111,-1.741,-1.664,1.496,-1.297,-1.263,-1.238,-1.175,-1.175,-1.104,-1.074,-0.995,-0.475,-0.457,0.046]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> \u003c/th>\n      <th>Common Name\u003c/th>\n      <th>Species\u003c/th>\n      <th>Predicted Viruses\u003c/th>\n      <th>Observed Viruses\u003c/th>\n      <th>Difference Between Observed and Predicted\u003c/th>\n    \u003c/tr>\n  \u003c/thead>\n\u003c/table>","options":{"columnDefs":[{"className":"dt-right","targets":[3,4,5]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script><!--/html_preserve-->
-
-### West Central Africa:
-<!--html_preserve--><div id="htmlwidget-67259fe4bf4c0f4337c4" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-67259fe4bf4c0f4337c4">{"x":{"filter":"none","data":[["1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20","21","22","23","24","25","26","27","28","29","30"],["Bonobo, Dwarf Chimpanzee, Gracile Chimpanzee, Pygmy Chimpanzee","Lowland Gorilla, Western Gorilla","Greater Spot-nosed Guenon, Greater White-nosed Monkey, Putty-nosed Monkey, Spot-nosed Guenon, White-nosed Guenon","African Buffalo","Gray-cheeked Mangabey, Grey-cheeked Mangabey, White-cheeked Mangabey","Franquet's Epauletted Fruit Bat","Mandrill","Mona Guenon, Mona Monkey","Yellow-spotted Brush-furred Rat","Jackson's Praomys, Jackson's Soft-furred Mouse","Crab-eating Mongoose, Isabelline Red-legged Sun Squirrel, Red-legged Sun Squirrel","King Colobus, Ursine Black-and-white Colobus, Western Black-and-white Colobus, Western Pied Colobus","Rusty-bellied Brush-furred Rat","Drill","African Elephant","Forest Giant Pouched Rat, Giant Rat","Eastern Black-and-white Colobus, Guereza, Magistrate Colobus","Peter's Duiker, Peters' Duiker","Bay Duiker","Weyn's Duiker, Weyns' Duiker","Red River Hog","White-bellied Duiker","Black-fronted Duiker","Pygmy Hippopotamus","Bongo","Peter's Mouse","Tropical Vlei Rat","Little Collared Fruit Bat","Collared Mangabey, Red-capped Mangabey, Sooty Mangabey, White-collared Mangabey","Greater Long-fingered Bat"],["Pan paniscus","Gorilla gorilla","Cercopithecus nictitans","Syncerus caffer","Lophocebus albigena","Epomops franqueti","Mandrillus sphinx","Cercopithecus mona","Lophuromys flavopunctatus","Praomys jacksoni","Heliosciurus rufobrachium","Colobus polykomos","Lophuromys sikapusi","Mandrillus leucophaeus","Loxodonta africana","Cricetomys emini","Colobus guereza","Cephalophus callipygus","Cephalophus dorsalis","Cephalophus weynsi","Potamochoerus porcus","Cephalophus leucogaster","Cephalophus nigrifrons","Choeropsis liberiensis","Tragelaphus eurycerus","Mus setulosus","Otomys tropicalis","Myonycteris torquata","Cercocebus torquatus","Miniopterus inflatus"],[1.782,4.902,1.153,3.143,0.904,1.021,1.215,1.48,0.893,0.95,0.985,0.943,1.068,1.134,1.188,0.691,2.32,0.472,0.497,0.493,0.507,0.484,0.472,0.454,0.56,1.228,1.21,1.109,0.896,1.078],[6,8,4,1,3,3,3,3,2,2,0,0,2,2,2,0,3,1,0,0,1,0,0,0,1,1,1,1,1,1],[4.218,3.098,2.847,-2.143,2.096,1.979,1.785,1.52,1.107,1.05,-0.985,-0.943,0.932,0.866,0.812,-0.691,0.68,0.528,-0.497,-0.493,0.493,-0.484,-0.472,-0.454,0.44,-0.228,-0.21,-0.109,0.104,-0.078]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> \u003c/th>\n      <th>Common Name\u003c/th>\n      <th>Species\u003c/th>\n      <th>Predicted Viruses\u003c/th>\n      <th>Observed Viruses\u003c/th>\n      <th>Difference Between Observed and Predicted\u003c/th>\n    \u003c/tr>\n  \u003c/thead>\n\u003c/table>","options":{"columnDefs":[{"className":"dt-right","targets":[3,4,5]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script><!--/html_preserve-->
-
-### Central African Band:
-<!--html_preserve--><div id="htmlwidget-3b5cc3056b7c462c2020" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-3b5cc3056b7c462c2020">{"x":{"filter":"none","data":[["1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20","21","22","23","24","25","26","27","28","29","30","31","32","33","34"],["Green Monkey, Grivet Monkey, Malbrouk Monkey, Tantalus, Vervet Monkey","Egyptian Fruit Bat, Egyptian Rousette, EGYPTIAN ROUSETTE","African Grass Rat","Kemp's Gerbil","Anubis Baboon, Olive Baboon","Thomson's Gazelle","Guinea Multimammate Mouse, Reddish-white Mastomys","Green Monkey","Angolan Free-tailed Bat","Peter's Dwarf Epauletted Fruit Bat","Lesser Bushbaby, Lesser Galago, Northern Lesser Galago, Senegal Galago, Senegal Lesser Galago","White-tailed Mongoose","Hubert's Mastomys, Huberts Mastomys","Roan Antelope","Geoffroy's Ground Squirrel, Striped Ground Squirrel","Spotted Hyaena","Gambian Epauletted Fruit Bat","Eloquent Horseshoe Bat","Hamadryas Baboon, Sacred Baboon","Cape Warthog, Desert Warthog, Somali Warthog","Waterbuck","Ethiopian Wolf, Simien Fox, Simien Jackal","Lesser Kudu","Natal Mastomys, Natal Multimammate Mouse","Slender Mongoose","Guinea Baboon","Oribi","Grant's Gazelle","African Lion, Lion","Typical Lemniscomys, Typical Striped Grass Mouse","Common Genet, Ibiza Common Genet, Ibiza Genet","Gelada Baboon","Aba Roundleaf Bat","Somali Grass Rat"],["Chlorocebus aethiops","Rousettus aegyptiacus","Arvicanthis niloticus","Gerbilliscus kempi","Papio anubis","Eudorcas thomsonii","Mastomys erythroleucus","Chlorocebus sabaeus","Tadarida condylura","Micropteropus pusillus","Galago senegalensis","Ichneumia albicauda","Mastomys huberti","Hippotragus equinus","Xerus erythropus","Crocuta crocuta","Epomophorus gambianus","Rhinolophus eloquens","Papio hamadryas","Phacochoerus aethiopicus","Kobus ellipsiprymnus","Canis simensis","Tragelaphus imberbis","Mastomys natalensis","Herpestes sanguineus","Papio papio","Ourebia ourebi","Nanger granti","Panthera leo","Lemniscomys striatus","Genetta genetta","Theropithecus gelada","Hipposideros abae","Arvicanthis neumanni"],[1.12,2.435,2.849,0.977,4.242,0.37,1.675,1.039,1.11,1.18,1.626,0.39,0.743,1.062,0.992,1.007,0.938,1.105,2.153,0.778,0.709,0.343,0.356,6.483,0.539,2.543,0.431,0.402,2.636,1.724,0.732,1.153,1.127,0.91],[7,8,8,6,1,3,4,3,3,3,0,2,2,0,2,2,0,2,3,0,0,1,1,7,1,3,0,0,3,2,1,1,1,1],[5.88,5.565,5.151,5.023,-3.242,2.63,2.325,1.961,1.89,1.82,-1.626,1.61,1.257,-1.062,1.008,0.993,-0.938,0.895,0.847,-0.778,-0.709,0.657,0.644,0.517,0.461,0.457,-0.431,-0.402,0.364,0.276,0.268,-0.153,-0.127,0.09]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> \u003c/th>\n      <th>Common Name\u003c/th>\n      <th>Species\u003c/th>\n      <th>Predicted Viruses\u003c/th>\n      <th>Observed Viruses\u003c/th>\n      <th>Difference Between Observed and Predicted\u003c/th>\n    \u003c/tr>\n  \u003c/thead>\n\u003c/table>","options":{"columnDefs":[{"className":"dt-right","targets":[3,4,5]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script><!--/html_preserve-->
-
-### Southeastern China:
-<!--html_preserve--><div id="htmlwidget-150ba18aa4d29ce6d7ff" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-150ba18aa4d29ce6d7ff">{"x":{"filter":"none","data":[["1","2","3","4","5","6","7","8","9","10","11","12","13","14"],["Lesser Rice-field Rat, Losea Rat","Intermediate Horseshoe Bat, Intermediat Horseshoe Bat","Rickett's Big-footed Bat, Rickett's Big-footed Myotis","Bear Macaque, Stump-tailed Macaque, Stumptail Macaque","Japanese Pipistrelle, Japanese Pipistrelle","Oriental House Rat, Tanezumi Rat","Great Himalayan Leaf-nosed Bat, Great Leaf-nosed Bat, Great Roundleaf Bat","Formosan Rock Macaque, Taiwanese Macaque, Taiwan Macaque","Chinese Ferret-badger, Small-toothed Ferret-badger","Pearson's Horseshoe Bat","Big-eared Horseshoe Bat","Chinese Horseshoe Bat, Chinese Rufous Horseshoe Bat, Little Nepalese Horseshoe Bat","Francois's Langur","Gem-faced Civet, Masked Palm Civet"],["Rattus losea","Rhinolophus affinis","Myotis pilosus","Macaca arctoides","Pipistrellus abramus","Rattus tanezumi","Hipposideros armiger","Macaca cyclopis","Melogale moschata","Rhinolophus pearsonii","Rhinolophus macrotis","Rhinolophus sinicus","Trachypithecus francoisi","Paguma larvata"],[2.874,1.511,0.895,2.88,0.875,1.84,1.769,1.39,0.454,1.354,1.162,1.161,0.969,0.971],[1,0,0,2,0,1,1,2,0,1,1,1,1,1],[-1.874,-1.511,-0.895,-0.88,-0.875,-0.84,-0.769,0.61,-0.454,-0.354,-0.162,-0.161,0.031,0.029]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> \u003c/th>\n      <th>Common Name\u003c/th>\n      <th>Species\u003c/th>\n      <th>Predicted Viruses\u003c/th>\n      <th>Observed Viruses\u003c/th>\n      <th>Difference Between Observed and Predicted\u003c/th>\n    \u003c/tr>\n  \u003c/thead>\n\u003c/table>","options":{"columnDefs":[{"className":"dt-right","targets":[3,4,5]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script><!--/html_preserve-->
-
-#Cross-validation Results
-The reviewer articulated concerns about our models' ability to make out-of-sample predictions, arguing that cross-validation based on random folds does not adequately address this issue. This analysis suggests that our *All Zoonoses*, *All Viruses*, and *Strict Viruses* models are fairly robust to a systematic cross-validation that creates folds based on geographical/phylogenetic region ~ a non-random method to approximate out-of-sample testing. For each of these three models, only 4-5 substantial (n > 10) folds show evidence of bias, while 10-11 substantial folds are well-predicted. 
-
-For the *Strict Zoonoses* model the evidence is more equivocal, with 8 substantial regions that show evidence of bias and 7 substantial regions which are well-predicted. This suggests that there might be some association between zoogeographical region and number of strictly-defined zoonoses present in animals. In order to further explore possibility of an association between region and our model outcomes, we included region as a random effect variable in each of our models below
+The presence of biased regions across the models suggested the possibility that there is some association between zoogeographical region and our outcomes of interest, but the cross-validation procedure is not the appropriate way to assess this relationship. To that end, we added zoogeographical region as a categorical random effect to the best-fit models for each of our four outcomes.
 
 #Region as Random Effect
+
+Below we add zoographical region as a categorical random effect to each of our best-fit GAMs. The model fit and variable relative deviance explained comparisons for each model follow:
+
 ## All Zoonoses GAM
+Adding zoogeographical region as a categorical random effect to our best-fit All Zoonoses GAM does not improve the model fit, as seen in the tables below:
 
 
-```
-## 
-## Family: poisson 
-## Link function: log 
-## 
-## Formula:
-## NSharedWithHoSa ~ s(hAllZACitesLn, bs = "tp", k = 7) + s(hHuntedIUCN, 
-##     bs = "re") + s(hOrderCETARTIODACTYLA, bs = "re") + s(hOrderCHIROPTERA, 
-##     bs = "re") + s(hOrderDIPROTODONTIA, bs = "re") + s(hOrderPERAMELEMORPHIA, 
-##     bs = "re") + s(hOrderPERISSODACTYLA, bs = "re") + s(zg_region, 
-##     bs = "re") + s(hOrderSCANDENTIA, bs = "re") + s(PdHoSa.cbCst, 
-##     bs = "tp", k = 7) + s(UrbRurPopRatioLn, bs = "tp", k = 7) + 
-##     offset(LnTotNumVirus)
-## 
-## Parametric coefficients:
-##             Estimate Std. Error z value Pr(>|z|)    
-## (Intercept) -0.34123    0.03973  -8.588   <2e-16 ***
-## ---
-## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
-## 
-## Approximate significance of smooth terms:
-##                              edf Ref.df Chi.sq  p-value    
-## s(hAllZACitesLn)         1.51208      6  7.628 0.009189 ** 
-## s(hHuntedIUCN)           0.23250      1  0.391 0.205630    
-## s(hOrderCETARTIODACTYLA) 0.88970      1 26.937 9.05e-08 ***
-## s(hOrderCHIROPTERA)      0.71246      1  4.448 0.016087 *  
-## s(hOrderDIPROTODONTIA)   0.52135      1  0.997 0.167200    
-## s(hOrderPERAMELEMORPHIA) 0.78000      1  0.760 0.323730    
-## s(hOrderPERISSODACTYLA)  0.74609      1  3.026 0.044467 *  
-## s(zg_region)             0.00017     30  0.000 0.882367    
-## s(hOrderSCANDENTIA)      0.78404      1  0.811 0.309186    
-## s(PdHoSa.cbCst)          1.97262      6 14.588 0.000634 ***
-## s(UrbRurPopRatioLn)      1.25644      6 10.284 0.001812 ** 
-## ---
-## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
-## 
-## R-sq.(adj) =  0.893   Deviance explained = 33.7%
-## UBRE = -0.60137  Scale est. = 1         n = 584
-```
+Table: All Zoonoses Model Comparison
+
+                      Original Model   Region Model
+-------------------  ---------------  -------------
+AICs                       1517.5834      1517.5836
+Deviance Explained            0.3368         0.3368
 
 
 
-Table: All Zoonoses: Original Model
+Table: All Zoonoses: Original vs. Region Model Relative Deviance Explained
 
-term                     rel_deviance_explained
-----------------------  -----------------------
-hAllZACitesLn                         0.1078137
-hHuntedIUCN                           0.0074656
-hOrderCETARTIODACTYLA                 0.3453714
-hOrderCHIROPTERA                      0.0591182
-hOrderDIPROTODONTIA                   0.0223696
-hOrderPERAMELEMORPHIA                 0.0458438
-hOrderPERISSODACTYLA                  0.0555464
-hOrderSCANDENTIA                      0.0482336
-PdHoSa.cbCst                          0.1869414
-UrbRurPopRatioLn                      0.1212965
-
-
-Table: All Zoonoses: Region Model
-
-term                     rel_deviance_explained
-----------------------  -----------------------
-hAllZACitesLn                         0.1078140
-hHuntedIUCN                           0.0074651
-hOrderCETARTIODACTYLA                 0.3453724
-hOrderCHIROPTERA                      0.0591187
-hOrderDIPROTODONTIA                   0.0223696
-hOrderPERAMELEMORPHIA                 0.0458440
-hOrderPERISSODACTYLA                  0.0555464
-zg_region                             0.0000023
-hOrderSCANDENTIA                      0.0482336
-PdHoSa.cbCst                          0.1869400
-UrbRurPopRatioLn                      0.1212939
+Term                     Original Model Relative Deviance Explained   Region Model Relative Deviance Explained
+----------------------  -------------------------------------------  -----------------------------------------
+hAllZACitesLn                                                0.1078                                     0.1078
+hHuntedIUCN                                                  0.0075                                     0.0075
+hOrderCETARTIODACTYLA                                        0.3454                                     0.3454
+hOrderCHIROPTERA                                             0.0591                                     0.0591
+hOrderDIPROTODONTIA                                          0.0224                                     0.0224
+hOrderPERAMELEMORPHIA                                        0.0458                                     0.0458
+hOrderPERISSODACTYLA                                         0.0555                                     0.0555
+hOrderSCANDENTIA                                             0.0482                                     0.0482
+PdHoSa.cbCst                                                 0.1869                                     0.1869
+UrbRurPopRatioLn                                             0.1213                                     0.1213
+zg_region                                                        NA                                     0.0000
   
-  
-Adding zoogeographical region as a random effect to our best-fit All Zoonoses GAM does not improve the model (AIC~region~: 1517.584 vs AIC~original~: 1517.583); the effective degrees of freedom for the region smooth is very low (1.7\times 10^{-4}), which supports removing the region variable from the All Zoonoses GAM.
   
 ## All Viruses GAM  
+Adding zoogeographical region as a categorical random effect to our best-fit All Viruses GAM improves the model, as seen by the decrease in AIC and the increase in deviance explained.
 
-```
-## 
-## Family: poisson 
-## Link function: log 
-## 
-## Formula:
-## TotVirusPerHost ~ s(hDiseaseZACitesLn, bs = "cs", k = 7) + s(hMassGramsPVR, 
-##     bs = "cs", k = 7) + s(hOrderCETARTIODACTYLA, bs = "re") + 
-##     s(hOrderCHIROPTERA, bs = "re") + s(hOrderEULIPOTYPHLA, bs = "re") + 
-##     s(hOrderPERISSODACTYLA, bs = "re") + s(hOrderPRIMATES, bs = "re") + 
-##     s(hOrderRODENTIA, bs = "re") + s(LnAreaHost, bs = "cs", k = 7) + 
-##     s(zg_region, bs = "re") + s(S20, bs = "cs", k = 7)
-## 
-## Parametric coefficients:
-##             Estimate Std. Error z value Pr(>|z|)    
-## (Intercept)  0.45265    0.08493    5.33 9.83e-08 ***
-## ---
-## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
-## 
-## Approximate significance of smooth terms:
-##                              edf Ref.df   Chi.sq  p-value    
-## s(hDiseaseZACitesLn)      5.4745      6 3523.425  < 2e-16 ***
-## s(hMassGramsPVR)          4.0770      6  673.951  0.00497 ** 
-## s(hOrderCETARTIODACTYLA)  0.8687      1   35.818  0.00261 ** 
-## s(hOrderCHIROPTERA)       1.0000      1  370.532  < 2e-16 ***
-## s(hOrderEULIPOTYPHLA)     0.7690      1    4.668  0.01898 *  
-## s(hOrderPERISSODACTYLA)   0.9999      1   12.526  0.00159 ** 
-## s(hOrderPRIMATES)         0.8829      1   44.972 3.55e-05 ***
-## s(hOrderRODENTIA)         1.0000      1  189.311 1.12e-08 ***
-## s(LnAreaHost)             3.8438      6   12.442  0.29000    
-## s(zg_region)             14.0850     30   62.004 1.67e-06 ***
-## s(S20)                    0.9793      6  180.418 7.26e-05 ***
-## ---
-## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
-## 
-## R-sq.(adj) =  0.518   Deviance explained = 52.5%
-## UBRE = 0.31343  Scale est. = 1         n = 576
-```
+
+Table: All Viruses Model Comparison
+
+                      Original Model   Region Model
+-------------------  ---------------  -------------
+AICs                       2330.1757      2301.8910
+Deviance Explained            0.4918         0.5254
 
 
 
-Table: All Viruses: Original Model
+Table: All Viruses: Original vs. Region Model Relative Deviance Explained
 
-term                     rel_deviance_explained
-----------------------  -----------------------
-hDiseaseZACitesLn                     0.6481007
-hMassGramsPVR                         0.0190962
-hOrderCETARTIODACTYLA                 0.0185942
-hOrderCHIROPTERA                      0.0994140
-hOrderEULIPOTYPHLA                    0.0108464
-hOrderPERISSODACTYLA                  0.0141255
-hOrderPRIMATES                        0.0252128
-hOrderRODENTIA                        0.0479167
-LnAreaHost                            0.0158097
-S20                                   0.1008838
-
-
-
-Table: All Viruses: Region Model
-
-term                     rel_deviance_explained
-----------------------  -----------------------
-hDiseaseZACitesLn                     0.6512018
-hMassGramsPVR                         0.0206634
-hOrderCETARTIODACTYLA                 0.0112397
-hOrderCHIROPTERA                      0.1174452
-hOrderEULIPOTYPHLA                    0.0071505
-hOrderPERISSODACTYLA                  0.0147072
-hOrderPRIMATES                        0.0195596
-hOrderRODENTIA                        0.0497665
-LnAreaHost                            0.0111527
-zg_region                             0.0878964
-S20                                   0.0092169
+Term                     Original Model Relative Deviance Explained   Region Model Relative Deviance Explained
+----------------------  -------------------------------------------  -----------------------------------------
+hDiseaseZACitesLn                                            0.6481                                     0.6512
+hMassGramsPVR                                                0.0191                                     0.0207
+hOrderCETARTIODACTYLA                                        0.0186                                     0.0112
+hOrderCHIROPTERA                                             0.0994                                     0.1174
+hOrderEULIPOTYPHLA                                           0.0108                                     0.0072
+hOrderPERISSODACTYLA                                         0.0141                                     0.0147
+hOrderPRIMATES                                               0.0252                                     0.0196
+hOrderRODENTIA                                               0.0479                                     0.0498
+LnAreaHost                                                   0.0158                                     0.0112
+S20                                                          0.1009                                     0.0092
+zg_region                                                        NA                                     0.0879
   
-  
-Adding zoogeographical region as a random effect to our best-fit All Viruses GAM significantly improves the model (AIC~region~: 2301.891 vs AIC~original~: 2330.176). The smooth for region is significant, as seen in the model details above. The deviance explained by the original model was 0.492.
 
 ## Strict Zoonoses GAM
+Adding zoogeographical region as a categorical random effect to our best-fit Strict Zoonoses GAM improves the model, as seen by the decrease in AIC and the increase in deviance explained.
 
-```
-## 
-## Family: poisson 
-## Link function: log 
-## 
-## Formula:
-## NSharedWithHoSa_strict ~ s(hDiseaseZACitesLn, bs = "tp", k = 7) + 
-##     s(hMassGramsPVR, bs = "tp", k = 7) + s(hOrderCETARTIODACTYLA, 
-##     bs = "re") + s(hOrderDIPROTODONTIA, bs = "re") + s(hOrderLAGOMORPHA, 
-##     bs = "re") + s(zg_region, bs = "re") + s(hOrderPERISSODACTYLA, 
-##     bs = "re") + s(hOrderPRIMATES, bs = "re") + s(HumPopDensLnChg, 
-##     bs = "tp", k = 7) + s(PdHoSa.cbCst, bs = "tp", k = 7) + s(UrbRurPopRatioChg, 
-##     bs = "tp", k = 7) + offset(LnTotNumVirus)
-## 
-## Parametric coefficients:
-##             Estimate Std. Error z value Pr(>|z|)    
-## (Intercept) -1.35552    0.09893   -13.7   <2e-16 ***
-## ---
-## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
-## 
-## Approximate significance of smooth terms:
-##                                edf Ref.df Chi.sq  p-value    
-## s(hDiseaseZACitesLn)     8.549e-01      6  3.055  0.04167 *  
-## s(hMassGramsPVR)         6.566e-01      6  1.709  0.12505    
-## s(hOrderCETARTIODACTYLA) 9.505e-01      1 27.082 8.79e-07 ***
-## s(hOrderDIPROTODONTIA)   8.180e-01      1  3.831  0.04622 *  
-## s(hOrderLAGOMORPHA)      2.885e-01      1  0.433  0.22928    
-## s(zg_region)             9.804e+00     30 25.363  0.00067 ***
-## s(hOrderPERISSODACTYLA)  8.160e-01      1  0.878  0.30007    
-## s(hOrderPRIMATES)        5.516e-01      1  1.990  0.04243 *  
-## s(HumPopDensLnChg)       6.751e-05      6  0.000  0.80643    
-## s(PdHoSa.cbCst)          2.601e+00      6 53.113  0.03283 *  
-## s(UrbRurPopRatioChg)     4.077e+00      6 27.372  0.05795 .  
-## ---
-## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
-## 
-## R-sq.(adj) =  0.692   Deviance explained = 28.6%
-## UBRE = -0.17821  Scale est. = 1         n = 576
-```
+
+Table: Strict Zoonoses Model Comparison
+
+                      Original Model   Region Model
+-------------------  ---------------  -------------
+AICs                        1092.285      1080.4189
+Deviance Explained             0.236         0.2858
 
 
 
-Table: Strict Zoonoses: Original Model
+Table: Strict Zoonoses: Original vs. Region Model Relative Deviance Explained
 
-term                     rel_deviance_explained
-----------------------  -----------------------
-hDiseaseZACitesLn                     0.0376082
-hMassGramsPVR                         0.0112017
-hOrderCETARTIODACTYLA                 0.2801874
-hOrderDIPROTODONTIA                   0.0275007
-hOrderLAGOMORPHA                      0.0088117
-hOrderPERISSODACTYLA                  0.0499548
-hOrderPRIMATES                        0.0010121
-HumPopDensLnChg                       0.0434312
-PdHoSa.cbCst                          0.3447580
-UrbRurPopRatioChg                     0.1955343
-
-
-
-Table: Strict Zoonoses: Region Model
-
-term                     rel_deviance_explained
-----------------------  -----------------------
-hDiseaseZACitesLn                     0.0199144
-hMassGramsPVR                         0.0190846
-hOrderCETARTIODACTYLA                 0.2366562
-hOrderDIPROTODONTIA                   0.0347912
-hOrderLAGOMORPHA                      0.0049198
-zg_region                             0.2506387
-hOrderPERISSODACTYLA                  0.0394316
-hOrderPRIMATES                        0.0105020
-HumPopDensLnChg                       0.0011502
-PdHoSa.cbCst                          0.2243002
-UrbRurPopRatioChg                     0.1586111
+Term                     Original Model Relative Deviance Explained   Region Model Relative Deviance Explained
+----------------------  -------------------------------------------  -----------------------------------------
+hDiseaseZACitesLn                                            0.0376                                     0.0199
+hMassGramsPVR                                                0.0112                                     0.0191
+hOrderCETARTIODACTYLA                                        0.2802                                     0.2367
+hOrderDIPROTODONTIA                                          0.0275                                     0.0348
+hOrderLAGOMORPHA                                             0.0088                                     0.0049
+hOrderPERISSODACTYLA                                         0.0500                                     0.0394
+hOrderPRIMATES                                               0.0010                                     0.0105
+HumPopDensLnChg                                              0.0434                                     0.0012
+PdHoSa.cbCst                                                 0.3448                                     0.2243
+UrbRurPopRatioChg                                            0.1955                                     0.1586
+zg_region                                                        NA                                     0.2506
   
-  
-Adding zoogeographical region as a random effect to our best-fit Strict Zoonoses GAM significantly improves the model (AIC~region~: 1080.419 vs AIC~original~: 1092.285). The smooth for region is significant, as seen in the model details above. The deviance explained by the original model was 0.236.
-
 
 ##Strict Viruses GAM
+Adding zoogeographical region as a categorical random effect to our best-fit Strict Viruses GAM improves the model, as seen by the decrease in AIC and the increase in deviance explained.
 
-```
-## 
-## Family: poisson 
-## Link function: log 
-## 
-## Formula:
-## TotVirusPerHost_strict ~ s(hDiseaseZACitesLn, bs = "cs", k = 7) + 
-##     s(hMassGramsPVR, bs = "cs", k = 7) + s(hOrderCHIROPTERA, 
-##     bs = "re") + s(hOrderCINGULATA, bs = "re") + s(hOrderEULIPOTYPHLA, 
-##     bs = "re") + s(hOrderPERAMELEMORPHIA, bs = "re") + s(hOrderPRIMATES, 
-##     bs = "re") + s(zg_region, bs = "re") + s(hOrderRODENTIA, 
-##     bs = "re") + s(hOrderSCANDENTIA, bs = "re") + s(LnAreaHost, 
-##     bs = "cs", k = 7) + s(S20, bs = "cs", k = 7)
-## 
-## Parametric coefficients:
-##             Estimate Std. Error z value Pr(>|z|)    
-## (Intercept)  -0.5622     0.1260  -4.464 8.06e-06 ***
-## ---
-## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
-## 
-## Approximate significance of smooth terms:
-##                                edf Ref.df   Chi.sq  p-value    
-## s(hDiseaseZACitesLn)     4.994e+00      6 4113.344  < 2e-16 ***
-## s(hMassGramsPVR)         3.614e+00      6   14.583   0.0242 *  
-## s(hOrderCHIROPTERA)      1.000e+00      1  575.944 9.11e-16 ***
-## s(hOrderCINGULATA)       7.583e-01      1    0.831   0.2958    
-## s(hOrderEULIPOTYPHLA)    6.524e-01      1    1.783   0.1241    
-## s(hOrderPERAMELEMORPHIA) 7.525e-01      1    0.733   0.3249    
-## s(hOrderPRIMATES)        1.000e+00      1  209.193 2.68e-14 ***
-## s(zg_region)             1.588e+01     30   52.394 6.90e-06 ***
-## s(hOrderRODENTIA)        9.991e-01      1  382.497 4.26e-15 ***
-## s(hOrderSCANDENTIA)      5.444e-01      1    1.900   0.0832 .  
-## s(LnAreaHost)            1.706e-04      6    0.000   0.4649    
-## s(S20)                   1.081e+00      6   71.188   0.0172 *  
-## ---
-## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
-## 
-## R-sq.(adj) =  0.422   Deviance explained = 39.9%
-## UBRE = 0.33243  Scale est. = 1         n = 575
-```
+
+Table: Strict Viruses Model Comparison
+
+                      Original Model   Region Model
+-------------------  ---------------  -------------
+AICs                       1730.9954       1703.647
+Deviance Explained            0.3585          0.399
 
 
 
-Table: Strict Viruses: Original Model
+Table: Strict Viruses: Original vs. Region Model Relative Deviance Explained
 
-term                     rel_deviance_explained
-----------------------  -----------------------
-hDiseaseZACitesLn                     0.5363064
-hMassGramsPVR                         0.0276347
-hOrderCHIROPTERA                      0.1223286
-hOrderCINGULATA                       0.0056323
-hOrderEULIPOTYPHLA                    0.0037040
-hOrderPERAMELEMORPHIA                 0.0036182
-hOrderPRIMATES                        0.1178037
-hOrderRODENTIA                        0.1257924
-hOrderSCANDENTIA                      0.0028642
-LnAreaHost                            0.0152701
-S20                                   0.0390455
-
-
-
-Table: Strict Viruses: Region Model
-
-term                     rel_deviance_explained
-----------------------  -----------------------
-hDiseaseZACitesLn                     0.4891541
-hMassGramsPVR                         0.0247310
-hOrderCHIROPTERA                      0.1218755
-hOrderCINGULATA                       0.0047543
-hOrderEULIPOTYPHLA                    0.0041093
-hOrderPERAMELEMORPHIA                 0.0044547
-hOrderPRIMATES                        0.1061770
-zg_region                             0.1151963
-hOrderRODENTIA                        0.1177081
-hOrderSCANDENTIA                      0.0039317
-LnAreaHost                            0.0000002
-S20                                   0.0079079
+Term                     Original Model Relative Deviance Explained   Region Model Relative Deviance Explained
+----------------------  -------------------------------------------  -----------------------------------------
+hDiseaseZACitesLn                                            0.5363                                     0.4892
+hMassGramsPVR                                                0.0276                                     0.0247
+hOrderCHIROPTERA                                             0.1223                                     0.1219
+hOrderCINGULATA                                              0.0056                                     0.0048
+hOrderEULIPOTYPHLA                                           0.0037                                     0.0041
+hOrderPERAMELEMORPHIA                                        0.0036                                     0.0045
+hOrderPRIMATES                                               0.1178                                     0.1062
+hOrderRODENTIA                                               0.1258                                     0.1177
+hOrderSCANDENTIA                                             0.0029                                     0.0039
+LnAreaHost                                                   0.0153                                     0.0000
+S20                                                          0.0390                                     0.0079
+zg_region                                                        NA                                     0.1152
   
-  
-Adding zoogeographical region as a random effect to our best-fit Strict Viruses GAM significantly improves the model (AIC~region~: 1703.647 vs AIC~original~: 1730.995). The smooth for region is significant, as seen in the model details above. The deviance explained by the original model was 0.358.
 
+## Random Effect Model Interpretation  
+For three of our best-fit GAMS (*All Viruses*, *Strict Zoonoses*, and *Strict Viruses*) the addition of zoogeographical region as a categorical random effect decreased the model AIC and increased the deviance explained by 3-5%. These results support the reviewer's suggestion that there might be a stronger relationship between geography and our outcomes of interest than was previously accounted for in these models. The *All Zoonoses* model, which is used to create the series of maps in the main manuscript, does not improve with the inclusion of zoogeographical region.
 
+Taking a closer look at the change in relative deviance explained when we add zoogeographical region, we see most of the variables with substantial decreases in deviance explained when region is included are closely connected to geography: LnAreaHost (host area), S20 (species range 20% overlap), HumPopDensLnChg (human population density change). This is not surprising, since the inclusion of another (likely non-independent) geographic variable might be expected to siphon away the relative effect of these variables, although over-interpreting the specific changes in deviance explained by competing terms is inappropriate. We might have more deeply investigated the details of this zoogeographical variable by separating out the effect of each region during our model selection process (as we did with taxonomic Order); however, we felt that the improved predictive power of a model using region-specific terms was offset by the decreased interpretability of these terms -- especially when compared to the pre-existing geographical variables, such as host area or overlapping species range. The association between variables like host range or human population density change and our outcomes of interest are interpretable in relevant, biologically plausible ways; in pursuing our goal to both predict and understand, we choose to trade off some gains in prediction for interpretability in the case of zoogeographical region. 
 
+# Conclusion
+The zoogeographical cross-validation procedure and the subsequent inclusion of region into our GAMs reveals that for the *All Viruses*, *Strict Zoonoses*, and *Strict Viruses* models, the addition of a region term would improve deviance explained by 3-5%. However, this modest increase in predictive power does come with some cost in interpretation, so we decided not to include zoogeographical region in our final models. 
 
-#Conclusions  
+It is evident that at the core of the reviewer's astute questions regarding these models is an important concern about the translation of GAM predictions, whose parameter estimates' uncertainty and deviance explained can be clearly stated or visualized, into layered raster maps, whose uncertainty is more difficult to convey to readers. This point is well-taken, and we do not wish to invite over-interpretation of the regions identified by our maps: they are a result of imperfect models that only explain a portion of deviance in the data. In order to more explicitly express this fact, we have included additional maps that illustate this uncertainty. 

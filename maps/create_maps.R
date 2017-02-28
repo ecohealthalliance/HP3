@@ -271,7 +271,7 @@ make_png <- function(my_raster, orders, model, data_type, png_res) {
   } else {
     bias_pt_layer = bias_grid[0,]
   }
-  filename = paste0(orders, "_", model, "_", data_type, ".png")
+  filename = P("maps", "output", paste0(orders, "_", model, "_", data_type, ".png"))
   png(filename, width = ncol(my_raster), height = nrow(my_raster), res = png_res)
   print(levelplot(my_raster, layers = 1,
                   par.settings = TheTheme,
@@ -298,18 +298,24 @@ rasters3 = filter(rasters2, data_type %in% c('observed', 'predicted', 'predicted
 mcmapply(make_png, my_raster=rasters3$raster, orders=rasters3$orders, model=rasters3$model, data_type=rasters3$data_type, png_res=150, mc.cores=40)
 
 library(magick)
-sorted <- c(8,9,7,5,6,4,2,3,1)
+sorted <- c(9,8,7,5,6,4,2,3,1)
 for(ORDER in c("ALL", hp3_orders)) {
 
-my_images <- lapply(list.files(pattern = paste0("^", ORDER, "_[^c].+\\.png"))[sorted], image_read)
+my_images <- lapply(list.files(P("maps", "output/"), pattern =paste0("^", ORDER, "_[^c].+\\.png"), full.names = TRUE)[sorted], image_read)
 labeled_images <- mapply(image_annotate, image=my_images, text=letters[1:9], MoreArgs = list(font="Helvetica", location="+200+770", size=175), SIMPLIFY = FALSE)
 
 comb_image <- image_append(stack=TRUE, image = c(
   image_append(c(labeled_images[[1]], labeled_images[[2]], labeled_images[[3]])),
   image_append(c(labeled_images[[4]], labeled_images[[5]], labeled_images[[6]])),
   image_append(c(labeled_images[[7]], labeled_images[[8]], labeled_images[[9]]))))
-image_write(comb_image, paste0(ORDER, "_combined.png"))
+image_write(comb_image, P("maps", "output", paste0(ORDER, "_combined.png")))
 }
 
-pngs <- list.files(pattern="\\.png")
-file.rename(pngs, P("maps", "output", pngs))
+missing_images <- lapply(list.files(P("maps", "output/"), pattern =paste0("zoonoses_missing.png"), full.names = TRUE), image_read)
+labeled_images <- mapply(image_annotate, image=missing_images, text=letters[1:6], MoreArgs = list(font="Helvetica", location="+200+770", size=175), SIMPLIFY = FALSE)
+comb_image <- image_append(stack=TRUE, image = c(
+  image_append(c(labeled_images[[1]], labeled_images[[2]])),
+  image_append(c(labeled_images[[3]], labeled_images[[4]])),
+  image_append(c(labeled_images[[5]], labeled_images[[8]]))))
+image_write(comb_image, P("maps", "output", "MISSING_ZOONOSES_FIG3.png"))
+

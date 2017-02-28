@@ -1,5 +1,5 @@
 library(tidyverse)
-library(stringr)
+library(stringi)
 library(sp)
 library(rgdal)
 library(raster)
@@ -8,7 +8,8 @@ library(rasterVis)
 library(maptools)
 library(mgcv)
 library(parallel)
-
+library(hexbin)
+library(rgeos)
 
 P <- rprojroot::find_rstudio_root_file
 
@@ -25,7 +26,7 @@ if(file.exists(P("maps/TERRESTRIAL_MAMMALS.zip")) &
 }
 
 terr = shapefile(P("maps/iucn_data/Mammals_Terrestrial.shp"), verbose = T)
-terr@data$BINOMIAL = str_replace(terr@data$BINOMIAL, " ", "_")
+terr@data$BINOMIAL = stri_replace_all_fixed(terr@data$BINOMIAL, " ", "_")
 
 # select only extant species
 terr = subset(terr, PRESENCE == 1)
@@ -50,6 +51,7 @@ hp3_all = mutate(hp3_all,
                  predicted_max = as.vector(unname(predict(all_viruses_gam, hp3_all_pred, type="response"))),
                  resid = predicted - observed,
                  missing = predicted_max - observed,
+                 number = 1,
                  hHostNameFinal = as.character(hHostNameFinal))
 
 # just zoonotic viruses
@@ -67,6 +69,7 @@ hp3_zoo = mutate(hp3_zoo,
                  predicted_max = as.vector(unname(predict(zoo_viruses_gam, hp3_zoo_pred, type="response"))),
                  resid = predicted - observed,
                  missing = predicted_max - observed,
+                 number = 1,
                  hHostNameFinal = as.character(hHostNameFinal))
 
 
@@ -113,22 +116,19 @@ myTheme3 <- rasterTheme(region = viridis::viridis(11))
 myTheme3$fontsize$text <- 5.6
 myTheme3$axis.line$lwd <- 0.2
 
+
+
 data(wrld_simpl)
 wrld_simpl = subset(wrld_simpl, NAME != 'Antarctica')
-world_layer <- layer(sp.polygons(wrld_simpl, lwd=0.2, col='gray50'))
+world_layer <- layer(sp.polygons(wrld_simpl, lwd=1, col='gray50'))
 
-make_map <- function(model, orders, data_type, colors, filename, raster_res, png_res) {
+make_map <- function(model, orders, data_type, raster_res) {
   if(model == 'hosts') {
     sp_data_frame = data_host
   } else if (model == 'zoonoses') {
     sp_data_frame = data_hp3_zoo
   } else if (model == 'viruses') {
     sp_data_frame = data_hp3_all
-  }
-  if(colors == "redgreen") {
-    theme = myTheme
-  } else {
-    theme = myTheme2
   }
   template <- raster(resolution = raster_res)
   subsetted_shapes <- subset(sp_data_frame, (order_group %in% orders))
@@ -138,31 +138,32 @@ make_map <- function(model, orders, data_type, colors, filename, raster_res, png
   return(my_raster)
 }
 
-make_png <- function(my_raster, theme, filename, png_res) {
-  png(filename, width = ncol(my_raster), height = nrow(my_raster), res = png_res)
-  print(levelplot(my_raster, layers = 1,
-                  par.settings = theme,
-                  margin = FALSE,
-                  ylab = '',
-                  xlab = '',
-                  scales = list(draw=FALSE),
-                  colorkey=list(width = 1,
-                                axis.text = list(fontfamily="Helvetica", fontsize=5.6)),
-                  maxpixels = ncell(my_raster),
-                  xlim = c(-180, 180),
-                  ylim = c(-58, 90)) +
-          world_layer)
-  dev.off()
+
+
+make_cutoff <- function(resids, predictions, sig_level = 0.05, nreps = 1000, vals = seq(from=1, to=100, by=1)) {
+  N = length(resids)
+  stopifnot(N == length(predictions))
+  vals <- unique(c(vals[vals <= N], N))
+  q <- matrix(NA, nrow = nreps, ncol=length(vals))
+  for (i in seq_len(nreps)) {
+    for (j in seq_along(vals)) {
+      samp = sample.int(N, vals[j])
+      q[i, j] <- sum(resids[samp])/sum(predictions[samp])
+    }
+  }
+  cutoffs <- apply(q, 2, function(dis) {
+    quantile(dis, c(sig_level/2, 1-sig_level/2))
+  })
+  return(list(lower=approxfun(vals, cutoffs[1,], rule=1),
+              upper=approxfun(vals, cutoffs[2,], rule=1)))
 }
 
 rasters = crossing(orders=c(hp3_orders,"OTHER"),
                    model=c('hosts', 'zoonoses', 'viruses'),
-                   data_type = c('observed', 'predicted', 'missing', 'resid')
+                   data_type = c('observed', 'predicted', 'predicted_max', 'missing', 'resid', 'number')
 ) %>%
-  filter(!(model == 'hosts' & data_type == 'resid')) %>%
-  mutate(colors = if_else(data_type %in% c("missing", "resid"), "bluered", "redgreen")) %>%
-  mutate(filename = paste0(orders, "_", model, "_", data_type, ".png")) %>%
-  mutate(raster_res = 1/6, png_res=900)
+  filter(!(model == 'hosts' & data_type %in% c('resid', 'number', 'predicted_max')))
+
 
 # rs <- make_map(
 #   model = rasters$model[1],
@@ -175,269 +176,140 @@ rasters = crossing(orders=c(hp3_orders,"OTHER"),
 # )
 start_time <- Sys.time()
 rasters$raster <- mcmapply(make_map,
-                          model = rasters$model,
-                          orders = rasters$orders,
-                          data_type = rasters$data_type,
-                          colors = rasters$colors,
-                          filename=P("maps", "output", rasters$filename),
-                          raster_res = rasters$raster_res,
-                          png_res = rasters$png_res,
-                          mc.preschedule = FALSE, mc.cores = 20, mc.silent= TRUE)
+                           model = rasters$model,
+                           orders = rasters$orders,
+                           data_type = rasters$data_type,
+                           raster_res = 1/6,
+                           mc.preschedule = FALSE, mc.cores = 20, mc.silent= TRUE)
 stop_time <- Sys.time()
 
 print(stop_time - start_time)
 capture.output(print(stop_time - start_time), file="time_elapsed.txt")
 saveRDS(rasters, "rasters.rds")
- rasters <- readRDS("rasters.rds")
+rasters <- readRDS("rasters.rds")
 
-# rasters %>%
-#   group_by(model, data_type) %>%
-#   do({
-#     new_row = .[1,]
-#     new_rows$orders <- "ALL"
-#     new_row$Raster = Reduce
-#     bind_rows(.,
-#               )
-#   })
-#  #
-# bias_raster = rasters$raster[[11]]/rasters$raster[[10]]
-# plot(bias_raster)
-#
-#
-# miat = seq(from=-1, to=1, by = 0.25)
-# make_png_pct <- function(my_raster, theme, filename, png_res) {
-#   png(filename, width = ncol(my_raster), height = nrow(my_raster), res = png_res)
-#   print(levelplot(my_raster, layers = 1,
-#                   par.settings = theme,
-#                   margin = FALSE,
-#                   ylab = '',
-#                   xlab = '',
-#                   scales = list(draw=FALSE),
-#                   colorkey=list(width = 1,
-#                                 axis.text = list(fontfamily="Helvetica", fontsize=5.6),
-#                                 labels = scales::percent_format()(miat),
-#                                 at = miat + 0.125),
-#                   at = miat,
-#                   maxpixels = ncell(my_raster),
-#                   xlim = c(-180, 180),
-#                   ylim = c(-58, 90)) +
-#           world_layer)
-#   dev.off()
-# }
-#
-# make_png_pct(bias_raster,theme = myTheme3, filename = "bias_test.png", png_res = 900)
-# Function to create .png maps from 'in memory' rasters. The xlim & ylim removes Antarctica
-#
-# plot_png = function(raster, out_dir, res, theme){
-#   name = deparse(substitute(raster))
-#   out_file = paste0(out_dir, name, '.png')
-#   png(out_file, width = ncol(raster), height = nrow(raster), res = res)
-#   print(levelplot(raster, layers = 1,
-#                   par.settings = theme,
-#                   margin = F,
-#                   ylab = '',
-#                   xlab = '',
-#                   scales = list(draw=FALSE),
-#                   maxpixels = ncell(raster),
-#                   xlim = c(-180, 180),
-#                   ylim = c(-58, 90)) +?
-#           layer(sp.polygons(wrld_simpl, lwd = 0.5, col = 'gray50')))
-#   dev.off()
-# }
-#
-# # Read .tif files from directory and create .png maps.
-# # Requires maptools::data(wrld_simpl) to draw the global borders
-# read_print = function(in_dir, out_dir, res, theme){
-#
-#   list_tif = dir(in_dir, '.tif')
-#   for (i in list_tif) {
-#     raster = raster(paste0(in_dir, i))
-#     out_file = paste0(out_dir, str_sub(i, 1, -4), 'png')
-#     png(out_file, width = ncol(raster), height = nrow(raster), res = res)
-#     print(levelplot(raster, layers = 1,
-#                     par.settings = myTheme,
-#                     margin = F,
-#                     ylab = '',
-#                     xlab = '',
-#                     scales = list(draw=FALSE),
-#                     colorkey=list(width = 1,
-#                                   axis.text = list(fontfamily="Helvetica", fontsize=5.6)),
-#                     maxpixels = ncell(raster),
-#                     xlim = c(-180, 180),
-#                     ylim = c(-58, 90)) +
-#             layer(sp.polygons(wrld_simpl, lwd = 0.2, col = 'gray50')))
-#     dev.off()
-#     print(paste('Done!!', i))
-#   }
-# }
-#
-#
-# # Function to create the missing zoonoses maps. Resolution can be defined as 1/6
-# spp_rich_virus = function(shapefile, colname, order = NULL, res, out_dir, ...) {
-#   template <- raster(resolution = res)
-#   if (is.null(order)){
-#     for(i in colname){
-#       out_file = paste0(out_dir, i)
-#       extension(out_file) = 'tif'
-#       print(paste('Processing', i, sep = ' '))
-#       temp = raster()
-#       temp = rasterize(shapefile, template, i, fun = 'sum', silent = F, progress = 'text')
-#       writeRaster(temp, filename = out_file, format = "GTiff", overwrite = T, progress = 'text')
-#     }
-#   } else {
-#     template <- raster(resolution = res)
-#     for(j in order){
-#       tmp_pol = subset(shapefile, Order == j)
-#       print(dim(tmp_pol))
-#       for(i in colname){
-#         out_file = paste0(out_dir, j, '_', i)
-#         extension(out_file) = 'tif'
-#         print(paste('Processing', j, i, sep = ' '))
-#         temp0 = raster()
-#         temp0 = rasterize(tmp_pol, template, i, fun = 'sum', silent = F, progress ='text')
-#         writeRaster(temp0, filename = out_file, format = "GTiff", overwrite = T, progress = 'text')
-#       }
-#     }
-#   }
-# }
-#
-#
-# # Function to calculate host species richness
-#
-# spp_rich_host = function(shapefile, order = NULL, file_name, res, out_dir, ...) {
-#   require(rgdal)
-#   template <- raster(resolution = res)
-#   if (is.null(order)){
-#     out_file = paste0(out_dir, file_name)
-#     extension(out_file) = 'tif'
-#     print(paste('Processing ALL mammals'))
-#     temp = raster()
-#     temp = rasterize(shapefile, template, 1, fun = 'sum', silent = F, progress = 'text')
-#     writeRaster(temp, filename = out_file, format = "GTiff", overwrite = T, progress = 'text')
-#   } else {
-#     mclapply(colname, function(j) {
-#       tmp_pol = subset(shapefile, Order == j)
-#       print(dim(tmp_pol))
-#       out_file = paste0(out_dir, j, '_', file_name)
-#       extension(out_file) = 'tif'
-#       print(paste('Processing just', j, sep = ' '))
-#       temp0 = raster()
-#       temp0 = rasterize(tmp_pol, template, 1, fun = 'sum', silent = F, progress = 'text')
-#       writeRaster(temp0, filename = out_file, format = "GTiff", overwrite = T, progress = 'text')
-#       return(NULL)
-#     })
-#   }
-#   return(invisible(NULL))
-# }
-#
-#
-# # Calculate residuals and write tif files
-#
-# res_pred_obs = function(prediction, observed, in_dir, out_dir, file_name){
-#   out_file = paste0(out_dir, file_name)
-#   extension(out_file) = 'tif'
-#   cat('Processing', out_file)
-#   pred = raster(paste0(in_dir, prediction, '.tif'))
-#   obs = raster(paste0(in_dir, observed, '.tif'))
-#   temp = pred - obs
-#   writeRaster(temp, filename = out_file, format = "GTiff", overwrite = T, progress = 'text')
-# }
-#
-# # Function to list all files in directory with a given extension
-# tif_path = function(directory, ext){
-#   list_files = dir(directory, ext)
-#   for(i in list_files){
-#     s = paste0(directory, list_files)
-#     return(s)
-#   }
-# }
-#
-#
-# # Function to create maps from a raster stack
-#
-# png_maps = function(raster_stack, out_dir, res, theme){
-#   nl = nlayers(raster_stack)
-#   mclapply(1:nl, function(i) {
-#     png(paste0(out_dir, names(raster_stack)[i], '.png'), width = ncol(raster_stack), height = nrow(raster_stack), res = res)
-#     p <- levelplot(raster_stack, layers = i,
-#                    par.settings = myTheme2,
-#                    margin = F,
-#                    ylab = '',
-#                    xlab = '',
-#                    scales = list(draw=FALSE),
-#                    colorkey=list(width = 1,
-#                                  axis.text = list(fontfamily="Helvetica", fontsize=5.6)),
-#                    maxpixels = ncell(raster_stack),
-#                    xlim = c(-180, 180),
-#                    ylim = c(-58, 90)) +
-#       layer(sp.polygons(wrld_simpl, lwd = 0.2,
-#                         col = 'gray50'))
-#     print(p)
-#     # cat('Printed', names(raster_stack)[i], sep="\n")
-#     dev.off()
-#   })
-# }
-#
-# ##########
-# # Generate .tif files for all mammals and by order
-# beginCluster(n = 40)
-#
-# list_vars_all = c('obs_all', 'pred_all', 'pred_obs_all')
-# list_vars_zoo = c('obs_zoo', 'pred_zoo', 'pred_obs_zoo')
-# list_orders = c('CARNIVORA', 'CETARTIODACTYLA', 'CHIROPTERA', 'PRIMATES', 'RODENTIA')
-#
-# group1 <- alist(
-#   # Create all_viruses .tif rasters
-#   spp_rich_virus(data_hp3_all, list_vars_all, NULL, 1/6, P('maps/output/tif/all_viruses/')),
-#   spp_rich_virus(data_hp3_all, list_vars_all, list_orders, 1/6, P('maps/output/tif/all_viruses/')),
-#
-#   # Create all_zoonoses .tif rasters
-#   spp_rich_virus(data_hp3_zoo, list_vars_zoo, NULL, 1/6, P('maps/output/tif/zoonoses/')),
-#   spp_rich_virus(data_hp3_zoo, list_vars_zoo, list_orders, 1/6, P('maps/output/tif/zoonoses/'))
-# )
-#
-# mclapply(group1, eval, mc.allow.recursive = TRUE)
-#
-# group2 <- alist(
-#   # Species richness .tif files for species in HP3 database
-#   spp_rich_host(data_hp3_all, NULL, 'hp3_viruses', 1/6, P('maps/output/tif/host/')),
-#   spp_rich_host(data_hp3_all, list_orders, 'hp3_viruses', 1/6, P('maps/output/tif/host/')),
-#
-#   # Species richness maps for ALL mammals
-#   spp_rich_host(terr, NULL, 'all_mammals', 1/6, P('maps/output/tif/host/')),
-#   spp_rich_host(terr, list_orders, 'all_mammals', 1/6, P('maps/output/tif/host/'))
-# )
-#
-# mclapply(group2, eval, mc.allow.recursive = TRUE)
-# # Generate beatiful maps
-# # Read all_viruses .tif rasters and create .png maps.
-# read_print(P('maps/output/tif/all_viruses/'), P('maps/output/png/all_viruses/'), 900, myTheme)
-#
-# # Read all_zoonoses .tif rasters and create .png maps.
-# read_print(P('maps/output/tif/zoonoses/'), P('maps/output/png/zoonoses/'), 900, myTheme)
-#
-# # Read all host .tif rasters and create .png maps
-# read_print(P('maps/output/tif/host/'), P('maps/output/png/host/'), 900, rev(myTheme))
-#
-#
-# #Calculate residuals (pred - obs) for mammals vs hp3 mammals data
-#
-# group3 <- alist(
-#   res_pred_obs('CARNIVORA_hp3_viruses', 'CARNIVORA_all_mammals', P('maps/output/tif/host/'), P('maps/output/tif/host/'), 'CARNIVORA_pred_obs_richness' ),
-#   res_pred_obs('RODENTIA_hp3_viruses', 'RODENTIA_all_mammals', P('maps/output/tif/host/'), P('maps/output/tif/host/'), 'RODENTIA_pred_obs_richness' ),
-#   res_pred_obs('CHIROPTERA_hp3_viruses', 'CHIROPTERA_all_mammals', P('maps/output/tif/host/'), P('maps/output/tif/host/'), 'CHIROPTERA_pred_obs_richness' ),
-#   res_pred_obs('CETARTIODACTYLA_hp3_viruses', 'CETARTIODACTYLA_all_mammals', P('maps/output/tif/host/'), P('maps/output/tif/host/'), 'CETARTIODACTYLA_pred_obs_richness' ),
-#   res_pred_obs('PRIMATES_hp3_viruses', 'PRIMATES_all_mammals', P('maps/output/tif/host/'), P('maps/output/tif/host/'), 'PRIMATES_pred_obs_richness' ),
-#   res_pred_obs('hp3_viruses', 'all_mammals', P('maps/output/tif/host/'), P('maps/output/tif/host/'), 'mammals_pred_obs_richness' )
-# )
-# mclapply(group3, eval)
-# # get list of files with .tif extension
-# mammals = tif_path(P('maps/output/tif/host/'), 'tif')
-#
-# # Create raster stack for those files that onclude the words 'pred_obs'
-# mammals = stack(str_subset(mammals, 'pred_obs'))
-#
-#
-# # Create residual maps for species with different color palette
-# png_maps(mammals, P('maps/output/png/host/'), 900,  MyTheme2)
-#
+rasters2 <- rasters %>%
+  group_by(model, data_type) %>%
+  do({
+    new_row = .[1,]
+    new_row$orders <- "ALL"
+    sum_raster = do.call("sum", c(unname(.$raster, NULL), na.rm=TRUE))
+    sum_raster = calc(sum_raster, fun=function(x) ifelse(x==0, NA, x))
+    new_row$raster <- list(sum_raster)
+    out = bind_rows(., new_row)
+    return(out)
+  }) %>%
+  group_by() %>%
+  group_by(orders, model) %>%
+  do({
+    if(all(.$model == "hosts")) {
+      return(.)
+    } else {
+      new_row = .[1,]
+      new_row$data_type <- "bias"
+      bias_raster = .$raster[[which(.$data_type == "resid")]]/.$raster[[which(.$data_type == "predicted")]]
+      new_row$raster <- list(bias_raster)
+      out = bind_rows(., new_row)
+      return(out)
+    }
+  }) %>%
+  group_by() %>%
+  arrange(orders, model, data_type) %>%
+  filter(orders != "OTHER")
+
+bias_layers = rasters2 %>%
+  filter(model != "hosts") %>%
+  filter(data_type %in% c("bias", "number")) %>%
+  spread("data_type", "raster")
+
+hex_coords <- hcell2xy(hexbin(crossing(y=seq(from=-180, to=180, by=0.1), x = seq(from=-90,to=90,by=0.1)), xbins=180))
+bias_grid <- SpatialPoints(coords=hex_coords, proj4string = CRS(proj4string(bias_layers$bias[[1]])))
+
+bias_cutshape <- function(model, orders, bias_raster, number_raster, cutoff = 0.05) {
+  if(model == "viruses") {
+    mod_data <- hp3_all
+  } else if (model=="zoonoses") {
+    mod_data <- hp3_zoo
+  }
+  if(orders != "ALL") {
+    mod_data = mod_data[mod_data$hOrder == orders,]
+  }
+  bias_funs <- make_cutoff(mod_data$resid, mod_data$predicted, nreps=100000, sig_level = 0.05, vals = seq(from=1, to=101, by=4))
+  bias_matrix <- as.matrix(bias_raster)
+  num_matrix <- as.matrix(number_raster)
+  bias_mat2 <- ifelse((bias_matrix > bias_funs$upper(num_matrix)) | bias_matrix < bias_funs$lower(num_matrix), 1, NA)
+
+
+  bias_shapes <- fasteraster::raster2vector(bias_mat2) %>%
+  {Filter(function(x) nrow(x) > 3, .) } %>%
+    lapply(function(x) cbind(360*x[,2]/ncol(bias_matrix) - 180, -180*x[,1]/nrow(bias_matrix) + 90))
+  z <- seq_along(bias_shapes)
+  bias_p <- SpatialPolygons(lapply(z, function(z) Polygons(list(Polygon(bias_shapes[[z]])), z)), proj4string = CRS(proj4string(bias_raster)))
+  bias_points <- bias_grid[bias_p,]
+  return(bias_points)
+}
+
+bias_layers$bias_shape <- mcmapply(bias_cutshape, model=bias_layers$model, orders=bias_layers$orders, bias_raster = bias_layers$bias, number_raster = bias_layers$number, mc.cores = 20)
+
+
+saveRDS(bias_layers,file = "bias_layers.rds")
+
+
+make_png <- function(my_raster, orders, model, data_type, png_res) {
+  if(model == "hosts" & data_type=="missing") {
+    TheTheme <- myTheme2
+  } else {
+    TheTheme <- myTheme
+  }
+  TheTheme$fontsize$text <- 30
+  TheTheme$axis.line$lwd <- 2
+
+
+  if(data_type %in% c("predicted_max", "missing") &
+     model != "hosts") {
+    bias_pt_layer = bias_layers$bias_shape[[which(bias_layers$orders == orders & bias_layers$model == model)]]
+  } else {
+    bias_pt_layer = bias_grid[0,]
+  }
+  filename = paste0(orders, "_", model, "_", data_type, ".png")
+  png(filename, width = ncol(my_raster), height = nrow(my_raster), res = png_res)
+  print(levelplot(my_raster, layers = 1,
+                  par.settings = TheTheme,
+                  margin= FALSE,
+                  ylab = '',
+                  xlab = '',
+                  scales = list(draw=FALSE),
+                  colorkey=list(width = 1,
+                                axis.text = list(fontfamily="Helvetica", fontsize=5.6)),
+                  maxpixels = ncell(my_raster),
+                  xlim = c(-180, 180),
+                  ylim = c(-58, 90)) +
+          layer(sp.points(bias_pt_layer, pch=20, cex=0.4, col="grey20"), data=list(bias_pt_layer=bias_pt_layer)) +
+          world_layer
+
+  )
+  dev.off()
+  #return(bias_pt_layer)
+}
+
+rasters3 = filter(rasters2, data_type %in% c('observed', 'predicted', 'predicted_max', 'missing')) %>%
+  filter(!(model=="hosts" & data_type=="predicted_max")) %>%
+  filter(!(model!="hosts" & data_type=="predicted"))
+mcmapply(make_png, my_raster=rasters3$raster, orders=rasters3$orders, model=rasters3$model, data_type=rasters3$data_type, png_res=150, mc.cores=40)
+
+library(magick)
+sorted <- c(8,9,7,5,6,4,2,3,1)
+for(ORDER in c("ALL", hp3_orders)) {
+
+my_images <- lapply(list.files(pattern = paste0("^", ORDER, "_[^c].+\\.png"))[sorted], image_read)
+labeled_images <- mapply(image_annotate, image=my_images, text=letters[1:9], MoreArgs = list(font="Helvetica", location="+200+770", size=175), SIMPLIFY = FALSE)
+
+comb_image <- image_append(stack=TRUE, image = c(
+  image_append(c(labeled_images[[1]], labeled_images[[2]], labeled_images[[3]])),
+  image_append(c(labeled_images[[4]], labeled_images[[5]], labeled_images[[6]])),
+  image_append(c(labeled_images[[7]], labeled_images[[8]], labeled_images[[9]]))))
+image_write(comb_image, paste0(ORDER, "_combined.png"))
+}
+
+pngs <- list.files(pattern="\\.png")
+file.rename(pngs, P("maps", "output", pngs))

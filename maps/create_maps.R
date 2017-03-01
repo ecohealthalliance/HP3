@@ -282,7 +282,7 @@ make_png <- function(my_raster, orders, model, data_type, png_res) {
   }
 
   filename = P("maps", "output", paste0(orders, "_", model, "_", data_type, ".png"))
-  png(filename, width = ncol(my_raster), height = nrow(my_raster), res = png_res, type = "cairo", antialias = "none", family = "Arial")
+  png(filename, width = ncol(my_raster) + 1, height = nrow(my_raster) + 1, res = png_res) #, type = "cairo-png", antialias = "subpixel", family = "Arial")
   print(levelplot(my_raster, layers = 1,
                   par.settings = TheTheme,
                   margin= FALSE,

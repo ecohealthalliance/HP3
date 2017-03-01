@@ -222,10 +222,11 @@ bias_layers = rasters2 %>%
   filter(data_type %in% c("bias", "number")) %>%
   spread("data_type", "raster")
 
-hex_coords <- hcell2xy(hexbin(crossing(y=seq(from=-180, to=180, by=0.1), x = seq(from=-90,to=90,by=0.1)), xbins=180))
+hex_coords <- hcell2xy(hexbin(crossing(y=seq(from=-180, to=180, by=0.1), x = seq(from=-90,to=90,by=0.1)), xbins=90))
 bias_grid <- SpatialPoints(coords=hex_coords, proj4string = CRS(proj4string(bias_layers$bias[[1]])))
+angle_lines <- SpatialLines(lapply(seq(from=0, to=720, by=1), function(z) Lines(list(Line(matrix(c(-720 + z, z, z, z-720), ncol=2))), ID = z)),  proj4string = CRS(proj4string(bias_layers$bias[[1]])))
 
-bias_cutshape <- function(model, orders, bias_raster, number_raster, cutoff = 0.05) {
+bias_cutshape <- function(model, orders, bias_raster, number_raster, cutoff = 0.05, type="points") {
   if(model == "viruses") {
     mod_data <- hp3_all
   } else if (model=="zoonoses") {
@@ -245,21 +246,29 @@ bias_cutshape <- function(model, orders, bias_raster, number_raster, cutoff = 0.
     lapply(function(x) cbind(360*x[,2]/ncol(bias_matrix) - 180, -180*x[,1]/nrow(bias_matrix) + 90))
   z <- seq_along(bias_shapes)
   bias_p <- SpatialPolygons(lapply(z, function(z) Polygons(list(Polygon(bias_shapes[[z]])), z)), proj4string = CRS(proj4string(bias_raster)))
-  bias_points <- bias_grid[bias_p,]
-  return(bias_points)
+
+  if(type=="points") {
+    bias_out <- bias_grid[bias_p,]
+  } else {
+    bias_out <- rgeos::gIntersection(angle_lines, gBuffer(bias_p, width = .0001))
+  }
+  return(bias_out)
 }
 
-bias_layers$bias_shape <- mcmapply(bias_cutshape, model=bias_layers$model, orders=bias_layers$orders, bias_raster = bias_layers$bias, number_raster = bias_layers$number, mc.cores = 20)
+bias_layers$bias_shape <- mcmapply(bias_cutshape, model=bias_layers$model, orders=bias_layers$orders, bias_raster = bias_layers$bias, number_raster = bias_layers$number,
+                                   MoreArgs = list(type="lines"), mc.cores = 20)
 
 
 saveRDS(bias_layers,file = "bias_layers.rds")
-
+bias_layers <- readRDS("bias_layers.rds")
 
 make_png <- function(my_raster, orders, model, data_type, png_res) {
   if(model == "hosts" & data_type=="missing") {
-    TheTheme <- myTheme2
+    TheTheme <- BuRdTheme()
+  } else if ((data_type %in% c("predicted_max", "observed", "missing")) | model=="hosts") {
+    TheTheme <- rasterTheme(region = rev(brewer.pal(11, 'RdYlGn')))
   } else {
-    TheTheme <- myTheme
+    TheTheme <- rasterTheme(region = viridis::viridis(11))
   }
   TheTheme$fontsize$text <- 30
   TheTheme$axis.line$lwd <- 2
@@ -271,8 +280,9 @@ make_png <- function(my_raster, orders, model, data_type, png_res) {
   } else {
     bias_pt_layer = bias_grid[0,]
   }
+
   filename = P("maps", "output", paste0(orders, "_", model, "_", data_type, ".png"))
-  png(filename, width = ncol(my_raster), height = nrow(my_raster), res = png_res)
+  png(filename, width = ncol(my_raster), height = nrow(my_raster), res = png_res, type = "cairo", antialias = "none", family = "Arial")
   print(levelplot(my_raster, layers = 1,
                   par.settings = TheTheme,
                   margin= FALSE,
@@ -284,7 +294,9 @@ make_png <- function(my_raster, orders, model, data_type, png_res) {
                   maxpixels = ncell(my_raster),
                   xlim = c(-180, 180),
                   ylim = c(-58, 90)) +
-          layer(sp.points(bias_pt_layer, pch=20, cex=0.4, col="grey20"), data=list(bias_pt_layer=bias_pt_layer)) +
+          #layer(sp.points(bias_pt_layer, pch=20, cex=0.8, col="grey20"), data=list(bias_pt_layer=bias_pt_layer)) +
+          layer(sp.lines(bias_pt_layer, lwd=2, col="grey20"), data=list(bias_pt_layer=bias_pt_layer)) +
+
           world_layer
 
   )
@@ -298,10 +310,16 @@ rasters3 = filter(rasters2, data_type %in% c('observed', 'predicted', 'predicted
 mcmapply(make_png, my_raster=rasters3$raster, orders=rasters3$orders, model=rasters3$model, data_type=rasters3$data_type, png_res=150, mc.cores=40)
 
 library(magick)
-sorted <- c(9,8,7,5,6,4,2,3,1)
+
 for(ORDER in c("ALL", hp3_orders)) {
 
-my_images <- lapply(list.files(P("maps", "output/"), pattern =paste0("^", ORDER, "_[^c].+\\.png"), full.names = TRUE)[sorted], image_read)
+  image_files <- P("maps", "output/", paste0(ORDER, "_",
+                                             c("viruses_observed", "viruses_predicted_max", "viruses_missing",
+                                               "zoonoses_observed", "zoonoses_predicted_max", "zoonoses_missing",
+                                               "hosts_observed", "hosts_predicted", "hosts_missing"),
+                                             ".png"))
+
+my_images <- lapply(image_files, image_read)
 labeled_images <- mapply(image_annotate, image=my_images, text=letters[1:9], MoreArgs = list(font="Helvetica", location="+200+770", size=175), SIMPLIFY = FALSE)
 
 comb_image <- image_append(stack=TRUE, image = c(
@@ -313,9 +331,10 @@ image_write(comb_image, P("maps", "output", paste0(ORDER, "_combined.png")))
 
 missing_images <- lapply(list.files(P("maps", "output/"), pattern =paste0("zoonoses_missing.png"), full.names = TRUE), image_read)
 labeled_images <- mapply(image_annotate, image=missing_images, text=letters[1:6], MoreArgs = list(font="Helvetica", location="+200+770", size=175), SIMPLIFY = FALSE)
-comb_image <- image_append(stack=TRUE, image = c(
+comb_image2 <- image_append(stack=TRUE, image = c(
   image_append(c(labeled_images[[1]], labeled_images[[2]])),
   image_append(c(labeled_images[[3]], labeled_images[[4]])),
-  image_append(c(labeled_images[[5]], labeled_images[[8]]))))
-image_write(comb_image, P("maps", "output", "MISSING_ZOONOSES_FIG3.png"))
+  image_append(c(labeled_images[[5]], labeled_images[[6]]))))
+image_write(comb_image2, P("maps", "output", "MISSING_ZOONOSES_FIG3.png"))
+
 

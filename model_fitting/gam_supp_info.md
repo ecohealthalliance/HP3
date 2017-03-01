@@ -12,11 +12,10 @@ Terms in models with ΔAIC < 2.  All continuous terms effects are represented
 as splines, all discrete terms as random effects:
 
 
-     ΔAIC  Terms in Model                                                                                                                                                                                                                           
----------  -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
- 0.000000  offset(LnTotNumVirus) + hAllZACitesLn + hHuntedIUCN + hOrderCETARTIODACTYLA + hOrderCHIROPTERA + hOrderDIPROTODONTIA + hOrderPERAMELEMORPHIA + hOrderPERISSODACTYLA + hOrderSCANDENTIA + PdHoSa.cbCst + UrbRurPopRatioLn                 
- 0.051505  offset(LnTotNumVirus) + hAllZACitesLn + hHuntedIUCN + hOrderCETARTIODACTYLA + hOrderCHIROPTERA + hOrderDIPROTODONTIA + hOrderPERAMELEMORPHIA + hOrderPERISSODACTYLA + hOrderSCANDENTIA + HumPopDensLnChg + PdHoSaSTPD + UrbRurPopRatioLn 
- 1.262928  offset(LnTotNumVirus) + hDiseaseZACitesLn + hHuntedIUCN + hOrderCETARTIODACTYLA + hOrderCHIROPTERA + hOrderDIPROTODONTIA + hOrderPERAMELEMORPHIA + hOrderPERISSODACTYLA + hOrderSCANDENTIA + PdHoSa.cbCst + UrbRurPopRatioLn             
+     ΔAIC  Terms in Model                                                                                                                                                                                                               
+---------  -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ 0.000000  offset(LnTotNumVirus) + hDiseaseZACitesLn + hHuntedIUCN + hOrderCETARTIODACTYLA + hOrderCHIROPTERA + hOrderDIPROTODONTIA + hOrderPERAMELEMORPHIA + hOrderPERISSODACTYLA + hOrderSCANDENTIA + PdHoSa.cbCst + UrbRurPopRatioLn 
+ 1.650939  offset(LnTotNumVirus) + hDiseaseZACitesLn + hHuntedIUCN + hOrderCETARTIODACTYLA + hOrderCHIROPTERA + hOrderDIPROTODONTIA + hOrderPERAMELEMORPHIA + hOrderPERISSODACTYLA + hOrderSCANDENTIA + PdHoSaSTPD + UrbRurPopRatioLn   
 
 Partial effect plots of all terms in top model:
 
@@ -31,7 +30,7 @@ Summary of top model:
 ## Link function: log 
 ## 
 ## Formula:
-## NSharedWithHoSa ~ s(hAllZACitesLn, bs = "tp", k = 7) + s(hHuntedIUCN, 
+## NSharedWithHoSa ~ s(hDiseaseZACitesLn, bs = "tp", k = 7) + s(hHuntedIUCN, 
 ##     bs = "re") + s(hOrderCETARTIODACTYLA, bs = "re") + s(hOrderCHIROPTERA, 
 ##     bs = "re") + s(hOrderDIPROTODONTIA, bs = "re") + s(hOrderPERAMELEMORPHIA, 
 ##     bs = "re") + s(hOrderPERISSODACTYLA, bs = "re") + s(hOrderSCANDENTIA, 
@@ -40,27 +39,27 @@ Summary of top model:
 ## 
 ## Parametric coefficients:
 ##             Estimate Std. Error z value Pr(>|z|)    
-## (Intercept) -0.34078    0.03976  -8.572   <2e-16 ***
+## (Intercept)  -0.3381     0.0408  -8.288   <2e-16 ***
 ## ---
 ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 ## 
 ## Approximate significance of smooth terms:
 ##                             edf Ref.df Chi.sq  p-value    
-## s(hAllZACitesLn)         1.4994      6  7.458 0.009885 ** 
-## s(hHuntedIUCN)           0.2423      1  0.415 0.202430    
-## s(hOrderCETARTIODACTYLA) 0.8896      1 26.998 8.91e-08 ***
-## s(hOrderCHIROPTERA)      0.7121      1  4.446 0.016082 *  
-## s(hOrderDIPROTODONTIA)   0.5222      1  1.001 0.166705    
-## s(hOrderPERAMELEMORPHIA) 0.7799      1  0.760 0.323662    
-## s(hOrderPERISSODACTYLA)  0.7462      1  3.030 0.044351 *  
-## s(hOrderSCANDENTIA)      0.7841      1  0.811 0.309212    
-## s(PdHoSa.cbCst)          1.9705      6 14.498 0.000673 ***
-## s(UrbRurPopRatioLn)      1.2568      6 10.278 0.001822 ** 
+## s(hDiseaseZACitesLn)     1.1892      6  5.652  0.01821 *  
+## s(hHuntedIUCN)           0.3661      1  0.769  0.16501    
+## s(hOrderCETARTIODACTYLA) 0.8847      1 27.207 8.99e-08 ***
+## s(hOrderCHIROPTERA)      0.7063      1  4.438  0.01491 *  
+## s(hOrderDIPROTODONTIA)   0.4302      1  0.728  0.19303    
+## s(hOrderPERAMELEMORPHIA) 0.7790      1  0.760  0.32327    
+## s(hOrderPERISSODACTYLA)  0.7632      1  3.279  0.03866 *  
+## s(hOrderSCANDENTIA)      0.7877      1  0.808  0.31102    
+## s(PdHoSa.cbCst)          1.8802      6 12.634  0.00197 ** 
+## s(UrbRurPopRatioLn)      1.2494      6 10.007  0.00201 ** 
 ## ---
 ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 ## 
-## R-sq.(adj) =  0.894   Deviance explained = 33.7%
-## UBRE = -0.60157  Scale est. = 1         n = 584
+## R-sq.(adj) =  0.891   Deviance explained =   33%
+## UBRE = -0.59936  Scale est. = 1         n = 584
 ```
 
 Relative fraction of deviance explained by each variable in the top model:
@@ -68,32 +67,32 @@ Relative fraction of deviance explained by each variable in the top model:
 
 Term                     Relative Deviance Explained
 ----------------------  ----------------------------
-hAllZACitesLn                                  10.6%
-hHuntedIUCN                                   0.788%
-hOrderCETARTIODACTYLA                          34.7%
-hOrderCHIROPTERA                               5.93%
-hOrderDIPROTODONTIA                            2.25%
-hOrderPERAMELEMORPHIA                          4.59%
-hOrderPERISSODACTYLA                           5.58%
-hOrderSCANDENTIA                               4.85%
-PdHoSa.cbCst                                   18.6%
-UrbRurPopRatioLn                               12.2%
+hDiseaseZACitesLn                              7.53%
+hHuntedIUCN                                    1.33%
+hOrderCETARTIODACTYLA                          36.4%
+hOrderCHIROPTERA                               6.59%
+hOrderDIPROTODONTIA                            1.74%
+hOrderPERAMELEMORPHIA                           4.8%
+hOrderPERISSODACTYLA                           6.36%
+hOrderSCANDENTIA                               5.34%
+PdHoSa.cbCst                                   16.8%
+UrbRurPopRatioLn                               13.1%
 
 10-fold cross-validation.  Good fit indicated by *non*-significant p-values:
 
 
-Fold    Observations Fit   Obervations Held Out   P-value
------  -----------------  ---------------------  --------
-1                    525                     59     0.873
-2                    525                     59     0.735
-3                    525                     59     0.280
-4                    525                     59     0.236
-5                    526                     58     0.604
-6                    526                     58     0.068
-7                    526                     58     0.078
-8                    526                     58     0.146
-9                    526                     58     0.377
-10                   526                     58     0.443
+Fold    Observations Fit   Observations Held Out   P-value   Mean Error
+-----  -----------------  ----------------------  --------  -----------
+1                    525                      59     0.776   -0.0334547
+2                    525                      59     0.845    0.0270573
+3                    525                      59     0.292    0.1052307
+4                    525                      59     0.403   -0.0801936
+5                    526                      58     0.606    0.0587951
+6                    526                      58     0.082    0.1875158
+7                    526                      58     0.085   -0.1922741
+8                    526                      58     0.123   -0.2221036
+9                    526                      58     0.437    0.0701885
+10                   526                      58     0.640   -0.0564995
 
 # Zoonoses GAM - Strict Associations
 
@@ -172,18 +171,18 @@ UrbRurPopRatioChg                              19.5%
 10-fold cross-validation.  Good fit indicated by *non*-significant p-values:
 
 
-Fold    Observations Fit   Obervations Held Out   P-value
------  -----------------  ---------------------  --------
-1                    518                     58     0.060
-2                    518                     58     0.751
-3                    518                     58     0.131
-4                    518                     58     0.491
-5                    518                     58     0.452
-6                    518                     58     0.100
-7                    519                     57     0.850
-8                    519                     57     0.964
-9                    519                     57     0.210
-10                   519                     57     0.651
+Fold    Observations Fit   Observations Held Out   P-value   Mean Error
+-----  -----------------  ----------------------  --------  -----------
+1                    518                      58     0.060    0.2070057
+2                    518                      58     0.751    0.0328970
+3                    518                      58     0.131   -0.1400915
+4                    518                      58     0.491   -0.0535195
+5                    518                      58     0.452    0.0852502
+6                    518                      58     0.100   -0.1517403
+7                    519                      57     0.850   -0.0224318
+8                    519                      57     0.964    0.0086410
+9                    519                      57     0.210    0.1272233
+10                   519                      57     0.651   -0.1506230
 
 # Zoonoses GAM - All Associations without Reverse Zoonoses
 
@@ -193,10 +192,10 @@ Terms in models with ΔAIC < 2.  All continuous terms effects are represented
 as splines, all discrete terms as random effects:
 
 
-     ΔAIC  Terms in Model                                                                                                                                                                                                                             
----------  -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
- 0.000000  offset(LnTotNumVirus) + hAllZACitesLn + hHuntedIUCN + hOrderCETARTIODACTYLA + hOrderCHIROPTERA + hOrderDIPROTODONTIA + hOrderPERAMELEMORPHIA + hOrderPERISSODACTYLA + hOrderSCANDENTIA + HumPopDensLnChg + PdHoSa.cbCst + UrbRurPopRatioLn 
- 1.486322  offset(LnTotNumVirus) + hAllZACitesLn + hHuntedIUCN + hOrderCETARTIODACTYLA + hOrderCHIROPTERA + hOrderDIPROTODONTIA + hOrderPERAMELEMORPHIA + hOrderPERISSODACTYLA + hOrderSCANDENTIA + HumPopDensLnChg + PdHoSaSTPD + UrbRurPopRatioLn   
+      ΔAIC  Terms in Model                                                                                                                                                                                                                               
+----------  ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ 0.0000000  offset(LnTotNumVirus) + hDiseaseZACitesLn + hHuntedIUCN + hOrderCETARTIODACTYLA + hOrderCHIROPTERA + hOrderDIPROTODONTIA + hOrderPERAMELEMORPHIA + hOrderPERISSODACTYLA + hOrderSCANDENTIA + HumPopDensLnChg + PdHoSaSTPD + UrbRurPopRatioLn 
+ 0.7056058  offset(LnTotNumVirus) + hDiseaseZACitesLn + hHuntedIUCN + hOrderCETARTIODACTYLA + hOrderCHIROPTERA + hOrderDIPROTODONTIA + hOrderPERAMELEMORPHIA + hOrderPERISSODACTYLA + hOrderSCANDENTIA + PdHoSa.cbCst + UrbRurPopRatioLn                 
 
 Partial effect plots of all terms in top model:
 
@@ -211,38 +210,38 @@ Summary of top model:
 ## Link function: log 
 ## 
 ## Formula:
-## NSharedWithHoSa_norev ~ s(hAllZACitesLn, bs = "tp", k = 7) + 
+## NSharedWithHoSa_norev ~ s(hDiseaseZACitesLn, bs = "tp", k = 7) + 
 ##     s(hHuntedIUCN, bs = "re") + s(hOrderCETARTIODACTYLA, bs = "re") + 
 ##     s(hOrderCHIROPTERA, bs = "re") + s(hOrderDIPROTODONTIA, bs = "re") + 
 ##     s(hOrderPERAMELEMORPHIA, bs = "re") + s(hOrderPERISSODACTYLA, 
 ##     bs = "re") + s(hOrderSCANDENTIA, bs = "re") + s(HumPopDensLnChg, 
-##     bs = "tp", k = 7) + s(PdHoSa.cbCst, bs = "tp", k = 7) + s(UrbRurPopRatioLn, 
+##     bs = "tp", k = 7) + s(PdHoSaSTPD, bs = "tp", k = 7) + s(UrbRurPopRatioLn, 
 ##     bs = "tp", k = 7) + offset(LnTotNumVirus)
 ## 
 ## Parametric coefficients:
 ##             Estimate Std. Error z value Pr(>|z|)    
-## (Intercept) -0.34696    0.03983  -8.711   <2e-16 ***
+## (Intercept) -0.35023    0.04169    -8.4   <2e-16 ***
 ## ---
 ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 ## 
 ## Approximate significance of smooth terms:
-##                             edf Ref.df Chi.sq  p-value    
-## s(hAllZACitesLn)         1.6689      6  8.980  0.00481 ** 
-## s(hHuntedIUCN)           0.2775      1  0.537  0.17674    
-## s(hOrderCETARTIODACTYLA) 0.8738      1 25.214 1.64e-07 ***
-## s(hOrderCHIROPTERA)      0.6705      1  3.940  0.01852 *  
-## s(hOrderDIPROTODONTIA)   0.5605      1  1.108  0.16020    
-## s(hOrderPERAMELEMORPHIA) 0.7801      1  0.755  0.32514    
-## s(hOrderPERISSODACTYLA)  0.7233      1  2.773  0.05058 .  
-## s(hOrderSCANDENTIA)      0.7866      1  0.805  0.31186    
-## s(HumPopDensLnChg)       0.6403      6  1.182  0.15112    
-## s(PdHoSa.cbCst)          2.0565      6 10.147  0.00608 ** 
-## s(UrbRurPopRatioLn)      1.0286      6  6.819  0.00402 ** 
+##                             edf Ref.df Chi.sq p-value    
+## s(hDiseaseZACitesLn)     1.2482      6  6.122 0.01524 *  
+## s(hHuntedIUCN)           0.2941      1  0.654 0.15257    
+## s(hOrderCETARTIODACTYLA) 0.8799      1 27.211 1.2e-07 ***
+## s(hOrderCHIROPTERA)      0.7103      1  5.358 0.00911 ** 
+## s(hOrderDIPROTODONTIA)   0.8395      1  3.445 0.03841 *  
+## s(hOrderPERAMELEMORPHIA) 0.8029      1  0.739 0.33730    
+## s(hOrderPERISSODACTYLA)  0.7513      1  3.197 0.04001 *  
+## s(hOrderSCANDENTIA)      0.7902      1  0.799 0.31460    
+## s(HumPopDensLnChg)       0.6123      6  1.062 0.16953    
+## s(PdHoSaSTPD)            2.0388      6 12.011 0.05483 .  
+## s(UrbRurPopRatioLn)      1.0733      6  9.358 0.00153 ** 
 ## ---
 ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 ## 
-## R-sq.(adj) =  0.883   Deviance explained = 32.3%
-## UBRE = -0.57891  Scale est. = 1         n = 583
+## R-sq.(adj) =   0.88   Deviance explained = 31.5%
+## UBRE = -0.5744  Scale est. = 1         n = 583
 ```
 
 Relative fraction of deviance explained by each variable in the top model:
@@ -250,33 +249,33 @@ Relative fraction of deviance explained by each variable in the top model:
 
 Term                     Relative Deviance Explained
 ----------------------  ----------------------------
-hAllZACitesLn                                  14.9%
-hHuntedIUCN                                   0.813%
-hOrderCETARTIODACTYLA                          31.9%
-hOrderCHIROPTERA                               5.25%
-hOrderDIPROTODONTIA                            2.67%
-hOrderPERAMELEMORPHIA                          4.95%
-hOrderPERISSODACTYLA                           5.17%
-hOrderSCANDENTIA                               5.34%
-HumPopDensLnChg                                3.55%
-PdHoSa.cbCst                                   18.4%
-UrbRurPopRatioLn                               7.09%
+hDiseaseZACitesLn                              10.3%
+hHuntedIUCN                                    1.29%
+hOrderCETARTIODACTYLA                          33.1%
+hOrderCHIROPTERA                                5.2%
+hOrderDIPROTODONTIA                            5.43%
+hOrderPERAMELEMORPHIA                          6.42%
+hOrderPERISSODACTYLA                           6.18%
+hOrderSCANDENTIA                               5.78%
+HumPopDensLnChg                                3.34%
+PdHoSaSTPD                                     14.5%
+UrbRurPopRatioLn                               8.44%
 
 10-fold cross-validation.  Good fit indicated by *non*-significant p-values:
 
 
-Fold    Observations Fit   Obervations Held Out   P-value
------  -----------------  ---------------------  --------
-1                    524                     59     0.492
-2                    524                     59     0.164
-3                    524                     59     0.267
-4                    525                     58     0.890
-5                    525                     58     0.752
-6                    525                     58     0.787
-7                    525                     58     0.019
-8                    525                     58     0.330
-9                    525                     58     0.334
-10                   525                     58     0.715
+Fold    Observations Fit   Observations Held Out   P-value   Mean Error
+-----  -----------------  ----------------------  --------  -----------
+1                    524                      59     0.636   -0.0657058
+2                    524                      59     0.116   -0.2195015
+3                    524                      59     0.261    0.1546401
+4                    525                      58     0.770    0.0250976
+5                    525                      58     0.979   -0.0029883
+6                    525                      58     0.924    0.0101716
+7                    525                      58     0.019    0.1646305
+8                    525                      58     0.361   -0.1337026
+9                    525                      58     0.260    0.0810766
+10                   525                      58     0.606   -0.0539774
 
 # All Viruses GAM - All Associations
 
@@ -355,18 +354,18 @@ S20                                              10%
 10-fold cross-validation.  Good fit indicated by *non*-significant p-values:
 
 
-Fold    Observations Fit   Obervations Held Out   P-value
------  -----------------  ---------------------  --------
-1                    518                     58     0.054
-2                    518                     58     0.341
-3                    518                     58     0.719
-4                    518                     58     0.233
-5                    518                     58     0.440
-6                    518                     58     0.010
-7                    519                     57     0.469
-8                    519                     57     0.236
-9                    519                     57     0.111
-10                   519                     57     0.152
+Fold    Observations Fit   Observations Held Out   P-value   Mean Error
+-----  -----------------  ----------------------  --------  -----------
+1                    518                      58     0.054    0.8392332
+2                    518                      58     0.341   -0.2544549
+3                    518                      58     0.719   -0.0961627
+4                    518                      58     0.233    0.5595787
+5                    518                      58     0.440    0.2564444
+6                    518                      58     0.010   -0.7324799
+7                    519                      57     0.469   -0.2631182
+8                    519                      57     0.236   -0.3085288
+9                    519                      57     0.111   -0.4106174
+10                   519                      57     0.152    0.5007231
 
 # All Viruses GAM - Strict Associations
 
@@ -447,18 +446,18 @@ S20                                             3.9%
 10-fold cross-validation.  Good fit indicated by *non*-significant p-values:
 
 
-Fold    Observations Fit   Obervations Held Out   P-value
------  -----------------  ---------------------  --------
-1                    517                     58     0.986
-2                    517                     58     0.602
-3                    517                     58     0.308
-4                    517                     58     0.091
-5                    517                     58     0.666
-6                    518                     57     0.643
-7                    518                     57     0.663
-8                    518                     57     0.370
-9                    518                     57     0.735
-10                   518                     57     0.114
+Fold    Observations Fit   Observations Held Out   P-value   Mean Error
+-----  -----------------  ----------------------  --------  -----------
+1                    517                      58     0.986   -0.0030748
+2                    517                      58     0.602   -0.0857512
+3                    517                      58     0.308    0.2679808
+4                    517                      58     0.091   -0.3216970
+5                    517                      58     0.666   -0.0903830
+6                    518                      57     0.643    0.1230466
+7                    518                      57     0.663    0.1210772
+8                    518                      57     0.370    0.2459483
+9                    518                      57     0.735   -0.0596712
+10                   518                      57     0.114   -0.4076403
 
 # Viral Traits GAM - All Associations
 
@@ -526,18 +525,18 @@ vWOKcitesLn                                   37.4%
 10-fold cross-validation.  Good fit indicated by *non*-significant p-values:
 
 
-Fold    Observations Fit   Obervations Held Out   P-value
------  -----------------  ---------------------  --------
-1                    417                     47     0.628
-2                    417                     47     0.432
-3                    417                     47     0.894
-4                    417                     47     0.991
-5                    418                     46     0.039
-6                    418                     46     0.985
-7                    418                     46     0.578
-8                    418                     46     0.702
-9                    418                     46     0.175
-10                   418                     46     0.482
+Fold    Observations Fit   Observations Held Out   P-value   Mean Error
+-----  -----------------  ----------------------  --------  -----------
+1                    417                      47     0.628    0.0284356
+2                    417                      47     0.432   -0.0415209
+3                    417                      47     0.894   -0.0087683
+4                    417                      47     0.991    0.0007085
+5                    418                      46     0.039    0.1382797
+6                    418                      46     0.985    0.0012093
+7                    418                      46     0.578    0.0327128
+8                    418                      46     0.702   -0.0232710
+9                    418                      46     0.175   -0.0936072
+10                   418                      46     0.482   -0.0374536
 
 
 # Viral Traits GAM - Strict Associations
@@ -604,18 +603,18 @@ vWOKcitesLn                                             53.1%
 10-fold cross-validation.  Good fit indicated by *non*-significant p-values:
 
 
-Fold    Observations Fit   Obervations Held Out   P-value
------  -----------------  ---------------------  --------
-1                    367                     41     0.530
-2                    367                     41     0.831
-3                    367                     41     0.245
-4                    367                     41     0.830
-5                    367                     41     0.566
-6                    367                     41     0.357
-7                    367                     41     0.322
-8                    367                     41     0.275
-9                    368                     40     0.876
-10                   368                     40     0.307
+Fold    Observations Fit   Observations Held Out   P-value   Mean Error
+-----  -----------------  ----------------------  --------  -----------
+1                    367                      41     0.530   -0.0392634
+2                    367                      41     0.831    0.0140749
+3                    367                      41     0.245    0.0730734
+4                    367                      41     0.830   -0.0118296
+5                    367                      41     0.566    0.0403362
+6                    367                      41     0.357   -0.0488821
+7                    367                      41     0.322   -0.0667731
+8                    367                      41     0.275    0.0664279
+9                    368                      40     0.876    0.0092493
+10                   368                      40     0.307   -0.0601761
 
 # Zoonoses in Domestic Animals GAM - All Associations
 
@@ -674,18 +673,18 @@ hOrderCETARTIODACTYLA                            57%
 10-fold cross-validation.  Good fit indicated by *non*-significant p-values:
 
 
-Fold    Observations Fit   Obervations Held Out   P-value
------  -----------------  ---------------------  --------
-1                     28                      4     0.748
-2                     28                      4     0.876
-3                     29                      3     0.500
-4                     29                      3     0.250
-5                     29                      3     0.000
-6                     29                      3     0.749
-7                     29                      3     0.249
-8                     29                      3     0.498
-9                     29                      3     0.254
-10                    29                      3     0.000
+Fold    Observations Fit   Observations Held Out   P-value   Mean Error
+-----  -----------------  ----------------------  --------  -----------
+1                     28                       4     0.748    0.3897941
+2                     28                       4     0.876    0.0413904
+3                     29                       3     0.500   -0.2523949
+4                     29                       3     0.250    0.5501736
+5                     29                       3     0.000    1.9905346
+6                     29                       3     0.749    1.5312558
+7                     29                       3     0.249   -1.4689101
+8                     29                       3     0.498   -0.8212953
+9                     29                       3     0.254   -2.6681889
+10                    29                       3     0.000   -0.8835657
 
 
 # Zoonoses in Domestic Animals GAM - Strict Associations
@@ -705,28 +704,29 @@ as splines, all discrete terms as random effects:
  0.6164310  offset(LnTotNumVirus) + hOrderPROBOSCIDEA + hOrderRODENTIA                                                                        
  0.6978756  offset(LnTotNumVirus) + hOrderPROBOSCIDEA                                                                                         
  0.7057037  offset(LnTotNumVirus) + domestic_categoryOther + hOrderPROBOSCIDEA                                                                
- 0.7983514  offset(LnTotNumVirus) + domestic_category3 + hOrderLAGOMORPHA + hOrderRODENTIA + LnDOMYearBP                                      
+ 0.7983515  offset(LnTotNumVirus) + domestic_category3 + hOrderLAGOMORPHA + hOrderRODENTIA + LnDOMYearBP                                      
  0.8305375  offset(LnTotNumVirus) + domestic_category3 + hOrderRODENTIA + LnDOMYearBP                                                         
- 0.8356624  offset(LnTotNumVirus) + domestic_category3 + hAllZACitesLn + hOrderLAGOMORPHA + hOrderRODENTIA + LnDOMYearBP                      
- 0.9613771  offset(LnTotNumVirus) + domestic_category3 + hOrderLAGOMORPHA + hOrderRODENTIA + LnDOMYearBP + PdHoSa.cbCst                       
+ 0.8356247  offset(LnTotNumVirus) + domestic_category3 + hAllZACitesLn + hOrderLAGOMORPHA + hOrderRODENTIA + LnDOMYearBP                      
+ 0.9613857  offset(LnTotNumVirus) + domestic_category3 + hOrderLAGOMORPHA + hOrderRODENTIA + LnDOMYearBP + PdHoSa.cbCst                       
  1.0015364  offset(LnTotNumVirus) + hOrderRODENTIA                                                                                            
  1.0485809  offset(LnTotNumVirus) + domestic_category3 + hOrderRODENTIA + LnDOMYearBP + PdHoSa.cbCst                                          
- 1.0494444  offset(LnTotNumVirus) + domestic_category3 + hDiseaseZACitesLn + hOrderRODENTIA + LnDOMYearBP                                     
+ 1.0494122  offset(LnTotNumVirus) + domestic_category3 + hDiseaseZACitesLn + hOrderRODENTIA + LnDOMYearBP                                     
+ 1.0649989  offset(LnTotNumVirus) + domestic_category3 + hDiseaseZACitesLn + hMassGramsPVR + hOrderRODENTIA + LnDOMYearBP                     
  1.0738794  +offset(LnTotNumVirus)                                                                                                            
  1.0738794  offset(LnTotNumVirus)                                                                                                             
  1.0741740  offset(LnTotNumVirus) + domestic_categoryOther                                                                                    
  1.0936712  offset(LnTotNumVirus) + domestic_category3 + hDiseaseZACitesLn + hOrderLAGOMORPHA + hOrderRODENTIA + LnDOMYearBP                  
- 1.1123719  offset(LnTotNumVirus) + domestic_category2 + domestic_category3 + hOrderRODENTIA + LnDOMYearBP                                    
- 1.4399812  offset(LnTotNumVirus) + domestic_category3 + hAllZACitesLn + hOrderRODENTIA + LnDOMYearBP + PdHoSa.cbCst                          
+ 1.1123648  offset(LnTotNumVirus) + domestic_category2 + domestic_category3 + hOrderRODENTIA + LnDOMYearBP                                    
  1.4523096  offset(LnTotNumVirus) + domestic_category2 + domestic_category3 + hOrderRODENTIA + LnDOMYearBP + PdHoSa.cbCst                     
- 1.6298800  offset(LnTotNumVirus) + domestic_category2 + domestic_category3 + hMassGramsPVR + hOrderRODENTIA + LnDOMYearBP + PdHoSa.cbCst     
- 1.6412123  offset(LnTotNumVirus) + domestic_category2 + domestic_category3 + hDiseaseZACitesLn + hOrderRODENTIA + LnDOMYearBP + PdHoSa.cbCst 
+ 1.5217381  offset(LnTotNumVirus) + domestic_category3 + hAllZACitesLn + hOrderRODENTIA + LnDOMYearBP + PdHoSa.cbCst                          
+ 1.6298513  offset(LnTotNumVirus) + domestic_category2 + domestic_category3 + hMassGramsPVR + hOrderRODENTIA + LnDOMYearBP + PdHoSa.cbCst     
+ 1.6412275  offset(LnTotNumVirus) + domestic_category2 + domestic_category3 + hDiseaseZACitesLn + hOrderRODENTIA + LnDOMYearBP + PdHoSa.cbCst 
  1.6436877  offset(LnTotNumVirus) + domestic_category2 + domestic_category3 + hMassGramsPVR + hOrderRODENTIA + LnDOMYearBP                    
- 1.6622703  offset(LnTotNumVirus) + domestic_category3 + hAllZACitesLn + hOrderLAGOMORPHA + hOrderRODENTIA + LnDOMYearBP + PdHoSa.cbCst       
- 1.7786943  offset(LnTotNumVirus) + domestic_category2 + domestic_category3 + hAllZACitesLn + hMassGramsPVR + hOrderRODENTIA + LnDOMYearBP    
- 1.7870739  offset(LnTotNumVirus) + domestic_category3 + hDiseaseZACitesLn + hOrderLAGOMORPHA + hOrderRODENTIA + LnDOMYearBP + PdHoSa.cbCst   
+ 1.6622661  offset(LnTotNumVirus) + domestic_category3 + hAllZACitesLn + hOrderLAGOMORPHA + hOrderRODENTIA + LnDOMYearBP + PdHoSa.cbCst       
+ 1.7786942  offset(LnTotNumVirus) + domestic_category2 + domestic_category3 + hAllZACitesLn + hMassGramsPVR + hOrderRODENTIA + LnDOMYearBP    
+ 1.7870691  offset(LnTotNumVirus) + domestic_category3 + hDiseaseZACitesLn + hOrderLAGOMORPHA + hOrderRODENTIA + LnDOMYearBP + PdHoSa.cbCst   
  1.7917253  offset(LnTotNumVirus) + domestic_category3 + domestic_categoryOther + hOrderLAGOMORPHA + LnDOMYearBP                              
- 1.8509329  offset(LnTotNumVirus) + domestic_category2 + domestic_category3 + hAllZACitesLn + hOrderRODENTIA + LnDOMYearBP + PdHoSa.cbCst     
+ 1.8509326  offset(LnTotNumVirus) + domestic_category2 + domestic_category3 + hAllZACitesLn + hOrderRODENTIA + LnDOMYearBP + PdHoSa.cbCst     
  1.9147085  offset(LnTotNumVirus) + domestic_category3 + domestic_categoryOther + LnDOMYearBP                                                 
 
 Partial effect plots of all terms in top model:
@@ -774,18 +774,18 @@ hOrderRODENTIA                             14.5%
 10-fold cross-validation.  Good fit indicated by *non*-significant p-values:
 
 
-Fold    Observations Fit   Obervations Held Out   P-value
------  -----------------  ---------------------  --------
-1                     28                      4     0.626
-2                     28                      4     0.252
-3                     29                      3     0.252
-4                     29                      3     0.750
-5                     29                      3     0.000
-6                     29                      3     0.000
-7                     29                      3     0.000
-8                     29                      3     0.499
-9                     29                      3     0.498
-10                    29                      3     0.251
+Fold    Observations Fit   Observations Held Out   P-value   Mean Error
+-----  -----------------  ----------------------  --------  -----------
+1                     28                       4     0.626    0.2418309
+2                     28                       4     0.252    0.5708533
+3                     29                       3     0.252   -0.8245980
+4                     29                       3     0.750   -0.5787268
+5                     29                       3     0.000    1.9934697
+6                     29                       3     0.000   -1.0237261
+7                     29                       3     0.000   -0.4910065
+8                     29                       3     0.499   -0.3241519
+9                     29                       3     0.498   -0.6561722
+10                    29                       3     0.251    0.8110239
 
 # All Viruses in Domestic Animals GAM - All Associations
 
@@ -851,18 +851,18 @@ hOrderPERISSODACTYLA                            16%
 10-fold cross-validation.  Good fit indicated by *non*-significant p-values:
 
 
-Fold    Observations Fit   Obervations Held Out   P-value
------  -----------------  ---------------------  --------
-1                     28                      4     0.248
-2                     28                      4     0.000
-3                     29                      3     0.000
-4                     29                      3     0.499
-5                     29                      3     0.000
-6                     29                      3     0.750
-7                     29                      3     0.000
-8                     29                      3     0.498
-9                     29                      3     0.501
-10                    29                      3     0.748
+Fold    Observations Fit   Observations Held Out   P-value   Mean Error
+-----  -----------------  ----------------------  --------  -----------
+1                     28                       4     0.248   -1.3068071
+2                     28                       4     0.000    4.0357625
+3                     29                       3     0.000   -8.8075012
+4                     29                       3     0.499   -3.8318981
+5                     29                       3     0.000    9.6955876
+6                     29                       3     0.750   -1.1155114
+7                     29                       3     0.000   -4.7601992
+8                     29                       3     0.498    0.9179496
+9                     29                       3     0.501    0.3652101
+10                    29                       3     0.748    0.3792041
 
 # All Viruses in Domestic Animals GAM - Stringent Associations
 
@@ -876,8 +876,8 @@ as splines, all discrete terms as random effects:
       ΔAIC  Terms in Model                                                                                                             
 ----------  ---------------------------------------------------------------------------------------------------------------------------
  0.0000000  domestic_category2 + domestic_categoryOther + hDiseaseZACitesLn + hOrderPERISSODACTYLA + hOrderRODENTIA                    
- 0.0555192  domestic_category2 + domestic_categoryOther + hDiseaseZACitesLn + hOrderLAGOMORPHA + hOrderPERISSODACTYLA + hOrderRODENTIA 
- 1.3747177  domestic_category2 + hDiseaseZACitesLn + hOrderPERISSODACTYLA + hOrderRODENTIA                                             
+ 0.0555253  domestic_category2 + domestic_categoryOther + hDiseaseZACitesLn + hOrderLAGOMORPHA + hOrderPERISSODACTYLA + hOrderRODENTIA 
+ 1.3747238  domestic_category2 + hDiseaseZACitesLn + hOrderPERISSODACTYLA + hOrderRODENTIA                                             
 
 Partial effect plots of all terms in top model:
 
@@ -904,11 +904,11 @@ Summary of top model:
 ## 
 ## Approximate significance of smooth terms:
 ##                              edf Ref.df    Chi.sq  p-value    
-## s(domestic_category2)     1.0000      1 1.106e+02 3.81e-09 ***
-## s(domestic_categoryOther) 0.9336      1 2.143e+02 0.016014 *  
-## s(hDiseaseZACitesLn)      3.5543      6 1.210e+06 8.13e-07 ***
-## s(hOrderPERISSODACTYLA)   0.9789      1 8.135e+01 1.57e-15 ***
-## s(hOrderRODENTIA)         1.0000      1 4.275e+02 0.000549 ***
+## s(domestic_category2)     1.0000      1    110.64 3.81e-09 ***
+## s(domestic_categoryOther) 0.9336      1    214.34 0.016014 *  
+## s(hDiseaseZACitesLn)      3.5543      6 760224.93 7.98e-07 ***
+## s(hOrderPERISSODACTYLA)   0.9789      1     81.35 1.57e-15 ***
+## s(hOrderRODENTIA)         1.0000      1    427.47 0.000549 ***
 ## ---
 ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 ## 
@@ -930,18 +930,18 @@ hOrderRODENTIA                                  3.47%
 10-fold cross-validation.  Good fit indicated by *non*-significant p-values:
 
 
-Fold    Observations Fit   Obervations Held Out   P-value
------  -----------------  ---------------------  --------
-1                     28                      4     0.749
-2                     28                      4     0.876
-3                     29                      3     0.251
-4                     29                      3     0.249
-5                     29                      3     0.499
-6                     29                      3     0.000
-7                     29                      3     0.750
-8                     29                      3     0.000
-9                     29                      3     0.502
-10                    29                      3     0.749
+Fold    Observations Fit   Observations Held Out   P-value   Mean Error
+-----  -----------------  ----------------------  --------  -----------
+1                     28                       4     0.749   -0.0889347
+2                     28                       4     0.876    0.4056110
+3                     29                       3     0.251   -6.6005473
+4                     29                       3     0.249    1.3773346
+5                     29                       3     0.499   -0.8342990
+6                     29                       3     0.000    1.1021046
+7                     29                       3     0.750    0.9422361
+8                     29                       3     0.000   12.5596416
+9                     29                       3     0.502    4.1044873
+10                    29                       3     0.749   -0.0981216
 
 <!-- # Publication plots -->
 

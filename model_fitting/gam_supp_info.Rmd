@@ -62,7 +62,7 @@ terms = list(
   interaction2 = "s(hHuntedIUCN, bs='re')",
   interaction3 = "s(hArtfclHbttUsrIUCN, bs='re')",
   phylo_distance = c("s(PdHoSa.cbCst, bs = 'tp', k=7)", "s(PdHoSaSTPD, bs = 'tp', k=7)"),
-  bias = c("s(hAllZACitesLn, bs = 'tp', k=7)", "s(hDiseaseZACitesLn, bs = 'tp', k=7)"),
+  bias = c("s(hDiseaseZACitesLn, bs = 'tp', k=7)"),
   offset = "offset(LnTotNumVirus)",
   stringsAsFactors=FALSE)
 
@@ -205,7 +205,7 @@ terms = list(
   interaction2 = "s(hHuntedIUCN, bs='re')",
   interaction3 = "s(hArtfclHbttUsrIUCN, bs='re')",
   phylo_distance = c("s(PdHoSa.cbCst, bs = 'tp', k=7)", "s(PdHoSaSTPD, bs = 'tp', k=7)"),
-  bias = c("s(hAllZACitesLn, bs = 'tp', k=7)", "s(hDiseaseZACitesLn, bs = 'tp', k=7)"),
+  bias = c("s(hDiseaseZACitesLn, bs = 'tp', k=7)"),
   offset = "offset(LnTotNumVirus)",
   stringsAsFactors=FALSE)
 

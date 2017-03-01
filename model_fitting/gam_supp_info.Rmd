@@ -289,7 +289,7 @@ terms = list(
     "s(S20, bs='cs', k = 7)",
     "s(S, bs='cs', k = 7)"
   ),
-   bias = c("s(hAllZACitesLn, bs='cs',k = 7)", "s(hDiseaseZACitesLn, bs='cs', k=7)"),
+   bias = c("s(hDiseaseZACitesLn, bs='cs', k=7)"),
   stringsAsFactors = FALSE)
 
 terms = c(dummy_terms, terms)
@@ -585,7 +585,7 @@ terms = list(
   cont = c("s(hContinents, bs = 'tp', k = 7)", ""),
   category = c("s(domestic_category, bs = 're')", ""),
   phylo_distance = c("s(PdHoSa.cbCst, bs = 'tp', k = 7)", ""), #, "s(PdHoSaSTPD, bs = 're')"),
-  bias = c("s(hAllZACitesLn, bs = 'tp', k = 7)", "s(hDiseaseZACitesLn, bs = 'tp', k = 7)", ""),
+  bias = c("s(hDiseaseZACitesLn, bs = 'tp', k = 7)", ""),
   offset = "offset(LnTotNumVirus)",
   stringsAsFactors=FALSE)
 
@@ -713,7 +713,7 @@ terms = list(
   domestication = c("s(LnDOMYearBP, bs = 'tp', k = 7)",""),
   cont = c("s(hContinents, bs = 'tp', k = 7)", ""),
   category = c("s(domestic_category, bs = 're')", ""),
-  bias = c("s(hAllZACitesLn, bs = 'tp', k = 7)", "s(hDiseaseZACitesLn, bs = 'tp', k = 7)", ""),
+  bias = c("s(hDiseaseZACitesLn, bs = 'tp', k = 7)", ""),
   stringsAsFactors=FALSE)
 
 terms = c(dummy_terms, terms)

@@ -312,22 +312,22 @@ Summary of top model:
 ## 
 ## Parametric coefficients:
 ##             Estimate Std. Error z value Pr(>|z|)    
-## (Intercept)  0.51806    0.06972   7.431 1.08e-13 ***
+## (Intercept)  0.51842    0.06969   7.439 1.01e-13 ***
 ## ---
 ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 ## 
 ## Approximate significance of smooth terms:
 ##                             edf Ref.df   Chi.sq  p-value    
-## s(hDiseaseZACitesLn)     5.5484      6 1846.572  < 2e-16 ***
-## s(hMassGramsPVR)         3.8207      6  216.421 0.008539 ** 
-## s(hOrderCETARTIODACTYLA) 0.9355      1   24.370 0.000231 ***
-## s(hOrderCHIROPTERA)      1.0000      1  155.124 2.49e-16 ***
-## s(hOrderEULIPOTYPHLA)    0.8482      1    5.867 0.008946 ** 
-## s(hOrderPERISSODACTYLA)  0.9999      1    9.949 0.001317 ** 
-## s(hOrderPRIMATES)        0.9427      1   34.403 1.52e-05 ***
-## s(hOrderRODENTIA)        0.9954      1   95.491 8.53e-09 ***
-## s(LnAreaHost)            3.5806      6   18.930 0.024928 *  
-## s(S20)                   5.1611      6  301.384 7.25e-15 ***
+## s(hDiseaseZACitesLn)     5.5484      6 1847.372  < 2e-16 ***
+## s(hMassGramsPVR)         3.8209      6  216.724 0.008534 ** 
+## s(hOrderCETARTIODACTYLA) 0.9366      1   24.340 0.000235 ***
+## s(hOrderCHIROPTERA)      1.0000      1  154.883 2.53e-16 ***
+## s(hOrderEULIPOTYPHLA)    0.8481      1    5.870 0.008921 ** 
+## s(hOrderPERISSODACTYLA)  1.0000      1    9.946 0.001320 ** 
+## s(hOrderPRIMATES)        0.9435      1   34.387 1.54e-05 ***
+## s(hOrderRODENTIA)        0.9933      1   95.293 8.40e-09 ***
+## s(LnAreaHost)            3.5804      6   18.950 0.024870 *  
+## s(S20)                   5.1613      6  299.708 7.02e-15 ***
 ## ---
 ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 ## 
@@ -356,16 +356,16 @@ S20                                              10%
 
 Fold    Observations Fit   Observations Held Out   P-value   Mean Error
 -----  -----------------  ----------------------  --------  -----------
-1                    518                      58     0.054    0.8392332
-2                    518                      58     0.341   -0.2544549
-3                    518                      58     0.719   -0.0961627
-4                    518                      58     0.233    0.5595787
-5                    518                      58     0.440    0.2564444
-6                    518                      58     0.010   -0.7324799
-7                    519                      57     0.469   -0.2631182
-8                    519                      57     0.236   -0.3085288
-9                    519                      57     0.111   -0.4106174
-10                   519                      57     0.152    0.5007231
+1                    518                      58     0.054    0.8392413
+2                    518                      58     0.341   -0.2544546
+3                    518                      58     0.719   -0.0961621
+4                    518                      58     0.233    0.5595995
+5                    518                      58     0.440    0.2562939
+6                    518                      58     0.010   -0.7324828
+7                    519                      57     0.469   -0.2631538
+8                    519                      57     0.236   -0.3085747
+9                    519                      57     0.111   -0.4106184
+10                   519                      57     0.152    0.5007197
 
 # All Viruses GAM - Strict Associations
 
@@ -706,7 +706,6 @@ as splines, all discrete terms as random effects:
  0.7057037  offset(LnTotNumVirus) + domestic_categoryOther + hOrderPROBOSCIDEA                                                                
  0.7983515  offset(LnTotNumVirus) + domestic_category3 + hOrderLAGOMORPHA + hOrderRODENTIA + LnDOMYearBP                                      
  0.8305375  offset(LnTotNumVirus) + domestic_category3 + hOrderRODENTIA + LnDOMYearBP                                                         
- 0.8356247  offset(LnTotNumVirus) + domestic_category3 + hAllZACitesLn + hOrderLAGOMORPHA + hOrderRODENTIA + LnDOMYearBP                      
  0.9613857  offset(LnTotNumVirus) + domestic_category3 + hOrderLAGOMORPHA + hOrderRODENTIA + LnDOMYearBP + PdHoSa.cbCst                       
  1.0015364  offset(LnTotNumVirus) + hOrderRODENTIA                                                                                            
  1.0485809  offset(LnTotNumVirus) + domestic_category3 + hOrderRODENTIA + LnDOMYearBP + PdHoSa.cbCst                                          
@@ -718,15 +717,11 @@ as splines, all discrete terms as random effects:
  1.0936712  offset(LnTotNumVirus) + domestic_category3 + hDiseaseZACitesLn + hOrderLAGOMORPHA + hOrderRODENTIA + LnDOMYearBP                  
  1.1123648  offset(LnTotNumVirus) + domestic_category2 + domestic_category3 + hOrderRODENTIA + LnDOMYearBP                                    
  1.4523096  offset(LnTotNumVirus) + domestic_category2 + domestic_category3 + hOrderRODENTIA + LnDOMYearBP + PdHoSa.cbCst                     
- 1.5217381  offset(LnTotNumVirus) + domestic_category3 + hAllZACitesLn + hOrderRODENTIA + LnDOMYearBP + PdHoSa.cbCst                          
  1.6298513  offset(LnTotNumVirus) + domestic_category2 + domestic_category3 + hMassGramsPVR + hOrderRODENTIA + LnDOMYearBP + PdHoSa.cbCst     
  1.6412275  offset(LnTotNumVirus) + domestic_category2 + domestic_category3 + hDiseaseZACitesLn + hOrderRODENTIA + LnDOMYearBP + PdHoSa.cbCst 
  1.6436877  offset(LnTotNumVirus) + domestic_category2 + domestic_category3 + hMassGramsPVR + hOrderRODENTIA + LnDOMYearBP                    
- 1.6622661  offset(LnTotNumVirus) + domestic_category3 + hAllZACitesLn + hOrderLAGOMORPHA + hOrderRODENTIA + LnDOMYearBP + PdHoSa.cbCst       
- 1.7786942  offset(LnTotNumVirus) + domestic_category2 + domestic_category3 + hAllZACitesLn + hMassGramsPVR + hOrderRODENTIA + LnDOMYearBP    
  1.7870691  offset(LnTotNumVirus) + domestic_category3 + hDiseaseZACitesLn + hOrderLAGOMORPHA + hOrderRODENTIA + LnDOMYearBP + PdHoSa.cbCst   
  1.7917253  offset(LnTotNumVirus) + domestic_category3 + domestic_categoryOther + hOrderLAGOMORPHA + LnDOMYearBP                              
- 1.8509326  offset(LnTotNumVirus) + domestic_category2 + domestic_category3 + hAllZACitesLn + hOrderRODENTIA + LnDOMYearBP + PdHoSa.cbCst     
  1.9147085  offset(LnTotNumVirus) + domestic_category3 + domestic_categoryOther + LnDOMYearBP                                                 
 
 Partial effect plots of all terms in top model:
@@ -799,8 +794,8 @@ as splines, all discrete terms as random effects:
       ΔAIC  Terms in Model                                                                                                           
 ----------  -------------------------------------------------------------------------------------------------------------------------
  0.0000000  domestic_category2 + hDiseaseZACitesLn + hOrderLAGOMORPHA + hOrderPERISSODACTYLA                                         
- 0.6208198  domestic_category2 + hDiseaseZACitesLn + hMassGramsPVR + hOrderLAGOMORPHA + hOrderPERISSODACTYLA                         
- 1.1453821  domestic_category2 + hDiseaseZACitesLn + hMassGramsPVR + hOrderCETARTIODACTYLA + hOrderLAGOMORPHA + hOrderPERISSODACTYLA 
+ 0.6207944  domestic_category2 + hDiseaseZACitesLn + hMassGramsPVR + hOrderLAGOMORPHA + hOrderPERISSODACTYLA                         
+ 1.1453550  domestic_category2 + hDiseaseZACitesLn + hMassGramsPVR + hOrderCETARTIODACTYLA + hOrderLAGOMORPHA + hOrderPERISSODACTYLA 
 
 Partial effect plots of all terms in top model:
 
@@ -821,16 +816,16 @@ Summary of top model:
 ## 
 ## Parametric coefficients:
 ##             Estimate Std. Error z value Pr(>|z|)    
-## (Intercept)  1.95532    0.08373   23.35   <2e-16 ***
+## (Intercept)  1.95531    0.08373   23.35   <2e-16 ***
 ## ---
 ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 ## 
 ## Approximate significance of smooth terms:
 ##                            edf Ref.df   Chi.sq  p-value    
-## s(domestic_category2)   0.9656      1   82.572 2.72e-13 ***
-## s(hDiseaseZACitesLn)    2.4410      6 8060.305  < 2e-16 ***
+## s(domestic_category2)   0.9656      1   82.575 2.71e-13 ***
+## s(hDiseaseZACitesLn)    2.4410      6 8094.770  < 2e-16 ***
 ## s(hOrderLAGOMORPHA)     0.8752      1    6.812  0.00636 ** 
-## s(hOrderPERISSODACTYLA) 0.9999      1  137.218  < 2e-16 ***
+## s(hOrderPERISSODACTYLA) 1.0000      1  137.226  < 2e-16 ***
 ## ---
 ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 ## 
@@ -873,11 +868,10 @@ Terms in models with ΔAIC < 2.  All continuous terms effects are represented
 as splines, all discrete terms as random effects:
 
 
-      ΔAIC  Terms in Model                                                                                                             
-----------  ---------------------------------------------------------------------------------------------------------------------------
- 0.0000000  domestic_category2 + domestic_categoryOther + hDiseaseZACitesLn + hOrderPERISSODACTYLA + hOrderRODENTIA                    
- 0.0555253  domestic_category2 + domestic_categoryOther + hDiseaseZACitesLn + hOrderLAGOMORPHA + hOrderPERISSODACTYLA + hOrderRODENTIA 
- 1.3747238  domestic_category2 + hDiseaseZACitesLn + hOrderPERISSODACTYLA + hOrderRODENTIA                                             
+     ΔAIC  Terms in Model                                                                                          
+---------  --------------------------------------------------------------------------------------------------------
+ 0.000000  domestic_category2 + domestic_categoryOther + hDiseaseZACitesLn + hOrderPERISSODACTYLA + hOrderRODENTIA 
+ 1.374724  domestic_category2 + hDiseaseZACitesLn + hOrderPERISSODACTYLA + hOrderRODENTIA                          
 
 Partial effect plots of all terms in top model:
 

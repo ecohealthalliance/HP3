@@ -15,17 +15,7 @@ P <- rprojroot::find_rstudio_root_file
 
 # Load the Mammals' shapefile TERRESTRIAL_MAMMALS, downloaded from: http://www.iucnredlist.org/technical-documents/spatial-data#mammals
 # This study uses version 2015-2, which we provide via Amazon S3 storage.
-if(!file.exists(P("maps/TERRESTRIAL_MAMMALS.zip"))) {
-  download.file("https://s3.amazonaws.com/hp3-shapefiles/TERRESTRIAL_MAMMALS.zip",
-                destfile = P("maps/TERRESTRIAL_MAMMALS.zip"))
-}
-
-if(file.exists(P("maps/TERRESTRIAL_MAMMALS.zip")) &
-   !dir.exists(P("maps/iucn_data"))) {
-  unzip(P("maps/TERRESTRIAL_MAMMALS.zip"), exdir=P("maps/iucn_data/"))
-}
-
-terr = shapefile(P("maps/iucn_data/Mammals_Terrestrial.shp"), verbose = T)
+terr = shapefile(P("shapefiles", "Mammals_Terrestrial", "Mammals_Terrestrial.shp"), verbose = T)
 terr@data$BINOMIAL = stri_replace_all_fixed(terr@data$BINOMIAL, " ", "_")
 
 # select only extant species
@@ -41,8 +31,8 @@ terr@data = left_join(terr@data, taxa, by = c("ID_NO" = 'spp_ID'))
 hp3_orders = c('CARNIVORA', 'CETARTIODACTYLA', 'CHIROPTERA', 'PRIMATES', 'RODENTIA')
 # Read HP3 results
 # Get HP3 all virus predictions
-all_viruses_gam <- readRDS(P("model_fitting/all_viruses_model.rds"))
-hp3_hosts <- readRDS(P("model_fitting/postprocessed_database.rds"))$hosts
+all_viruses_gam <- readRDS(P("intermediates", "all_viruses_models.rds"))$model[[1]]
+hp3_hosts <- readRDS(P("intermediates", "postprocessed_database.rds"))$hosts
 hp3_all = as_tibble(left_join(all_viruses_gam$model, hp3_hosts))
 hp3_all_pred = within(hp3_all, {hDiseaseZACitesLn = max(hDiseaseZACitesLn)})
 hp3_all = mutate(hp3_all,
@@ -55,7 +45,7 @@ hp3_all = mutate(hp3_all,
                  hHostNameFinal = as.character(hHostNameFinal))
 
 # just zoonotic viruses
-zoo_viruses_gam <- readRDS(P("model_fitting/all_zoonoses_model.rds"))
+zoo_viruses_gam <- readRDS(P("intermediates", "all_zoonoses_models.rds"))$model[[1]]
 hp3_zoo = left_join(zoo_viruses_gam$model, hp3_hosts) %>%
   left_join(dplyr::select(hp3_all, hHostNameFinal, predicted_max)) %>%
   dplyr::rename(vir_prediction_max = predicted_max) %>%
@@ -259,8 +249,8 @@ bias_layers$bias_shape <- mcmapply(bias_cutshape, model=bias_layers$model, order
                                    MoreArgs = list(type="lines"), mc.cores = 20)
 
 
-saveRDS(bias_layers,file = "bias_layers.rds")
-bias_layers <- readRDS("bias_layers.rds")
+# saveRDS(bias_layers,file = "bias_layers.rds")
+# bias_layers <- readRDS("bias_layers.rds")
 
 make_png <- function(my_raster, orders, model, data_type, png_res) {
   if(model == "hosts" & data_type=="missing") {
@@ -281,8 +271,8 @@ make_png <- function(my_raster, orders, model, data_type, png_res) {
     bias_pt_layer = bias_grid[0,]
   }
 
-  filename = P("maps", "output", paste0(orders, "_", model, "_", data_type, ".png"))
-  png(filename, width = ncol(my_raster) + 1, height = nrow(my_raster) + 1, res = png_res) #, type = "cairo-png", antialias = "subpixel", family = "Arial")
+  filename = P("figures", "maps", paste0(orders, "_", model, "_", data_type, ".png"))
+  png(filename, width = ncol(my_raster) + 1, height = nrow(my_raster) + 1, res = png_res, type = "cairo-png", antialias = "subpixel", family = "Arial")
   print(levelplot(my_raster, layers = 1,
                   par.settings = TheTheme,
                   margin= FALSE,
@@ -296,10 +286,7 @@ make_png <- function(my_raster, orders, model, data_type, png_res) {
                   ylim = c(-58, 90)) +
           #layer(sp.points(bias_pt_layer, pch=20, cex=0.8, col="grey20"), data=list(bias_pt_layer=bias_pt_layer)) +
           layer(sp.lines(bias_pt_layer, lwd=2, col="grey20"), data=list(bias_pt_layer=bias_pt_layer)) +
-
-          world_layer
-
-  )
+          world_layer)
   dev.off()
   #return(bias_pt_layer)
 }
@@ -308,33 +295,3 @@ rasters3 = filter(rasters2, data_type %in% c('observed', 'predicted', 'predicted
   filter(!(model=="hosts" & data_type=="predicted_max")) %>%
   filter(!(model!="hosts" & data_type=="predicted"))
 mcmapply(make_png, my_raster=rasters3$raster, orders=rasters3$orders, model=rasters3$model, data_type=rasters3$data_type, png_res=150, mc.cores=40)
-
-library(magick)
-
-for(ORDER in c("ALL", hp3_orders)) {
-
-  image_files <- P("maps", "output/", paste0(ORDER, "_",
-                                             c("viruses_observed", "viruses_predicted_max", "viruses_missing",
-                                               "zoonoses_observed", "zoonoses_predicted_max", "zoonoses_missing",
-                                               "hosts_observed", "hosts_predicted", "hosts_missing"),
-                                             ".png"))
-
-my_images <- lapply(image_files, image_read)
-labeled_images <- mapply(image_annotate, image=my_images, text=letters[1:9], MoreArgs = list(font="Helvetica", location="+200+770", size=175), SIMPLIFY = FALSE)
-
-comb_image <- image_append(stack=TRUE, image = c(
-  image_append(c(labeled_images[[1]], labeled_images[[2]], labeled_images[[3]])),
-  image_append(c(labeled_images[[4]], labeled_images[[5]], labeled_images[[6]])),
-  image_append(c(labeled_images[[7]], labeled_images[[8]], labeled_images[[9]]))))
-image_write(comb_image, P("maps", "output", paste0(ORDER, "_combined.png")))
-}
-
-missing_images <- lapply(list.files(P("maps", "output/"), pattern =paste0("zoonoses_missing.png"), full.names = TRUE), image_read)
-labeled_images <- mapply(image_annotate, image=missing_images, text=letters[1:6], MoreArgs = list(font="Helvetica", location="+200+770", size=175), SIMPLIFY = FALSE)
-comb_image2 <- image_append(stack=TRUE, image = c(
-  image_append(c(labeled_images[[1]], labeled_images[[2]])),
-  image_append(c(labeled_images[[3]], labeled_images[[4]])),
-  image_append(c(labeled_images[[5]], labeled_images[[6]]))))
-image_write(comb_image2, P("maps", "output", "MISSING_ZOONOSES_FIG3.png"))
-
-

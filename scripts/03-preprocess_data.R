@@ -1,5 +1,4 @@
 #  Preprocess all data for input to models
-
 library(dplyr)
 library(magrittr)
 library(readr)
@@ -8,6 +7,7 @@ library(readxl)
 library(tidyr)
 library(purrr)
 P <- rprojroot::find_rstudio_root_file
+source(P("R", "logp.R"))
 ## Read the data files
 associations = read_csv(P("data/associations.csv"))
 hosts  = read_csv(P("data/hosts.csv"))
@@ -57,12 +57,12 @@ hosts = associations %>%
 
 #phylo-corrected mass
 hosts = read_csv(P("data/intermediate/PVR_cytb_hostmass.csv")) %>%
-  select(-hMassGramsLn) %>%
+#  select(-hMassGramsLn) %>%
   rename(hMassGramsPVR = PVRcytb_resid) %>%
   full_join(hosts, by="hHostNameFinal")
 
 #phylo-dist to humans via cyt-b
-hosts = read.csv(P("data/intermediate/HP3-cytb_PDmatrix-12Mar2016.csv"),
+hosts = read.csv(P("data/intermediate/HP3-cytb_PDmatrix.csv"),
              as.is=T, row.names = 1, stringsAsFactors = FALSE) %>%
     add_rownames("hHostNameFinal") %>%
     select(hHostNameFinal, Homo_sapiens) %>%
@@ -70,7 +70,7 @@ hosts = read.csv(P("data/intermediate/HP3-cytb_PDmatrix-12Mar2016.csv"),
     full_join(hosts, by="hHostNameFinal")
 
 #phylo-dist to humans via mammallian supertree
-hosts = read.csv(P("data/intermediate/HP3-ST_PDmatrix-12Mar2016.csv"),
+hosts = read.csv(P("data/intermediate/HP3-ST_PDmatrix.csv"),
                  as.is=T, row.names = 1, stringsAsFactors = FALSE) %>%
   add_rownames("hHostNameFinal") %>%
   select(hHostNameFinal, Homo_sapiens) %>%
@@ -79,13 +79,6 @@ hosts = read.csv(P("data/intermediate/HP3-ST_PDmatrix-12Mar2016.csv"),
   arrange(hHostNameFinal)
 
 ## Transform and derive variables
-
-logp = function(x){   # Fn to take log but make zeros less 10x less than min
-  # x[is.na(x)] <- 0
-  m = min(x[ x > 0], na.rm=T)
-  x = log( x + m )
-  return(x)
-}
 
 is_real <- function(x) {
   !(is.nan(x) | is.na(x) | is.infinite(x))
@@ -159,8 +152,8 @@ hosts = hosts %>%
 # Calculate non-human phylogenetic distances
 
 trees <- list(
-  super = read_csv(P("data/intermediate/HP3-ST_PDmatrix-12Mar2016.csv")),
-  cytb = read_csv(P("data/intermediate/HP3-cytb_PDmatrix-12Mar2016.csv")))
+  super = read_csv(P("data/intermediate/HP3-ST_PDmatrix.csv")),
+  cytb = read_csv(P("data/intermediate/HP3-cytb_PDmatrix.csv")))
 trees <- map(trees, function(tree) {
   names(tree)[1] <- "species1"
   tree <- gather(tree, "species2", "distance", -species1)
@@ -224,4 +217,4 @@ viruses <- left_join(viruses, dists_strict, by ="vVirusNameCorrected")
 log2 <- function(x) {
   ifelse(x == 0 | is.na(x), NA, log(x))
 }
-
+saveRDS(list(hosts=hosts, viruses=viruses, associations=associations), P("intermediates/postprocessed_database.rds"))

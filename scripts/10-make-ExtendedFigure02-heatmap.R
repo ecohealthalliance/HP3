@@ -52,11 +52,13 @@ vricho <- as.data.frame(vricho)
 
 
 #15 June 2016 - Extended Data Figure 1, Unique viral richness by host Order and viral Family heatmap
+pdf(P("figures", "ExtendedFigure02-heatmap.pdf"))
 pheatmap(z2, col=c("white", col=brewer.pal(9, "YlOrRd")),
          breaks=c(0, 0.5,1,2,5,10,15,20,30,50), cluster_rows=T, cluster_cols=T,
          clustering_method = "complete", scale="none", fontsize_row = 12, display_numbers=T, number_format = "%.0f",
          treeheight_col=0, treeheight_row=0,
          fontsize_col = 12, fontsize_number=10, margins=c(13,5))
+dev.off()
 ## Different picutre when scale="row" vs. scale="none"
 ## Different clustering methods give different picture than above. e.g. "centroid" vs "complete"
 ## Different clustering_distance methods give different picture than above.

@@ -7,8 +7,10 @@
 .Rapp.history
 *_cache/
 
-maps/iucn_data/
-maps/output/tif
+shapefiles/mam/*
+shapefiles/iucn_data/*
+shapefiles/host_zg_area/*
+shapefiles/*.zip
 *.tif
 *.grd
 *.gri

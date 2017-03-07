@@ -5,7 +5,10 @@ library(dplyr)
 library(purrr)
 library(ReporteRs)
 source(P("R/relative_contributions.R"))
-top_models <- readRDS(P("model_fitting/top_models.rds"))
+
+top_models <- lapply(c("all_zoonoses_models.rds", "all_zoonoses_strict_models.rds", "all_viruses_models.rds", "all_viruses_strict_models.rds", "vtraits_models.rds","vtraits_strict_models.rds"), function(mods) {
+  readRDS(P("intermediates", mods))$model[[1]]
+})
 
 model_names = c("Zoonoses Model",
                 "Zoonoses Model (stringent)",
@@ -73,6 +76,6 @@ word_table[,1] <- parLeft()
 # create word file
 docx() %>%
   addFlexTable(word_table) %>%
-  writeDoc(file = P("figures/ExtendedTable01-models.docx"))
+  writeDoc(file = P("figures", "ExtendedTable01-models.docx"))
 
 

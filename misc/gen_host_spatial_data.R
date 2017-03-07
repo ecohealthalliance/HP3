@@ -11,21 +11,8 @@ library(tibble)
 library(mgcv)
 library(rgeos)
 
-P <- rprojroot::find_rstudio_root_file
 
-# Load the Mammals' shapefile TERRESTRIAL_MAMMALS, originally downloaded from: http://www.iucnredlist.org/technical-documents/spatial-data#mammals
-# This study uses version 2015-2, which is stored on AWS S3.
-if(!file.exists(P("maps/TERRESTRIAL_MAMMALS.zip"))) {
-  download.file("https://s3.amazonaws.com/hp3-shapefiles/TERRESTRIAL_MAMMALS.zip",
-                destfile = P("maps/TERRESTRIAL_MAMMALS.zip"))
-}
-
-if(file.exists(P("maps/TERRESTRIAL_MAMMALS.zip")) &
-   !dir.exists(P("maps/iucn_data"))) {
-  unzip(P("maps/TERRESTRIAL_MAMMALS.zip"), exdir=P("maps/iucn_data/"))
-}
-
-terr = shapefile(P("maps/iucn_data/Mammals_Terrestrial.shp"), verbose = T)
+terr = shapefile(P("maps/Mammals_Terrestrial/Mammals_Terrestrial.shp"), verbose = T)
 terr@data$BINOMIAL = str_replace(terr@data$BINOMIAL, " ", "_")
 terr = subset(terr, PRESENCE == 1)
 

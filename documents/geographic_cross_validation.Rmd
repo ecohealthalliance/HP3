@@ -4,7 +4,7 @@ output:
   html_document:
     toc: TRUE
     code_download: TRUE
-    keep_md: TRUE
+    keep_md: FALSE
 ---
 
 ```{r setup, include=FALSE, cache=FALSE}
@@ -38,11 +38,12 @@ set.seed(0)
 opts_chunk$set(echo = FALSE, message=FALSE, warning = FALSE, autodep=TRUE)
 ```
 
+
 ```{r db-loading, cache = TRUE}
-db <- readRDS(P("model_fitting/postprocessed_database.rds"))
+db <- readRDS(P("intermediates", "postprocessed_database.rds"))
 hosts <- db[["hosts"]]
 host_names <- read_csv(P("data/hosts.csv")) %>%
-  select(hHostNameFinal, Common_names_Eng)
+  dplyr::select(hHostNameFinal, Common_names_Eng)
 
 ```
 # Zoogeographic Cross-Validation
@@ -52,9 +53,9 @@ In addition to randomly-selected k-fold cross-validation, we evaluated the robus
 In order to meaningfully organize geographic areas, we utilized mammalian zoogeographic regions from [*Holt et al (2013)*](http://dx.doi.org/10.1126/science.1228282) which are defined by distributions of and phylogenetic relationships between species. Using QGIS, a mammal-specific zoogeographical shapefile provided by [Holt's group](http://macroecology.ku.dk/resources/wallace) at the University of Copenhagen was intersected (using QGIS Vector > Geoprocessing Tools > Intersect) with a shapefile of IUCN's host ranges. Areas of these intersections were then calculated using an equal-area projection, and each host was assigned to only the region which contained the greatest proportion of its range. Results of the non-parametric permutation test are shown below; non-significant results indicate that model predictions are unbiased.
 
 ```{r map-setup, cache = TRUE, message=FALSE}
-zregions <- shapefile(P("maps/mam.shp"), verbose = FALSE)
+zregions <- shapefile(P("shapefiles", "mam", "mam.shp"), verbose = FALSE)
 #Intersected with IUCN habitat shapefile in QGIS
-zoog_mammals <- shapefile(P("maps/host_zg_area.shp"), verbose = FALSE)
+zoog_mammals <- shapefile(P("shapefiles", "host_zg_area", "host_zg_area.shp"), verbose = FALSE)
 zoog_mammals_data <- as_tibble(zoog_mammals@data)
 
 #Paring down the dataset
@@ -92,7 +93,7 @@ dummys = as.data.frame(with(data_set, model.matrix(~hOrder))[,-1])
 data_set = cbind(data_set, dummys)
 
 ###### ALL ZOONOSES
-allz_gam = readRDS(P("model_fitting/all_zoonoses_model.rds"))
+allz_gam = readRDS(P("intermediates", "all_zoonoses_models.rds"))$model[[1]]
 
 joined_dat <- left_join(data_set, zgm, by=c("hHostNameFinal"="BINOMIAL"))
 joined_dat <- filter_down(allz_gam, joined_dat, "mam_upgma_")
@@ -154,8 +155,8 @@ results %>% arrange(fold) %>%
 
 ```{r all-viruses, cache = TRUE}
 ###### ALL VIRUSES
-allv_gam = readRDS(P("model_fitting/all_viruses_model.rds"))
-vregions <- shapefile(P("maps/mam.shp"), verbose = FALSE)
+allv_gam = readRDS(P("intermediates", "all_viruses_models.rds"))$model[[1]]
+vregions <- shapefile(P("shapefiles", "mam", "mam.shp"), verbose = FALSE)
 
 temp <- left_join(data_set, zgm, by=c("hHostNameFinal"="BINOMIAL"))
 temp <- filter_down(allv_gam, temp, "mam_upgma_")
@@ -215,10 +216,9 @@ vresults %>% arrange(fold) %>%
 ## Zoonoses GAM - Strict Associations
 
 ```{r strict-zoo, cache = TRUE}
-model_list <- readRDS(P("model_fitting/top_models.rds"))
-strictz_gam <- model_list$all_zoonoses_strict
+strictz_gam <- readRDS(P("intermediates", "all_zoonoses_strict_models.rds"))$model[[1]]
 
-szregions <- shapefile(P("maps/mam.shp"), verbose = FALSE)
+szregions <- shapefile(P("shapefiles", "mam", "mam.shp"), verbose = FALSE)
 
 temp <- left_join(data_set, zgm, by=c("hHostNameFinal"="BINOMIAL"))
 temp <- filter_down(strictz_gam, temp, "mam_upgma_")
@@ -280,9 +280,9 @@ szresults %>% arrange(fold) %>%
 ## All Viruses GAM - Strict Associations
 
 ```{r strict-viruses, cache = TRUE}
-strictv_gam <- model_list$all_viruses_strict
+strictv_gam <- readRDS(P("intermediates", "all_viruses_strict_models.rds"))$model[[1]]
 
-svregions <- shapefile(P("maps/mam.shp"), verbose = FALSE)
+svregions <- shapefile(P("shapefiles", "mam", "mam.shp"), verbose = FALSE)
 
 temp <- left_join(data_set, zgm, by=c("hHostNameFinal"="BINOMIAL"))
 temp <- filter_down(strictv_gam, temp, "mam_upgma_")

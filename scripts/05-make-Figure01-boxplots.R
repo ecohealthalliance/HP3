@@ -5,7 +5,7 @@ options(stringsAsFactors=F)
 set.seed(0)
 P <- rprojroot::find_rstudio_root_file
 
-postprocessed_data <- readRDS(P('model_fitting/postprocessed_database.rds'))
+postprocessed_data <- readRDS(P("intermediates", "postprocessed_database.rds"))
 
 asc <- postprocessed_data$associations
 h <- postprocessed_data$hosts
@@ -37,7 +37,7 @@ h2 <- merge(h, order_propshared, by="hOrder")
 h2 <- h2 %>%
   arrange(desc(prop_human_mean_order))  # arrange by mean proportion zoonotic by order
 
-order_propshared
+#order_propshared
 h2$hOrder <- ordered(h2$hOrder, levels=stringi::stri_trans_totitle(c( "CINGULATA", "PILOSA","DIDELPHIMORPHIA", "EULIPOTYPHLA",
                 "CHIROPTERA", "PRIMATES", "RODENTIA", "CARNIVORA", "LAGOMORPHA", "PROBOSCIDEA", "DIPROTODONTIA",
                  "CETARTIODACTYLA", "PERISSODACTYLA",  "PERAMELEMORPHIA", "SCANDENTIA")))

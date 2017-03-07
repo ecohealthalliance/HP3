@@ -1,9 +1,16 @@
 library(ggplot2)
+library(tidyr)
+library(purrr)
+library(stringi)
+library(cowplot)
+library(viridis)
 library(dplyr)
 library(svglite)
-library(viridis)
+library(mgcv)
+library(magrittr)
 set.seed(0)
 P <- rprojroot::find_rstudio_root_file
+source(P("R", "relative_contributions.R"))
 
 partials_theme = theme(text = element_text(family="Helvetica", size=7),
                        panel.border=element_blank(),
@@ -16,8 +23,8 @@ partials_theme = theme(text = element_text(family="Helvetica", size=7),
                        axis.title.x = element_text(lineheight=1.2),
                        legend.position="none")
 
-bgam = readRDS(P("model_fitting/viral_traits_model.rds"))
-viruses <- readRDS(P("model_fitting/virus_data_processed.rds"))
+bgam = readRDS(P("intermediates", "vtraits_models.rds"))$model[[1]]
+viruses <- readRDS(P("intermediates", "postprocessed_database.rds"))$viruses
 
 de_bgam =  get_relative_contribs(bgam) %>%
   mutate(dev_explained = rel_deviance_explained * summary(bgam)$dev.expl) %>%
@@ -131,12 +138,14 @@ bin_plot = ggplot() +
   # geom_text(data = bin_data, mapping=aes(x=no, y=(response+se) + 0.1 , label = labels), color="black", family="Lato", size=3, angle =90, hjust=0, vjust =0.5) +
   #scale_fill_manual(breaks = c(FALSE, TRUE), values=c("grey", viridis(5)[4])) +
   scale_x_continuous(breaks = bin_data$no, labels = bin_data$labels) +
-  noamtools::theme_nr +
   scale_y_continuous(limits=c(-10,10), oob=scales::rescale_none, name="") +
   partials_theme + theme(axis.title.x=element_blank(), axis.ticks.x=element_blank(),
                          axis.text.x = element_text(color="black", lineheight = 1.2,
                                                     vjust=0.5, margin=margin(t=0), family="Helvetica", size=5.6),
-                         axis.text.y = element_text(family="Helvetica", size=5.6))
+                         axis.text.y = element_text(family="Helvetica", size=5.6),
+                         panel.border = element_blank(), axis.line.x=element_blank(), axis.line.y=element_blank(),
+                         panel.background = element_rect(fill = "transparent", colour = NA),
+                         plot.background = element_rect(fill = "transparent", colour = NA))
 
 
 #svglite(file="rplot.svg", width = convertr::convert(113, "mm", "in"), convertr::convert(180, "mm", "in"), pointsize=7)
@@ -192,7 +201,7 @@ vir_fam_plot = ggplot(vir_plotdata, aes(x=as.numeric(vFamily) + jitter_vals, y=s
   theme(text = element_text(family="Helvetica", size=7), panel.grid=element_blank(),
         legend.position=c(0.6, 0.1),
         legend.title.align = 0.5,
-        legend.text = element_text(color="white"),
+        legend.text = element_text(color="black"),
         legend.title = element_text(size = 4.5),
         legend.background = element_blank(),
         panel.border=element_blank(), panel.background=element_blank(),
@@ -209,6 +218,7 @@ gamplots_top = cowplot::plot_grid(plotlist = smooth_plots[c(1,3)], nrow=1, label
 gamplots_all = cowplot::plot_grid(gamplots_top, bin_plot, nrow = 2, labels = c("", "d"), label_size=7)
 allplots = cowplot::ggdraw() +
   cowplot::draw_plot(vir_fam_plot, 0, 0, 13/33, 1) +
+  cowplot::draw_grob(legend, x=-0.5, y=-0.06) +
  # cowplot::draw_plot(smooth_plots[[1]], 13/33, 0.5, 10/33, 0.5) +
   #cowplot::draw_plot(smooth_plots[[3]], 23/33, 0.5, 10/33, 0.5) +
   cowplot::draw_plot(cowplot::plot_grid(smooth_plots[[1]], smooth_plots[[3]], nrow=1, align="hv"), 13/33, 0.5, 20/33, 0.5) +

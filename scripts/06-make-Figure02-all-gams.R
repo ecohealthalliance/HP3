@@ -22,7 +22,6 @@ partials_theme = theme(text = element_text(family="Helvetica", size=7),
                        axis.ticks.x = element_line(size=0.3),
                        axis.ticks.y = element_blank(),
                        axis.text.y = element_text(color="black"),
-                       axis.text.y = element_text(color="black"),
                        axis.title.x = element_text(lineheight = 1.2),
                        legend.position="none"
                        #plot.margin=margin(l=0)
@@ -31,7 +30,7 @@ partials_theme = theme(text = element_text(family="Helvetica", size=7),
 blankPlot <- ggplot()+geom_blank(aes(1,1)) +
   cowplot::theme_nothing()
 
-bgam = readRDS(P("model_fitting/all_viruses_model.rds"))
+bgam = readRDS(P("intermediates", "all_viruses_models.rds"))$model[[1]]
 
 de_bgam =  get_relative_contribs(bgam) %>%
   mutate(dev_explained = rel_deviance_explained * summary(bgam)$dev.expl) %>%
@@ -165,7 +164,7 @@ vir_plots <- plot_grid(plot_grid(plotlist = smooth_plots_vir, nrow=1, align="h",
 #---
 
 # Zoonoses plot
-bgam = readRDS(P("model_fitting/all_zoonoses_model.rds"))
+bgam = readRDS(P("intermediates", "all_zoonoses_models.rds"))$model[[1]]
 de_bgam =  get_relative_contribs(bgam) %>%
   mutate(dev_explained = rel_deviance_explained * summary(bgam)$dev.expl) %>%
   mutate(dev_explained = paste0(stri_trim_both(formatC(dev_explained*100, format = "fg", digits=2)), "%"))
@@ -300,7 +299,8 @@ zoo_plots <- plot_grid(plot_grid(plotlist = smooth_plots_zoo, nrow=1, align="h",
                                     bin_plot_zoo, blankPlot, nrow=1, rel_widths = c(3.22,1.35, 1),
                        labels = c("", "i"), label_size = 7, hjust=0)
 allplots = cowplot::plot_grid(vir_plots, zoo_plots, nrow=2, rel_widths = c(5.3, 4.35))
-svglite(file=P("figures/Figure02-all-gams.svg"), width = convertr::convert(183, "mm", "in"), convertr::convert(100, "mm", "in"), pointsize=7)
+#gdtools::match_family("Helvetica")
+svglite(file=P("figures", "Figure02-all-gams.svg"), width = convertr::convert(183, "mm", "in"), convertr::convert(100, "mm", "in"), pointsize=7)
 allplots
 dev.off()
 

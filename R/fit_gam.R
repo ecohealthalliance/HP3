@@ -35,7 +35,7 @@ fit_all_gams <- function(data_set, outcome_variable, model_family, terms) {
 
   # Remove unused terms from models and reduce to unique ones
   models_reduced = models %>%
-    select(model) %>%
+    dplyr::select(model) %>%
     mutate(formula = map_chr(model, ~rearrange_formula(rm_low_edf(.)))) %>%
     distinct(formula, .keep_all = TRUE)
 

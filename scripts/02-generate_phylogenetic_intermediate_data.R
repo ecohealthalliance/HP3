@@ -4,7 +4,7 @@
 #library(geiger)
 #require(picante)
 P <- rprojroot::find_rstudio_root_file
-library(PVR)
+library(PVR) # Note this package has been removed from CRAN
 library(ape)
 
 asc <- read.csv(P("data/associations.csv"), header=T, strip.white = T)
@@ -34,9 +34,9 @@ ST2 <- drop.tip(ST, which(ST$tip.label %in% ST_drop)) #new tree, drop all tips i
 
 ## Calculate sp to sp maxtrix of phylo distance (cophenetic)
 vSTphylodist <- as.data.frame(cophenetic(ST2)) #calculate Supertree phylo distance matrix, 753 spp.
-write.csv(vSTphylodist, P("data/intermediate/HP3-ST_PDmatrix-12Mar2016.csv")) #write ST PD matrix to file
+write.csv(vSTphylodist, P("data/intermediate/HP3-ST_PDmatrix.csv")) #write ST PD matrix to file
 vCYTBphylodist <- as.data.frame(cophenetic(cytb2)) #calculate cytb phylo distance matrix, #644 spp.
-write.csv(vCYTBphylodist, P("data/intermediate/HP3-cytb_PDmatrix-12Mar2016.csv")) #write cytb PD matrix to file
+write.csv(vCYTBphylodist, P("data/intermediate/HP3-cytb_PDmatrix.csv")) #write cytb PD matrix to file
 
 
 
@@ -52,8 +52,8 @@ mass2 <- mass[complete.cases(mass),] #remove spp. with no mass
 
 #new cytb tree without missing body mass
 
-cytb$tip.label[sort.list(cytb$tip.label)] #show taxon tip names and call in alphabetical order
-mass2$hHostNameFinal[sort.list(mass2$hHostNameFinal)] #sort order of HP3host alphabetically=default
+#cytb$tip.label[sort.list(cytb$tip.label)] #show taxon tip names and call in alphabetical order
+#mass2$hHostNameFinal[sort.list(mass2$hHostNameFinal)] #sort order of HP3host alphabetically=default
 missingcytb <- setdiff (cytb$tip.label, mass2$hHostNameFinal)
 missingcytb2 <- missingcytb[missingcytb!="Ornithorhynchus_anatinus"] #keep root
 
@@ -96,13 +96,13 @@ STx <- mass2_ST[match(ST_mass$tip.label, mass2_ST$hHostNameFinal),] ## worked, s
 STx2 <- STx$hMassGramsLn
 
 cytbPSR <- PSR(cytb_PVR, trait=x2) #way of showing phylo sig using PSR
-PSRplot(cytbPSR, info="null")
+#PSRplot(cytbPSR, info="null")
 
 PVRcytb <- PVR(cytb_PVR, phy=cytb_mass, trait=x2, method="moran") #PVR calculation - may take time
 
 PVRcytb_resid <- PVRcytb@PVR$Residuals
 
 mass3_cytb <- data.frame(x,PVRcytb_resid) #merged residuals with cytb mass in correct order of tree
-names(mass3_cytb)
-plot(mass3_cytb$hMassGramsLn, mass3_cytb$PVRcytb_resid)
+#names(mass3_cytb)
+#plot(mass3_cytb$hMassGramsLn, mass3_cytb$PVRcytb_resid)
 write.csv(mass3_cytb, file=P("data/intermediate/PVR_cytb_hostmass.csv"))  #write new PVR body mass file, calculated with cytb tree

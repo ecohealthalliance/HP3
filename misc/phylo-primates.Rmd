@@ -3,7 +3,7 @@ title: "Phylogenetic Distance / Primates"
 output: 
   html_document:
     code_download: TRUE
-    keep_md: TRUE
+    keep_md: FALSE
 ---
 
 ```{r setup, include=FALSE}

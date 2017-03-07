@@ -8,9 +8,9 @@ SHAPEFILES := shapefiles/mam/mam.shp shapefiles/host_zg_area/host_zg_area.shp sh
 MODELS := intermediates/all_viruses_models.rds  intermediates/all_viruses_strict_models.rds  intermediates/all_zoonoses_models.rds  intermediates/all_zoonoses_norev_models.rds  intermediates/all_zoonoses_strict_models.rds  intermediates/domestic_viruses_models.rds  intermediates/domestic_viruses_strict_models.rds  intermediates/domestic_zoonoses_models.rds  intermediates/domestic_zoonoses_strict_models.rds intermediates/vtraits_models.rds  intermediates/vtraits_strict_models.rds
 INTERMEDIATE_DATA := data/intermediate/PVR_cytb_hostmass.csv data/intermediate/HP3-ST_PDmatrix.csv data/intermediate/HP3-cytb_PDmatrix.csv
 MAPNAMES_FILE := figures/maps/map_names.txt
-MAPS := $(shell cat ${MAPNAMES_FILE})
+MAP_NAMES := $(shell cat ${MAPNAMES_FILE})
 EXTENDED_MAPS := figures/ExtendedFigure04-ALL.png figures/ExtendedFigure05-CARNIVORA.png figures/ExtendedFigure06-CETARTIODACTYLA.png figures/ExtendedFigure07-CHIROPTERA.png figures/ExtendedFigure08-PRIMATES.png figures/ExtendedFigure09-RODENTIA.png
-FIGURES := figures/Figure01A-boxplots.pdf figures/Figure01B-boxplots.pdf figures/Figure03-missing-zoo-maps.png figures/Figure04-viral-traits.svg
+FIGURES := figures/Figure01A-boxplots.pdf figures/Figure01B-boxplots.pdf figures/Figure02-all-gams.svg figures/Figure03-missing-zoo-maps.png figures/Figure04-viral-traits.svg
 
 shapefiles: $(SHAPEFILES)
 models: $(MODELS)
@@ -44,10 +44,10 @@ documents/geographic_cross_validation.html: documents/geographic_cross_validatio
 figures/Figure01A-boxplots.pdf Figure01B-boxplots.pdf: scripts/05-make-Figure01-boxplots.R intermediates/postprocessed_database.rds
 	Rscript $<
 
-figures/Figure02-all-gams.svg: scripts/06-make-Figure02-all-all-gams.R $(FUNCTIONS) $(MODELS)
+figures/Figure02-all-gams.svg: scripts/06-make-Figure02-all-gams.R $(FUNCTIONS) $(MODELS)
 	Rscript $<
 
-$(MAPS): 07-make-maps.R $(MODELS) $(SHAPEFILES)
+$(MAP_NAMES): scripts/07-make-maps.R $(MODELS) $(SHAPEFILES)
 	Rscript $<
 
 figures/Figure03-missing-zoo-maps.png $(EXTENDED_MAPS): scripts/08-make-Figure03-ExtendedFigs-stitch-maps.R $(MAP_NAMES)
@@ -63,14 +63,14 @@ figures/SuppTable1-observed-predicted-missing.csv: scripts/12-make-SuppTable01-p
 	Rscript $<
 
 README.txt: README.md
-	cp README.md README.txt
+	cp -f README.md README.txt
 
 clean:
-	rm shapefiles/*.*
+	rm -r shapefiles/*/
 	rm data/intermediate/*.*
 	rm intermediates/*.*
 	rm figures/maps/*.png
-	rm figures/*.png figures/*.svg figures/*.pdf figures/*.docx
+	rm figures/*.png figures/*.svg figures/*.pdf figures/*.docx figures/*.csv
 	rm -r documents/*cache/
 
 

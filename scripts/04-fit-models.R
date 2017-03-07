@@ -275,7 +275,8 @@ terms = c(dummy_terms, terms)
 domestic_zoonoses = fit_all_gams(data_set,
                                  outcome_variable = "NSharedWithHoSa",
                                  poisson,
-                                 terms)
+                                 terms) %>%
+  filter(daic < 3)
 
 saveRDS(domestic_zoonoses, P("intermediates", "domestic_zoonoses_models.rds"))
 
@@ -285,7 +286,8 @@ model_family = poisson
 domestic_zoonoses_strict = fit_all_gams(data_set,
                                         outcome_variable = "NSharedWithHoSa_strict",
                                         poisson,
-                                        terms)
+                                        terms) %>%
+  filter(daic < 3)
 
 saveRDS(domestic_zoonoses_strict, P("intermediates", "domestic_zoonoses_strict_models.rds"))
 
@@ -314,7 +316,8 @@ terms = c(dummy_terms, terms)
 domestic_viruses = fit_all_gams(data_set,
                                 outcome_variable = "TotVirusPerHost",
                                 poisson,
-                                terms)
+                                terms) %>%
+  filter(daic < 3)
 
 saveRDS(domestic_viruses, P("intermediates", "domestic_viruses_models.rds"))
 
@@ -324,7 +327,8 @@ model_family = poisson
 domestic_viruses_strict = fit_all_gams(data_set,
                                        outcome_variable = "TotVirusPerHost_strict",
                                        poisson,
-                                       terms)
+                                       terms) %>%
+  filter(daic < 3)
 
 saveRDS(domestic_viruses_strict, P("intermediates", "domestic_viruses_strict_models.rds"))
 

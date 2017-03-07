@@ -1,0 +1,5 @@
+digraph G {
+n2[label="GNUmakefile", color="red"];
+n4[label="Makefile", color="red"];
+n3[label="makefile", color="red"];
+}

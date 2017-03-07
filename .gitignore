@@ -6,7 +6,6 @@
 .dropbox
 .Rapp.history
 *_cache/
-
 shapefiles/mam/*
 shapefiles/iucn_data/*
 shapefiles/host_zg_area/*
@@ -25,3 +24,4 @@ shapefiles/*.zip
 *.cpg
 Icon
 
+packrat/lib*/

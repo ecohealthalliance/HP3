@@ -29,8 +29,9 @@ This repository contains code and data to replicate analyses in Olival et. al.
 -   `scripts/` contains all the scripts used to fit the models and generate outputs
 -   `R/` contains files with functions used in other scripts.    
 -   `misc/` contains small scripts used for other calculations
--   `intermediates/` contains all the models in the analysis in compressed
-     `*.rds` R data form.
+-   `intermediates/` is a holding directory for
+     intermediate data files and fitted model objects in
+     `*.rds` R data form. These are re-created when the project is built
 -   `shapefiles/` is an empty holding directory.  Large shapefiles used to generate
     maps and in analyses are stored separately on AWS to limit the size of this
     repository.  They are downloaded to this folder by the scripts when needed.
@@ -38,9 +39,12 @@ This repository contains code and data to replicate analyses in Olival et. al.
 The `Makefile` in this repository holds the project workflow. Running
 `make all` in this directory will re-build the project. `make clean` will
 remove shapefiles, intermediate data, fit models, and all figures and maps.
+If this project is opened in RStudio, this can also be accomplished with the
+"Build All" and "Clean" buttons in the Build tab.
+
 ---
 
-### Listing of all files
+### Listing of files
 
 ```
 ├── README.md                                          | This file in .md format
@@ -99,7 +103,7 @@ remove shapefiles, intermediate data, fit models, and all figures and maps.
 │   └── utils.R                                        | Miscelaneuous utility functions
 │
 ├── scripts/                                           | Scripts to build project outputs
-│   ├── 01-download-shapefiles.R                       |
+│   ├── 01-download-shapefiles.R                       | Fetch shapefiles from storage on Amazon AWS
 │   ├── 02-generate_phylogenetic_intermediate_data.R   | Calculate phylogenetic distance matrices and PVD-adjusted body mass
 │   ├── 03-preprocess_data.R                           | Data cleaning and merging
 │   ├── 04-fit-models.R                                | Fit the GAMs in the paper
@@ -113,5 +117,7 @@ remove shapefiles, intermediate data, fit models, and all figures and maps.
 │   └── 12-make-SuppTable01-predictions.R              | Generate supplemental table of oberved and predicted viruses and zoonoses by species
 │
 ├── intermediates/                                     | Holds intermediate fitted model objects when project is built
-└── shapefiles/                                        | Holds large shapefiles downloaded when project is built
+├── shapefiles/                                        | Holds large shapefiles downloaded when project is built
+├── packrat/                                           | Holds all R package dependencies
+└── .Rprofile                                          | Configures R to use packrat dependencies
 ```

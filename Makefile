@@ -50,7 +50,7 @@ figures/Figure02-all-gams.svg: scripts/06-make-Figure02-all-all-gams.R $(FUNCTIO
 $(MAPS): 07-make-maps.R $(MODELS) $(SHAPEFILES)
 	Rscript $<
 
-figures/Figure03-missing-zoo-maps.png $(EXTENDED_MAPS): scripts/08-make-Figure03-ExtendedFigs-stitch-maps.R maps
+figures/Figure03-missing-zoo-maps.png $(EXTENDED_MAPS): scripts/08-make-Figure03-ExtendedFigs-stitch-maps.R $(MAP_NAMES)
 	Rscript $<
 
 figures/Figure04-viral-traits.svg: scripts/09-make-Figure04-viral-traits.R $(MODELS)

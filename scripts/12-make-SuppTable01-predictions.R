@@ -4,9 +4,9 @@ library(tibble)
 library(readr)
 P <- rprojroot::find_rstudio_root_file
 
-all_viruses_gam <- readRDS(P("model_fitting/all_viruses_model.rds"))
-zoo_viruses_gam <- readRDS(P("model_fitting/all_zoonoses_model.rds"))
-hp3_hosts <- readRDS(P("model_fitting/postprocessed_database.rds"))$hosts
+all_viruses_gam <- readRDS(P("intermediates", "all_viruses_models.rds"))$model[[1]]
+zoo_viruses_gam <- readRDS(P("intermediates", "all_zoonoses_models.rds"))$model[[1]]
+hp3_hosts <- readRDS(P("intermediates", "postprocessed_database.rds"))$hosts
 hp3_all = as_tibble(left_join(all_viruses_gam$model, hp3_hosts))
 hp3_all = as_tibble(left_join(hp3_all, zoo_viruses_gam$model))
 hp3_all_pred = mutate(hp3_all,
@@ -34,4 +34,4 @@ hp3_all =  hp3_all %>%
   mutate(host_order = as.character(host_order)) %>%
   arrange(host_species)
 
-write_csv(hp3_all, "figures/SupplementalTable1-observed-predicted-missing.csv")
+write_csv(hp3_all, "figures/SuppTable1-observed-predicted-missing.csv")

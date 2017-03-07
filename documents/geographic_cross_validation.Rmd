@@ -365,10 +365,10 @@ allz_rep_gam <- gam(NSharedWithHoSa ~ s(hDiseaseZACitesLn, bs = "tp", k = 7) + s
                        s(hOrderSCANDENTIA, bs = "re") + s(PdHoSa.cbCst, bs = "tp", k = 7) + 
                        s(UrbRurPopRatioLn, bs = "tp", k = 7) + offset(LnTotNumVirus), poisson, allz_dat, select=TRUE)
 
-AICs <- c(allz_rep_gam$aic, allz_region_gam$aic)
+AIC <- c(allz_rep_gam$aic, allz_region_gam$aic)
 `Deviance Explained` <- c(1-allz_rep_gam$deviance/allz_rep_gam$null.deviance, 1-allz_region_gam$deviance/allz_region_gam$null.deviance )
 
-mc <- t(tibble(AICs,`Deviance Explained`))
+mc <- t(tibble(AIC,`Deviance Explained`))
 colnames(mc) <- c("Original Model", "Region Model")
 
 kable(mc, caption = "All Zoonoses Model Comparison", digits =4)
@@ -408,10 +408,10 @@ allv_region_gam <- gam(TotVirusPerHost ~  s(hDiseaseZACitesLn, bs = "cs", k = 7)
     s(hOrderRODENTIA, bs = "re") + s(LnAreaHost, bs = "cs", k = 7) + s(zg_region, bs = "re") +
     s(S20, bs = "cs", k = 7), poisson, allv_dat, select = TRUE)
 
-AICs <- c(allv_rep_gam$aic, allv_region_gam$aic)
+AIC <- c(allv_rep_gam$aic, allv_region_gam$aic)
 `Deviance Explained` <- c(1-allv_rep_gam$deviance/allv_rep_gam$null.deviance, 1-allv_region_gam$deviance/allv_region_gam$null.deviance )
 
-mc <- t(tibble(AICs,`Deviance Explained`))
+mc <- t(tibble(AIC,`Deviance Explained`))
 colnames(mc) <- c("Original Model", "Region Model")
 
 kable(mc, caption = "All Viruses Model Comparison", digits =4)
@@ -455,10 +455,10 @@ sz_region_gam <- gam(NSharedWithHoSa_strict ~ s(hDiseaseZACitesLn, bs = "tp", k 
       s(HumPopDensLnChg, bs = "tp", k = 7) + s(PdHoSa.cbCst, bs = "tp", k = 7) + 
       s(UrbRurPopRatioChg, bs = "tp", k = 7) + offset(LnTotNumVirus), poisson, strictz_dat, select = TRUE)
 
-AICs <- c(sz_rep_gam$aic, sz_region_gam$aic)
+AIC <- c(sz_rep_gam$aic, sz_region_gam$aic)
 `Deviance Explained` <- c(1-sz_rep_gam$deviance/sz_rep_gam$null.deviance, 1-sz_region_gam$deviance/sz_region_gam$null.deviance )
 
-mc <- t(tibble(AICs,`Deviance Explained`))
+mc <- t(tibble(AIC,`Deviance Explained`))
 colnames(mc) <- c("Original Model", "Region Model")
 
 kable(mc, caption = "Strict Zoonoses Model Comparison", digits =4)
@@ -501,10 +501,10 @@ strictv_region_gam <- gam(TotVirusPerHost_strict ~ s(hDiseaseZACitesLn, bs = "cs
     s(LnAreaHost, bs = "cs", k = 7) + s(S20, bs = "cs", k = 7), poisson, strictv_dat, select=TRUE)
 
 
-AICs <- c(strictv_rep_gam$aic, strictv_region_gam$aic)
+AIC <- c(strictv_rep_gam$aic, strictv_region_gam$aic)
 `Deviance Explained` <- c(1-strictv_rep_gam$deviance/strictv_rep_gam$null.deviance, 1-strictv_region_gam$deviance/strictv_region_gam$null.deviance )
 
-mc <- t(tibble(AICs,`Deviance Explained`))
+mc <- t(tibble(AIC,`Deviance Explained`))
 colnames(mc) <- c("Original Model", "Region Model")
 
 kable(mc, caption = "Strict Viruses Model Comparison", digits =4)

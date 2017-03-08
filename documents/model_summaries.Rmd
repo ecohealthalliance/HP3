@@ -4,7 +4,7 @@ output:
   html_document:
     toc: TRUE
     code_download: TRUE
-    keep_md: FALSE
+    self_contained: TRUE
 ---
 
 ```{r setup, include=FALSE, cache=FALSE}

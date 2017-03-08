@@ -5,8 +5,8 @@ This repository contains code and data to replicate analyses in Olival et. al.
 
 -  `documents` contains two  R markdown documents in both raw and readable HTML
     form which give more detail than in the main paper or supplemental methods
-    on our model-fitting and validation process: `model_summaries.R`d/html`
-    and `geographic_cross_validation.Rmd/html'.
+    on our model-fitting and validation process: `model_summaries.Rhtml`
+    and `geographic_cross_validation.Rmd/html`.
 -  `data/` contains data used in these analyses, including
     -   our primary database of host-viral associations (`associations.csv`)
     -   databases of host (`hosts.csv`) and viral (`viruses.csv`) traits
@@ -92,7 +92,7 @@ If this project is opened in RStudio, this can also be accomplished with the
 │   ├── phylo-primates.Rmd                             | Examination of phylogenetic effects specific to primates
 │   └── zoonotic_dev_explained_w_offset.R              | For calculating deviance explained in models with offsets
 │
-├── R/                                                  | Functions used in scripts and R markdown documents
+├── R/                                                 | Functions used in scripts and R markdown documents
 │   ├── avg_gam_vis.R                                  | Functions for visualizing the average GAM of an ense
 │   ├── cross_validation.R                             | Cross validation
 │   ├── cv_gam_by.R                                    | Zoogeographical cross-validation

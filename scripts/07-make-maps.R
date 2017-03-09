@@ -8,7 +8,6 @@ library(rasterVis)
 library(maptools)
 library(mgcv)
 library(parallel)
-library(hexbin)
 library(rgeos)
 
 P <- rprojroot::find_rstudio_root_file
@@ -208,8 +207,6 @@ bias_layers = rasters2 %>%
   filter(data_type %in% c("bias", "number")) %>%
   spread("data_type", "raster")
 
-hex_coords <- hcell2xy(hexbin(crossing(y=seq(from=-180, to=180, by=0.1), x = seq(from=-90,to=90,by=0.1)), xbins=90))
-bias_grid <- SpatialPoints(coords=hex_coords, proj4string = CRS(proj4string(bias_layers$bias[[1]])))
 angle_lines <- SpatialLines(lapply(seq(from=0, to=720, by=1), function(z) Lines(list(Line(matrix(c(-720 + z, z, z, z-720), ncol=2))), ID = z)),  proj4string = CRS(proj4string(bias_layers$bias[[1]])))
 
 bias_cutshape <- function(model, orders, bias_raster, number_raster, cutoff = 0.05, type="points") {

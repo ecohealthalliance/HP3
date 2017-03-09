@@ -229,8 +229,8 @@ Requires: BH, Rcpp, hms, readr, tibble
 
 Package: hexbin
 Source: CRAN
-Version: 1.27.0
-Hash: 784735df965ab0cc88ebfe57f5eed631
+Version: 1.27.1
+Hash: 378383b2c37556649fd6b2ee0be7e2a5
 
 Package: highr
 Source: CRAN
@@ -420,9 +420,10 @@ Requires: Rcpp, sp
 
 Package: rasterVis
 Source: CRAN
-Version: 0.35
-Hash: 21695024fad50cf14d7530473223d2e6
-Requires: RColorBrewer, hexbin, latticeExtra, raster, sp, zoo
+Version: 0.41
+Hash: 64336f3e06daf248edfae070510dd555
+Requires: RColorBrewer, hexbin, latticeExtra, raster, sp, viridisLite,
+    zoo
 
 Package: readr
 Source: CRAN
@@ -569,6 +570,11 @@ Source: CRAN
 Version: 0.3.4
 Hash: c98cc0ee11a389f397c38ddb3762880c
 Requires: ggplot2, gridExtra
+
+Package: viridisLite
+Source: CRAN
+Version: 0.1.3
+Hash: d16a33135b1f4c8818b8cd569da3913f
 
 Package: withr
 Source: CRAN

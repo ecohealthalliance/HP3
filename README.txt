@@ -3,6 +3,8 @@
 This repository contains code and data to replicate analyses in Olival et. al.
 (2016) *Host and Viral Traits Predict Zoonotic Spillover from Mammals.*
 
+### Repo Structure
+
 -  `documents` contains two  R markdown documents in both raw and readable HTML
     form which give more detail than in the main paper or supplemental methods
     on our model-fitting and validation process: `model_summaries.Rhtml`
@@ -35,12 +37,6 @@ This repository contains code and data to replicate analyses in Olival et. al.
 -   `shapefiles/` is an empty holding directory.  Large shapefiles used to generate
     maps and in analyses are stored separately on AWS to limit the size of this
     repository.  They are downloaded to this folder by the scripts when needed.
-
-The `Makefile` in this repository holds the project workflow. Running
-`make all` in this directory will re-build the project. `make clean` will
-remove shapefiles, intermediate data, fit models, and all figures and maps.
-If this project is opened in RStudio, this can also be accomplished with the
-"Build All" and "Clean" buttons in the Build tab.
 
 ---
 
@@ -121,3 +117,20 @@ If this project is opened in RStudio, this can also be accomplished with the
 ├── packrat/                                           | Holds all R package dependencies
 └── .Rprofile                                          | Configures R to use packrat dependencies
 ```
+---
+
+### Reproducing the analysis
+
+The `Makefile` in this repository holds the project workflow. Running
+`make all` in the directory will re-build the project. `make clean` will
+remove shapefiles, intermediate data, fit models, and all figures and maps.
+If this project is opened in RStudio, this can also be accomplished with the
+"Build All" and "Clean" buttons in the Build tab.
+
+This project uses [packrat](https://github.com/rstudio/packrat/) to manage
+R package dependencies.  Running `packrat::restore()` will unpack the versions
+of packages used in this project.  In addition, these packages have
+the following system requirements: `cairo`, `gdal`, `GEOS`, `libmagick++-`,
+`jave`, `libcurl`, `libpng`, `libxml2`, `OpenSSL`, and `pandoc`. All analyses
+were performed using R 3.3.2 under Ubuntu 14.04 Complete build takes approximately
+1 hour with 40 cores and 256GB of memory.

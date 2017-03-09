@@ -168,10 +168,10 @@ rasters$raster <- mcmapply(make_map,
                            orders = rasters$orders,
                            data_type = rasters$data_type,
                            raster_res = 1/6,
-                           mc.preschedule = FALSE, mc.cores = 20, mc.silent= TRUE)
+                           mc.preschedule = FALSE, mc.cores = min(parallel::detectCores(), 20), mc.silent= TRUE)
 
-saveRDS(rasters, "rasters.rds")
-rasters <- readRDS("rasters.rds")
+# saveRDS(rasters, "rasters.rds")
+# rasters <- readRDS("rasters.rds")
 
 rasters2 <- rasters %>%
   group_by(model, data_type) %>%
@@ -209,7 +209,7 @@ bias_layers = rasters2 %>%
 
 angle_lines <- SpatialLines(lapply(seq(from=0, to=720, by=1), function(z) Lines(list(Line(matrix(c(-720 + z, z, z, z-720), ncol=2))), ID = z)),  proj4string = CRS(proj4string(bias_layers$bias[[1]])))
 
-bias_cutshape <- function(model, orders, bias_raster, number_raster, cutoff = 0.05, type="points") {
+bias_cutshape <- function(model, orders, bias_raster, number_raster, cutoff = 0.05) {
   if(model == "viruses") {
     mod_data <- hp3_all
   } else if (model=="zoonoses") {
@@ -230,16 +230,13 @@ bias_cutshape <- function(model, orders, bias_raster, number_raster, cutoff = 0.
   z <- seq_along(bias_shapes)
   bias_p <- SpatialPolygons(lapply(z, function(z) Polygons(list(Polygon(bias_shapes[[z]])), z)), proj4string = CRS(proj4string(bias_raster)))
 
-  if(type=="points") {
-    bias_out <- bias_grid[bias_p,]
-  } else {
-    bias_out <- rgeos::gIntersection(angle_lines, gBuffer(bias_p, width = .0001))
-  }
-  return(bias_out)
+
+  bias_out <- rgeos::gIntersection(angle_lines, gBuffer(bias_p, width = .0001))
+
 }
 
 bias_layers$bias_shape <- mcmapply(bias_cutshape, model=bias_layers$model, orders=bias_layers$orders, bias_raster = bias_layers$bias, number_raster = bias_layers$number,
-                                   MoreArgs = list(type="lines"), mc.cores = 20)
+                                   mc.cores = min(parallel::detectCores(), 20))
 
 
 # saveRDS(bias_layers,file = "bias_layers.rds")
@@ -261,7 +258,7 @@ make_png <- function(my_raster, orders, model, data_type, png_res) {
      model != "hosts") {
     bias_pt_layer = bias_layers$bias_shape[[which(bias_layers$orders == orders & bias_layers$model == model)]]
   } else {
-    bias_pt_layer = bias_grid[0,]
+    bias_pt_layer = angle_lines[0,]
   }
 
   filename = P("figures", "maps", paste0(orders, "_", model, "_", data_type, ".png"))
@@ -287,4 +284,4 @@ make_png <- function(my_raster, orders, model, data_type, png_res) {
 rasters3 = filter(rasters2, data_type %in% c('observed', 'predicted', 'predicted_max', 'missing')) %>%
   filter(!(model=="hosts" & data_type=="predicted_max")) %>%
   filter(!(model!="hosts" & data_type=="predicted"))
-mcmapply(make_png, my_raster=rasters3$raster, orders=rasters3$orders, model=rasters3$model, data_type=rasters3$data_type, png_res=150, mc.cores=40)
+mcmapply(make_png, my_raster=rasters3$raster, orders=rasters3$orders, model=rasters3$model, data_type=rasters3$data_type, png_res=150, mc.cores = min(parallel::detectCores(), 20))

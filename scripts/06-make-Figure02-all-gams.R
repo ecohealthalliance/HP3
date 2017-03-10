@@ -84,7 +84,7 @@ smooth_plots_vir = map(names(smooth_data_vir), function(smooth_term_vir) {
   pl =  ggplot() +
     geom_hline(yintercept = 0, size=0.1, col="grey50") +
     geom_point(mapping = aes(x=model_data_vir[[smooth_term_vir]], y = (partials[[smooth_term_vir]])),
-               shape=21, fill="#DA006C", col="black", alpha=0.15, size=0.5, stroke=0.1) +
+               shape=21, fill="#DA006C", col="black", alpha=0.25, size=0.5, stroke=0.1) +
     geom_ribbon(mapping = aes(x = smooth_ranges[[smooth_term_vir]],
                               ymin = (smooth_preds$fit[[smooth_term_vir]] - 2 * smooth_preds$se.fit[[smooth_term_vir]]),
                               ymax = (smooth_preds$fit[[smooth_term_vir]] + 2 * smooth_preds$se.fit[[smooth_term_vir]])),
@@ -141,7 +141,7 @@ bin_vir_data = bin_vir_partials %>%
 bin_plot_vir = ggplot() +
   geom_hline(yintercept = 0, size=0.1, col="grey50") +
   geom_point(data=bin_vir_partials, mapping=aes(x=no, y=(partial)), position=position_jitter(width=0.5),
-             shape=21, fill="#DA006C", col="black", alpha=0.1, size=0.5, stroke=0.1) +
+             shape=21, fill="#DA006C", col="black", alpha=0.25, size=0.5, stroke=0.1) +
   geom_rect(data = bin_vir_data, mapping=aes(xmin = no - 0.35, xmax  = no + 0.35, ymin=(response-2*se), ymax=(response+2*se), fill=signif), alpha = 0.5) +
   geom_segment(data = bin_vir_data, mapping=aes(x=no - 0.35, xend = no + 0.35, y=(response), yend=(response)), col="black", size=0.3) +
 
@@ -217,7 +217,7 @@ smooth_plots_zoo = map(names(smooth_data), function(smooth_term) {
   pl =  ggplot() +
     geom_hline(yintercept = 0, size=0.1, col="grey50") +
     geom_point(mapping = aes(x=model_data[[smooth_term]], y = (partials[[smooth_term]])),
-               shape=21, fill=viridis(4)[2], col="black", alpha=0.1, size=0.5, stroke=0.1) +
+               shape=21, fill=viridis(4)[2], col="black", alpha=0.25, size=0.5, stroke=0.1) +
     geom_ribbon(mapping = aes(x = smooth_ranges[[smooth_term]],
                               ymin = (smooth_preds$fit[[smooth_term]] - 2 * smooth_preds$se.fit[[smooth_term]]),
                               ymax = (smooth_preds$fit[[smooth_term]] + 2 * smooth_preds$se.fit[[smooth_term]])),
@@ -277,7 +277,7 @@ bin_zoo_data %<>%
 
 bin_plot_zoo = ggplot() +
   geom_point(data=bin_zoo_partials, mapping=aes(x=no, y=(partial)), position=position_jitter(width=0.5),
-             shape=21, fill=viridis(4)[2], col="black", alpha=0.15, size=0.5, stroke=0.1) +
+             shape=21, fill=viridis(4)[2], col="black", alpha=0.25, size=0.5, stroke=0.1) +
   geom_rect(data = bin_zoo_data, mapping=aes(xmin = no - 0.35, xmax  = no + 0.35, ymin=(response-2*se), ymax=(response+2*se)), fill = "#FD9825", alpha = 0.5) +
   geom_hline(yintercept = 0, size=0.1, col="grey50") +
   geom_segment(data = bin_zoo_data, mapping=aes(x=no - 0.35, xend = no + 0.35, y=(response), yend=(response)), col="black", size=0.3) +
@@ -305,7 +305,7 @@ allplots
 dev.off()
 
 
-png(file=P("figures", "figures/Figure02-all-gams.png"), width = convertr::convert(183, "mm", "in")*300, convertr::convert(100, "mm", "in")*300, pointsize=7, res=300)
+png(file=P("figures", "Figure02-all-gams.png"), width = convertr::convert(183, "mm", "in")*300, convertr::convert(100, "mm", "in")*300, pointsize=7, res=300)
 allplots
 dev.off()
 

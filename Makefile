@@ -10,7 +10,7 @@ INTERMEDIATE_DATA := data/intermediate/PVR_cytb_hostmass.csv data/intermediate/H
 MAPNAMES_FILE := figures/maps/map_names.txt
 MAP_NAMES := $(shell cat ${MAPNAMES_FILE})
 EXTENDED_MAPS := figures/ExtendedFigure04-ALL.png figures/ExtendedFigure05-CARNIVORA.png figures/ExtendedFigure06-CETARTIODACTYLA.png figures/ExtendedFigure07-CHIROPTERA.png figures/ExtendedFigure08-PRIMATES.png figures/ExtendedFigure09-RODENTIA.png
-FIGURES := figures/Figure01A-boxplots.pdf figures/Figure01B-boxplots.pdf figures/Figure02-all-gams.svg figures/Figure03-missing-zoo-maps.png figures/Figure04-viral-traits.svg
+FIGURES := figures/Figure01A-boxplots.pdf figures/Figure01B-boxplots.pdf figures/Figure02-all-gams.svg figures/Figure02-all-gams.png figures/Figure03-missing-zoo-maps.png figures/Figure04-viral-traits.svg figures/Figure04-viral-traits.png
 
 shapefiles: $(SHAPEFILES)
 models: $(MODELS)
@@ -44,7 +44,7 @@ documents/geographic_cross_validation.html: documents/geographic_cross_validatio
 figures/Figure01A-boxplots.pdf Figure01B-boxplots.pdf: scripts/05-make-Figure01-boxplots.R intermediates/postprocessed_database.rds
 	Rscript $<
 
-figures/Figure02-all-gams.svg: scripts/06-make-Figure02-all-gams.R $(FUNCTIONS) $(MODELS)
+figures/Figure02-all-gams.svg figures/Figure02-all-gams.png: scripts/06-make-Figure02-all-gams.R $(FUNCTIONS) $(MODELS)
 	Rscript $<
 
 $(MAP_NAMES): scripts/07-make-maps.R $(MODELS) $(SHAPEFILES)
@@ -53,7 +53,7 @@ $(MAP_NAMES): scripts/07-make-maps.R $(MODELS) $(SHAPEFILES)
 figures/Figure03-missing-zoo-maps.png $(EXTENDED_MAPS): scripts/08-make-Figure03-ExtendedFigs-stitch-maps.R $(MAP_NAMES)
 	Rscript $<
 
-figures/Figure04-viral-traits.svg: scripts/09-make-Figure04-viral-traits.R $(MODELS)
+figures/Figure04-viral-traits.svg figures/Figure04-viral-traits.png: scripts/09-make-Figure04-viral-traits.R $(MODELS)
 	Rscript $<
 
 figures/ExtendedTable01-models.docx: scripts/11-make-ExtendedTable01-models.R $(MODELS)

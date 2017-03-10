@@ -211,7 +211,7 @@ partials <- as.data.frame(lapply(1:ncol(preds$fit), function(cl) {
 }))
 names(partials) <- names(preds$fit)
 
-smooth_titles = c("citations (log)", "phylogenetic dist.\nto humans (log)", "range urban/rural\npopulation (log)")
+smooth_titles = c("disease\ncitations (log)", "phylogenetic dist.\nto humans (log)", "range urban/rural\npopulation (log)")
 names(smooth_titles) = names(smooth_data)
 smooth_plots_zoo = map(names(smooth_data), function(smooth_term) {
   pl =  ggplot() +
@@ -303,4 +303,9 @@ allplots = cowplot::plot_grid(vir_plots, zoo_plots, nrow=2, rel_widths = c(5.3, 
 svglite(file=P("figures", "Figure02-all-gams.svg"), width = convertr::convert(183, "mm", "in"), convertr::convert(100, "mm", "in"), pointsize=7)
 allplots
 dev.off()
+
+
+library(rsvg)
+bitmap <- rsvg(P("figures/Figure02-all-gams.svg"), width=3600)
+png::writePNG(bitmap, P("figures/Figure02-all-gams.png"), dpi=600)
 

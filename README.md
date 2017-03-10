@@ -132,5 +132,6 @@ R package dependencies.  Running `packrat::restore()` will unpack the versions
 of packages used in this project.  In addition, these packages have
 the following system requirements: `cairo`, `gdal`, `GEOS`, `libmagick++-`,
 `jave`, `libcurl`, `libpng`, `libxml2`, `OpenSSL`, and `pandoc`. All analyses
-were performed using R 3.3.2 under Ubuntu 14.04 Complete build takes approximately
-1 hour with 40 cores and 256GB of memory.
+were performed using R 3.3.2 under Ubuntu 14.04. Complete build takes approximately
+1 hour with 40 cores and 256GB of memory, or approximately 8 hours on a 2-core
+Macbook Pro with 16GB of memory.

@@ -232,7 +232,11 @@ allplots
 dev.off()
 
 
-library(rsvg)
-bitmap <- rsvg(P("figures/Figure04-viral-traits.svg"), width=3600)
-png::writePNG(bitmap, P("figures/Figure04-viral-traits.png"), dpi=600)
+
+png(file=P("figures", "Figure04-viral-traits.png"), width = convertr::convert(183, "mm", "in")*300, convertr::convert(100, "mm", "in")*300, pointsize=7, res=300)
+allplots
+dev.off()
+
+
+
 

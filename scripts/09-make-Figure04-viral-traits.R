@@ -79,7 +79,7 @@ smooth_plots = map(names(smooth_data), function(smooth_term) {
     #  geom_hline(yintercept = (intercept), size=0.5, col="red") +
     geom_hline(yintercept = 0, size=0.1, col="grey50") +
     geom_point(mapping = aes(x=model_data[[smooth_term]], y = (partials[[smooth_term]])),
-               shape=21, fill=viridis(4)[1], col="black", alpha=0.15, size=0.5, stroke=0.1) +
+               shape=21, fill=viridis(4)[1], col="black", alpha=0.15, size=1, stroke=0.1) +
     geom_ribbon(mapping = aes(x = smooth_ranges[[smooth_term]],
                               ymin = (smooth_preds$fit[[smooth_term]] - 2 * smooth_preds$se.fit[[smooth_term]]),
                               ymax = (smooth_preds$fit[[smooth_term]] + 2 * smooth_preds$se.fit[[smooth_term]])),
@@ -131,7 +131,7 @@ bin_data %<>%
 
 bin_plot = ggplot() +
   geom_hline(yintercept = 0, size=0.1, col="grey50") +
-  geom_point(data=bin_partials, mapping=aes(x=no, y=(partial)), position=position_jitter(width=0.35), shape=21, fill=viridis(4)[1], col="black", alpha=0.15, size=0.5, stroke=0.1) +
+  geom_point(data=bin_partials, mapping=aes(x=no, y=(partial)), position=position_jitter(width=0.35), shape=21, fill=viridis(4)[1], col="black", alpha=0.15, size=1, stroke=0.1) +
   geom_rect(data = bin_data, mapping=aes(xmin = no - 0.45, xmax  = no + 0.45, ymin=(response-2*se), ymax=(response+2*se)), fill = viridis(5)[4], alpha = 0.75) +
   geom_segment(data = bin_data, mapping=aes(x=no - 0.45, xend = no + 0.45, y=(response), yend=(response)), col="black", size=0.3) +
 #  geom_label(data = bin_data, mapping=aes(x=no, y = response + 2*se + 4, label=paste0("DE = ", dev_explained)), color="black", family="Lato", size=1.5, label.size=0, fill="#FFFFFF8C") +

@@ -12,7 +12,7 @@ set.seed(0)
 P <- rprojroot::find_rstudio_root_file
 source(P("R", "relative_contributions.R"))
 
-partials_theme = theme(text = element_text(family="Helvetica", size=7),
+partials_theme = theme(text = element_text(family="Helvetica", size=9),
                        panel.border=element_blank(),
                        panel.background=element_blank(),
                        #   axis.title.y = element_blank(),
@@ -79,7 +79,7 @@ smooth_plots = map(names(smooth_data), function(smooth_term) {
     #  geom_hline(yintercept = (intercept), size=0.5, col="red") +
     geom_hline(yintercept = 0, size=0.1, col="grey50") +
     geom_point(mapping = aes(x=model_data[[smooth_term]], y = (partials[[smooth_term]])),
-               shape=21, fill=viridis(4)[1], col="black", alpha=0.25, size=1, stroke=0.1) +
+               shape=21, fill=viridis(4)[1], col="black", alpha=0.25, size=1.25, stroke=0.1) +
     geom_ribbon(mapping = aes(x = smooth_ranges[[smooth_term]],
                               ymin = (smooth_preds$fit[[smooth_term]] - 2 * smooth_preds$se.fit[[smooth_term]]),
                               ymax = (smooth_preds$fit[[smooth_term]] + 2 * smooth_preds$se.fit[[smooth_term]])),
@@ -131,7 +131,7 @@ bin_data %<>%
 
 bin_plot = ggplot() +
   geom_hline(yintercept = 0, size=0.1, col="grey50") +
-  geom_point(data=bin_partials, mapping=aes(x=no, y=(partial)), position=position_jitter(width=0.35), shape=21, fill=viridis(4)[1], col="black", alpha=0.25, size=1, stroke=0.1) +
+  geom_point(data=bin_partials, mapping=aes(x=no, y=(partial)), position=position_jitter(width=0.35), shape=21, fill=viridis(4)[1], col="black", alpha=0.25, size=1.25, stroke=0.1) +
   geom_rect(data = bin_data, mapping=aes(xmin = no - 0.45, xmax  = no + 0.45, ymin=(response-2*se), ymax=(response+2*se)), fill = viridis(5)[4], alpha = 0.75) +
   geom_segment(data = bin_data, mapping=aes(x=no - 0.45, xend = no + 0.45, y=(response), yend=(response)), col="black", size=0.3) +
 #  geom_label(data = bin_data, mapping=aes(x=no, y = response + 2*se + 4, label=paste0("DE = ", dev_explained)), color="black", family="Lato", size=1.5, label.size=0, fill="#FFFFFF8C") +
@@ -141,7 +141,7 @@ bin_plot = ggplot() +
   scale_y_continuous(limits=c(-10,10), oob=scales::rescale_none, name="") +
   partials_theme + theme(axis.title.x=element_blank(), axis.ticks.x=element_blank(),
                          axis.text.x = element_text(color="black", lineheight = 1.2,
-                                                    vjust=0.5, margin=margin(t=0), family="Helvetica", size=5.6),
+                                                    vjust=0.5, margin=margin(t=0), family="Helvetica", size=9),
                          axis.text.y = element_text(family="Helvetica", size=5.6),
                          panel.border = element_blank(), axis.line.x=element_blank(), axis.line.y=element_blank(),
                          panel.background = element_rect(fill = "transparent", colour = NA),
@@ -179,11 +179,11 @@ legendpts = data_frame(fill=c(viridis(5)[5], viridis(5)[4], "#1F7DDC"), x = 2:4 
 vir_fam_plot = ggplot(vir_plotdata, aes(x=as.numeric(vFamily) + jitter_vals, y=st_dist_noHoSa_max, group=vFamily)) +
   annotate("rect", xmin=1.7, xmax=5, ymin=217, ymax=349, fill=NA, col="black", size=.1) +
   geom_boxplot(mapping=aes(fill=prop_fam_zoonotic, x=as.numeric(vFamily), y=st_dist_noHoSa_max2), outlier.shape=NA, width=0.7, size=0.3) +
-  geom_point(mapping=aes(col=vHostType, x = jitter_fams), shape=21, size = 1, fill="#1F7DDC", col="black", stroke=0.3,
+  geom_point(mapping=aes(col=vHostType, x = jitter_fams), shape=21, size = 1.25, fill="#1F7DDC", col="black", stroke=0.3,
              data = filter(vir_plotdata, vHostType == "Non-Human Only")) +
-  geom_point(mapping=aes(col=vHostType, x = jitter_fams), shape=21, size = 1, fill=viridis(5)[5], col="black", stroke=0.3,
+  geom_point(mapping=aes(col=vHostType, x = jitter_fams), shape=21, size = 1.25, fill=viridis(5)[5], col="black", stroke=0.3,
              data = filter(vir_plotdata, vHostType == "Zoonotic")) +
-  geom_point(mapping=aes(col=vHostType, x = jitter_fams), shape=21, size = 1, fill=viridis(5)[4], col="black", stroke=0.3,
+  geom_point(mapping=aes(col=vHostType, x = jitter_fams), shape=21, size = 1.25, fill=viridis(5)[4], col="black", stroke=0.3,
              data = filter(vir_plotdata, vHostType == "Human Only")) +
   geom_point(mapping=aes(x=x,y=y), data = legendpts, shape=21, size = 1, stroke=0.3, fill = c(viridis(5)[4], "#1F7DDC", viridis(5)[5])) +
   geom_text(mapping=aes(x=x,y=y + 10, label=label), data = legendpts, size=1.6, hjust =0, family="Helvetica") +
@@ -206,7 +206,7 @@ vir_fam_plot = ggplot(vir_plotdata, aes(x=as.numeric(vFamily) + jitter_vals, y=s
         legend.background = element_blank(),
         panel.border=element_blank(), panel.background=element_blank(),
         axis.ticks.y=element_blank(), axis.ticks.x = element_line(size=0.3),
-        axis.title.x=element_text(size=7, hjust=0.5, lineheight = 1.2), # margin=margin(t=8), debug=FALSE),
+        axis.title.x=element_text(size=9, hjust=0.5, lineheight = 1.2), # margin=margin(t=8), debug=FALSE),
         axis.text.y = element_text(hjust=1, debug=FALSE)) +
   coord_flip()
 
@@ -231,6 +231,9 @@ svglite(file=P("figures/Figure04-viral-traits.svg"), width = convertr::convert(1
 allplots
 dev.off()
 
+# library(rsvg)
+# bitmap <- rsvg(P("figures/Figure04-viral-traits.svg"), width=3600)
+# png::writePNG(bitmap, P("figures/Figure04-viral-traits2.png"), dpi=600)
 
 
 png(file=P("figures", "Figure04-viral-traits.png"), width = convertr::convert(183, "mm", "in")*300, convertr::convert(117, "mm", "in")*300, pointsize=7, res=300)

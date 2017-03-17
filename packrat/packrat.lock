@@ -483,6 +483,11 @@ Source: CRAN
 Version: 0.6
 Hash: fd256f8bfb9a64cc35f98b0decb1a79f
 
+Package: rsvg
+Source: CRAN
+Version: 1.0
+Hash: 5fed4389e0737dd43974ee2e0caa61bd
+
 Package: rvest
 Source: CRAN
 Version: 0.3.1

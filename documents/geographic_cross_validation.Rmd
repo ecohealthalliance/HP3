@@ -1,5 +1,5 @@
 ---
-title: "HP3: Zoogeographical Cross-Validation"
+title: "Supplementary Information: Zoogeography"
 output:
   html_document:
     toc: TRUE
@@ -50,7 +50,6 @@ host_names <- read_csv(P("data/hosts.csv")) %>%
 
 In addition to randomly-selected k-fold cross-validation, we evaluated the robustness of our models via non-random geographic cross-validation: we systematically removed all observations from a zoogeographical region, re-fit the model using all observations from outside the region, then performed a non-parametric permutation test comparing the predicted values to the observed values for that region.
 
-In order to meaningfully organize geographic areas, we utilized mammalian zoogeographic regions from [*Holt et al (2013)*](http://dx.doi.org/10.1126/science.1228282) which are defined by distributions of and phylogenetic relationships between species. Using QGIS, a mammal-specific zoogeographical shapefile provided by [Holt's group](http://macroecology.ku.dk/resources/wallace) at the University of Copenhagen was intersected (using QGIS Vector > Geoprocessing Tools > Intersect) with a shapefile of IUCN's host ranges. Areas of these intersections were then calculated using an equal-area projection, and each host was assigned to only the region which contained the greatest proportion of its range. Results of the non-parametric permutation test are shown below; non-significant results indicate that model predictions are unbiased.
 
 ```{r map-setup, cache = TRUE, message=FALSE}
 zregions <- shapefile(P("shapefiles", "mam", "mam.shp"), verbose = FALSE)
@@ -334,16 +333,10 @@ svresults %>% arrange(fold) %>%
   kable(caption = "Unbiased Prediction Regions (n > 10)", digits = 4)
 ```
 
-##Cross-validation Interpretation
-The reviewer articulated concerns about our models' ability to make out-of-sample predictions, arguing that cross-validation based on random folds does not adequately address this issue. Accordingly, we performed a non-random cross-validation using zoogeography to determine folds. The results of this procedure show that for the *All Zoonoses*, *All Viruses*, and *Strict Viruses* models, most regions do not show evidence of bias (that is, a systematic over- or under-prediction of model outcome greater than what one would expect due to chance). For each of these three models, only 4-5 substantial (n > 10) folds show evidence of bias, while 10-11 substantial folds do not. The mean size of these prediction differences are measured in units of each model outcome: for the All Zoonoses GAM in Zoonoses and in the Viruses GAMs in Viruses. It is important to note that the significance tests in this type of cross-validation are subject to multiple comparison concerns, just like those in the random cross-validation, so the occasional significant finding should not be over-interpreted. Nevertheless, to be conservative in the performance evaluation of our model we have made no correction for the many comparisons being made at the 5% significance level. 
-
-For the *Strict Zoonoses* model the evidence is more equivocal, with 8 substantial regions that show evidence of bias and 7 substantial regions which show no evidence of bias. This suggests that there might be some unaccounted-for association between zoogeographical region and number of strictly-defined zoonoses present in animals. We took a closer look at each biased region for each model, examining the over- or under-prediction patterns on a species-by-species level; however, no clear interpretable pattern (besides their region) was evident. 
-
-The presence of biased regions across the models suggested the possibility that there is some association between zoogeographical region and our outcomes of interest, but the cross-validation procedure is not the appropriate way to assess this relationship. To that end, we added zoogeographical region as a categorical random effect to the best-fit models for each of our four outcomes.
 
 #Region as Random Effect
 
-Below we add zoographical region as a categorical random effect to each of our best-fit GAMs. The model fit and variable relative deviance explained comparisons for each model follow:
+To further investigate the relationship between zoogeographical region and our outcomes of interest, we added zoographical region as a categorical random effect to each of our best-fit GAMs. The model fit and variable relative deviance explained comparisons for each model follow:
 
 ## All Zoonoses GAM
 Adding zoogeographical region as a categorical random effect to our best-fit All Zoonoses GAM does not improve the model fit, as seen in the tables below:
@@ -524,12 +517,3 @@ strictv_com %>% rename(`Term` = term, `Original Model Relative Deviance Explaine
 ```
   
 
-## Random Effect Model Interpretation  
-For three of our best-fit GAMS (*All Viruses*, *Strict Zoonoses*, and *Strict Viruses*) the addition of zoogeographical region as a categorical random effect decreased the model AIC and increased the deviance explained by 3-5%. These results support the reviewer's suggestion that there might be a stronger relationship between geography and our outcomes of interest than was previously accounted for in these models. The *All Zoonoses* model, which is used to create the series of maps in the main manuscript, does not improve with the inclusion of zoogeographical region.
-
-Taking a closer look at the change in relative deviance explained when we add zoogeographical region, we see most of the variables with substantial decreases in deviance explained when region is included are closely connected to geography: LnAreaHost (host area), S20 (species range 20% overlap), HumPopDensLnChg (human population density change). This is not surprising, since the inclusion of another (likely non-independent) geographic variable might be expected to siphon away the relative effect of these variables, although over-interpreting the specific changes in deviance explained by competing terms is inappropriate. We might have more deeply investigated the details of this zoogeographical variable by separating out the effect of each region during our model selection process (as we did with taxonomic Order); however, we felt that the improved predictive power of a model using region-specific terms was offset by the decreased interpretability of these terms -- especially when compared to the pre-existing geographical variables, such as host area or overlapping species range. The association between variables like host range or human population density change and our outcomes of interest are interpretable in relevant, biologically plausible ways; in pursuing our goal to both predict and understand, we choose to trade off some gains in prediction for interpretability in the case of zoogeographical region. 
-
-# Conclusion
-The zoogeographical cross-validation procedure and the subsequent inclusion of region into our GAMs reveals that for the *All Viruses*, *Strict Zoonoses*, and *Strict Viruses* models, the addition of a region term would improve deviance explained by 3-5%. However, this modest increase in predictive power does come with some cost in interpretation, so we decided not to include zoogeographical region in our final models. 
-
-It is evident that at the core of the reviewer's astute questions regarding these models is an important concern about the translation of GAM predictions, whose parameter estimates' uncertainty and deviance explained can be clearly stated or visualized, into layered raster maps, whose uncertainty is more difficult to convey to readers. This point is well-taken, and we do not wish to invite over-interpretation of the regions identified by our maps: they are a result of imperfect models that only explain a portion of deviance in the data. In order to more explicitly express this fact, we have included additional maps that illustate this uncertainty. 

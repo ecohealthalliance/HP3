@@ -211,7 +211,7 @@ partials <- as.data.frame(lapply(1:ncol(preds$fit), function(cl) {
 }))
 names(partials) <- names(preds$fit)
 
-smooth_titles = c("disease\ncitations (log)", "phylogenetic dist.\nto humans (log)", "range urban/rural\npopulation (log)")
+smooth_titles = c("disease\ncitations (log)", "phylogenetic dist.\nfrom humans (log)", "range urban/rural\npopulation (log)")
 names(smooth_titles) = names(smooth_data)
 smooth_plots_zoo = map(names(smooth_data), function(smooth_term) {
   pl =  ggplot() +

@@ -17,7 +17,7 @@ for(ORDER in hp3_orders) {
     image_append(c(labeled_images[[1]], labeled_images[[2]], labeled_images[[3]])),
     image_append(c(labeled_images[[4]], labeled_images[[5]], labeled_images[[6]])),
     image_append(c(labeled_images[[7]], labeled_images[[8]], labeled_images[[9]]))))
-  image_write(comb_image, P("figures", paste0("ExtendedFigure0", 3 + which(ORDER == hp3_orders), "-", ORDER, ".png")))
+  image_write(comb_image, P("figures", paste0("ExtendedFigure0", 2 + which(ORDER == hp3_orders), "-", ORDER, ".png")))
 }
 
 missing_images <- lapply(list.files(P("figures", "maps/"), pattern =paste0("zoonoses_missing.png"), full.names = TRUE), image_read)

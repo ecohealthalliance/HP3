@@ -72,12 +72,12 @@ This repository contains code and data to replicate analyses in Olival et. al.
 │   ├── Figure02-all-gams.svg                          |
 │   ├── Figure03-missing-zoo-maps.png                  |
 │   ├── Figure04-viral-traits.svg                      |
-│   ├── ExtendedFigure04-ALL.png                       |
-│   ├── ExtendedFigure05-CARNIVORA.png                 |
-│   ├── ExtendedFigure06-CETARTIODACTYLA.png           |
-│   ├── ExtendedFigure07-CHIROPTERA.png                |
-│   ├── ExtendedFigure08-PRIMATES.png                  |
-│   ├── ExtendedFigure09-RODENTIA.png                  |
+│   ├── ExtendedFigure03-ALL.png                       |
+│   ├── ExtendedFigure04-CARNIVORA.png                 |
+│   ├── ExtendedFigure05-CETARTIODACTYLA.png           |
+│   ├── ExtendedFigure06-CHIROPTERA.png                |
+│   ├── ExtendedFigure07-PRIMATES.png                  |
+│   ├── ExtendedFigure08-RODENTIA.png                  |
 │   ├── ExtendedTable01-models.docx                    |
 │   ├── SuppTable1-observed-predicted-missing.csv      |
 │   └── maps/                                          | Individual maps stiched together for figures.

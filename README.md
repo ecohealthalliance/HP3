@@ -86,6 +86,7 @@ This repository contains code and data to replicate analyses in Olival et. al.
 │   ├── calc-bat-special.R                             | Calculates significance of bat order effect in GAM
 │   ├── gen_host_spatial_data.R                        | Used for generating host zoogeographies shapefile
 │   ├── phylo-primates.Rmd                             | Examination of phylogenetic effects specific to primates
+│   ├── calc-pred-obs-correlation.R                    | Alternative measures of model fit
 │   └── zoonotic_dev_explained_w_offset.R              | For calculating deviance explained in models with offsets
 │
 ├── R/                                                 | Functions used in scripts and R markdown documents

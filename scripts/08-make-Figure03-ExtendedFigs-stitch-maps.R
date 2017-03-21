@@ -11,7 +11,7 @@ for(ORDER in hp3_orders) {
                                              ".png"))
 
   my_images <- lapply(image_files, image_read)
-  labeled_images <- mapply(image_annotate, image=my_images, text=letters[1:9], MoreArgs = list(font="Helvetica", location="+200+770", size=175), SIMPLIFY = FALSE)
+  labeled_images <- mapply(image_annotate, image=my_images, text=letters[1:9], MoreArgs = list(font="Helvetica-Bold", location="+200+770", size=175), SIMPLIFY = FALSE)
 
   comb_image <- image_append(stack=TRUE, image = c(
     image_append(c(labeled_images[[1]], labeled_images[[2]], labeled_images[[3]])),
@@ -21,7 +21,7 @@ for(ORDER in hp3_orders) {
 }
 
 missing_images <- lapply(list.files(P("figures", "maps/"), pattern =paste0("zoonoses_missing.png"), full.names = TRUE), image_read)
-labeled_images <- mapply(image_annotate, image=missing_images, text=letters[1:6], MoreArgs = list(font="Helvetica", location="+200+770", size=175), SIMPLIFY = FALSE)
+labeled_images <- mapply(image_annotate, image=missing_images, text=letters[1:6], MoreArgs = list(font="Helvetica-Bold", location="+200+770", size=175), SIMPLIFY = FALSE)
 comb_image2 <- image_append(stack=TRUE, image = c(
   image_append(c(labeled_images[[1]], labeled_images[[2]])),
   image_append(c(labeled_images[[3]], labeled_images[[4]])),

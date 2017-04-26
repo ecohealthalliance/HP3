@@ -10,7 +10,7 @@ _Nature_
 
 -  `documents` contains two  R markdown documents in both raw and readable HTML
     form which give more detail than in the main paper or supplemental methods
-    on our model-fitting and validation process: `model_summaries.Rhtml`
+    on our model-fitting and validation process: `model_summaries.Rmd/html`
     and `geographic_cross_validation.Rmd/html`.
 -  `data/` contains data used in these analyses, including
     -   our primary database of host-viral associations (`associations.csv`)

@@ -1,7 +1,10 @@
 # HP3 Analysis files
 
-This repository contains code and data to replicate analyses in Olival et. al.
-(2016) *Host and Viral Traits Predict Zoonotic Spillover from Mammals.*
+[![DOI](https://zenodo.org/badge/57073465.svg)](https://zenodo.org/badge/latestdoi/57073465)
+
+This repository contains code, data, documentation, metadata and figure source files used
+in Olival et. al. (2017) "Host and Viral Traits Predict Zoonotic Spillover from Mammals."
+_Nature_
 
 ### Repo Structure
 
@@ -47,6 +50,7 @@ This repository contains code and data to replicate analyses in Olival et. al.
 ├── README.txt                                         | This file in .txt format
 ├── HP3.Rproj                                          | Rstudio project organization file
 ├── Makefile                                           | Makefile for building project
+├── .zenodo.json                                       | Metadata file for ZENODO repository
 ├── data/
 │   ├── associations.csv                               | associations database
 │   ├── cytb_supertree.tree                            | tree file for Cyt-b constrained version of mammal supertree

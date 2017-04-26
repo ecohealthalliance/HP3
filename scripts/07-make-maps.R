@@ -9,6 +9,7 @@ library(maptools)
 library(mgcv)
 library(parallel)
 library(rgeos)
+library(gridExtra)
 
 P <- rprojroot::find_rstudio_root_file
 
@@ -275,7 +276,7 @@ make_png <- function(my_raster, orders, model, data_type, png_res) {
                   xlim = c(-180, 180),
                   ylim = c(-58, 90)) +
           #layer(sp.points(bias_pt_layer, pch=20, cex=0.8, col="grey20"), data=list(bias_pt_layer=bias_pt_layer)) +
-          layer(sp.lines(bias_pt_layer, lwd=2, col="grey20"), data=list(bias_pt_layer=bias_pt_layer)) +
+          layer(sp.lines(bias_pt_layer, lwd=3, col="grey20"), data=list(bias_pt_layer=bias_pt_layer)) +
           world_layer)
   dev.off()
   #return(bias_pt_layer)
@@ -285,3 +286,48 @@ rasters3 = filter(rasters2, data_type %in% c('observed', 'predicted', 'predicted
   filter(!(model=="hosts" & data_type=="predicted_max")) %>%
   filter(!(model!="hosts" & data_type=="predicted"))
 mcmapply(make_png, my_raster=rasters3$raster, orders=rasters3$orders, model=rasters3$model, data_type=rasters3$data_type, png_res=150, mc.cores = min(parallel::detectCores(), 20))
+
+
+mainrasts = rasters3 %>% filter(data_type == "missing" & model=="zoonoses")
+
+make_eps <- function(my_raster, orders, model, data_type, alabel) {
+  if(model == "hosts" & data_type=="missing") {
+    TheTheme <- BuRdTheme()
+  } else if ((data_type %in% c("predicted_max", "observed", "missing")) | model=="hosts") {
+    TheTheme <- rasterTheme(region = rev(brewer.pal(11, 'RdYlGn')))
+  } else {
+    TheTheme <- rasterTheme(region = viridis::viridis(11))
+  }
+  TheTheme$fontsize$text <- 30
+  TheTheme$axis.line$lwd <- 2
+
+
+  if(data_type %in% c("predicted_max", "missing") &
+     model != "hosts") {
+    bias_pt_layer = bias_layers$bias_shape[[which(bias_layers$orders == orders & bias_layers$model == model)]]
+  } else {
+    bias_pt_layer = angle_lines[0,]
+  }
+  return(levelplot(my_raster, layers = 1,
+                  par.settings = TheTheme,
+                  margin= FALSE,
+                  ylab = '',
+                  xlab = '',
+                  scales = list(draw=FALSE),
+                  colorkey=list(width = 1,
+                                axis.text = list(fontfamily="Helvetica", fontsize=5.6)),
+                  maxpixels = ncell(my_raster),
+                  xlim = c(-180, 180),
+                  ylim = c(-58, 90)) +
+          #layer(sp.points(bias_pt_layer, pch=20, cex=0.8, col="grey20"), data=list(bias_pt_layer=bias_pt_layer)) +
+          layer(sp.lines(bias_pt_layer, lwd=3, col="grey20"), data=list(bias_pt_layer=bias_pt_layer)) +
+          world_layer +
+          layer(panel.text(x = -135, y=-30, label = alabel, cex=3), data=list(alabel=alabel)))
+  #return(bias_pt_layer)
+}
+
+fig3plots <- mapply(make_eps, my_raster=mainrasts$raster, orders=mainrasts$orders, model=mainrasts$model, data_type=mainrasts$data_type, alabel = letters[1:6], SIMPLIFY = FALSE)
+#fig3plots[[1]]
+pdf(P("figures", "Figure03-missing-zoo-maps.pdf"), width = 14.41*2, height=7.21*3)
+grid.arrange(grobs=fig3plots, nrow=3, ncol=2)
+dev.off()

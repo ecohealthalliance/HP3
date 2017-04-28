@@ -322,7 +322,7 @@ make_eps <- function(my_raster, orders, model, data_type, alabel) {
           #layer(sp.points(bias_pt_layer, pch=20, cex=0.8, col="grey20"), data=list(bias_pt_layer=bias_pt_layer)) +
           layer(sp.lines(bias_pt_layer, lwd=3, col="grey20"), data=list(bias_pt_layer=bias_pt_layer)) +
           world_layer +
-          layer(panel.text(x = -135, y=-30, label = alabel, cex=3), data=list(alabel=alabel)))
+          layer(panel.text(x = -135, y=-30, label = alabel, cex=3, fontface="bold"), data=list(alabel=alabel)))
   #return(bias_pt_layer)
 }
 

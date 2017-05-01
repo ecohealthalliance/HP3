@@ -290,7 +290,7 @@ mcmapply(make_png, my_raster=rasters3$raster, orders=rasters3$orders, model=rast
 
 mainrasts = rasters3 %>% filter(data_type == "missing" & model=="zoonoses")
 
-make_eps <- function(my_raster, orders, model, data_type, alabel) {
+make_eps <- function(my_raster, orders, model, data_type, alabel, white_labels=FALSE) {
   if(model == "hosts" & data_type=="missing") {
     TheTheme <- BuRdTheme()
   } else if ((data_type %in% c("predicted_max", "observed", "missing")) | model=="hosts") {
@@ -301,7 +301,7 @@ make_eps <- function(my_raster, orders, model, data_type, alabel) {
   TheTheme$fontsize$text <- 7
   TheTheme$axis.line$lwd <- 0.5
   TheTheme$add.line$lwd <- 0.01
-
+  if(white_labels) TheTheme$axis.text$col = "white"
 
   if(data_type %in% c("predicted_max", "missing") &
      model != "hosts") {
@@ -318,6 +318,7 @@ make_eps <- function(my_raster, orders, model, data_type, alabel) {
                   colorkey=list(width = 1,
                                 axis.text = list(fontfamily="Helvetica", fontsize=7, cex=0.8)),
                   maxpixels = ncell(my_raster),
+                  raster=TRUE,
                   xlim = c(-180, 180),
                   ylim = c(-58, 90)) +
           #layer(sp.points(bias_pt_layer, pch=20, cex=0.8, col="grey20"), data=list(bias_pt_layer=bias_pt_layer)) +
@@ -333,7 +334,12 @@ pdf(P("figures", "Figure03-missing-zoo-maps.pdf"), width = 4.65, height=3.49)
 grid.arrange(grobs=fig3plots, nrow=3, ncol=2)
 dev.off()
 
-fig3plots <- mapply(make_eps, my_raster=mainrasts$raster, orders=mainrasts$orders, model=mainrasts$model, data_type=mainrasts$data_type, alabel = letters[1:6], SIMPLIFY = FALSE)
+fig3plotspng <- mapply(make_eps, my_raster=mainrasts$raster, orders=mainrasts$orders, model=mainrasts$model, data_type=mainrasts$data_type, alabel = rep("", 6), MoreArgs=list(white_labels=TRUE), SIMPLIFY = FALSE)
+png(P("figures", "Figure03-missing-zoo-maps.png"), width = 4.65, height=3.49, units="in", res=600)
+grid.arrange(grobs=fig3plotspng, nrow=3, ncol=2)
+dev.off()
+
+
 #fig3plots[[1]]
 
 

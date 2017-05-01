@@ -331,3 +331,75 @@ fig3plots <- mapply(make_eps, my_raster=mainrasts$raster, orders=mainrasts$order
 pdf(P("figures", "Figure03-missing-zoo-maps.pdf"), width = 14.41*2, height=7.21*3)
 grid.arrange(grobs=fig3plots, nrow=3, ncol=2)
 dev.off()
+
+fig3plots <- mapply(make_eps, my_raster=mainrasts$raster, orders=mainrasts$orders, model=mainrasts$model, data_type=mainrasts$data_type, alabel = letters[1:6], SIMPLIFY = FALSE)
+#fig3plots[[1]]
+
+
+make_eps2 <- function(my_raster, orders, model, data_type, alabel) {
+  if(model == "hosts" & data_type=="missing") {
+    TheTheme <- BuRdTheme()
+  } else if ((data_type %in% c("predicted_max", "observed", "missing")) | model=="hosts") {
+    TheTheme <- rasterTheme(region = rev(brewer.pal(11, 'RdYlGn')))
+  } else {
+    TheTheme <- rasterTheme(region = viridis::viridis(11))
+  }
+  TheTheme$fontsize$text <- 7
+  TheTheme$axis.line$lwd <- 0.5
+  TheTheme$add.line$lwd <- 0.01
+
+  world_layer <- layer(sp.polygons(wrld_simpl, lwd=0.2, col='gray50'))
+  if(data_type %in% c("predicted_max", "missing") &
+     model != "hosts") {
+    bias_pt_layer = bias_layers$bias_shape[[which(bias_layers$orders == orders & bias_layers$model == model)]]
+  } else {
+    bias_pt_layer = angle_lines[0,]
+  }
+  return(levelplot(my_raster, layers = 1,
+                   par.settings = TheTheme,
+                   margin= FALSE,
+                   ylab = '',
+                   xlab = '',
+                   scales = list(draw=FALSE),
+                   colorkey=list(width = 1,
+                                 axis.text = list(fontfamily="Helvetica", fontsize=7, cex=0.8)),
+                   maxpixels = ncell(my_raster),
+                   xlim = c(-180, 180),
+                   ylim = c(-58, 90)) +
+           #layer(sp.points(bias_pt_layer, pch=20, cex=0.8, col="grey20"), data=list(bias_pt_layer=bias_pt_layer)) +
+           layer(sp.lines(bias_pt_layer, lwd=0.5, col="grey20"), data=list(bias_pt_layer=bias_pt_layer)) +
+                 #theme=within(TheTheme, add.lines = list(lwd = .1))) +
+           world_layer +
+           layer(panel.text(x = -135, y=-30, label = alabel, cex=1.14, fontface="bold"),
+                 data=list(alabel=alabel)))
+  #return(bias_pt_layer)
+}
+
+hp3_orders <- c("ALL", "CARNIVORA", "CETARTIODACTYLA", "CHIROPTERA", "PRIMATES", "RODENTIA")
+
+for(i in 1:6) {
+  extrasts <- filter(rasters3, orders == hp3_orders[i]) %>%
+    mutate(model = factor(model, c("viruses", "zoonoses", "hosts")),
+           data_type = factor(data_type, c("observed", "predicted", "predicted_max", "missing"))) %>%
+    arrange(model, data_type)
+  extplots <- mapply(make_eps2, my_raster=extrasts$raster, orders=extrasts$orders, model=extrasts$model, data_type=extrasts$data_type, alabel = letters[1:9], SIMPLIFY = FALSE)
+  tiff(P("figures", paste0("ExtendedFigure0", i+2, "-", hp3_orders[i], ".tif")), width = 183, height=91.5, res=300, unit="mm", compression="lzw")
+  grid.arrange(grobs=extplots, nrow=3, ncol=3, padding = 0)
+  dev.off()
+
+}
+
+# for(i in 1:6) {
+#   extrasts <- filter(rasters3, orders == hp3_orders[i]) %>%
+#     mutate(model = factor(model, c("viruses", "zoonoses", "hosts")),
+#            data_type = factor(data_type, c("observed", "predicted", "predicted_max", "missing"))) %>%
+#     arrange(model, data_type)
+#   extplots <- mapply(make_eps2, my_raster=extrasts$raster, orders=extrasts$orders, model=extrasts$model, data_type=extrasts$data_type, alabel = letters[1:9], SIMPLIFY = FALSE)
+#   setEPS()
+#   postscript(P("figures", paste0("ExtendedFigure0", i+2, "-", hp3_orders[i], "eps")), width = 7.2, height=3.6, horizontal = FALSE, onefile = FALSE)
+#   grid.arrange(grobs=extplots, nrow=3, ncol=3, padding = 0)
+#   dev.off()
+#
+# }
+
+

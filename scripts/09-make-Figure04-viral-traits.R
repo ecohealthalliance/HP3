@@ -79,7 +79,7 @@ smooth_plots = map(names(smooth_data), function(smooth_term) {
     #  geom_hline(yintercept = (intercept), size=0.5, col="red") +
     geom_hline(yintercept = 0, size=0.1, col="grey50") +
     geom_point(mapping = aes(x=model_data[[smooth_term]], y = (partials[[smooth_term]])),
-               shape=21, fill=viridis(4)[1], col="black", alpha=0.25, size=1.25, stroke=0.1) +
+               shape=21, fill=viridis(4)[1], col="black", alpha=0.25, size=1.25, stroke=0.3) +
     geom_ribbon(mapping = aes(x = smooth_ranges[[smooth_term]],
                               ymin = (smooth_preds$fit[[smooth_term]] - 2 * smooth_preds$se.fit[[smooth_term]]),
                               ymax = (smooth_preds$fit[[smooth_term]] + 2 * smooth_preds$se.fit[[smooth_term]])),
@@ -94,7 +94,7 @@ smooth_plots = map(names(smooth_data), function(smooth_term) {
 
 })
 
-smooth_plots[[1]] = smooth_plots[[1]] + ylab("Strength of Effect")
+smooth_plots[[1]] = smooth_plots[[1]] + ylab("")
 smooth_plots[[2]] = smooth_plots[[2]] + ylab("")
 smooth_plots[[3]] = smooth_plots[[3]] + ylab("Strength of Effect")
 bin_data = binary_preds %>% map(function(x) {
@@ -131,7 +131,7 @@ bin_data %<>%
 
 bin_plot = ggplot() +
   geom_hline(yintercept = 0, size=0.1, col="grey50") +
-  geom_point(data=bin_partials, mapping=aes(x=no, y=(partial)), position=position_jitter(width=0.35), shape=21, fill=viridis(4)[1], col="black", alpha=0.25, size=1.25, stroke=0.1) +
+  geom_point(data=bin_partials, mapping=aes(x=no, y=(partial)), position=position_jitter(width=0.35), shape=21, fill=viridis(4)[1], col="black", alpha=0.25, size=1.25, stroke=0.3) +
   geom_rect(data = bin_data, mapping=aes(xmin = no - 0.45, xmax  = no + 0.45, ymin=(response-2*se), ymax=(response+2*se)), fill = viridis(5)[4], alpha = 0.75) +
   geom_segment(data = bin_data, mapping=aes(x=no - 0.45, xend = no + 0.45, y=(response), yend=(response)), col="black", size=0.3) +
 #  geom_label(data = bin_data, mapping=aes(x=no, y = response + 2*se + 4, label=paste0("DE = ", dev_explained)), color="black", family="Lato", size=1.5, label.size=0, fill="#FFFFFF8C") +
@@ -194,7 +194,7 @@ vir_fam_plot = ggplot(vir_plotdata, aes(x=as.numeric(vFamily) + jitter_vals, y=s
                                             label.position = "bottom",  label.vjust = -4.5,
                                             barheight=unit(3, "mm"), barwidth = unit(25, "mm"), raster=TRUE)) +
   scale_x_continuous(breaks=1:n_families, labels = levels(vir_plotdata$vFamily),
-                     limits=c(1, n_families), expand=c(0,0.5), oob=scales::rescale_none, name="") +
+                     limits=c(1, n_families), expand=c(0.05,0), oob=scales::rescale_none, name="") +
   scale_y_continuous(breaks=seq(0,300,by=100), expand=c(0,0), limits=c(-5, 350),
                      name ="max phylogenetic\nhost breadth", oob=scales::rescale_none) +
   theme_bw() +
@@ -217,28 +217,33 @@ vir_fam_plot = cowplot::ggdraw(vir_fam_plot + theme(legend.position = "none"))
 gamplots_top = cowplot::plot_grid(plotlist = smooth_plots[c(1,3)], nrow=1, labels=c("b", "c"), label_size=7, align="hv")
 gamplots_all = cowplot::plot_grid(gamplots_top, bin_plot, nrow = 2, labels = c("", "d"), label_size=7)
 allplots = cowplot::ggdraw() +
-  cowplot::draw_plot(vir_fam_plot, 0, 0, 13/33, 1) +
+  cowplot::draw_plot(vir_fam_plot, 0, 0, 0.61, 1) +
   cowplot::draw_grob(legend, x=-0.5, y=-0.06) +
  # cowplot::draw_plot(smooth_plots[[1]], 13/33, 0.5, 10/33, 0.5) +
   #cowplot::draw_plot(smooth_plots[[3]], 23/33, 0.5, 10/33, 0.5) +
-  cowplot::draw_plot(cowplot::plot_grid(smooth_plots[[1]], smooth_plots[[3]], nrow=1, align="hv"), 13/33, 0.5, 20/33, 0.5) +
-  cowplot::draw_plot(bin_plot, 18/33, 0,  10/33, 0.5) +
-  cowplot::draw_plot_label(c("a", "b", "c", "d"), x = c(0, 13/33, 23/33, 18/33),
-                           y = c(1, 1, 1, 0.5), size = 7)
+  cowplot::draw_plot(cowplot::plot_grid(smooth_plots[[1]], smooth_plots[[3]], nrow=2, align="hv"), 0.61, 0.333, 0.39, 0.666) +
+  cowplot::draw_plot(bin_plot, 0.61, 0,  0.39, 0.3333) +
+  cowplot::draw_plot_label(c("a", "b", "c", "d"), x = c(0, .66, .66, .66),
+                           y = c(1, 1, .6666, 0.3333), size = 8, fontface = "bold")
 
 #  cowplot::plot_grid(vir_fam_plot, gamplots_all, nrow=1, rel_widths=c(1.3, 2), labels=c("a", ""), label_size=7)  + cowplot::draw_grob(legend, x=-0.5, y=-0.06)
-svglite(file=P("figures/Figure04-viral-traits.svg"), width = convertr::convert(183, "mm", "in"), convertr::convert(117, "mm", "in"), pointsize=7)
+# svglite(file=P("figures/Figure04-viral-traits.svg"), width =4.65, height = 4.61, pointsize=7)
+# allplots
+# dev.off()
+
+pdf(file=P("figures/Figure04-viral-traits.pdf"), width = convertr::convert(118, "mm", "in"), convertr::convert(106, "mm", "in"), pointsize=7)
 allplots
 dev.off()
+
 
 # library(rsvg)
 # bitmap <- rsvg(P("figures/Figure04-viral-traits.svg"), width=3600)
 # png::writePNG(bitmap, P("figures/Figure04-viral-traits2.png"), dpi=600)
 
-
-png(file=P("figures", "Figure04-viral-traits.png"), width = convertr::convert(183, "mm", "in")*300, convertr::convert(117, "mm", "in")*300, pointsize=7, res=300)
-allplots
-dev.off()
+#
+# png(file=P("figures", "Figure04-viral-traits.png"), width = convertr::convert(118, "mm", "in")*300, convertr::convert(117, "mm", "in")*300, pointsize=7, res=300)
+# allplots
+# dev.off()
 
 
 

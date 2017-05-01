@@ -298,8 +298,9 @@ make_eps <- function(my_raster, orders, model, data_type, alabel) {
   } else {
     TheTheme <- rasterTheme(region = viridis::viridis(11))
   }
-  TheTheme$fontsize$text <- 30
-  TheTheme$axis.line$lwd <- 2
+  TheTheme$fontsize$text <- 7
+  TheTheme$axis.line$lwd <- 0.5
+  TheTheme$add.line$lwd <- 0.01
 
 
   if(data_type %in% c("predicted_max", "missing") &
@@ -315,20 +316,20 @@ make_eps <- function(my_raster, orders, model, data_type, alabel) {
                   xlab = '',
                   scales = list(draw=FALSE),
                   colorkey=list(width = 1,
-                                axis.text = list(fontfamily="Helvetica", fontsize=5.6)),
+                                axis.text = list(fontfamily="Helvetica", fontsize=7, cex=0.8)),
                   maxpixels = ncell(my_raster),
                   xlim = c(-180, 180),
                   ylim = c(-58, 90)) +
           #layer(sp.points(bias_pt_layer, pch=20, cex=0.8, col="grey20"), data=list(bias_pt_layer=bias_pt_layer)) +
-          layer(sp.lines(bias_pt_layer, lwd=3, col="grey20"), data=list(bias_pt_layer=bias_pt_layer)) +
+          layer(sp.lines(bias_pt_layer, lwd=0.5, col="grey20"), data=list(bias_pt_layer=bias_pt_layer)) +
           world_layer +
-          layer(panel.text(x = -135, y=-30, label = alabel, cex=3, fontface="bold"), data=list(alabel=alabel)))
+          layer(panel.text(x = -135, y=-30, label = alabel, cex=1.14, fontface="bold"), data=list(alabel=alabel)))
   #return(bias_pt_layer)
 }
 
 fig3plots <- mapply(make_eps, my_raster=mainrasts$raster, orders=mainrasts$orders, model=mainrasts$model, data_type=mainrasts$data_type, alabel = letters[1:6], SIMPLIFY = FALSE)
 #fig3plots[[1]]
-pdf(P("figures", "Figure03-missing-zoo-maps.pdf"), width = 14.41*2, height=7.21*3)
+pdf(P("figures", "Figure03-missing-zoo-maps.pdf"), width = 4.65, height=3.49)
 grid.arrange(grobs=fig3plots, nrow=3, ncol=2)
 dev.off()
 

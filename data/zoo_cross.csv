@@ -1,0 +1,125 @@
+model,region,n_fit,n_validate,p_value,mean_diff
+all zoonoses,Southern South America,574,10,0.11732,0.12452521452176675
+all zoonoses,South Africa,523,61,0.2029,-0.16799338015675422
+all zoonoses,Southeastern South America,562,22,0.00387,0.3030895265555124
+all zoonoses,Central Western South America,582,2,0.49974,-0.2845251427791874
+all zoonoses,Northern Eurussia,548,36,0.04204,0.2935047349621088
+all zoonoses,Northern South America,485,99,0.99491,5.478615764673086e-4
+all zoonoses,Southern Central America,567,17,0.59962,0.09881545550407438
+all zoonoses,Sahara,579,5,0.31055,-0.2554528486494092
+all zoonoses,Northern America,525,59,0.70008,-0.04428155817754095
+all zoonoses,India,563,21,0.72207,-0.11790592313304439
+all zoonoses,Southwestern North America,563,21,0.96693,-0.0049065242264477405
+all zoonoses,Japan,581,3,0.0,-0.5610061611313044
+all zoonoses,Europe,546,38,0.02723,-0.3831536575147251
+all zoonoses,Southern Mexico,578,6,0.78228,-0.06275916901883231
+all zoonoses,Central African Band,550,34,0.01532,-0.4577807118799538
+all zoonoses,Southeast Asia,550,34,0.76048,-0.056519732172228804
+all zoonoses,Arabian Peninsula,577,7,0.34392,-0.3158077611987421
+all zoonoses,West Central Africa,551,33,0.17921,0.12913109620421429
+all zoonoses,Central / Eastern North America,562,22,0.15713,0.2401547665883927
+all zoonoses,Melanesia,580,4,0.87311,-0.11622524331190157
+all zoonoses,Northwestern China / Mongolia,583,1,0.0,-0.3211324925341819
+all zoonoses,Madagascar,578,6,0.0,0.5744213587594127
+all zoonoses,Southeastern China,569,15,0.0,0.4156992749460635
+all zoonoses,Southern Australia,573,11,0.29248,-0.2760448093075358
+all zoonoses,Northern Australia,581,3,0.25058,1.0468756620175679
+all zoonoses,Eastern Indonesia,579,5,0.0,0.40240799866452387
+all zoonoses,Western Australia,581,3,0.24978,-0.5746863965388931
+all zoonoses,Northeastern China,583,1,0.0,-0.5642297726665031
+all zoonoses,Western China,583,1,0.0,-0.34330684861389615
+all zoonoses,Morocco / Tunisia,583,1,0.0,0.20817336978399048
+all zoonoses,Northwest Asia,581,3,0.0,0.5870965083561516
+strict zoonoses,Southern South America,566,10,0.10211,0.43643006240206333
+strict zoonoses,South Africa,515,61,0.77633,-0.024378873503034883
+strict zoonoses,Southeastern South America,555,21,0.00388,0.6149403713432786
+strict zoonoses,Central Western South America,574,2,0.0,-0.34984963263895064
+strict zoonoses,Northern Eurussia,540,36,0.01732,0.28879362265832004
+strict zoonoses,Northern South America,477,99,0.03695,-0.2044085803957635
+strict zoonoses,Southern Central America,560,16,0.0,-0.3820316497819645
+strict zoonoses,Sahara,571,5,0.18958,-0.12652161802918932
+strict zoonoses,Northern America,517,59,0.0444,-0.1884559222828975
+strict zoonoses,India,555,21,0.78288,0.04675307092451287
+strict zoonoses,Southwestern North America,555,21,0.76171,-0.034677576795682535
+strict zoonoses,Japan,573,3,0.0,-0.1578739971531036
+strict zoonoses,Europe,539,37,0.95108,0.009064391782088843
+strict zoonoses,Southern Mexico,571,5,0.0,-0.3033246025801039
+strict zoonoses,Central African Band,542,34,0.03776,0.36853097200885127
+strict zoonoses,Southeast Asia,542,34,0.00728,-0.5019816233748152
+strict zoonoses,Arabian Peninsula,569,7,0.54666,0.19208211759559482
+strict zoonoses,West Central Africa,545,31,0.00448,0.8319295768655983
+strict zoonoses,Central / Eastern North America,554,22,0.12271,-0.3528832899731544
+strict zoonoses,Melanesia,572,4,0.87554,0.1766829032915661
+strict zoonoses,Northwestern China / Mongolia,575,1,0.0,-0.003039430953732803
+strict zoonoses,Madagascar,570,6,0.0,-0.29976444110260797
+strict zoonoses,Southeastern China,562,14,0.62248,0.08761386383451805
+strict zoonoses,Southern Australia,565,11,0.70697,-0.09881951774282449
+strict zoonoses,Northern Australia,573,3,0.24885,0.2882002833962346
+strict zoonoses,Eastern Indonesia,571,5,0.0,-0.24317414571237825
+strict zoonoses,Western Australia,573,3,0.74876,0.003747014224344943
+strict zoonoses,Northeastern China,575,1,0.0,-0.739196839491629
+strict zoonoses,Western China,575,1,0.0,-0.05407262489741925
+strict zoonoses,Morocco / Tunisia,575,1,0.0,-0.20449398838302318
+strict zoonoses,Northwest Asia,574,2,0.0,0.8003060047089006
+all viruses,Southern South America,566,10,0.04031,-0.20441700722849634
+all viruses,South Africa,515,61,0.00921,0.833683367552651
+all viruses,Southeastern South America,555,21,0.38298,-0.2899123872436205
+all viruses,Central Western South America,574,2,0.50004,-0.2858898468486026
+all viruses,Northern Eurussia,540,36,0.50522,-0.35730952203298555
+all viruses,Northern South America,477,99,0.21619,0.3875053317562096
+all viruses,Southern Central America,560,16,0.58242,-0.4241774768751929
+all viruses,Sahara,571,5,0.62559,-0.23044661516244083
+all viruses,Northern America,517,59,0.81693,-0.05250839423083765
+all viruses,India,555,21,0.22001,1.1181006138463974
+all viruses,Southwestern North America,555,21,0.8198,0.08505309029100855
+all viruses,Japan,573,3,0.0,-2.696935979359341
+all viruses,Europe,539,37,4.5e-4,-1.502623330038974
+all viruses,Southern Mexico,571,5,0.0,-0.8029010758944424
+all viruses,Central African Band,542,34,0.0261,0.9721752601757183
+all viruses,Southeast Asia,542,34,0.80799,-0.12378306973571455
+all viruses,Arabian Peninsula,569,7,0.9382,0.155378661579076
+all viruses,West Central Africa,545,31,0.79089,0.09157456526842347
+all viruses,Central / Eastern North America,554,22,0.30043,1.0544580462934214
+all viruses,Melanesia,572,4,0.50032,-0.3984038329674979
+all viruses,Northwestern China / Mongolia,575,1,0.0,-3.7483924765921968
+all viruses,Madagascar,570,6,0.71805,-0.1219128013693841
+all viruses,Southeastern China,562,14,6.3e-4,-1.56205366235093
+all viruses,Southern Australia,565,11,0.41202,0.6794476296060714
+all viruses,Northern Australia,573,3,0.75046,1.3664409281445205
+all viruses,Eastern Indonesia,571,5,0.56223,0.42123798391499506
+all viruses,Western Australia,573,3,0.0,-0.60899246081185
+all viruses,Northeastern China,575,1,0.0,0.005810637776532124
+all viruses,Western China,575,1,0.0,-0.3644524696535898
+all viruses,Morocco / Tunisia,575,1,0.0,-0.8836061475155823
+all viruses,Northwest Asia,574,2,0.0,-1.1291449138460927
+strict viruses,Southern South America,574,10,0.11732,0.12452521452176675
+strict viruses,South Africa,523,61,0.2029,-0.16799338015675422
+strict viruses,Southeastern South America,562,22,0.00387,0.3030895265555124
+strict viruses,Central Western South America,582,2,0.49974,-0.2845251427791874
+strict viruses,Northern Eurussia,548,36,0.04204,0.2935047349621088
+strict viruses,Northern South America,485,99,0.99491,5.478615764673086e-4
+strict viruses,Southern Central America,567,17,0.59962,0.09881545550407438
+strict viruses,Sahara,579,5,0.31055,-0.2554528486494092
+strict viruses,Northern America,525,59,0.70008,-0.04428155817754095
+strict viruses,India,563,21,0.72207,-0.11790592313304439
+strict viruses,Southwestern North America,563,21,0.96693,-0.0049065242264477405
+strict viruses,Japan,581,3,0.0,-0.5610061611313044
+strict viruses,Europe,546,38,0.02723,-0.3831536575147251
+strict viruses,Southern Mexico,578,6,0.78228,-0.06275916901883231
+strict viruses,Central African Band,550,34,0.01532,-0.4577807118799538
+strict viruses,Southeast Asia,550,34,0.76048,-0.056519732172228804
+strict viruses,Arabian Peninsula,577,7,0.34392,-0.3158077611987421
+strict viruses,West Central Africa,551,33,0.17921,0.12913109620421429
+strict viruses,Central / Eastern North America,562,22,0.15713,0.2401547665883927
+strict viruses,Melanesia,580,4,0.87311,-0.11622524331190157
+strict viruses,Northwestern China / Mongolia,583,1,0.0,-0.3211324925341819
+strict viruses,Madagascar,578,6,0.0,0.5744213587594127
+strict viruses,Southeastern China,569,15,0.0,0.4156992749460635
+strict viruses,Southern Australia,573,11,0.29248,-0.2760448093075358
+strict viruses,Northern Australia,581,3,0.25058,1.0468756620175679
+strict viruses,Eastern Indonesia,579,5,0.0,0.40240799866452387
+strict viruses,Western Australia,581,3,0.24978,-0.5746863965388931
+strict viruses,Northeastern China,583,1,0.0,-0.5642297726665031
+strict viruses,Western China,583,1,0.0,-0.34330684861389615
+strict viruses,Morocco / Tunisia,583,1,0.0,0.20817336978399048
+strict viruses,Northwest Asia,581,3,0.0,0.5870965083561516

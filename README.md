@@ -4,7 +4,7 @@
 
 This repository contains code, data, documentation, metadata and figure source files used
 in Olival et. al. (2017) "Host and Viral Traits Predict Zoonotic Spillover from Mammals."
-_Nature_
+_Nature_ https://dx.doi.org/10.1038/nature22975
 
 ### Repo Structure
 

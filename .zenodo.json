@@ -28,7 +28,7 @@
   "description": "This compendium includes the code, data, documentation, metadata and figure source files that accompany this research.",
   "access_right": "open",
   "related_identifiers": [{
-      "identifier": "natureDOI",
+      "identifier": "https://dx.doi.org/10.1038/nature22975",
       "relation": "isSupplementTo"
     }, {
     "identifier": "http://github.com/ecohealthalliance/HP3",

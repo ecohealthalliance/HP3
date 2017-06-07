@@ -1,6 +1,6 @@
 # HP3 Analysis files
 
-[![DOI](https://zenodo.org/badge/57073465.svg)](https://zenodo.org/badge/latestdoi/57073465)
+[![DOI](https://zenodo.org/badge/596810.svg)](https://zenodo.org/badge/latestdoi/596810)
 
 This repository contains code, data, documentation, metadata and figure source files used
 in Olival et. al. (2017) "Host and Viral Traits Predict Zoonotic Spillover from Mammals."

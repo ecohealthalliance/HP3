@@ -1,6 +1,6 @@
 # HP3 Analysis files
 
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.596810))](https://doi.org/10.5281/zenodo.596810))
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.596810)](https://doi.org/10.5281/zenodo.596810)
 
 
 This repository contains code, data, documentation, metadata and figure source files used

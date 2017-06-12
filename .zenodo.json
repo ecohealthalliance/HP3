@@ -1,0 +1,37 @@
+{
+  "title": "Host and Viral Traits Predict Zoonotic Spillover from Mammals",
+  "license": ["CC-0", "MIT"],
+  "creators": [{
+    "name": "Olival, Kevin J",
+    "affiliation": "EcoHealth Alliance, New York, NY, USA",
+    "orcid": "0000-0003-3211-1875"
+    },{
+    "name": "Hosseini, Parviez R.",
+    "affiliation": "EcoHealth Alliance, New York, NY, USA"
+  }, {
+    "name": "Zambrana-Torrelio, Carlos",
+    "affiliation": "EcoHealth Alliance, New York, NY, USA",
+    "orcid": "0000-0002-5614-7496"
+  },{
+    "name": "Ross, Noam",
+    "affiliation": "EcoHealth Alliance, New York, NY, USA",
+    "orcid": "0000-0002-2136-0000"
+  },{
+    "name": "Bogich, Tiffany L.",
+    "affiliation": "EcoHealth Alliance, New York, NY, USA",
+    "orcid": "0000-0002-8143-5289"
+  },{
+    "name": "Daszak, Peter",
+    "affiliation": "EcoHealth Alliance, New York, NY, USA",
+    "orcid": "0000-0002-2046-5695"
+  }],
+  "description": "This compendium includes the code, data, documentation, metadata and figure source files that accompany this research.",
+  "access_right": "open",
+  "related_identifiers": [{
+      "identifier": "https://dx.doi.org/10.1038/nature22975",
+      "relation": "isSupplementTo"
+    }, {
+    "identifier": "http://github.com/ecohealthalliance/HP3",
+    "relation": "isVariantFormOf"
+  }]
+}

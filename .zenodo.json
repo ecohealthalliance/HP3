@@ -33,7 +33,7 @@
       "scheme": "doi"
     }, {
     "identifier": "http://github.com/ecohealthalliance/HP3",
-    "relation": "isVariantFormOf",
+    "relation": "isIdenticalTo",
     "scheme": "url"
   }]
 }

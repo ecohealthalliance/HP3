@@ -1,6 +1,6 @@
 # HP3 Analysis files
 
-[![DOI](https://zenodo.org/badge/57073465.svg)](https://zenodo.org/badge/latestdoi/57073465)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.596810))](https://doi.org/10.5281/zenodo.596810))
 
 This repository contains code, data, documentation, metadata and figure source files used
 in Olival et. al. (2017) "Host and Viral Traits Predict Zoonotic Spillover from Mammals."
@@ -27,12 +27,12 @@ _Nature_ https://dx.doi.org/10.1038/nature22975
         variables used in model-fitting
     -   `IUCN_taxonomy_23JUN2016.csv`, data from IUCN used to harmonize our data with IUCN spatial data (see Supplementary Methods)
     -   `Genbank_accession_cytb.csv`,two Genbank accession numbers used in constructing the Cyt-B constrained tree
-    -   `region_names.rds`, a list of zoogeographical region names used to describe cross-validation regions. 
+    -   `region_names.rds`, a list of zoogeographical region names used to describe cross-validation regions.
 -  `figures/` contains figures and tables in the paper and extended data and
     the scripts to generate them, including a `maps/` subdirectory with individual
     maps that are stitched together for the main and extended figures.
 -   `scripts/` contains all the scripts used to fit the models and generate outputs
--   `R/` contains files with functions used in other scripts.    
+-   `R/` contains files with functions used in other scripts.
 -   `misc/` contains small scripts used for other calculations
 -   `intermediates/` is a holding directory for
      intermediate data files and fitted model objects in

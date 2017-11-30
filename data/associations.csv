@@ -1044,7 +1044,7 @@ Camelpox_virus,Homo_sapiens,human,Antibodies,0,Bera et al. 2011
 Canine_distemper_virus,Homo_sapiens,human,PCR,2,Mee et al. 1998
 Caraparu_virus,Homo_sapiens,human,Isolation,2,de Brito Magalhaes et al. 2007
 Catu_virus,Homo_sapiens,human,Isolation,2,Zuckerman et al. 2009
-Cercopithecine_herpesvirus_1,Homo_sapiens,human,Isolation,2,Huff et al. 2003
+Cercopithecine_herpesvirus_1,Homo_sapiens,human,Isolation,2,Huff and Barry 2003
 Chagres_virus,Homo_sapiens,human,Isolation,2,Peralta et al. 1965
 Chandipura_virus,Homo_sapiens,human,Isolation,2,Bhatt and Rodriguez 1967
 Candiru_virus,Homo_sapiens,human,Isolation,2,da Rosa 1983
@@ -1404,13 +1404,13 @@ Vaccinia_virus,Lynx_lynx,wild,Antibodies,0,Tryland et al. 2008
 Feline_leukemia_virus,Lynx_pardinus,wild,PCR,2,Geret et al. 2011
 Feline_immunodeficiency_virus,Lynx_rufus,wild,Antibodies,0,Brown et al. 2003
 Rabies_virus,Lynx_rufus,wild,Antibodies,0,Aranda et al. 1999
-Cercopithecine_herpesvirus_1,Macaca_arctoides,wild,Isolation,2,Huff et al. 2003
+Cercopithecine_herpesvirus_1,Macaca_arctoides,wild,Isolation,2,Huff and Barry 2003
 Simian_foamy_virus,Macaca_arctoides,wild,PCR,2,Hussain et al. 2003
-Cercopithecine_herpesvirus_1,Macaca_cyclopis,wild,Isolation,2,Huff et al. 2003
+Cercopithecine_herpesvirus_1,Macaca_cyclopis,wild,Isolation,2,Huff and Barry 2003
 Simian_foamy_virus,Macaca_cyclopis,wild,PCR,2,Schweizer et al. 1995
 Bakau_virus,Macaca_fascicularis,wild,Isolation,2,CDC ArboCat
 Canine_distemper_virus,Macaca_fascicularis,captive,Isolation,2,Sakai et al. 2013
-Cercopithecine_herpesvirus_1,Macaca_fascicularis,wild,Isolation,2,Huff et al. 2003
+Cercopithecine_herpesvirus_1,Macaca_fascicularis,wild,Isolation,2,Huff and Barry 2003
 Chikungunya_virus,Macaca_fascicularis,wild,Antibodies,0,Inoue et al. 2003
 Dengue_virus,Macaca_fascicularis,wild,Antibodies,0,Inoue et al. 2003
 Eastern_equine_encephalitis_virus,Macaca_fascicularis,wild,Antibodies,0,Fowler & Miller 2003
@@ -1426,7 +1426,7 @@ Simian_foamy_virus,Macaca_fascicularis,wild,PCR,2,Webb et al. 1965
 Simian_parvovirus,Macaca_fascicularis,captive,Isolation,2,O'Sullivan et al. 1994
 Yaba_monkey_tumor_virus,Macaca_fascicularis,wild,Antibodies,0,Downie 1974
 Borna_disease_virus,Macaca_fuscata,wild,PCR,2,Hagiwara et al. 2008
-Cercopithecine_herpesvirus_1,Macaca_fuscata,wild,Isolation,2,Huff et al. 2003
+Cercopithecine_herpesvirus_1,Macaca_fuscata,wild,Isolation,2,Huff and Barry 2003
 Hepatitis_E_virus,Macaca_fuscata,wild,Antibodies,0,Taylor et al. 2001
 Measles_virus,Macaca_fuscata,wild,Antigen,0,Choi et al. 1999
 Simian_foamy_virus,Macaca_fuscata,wild,PCR,2,Hussain et al. 2003
@@ -1434,7 +1434,7 @@ Torque_Teno_virus,Macaca_fuscata,wild,PCR,2,Okamoto et al. 2000
 Primate_T-lymphotropic_virus_1,Macaca_maura,wild,Isolation,2,Saksena et al. 1994
 Adeno-associated_virus-1,Macaca_mulatta,captive,Antibodies,0,Xiao et al. 1999
 Adeno-associated_virus-2,Macaca_mulatta,captive,Antibodies,0,Xiao et al. 1999
-Cercopithecine_herpesvirus_1,Macaca_mulatta,wild,Isolation,2,Huff et al. 2003
+Cercopithecine_herpesvirus_1,Macaca_mulatta,wild,Isolation,2,Huff and Barry 2003
 Cercopithecine_herpesvirus_15,Macaca_mulatta,captive,isolation,2,Habis et al. 2000
 Cercopithecine_herpesvirus_17,Macaca_mulatta,captive,isolation,2,Desrosiers et al. 1997
 Cercopithecine_herpesvirus_8,Macaca_mulatta,captive,isolation,2,Asher et al. 1974
@@ -1454,12 +1454,12 @@ Simian_virus_40,Macaca_mulatta,wild,PCR,2,Simon et al. 1999
 Simian_virus_5,Macaca_mulatta,wild,Antibodies,0,Verschoor et al. 2008
 Tanapox_virus,Macaca_mulatta,captive,Antibodies,0,Downie 1974
 Yaba_monkey_tumor_virus,Macaca_mulatta,wild,Isolation,2,Zimmerman et al. 2005
-Cercopithecine_herpesvirus_1,Macaca_nemestrina,wild,Isolation,2,Huff et al. 2003
+Cercopithecine_herpesvirus_1,Macaca_nemestrina,wild,Isolation,2,Huff and Barry 2003
 Cercopithecine_herpesvirus_9,Macaca_nemestrina,captive,Isolation,2,Hukkanen et al. 2009
 Pig-tailed_macaque_parvovirus,Macaca_nemestrina,captive,PCR,2,Green et al. 2000
 Primate_T-lymphotropic_virus_1,Macaca_nigra,wild,Antibodies,0,Ishikawa et al. 1987
 Primate_T-lymphotropic_virus_1,Macaca_ochreata,wild,Antibodies,0,Ishikawa et al. 1987
-Cercopithecine_herpesvirus_1,Macaca_radiata,wild,Isolation,2,Huff et al. 2003
+Cercopithecine_herpesvirus_1,Macaca_radiata,wild,Isolation,2,Huff and Barry 2003
 Kyasanur_Forest_disease_virus,Macaca_radiata,wild,Isolation,2,Sreenivasan et al. 1986
 Measles_virus,Macaca_radiata,wild,Antibodies,0,Bhatt et al. 1966
 Simian_virus_5,Macaca_radiata,wild,Antibodies,0,Bhatt et al. 1966

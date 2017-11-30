@@ -659,7 +659,7 @@ Canine_distemper_virus,Crocuta_crocuta,domestic,Antibodies,0,Prager et al. 2013
 Feline_coronavirus,Crocuta_crocuta,wild,PCR,2,East et al. 2004
 Feline_immunodeficiency_virus,Crocuta_crocuta,wild,Antibodies,0,Harrison et al.2002
 Rabies_virus,Crocuta_crocuta,wild,PCR,2,Lembo et al. 2008
-Venezuelan_equine_encephalitis_virus,Cuniculus_paca,wild,Antibodies,0,Grayson & Galido 1968
+Venezuelan_equine_encephalitis_virus,Cuniculus_paca,wild,Antibodies,0,Grayson & Galindo 1968
 Rabies_virus,Cynictis_penicillata,wild,PCR,2,Cissi et al. 1985
 Rabies_virus,Cynomops_abrasus,wild,Isolation,2,Kobayashi et al. 2010 Note that this species is referred to as Molossus abrasus in this text.
 Rabies_virus,Cynomops_planirostris,wild,Antibodies,0,Queiroz et al. 2009
@@ -1275,7 +1275,7 @@ Yaba_monkey_tumor_virus,Homo_sapiens,human,Antibodies,0,Grace & Mirand 1965
 Yellow_fever_virus,Homo_sapiens,human,Isolation,2,Pisano et al. 1997
 Zaire_ebolavirus,Homo_sapiens,human,Isolation,2,Georges et al. 1999
 Zika_virus,Homo_sapiens,human,PCR,2,Duffy et al. 2010
-Venezuelan_equine_encephalitis_virus,Hoplomys_gymnurus,wild,Antibodies,0,Grayson & Galido 1968
+Venezuelan_equine_encephalitis_virus,Hoplomys_gymnurus,wild,Antibodies,0,Grayson & Galindo 1968
 Rabies_virus,Hydrochoerus_hydrochaeris,wild,Isolation,2,Delpietro et al. 2009
 Encephalomyocarditis_virus,Hydromys_chrysogaster,wild,Isolation,2,Tesh and Wallace 1978
 Sindbis_virus,Hydromys_chrysogaster,wild,Antibodies,0,Price 1978
@@ -1539,7 +1539,7 @@ Bovine_respiratory_syncytial_virus,Mazama_gouazoubira,wild,Antibodies,0,Deem et 
 Influenza_A_virus,Megaderma_lyra,wild,Antibodies,0,Kelkar et al. 1981
 Amapari_virus,Megadontomys_nelsoni,wild,Antibodies,0,Milazzo et al. 2010
 Whitewater_Arroyo_virus,Megadontomys_nelsoni,wild,Antibodies,0,Milazzo et al. 2010
-Venezuelan_equine_encephalitis_virus,Melanomys_caliginosus,wild,Antibodies,0,Acha & Szyfres 2003; Grayson & Galido 1968
+Venezuelan_equine_encephalitis_virus,Melanomys_caliginosus,wild,Antibodies,0,Acha & Szyfres 2003; Grayson & Galindo 1968
 Mustelid_herpesvirus_1,Meles_meles,wild,PCR,2,King et al. 2004
 Rabies_virus,Mellivora_capensis,wild,Isolation,2,Bingham et al. 2001
 Severe_acute_respiratory_syndrome-related_coronavirus,Melogale_moschata,wild,Antibodies,0,Tu et al. 2004
@@ -2229,7 +2229,7 @@ Caraparu_virus,Proechimys_semispinosus,wild,Isolation,2,Shope et al. 1988
 Madrid_virus,Proechimys_semispinosus,wild,Isolation,2,Shope et al. 1988
 Marituba_virus,Proechimys_semispinosus,wild,Isolation,2,Galindo et al. 1966
 St._Louis_encephalitis_virus,Proechimys_semispinosus,wild,Antibodies,0,Sabattini et al. 1965
-Venezuelan_equine_encephalitis_virus,Proechimys_semispinosus,wild,Antibodies,0,Grayson & Galido 1968
+Venezuelan_equine_encephalitis_virus,Proechimys_semispinosus,wild,Antibodies,0,Grayson & Galindo 1968
 Vesicular_stomatitis_Indiana_virus,Proechimys_semispinosus,wild,plaque reduction neutralization,1,Tesh et al. 1969
 Rabies_virus,Proteles_cristata,wild,PCR,2,Lembo et al. 2008
 Canine_distemper_virus,Pseudalopex_gymnocercus,wild,Antibodies,0,Fiorello et al. 2007
@@ -2479,14 +2479,14 @@ St._Louis_encephalitis_virus,Sciurus_carolinensis,wild,Antibodies,0,Day et al. 1
 Theilovirus,Sciurus_carolinensis,wild,Antibodies,0,Greenwood & Sanchez 2002
 Vesicular_stomatitis_Indiana_virus,Sciurus_carolinensis,wild,SNT,1,Jenney et al. 1975
 West_Nile_virus,Sciurus_carolinensis,wild,Antibodies,0,Root et al. 2005
-Venezuelan_equine_encephalitis_virus,Sciurus_granatensis,wild,Antibodies,0,Grayson & Galido 1968
+Venezuelan_equine_encephalitis_virus,Sciurus_granatensis,wild,Antibodies,0,Grayson & Galindo 1968
 Colorado_tick_fever_virus,Sciurus_griseus,wild,Isolation,2,Acha & Szyfres 2003; Johnson et al. 1997
 Western_equine_encephalitis_virus,Sciurus_griseus,wild,hemmaglutination,0,Hardy 1987
 California_encephalitis_virus,Sciurus_niger,wild,Antibodies,0,Moulton & Thompson 1971
 Eastern_equine_encephalitis_virus,Sciurus_niger,wild,Antibodies,0,Karstad et al. 1960
 Rabies_virus,Sciurus_niger,wild,Antibodies,0,Childs et al. 1997
 West_Nile_virus,Sciurus_niger,wild,Antibodies,0,Root et al. 2005
-Venezuelan_equine_encephalitis_virus,Sciurus_variegatoides,wild,Antibodies,0,Grayson & Galido 1968
+Venezuelan_equine_encephalitis_virus,Sciurus_variegatoides,wild,Antibodies,0,Grayson & Galindo 1968
 Encephalomyocarditis_virus,Sciurus_vulgaris,wild,Isolation,2,Knowles et al. 1998
 Ljungan_virus,Sciurus_vulgaris,wild,PCR,2,Romeo et al. 2014
 Lymphocytic_choriomeningitis_virus,Sciurus_vulgaris,wild,PCR,2,Blasdell et al. 2008

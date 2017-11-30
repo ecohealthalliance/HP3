@@ -14,7 +14,7 @@ Bluetongue_virus,Aepyceros_melampus,wild,Antibodies,0,Karesh et al. 1997
 Bovine_viral_diarrhea_virus_1,Aepyceros_melampus,wild,SNT,1,Hamblin and Hedger 1979
 Crimean-Congo_hemorrhagic_fever_virus,Aepyceros_melampus,wild,Antibodies,0,Shepherd et al. 1987
 Foot-and-mouth_disease_virus,Aepyceros_melampus,wild,Antibodies,0,Hamblin et al. 1990
-Lumpy_skin_disease_virus,Aepyceros_melampus,wild,Antibodies,0,Hedger et al. 1983
+Lumpy_skin_disease_virus,Aepyceros_melampus,wild,Antibodies,0,Hedger and Hamblin 1983
 Rift_Valley_fever_virus,Aepyceros_melampus,wild,Antibodies,0,Anderson & Rowe 1998; Capobianco Dondona 2016
 Rinderpest_virus,Aepyceros_melampus,wild,Antibodies,0,Rutebarika et al. 2005
 Witwatersrand_virus,Aethomys_kaiseri,wild,Antibodies,0,Henderson et al. 1972
@@ -66,7 +66,7 @@ Tamana_bat_virus,Anoura_geoffroyi,wild,Antibodies,0,Price 1978
 Bovine_viral_diarrhea_virus_1,Antidorcas_marsupialis,wild,SNT,1,Hamblin and Hedger 1979
 Crimean-Congo_hemorrhagic_fever_virus,Antidorcas_marsupialis,wild,Antibodies,0,Shepherd et al. 1987
 Foot-and-mouth_disease_virus,Antidorcas_marsupialis,wild,Antibodies,0,Falconer & Child 1975 in Weaver & Karesh 2013
-Lumpy_skin_disease_virus,Antidorcas_marsupialis,wild,Antibodies,0,Hedger et al. 1983
+Lumpy_skin_disease_virus,Antidorcas_marsupialis,wild,Antibodies,0,Hedger and Hamblin 1983
 Rift_Valley_fever_virus,Antidorcas_marsupialis,wild,PCR,2,Capobianco Dondona 2016
 Bluetongue_virus,Antilocapra_americana,wild,Antibodies,0,Dubay et al. 2006
 Bovine_parainfluenza_virus_3,Antilocapra_americana,wild,Antibodies,0,Dunbar et al. 1999
@@ -943,7 +943,7 @@ Bluetongue_virus,Giraffa_camelopardalis,wild,ELISA,0,Kimber et al. 2002
 Crimean-Congo_hemorrhagic_fever_virus,Giraffa_camelopardalis,wild,Antibodies,0,Shepherd et al. 1987
 Equid_herpesvirus_9,Giraffa_camelopardalis,wild,Isolation,2,Kasem et al. 2008
 Foot-and-mouth_disease_virus,Giraffa_camelopardalis,wild,Antibodies,0,Hamblin et al. 1990
-Lumpy_skin_disease_virus,Giraffa_camelopardalis,wild,Antibodies,0,Hedger et al. 1983
+Lumpy_skin_disease_virus,Giraffa_camelopardalis,wild,Antibodies,0,Hedger and Hamblin 1983
 Rinderpest_virus,Giraffa_camelopardalis,wild,PCR,2,Roeder 2011
 Rabies_virus,Glaucomys_volans,wild,Antibodies,0,Childs et al. 1997
 Rift_Valley_fever_virus,Glauconycteris_argentata,wild,Isolation,2,Calisher et al. 2006
@@ -1312,7 +1312,7 @@ Bovine_herpesvirus_2,Kobus_ellipsiprymnus,wild,Antibodies,0,Hamblin & Hedger 198
 Bovine_viral_diarrhea_virus_1,Kobus_ellipsiprymnus,wild,SNT,1,Hamblin & Hedger 1979
 Crimean-Congo_hemorrhagic_fever_virus,Kobus_ellipsiprymnus,wild,Antibodies,0,Shepherd et al. 1987
 Foot-and-mouth_disease_virus,Kobus_ellipsiprymnus,wild,Antibodies,0,Hamblin et al. 1990
-Lumpy_skin_disease_virus,Kobus_ellipsiprymnus,wild,Antibodies,0,Hedger et al. 1983
+Lumpy_skin_disease_virus,Kobus_ellipsiprymnus,wild,Antibodies,0,Hedger and Hamblin 1983
 Rift_Valley_fever_virus,Kobus_ellipsiprymnus,wild,Antibodies,0,Anderson & Rowe 1998
 Woolly_monkey_sarcoma_virus,Lagothrix_lagotricha,captive,Isolation,2,Scolnick et al. 1976
 Foot-and-mouth_disease_virus,Lama_glama,domestic,Antibodies,0,Weaver et al. 2013
@@ -2375,7 +2375,7 @@ Bovine_herpesvirus_2,Redunca_arundinum,wild,Antibodies,0,Hamblin & Hedger 1982
 Bovine_viral_diarrhea_virus_1,Redunca_arundinum,wild,SNT,1,Hamblin & Hedger 1979
 Crimean-Congo_hemorrhagic_fever_virus,Redunca_arundinum,wild,Antibodies,0,Shepherd et al. 1987
 Foot-and-mouth_disease_virus,Redunca_arundinum,wild,Antibodies,0,Weaver et al. 2013
-Lumpy_skin_disease_virus,Redunca_arundinum,wild,Antibodies,0,Hedger et al. 1983
+Lumpy_skin_disease_virus,Redunca_arundinum,wild,Antibodies,0,Hedger and Hamblin 1983
 Bluetongue_virus,Redunca_fulvorufula,wild,Antibodies,0,Williams et al. 2001
 Crimean-Congo_hemorrhagic_fever_virus,Redunca_fulvorufula,wild,Antibodies,0,Shepherd et al. 1987
 Bayou_virus,Reithrodontomys_fulvescens,wild,Antibodies,0,Holsomback et al. 2009
@@ -2731,7 +2731,7 @@ Bluetongue_virus,Tragelaphus_strepsiceros,wild,Antibodies,0,Williams et al. 2001
 Bovine_viral_diarrhea_virus_1,Tragelaphus_strepsiceros,wild,SNT,1,Hamblin & Hedger 1979
 Crimean-Congo_hemorrhagic_fever_virus,Tragelaphus_strepsiceros,wild,Antibodies,0,Shepherd et al. 1987
 Foot-and-mouth_disease_virus,Tragelaphus_strepsiceros,wild,Isolation,2,Weaver et al. 2013
-Lumpy_skin_disease_virus,Tragelaphus_strepsiceros,wild,Antibodies,0,Hedger et al. 1983
+Lumpy_skin_disease_virus,Tragelaphus_strepsiceros,wild,Antibodies,0,Hedger and Hamblin 1983
 Rabies_virus,Tragelaphus_strepsiceros,wild,PCR,2,Mansfield et al. 2006
 Rinderpest_virus,Tragelaphus_strepsiceros,wild,PCR,2,Roeder 2011
 Bovine_viral_diarrhea_virus_1,Tragulus_javanicus,wild,PCR,2,Grondahl et al. 2003

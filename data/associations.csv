@@ -520,10 +520,10 @@ Vesicular_stomatitis_Indiana_virus,Cebus_capucinus,wild,plaque reduction neutral
 Zaire_ebolavirus,Cephalophus_callipygus,wild,PCR,2,Lahm et al. 2007
 Bluetongue_virus,Cephalophus_dorsalis,wild,agar gel immunodiffusion,0,Karesh et al. 1995
 Bovine_herpesvirus_1,Cephalophus_dorsalis,wild,VNT,1,Karesh et al. 1995
-O'nyong-nyong_virus,Cephalophus_dorsalis,wild,plaque reduction neutralization,1,Kading et al. 2012
+O'nyong-nyong_virus,Cephalophus_dorsalis,wild,plaque reduction neutralization,1,Kading et al. 2013
 Bluetongue_virus,Cephalophus_leucogaster,wild,agar gel immunodiffusion,0,Karesh et al. 1995
 Bovine_herpesvirus_1,Cephalophus_leucogaster,wild,VNT,1,Karesh et al. 1995
-O'nyong-nyong_virus,Cephalophus_leucogaster,wild,plaque reduction neutralization,1,Kading et al. 2012
+O'nyong-nyong_virus,Cephalophus_leucogaster,wild,plaque reduction neutralization,1,Kading et al. 2013
 Bluetongue_virus,Cephalophus_nigrifrons,wild,agar gel immunodiffusion,0,Karesh et al. 1995
 Bovine_herpesvirus_1,Cephalophus_nigrifrons,wild,VNT,1,Karesh et al. 1995
 Bluetongue_virus,Cephalophus_weynsi,wild,agar gel immunodiffusion,0,Karesh et al. 1995
@@ -1502,7 +1502,7 @@ Simian_immunodeficiency_virus,Mandrillus_leucophaeus,wild,Isolation,2,Hu et al. 
 Human_enterovirus_B,Mandrillus_sphinx,wild,PCR,2,Van Nguyen et al. 2014
 Simian_foamy_virus,Mandrillus_sphinx,wild,PCR,2,Hussain et al. 2003
 Simian_immunodeficiency_virus,Mandrillus_sphinx,wild,Isolation,2,Hu et al. 2003
-O'nyong-nyong_virus,Mandrillus_sphinx,wild,plaque reduction neutralization,1,Kading et al. 2012
+O'nyong-nyong_virus,Mandrillus_sphinx,wild,plaque reduction neutralization,1,Kading et al. 2013
 Oriboca_virus,Marmosa_murina,wild,Isolation,2,Shope et al. 1988
 Colorado_tick_fever_virus,Marmota_flaviventris,wild,Antibodies,0,Eklund et al. 1958
 Powassan_virus,Marmota_flaviventris,wild,Antibodies,0,McLean et al. 1970
@@ -2126,7 +2126,7 @@ Patois_virus,Philander_opossum,wild,Antibodies,0,Scherer et al. 1972
 Venezuelan_equine_encephalitis_virus,Philander_opossum,wild,Antibodies,0,Seymour et al. 1978
 Vesicular_stomatitis_Indiana_virus,Philander_opossum,wild,plaque reduction neutralization,1,Tesh et al. 1969
 Bluetongue_virus,Philantomba_monticola,wild,agar gel immunodiffusion,0,Karesh et al. 1995
-O'nyong-nyong_virus,Philantomba_monticola,wild,plaque reduction neutralization,1,Kading et al. 2012
+O'nyong-nyong_virus,Philantomba_monticola,wild,plaque reduction neutralization,1,Kading et al. 2013
 Australian_bat_lyssavirus,Philetor_brachypterus,wild,Antibodies,0,Arguin et al. 2002
 Influenza_A_virus,Phoca_vitulina,wild,Antibodies,0,Fujii et al. 2007
 Influenza_B_virus,Phoca_vitulina,wild,Isolation,2,Osterhaus et al. 2000
@@ -2650,7 +2650,7 @@ Bovine_viral_diarrhea_virus_1,Syncerus_caffer,wild,SNT,1,Hamblin & Hedger 1979
 Crimean-Congo_hemorrhagic_fever_virus,Syncerus_caffer,wild,Antibodies,0,Shepherd et al. 1987
 Foot-and-mouth_disease_virus,Syncerus_caffer,wild,Antibodies,0,Hamblin et al. 1990
 Lumpy_skin_disease_virus,Syncerus_caffer,wild,Isolation,2,Davies 1982
-O'nyong-nyong_virus,Syncerus_caffer,wild,plaque reduction neutralization,1,Kading et al. 2012
+O'nyong-nyong_virus,Syncerus_caffer,wild,plaque reduction neutralization,1,Kading et al. 2013
 Rift_Valley_fever_virus,Syncerus_caffer,wild,Antibodies,0,Anderson & Rowe 1998
 Eastern_equine_encephalitis_virus,Tadarida_brasiliensis,wild,Antibodies,0,Sulkin & Allen 1974; Constantine 1970
 Rabies_virus,Tadarida_brasiliensis,wild,PCR,2,Blanton et al. 2008

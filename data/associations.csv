@@ -1513,7 +1513,7 @@ Powassan_virus,Marmota_monax,wild,Isolation,2, McLean et al. 1967
 Rabies_virus,Marmota_monax,wild,Isolation,2,Wang et al. 2009
 Woodchuck_hepatitis_virus,Marmota_monax,wild,"EM, DNA (i.e. more than just PCR)",2,Summers et al. 1978
 European_bat_lyssavirus_1,Martes_foina,wild,Antibodies,0,Muller et al. 2004
-Canine_adenovirus,Martes_pennanti,wild,Antibodies,0,Philippa 2004
+Canine_adenovirus,Martes_pennanti,wild,Antibodies,0,Philippa et al. 2004
 Mustelid_herpesvirus_1,Martes_pennanti,captive,PCR,2,Gagnon et al. 2011
 Rabies_virus,Martes_pennanti,wild,Antibodies,0,Philippa et al. 2004
 Crimean-Congo_hemorrhagic_fever_virus,Mastomys_coucha,wild,Antibodies,0,Shepherd et al. 1987
@@ -1839,7 +1839,7 @@ Bakau_virus,Nycticebus_coucang,wild,Antibodies,0,Beran & Steele 1994
 Rabies_virus,Nycticeius_humeralis,wild,PCR,2,Blanton et al. 2008
 Rabies_virus,Nyctinomops_laticaudatus,wild,Isolation,2,Cunha et al. 2010
 Rabies_virus,Nyctinomops_macrotis,wild,Isolation,2,Passos et al. 1998
-Canine_adenovirus,Odobenus_rosmarus,wild,Antibodies,0,Philippa 2004
+Canine_adenovirus,Odobenus_rosmarus,wild,Antibodies,0,Philippa et al. 2004
 Influenza_A_virus,Odobenus_rosmarus,wild,Antibodies,0,Calle et al. 2002
 Walrus_calicivirus,Odobenus_rosmarus,wild,Isolation,2,Ganova-Raeva et al. 2004
 Bluetongue_virus,Odocoileus_hemionus,wild,Antibodies,0,Dubay et al. 2006
@@ -2756,10 +2756,10 @@ Tacaribe_virus,Uroderma_bilobatum,wild,Antibodies,0,Price 1978
 Tamana_bat_virus,Uroderma_bilobatum,wild,Antibodies,0,Price 1978
 Venezuelan_equine_encephalitis_virus,Uroderma_bilobatum,wild,Isolation,2,Calisher et al. 2006
 Bluetongue_virus,Ursus_americanus,wild,Antibodies,0,Dunbar et al. 1998
-Canine_adenovirus,Ursus_americanus,wild,Antibodies,0,Philippa 2004
+Canine_adenovirus,Ursus_americanus,wild,Antibodies,0,Philippa et al. 2004
 Equid_herpesvirus_1,Ursus_americanus,captive,PCR,2,Wohlsein et al. 2011
 Sindbis_virus,Ursus_arctos,wild,Antibodies,0,Walters et al. 1999
-Canine_adenovirus,Ursus_maritimus,wild,Antibodies,0,Philippa 2004
+Canine_adenovirus,Ursus_maritimus,wild,Antibodies,0,Philippa et al. 2004
 Canine_distemper_virus,Ursus_maritimus,wild,Antibodies,0,Garner et al. 2000
 Equid_herpesvirus_9,Ursus_maritimus,wild,PCR,2,Schrenzel et al. 2008
 Vesicular_stomatitis_Indiana_virus,Vampyrodes_caraccioli,wild,plaque reduction neutralization,1,Ubico & McLean 1995

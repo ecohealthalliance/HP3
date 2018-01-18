@@ -1402,7 +1402,7 @@ Rabies_virus,Lycaon_pictus,wild,PCR,2,Lembo et al. 2008
 Borna_disease_virus,Lynx_lynx,wild,PCR,2,Degiorgis et al. 2000
 Vaccinia_virus,Lynx_lynx,wild,Antibodies,0,Tryland et al. 2008
 Feline_leukemia_virus,Lynx_pardinus,wild,PCR,2,Geret et al. 2011
-Feline_immunodeficiency_virus,Lynx_rufus,wild,Antibodies,0,Brown et al. 2003
+Feline_immunodeficiency_virus,Lynx_rufus,wild,Antibodies,0,Brown et al. 1993
 Rabies_virus,Lynx_rufus,wild,Antibodies,0,Aranda et al. 1999
 Cercopithecine_herpesvirus_1,Macaca_arctoides,wild,Isolation,2,Huff and Barry 2003
 Simian_foamy_virus,Macaca_arctoides,wild,PCR,2,Hussain et al. 2003
@@ -2028,7 +2028,7 @@ Feline_calicivirus,Panthera_leo,wild,Antibodies,0,Hofmann-Lehmann et al. 1996
 Feline_coronavirus,Panthera_leo,wild,Antibodies,0,Hofmann-Lehmann et al. 1996
 Human_norovirus-Alphatron,Panthera_leo,captive,PCR,2,Martella et al. 2007
 Human_picobirnavirus,Panthera_leo,captive,PCR,2,Gillman et al. 2012
-Feline_immunodeficiency_virus,Panthera_pardus,wild,Antibodies,0,Brown et al. 2003
+Feline_immunodeficiency_virus,Panthera_pardus,wild,Antibodies,0,Brown et al. 1993
 Rabies_virus,Panthera_pardus,wild,PCR,2,Lembo et al. 2008
 Baboon_polyomavirus_2,Papio_anubis,wild,Antibodies,0,Gardner 1989
 Cercopithecine_herpesvirus_16,Papio_anubis,wild,Antibodies,0,Eberle et al. 1997

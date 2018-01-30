@@ -645,6 +645,7 @@ Kuzmin I, and Rupprecht CE (1999). Bat rabies handbook of animal models of infec
 Kuzmin IV, Niezgoda M, Carroll DS, Keeler N, Hossain MJ, Breiman RF, et al. (2006). Lyssavirus surveillance in bats, Bangladesh. Emerging infectious diseases 12:486-488.
 Kwiatek O, Ali YH, Saeed IK, Khalafalla AI, Mohamed OI, Ali Abu Obeida MBA, et al. (2011). Asian Lineage of Peste des Petits Ruminants Virus, Africa. Emerging infectious diseases 17:1223-1231.
 L'vov D, Sidorova G, Gromashevskiĭ V, Skvortsova T, and Aristova V (1983). [Isolation of Tamdy virus (Bunyaviridae) pathogenic for man from natural sources in Central Asia, Kazakhstan and Transcaucasia]. Voprosy virusologii 29:487-490.
+La Linn ML, Gardner J, Warrilow D, Darnell GA, McMahon CR, Field I, et al. (2001). Arbovirus of marine mammals: a new alphavirus isolated from the elephant seal louse, Lepidophthirus macrorhini. Journal of virology 75:4103-4109.
 Laakkonen J, Kallio-Kokko H, Oktem MA, Blasdell K, Plyusnina A, Niernimaa J, et al. (2006). Serological survey for viral pathogens in Turkish rodents. Journal of wildlife diseases 42:672-676.
 Lahm SA, Kombila M, Swanepoel R, and Barnes RFW (2007). Morbidity and mortality of wild animals in relation to outbreaks of Ebola haemorrhagic fever in Gabon, 1994-2003. Transactions of the Royal Society of Tropical Medicine and Hygiene 101:64-78.
 Lambert AJ, Kosoy O, Velez JO, Russell BJ, and Lanciotti RS (2007). Detection of Colorado Tick Fever viral RNA in acute human serum samples by a quantitative real-time RT-PCR assay. Journal of virological methods 140:43-48.
@@ -681,7 +682,6 @@ Li W, Shi Z, Yu M, Ren W, Smith C, Epstein JH, et al. (2005). Bats are natural r
 Li Y, Wang J, Hickey AC, Zhang Y, Li Y, Wu Y, et al. (2008). Antibodies to Nipah or Nipah-like Viruses in Bats, China. Emerging infectious diseases 14:1974-1976.
 Lillibridge KM, Parsons R, Randle Y, Travassos da Rosa APa, Guzman H, Siirin M, et al. (2004). The 2002 introduction of West Nile virus into Harris County, Texas, an area historically endemic for St. Louis encephalitis. The American journal of tropical medicine and hygiene 70:676-681.
 Lindholm I, Murphy J, Oneil BW, Campo MS, and Jarrett WFH (1984). Papillomas Of The Teats And Udder Of Cattle And Their Causal Viruses. Veterinary Record 115:574-577.
-Linn ML, Gardner J, Warrilow D, Darnell GA, McMahon CR, Field I, et al. (2001). Arbovirus of marine mammals: a new alphavirus isolated from the elephant seal louse, Lepidophthirus macrorhini. Journal of virology 75:4103-4109.
 Liu L, Hägglund S, Hakhverdyan M, Alenius S, Larsen LE, and Belák S (2006). Molecular epidemiology of bovine coronavirus on the basis of comparative analyses of the S gene. Journal of clinical microbiology 44:957-960.
 Ljubin-Sternak S, Juretic E, Santak M, Plesa M, Forcic D, Vilibic-Cavlek T, et al. (2011). Clinical and Molecular Characterization of a Parechovirus Type 1 Outbreak in Neonates in Croatia. Journal of medical virology 83:137-141.
 London WT (1977). Epizootiology, transmission and approach to prevention of fatal simian haemorrhagic fever in rhesus monkeys. Nature 268:344-345.

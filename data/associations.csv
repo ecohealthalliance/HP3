@@ -358,7 +358,7 @@ Mason-Pfizer_monkey_virus,Calomys_callosus,wild,Isolation,2,Diehl et al. 2008
 Junin_virus,Calomys_laucha,wild,Isolation,2,Gonzalez et al. 2007
 Laguna_Negra_virus,Calomys_laucha,wild,Isolation,2,Acha & Szyfres 2003; Johnson et al. 1997
 Junin_virus,Calomys_musculinus,wild,Isolation,2,Gonzalez et al. 2007
-St._Louis_encephalitis_virus,Calomys_musculinus,wild,Isolation,2,Kramer et al. 2001
+St._Louis_encephalitis_virus,Calomys_musculinus,wild,Isolation,2,Kramer and Chandler 2001
 Andes_virus,Calomys_tener,wild,PCR,2,de Figueirodo et al. 2010
 Vesicular_stomatitis_Indiana_virus,Caluromys_derbianus,wild,plaque reduction neutralization,1,Tesh et al. 1969
 Caraparu_virus,Caluromys_philander,wild,Isolation,2,Shope et al. 1988
@@ -727,7 +727,7 @@ Marituba_virus,Didelphis_marsupialis,wild,Isolation,2,Shope et al. 1988
 Mayaro_virus,Didelphis_marsupialis,wild,Antibodies,0,de Thoisy et al. 2003
 Oriboca_virus,Didelphis_marsupialis,wild,Isolation,2,Shopeet al. 1988
 Patois_virus,Didelphis_marsupialis,wild,Antibodies,0,Scherer et al. 1972
-St._Louis_encephalitis_virus,Didelphis_marsupialis,wild,Isolation,2,Kramer et al. 2001
+St._Louis_encephalitis_virus,Didelphis_marsupialis,wild,Isolation,2,Kramer and Chandler 2001
 Venezuelan_equine_encephalitis_virus,Didelphis_marsupialis,wild,Antibodies,0,Estrada-Franco et al. 2004
 Vesicular_stomatitis_Indiana_virus,Didelphis_marsupialis,wild,plaque reduction neutralization,1,Tesh et al. 1969
 California_encephalitis_virus,Didelphis_virginiana,wild,Antibodies,0,Parkin et al. 1973
@@ -1689,7 +1689,7 @@ Nipah_virus,Mus_musculus,wild,Isolation,2,WHO
 Rabies_virus,Mus_musculus,domestic,Antibodies,0,Childs et al. 1997
 Saboya_virus,Mus_musculus,wild,Isolation,2,Fontenille et al. 1994; Saluzzo et al. 1986; Grard et al. 2010
 Sendai_virus,Mus_musculus,domestic,Isolation,2,Faisca et al. 2007
-St._Louis_encephalitis_virus,Mus_musculus,domestic,Isolation,2,Kramer et al. 2001
+St._Louis_encephalitis_virus,Mus_musculus,domestic,Isolation,2,Kramer and Chandler 2001
 Theilovirus,Mus_musculus,domestic,Isolation,2,Liang et al. 2008 
 Venezuelan_equine_encephalitis_virus,Mus_musculus,wild,Isolation,2,Sudia & Newhouse 1975
 Western_equine_encephalitis_virus,Mus_musculus,domestic,Antibodies,0,Hardy et al. 1974
@@ -2207,7 +2207,7 @@ Encephalomyocarditis_virus,Procyon_lotor,wild,Isolation,2,Tesh & Wallace 1978
 Patois_virus,Procyon_lotor,wild,Antibodies,0,Scherer et al. 1972
 Rabies_virus,Procyon_lotor,wild,PCR,2,Nadin-Davies et al. 1994
 Racoonpox_virus,Procyon_lotor,wild,Isolation,2,Thomas et al. 1975
-St._Louis_encephalitis_virus,Procyon_lotor,wild,Isolation,2,Kramer et al. 2001
+St._Louis_encephalitis_virus,Procyon_lotor,wild,Isolation,2,Kramer and Chandler 2001
 Suid_herpesvirus_1,Procyon_lotor,wild,virus neutralization,0,Mitchell et al. 1999
 Vesicular_stomatitis_Indiana_virus,Procyon_lotor,wild,Antibodies,0,Fletcher et al. 1985
 West_Nile_virus,Procyon_lotor,wild,Antibodies,0,Root et al. 2005

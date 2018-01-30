@@ -874,7 +874,7 @@ Parker JC, Cross SS, and Rowe WP (1970). Rat Coronavirus (Rcv) - A Prevalent, Na
 Parker JC, Igel HJ, Reynolds RK, Lewis AM, and Rowe WP (1976). Lymphocytic Choriomeningitis Virus-Infection In Fetal, Newborn, And Young-Adult Syrian-Hamsters (Mesocricetus-Auratus). Infection and immunity 13:967-981.
 Parker JC, and Reynolds RK (1968). Natural history of Sendai virus infection in mice. American journal of epidemiology 88:112-125.
 Parkin WE (1973). The occurrence and effects of the local strains of the California encephalitis group of viruses in domestic mammals of Florida. American Journal of Tropical Medicine and Hygiene 11:788-795.
-PARKS JB, and ENGLAND JJ (1974). A Serological Survey For Selected Viral Infections Of Rocky Mountain Bighorn Sheep. J. Wildl. Dis. 10:107-110.
+Parks JB, and England JJ (1974). A Serological Survey For Selected Viral Infections Of Rocky Mountain Bighorn Sheep. J. Wildl. Dis. 10:107-110.
 Parks WP, Boucher DW, Melnick JL, Taber LH, and Yow MD (1970). Seroepidemiological and ecological studies of the adenovirus-associated satellite viruses. Infection and immunity 2:716-722.
 Passler T, Walz PH, Ditchkoff SS, Brock KV, Deyoung RW, Foley AM, et al. (2009). Cohabitation of pregnant white-tailed deer and cattle persistently infected with Bovine viral diarrhea virus results in persistently infected fawns. Veterinary microbiology 134:362-367.
 Passos EC, Carrieri ML, Dainovskas E, Camara M, and Silva MMS (1998). Isolation of rabies virus in an insectivorous bat Nyctinomops macrotis, in Southeastern Brazil. Revista De Saude Publica 32:74-76.
@@ -1084,7 +1084,8 @@ Tachezy R, Vanranst MA, Cruz Y, and Burk RD (1994). Analysis Of Short Novel Huma
 Tagliapietra V, Rosa R, Hauffe HC, Laakkonen J, Voutilainen L, Vapalahti O, et al. (2009). Spatial and Temporal Dynamics of Lymphocytic Choriomeningitis Virus in Wild Rodents, Northern Italy. Emerging infectious diseases 15:1019-1025.
 Tajima S, Takasaki T, Matsuno S, Nakayama M, and Kurane I (2005). Genetic characterization of Yokose virus, a flavivirus isolated from the bat in Japan. Virology 332:38-44.
 Takemoto KK, and Segawa K (1983). A new monkey lymphotropic papovavirus: characterization of the virus and evidence of a related virus in humans. Prog Clin Biol Res 105:87-96.
-Taniguchi S, Watanabe S, Masangkay J, Omatsu T, Ikegami T, and Alviola P (2011). Reston Ebolavirus antibodies in bats, the Philippines. EMERGING INFECTIOUS DISEASES.
+Tan KE, Anderson M, Krajden M, Petric M, Mak A, Naus M. (2011) Mumps virus detection during an outbreak in a highly unvaccinated population in British Columbia. Canadian Journal of Public Health/Revue Canadienne de Sante'e Publique Jan 1:47-50.
+Taniguchi S, Watanabe S, Masangkay J, Omatsu T, Ikegami T, and Alviola P (2011). Reston Ebolavirus antibodies in bats, the Philippines. Emerging Infectious Dieases.
 Tao S-j, and Chen BQ (2005). Studies of coltivirus in China. Chinese medical journal 118:581-586.
 Tauro LB, Diaz LA, Almirón WR, and Contigiani MS (2009). Infection by Bunyamwera virus (Orthobunyavirus) in free ranging birds of Cordoba city (Argentina). Veterinary microbiology 139:153-155.
 Taylor LH, Latham SM, and Mark E (2001). Risk factors for human disease emergence. Philosophical Transactions of the Royal Society of London B: Biological Sciences 356:983-989.

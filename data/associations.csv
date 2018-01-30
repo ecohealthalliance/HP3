@@ -132,18 +132,18 @@ Rabies_virus,Artibeus_cinereus,wild,Antibodies,0,Price & Everard 1977
 Yellow_fever_virus,Artibeus_cinereus,wild,Antibodies,0,Price 1978
 Rabies_virus,Artibeus_fimbriatus,wild,Isolation,2,Cunha et al. 2005
 Dengue_virus,Artibeus_jamaicensis,wild,PCR,2,Aguilar-Setien et al. 2008
-Eastern_equine_encephalitis_virus,Artibeus_jamaicensis,wild,Antibodies,0,Ubico & McClean 1995
+Eastern_equine_encephalitis_virus,Artibeus_jamaicensis,wild,Antibodies,0,Ubico & McLean 1995
 Ilheus_virus,Artibeus_jamaicensis,wild,Antibodies,0,Price et al. 1978
 Marituba_virus,Artibeus_jamaicensis,wild,Isolation,2,Calisher et al. 2006
 Rabies_virus,Artibeus_jamaicensis,wild,Isolation,2,Price & Everard 1977
-Rio_Bravo_virus,Artibeus_jamaicensis,wild,Antibodies,0,Ubico & McClean 1995
-St._Louis_encephalitis_virus,Artibeus_jamaicensis,wild,Antibodies,0,Ubico & McClean 1995
+Rio_Bravo_virus,Artibeus_jamaicensis,wild,Antibodies,0,Ubico & McLean 1995
+St._Louis_encephalitis_virus,Artibeus_jamaicensis,wild,Antibodies,0,Ubico & McLean 1995
 Tacaribe_virus,Artibeus_jamaicensis,wild,Isolation,2,Abraham et al. 2009
 Tamana_bat_virus,Artibeus_jamaicensis,wild,Antibodies,0,Price 1978
-Venezuelan_equine_encephalitis_virus,Artibeus_jamaicensis,wild,Antibodies,0,Ubico & McClean 1995
-Vesicular_stomatitis_Indiana_virus,Artibeus_jamaicensis,wild,Antibodies,0,Ubico & McClean 1995
-Vesicular_stomatitis_New_Jersey_virus,Artibeus_jamaicensis,wild,Antibodies,0,Ubico & McClean 1995
-Western_equine_encephalitis_virus,Artibeus_jamaicensis,wild,Antibodies,0,Ubico & McClean 1995
+Venezuelan_equine_encephalitis_virus,Artibeus_jamaicensis,wild,Antibodies,0,Ubico & McLean 1995
+Vesicular_stomatitis_Indiana_virus,Artibeus_jamaicensis,wild,Antibodies,0,Ubico & McLean 1995
+Vesicular_stomatitis_New_Jersey_virus,Artibeus_jamaicensis,wild,Antibodies,0,Ubico & McLean 1995
+Western_equine_encephalitis_virus,Artibeus_jamaicensis,wild,Antibodies,0,Ubico & McLean 1995
 Yellow_fever_virus,Artibeus_jamaicensis,wild,Antibodies,0,Price 1978
 Caraparu_virus,Artibeus_lituratus,wild,Antibodies,0,Geevarghesse & Banerjee 1990
 Dengue_virus,Artibeus_lituratus,wild,Antibodies,0,Price 1978
@@ -156,21 +156,21 @@ Marituba_virus,Artibeus_lituratus,wild,Isolation,2,Calisher et al. 2006
 Oriboca_virus,Artibeus_lituratus,wild,Antibodies,0,Price 1978
 Oropouche_virus,Artibeus_lituratus,wild,Antibodies,0,Geevarghese & Banerjee 1990
 Rabies_virus,Artibeus_lituratus,wild,Isolation,2,Kobayashi et al. 2005
-Rio_Bravo_virus,Artibeus_lituratus,wild,Antibodies,0,Ubico & McClean 1995
-St._Louis_encephalitis_virus,Artibeus_lituratus,wild,Antibodies,0,Ubico & McClean 1995
+Rio_Bravo_virus,Artibeus_lituratus,wild,Antibodies,0,Ubico & McLean 1995
+St._Louis_encephalitis_virus,Artibeus_lituratus,wild,Antibodies,0,Ubico & McLean 1995
 Tacaribe_virus,Artibeus_lituratus,wild,Isolation,2,Calisher et al. 2006
 Venezuelan_equine_encephalitis_virus,Artibeus_lituratus,wild,Antibodies,0,Seymour et al. 1978
-Vesicular_stomatitis_Indiana_virus,Artibeus_lituratus,wild,Antibodies,0,Ubico & McClean 1995
-Western_equine_encephalitis_virus,Artibeus_lituratus,wild,Antibodies,0,Ubico & McClean 1995
+Vesicular_stomatitis_Indiana_virus,Artibeus_lituratus,wild,Antibodies,0,Ubico & McLean 1995
+Western_equine_encephalitis_virus,Artibeus_lituratus,wild,Antibodies,0,Ubico & McLean 1995
 Yellow_fever_virus,Artibeus_lituratus,wild,Antibodies,0,Price 1978
 Rabies_virus,Artibeus_phaeotis,wild,Antibodies,0,Salas-Rojas et al. 2004
-Rio_Bravo_virus,Artibeus_phaeotis,wild,Antibodies,0,Ubico and McClean 1995
-St._Louis_encephalitis_virus,Artibeus_phaeotis,wild,Antibodies,0,Ubico & McClean 1995
+Rio_Bravo_virus,Artibeus_phaeotis,wild,Antibodies,0,Ubico and McLean 1995
+St._Louis_encephalitis_virus,Artibeus_phaeotis,wild,Antibodies,0,Ubico & McLean 1995
 Venezuelan_equine_encephalitis_virus,Artibeus_phaeotis,wild,Isolation,2,Calisher et al. 2006
-Vesicular_stomatitis_Indiana_virus,Artibeus_phaeotis,wild,Antibodies,0,Ubico & McClean 1995
-Vesicular_stomatitis_New_Jersey_virus,Artibeus_phaeotis,wild,Antibodies,0,Ubico & McClean 1995
+Vesicular_stomatitis_Indiana_virus,Artibeus_phaeotis,wild,Antibodies,0,Ubico & McLean 1995
+Vesicular_stomatitis_New_Jersey_virus,Artibeus_phaeotis,wild,Antibodies,0,Ubico & McLean 1995
 Rabies_virus,Artibeus_planirostris,wild,Isolation,2,Kobayashi et al. 2007
-Rio_Bravo_virus,Artibeus_toltecus,wild,Antibodies,0,Ubico and McClean 1995
+Rio_Bravo_virus,Artibeus_toltecus,wild,Antibodies,0,Ubico and McLean 1995
 Tacaribe_virus,Artibeus_toltecus,wild,Isolation,2,Abraham et al. 2009
 Ippy_virus,Arvicanthis_neumanni,wild,Isolation,2,Meunier et al. 1985
 Arumowot_virus,Arvicanthis_niloticus,wild,isolation,2,Kemp et al. 1974
@@ -485,8 +485,8 @@ Feline_calicivirus,Caracal_caracal,wild,Antibodies,0,Thalwitzer et al. 2010
 Feline_coronavirus,Caracal_caracal,wild,Antibodies,0,Thalwitzer et al. 2010
 Puma_lentivirus,Caracal_caracal,wild,Antibodies,0,Thalwitzer et al. 2010
 Dengue_virus,Carollia_brevicauda,wild,PCR,2,Aguilar-Setien et al. 2008
-Rio_Bravo_virus,Carollia_brevicauda,wild,Antibodies,0,Ubico & McClean 1995
-Venezuelan_equine_encephalitis_virus,Carollia_brevicauda,wild,Antibodies,0,Ubico & McClean 1995
+Rio_Bravo_virus,Carollia_brevicauda,wild,Antibodies,0,Ubico & McLean 1995
+Venezuelan_equine_encephalitis_virus,Carollia_brevicauda,wild,Antibodies,0,Ubico & McLean 1995
 Bimiti_virus,Carollia_perspicillata,wild,Antibodies,0,Price 1978
 Catu_virus,Carollia_perspicillata,wild,Antibodies,0,Price 1978
 Dengue_virus,Carollia_perspicillata,wild,Antibodies,0,Price 1978
@@ -495,14 +495,14 @@ Ilheus_virus,Carollia_perspicillata,wild,Antibodies,0,Price et al. 1978
 Marituba_virus,Carollia_perspicillata,wild,Antibodies,0,Price 1978
 Mucambo_virus,Carollia_perspicillata,wild,Antibodies,0,Geevarghese & Banerjee 1990
 Rabies_virus,Carollia_perspicillata,wild,Isolation,2,Tomaz et al. 2007
-Rio_Bravo_virus,Carollia_perspicillata,wild,Antibodies,0,Ubico and McClean 1995
+Rio_Bravo_virus,Carollia_perspicillata,wild,Antibodies,0,Ubico and McLean 1995
 St._Louis_encephalitis_virus,Carollia_perspicillata,wild,Antibodies,0,Price 1978
 Tamana_bat_virus,Carollia_perspicillata,wild,Antibodies,0,Price 1978
 Venezuelan_equine_encephalitis_virus,Carollia_perspicillata,wild,Isolation,2,Calisher et al. 1982
 Vesicular_stomatitis_Indiana_virus,Carollia_perspicillata,wild,plaque reduction neutralization,1,Tesh et al. 1969
 Vesicular_stomatitis_New_Jersey_virus,Carollia_perspicillata,wild,Antibodies,0,Tesh et al. 1969
 Yellow_fever_virus,Carollia_perspicillata,wild,Antibodies,0,Price 1978
-Venezuelan_equine_encephalitis_virus,Carollia_subrufa,wild,Antibodies,0,Ubico and McClean 1995
+Venezuelan_equine_encephalitis_virus,Carollia_subrufa,wild,Antibodies,0,Ubico and McLean 1995
 Cowpox_virus,Castor_fiber,captive,PCR,2,Hentschke et al. 1999
 Caviid_herpesvirus_1,Cavia_porcellus,captive,Isolation,2,Hsiun & Kaplow 1969; Roizman & Baines 1991
 Caviid_herpesvirus_2,Cavia_porcellus,captive,Isolation,2,Griffith & Hsiung 1980
@@ -709,12 +709,12 @@ Wesselsbron_virus,Desmodillus_auricularis,wild,Isolation,2,Beran 1994
 Dengue_virus,Desmodus_rotundus,wild,Antibodies,0,Price 1978
 Ilheus_virus,Desmodus_rotundus,wild,Antibodies,0,Price 1978
 Rabies_virus,Desmodus_rotundus,wild,Isolation,2,Kobayashi et al. 2005
-Rio_Bravo_virus,Desmodus_rotundus,wild,Antibodies,0,Ubico & McClean 1995
+Rio_Bravo_virus,Desmodus_rotundus,wild,Antibodies,0,Ubico & McLean 1995
 Tacaribe_virus,Desmodus_rotundus,wild,Antibodies,0,Price et al. 1978
 Tamana_bat_virus,Desmodus_rotundus,wild,Antibodies,0,Price 1978
 Venezuelan_equine_encephalitis_virus,Desmodus_rotundus,wild,Isolation,2,Calisher et al. 2006
-Vesicular_stomatitis_Indiana_virus,Desmodus_rotundus,wild,plaque reduction neutralization,1,Ubico & McClean 1995
-Vesicular_stomatitis_New_Jersey_virus,Desmodus_rotundus,wild,Antibodies,0,Ubico & McClean 1995
+Vesicular_stomatitis_Indiana_virus,Desmodus_rotundus,wild,plaque reduction neutralization,1,Ubico & McLean 1995
+Vesicular_stomatitis_New_Jersey_virus,Desmodus_rotundus,wild,Antibodies,0,Ubico & McLean 1995
 Rabies_virus,Diaemus_youngi,wild,Isolation,2,Castilho et al. 2008
 African_horse_sickness_virus,Diceros_bicornis,wild,ELISA,0,Fischer-Tenhagen et al. 2000
 Bluetongue_virus,Diceros_bicornis,wild,ELISA,0,Fischer-Tenhagen et al. 2000
@@ -953,11 +953,11 @@ Influenza_A_virus,Globicephala_melas,wild,Isolation,2,Hinshaw et al. 1986
 Venezuelan_equine_encephalitis_virus,Glossophaga_commissarisi,wild,Antibodies,0,Seymour et al. 1978
 Rabies_virus,Glossophaga_longirostris,wild,Antibodies,0,Price & Everard 1977
 Rabies_virus,Glossophaga_morenoi,wild,Antibodies,0,Salas-Rojas et al. 2004
-Eastern_equine_encephalitis_virus,Glossophaga_soricina,wild,Antibodies,0,Ubico & McClean 1995
+Eastern_equine_encephalitis_virus,Glossophaga_soricina,wild,Antibodies,0,Ubico & McLean 1995
 Ilheus_virus,Glossophaga_soricina,wild,Antibodies,0,Price et al. 1978
 Rabies_virus,Glossophaga_soricina,wild,Antibodies,0,Sodre et al. 2007
 Rio_Bravo_virus,Glossophaga_soricina,wild,Antibodies,0,Ubico & McClean 1995
-St._Louis_encephalitis_virus,Glossophaga_soricina,wild,Antibodies,0,Ubico & McClean 1995
+St._Louis_encephalitis_virus,Glossophaga_soricina,wild,Antibodies,0,Ubico & McLean 1995
 Venezuelan_equine_encephalitis_virus,Glossophaga_soricina,wild,Isolation,2,Sulkin & Allen 1974; Sudia & Newhouse 1975
 Vesicular_stomatitis_Indiana_virus,Glossophaga_soricina,wild,Antibodies,0,Tesh et al. 1969
 Vesicular_stomatitis_New_Jersey_virus,Glossophaga_soricina,wild,Antibodies,0,Tesh et al. 1969
@@ -1506,7 +1506,7 @@ O'nyong-nyong_virus,Mandrillus_sphinx,wild,plaque reduction neutralization,1,Kad
 Oriboca_virus,Marmosa_murina,wild,Isolation,2,Shope et al. 1988
 Colorado_tick_fever_virus,Marmota_flaviventris,wild,Antibodies,0,Eklund et al. 1958
 Powassan_virus,Marmota_flaviventris,wild,Antibodies,0,McLean et al. 1970
-St._Louis_encephalitis_virus,Marmota_flaviventris,wild,Antibodies,0,McClean et al. 1968
+St._Louis_encephalitis_virus,Marmota_flaviventris,wild,Antibodies,0,McLean et al. 1968
 Eastern_equine_encephalitis_virus,Marmota_monax,wild,Antibodies,0,Karstad et al. 1960
 Marmodid_herpesvirus_1,Marmota_monax,wild,Isolation,2,Buchen-Osmond 2003
 Powassan_virus,Marmota_monax,wild,Isolation,2, McLean et al. 1967
@@ -2136,9 +2136,9 @@ Sealpox_virus,Phoca_vitulina,wild,PCR,2,Becher et al. 2002
 Cetacean_morbillivirus_virus,Phocoena_phocoena,wild,Isolation,2,McCullough et al. 1991
 Phocoena_spinipinnis_papillomavirus,Phocoena_spinipinnis,wild,Isolation,2,Van Bressem et al. 2007
 Influenza_A_virus,Phocoenoides_dalli,wild,Antibodies,0,Ohishi et al. 2006
-Rio_Bravo_virus,Phyllostomus_discolor,wild,Antibodies,0,Ubico & McClean 1995
+Rio_Bravo_virus,Phyllostomus_discolor,wild,Antibodies,0,Ubico & McLean 1995
 Tamana_bat_virus,Phyllostomus_discolor,wild,Antibodies,0,Price 1978
-Venezuelan_equine_encephalitis_virus,Phyllostomus_discolor,wild,Antibodies,0,Ubico & McClean 1995
+Venezuelan_equine_encephalitis_virus,Phyllostomus_discolor,wild,Antibodies,0,Ubico & McLean 1995
 Bimiti_virus,Phyllostomus_hastatus,wild,Antibodies,0,Price 1978
 Catu_virus,Phyllostomus_hastatus,wild,Antibodies,0,Price 1978
 Cocal_virus,Phyllostomus_hastatus,wild,Antibodies,0,Price 1978
@@ -2414,7 +2414,7 @@ Severe_acute_respiratory_syndrome-related_coronavirus,Rhinolophus_sinicus,wild,I
 Porcine_rubulavirus,Rhogeessa_parvula,wild,Antibodies,0,Salas-Rojas et al. 2004
 Cowpox_virus,Rhombomys_opimus,wild,Isolation,2,Marennikova et al. 1978
 Isfahan_virus,Rhombomys_opimus,wild,Antibodies,0,Tesh et al. 1977
-Eastern_equine_encephalitis_virus,Rhynchonycteris_naso,wild,Antibodies,0,Ubico & McClean 1995
+Eastern_equine_encephalitis_virus,Rhynchonycteris_naso,wild,Antibodies,0,Ubico & McLean 1995
 Chikungunya_virus,Rousettus_aegyptiacus,wild,Isolation,2,Calisher et al. 2006
 European_bat_lyssavirus_1,Rousettus_aegyptiacus,wild,Isolation,2,Calisher et al. 2006
 Kasokero_virus,Rousettus_aegyptiacus,wild,Isolation,2,Kalunda et al. 1986; Calisher et al. 2006
@@ -2554,17 +2554,17 @@ Rabies_virus,Spermophilus_undulatus,wild,PCR,2,Kuzmin et al. 2004
 Rabies_virus,Spermophilus_variegatus,wild,Antibodies,0,Suzan & Ceballos 2005
 Cetacean_morbillivirus_virus,Stenella_coeruleoalba,wild,PCR,2,Aguilar & Raga 1993
 Dengue_virus,Sturnira_lilium,wild,Antibodies,0,Aguilar-Setien et al. 2008
-Eastern_equine_encephalitis_virus,Sturnira_lilium,wild,Antibodies,0,Ubico & McClean 1995
+Eastern_equine_encephalitis_virus,Sturnira_lilium,wild,Antibodies,0,Ubico & McLean 1995
 Mapuera_virus,Sturnira_lilium,wild,Isolation,2,Calisher et al. 2006
 Rabies_virus,Sturnira_lilium,wild,Antibodies,0,Price and Everard 1977
-Rio_Bravo_virus,Sturnira_lilium,wild,Antibodies,0,Ubico and McClean 1995
+Rio_Bravo_virus,Sturnira_lilium,wild,Antibodies,0,Ubico and McLean 1995
 St._Louis_encephalitis_virus,Sturnira_lilium,wild,Antibodies,0,Sabattini et al. 1965
 Tacaribe_virus,Sturnira_lilium,wild,Antibodies,0,Price et al. 1978
 Tamana_bat_virus,Sturnira_lilium,wild,Antibodies,0,Price 1978
-Venezuelan_equine_encephalitis_virus,Sturnira_lilium,wild,Antibodies,0,Ubico & McClean 1995
+Venezuelan_equine_encephalitis_virus,Sturnira_lilium,wild,Antibodies,0,Ubico & McLean 1995
 Vesicular_stomatitis_Indiana_virus,Sturnira_lilium,wild,plaque reduction neutralization,1,Ubico & McLean 1995
-Vesicular_stomatitis_New_Jersey_virus,Sturnira_lilium,wild,Antibodies,0,Ubico & McClean 1995
-Venezuelan_equine_encephalitis_virus,Sturnira_ludovici,wild,Antibodies,0,Ubico & McClean 1995
+Vesicular_stomatitis_New_Jersey_virus,Sturnira_lilium,wild,Antibodies,0,Ubico & McLean 1995
+Venezuelan_equine_encephalitis_virus,Sturnira_ludovici,wild,Antibodies,0,Ubico & McLean 1995
 St._Louis_encephalitis_virus,Sturnira_tildae,wild,Antibodies,0,Price et al. 1978
 Kyasanur_Forest_disease_virus,Suncus_murinus,wild,Antibodies,0,Webb et al. 1965
 Thottapalayam_virus,Suncus_murinus,wild,Isolation,2,Carey et al. 1971

@@ -903,7 +903,7 @@ Feline_papillomavirus,Felis_catus,domestic,PCR,2,Terai & Burk 2002
 Human_herpesvirus_4,Felis_catus,domestic,Antibodies,0,Milman et al. 2010
 Human_norovirus-Alphatron,Felis_catus,domestic,Antibodies,0,Di Martino et al. 2010
 Mokola_virus,Felis_catus,domestic,Isolation,2,Meredith et al. 1996
-Rabies_virus,Felis_catus,domestic,PCR,2,Nadin-Davies et al. 1994
+Rabies_virus,Felis_catus,domestic,PCR,2,Diaz et al. 1994
 Racoonpox_virus,Felis_catus,domestic,PCR,2,Yager et al. 2006
 Suid_herpesvirus_1,Felis_catus,domestic,"Cell culture, PCR",2,Salwa 2004
 Vaccinia_virus,Felis_catus,domestic,VNT,1,Peres et al. 2013
@@ -1033,7 +1033,7 @@ Bhanja_virus,Homo_sapiens,human,Antibodies,0,Calisher et al. 2006
 BK_polyomavirus,Homo_sapiens,human,Isolation,2,Gardner et al. 1971
 Black_Creek_Canal_virus,Homo_sapiens,human,PCR,2,Ravkov et al. 1995
 Borna_disease_virus,Homo_sapiens,human,Antibodies,0,Kinnunen et al. 2007
-Bouboui_virus,Homo_sapiens,human,Isolation,2,Digoutte JP et al 1971
+Bouboui_virus,Homo_sapiens,human,Isolation,2,Digoutte et al 1971
 Bovine_leukemia_virus,Homo_sapiens,human,Antibodies,0,Buehring et al. 2003
 Bovine_papular_stomatitis_virus,Homo_sapiens,human,Isolation,2,McEvoy 1972
 Bunyamwera_virus,Homo_sapiens,human,Isolation,2,Tauro et al. 2009
@@ -2205,7 +2205,7 @@ Simian_hemorrhagic_fever_virus,Procolobus_rufomitratus,wild,Pyroseq,2,Lauck et a
 Borna_disease_virus,Procyon_lotor,wild,PCR,2,Hagiwara et al. 2009
 Encephalomyocarditis_virus,Procyon_lotor,wild,Isolation,2,Tesh & Wallace 1978
 Patois_virus,Procyon_lotor,wild,Antibodies,0,Scherer et al. 1972
-Rabies_virus,Procyon_lotor,wild,PCR,2,Nadin-Davies et al. 1994
+Rabies_virus,Procyon_lotor,wild,PCR,2,Nadin-Davies et al. 1996
 Racoonpox_virus,Procyon_lotor,wild,Isolation,2,Thomas et al. 1975
 St._Louis_encephalitis_virus,Procyon_lotor,wild,Isolation,2,Kramer and Chandler 2001
 Suid_herpesvirus_1,Procyon_lotor,wild,virus neutralization,0,Mitchell et al. 1999

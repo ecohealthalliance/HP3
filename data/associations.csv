@@ -1544,7 +1544,7 @@ Mustelid_herpesvirus_1,Meles_meles,wild,PCR,2,King et al. 2004
 Rabies_virus,Mellivora_capensis,wild,Isolation,2,Bingham et al. 2001
 Severe_acute_respiratory_syndrome-related_coronavirus,Melogale_moschata,wild,Antibodies,0,Tu et al. 2004
 Influenza_A_virus,Mephitis_mephitis,wild,PCR,2,Britton et al. 2010
-Rabies_virus,Mephitis_mephitis,wild,PCR,2,Nadin-Davies et al. 1994
+Rabies_virus,Mephitis_mephitis,wild,PCR,2,Nadin-Davis et al. 1993
 St._Louis_encephalitis_virus,Mephitis_mephitis,wild,Antibodies,0,Artsob et al. 1986
 Vesicular_stomatitis_Indiana_virus,Mephitis_mephitis,wild,plaque reduction neutralization,1,Aguirre et al. 1992
 Western_equine_encephalitis_virus,Mephitis_mephitis,wild,hemmaglutination,0,Hardy 1987
@@ -2787,7 +2787,7 @@ Vesicular_stomatitis_New_Jersey_virus,Vulpes_velox,wild,Antibodies,0,Miller et a
 Borna_disease_virus,Vulpes_vulpes,wild,PCR,2,Dauphin et al. 2001
 California_encephalitis_virus,Vulpes_vulpes,wild,Antibodies,0,Parkin et al. 1973
 Canine_adenovirus,Vulpes_vulpes,wild,Isolation,2,Thompson et al. 2010
-Rabies_virus,Vulpes_vulpes,wild,PCR,2,Nadin-Davies et al. 1994
+Rabies_virus,Vulpes_vulpes,wild,PCR,2,Nadin-Davis et al. 1993
 St._Louis_encephalitis_virus,Vulpes_vulpes,wild,Antibodies,0,Artsob et al. 1986
 Trubanaman_virus,Vulpes_vulpes,wild,Antibodies,0,Johansen et al. 2005
 Bhanja_virus,Xerus_erythropus,wild,Isolation,2,Kemp 1975; Kemp et al. 1974

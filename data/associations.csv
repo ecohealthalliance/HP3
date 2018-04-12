@@ -424,7 +424,7 @@ Canine_coronavirus,Canis_lupus,wild,PCR,2,Zarnke et al. 2001
 Rabies_virus,Canis_lupus,wild,PCR,2,Kuzmin et al. 2004
 African_horse_sickness_virus,Canis_mesomelas,wild,Antibodies,0,Binepal et al. 1992
 Bluetongue_virus,Canis_mesomelas,wild,"ELISA, SNT",0,Alexander et al. 1995
-Canine_distemper_virus,Canis_mesomelas,domestic,Antibodies,0,Prager et al. 2013
+Canine_distemper_virus,Canis_mesomelas,domestic,Antibodies,0,Prager et al. 2012
 Feline_panleukopenia_virus,Canis_mesomelas,wild,Antibodies,0,Alexander et al. 1994b
 Rabies_virus,Canis_mesomelas,wild,Isolation,2,Zulu et al. 2009
 Canine_adenovirus,Canis_simensis,wild,Antibodies,0,Laurenson et al. 1998
@@ -655,7 +655,7 @@ Borna_disease_virus,Crocidura_leucodon,wild,PCR,2,Hilbe et al. 2006
 Thiafora_virus,Crocidura_russula,wild,Isolation,2,Chastel 1989
 African_horse_sickness_virus,Crocuta_crocuta,wild,Antibodies,0,Binepal et al. 1992
 Bluetongue_virus,Crocuta_crocuta,wild,Antibodies,0,Alexander et al. 1994
-Canine_distemper_virus,Crocuta_crocuta,domestic,Antibodies,0,Prager et al. 2013
+Canine_distemper_virus,Crocuta_crocuta,domestic,Antibodies,0,Prager et al. 2012
 Feline_coronavirus,Crocuta_crocuta,wild,PCR,2,East et al. 2004
 Feline_immunodeficiency_virus,Crocuta_crocuta,wild,Antibodies,0,Harrison et al.2002
 Rabies_virus,Crocuta_crocuta,wild,PCR,2,Lembo et al. 2008

@@ -318,9 +318,9 @@ Foot-and-mouth_disease_virus,Boselaphus_tragocamelus,wild,Isolation,2,Davis 1981
 Marituba_virus,Bradypus_tridactylus,wild,Isolation,2,Shope et al. 1988
 Mayaro_virus,Bradypus_tridactylus,wild,Antibodies,0,de Thoisy et al. 2003
 St._Louis_encephalitis_virus,Bradypus_tridactylus,wild,Antibodies,0,de Thoisy et al. 2004
-Changuinola_virus,Bradypus_variegatus,wild,Isolation,2,Seymour et al. 1983
-Punta_Toro_virus,Bradypus_variegatus,wild,Antibodies,0,Seymour et al. 1983
-St._Louis_encephalitis_virus,Bradypus_variegatus,wild,Antibodies,0,Seymour et al. 1989
+Changuinola_virus,Bradypus_variegatus,wild,Isolation,2,Seymour et al. 1983b
+Punta_Toro_virus,Bradypus_variegatus,wild,Isolation,2,Seymour et al. 1983b
+St._Louis_encephalitis_virus,Bradypus_variegatus,wild,Antibodies,0,Seymour et al. 1983a
 Vesicular_stomatitis_Indiana_virus,Bradypus_variegatus,wild,plaque reduction neutralization,1,Tesh et al. 1969
 Bovine_immunodeficiency_virus,Bubalus_arnee,wild,Antibodies,0,Meas et al. 2000
 Bivens_Arm_virus,Bubalus_bubalis,domestic,Antibodies,0,Calisher et al. 1981
@@ -621,7 +621,7 @@ Borna_disease_virus,Choloepus_didactylus,wild,Antibodies,0,Shuppel et al. 1994
 Mayaro_virus,Choloepus_didactylus,wild,Antibodies,0,de Thoisy et al. 2003
 Changuinola_virus,Choloepus_hoffmanni,wild,Isolation,2,Seymour et al. 1983
 Mayaro_virus,Choloepus_hoffmanni,wild,Antibodies,0,de Thoisy et al. 2003
-St._Louis_encephalitis_virus,Choloepus_hoffmanni,wild,Antibodies,0,Seymour et al. 1983
+St._Louis_encephalitis_virus,Choloepus_hoffmanni,wild,Antibodies,0,Seymour et al. 1983a
 Vesicular_stomatitis_Indiana_virus,Choloepus_hoffmanni,wild,plaque reduction neutralization,1,Tesh et al. 1969
 Rabies_virus,Chrotopterus_auritus,wild,Isolation,2,Silva et al. 1968
 Rabies_virus,Chrysocyon_brachyurus,wild,Antibodies,0,Deem et al. 2005

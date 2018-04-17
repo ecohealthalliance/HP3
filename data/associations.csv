@@ -87,7 +87,7 @@ Hepatitis_A_virus,Aotus_trivirgatus,wild,Antibodies,0,Lemon et al. 1982
 Measles_virus,Aotus_trivirgatus,wild,Isolation,2,Fowler & Miller. 2003
 Torque_Teno_virus,Aotus_trivirgatus,wild,PCR,2,Catroxo et al. 2008
 Vesicular_stomatitis_Indiana_virus,Aotus_trivirgatus,wild,plaque reduction neutralization,1,Tesh et al. 1969
-Yellow_fever_virus,Aotus_trivirgatus,wild,Antibodies,0,Seymour et al. 1983
+Yellow_fever_virus,Aotus_trivirgatus,wild,Antibodies,0,Seymour et al. 1983a
 California_encephalitis_virus,Apodemus_agrarius,wild,Antibodies,0,Mitchell et al. 1993
 Dobrava-Belgrade_virus,Apodemus_agrarius,wild,Isolation,2,Plyusnin 2002
 Hantaan_virus,Apodemus_agrarius,wild,Isolation,2,Acha & Szyfres 2003; Lee et al. 1978
@@ -620,7 +620,7 @@ Measles_virus,Chlorocebus_sabaeus,wild,Isolation,2,Fowler & Miller. 2003
 Borna_disease_virus,Choeropsis_liberiensis,wild,Antibodies,0,Shuppel et al. 1994
 Borna_disease_virus,Choloepus_didactylus,wild,Antibodies,0,Shuppel et al. 1994
 Mayaro_virus,Choloepus_didactylus,wild,Antibodies,0,de Thoisy et al. 2003
-Changuinola_virus,Choloepus_hoffmanni,wild,Isolation,2,Seymour et al. 1983
+Changuinola_virus,Choloepus_hoffmanni,wild,Isolation,2,Seymour et al. 1983b
 Mayaro_virus,Choloepus_hoffmanni,wild,Antibodies,0,de Thoisy et al. 2003
 St._Louis_encephalitis_virus,Choloepus_hoffmanni,wild,Antibodies,0,Seymour et al. 1983a
 Vesicular_stomatitis_Indiana_virus,Choloepus_hoffmanni,wild,plaque reduction neutralization,1,Tesh et al. 1969
@@ -699,7 +699,7 @@ Witwatersrand_virus,Dasymys_incomtus,wild,Antibodies,0,Henderson et al. 1972
 Dengue_virus,Dasyprocta_leporina,wild,Antibodies,0,de Thouisy et al. 2004
 Mayaro_virus,Dasyprocta_leporina,wild,Antibodies,0,de Thoisy et al. 2003
 Yellow_fever_virus,Dasyprocta_leporina,wild,Antibodies,0,de Thoisy et al. 2004; McIntosh 1961
-Mayaro_virus,Dasyprocta_punctata,wild,Antibodies,0,Seymour et al. 1983
+Mayaro_virus,Dasyprocta_punctata,wild,Antibodies,0,Seymour et al. 1983a
 Vesicular_stomatitis_Indiana_virus,Dasyprocta_punctata,wild,plaque reduction neutralization,1,Tesh et al. 1969
 Eastern_equine_encephalitis_virus,Dasypus_novemcinctus,wild,Antibodies,0,Deem et al. 2009
 Mayaro_virus,Dasypus_novemcinctus,wild,Antibodies,0,de Thoisy et al. 2003
@@ -2446,7 +2446,7 @@ Bovine_herpesvirus_2,Rupicapra_rupicapra,wild,Antibodies,0,Thiry et al. 1988
 Foot-and-mouth_disease_virus,Rusa_unicolor,domestic,Isolation,2,Barman et al. 1999
 Australian_bat_lyssavirus,Saccolaimus_flaviventris,wild,Isolation,2,Calisher et al. 2006; Wong et al. 2007
 Australian_bat_lyssavirus,Saccolaimus_saccolaimus,wild,Isolation,2,Calisher et al. 2006
-Yellow_fever_virus,Saguinus_geoffroyi,wild,Antibodies,0,Seymour et al. 1983
+Yellow_fever_virus,Saguinus_geoffroyi,wild,Antibodies,0,Seymour et al. 1983a
 GB_virus_A,Saguinus_labiatus,wild,PCR,2,Bukh & Apgar 1997
 GB_virus_B,Saguinus_labiatus,captive,Isolation,2,Simons et al. 1995b
 Torque_Teno_virus,Saguinus_labiatus,wild,PCR,2,Okamoto et al. 2000

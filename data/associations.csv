@@ -84,7 +84,7 @@ GB_virus_A,Aotus_trivirgatus,wild,PCR,2,Bukh & Apgar 1997
 GB_virus_B,Aotus_trivirgatus,captive,Isolation,2,Bukh et al. 2001
 Hepatitis_A_virus,Aotus_trivirgatus,captive,Antibodies,0,Lemon et al. 1982
 Hepatitis_A_virus,Aotus_trivirgatus,wild,Antibodies,0,Lemon et al. 1982
-Measles_virus,Aotus_trivirgatus,wild,Isolation,2,Fowler & Miller. 2003
+Measles_virus,Aotus_trivirgatus,wild,Isolation,2,Fowler & Miller 2003
 Torque_Teno_virus,Aotus_trivirgatus,wild,PCR,2,Catroxo et al. 2008
 Vesicular_stomatitis_Indiana_virus,Aotus_trivirgatus,wild,plaque reduction neutralization,1,Tesh et al. 1969
 Yellow_fever_virus,Aotus_trivirgatus,wild,Antibodies,0,Seymour et al. 1983a
@@ -615,7 +615,7 @@ Simian_foamy_virus,Chlorocebus_pygerythrus,wild,PCR,2,Hussain et al. 2003
 Yaba_monkey_tumor_virus,Chlorocebus_pygerythrus,wild,PCR,2,Brettschneider et al. 2013
 Cercopithecine_herpesvirus_14,Chlorocebus_sabaeus,captive,isolation,2,Bocker et al. 1980
 Cercopithecine_herpesvirus_2,Chlorocebus_sabaeus,wild,Isolation,2,Malherbe & Harwin 1958
-Measles_virus,Chlorocebus_sabaeus,wild,Isolation,2,Fowler & Miller. 2003
+Measles_virus,Chlorocebus_sabaeus,wild,Isolation,2,Fowler & Miller 2003
 Borna_disease_virus,Choeropsis_liberiensis,wild,Antibodies,0,Shuppel et al. 1994
 Borna_disease_virus,Choloepus_didactylus,wild,Antibodies,0,Shuppel et al. 1994
 Mayaro_virus,Choloepus_didactylus,wild,Antibodies,0,de Thoisy et al. 2003
@@ -973,7 +973,7 @@ Human_adenovirus_C,Gorilla_gorilla,wild,PCR,2,Roy et al. 2009
 Human_adenovirus_F,Gorilla_gorilla,wild,PCR,2,Wevers et al. 2011
 Human_enterovirus_A,Gorilla_gorilla,wild,PCR,2,Sadeuh-Mba et al. 2014
 Human_enterovirus_D,Gorilla_gorilla,wild,PCR,2,Harvala et al. 2011
-Human_herpesvirus_1,Gorilla_gorilla,wild,Antibodies,0,Fowler & Miller. 2003
+Human_herpesvirus_1,Gorilla_gorilla,wild,Antibodies,0,Fowler & Miller 2003
 Pongine_herpesvirus_3,Gorilla_gorilla,captive,isolation,2,Neubauer et al. 1979
 Simian_foamy_virus,Gorilla_gorilla,wild,PCR,2,Hussain et al. 2003
 Zaire_ebolavirus,Gorilla_gorilla,wild,PCR,2,Leroy et al. 2004
@@ -2010,7 +2010,7 @@ Human_adenovirus_E,Pan_troglodytes,wild,PCR,2,Roy et al. 2009
 Human_adenovirus_F,Pan_troglodytes,wild,PCR,2,Wevers et al. 2011
 Human_enterovirus_A,Pan_troglodytes,wild,PCR,2,Sadeuh-Mba et al. 2014
 Human_enterovirus_D,Pan_troglodytes,wild,PCR,2,Harvala et al. 2011
-Human_herpesvirus_1,Pan_troglodytes,wild,Antibodies,0,Fowler & Miller. 2003
+Human_herpesvirus_1,Pan_troglodytes,wild,Antibodies,0,Fowler & Miller 2003
 Human_metapneumovirus,Pan_troglodytes,wild,PCR,2,Kondgen et al. 2010
 Human_respiratory_syncytial_virus,Pan_troglodytes,wild,PCR,2,Kondgen et al. 2010
 Pongine_herpesvirus_4,Pan_troglodytes,captive,PCR,2,Davison et al. 2003
@@ -2163,7 +2163,7 @@ Entebbe_bat_virus,Pipistrellus_pipistrellus,wild,Isolation,2,Gonzalez et al. 200
 European_bat_lyssavirus_1,Pipistrellus_pipistrellus,wild,Isolation,2,Muller et al. 2007
 Issyk-Kul_virus,Pipistrellus_pipistrellus,wild,Isolation,2,Kostyukov 1976
 Rabies_virus,Pipistrellus_subflavus,wild,PCR,2,Blanton et al. 2008
-Measles_virus,Pithecia_monachus,wild,Isolation,2,Fowler & Miller. 2003
+Measles_virus,Pithecia_monachus,wild,Isolation,2,Fowler & Miller 2003
 Mayaro_virus,Pithecia_pithecia,wild,Antibodies,0,de Thoisy et al. 2003
 Eastern_equine_encephalitis_virus,Platyrrhinus_helleri,wild,Antibodies,0,Price 1978
 Ilheus_virus,Platyrrhinus_helleri,wild,Antibodies,0,Price et al. 1978
@@ -2177,7 +2177,7 @@ Simian_foamy_virus,Pongo_abelii,wild,PCR,2,Hussain et al. 2003
 Dengue_virus,Pongo_pygmaeus,wild,Antibodies,0,Kilbourne et al. 2003
 Hepatitis_A_virus,Pongo_pygmaeus,wild,Antibodies,0,Sa-Nguanmoo et al. 2010
 Hepatitis_B_virus,Pongo_pygmaeus,wild,Antibodies,0,Sa-Nguanmoo et al. 2009
-Human_herpesvirus_1,Pongo_pygmaeus,wild,Antibodies,0,Fowler & Miller. 2003
+Human_herpesvirus_1,Pongo_pygmaeus,wild,Antibodies,0,Fowler & Miller 2003
 Human_herpesvirus_4,Pongo_pygmaeus,wild,Antibodies,0,Kilbourne et al. 2003
 Human_picobirnavirus,Pongo_pygmaeus,captive,PAGE,0,Masachessi et al. 2007
 Human_respiratory_syncytial_virus,Pongo_pygmaeus,wild,Antibodies,0,Kilbourne et al. 2003
@@ -2458,7 +2458,7 @@ Torque_Teno_virus,Saguinus_oedipus,wild,PCR,2,Catroxo et al. 2008
 Foot-and-mouth_disease_virus,Saiga_tatarica,wild,Isolation,2,Weaver et al. 2013
 Encephalomyocarditis_virus,Saimiri_sciureus,wild,Isolation,2,Roca-Garcia 1957
 Mayaro_virus,Saimiri_sciureus,wild,Antibodies,0,de Thoisy et al. 2003
-Measles_virus,Saimiri_sciureus,wild,Isolation,2,Fowler & Miller. 2003
+Measles_virus,Saimiri_sciureus,wild,Isolation,2,Fowler & Miller 2003
 Saimiriine_herpesvirus_1,Saimiri_sciureus,wild,Isolation,2,Daniel et al. 1967
 Saimiriine_herpesvirus_2,Saimiri_sciureus,wild,Isolation,2,Falk et al. 1972
 Simian_foamy_virus,Saimiri_sciureus,wild,Isolation,2,Johnston et al. 1971

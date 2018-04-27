@@ -1434,7 +1434,7 @@ Torque_Teno_virus,Macaca_fuscata,wild,PCR,2,Okamoto et al. 2000
 Primate_T-lymphotropic_virus_1,Macaca_maura,wild,Isolation,2,Saksena et al. 1994
 Adeno-associated_virus-1,Macaca_mulatta,captive,Antibodies,0,Xiao et al. 1999
 Adeno-associated_virus-2,Macaca_mulatta,captive,Antibodies,0,Xiao et al. 1999
-Cercopithecine_herpesvirus_1,Macaca_mulatta,wild,Isolation,2,Huff and Barry 2003
+Cercopithecine_herpesvirus_1,Macaca_mulatta,wild,Isolation,2,Huff & Barry 2003
 Cercopithecine_herpesvirus_15,Macaca_mulatta,captive,isolation,2,Habis et al. 2000
 Cercopithecine_herpesvirus_17,Macaca_mulatta,captive,isolation,2,Desrosiers et al. 1997
 Cercopithecine_herpesvirus_8,Macaca_mulatta,captive,isolation,2,Asher et al. 1974
@@ -1655,7 +1655,7 @@ Foot-and-mouth_disease_virus,Muntiacus_muntjak,wild,Antibodies,0,Barman et al. 1
 Japanese_encephalitis_virus,Murina_aurata,wild,Isolation,2,Wang et al. 2009
 Irkut_virus,Murina_leucogaster,wild,Isolation,2,Calisher et al. 2006
 Japanese_encephalitis_virus,Murina_leucogaster,wild,Antibodies,0,Miura et al. 1970
-Encephalomyocarditis_virus,Mus_booduga,wild,Isolation,2,Tesh and Wallace 1978
+Encephalomyocarditis_virus,Mus_booduga,wild,Isolation,2,Tesh & Wallace 1978
 Kyasanur_Forest_disease_virus,Mus_booduga,wild,Antibodies,0,Webb et al. 1965
 Murid_herpesvirus_1,Mus_cervicolor,wild,PCR,2,Ehlers et al. 2007
 Murine_leukemia_virus,Mus_cervicolor,wild,Isolation,2,Prassolov et al. 2001
@@ -1689,7 +1689,7 @@ Nipah_virus,Mus_musculus,wild,Isolation,2,WHO
 Rabies_virus,Mus_musculus,domestic,Antibodies,0,Childs et al. 1997
 Saboya_virus,Mus_musculus,wild,Isolation,2,Fontenille et al. 1994; Saluzzo et al. 1986; Grard et al. 2010
 Sendai_virus,Mus_musculus,domestic,Isolation,2,Faisca et al. 2007
-St._Louis_encephalitis_virus,Mus_musculus,domestic,Isolation,2,Kramer and Chandler 2001
+St._Louis_encephalitis_virus,Mus_musculus,domestic,Isolation,2,Kramer & Chandler 2001
 Theilovirus,Mus_musculus,domestic,Isolation,2,Liang et al. 2008 
 Venezuelan_equine_encephalitis_virus,Mus_musculus,wild,Isolation,2,Sudia & Newhouse 1975
 Western_equine_encephalitis_virus,Mus_musculus,domestic,Antibodies,0,Hardy et al. 1974
@@ -1857,7 +1857,7 @@ Bovine_viral_diarrhea_virus_1,Odocoileus_virginianus,wild,PCR,2,Passler at al. 2
 Deer_adenovirus,Odocoileus_virginianus,wild,Isolation,2,Sorden et al. 2000
 Deer_papillomavirus,Odocoileus_virginianus,wild,Isolation,2,Lancaster & Sundberg 1982
 Epizootic_hemorrhagic_disease_virus,Odocoileus_virginianus,wild,Antibodies,0,Nol et al. 2010
-Foot-and-mouth_disease_virus,Odocoileus_virginianus,wild,Isolation,2,Grubman and Baxt 2004
+Foot-and-mouth_disease_virus,Odocoileus_virginianus,wild,Isolation,2,Grubman & Baxt 2004
 Vesicular_stomatitis_Indiana_virus,Odocoileus_virginianus,wild,Antibodies,0,Fletcher et al. 1985
 West_Nile_virus,Odocoileus_virginianus,wild,Antibodies,0,Santaella et al. 2005
 Allpaahuayo_virus,Oecomys_bicolor,wild,Isolation,2,Moncayo et al. 2001
@@ -2207,7 +2207,7 @@ Encephalomyocarditis_virus,Procyon_lotor,wild,Isolation,2,Tesh & Wallace 1978
 Patois_virus,Procyon_lotor,wild,Antibodies,0,Scherer et al. 1972
 Rabies_virus,Procyon_lotor,wild,PCR,2,Nadin-Davis et al. 1996
 Racoonpox_virus,Procyon_lotor,wild,Isolation,2,Thomas et al. 1975
-St._Louis_encephalitis_virus,Procyon_lotor,wild,Isolation,2,Kramer and Chandler 2001
+St._Louis_encephalitis_virus,Procyon_lotor,wild,Isolation,2,Kramer & Chandler 2001
 Suid_herpesvirus_1,Procyon_lotor,wild,virus neutralization,0,Mitchell et al. 1999
 Vesicular_stomatitis_Indiana_virus,Procyon_lotor,wild,Antibodies,0,Fletcher et al. 1985
 West_Nile_virus,Procyon_lotor,wild,Antibodies,0,Root et al. 2005
@@ -2375,7 +2375,7 @@ Bovine_herpesvirus_2,Redunca_arundinum,wild,Antibodies,0,Hamblin & Hedger 1982
 Bovine_viral_diarrhea_virus_1,Redunca_arundinum,wild,SNT,1,Hamblin & Hedger 1979
 Crimean-Congo_hemorrhagic_fever_virus,Redunca_arundinum,wild,Antibodies,0,Shepherd et al. 1987
 Foot-and-mouth_disease_virus,Redunca_arundinum,wild,Antibodies,0,Weaver et al. 2013
-Lumpy_skin_disease_virus,Redunca_arundinum,wild,Antibodies,0,Hedger and Hamblin 1983
+Lumpy_skin_disease_virus,Redunca_arundinum,wild,Antibodies,0,Hedger & Hamblin 1983
 Bluetongue_virus,Redunca_fulvorufula,wild,Antibodies,0,Williams et al. 2001
 Crimean-Congo_hemorrhagic_fever_virus,Redunca_fulvorufula,wild,Antibodies,0,Shepherd et al. 1987
 Bayou_virus,Reithrodontomys_fulvescens,wild,Antibodies,0,Holsomback et al. 2009
@@ -2465,7 +2465,7 @@ Simian_foamy_virus,Saimiri_sciureus,wild,Isolation,2,Johnston et al. 1971
 Squirrel_monkey_retrovirus,Saimiri_sciureus,captive,Isolation,2,Heberling et al. 1977
 California_encephalitis_virus,Sciurus_carolinensis,wild,Antibodies,0,Moulton & Thompson 1971
 Eastern_equine_encephalitis_virus,Sciurus_carolinensis,wild,Antibodies,0,Karstad et al. 1960
-Encephalomyocarditis_virus,Sciurus_carolinensis,wild,Isolation,2,Vizoso and Hay 1965
+Encephalomyocarditis_virus,Sciurus_carolinensis,wild,Isolation,2,Vizoso & Hay 1965
 Lymphocytic_choriomeningitis_virus,Sciurus_carolinensis,wild,Antibodies,0,Greenwood & Sanchez 2002
 Minute_virus_of_mice,Sciurus_carolinensis,wild,Antibodies,0,Committee on Infectious Disease in Mice and Rats 1991; Greenwood & Sanchez 2002
 Murid_herpesvirus_1,Sciurus_carolinensis,wild,Antibodies,0,Greenwood & Sanchez 2002
@@ -2556,8 +2556,8 @@ Cetacean_morbillivirus_virus,Stenella_coeruleoalba,wild,PCR,2,Aguilar & Raga 199
 Dengue_virus,Sturnira_lilium,wild,Antibodies,0,Aguilar-Setien et al. 2008
 Eastern_equine_encephalitis_virus,Sturnira_lilium,wild,Antibodies,0,Ubico & McLean 1995
 Mapuera_virus,Sturnira_lilium,wild,Isolation,2,Calisher et al. 2006
-Rabies_virus,Sturnira_lilium,wild,Antibodies,0,Price and Everard 1977
-Rio_Bravo_virus,Sturnira_lilium,wild,Antibodies,0,Ubico and McLean 1995
+Rabies_virus,Sturnira_lilium,wild,Antibodies,0,Price & Everard 1977
+Rio_Bravo_virus,Sturnira_lilium,wild,Antibodies,0,Ubico & McLean 1995
 St._Louis_encephalitis_virus,Sturnira_lilium,wild,Antibodies,0,Sabattini et al. 1965
 Tacaribe_virus,Sturnira_lilium,wild,Antibodies,0,Price et al. 1978
 Tamana_bat_virus,Sturnira_lilium,wild,Antibodies,0,Price 1978
@@ -2575,7 +2575,7 @@ Border_disease_virus,Sus_scrofa,domestic,PCR,2,Roehe et al. 1992
 Borna_disease_virus,Sus_scrofa,domestic,PCR,2,Zhang et al. 2014
 Bovine_viral_diarrhea_virus_1,Sus_scrofa,domestic,PCR,2,Van Gennip et al. 1999
 Classical_swine_fever_virus,Sus_scrofa,domestic,Isolation,2,Kosmidou et al 1998
-Encephalomyocarditis_virus,Sus_scrofa,domestic,Isolation,2,Tesh and Wallace 1978
+Encephalomyocarditis_virus,Sus_scrofa,domestic,Isolation,2,Tesh & Wallace 1978
 Foot-and-mouth_disease_virus,Sus_scrofa,domestic,Isolation,2,Ghoneim et al. 2010
 Getah_virus,Sus_scrofa,domestic,Isolation,2,Attoui et al. 2007
 Hepatitis_E_virus,Sus_scrofa,domestic,Antibodies,0,Taylor et al. 2001;http://www.uniprot.org/uniprot/Q2A069
@@ -2622,11 +2622,11 @@ Torque_Teno_virus,Sus_scrofa,domestic,PCR,2,Martelli et al. 2006
 Transmissible_gastroenteritis_virus,Sus_scrofa,domestic,Antibodies,0,Morin et al. 1973
 Trubanaman_virus,Sus_scrofa,wild,Antibodies,0,Johansen et al. 2005
 Vaccinia_virus,Sus_scrofa,domestic,VNT,1,Peres et al. 2013
-Vesicular_exanthema_of_swine_virus,Sus_scrofa,domestic,Antibodies,0,Smith and Latham 1978
+Vesicular_exanthema_of_swine_virus,Sus_scrofa,domestic,Antibodies,0,Smith & Latham 1978
 Vesicular_stomatitis_Indiana_virus,Sus_scrofa,domestic,Antibodies,0,Fletcher et al. 1985
 Wesselsbron_virus,Sus_scrofa,domestic,Antibodies,0,Baba et al. 1994
 Japanaut_virus,Syconycteris_australis,wild,Isolation,2,Calisher et al. 2006
-Bovine_viral_diarrhea_virus_1,Sylvicapra_grimmia,wild,SNT,1,Hamblin and Hedger 1979
+Bovine_viral_diarrhea_virus_1,Sylvicapra_grimmia,wild,SNT,1,Hamblin & Hedger 1979
 Foot-and-mouth_disease_virus,Sylvicapra_grimmia,domestic,Antibodies,0,Weaver et al. 2013
 Peste-des-petits-ruminants_virus,Sylvicapra_grimmia,wild,ELISA,0,Ogunsanmi et al. 2003
 Bunyamwera_virus,Sylvilagus_aquaticus,wild,Isolation,2,Calisher et al. 1986
@@ -2731,7 +2731,7 @@ Bluetongue_virus,Tragelaphus_strepsiceros,wild,Antibodies,0,Williams et al. 2001
 Bovine_viral_diarrhea_virus_1,Tragelaphus_strepsiceros,wild,SNT,1,Hamblin & Hedger 1979
 Crimean-Congo_hemorrhagic_fever_virus,Tragelaphus_strepsiceros,wild,Antibodies,0,Shepherd et al. 1987
 Foot-and-mouth_disease_virus,Tragelaphus_strepsiceros,wild,Isolation,2,Weaver et al. 2013
-Lumpy_skin_disease_virus,Tragelaphus_strepsiceros,wild,Antibodies,0,Hedger and Hamblin 1983
+Lumpy_skin_disease_virus,Tragelaphus_strepsiceros,wild,Antibodies,0,Hedger & Hamblin 1983
 Rabies_virus,Tragelaphus_strepsiceros,wild,PCR,2,Mansfield et al. 2006
 Rinderpest_virus,Tragelaphus_strepsiceros,wild,PCR,2,Roeder 2011
 Bovine_viral_diarrhea_virus_1,Tragulus_javanicus,wild,PCR,2,Grondahl et al. 2003

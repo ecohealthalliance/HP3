@@ -81,7 +81,7 @@ Rabies_virus,Antrozous_pallidus,wild,PCR,2,Blanton et al. 2008
 Measles_virus,Aotus_azarae,wild,Antibodies,0,O'Brien et al. 1981
 Encephalomyocarditis_virus,Aotus_trivirgatus,wild,Isolation,2,Roca-Garcia 1957
 GB_virus_A,Aotus_trivirgatus,wild,PCR,2,Bukh & Apgar 1997
-GB_virus_B,Aotus_trivirgatus,captive,Isolation,2,Bukh et al. 2001a
+GB_virus_B,Aotus_trivirgatus,captive,Isolation,2,Bukh et al. 2001
 Hepatitis_A_virus,Aotus_trivirgatus,captive,Antibodies,0,Lemon et al. 1982
 Hepatitis_A_virus,Aotus_trivirgatus,wild,Antibodies,0,Lemon et al. 1982
 Measles_virus,Aotus_trivirgatus,wild,Isolation,2,Fowler & Miller. 2003
@@ -2452,7 +2452,7 @@ Torque_Teno_virus,Saguinus_labiatus,wild,PCR,2,Okamoto et al. 2000
 Callitrichine_herpesvirus_1,Saguinus_midas,wild,Isolation,2,de Thoisy et al. 2003
 Mayaro_virus,Saguinus_midas,wild,Antibodies,0,de Thoisy et al. 2003
 GB_virus_A,Saguinus_mystax,wild,PCR,2,Bukh & Apgar 1997
-GB_virus_A,Saguinus_nigricollis,wild,PCR,2,Bukh & Apga 1997
+GB_virus_A,Saguinus_nigricollis,wild,PCR,2,Bukh & Apgar 1997
 GB_virus_A,Saguinus_oedipus,wild,PCR,2,Bukh & Apgar 1997
 Torque_Teno_virus,Saguinus_oedipus,wild,PCR,2,Catroxo et al. 2008
 Foot-and-mouth_disease_virus,Saiga_tatarica,wild,Isolation,2,Weaver et al. 2013

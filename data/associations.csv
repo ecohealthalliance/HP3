@@ -1,4 +1,4 @@
-vVirusNameCorrected,hHostNameFinal,WildDomInReference,DetectionMethod,DetectionQuality,Reference
+vVirusNameCorrected,hHostNameFinal,WildDomInReference,DetectionMethod,DetectionQuality,referencekey
 Andes_virus,Abrothrix_longipilis,wild,PCR,2,Medina et al. 2009
 Andes_virus,Abrothrix_olivaceus,wild,Antibodies,0,Sosa-Estani et al. 2002
 Andes_virus,Abrothrix_sanborni,wild,Antibodies,0,Padula et al. 2004

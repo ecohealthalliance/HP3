@@ -312,7 +312,7 @@ Vesicular_stomatitis_Alagoas_virus,Bos_taurus,domestic,PCR,2,Cargnelutti et al. 
 Vesicular_stomatitis_Indiana_virus,Bos_taurus,domestic,Antibodies,0,Fletcher et al. 1985
 Vesicular_stomatitis_New_Jersey_virus,Bos_taurus,domestic,Antibodies,0,Adell et al. 2010
 Wad_Medani_virus,Bos_taurus,domestic,Antibodies,0,Darwish et al. 1983
-Wesselsbron_virus,Bos_taurus,domestic,Antibodies,0,Baba et al. 1994
+Wesselsbron_virus,Bos_taurus,domestic,Antibodies,0,Baba et al. 1995
 Wongorr_virus,Bos_taurus,domestic,Antibodies,0,Doherty et al. 1973
 Foot-and-mouth_disease_virus,Boselaphus_tragocamelus,wild,Isolation,2,Davis 1981
 Marituba_virus,Bradypus_tridactylus,wild,Isolation,2,Shope et al. 1988
@@ -380,7 +380,7 @@ Orungo_virus,Camelus_dromedarius,domestic,Antibodies,0,Brown et al. 1991
 Peste-des-petits-ruminants_virus,Camelus_dromedarius,domestic,PCR,2,Kwiatek et al. 2011
 Rift_Valley_fever_virus,Camelus_dromedarius,domestic,Antibodies,0,Al-Afaleq et al. 2007
 Thogoto_virus,Camelus_dromedarius,domestic,Isolation,2,Jones et al. 1987
-Wesselsbron_virus,Camelus_dromedarius,domestic,Antibodies,0,Baba et al. 1994
+Wesselsbron_virus,Camelus_dromedarius,domestic,Antibodies,0,Baba et al. 1995
 African_horse_sickness_virus,Canis_adustus,wild,bcELISA,0,Alexander et al. 1995
 Bluetongue_virus,Canis_adustus,wild,"ELISA, SNT",0,Alexander et al. 1995
 Rabies_virus,Canis_adustus,wild,Isolation,2,Sabeta et al. 2003
@@ -413,7 +413,7 @@ Suid_herpesvirus_1,Canis_familiaris,domestic,Isolation,2,Eidson et al. 1953
 Vaccinia_virus,Canis_familiaris,domestic,VNT,1,Peres et al. 2013
 Venezuelan_equine_encephalitis_virus,Canis_familiaris,domestic,Antibodies,0,Estrada-Franco et al. 2004
 Vesicular_stomatitis_Indiana_virus,Canis_familiaris,domestic,SNT,1,Webb et al. 1987b
-Wesselsbron_virus,Canis_familiaris,domestic,Antibodies,0,Baba et al. 1994
+Wesselsbron_virus,Canis_familiaris,domestic,Antibodies,0,Baba et al. 1995
 Canine_adenovirus,Canis_latrans,wild,Antibodies,0,Almberg et al. 2009
 Canine_coronavirus,Canis_latrans,wild,Antibodies,0,Foreyt et al. 1985
 Rabies_virus,Canis_latrans,wild,Isolation,2,Behymer et al. 1974
@@ -466,7 +466,7 @@ Sheeppox_virus,Capra_hircus,domestic,PCR,2,Bhanuprakash et al. 2010
 Suid_herpesvirus_1,Capra_hircus,domestic,"Cell culture, PCR",2,Salwa 2004
 Trubanaman_virus,Capra_hircus,domestic,Antibodies,0,Johansen et al. 2005
 Wad_Medani_virus,Capra_hircus,domestic,Antibodies,0,Darwish et al. 1983
-Wesselsbron_virus,Capra_hircus,domestic,Antibodies,0,Baba et al. 1994
+Wesselsbron_virus,Capra_hircus,domestic,Antibodies,0,Baba et al. 1995
 Bovine_herpesvirus_1,Capra_ibex,wild,Antibodies,0,Thiry et al. 1988
 Cervid_herpesvirus_1,Capra_ibex,wild,Antibodies,0,Thiry et al. 1988
 Goat_adenovirus,Capra_ibex,domestic,Isolation,2,Olson et al. 2004
@@ -797,7 +797,7 @@ Thogoto_virus,Equus_asinus,domestic,Antibodies,0,Jones et al. 1987
 Venezuelan_equine_encephalitis_virus,Equus_asinus,domestic,Isolation,2,Hearn et al. 1960
 Vesicular_exanthema_of_swine_virus,Equus_asinus,domestic,Antibodies,0,Smith et al. 1978
 Vesicular_stomatitis_Indiana_virus,Equus_asinus,domestic,Antibodies,0,Fletcher et al. 1985
-Wesselsbron_virus,Equus_asinus,domestic,Antibodies,0,Baba et al. 1994
+Wesselsbron_virus,Equus_asinus,domestic,Antibodies,0,Baba et al. 1995
 African_horse_sickness_virus,Equus_caballus,domestic,Antibodies,0,Baba et al. 1993
 Akabane_virus,Equus_caballus,domestic,Antibodies,0,Davies et al. 1985
 Anopheles_A_virus,Equus_caballus,domestic,Isolation,2,NA
@@ -854,7 +854,7 @@ Vaccinia_virus,Equus_caballus,domestic,VNT,1,Peres et al. 2013
 Venezuelan_equine_encephalitis_virus,Equus_caballus,domestic,PCR,2,Navarro et al. 2005
 Vesicular_stomatitis_Alagoas_virus,Equus_caballus,domestic,Isolation,2,Federer et al. 1967; Andrade et al. 1980
 Vesicular_stomatitis_Indiana_virus,Equus_caballus,domestic,Antibodies,0,Fletcher et al. 1985
-Wesselsbron_virus,Equus_caballus,domestic,Antibodies,0,Baba et al. 1994
+Wesselsbron_virus,Equus_caballus,domestic,Antibodies,0,Baba et al. 1995
 West_Nile_virus,Equus_caballus,domestic,PCR,2,Ibarra-Juarez et al. 2012
 Western_equine_encephalitis_virus,Equus_caballus,domestic,Antibodies,0,Calisher et al. 1983
 Equid_herpesvirus_9,Equus_hemionus,wild,Isolation,2,Kasem et al. 2008
@@ -1971,7 +1971,7 @@ Torque_Teno_virus,Ovis_aries,domestic,PCR,2,Leary et al. 1999
 Trubanaman_virus,Ovis_aries,domestic,Antibodies,0,Johansen et al. 2005
 Visna/maedi_virus,Ovis_aries,domestic,PCR,2,Cortez-Romero et al. 2011
 Wad_Medani_virus,Ovis_aries,domestic,Antibodies,0,Darwish et al. 1983
-Wesselsbron_virus,Ovis_aries,domestic,Antibodies,0,Baba et al. 1994
+Wesselsbron_virus,Ovis_aries,domestic,Antibodies,0,Baba et al. 1995
 Bluetongue_virus,Ovis_canadensis,wild,Isolation,2,Noon et al. 2002
 Bovine_viral_diarrhea_virus_1,Ovis_canadensis,wild,SNT,1,Parks & England 1974
 Epizootic_hemorrhagic_disease_virus,Ovis_canadensis,wild,Isolation,2,Noon et al. 2002
@@ -2624,7 +2624,7 @@ Trubanaman_virus,Sus_scrofa,wild,Antibodies,0,Johansen et al. 2005
 Vaccinia_virus,Sus_scrofa,domestic,VNT,1,Peres et al. 2013
 Vesicular_exanthema_of_swine_virus,Sus_scrofa,domestic,Antibodies,0,Smith & Latham 1978
 Vesicular_stomatitis_Indiana_virus,Sus_scrofa,domestic,Antibodies,0,Fletcher et al. 1985
-Wesselsbron_virus,Sus_scrofa,domestic,Antibodies,0,Baba et al. 1994
+Wesselsbron_virus,Sus_scrofa,domestic,Antibodies,0,Baba et al. 1995
 Japanaut_virus,Syconycteris_australis,wild,Isolation,2,Calisher et al. 2006
 Bovine_viral_diarrhea_virus_1,Sylvicapra_grimmia,wild,SNT,1,Hamblin & Hedger 1979
 Foot-and-mouth_disease_virus,Sylvicapra_grimmia,domestic,Antibodies,0,Weaver et al. 2013

@@ -1004,7 +1004,7 @@ Kyasanur_Forest_disease_virus,Hipposideros_speoris,wild,Antibodies,0,Bhat et al.
 Bovine_viral_diarrhea_virus_1,Hippotragus_equinus,wild,SNT,1,Depner et al. 1991
 Foot-and-mouth_disease_virus,Hippotragus_equinus,wild,Antibodies,0,Condy et al. 1969 in Weaver and Karesh 2013
 Hippotragine_herpesvirus_1,Hippotragus_equinus,zoo,Antibodies,0,Reid & Bridge 1991
-Bluetongue_virus,Hippotragus_niger,wild,Antibodies,0,Anderson et al. 1998
+Bluetongue_virus,Hippotragus_niger,wild,Antibodies,0,Anderson & Rowe 1998
 Bovine_viral_diarrhea_virus_1,Hippotragus_niger,wild,SNT,1,Hamblin & Hedger 1979
 Crimean-Congo_hemorrhagic_fever_virus,Hippotragus_niger,wild,Antibodies,0,Shepherd et al. 1987
 Foot-and-mouth_disease_virus,Hippotragus_niger,wild,Antibodies,0,Hamblin et al. 1990
@@ -2643,7 +2643,7 @@ California_encephalitis_virus,Sylvilagus_floridanus,wild,Antibodies,0,Parkin et 
 Cottontail_rabbit_papillomavirus,Sylvilagus_floridanus,wild,Antigen,0,Weiner et al. 2010
 Rabbit_kidney_vacuolating_virus,Sylvilagus_floridanus,wild,Isolation,2,Hartley & Rowe 1964
 St._Louis_encephalitis_virus,Sylvilagus_nuttallii,wild,Antibodies,0,Sabattini et al. 1965
-Bluetongue_virus,Syncerus_caffer,wild,Antibodies,0,Anderson et al. 1998
+Bluetongue_virus,Syncerus_caffer,wild,Antibodies,0,Anderson & Rowe 1998
 Bovine_ephemeral_fever_virus,Syncerus_caffer,wild,Antibodies,0,Davies et al. 1975
 Bovine_herpesvirus_2,Syncerus_caffer,wild,Antibodies,0,Hamblin & Hedger 1982
 Bovine_viral_diarrhea_virus_1,Syncerus_caffer,wild,SNT,1,Hamblin & Hedger 1979
@@ -2713,13 +2713,13 @@ Measles_virus,Trachypithecus_cristatus,wild,Isolation,2,Fowler & Miller 2003
 Kyasanur_Forest_disease_virus,Trachypithecus_francoisi,wild,Antibodies,0,Webb et al. 1965
 Simian_foamy_virus,Trachypithecus_francoisi,wild,Isolation,2,Hussain et al. 2003
 Langur_virus,Trachypithecus_obscurus,captive,Isolation,2,Benveniste & Todaro 1977
-Bluetongue_virus,Tragelaphus_angasii,wild,Antibodies,0,Anderson et al. 1998
+Bluetongue_virus,Tragelaphus_angasii,wild,Antibodies,0,Anderson & Rowe 1998
 Crimean-Congo_hemorrhagic_fever_virus,Tragelaphus_angasii,wild,Antibodies,0,Shepherd et al. 1987
 Bovine_viral_diarrhea_virus_1,Tragelaphus_eurycerus,wild,Isolation,2,Becher et al. 2000
 Foot-and-mouth_disease_virus,Tragelaphus_imberbis,wild,Antibodies,0,Anonymous 1966 in Weaver and Karesh 2013
 Rinderpest_virus,Tragelaphus_imberbis,wild,PCR,2,Roeder 2011
 Akabane_virus,Tragelaphus_oryx,wild,Antibodies,0,Davies et al. 1985
-Bluetongue_virus,Tragelaphus_oryx,wild,Antibodies,0,Anderson et al. 1998
+Bluetongue_virus,Tragelaphus_oryx,wild,Antibodies,0,Anderson & Rowe 1998
 Bovine_viral_diarrhea_virus_1,Tragelaphus_oryx,wild,Isolation,2,Vilcek et al. 2000
 Crimean-Congo_hemorrhagic_fever_virus,Tragelaphus_oryx,wild,Antibodies,0,Shepherd et al. 1987
 Foot-and-mouth_disease_virus,Tragelaphus_oryx,wild,Antibodies,0,Anderson 1981

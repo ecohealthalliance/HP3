@@ -533,8 +533,8 @@ Bluetongue_virus,Ceratotherium_simum,wild,ELISA,0,Fischer-Tenhagen et al. 2000
 Bovine_viral_diarrhea_virus_1,Ceratotherium_simum,wild,ELISA,0,Fischer-Tenhagen et al. 2000
 Crimean-Congo_hemorrhagic_fever_virus,Ceratotherium_simum,wild,Antibodies,0,Shepherd et al. 1987
 Rift_Valley_fever_virus,Ceratotherium_simum,wild,Antibodies,0,Anderson & Rowe 1998
-Primate_T-lymphotropic_virus_1,Cercocebus_agilis,wild,PCR,2,Sintasatah et al. 2009
-Primate_T-lymphotropic_virus_3,Cercocebus_agilis,wild,PCR,2,Sintasatah et al. 2009
+Primate_T-lymphotropic_virus_1,Cercocebus_agilis,wild,PCR,2,Sintasath et al. 2009
+Primate_T-lymphotropic_virus_3,Cercocebus_agilis,wild,PCR,2,Sintasath et al. 2009
 Simian_foamy_virus,Cercocebus_atys,wild,PCR,2,Hussain et al. 2003
 Simian_immunodeficiency_virus,Cercocebus_atys,wild,Isolation,2,Fultz et al. 1989
 Simian_foamy_virus,Cercocebus_chrysogaster,wild,PCR,2,Schweizer et al. 1995
@@ -564,13 +564,13 @@ Simian_foamy_virus,Cercopithecus_mitis,wild,PCR,2,Hussain et al. 2003
 Simian_virus_10,Cercopithecus_mitis,wild,Isolation,2,Mahy 2009
 Monkeypox_virus,Cercopithecus_mona,wild,Antibodies,0,Brack 1987
 Primate_T-lymphotropic_virus_1,Cercopithecus_mona,wild,PCR,2,NA
-Primate_T-lymphotropic_virus_3,Cercopithecus_mona,wild,PCR,2,Sintasatah et al. 2009
+Primate_T-lymphotropic_virus_3,Cercopithecus_mona,wild,PCR,2,Sintasath et al. 2009
 Simian_immunodeficiency_virus,Cercopithecus_mona,wild,PCR,2,Peeters et al. 2002
 Yellow_fever_virus,Cercopithecus_mona,wild,Antibodies,0,Bauer & Mahaffy 1930
 Simian_foamy_virus,Cercopithecus_neglectus,wild,PCR,2,Hussain et al. 2003
 Simian_immunodeficiency_virus,Cercopithecus_neglectus,wild,PCR,2,Peeters et al. 2002
-Primate_T-lymphotropic_virus_1,Cercopithecus_nictitans,wild,PCR,2,Sintasatah et al. 2009
-Primate_T-lymphotropic_virus_3,Cercopithecus_nictitans,wild,PCR,2,Sintasatah et al. 2009
+Primate_T-lymphotropic_virus_1,Cercopithecus_nictitans,wild,PCR,2,Sintasath et al. 2009
+Primate_T-lymphotropic_virus_3,Cercopithecus_nictitans,wild,PCR,2,Sintasath et al. 2009
 Simian_foamy_virus,Cercopithecus_nictitans,wild,PCR,2,Schweizer et al. 1995
 Simian_immunodeficiency_virus,Cercopithecus_nictitans,wild,PCR,2,Peeters et al. 2002
 Monkeypox_virus,Cercopithecus_petaurista,wild,Antibodies,0,Brack 1987
@@ -1378,7 +1378,7 @@ Felid_herpesvirus_1,Lontra_canadensis,wild,Antibodies,0,Kimber et al. 2000
 Feline_calicivirus,Lontra_canadensis,wild,Antibodies,0,Kimber et al. 2000
 Feline_panleukopenia_virus,Lontra_canadensis,wild,Antibodies,0,Kimber et al. 2000
 Rabies_virus,Lontra_canadensis,wild,Antibodies,0,Kimber et al. 2000
-Primate_T-lymphotropic_virus_3,Lophocebus_albigena,wild,PCR,2,Sintasatah et al. 2009
+Primate_T-lymphotropic_virus_3,Lophocebus_albigena,wild,PCR,2,Sintasath et al. 2009
 Simian_foamy_virus,Lophocebus_albigena,wild,PCR,2,Hussain et al. 2003
 Simian_immunodeficiency_virus,Lophocebus_albigena,wild,PCR,2,Peeters et al. 2002
 Vesicular_stomatitis_Indiana_virus,Lophostoma_silvicolum,wild,plaque reduction neutralization,1,Tesh et al. 1969

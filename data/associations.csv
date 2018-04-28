@@ -190,7 +190,7 @@ Cowpox_virus,Arvicola_scherman,wild,Antibodies,0,Charbonnel et al. 2008
 Lymphocytic_choriomeningitis_virus,Arvicola_scherman,wild,Antibodies,0,Tagliapietra et al. 2009
 Bhanja_virus,Atelerix_albiventris,wild,Antibodies,0,Hubalek 2009
 Chandipura_virus,Atelerix_albiventris,wild,Isolation,2,Kemp 1975
-Kotonkan_virus,Atelerix_albiventris,wild,Antibodies,0,Kemp et al.1973
+Kotonkan_virus,Atelerix_albiventris,wild,Antibodies,0,Kemp et al. 1973
 Semliki_Forest_virus,Atelerix_albiventris,wild,Isolation,2,CDC ArboCat Report
 Ateline_herpesvirus_1,Ateles_geoffroyi,captive,isolation,2,Hull et al. 1972
 Ateline_herpesvirus_2,Ateles_geoffroyi,wild,Isolation,2,Melendez et al. 1992
@@ -227,7 +227,7 @@ Bovine_herpesvirus_1,Bison_bonasus,wild,"PCR, Isolation",2,Borchers 2002
 Bovine_viral_diarrhea_virus_1,Bison_bonasus,wild,PCR,2,Becher et al. 1999
 Foot-and-mouth_disease_virus,Blastocerus_dichotomus,wild,Antibodies,0,Araujo et al. 2010 in Weaver et al. 2013
 Foot-and-mouth_disease_virus,Bos_gaurus,domestic,Isolation,2,Choudhury et al. 1992
-Ovine_herpesvirus_2,Bos_gaurus,wild,Isolation,2,Tyler et al.1993
+Ovine_herpesvirus_2,Bos_gaurus,wild,Isolation,2,Tyler et al. 1993
 Rinderpest_virus,Bos_gaurus,wild,Isolation,2,Chamberlain et al. 1993
 Bovine_immunodeficiency_virus,Bos_javanicus,domestic,Antibodies,0,Patil et al. 2003
 Ovine_herpesvirus_2,Bos_javanicus,wild,PCR,2,Wiyono et al. 1994
@@ -284,7 +284,7 @@ Gan_Gan_virus,Bos_taurus,domestic,Antibodies,0,Vale et al. 1991
 Hepatitis_E_virus,Bos_taurus,domestic,Antibodies,0,Favorov et al. 2000
 Ife_virus,Bos_taurus,domestic,Antibodies,0,Ezefeika et al. 1989
 Koongol_virus,Bos_taurus,domestic,Antibodies,0,Doherty et al. 1970
-Kotonkan_virus,Bos_taurus,domestic,Antibodies,0,Kemp et al.1973
+Kotonkan_virus,Bos_taurus,domestic,Antibodies,0,Kemp et al. 1973
 Lumpy_skin_disease_virus,Bos_taurus,domestic,PCR,2,Lamien et al. 2011
 Mumps_virus,Bos_taurus,domestic,Antibodies,0,Cuadrado 1959
 Ovine_herpesvirus_2,Bos_taurus,domestic,PCR,2,Furlan et al. 2012
@@ -409,7 +409,7 @@ Rabies_virus,Canis_familiaris,domestic,PCR,2,Lembo et al. 2008
 Ross_River_virus,Canis_familiaris,domestic,Antibodies,0,Digoutte et al. 1976
 Sandfly_fever_Sicilian_virus,Canis_familiaris,domestic,Antibodies,0,Sakhria et al. 2014
 St._Louis_encephalitis_virus,Canis_familiaris,domestic,Antibodies,0,Lillibridge et al. 2004
-Suid_herpesvirus_1,Canis_familiaris,domestic,Isolation,2,Eidson et al.1953
+Suid_herpesvirus_1,Canis_familiaris,domestic,Isolation,2,Eidson et al. 1953
 Vaccinia_virus,Canis_familiaris,domestic,VNT,1,Peres et al. 2013
 Venezuelan_equine_encephalitis_virus,Canis_familiaris,domestic,Antibodies,0,Estrada-Franco et al. 2004
 Vesicular_stomatitis_Indiana_virus,Canis_familiaris,domestic,SNT,1,Webb et al. 1987b

@@ -642,7 +642,7 @@ Foot-and-mouth_disease_virus,Connochaetes_taurinus,wild,Antibodies,0,Hamblin et 
 Lumpy_skin_disease_virus,Connochaetes_taurinus,wild,SNT,1,Barnard 1997
 Rift_Valley_fever_virus,Connochaetes_taurinus,wild,Antibodies,0,Capobianco Dondona 2016
 Rinderpest_virus,Connochaetes_taurinus,wild,Antibodies,0,Taylor & Watson 1967
-Rabies_virus,Corynorhinus_townsendii,wild,Isolation,2,Strieker et al. 2010
+Rabies_virus,Corynorhinus_townsendii,wild,Isolation,2,Streiker et al. 2010
 Monkeypox_virus,Cricetomys_emini,wild,Antibodies,0,Hutin et al. 2001
 Dugbe_virus,Cricetomys_gambianus,wild,Isolation,2,Beran 1994; Kemp 1975; Kemp et al. 1974; CDC ArboCat Report
 Ife_virus,Cricetomys_gambianus,wild,Antibodies,0,Ezefeika et al. 1987
@@ -1328,7 +1328,7 @@ Rabies_virus,Lasiurus_cinereus,wild,PCR,2,Blanton et al. 2008
 Rabies_virus,Lasiurus_ega,wild,PCR,2,Blanton et al. 2008
 Rabies_virus,Lasiurus_egregius,wild,IFA,0,Stutz et al. 2004
 Rabies_virus,Lasiurus_intermedius,wild,Isolation,2,Nadin-Davis et al. 2001
-Rabies_virus,Lasiurus_seminolus,wild,PCR,2,Strieker et al. 2010; Constantine 1979
+Rabies_virus,Lasiurus_seminolus,wild,PCR,2,Streiker et al. 2010; Constantine 1979
 Rabies_virus,Lasiurus_xanthinus,wild,PCR,2,Blanton et al. 2008
 Ljungan_virus,Lemmus_lemmus,wild,PCR,2,Hauffe et al. 2012
 Topografov_virus,Lemmus_sibiricus,wild,PCR,2,Vapalahti et al. 1999

@@ -175,7 +175,7 @@ Tacaribe_virus,Artibeus_toltecus,wild,Isolation,2,Abraham et al. 2009
 Ippy_virus,Arvicanthis_neumanni,wild,Isolation,2,Meunier et al. 1985
 Arumowot_virus,Arvicanthis_niloticus,wild,isolation,2,Kemp et al. 1974
 Bunyamwera_virus,Arvicanthis_niloticus,wild,Isolation,2,Monath et al. 1972; Henderson et al. 1972
-Ife_virus,Arvicanthis_niloticus,wild,Antibodies,0,Ezefeika et al. 1988
+Ife_virus,Arvicanthis_niloticus,wild,Antibodies,0,Ezeifeka et al. 1987
 Ippy_virus,Arvicanthis_niloticus,wild,Isolation,2,Meunier et al. 1985
 Lassa_virus,Arvicanthis_niloticus,wild,Antibodies,0,Gonzalez et al. 2007
 Qalyub_virus,Arvicanthis_niloticus,wild,Isolation,2,Saluzzo et al. 1986
@@ -282,7 +282,7 @@ Epizootic_hemorrhagic_disease_virus,Bos_taurus,domestic,Isolation,2,Nol et al. 2
 Foot-and-mouth_disease_virus,Bos_taurus,domestic,Isolation,2,Alexandersen et al. 2003 in Weaver & Karesh 2013
 Gan_Gan_virus,Bos_taurus,domestic,Antibodies,0,Vale et al. 1991
 Hepatitis_E_virus,Bos_taurus,domestic,Antibodies,0,Favorov et al. 2000
-Ife_virus,Bos_taurus,domestic,Antibodies,0,Ezefeika et al. 1989
+Ife_virus,Bos_taurus,domestic,Antibodies,0,Ezeifeka et al. 1989
 Koongol_virus,Bos_taurus,domestic,Antibodies,0,Doherty et al. 1970
 Kotonkan_virus,Bos_taurus,domestic,Antibodies,0,Kemp et al. 1973
 Lumpy_skin_disease_virus,Bos_taurus,domestic,PCR,2,Lamien et al. 2011
@@ -375,7 +375,7 @@ Crimean-Congo_hemorrhagic_fever_virus,Camelus_dromedarius,domestic,Antibodies,0,
 Dugbe_virus,Camelus_dromedarius,domestic,Antibodies,0,Morrill et al. 1990
 Equine_rhinitis_A_virus,Camelus_dromedarius,domestic,PCR,2,Wernery et al. 2008
 Foot-and-mouth_disease_virus,Camelus_dromedarius,domestic,Antibodies,0,Yousef et al. 2012
-Ife_virus,Camelus_dromedarius,domestic,Antibodies,0,Ezefeika et al. 1989
+Ife_virus,Camelus_dromedarius,domestic,Antibodies,0,Ezeifeka et al. 1989
 Orungo_virus,Camelus_dromedarius,domestic,Antibodies,0,Brown et al. 1991
 Peste-des-petits-ruminants_virus,Camelus_dromedarius,domestic,PCR,2,Kwiatek et al. 2011
 Rift_Valley_fever_virus,Camelus_dromedarius,domestic,Antibodies,0,Al-Afaleq et al. 2007
@@ -451,7 +451,7 @@ Epizootic_hemorrhagic_disease_virus,Capra_hircus,wild,Antibodies,0,Nol et al. 20
 Foot-and-mouth_disease_virus,Capra_hircus,domestic,Isolation,2,Ghoneim et al. 2010
 Goatpox_virus,Capra_hircus,domestic,Isolation,2,Tulman et al. 2002
 Hepatitis_E_virus,Capra_hircus,domestic,Antibodies,0,Meng et al.
-Ife_virus,Capra_hircus,domestic,Antibodies,0,Ezefeika et al. 1989
+Ife_virus,Capra_hircus,domestic,Antibodies,0,Ezeifeka et al. 1989
 Jaagsiekte_sheep_retrovirus,Capra_hircus,domestic,Isolation,2,York et al. 1992
 Orf_virus,Capra_hircus,domestic,PCR,2,Vikoren et al. 2008
 Orungo_virus,Capra_hircus,domestic,Antibodies,0,Brown et al. 1991
@@ -645,7 +645,7 @@ Rinderpest_virus,Connochaetes_taurinus,wild,Antibodies,0,Taylor & Watson 1967
 Rabies_virus,Corynorhinus_townsendii,wild,Isolation,2,Streiker et al. 2010
 Monkeypox_virus,Cricetomys_emini,wild,Antibodies,0,Hutin et al. 2001
 Dugbe_virus,Cricetomys_gambianus,wild,Isolation,2,Beran 1994; Kemp 1975; Kemp et al. 1974; CDC ArboCat Report
-Ife_virus,Cricetomys_gambianus,wild,Antibodies,0,Ezefeika et al. 1987
+Ife_virus,Cricetomys_gambianus,wild,Antibodies,0,Ezeifeka et al. 1987
 Kotonkan_virus,Cricetomys_gambianus,wild,Antibodies,0,Kemp et al 1973
 Monkeypox_virus,Cricetomys_gambianus,wild,PCR,2,CDC
 Qalyub_virus,Cricetomys_gambianus,wild,Isolation,2,Saluzzo et al. 1986
@@ -1946,7 +1946,7 @@ Dugbe_virus,Ovis_aries,domestic,Antibodies,0,Davies 1978
 Foot-and-mouth_disease_virus,Ovis_aries,domestic,Isolation,2,Ghoneim et al. 2010
 Gan_Gan_virus,Ovis_aries,domestic,Antibodies,0,Vale et al. 1991
 Hepatitis_E_virus,Ovis_aries,domestic,Antibodies,0,Meng et al.
-Ife_virus,Ovis_aries,domestic,Antibodies,0,Ezefeika et al. 1989
+Ife_virus,Ovis_aries,domestic,Antibodies,0,Ezeifeka et al. 1989
 Jaagsiekte_sheep_retrovirus,Ovis_aries,domestic,Isolation,2,York et al. 1992
 Louping_ill_virus,Ovis_aries,domestic,Isolation,2,Gao et al 1993
 Middelburg_virus,Ovis_aries,domestic,Antibodies,0,Jupp et al. 1998

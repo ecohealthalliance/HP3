@@ -986,7 +986,7 @@ Rabies_virus,Herpestes_sanguineus,wild,PCR,2,van Zyl et al. 2010
 Bimiti_virus,Heteromys_anomalus,wild,Isolation,2,Shope et al. 1988
 Caraparu_virus,Heteromys_anomalus,wild,Isolation,2,Shope et al. 1988
 Guama_virus,Heteromys_anomalus,wild,Isolation,2,Shope et al. 1988
-Venezuelan_equine_encephalitis_virus,Heteromys_anomalus,wild,Isolation,2,Downs et al. 1963
+Venezuelan_equine_encephalitis_virus,Heteromys_anomalus,wild,Isolation,2,Downs et al. 1962
 Rift_Valley_fever_virus,Hipposideros_abae,wild,Isolation,2,Calisher et al. 2006
 Japanese_encephalitis_virus,Hipposideros_armiger,wild,Isolation,2,Calisher et al. 2006
 Nipah_virus,Hipposideros_armiger,wild,Antibodies,0,Li et al. 2008
@@ -1283,7 +1283,7 @@ Bimiti_virus,Hylaeamys_laticeps,wild,Isolation,2,Shope et al. 1988
 Caraparu_virus,Hylaeamys_laticeps,wild,Isolation,2,Shope et al. 1988
 Catu_virus,Hylaeamys_laticeps,wild,Isolation,2,Shope et al. 1988
 Guama_virus,Hylaeamys_laticeps,wild,Isolation,2,Shope et al. 1988
-Venezuelan_equine_encephalitis_virus,Hylaeamys_laticeps,wild,Isolation,2,Downs et al. 1963
+Venezuelan_equine_encephalitis_virus,Hylaeamys_laticeps,wild,Isolation,2,Downs et al. 1962
 Amapari_virus,Hylaeamys_megacephalus,wild,Isolation,2,Pinheiro et al. 1977
 Caraparu_virus,Hylaeamys_megacephalus,wild,Isolation,2,Shope et al. 1988
 Catu_virus,Hylaeamys_megacephalus,wild,Isolation,2,Shope et al. 1988
@@ -2803,4 +2803,4 @@ Guanarito_virus,Zygodontomys_brevicauda,wild,Isolation,2,Fulhorst et al. 2001
 Nariva_virus,Zygodontomys_brevicauda,wild,Isolation,2,Tikasingh et al. 1966
 Pirital_virus,Zygodontomys_brevicauda,wild,Isolation,2,Fulhorst et al. 1999
 Sin_Nombre_virus,Zygodontomys_brevicauda,wild,Antibodies,0,Bayard et al. 2004
-Venezuelan_equine_encephalitis_virus,Zygodontomys_brevicauda,wild,Isolation,2,Downs et al. 1963
+Venezuelan_equine_encephalitis_virus,Zygodontomys_brevicauda,wild,Isolation,2,Downs et al. 1962

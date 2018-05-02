@@ -1225,7 +1225,7 @@ Sabia_virus,Homo_sapiens,human,Isolation,2,Coimbra et al. 1994
 Sandfly_fever_Naples_virus,Homo_sapiens,human,Isolation,2,Nicoletti et al. 1996
 Sandfly_fever_Sicilian_virus,Homo_sapiens,human,Isolation,2,Nicoletti et al. 1996
 Sapporo_virus,Homo_sapiens,human,PCR,2,Chiba et al. 2001
-Sealpox_virus,Homo_sapiens,human,Isolation,2,Dierauf et al. 2001
+Sealpox_virus,Homo_sapiens,human,PCR,2,Clark et al. 2005
 Semliki_Forest_virus,Homo_sapiens,human,Antibodies,0,http://www.uniprot.org/uniprot/P03305
 Seoul_virus,Homo_sapiens,human,Antibodies,0,Weissenbacher et al. 1996
 Severe_acute_respiratory_syndrome-related_coronavirus,Homo_sapiens,human,Antibodies,0,Tu et al. 2004

@@ -73,7 +73,7 @@ Bovine_parainfluenza_virus_3,Antilocapra_americana,wild,Antibodies,0,Dunbar et a
 Bovine_viral_diarrhea_virus_1,Antilocapra_americana,wild,SNT,1,Barrett & Chalmers 1975
 Epizootic_hemorrhagic_disease_virus,Antilocapra_americana,wild,Antibodies,0,Dubay et al. 2006
 St._Louis_encephalitis_virus,Antilocapra_americana,wild,Antibodies,0,Williams et al. 2001
-Vesicular_stomatitis_Indiana_virus,Antilocapra_americana,wild,SNT,1,Webb et al. 1987
+Vesicular_stomatitis_Indiana_virus,Antilocapra_americana,wild,SNT,1,Webb et al. 1987a
 Bluetongue_virus,Antilope_cervicapra,wild,Antibodies,0,Bhat et al. 1998
 Epizootic_hemorrhagic_disease_virus,Antilope_cervicapra,wild,Antibodies,0,Williams et al. 2001
 Foot-and-mouth_disease_virus,Antilope_cervicapra,wild,Isolation,2,Kar et al. 1983; Hegde et al. 2011 in Weaver & Karesh 2013
@@ -412,13 +412,13 @@ St._Louis_encephalitis_virus,Canis_familiaris,domestic,Antibodies,0,Lillibridge 
 Suid_herpesvirus_1,Canis_familiaris,domestic,Isolation,2,Eidson et al. 1953
 Vaccinia_virus,Canis_familiaris,domestic,VNT,1,Peres et al. 2013
 Venezuelan_equine_encephalitis_virus,Canis_familiaris,domestic,Antibodies,0,Estrada-Franco et al. 2004
-Vesicular_stomatitis_Indiana_virus,Canis_familiaris,domestic,SNT,1,Webb et al. 1987b
+Vesicular_stomatitis_New_Jersey_virus,Canis_familiaris,domestic,SNT,1,"Webb et al. 1987a; Webb et al. 1987b"
 Wesselsbron_virus,Canis_familiaris,domestic,Antibodies,0,Baba et al. 1995
 Canine_adenovirus,Canis_latrans,wild,Antibodies,0,Almberg et al. 2009
 Canine_coronavirus,Canis_latrans,wild,Antibodies,0,Foreyt et al. 1985
 Rabies_virus,Canis_latrans,wild,Isolation,2,Behymer et al. 1974
 St._Louis_encephalitis_virus,Canis_latrans,wild,Antibodies,0,Artsob et al. 1986
-Vesicular_stomatitis_New_Jersey_virus,Canis_latrans,wild,Antibodies,0,Webb et al. 1987
+Vesicular_stomatitis_New_Jersey_virus,Canis_latrans,wild,"Neutralizing Antibodies",1,Webb et al. 1987a
 Canine_adenovirus,Canis_lupus,wild,Antibodies,0,Almberg et al. 2009
 Canine_coronavirus,Canis_lupus,wild,PCR,2,Zarnke et al. 2001
 Rabies_virus,Canis_lupus,wild,PCR,2,Kuzmin et al. 2004
@@ -590,7 +590,7 @@ Epizootic_hemorrhagic_disease_virus,Cervus_elaphus,domestic,Antibodies,0,Nol et 
 Ovine_herpesvirus_2,Cervus_elaphus,wild,PCR,2,Vikoren et al. 2006
 Parapoxvirus_of_red_deer_in_New_Zealand,Cervus_elaphus,domestic,DNA RFLP,2,Horner et al. 1987
 Thiafora_virus,Cervus_elaphus,wild,Antibodies,0,Chastel 1989
-Vesicular_stomatitis_Indiana_virus,Cervus_elaphus,wild,SNT,1,Webb et al. 1987
+Vesicular_stomatitis_New_Jersey_virus,Cervus_elaphus,wild,SNT,1,Webb et al. 1987a
 Bluetongue_virus,Cervus_nippon,domestic,Antibodies,0,Williams et al. 2001
 Bovine_viral_diarrhea_virus_1,Cervus_nippon,domestic,SNT,1,Lawman et al. 1978
 Epizootic_hemorrhagic_disease_virus,Cervus_nippon,domestic,Antibodies,0,Waldrup et al. 1989
@@ -1316,7 +1316,7 @@ Lumpy_skin_disease_virus,Kobus_ellipsiprymnus,wild,Antibodies,0,Hedger & Hamblin
 Rift_Valley_fever_virus,Kobus_ellipsiprymnus,wild,Antibodies,0,Anderson & Rowe 1998
 Woolly_monkey_sarcoma_virus,Lagothrix_lagotricha,captive,Isolation,2,Scolnick et al. 1976
 Foot-and-mouth_disease_virus,Lama_glama,domestic,Antibodies,0,Weaver et al. 2013
-Vesicular_stomatitis_Indiana_virus,Lama_glama,domestic,SNT,1,Webb et al. 1987b
+Vesicular_stomatitis_New_Jersey_virus,Lama_glama,domestic,SNT,1,Webb et al. 1987b
 Borna_disease_virus,Lama_pacos,wild,PCR,2,Jacobsen et al. 2010
 Bovine_viral_diarrhea_virus_1,Lama_pacos,wild,PCR,2,Mattson et al. 2006
 Foot-and-mouth_disease_virus,Lama_pacos,domestic,Antibodies,0,Rivera et al. 1987
@@ -1849,7 +1849,7 @@ Deer_papillomavirus,Odocoileus_hemionus,wild,Isolation,2,Lancaster & Sundberg 19
 Epizootic_hemorrhagic_disease_virus,Odocoileus_hemionus,wild,Antibodies,0,OIE Report 2006
 Ovine_herpesvirus_2,Odocoileus_hemionus,wild,PCR,2,Schultheiss et al. 2007
 Sindbis_virus,Odocoileus_hemionus,wild,Antibodies,0,Walters et al. 1999
-Vesicular_stomatitis_Indiana_virus,Odocoileus_hemionus,wild,SNT,1,Webb et al. 1987
+Vesicular_stomatitis_New_Jersey_virus,Odocoileus_hemionus,wild,SNT,1,Webb et al. 1987a
 Alcelaphine_herpesvirus_1,Odocoileus_virginianus,wild,PCR,2,Li et al. 2005
 Bluetongue_virus,Odocoileus_virginianus,wild,PCR,2,Johnson et al. 2006
 Bovine_herpesvirus_1,Odocoileus_virginianus,wild,VNT,1,Ingebrigtsen et al 1986
@@ -2103,7 +2103,7 @@ Powassan_virus,Peromyscus_maniculatus,wild,Antibodies,0,Deardoff et al. 2013
 Prospect_Hill_virus,Peromyscus_maniculatus,wild,Antibodies,0,Yanagihara et al. 1987
 Sin_Nombre_virus,Peromyscus_maniculatus,wild,Isolation,2,Acha & Szyfres 2003; Song et al. 1996
 St._Louis_encephalitis_virus,Peromyscus_maniculatus,wild,Antibodies,0,Hardy et al. 1974
-Vesicular_stomatitis_New_Jersey_virus,Peromyscus_maniculatus,wild,Antibodies,0,Webb et al. 1987
+Vesicular_stomatitis_New_Jersey_virus,Peromyscus_maniculatus,wild,"Neutralising Antibodies",1,Webb et al. 1987a
 Western_equine_encephalitis_virus,Peromyscus_maniculatus,wild,Isolation,2,Hardy et al. 1974
 Whitewater_Arroyo_virus,Peromyscus_maniculatus,wild,Antibodies,0,Milazzo et al. 2010; Bennett et al. 2000
 Whitewater_Arroyo_virus,Peromyscus_megalops,wild,Antibodies,0,Milazzo et al. 2010

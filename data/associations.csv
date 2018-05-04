@@ -1688,7 +1688,7 @@ Murine_polyomavirus,Mus_musculus,captive,Isolation,2,Rowe et al. 1959
 Nipah_virus,Mus_musculus,wild,Isolation,2,WHO
 Rabies_virus,Mus_musculus,domestic,Antibodies,0,Childs et al. 1997
 Saboya_virus,Mus_musculus,wild,Isolation,2,Fontenille et al. 1994; Saluzzo et al. 1986; Grard et al. 2010
-Sendai_virus,Mus_musculus,domestic,Isolation,2,Faisca et al. 2007
+Sendai_virus,Mus_musculus,domestic,Isolation,2,Faisca & Desmecht 2007
 St._Louis_encephalitis_virus,Mus_musculus,domestic,Isolation,2,Kramer & Chandler 2001
 Theilovirus,Mus_musculus,domestic,Isolation,2,Liang et al. 2008 
 Venezuelan_equine_encephalitis_virus,Mus_musculus,wild,Isolation,2,Sudia & Newhouse 1975
@@ -2612,7 +2612,7 @@ Rotavirus_A,Sus_scrofa,wild,PCR,2,Okadera et al. 2013
 Rotavirus_B,Sus_scrofa,domestic,PCR,2,Medici et al. 2010
 Rotavirus_C,Sus_scrofa,domestic,PCR,2,Medici et al. 2010
 Rotavirus_E,Sus_scrofa,domestic,Isolation,2,Chasey et al. 1986
-Sendai_virus,Sus_scrofa,domestic,Antibodies,0,Faisca et al. 2007
+Sendai_virus,Sus_scrofa,domestic,Antibodies,0,Faisca & Desmecht 2007
 Suid_herpesvirus_1,Sus_scrofa,domestic,PCR,2,Hahn et al. 2010
 Suid_herpesvirus_1,Sus_scrofa,wild,Isolation,2,Pannwitz et al. 2012
 Swine_norovirus,Sus_scrofa,domestic,PCR,2,Song et al. 2011

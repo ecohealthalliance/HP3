@@ -1400,7 +1400,7 @@ Bluetongue_virus,Lycaon_pictus,wild,Antibodies,0,Alexander et al. 1994a
 Canine_distemper_virus,Lycaon_pictus,wild,Isolation,2,van de Bildt et al. 2002
 Rabies_virus,Lycaon_pictus,wild,PCR,2,Lembo et al. 2008
 Borna_disease_virus,Lynx_lynx,wild,PCR,2,Degiorgis et al. 2000
-Vaccinia_virus,Lynx_lynx,wild,Antibodies,0,Tryland et al. 2008
+Vaccinia_virus,Lynx_lynx,wild,Antibodies,0,Tryland et al. 1998a
 Feline_leukemia_virus,Lynx_pardinus,wild,PCR,2,Geret et al. 2011
 Feline_immunodeficiency_virus,Lynx_rufus,wild,Antibodies,0,Brown et al. 1993
 Rabies_virus,Lynx_rufus,wild,Antibodies,0,Aranda et al. 1999
@@ -1572,7 +1572,7 @@ Rabies_virus,Micronycteris_megalotis,wild,Antibodies,0,Salas-Rojas et al. 2004
 Lagos_bat_virus,Micropteropus_pusillus,wild,Isolation,2,Calisher et al. 2006
 Rift_Valley_fever_virus,Micropteropus_pusillus,wild,Isolation,2,Calisher et al. 2006
 Zaire_ebolavirus,Micropteropus_pusillus,wild,PCR,2,Leroy et al. 2004
-Cowpox_virus,Microtus_agrestis,wild,PCR,2,Acha & Szyfres 2003; Tryland et al. 1998
+Cowpox_virus,Microtus_agrestis,wild,PCR,2,Acha & Szyfres 2003; Tryland et al. 1998b
 Ectromelia_virus,Microtus_agrestis,wild,Antibodies,0,Kaplan et al. 1980
 Encephalomyocarditis_virus,Microtus_agrestis,wild,Antibodies,0,Kaplan et al. 1980
 Ljungan_virus,Microtus_agrestis,wild,PCR,2,Salisbury et al. 2014
@@ -1722,11 +1722,11 @@ Thiafora_virus,Myodes_glareolus,wild,Antibodies,0,Woessner et al. 2000
 Tick-borne_encephalitis_virus,Myodes_glareolus,wild,PCR,2,Weidmann et al. 2006
 Uukuniemi_virus,Myodes_glareolus,wild,Antibodies,0,Traavik et al. 1977
 Puumala_virus,Myodes_regulus,wild,PCR,2,Plyusnina et al. 2008
-Cowpox_virus,Myodes_rufocanus,wild,PCR,2,Tryland et al. 1998
+Cowpox_virus,Myodes_rufocanus,wild,PCR,2,Tryland et al. 1998b
 Puumala_virus,Myodes_rufocanus,wild,Isolation,2, Yanagihara et al. 1984
 Bunyamwera_virus,Myodes_rutilus,wild,Isolation,2,Calisher et al. 1986
 California_encephalitis_virus,Myodes_rutilus,wild,Antibodies,0,Mitchell et al. 1993
-Cowpox_virus,Myodes_rutilus,wild,PCR,2,Tryland et al. 1998
+Cowpox_virus,Myodes_rutilus,wild,PCR,2,Tryland et al. 1998b
 Powassan_virus,Myodes_rutilus,wild,Antibodies,0,Deardoff et al. 2013
 Tick-borne_encephalitis_virus,Myodes_rutilus,wild,PCR,2,Bakhvalova et al. 2006
 Zaire_ebolavirus,Myonycteris_torquata,wild,PCR,2,Leroy et al. 2004

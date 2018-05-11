@@ -540,7 +540,7 @@ Simian_immunodeficiency_virus,Cercocebus_atys,wild,Isolation,2,Fultz et al. 1989
 Simian_foamy_virus,Cercocebus_chrysogaster,wild,PCR,2,Schweizer et al. 1995
 Simian_immunodeficiency_virus,Cercocebus_galeritus,wild,Antibodies,0,Peeters et al. 2002
 Simian_foamy_virus,Cercocebus_torquatus,wild,PCR,2,Hussain et al. 2003
-Chikungunya_virus,Cercopithecus_ascanius,wild,Antibodies,0,Feigi 1998
+Chikungunya_virus,Cercopithecus_ascanius,wild,Antibodies,0,Eastwood et al. 2017
 Hepatitis_B_virus,Cercopithecus_ascanius,wild,Antibodies,0,Mutanda & Mufson 1974
 Human_coronavirus_229E,Cercopithecus_ascanius,wild,Antibodies,0,Mutanda & Mufson 1974
 Human_parainfluenza_virus_1,Cercopithecus_ascanius,wild,Antibodies,0,Mutanda & Mufson 1974
@@ -1996,7 +1996,7 @@ Primate_T-lymphotropic_virus_2,Pan_paniscus,wild,PCR,2,Ahuka-Mundeke et al. 2011
 Primate_T-lymphotropic_virus_3,Pan_paniscus,wild,Isolation,2,NA
 Simian_foamy_virus,Pan_paniscus,wild,PCR,2,Schweizer et al. 1995
 Bunyamwera_virus,Pan_troglodytes,wild,Antibodies,NA,CDC Arbocat
-Chikungunya_virus,Pan_troglodytes,wild,Antibodies,0,Feigin 1998
+Chikungunya_virus,Pan_troglodytes,wild,Antibodies,0,Morrison 1979
 Cote_d'Ivoire_ebolavirus,Pan_troglodytes,wild,Isolation,2,Le Guenno & Formentry 1995
 Encephalomyocarditis_virus,Pan_troglodytes,wild,Isolation,2,Reddacliff et al. 1997
 GB_virus_C,Pan_troglodytes,wild,PCR,2,Adams et al. 1998

@@ -916,7 +916,7 @@ Feline_foamy_virus,Felis_silvestris,wild,Isolation,2,Daniels et al. 1999
 Feline_leukemia_virus,Felis_silvestris,wild,PCR,2,Willi et al. 2007
 Feline_panleukopenia_virus,Felis_silvestris,wild,Isolation,2,Daniels et al. 1999
 Rabies_virus,Felis_silvestris,wild,PCR,2,Lembo et al. 2008
-Kyasanur_Forest_disease_virus,Funambulus_tristriatus,wild,Antibodies,0,Webb et al. 1965
+Kyasanur_Forest_disease_virus,Funambulus_tristriatus,wild,Antibodies,0,Webb 1965
 Monkeypox_virus,Funisciurus_anerythrus,wild,Isolation,2,Hutson et al. 2007
 Monkeypox_virus,Funisciurus_congicus,wild,Isolation,2,Khodakevich et al. 1986
 Chikungunya_virus,Galago_senegalensis,wild,Antibodies,0,Brack 1987
@@ -1422,7 +1422,7 @@ Parainfluenza_virus_5,Macaca_fascicularis,wild,Isolation,2,Chatziandreou et al. 
 Reston_ebolavirus,Macaca_fascicularis,wild,Isolation,2,Miranda et al. 1991
 Rhesus_monkey_papillomavirus_1,Macaca_fascicularis,captive,Isolation,2,Chan et al. 1997
 Simian_enterovirus_A,Macaca_fascicularis,captive,Isolation,2,Hoffert et al. 1958
-Simian_foamy_virus,Macaca_fascicularis,wild,PCR,2,Webb et al. 1965
+Simian_foamy_virus,Macaca_fascicularis,wild,PCR,2,Webb 1965
 Simian_parvovirus,Macaca_fascicularis,captive,Isolation,2,O'Sullivan et al. 1994
 Yaba_monkey_tumor_virus,Macaca_fascicularis,wild,Antibodies,0,Downie 1974
 Borna_disease_virus,Macaca_fuscata,wild,PCR,2,Hagiwara et al. 2008
@@ -1656,7 +1656,7 @@ Japanese_encephalitis_virus,Murina_aurata,wild,Isolation,2,Wang et al. 2009
 Irkut_virus,Murina_leucogaster,wild,Isolation,2,Calisher et al. 2006
 Japanese_encephalitis_virus,Murina_leucogaster,wild,Antibodies,0,Miura et al. 1970
 Encephalomyocarditis_virus,Mus_booduga,wild,Isolation,2,Tesh & Wallace 1978
-Kyasanur_Forest_disease_virus,Mus_booduga,wild,Antibodies,0,Webb et al. 1965
+Kyasanur_Forest_disease_virus,Mus_booduga,wild,Antibodies,0,Webb 1965
 Murid_herpesvirus_1,Mus_cervicolor,wild,PCR,2,Ehlers et al. 2007
 Murine_leukemia_virus,Mus_cervicolor,wild,Isolation,2,Prassolov et al. 2001
 Anopheles_B_virus,Mus_musculus,domestic,Isolation,2,da Rosa et al. 1992
@@ -2353,7 +2353,7 @@ Dhori_virus,Rattus_rattus,wild,Antibodies,0,Darwish et al. 1983
 Encephalomyocarditis_virus,Rattus_rattus,domestic,Isolation,2,Tesh & Wallace 1978
 Hepatitis_E_virus,Rattus_rattus,domestic,Antibodies,0,Taylor et al. 2001; http://www.uniprot.org/uniprot/Q2A069
 Kilham_rat_virus,Rattus_rattus,wild and captive,Antibodies and Isolation,2,Robey et al. 1968; Besselsen et al. 1995
-Kyasanur_Forest_disease_virus,Rattus_rattus,wild,Antibodies,0,Webb et al. 1965
+Kyasanur_Forest_disease_virus,Rattus_rattus,wild,Antibodies,0,Webb 1965
 Latino_virus,Rattus_rattus,wild,Isolation,2,Gonzalez et al. 2007
 Murid_herpesvirus_2,Rattus_rattus,wild,PCR,2,Lussier 1988; Ehlers et al. 2007
 Murine_pneumonia_virus,Rattus_rattus,domestic,PCR,2,McInnes et al. 2011
@@ -2566,7 +2566,7 @@ Vesicular_stomatitis_Indiana_virus,Sturnira_lilium,wild,plaque reduction neutral
 Vesicular_stomatitis_New_Jersey_virus,Sturnira_lilium,wild,Antibodies,0,Ubico & McLean 1995
 Venezuelan_equine_encephalitis_virus,Sturnira_ludovici,wild,Antibodies,0,Ubico & McLean 1995
 St._Louis_encephalitis_virus,Sturnira_tildae,wild,Antibodies,0,Price et al. 1978
-Kyasanur_Forest_disease_virus,Suncus_murinus,wild,Antibodies,0,Webb et al. 1965
+Kyasanur_Forest_disease_virus,Suncus_murinus,wild,Antibodies,0,Webb 1965
 Thottapalayam_virus,Suncus_murinus,wild,Isolation,2,Carey et al. 1971
 Rabies_virus,Suricata_suricatta,wild,PCR,2,van Zyl et al. 2010
 African_swine_fever_virus,Sus_scrofa,domestic,Isolation,2,ICTV database
@@ -2697,7 +2697,7 @@ Crimean-Congo_hemorrhagic_fever_virus,Tatera_indica,wild,Antibodies,0,Darwish et
 Dera_Ghazi_Khan_virus,Tatera_indica,wild,Antibodies,0,Darwish et al. 1983
 Dhori_virus,Tatera_indica,wild,Antibodies,0,Darwish et al. 1983
 Isfahan_virus,Tatera_indica,wild,Antibodies,0,Tesh et al. 1977
-Kyasanur_Forest_disease_virus,Tatera_indica,wild,Antibodies,0,Webb et al. 1965
+Kyasanur_Forest_disease_virus,Tatera_indica,wild,Antibodies,0,Webb 1965
 Salehabad_virus,Tatera_indica,wild,Antibodies,0,Darwish et al. 1983
 Wad_Medani_virus,Tatera_indica,wild,Antibodies,0,Darwish et al. 1983
 Canine_distemper_virus,Taxidea_taxus,wild,Antibodies,0,Goodrich et al. 1994
@@ -2710,7 +2710,7 @@ St._Louis_encephalitis_virus,Tolypeutes_matacus,wild,Antibodies,0,Deem et al. 20
 Tacaribe_virus,Tonatia_bidens,wild,Antibodies,0,Price 1978
 Bakau_virus,Trachypithecus_cristatus,wild,Antibodies,0,Beran & Steele 1994
 Measles_virus,Trachypithecus_cristatus,wild,Isolation,2,Fowler & Miller 2003
-Kyasanur_Forest_disease_virus,Trachypithecus_francoisi,wild,Antibodies,0,Webb et al. 1965
+Kyasanur_Forest_disease_virus,Trachypithecus_francoisi,wild,Antibodies,0,Webb 1965
 Simian_foamy_virus,Trachypithecus_francoisi,wild,Isolation,2,Hussain et al. 2003
 Langur_virus,Trachypithecus_obscurus,captive,Isolation,2,Benveniste & Todaro 1977
 Bluetongue_virus,Tragelaphus_angasii,wild,Antibodies,0,Anderson & Rowe 1998

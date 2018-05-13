@@ -72,10 +72,10 @@ Bluetongue_virus,Antilocapra_americana,wild,Antibodies,0,Dubay et al. 2006
 Bovine_parainfluenza_virus_3,Antilocapra_americana,wild,Antibodies,0,Dunbar et al. 1999
 Bovine_viral_diarrhea_virus_1,Antilocapra_americana,wild,SNT,1,Barrett & Chalmers 1975
 Epizootic_hemorrhagic_disease_virus,Antilocapra_americana,wild,Antibodies,0,Dubay et al. 2006
-St._Louis_encephalitis_virus,Antilocapra_americana,wild,Antibodies,0,Williams et al. 2001
+St._Louis_encephalitis_virus,Antilocapra_americana,wild,Antibodies,0,Williams & Barker 2001
 Vesicular_stomatitis_Indiana_virus,Antilocapra_americana,wild,SNT,1,Webb et al. 1987a
 Bluetongue_virus,Antilope_cervicapra,wild,Antibodies,0,Bhat et al. 1998
-Epizootic_hemorrhagic_disease_virus,Antilope_cervicapra,wild,Antibodies,0,Williams et al. 2001
+Epizootic_hemorrhagic_disease_virus,Antilope_cervicapra,wild,Antibodies,0,Williams & Barker 2001
 Foot-and-mouth_disease_virus,Antilope_cervicapra,wild,Isolation,2,Kar et al. 1983; Hegde et al. 2011 in Weaver & Karesh 2013
 Rabies_virus,Antrozous_pallidus,wild,PCR,2,Blanton et al. 2008
 Measles_virus,Aotus_azarae,wild,Antibodies,0,O'Brien et al. 1981
@@ -591,7 +591,7 @@ Ovine_herpesvirus_2,Cervus_elaphus,wild,PCR,2,Vikoren et al. 2006
 Parapoxvirus_of_red_deer_in_New_Zealand,Cervus_elaphus,domestic,DNA RFLP,2,Horner et al. 1987
 Thiafora_virus,Cervus_elaphus,wild,Antibodies,0,Chastel 1989
 Vesicular_stomatitis_New_Jersey_virus,Cervus_elaphus,wild,SNT,1,Webb et al. 1987a
-Bluetongue_virus,Cervus_nippon,domestic,Antibodies,0,Williams et al. 2001
+Bluetongue_virus,Cervus_nippon,domestic,Antibodies,0,Williams & Barker 2001
 Bovine_viral_diarrhea_virus_1,Cervus_nippon,domestic,SNT,1,Lawman et al. 1978
 Epizootic_hemorrhagic_disease_virus,Cervus_nippon,domestic,Antibodies,0,Waldrup et al. 1989
 Ovine_herpesvirus_2,Cervus_timorensis,wild,PCR,2,Tomkins et al. 1997
@@ -1351,7 +1351,7 @@ Phocid_herpesvirus_1,Leptonychotes_weddellii,wild,Antibodies,0,Harder et al. 199
 Rabies_virus,Leptonycteris_curasoae,wild,Antibodies,0,Salas-Rojas et al. 2004
 Rabies_virus,Leptonycteris_nivalis,wild,Isolation,2,Constantine 1979
 California_encephalitis_virus,Lepus_americanus,wild,Antibodies,0,Parkin et al. 1973
-St._Louis_encephalitis_virus,Lepus_americanus,wild,Antibodies,0,Williams et al. 2001
+St._Louis_encephalitis_virus,Lepus_americanus,wild,Antibodies,0,Williams & Barker 2001
 Western_equine_encephalitis_virus,Lepus_americanus,wild,Antibodies,0,Yuill et al. 1964
 Bunyamwera_virus,Lepus_californicus,wild,Isolation,2,Calisher et al. 1986
 Main_Drain_virus,Lepus_californicus,wild,Isolation,2,Calisher et al. 1986
@@ -1495,7 +1495,7 @@ Gan_Gan_virus,Macropus_rufogriseus,wild,Antibodies,0,Vale et al. 1991
 Wallal_virus,Macropus_rufus,wild,PCR,2,Hooper et al. 1999
 Warrego_virus,Macropus_rufus,wild,Isolation,2,Hooper et al. 1999
 Rabies_virus,Macrotus_californicus,wild,Isolation,2,Constantine 1979
-Kyasanur_Forest_disease_virus,Madromys_blanfordi,wild,Isolation,2,Williams et al. 2001
+Kyasanur_Forest_disease_virus,Madromys_blanfordi,wild,Isolation,2,Williams & Barker 2001
 Human_enterovirus_D,Mandrillus_leucophaeus,wild*,Antibodies,0,Harvala et al. 2012
 Simian_foamy_virus,Mandrillus_leucophaeus,wild,PCR,2,Hussain et al. 2003
 Simian_immunodeficiency_virus,Mandrillus_leucophaeus,wild,Isolation,2,Hu et al. 2003
@@ -1776,7 +1776,7 @@ Kern_Canyon_virus,Myotis_yumanensis,wild,Isolation,2,Calisher et al. 2006
 Rabies_virus,Myotis_yumanensis,wild,PCR,2,Blanton et al. 2008
 Human_picobirnavirus,Myrmecophaga_tridactyla,captive,PAGE,0,Haga et al. 1999
 Akabane_virus,Nanger_granti,wild,Antibodies,0,Davies et al. 1985
-Bluetongue_virus,Nanger_granti,wild,Antibodies,0,Williams et al. 2001
+Bluetongue_virus,Nanger_granti,wild,Antibodies,0,Williams & Barker 2001
 Foot-and-mouth_disease_virus,Nanger_granti,wild,Antibodies,0,Weaver et al. 2013
 Vesicular_stomatitis_Indiana_virus,Nasua_narica,wild,plaque reduction neutralization,1,Tesh et al. 1969
 Dengue_virus,Natalus_stramineus,wild,PCR,2,Aguilar-Setien et al. 2008
@@ -1885,7 +1885,7 @@ Whitewater_Arroyo_virus,Onychomys_leucogaster,wild,Antibodies,0,Milazzo et al. 2
 Modoc_virus,Onychomys_torridus,wild,Antibodies,0,Hardy et al. 1974
 St._Louis_encephalitis_virus,Onychomys_torridus,wild,Antibodies,0,Hardy et al. 1974
 St._Louis_encephalitis_virus,Orcinus_orca,wild,Isolation,2,Buck et al. 1993
-Bluetongue_virus,Oreamnos_americanus,wild,Antibodies,0,Williams et al. 2001
+Bluetongue_virus,Oreamnos_americanus,wild,Antibodies,0,Williams & Barker 2001
 Bovine_viral_diarrhea_virus_1,Oreamnos_americanus,wild,Isolation,2,Nelson et al. 2008
 Bovine_viral_diarrhea_virus_2,Oreamnos_americanus,domestic,PCR,2,Nelson et al. 2008
 Borna_disease_virus,Oryctolagus_cuniculus,domestic,PCR,2,Zhang et al. 2014
@@ -1922,7 +1922,7 @@ Bluetongue_virus,Otomys_irroratus,wild,Isolation,2,Howerth et al. 2001
 Arumowot_virus,Otomys_tropicalis,wild,isolation,2,Johnson et al. 1977
 Bunyamwera_virus,Otomys_tropicalis,wild,Antibodies,0,Henderson et al. 1972
 Witwatersrand_virus,Otomys_tropicalis,wild,Antibodies,0,Henderson et al. 1972
-Bluetongue_virus,Ourebia_ourebi,wild,Antibodies,0,Williams et al. 2001
+Bluetongue_virus,Ourebia_ourebi,wild,Antibodies,0,Williams & Barker 2001
 Orf_virus,Ovibos_moschatus,wild,PCR,2,Vikoren et al. 2008
 Ovine_herpesvirus_2,Ovibos_moschatus,wild,ELISA,0,Zarnke et al 2002
 Akabane_virus,Ovis_aries,domestic,Antibodies,0,Davies et al. 1985
@@ -1975,7 +1975,7 @@ Wesselsbron_virus,Ovis_aries,domestic,Antibodies,0,Baba et al. 1995
 Bluetongue_virus,Ovis_canadensis,wild,Isolation,2,Noon et al. 2002
 Bovine_viral_diarrhea_virus_1,Ovis_canadensis,wild,SNT,1,Parks & England 1974
 Epizootic_hemorrhagic_disease_virus,Ovis_canadensis,wild,Isolation,2,Noon et al. 2002
-Ovine_adenovirus_A,Ovis_canadensis,wild,Antibodies,0,Williams et al. 2001
+Ovine_adenovirus_A,Ovis_canadensis,wild,Antibodies,0,Williams & Barker 2001
 Vesicular_stomatitis_Indiana_virus,Ovis_canadensis,wild,plaque reduction neutralization,1,Trainer & Hanson 1969
 California_encephalitis_virus,Ovis_dalli,wild,Antibodies,0,Walters et al. 1999
 Ovine_herpesvirus_2,Ovis_dalli,wild,PCR,2,Zarnke et al 2002
@@ -2376,7 +2376,7 @@ Bovine_viral_diarrhea_virus_1,Redunca_arundinum,wild,SNT,1,Hamblin & Hedger 1979
 Crimean-Congo_hemorrhagic_fever_virus,Redunca_arundinum,wild,Antibodies,0,Shepherd et al. 1987
 Foot-and-mouth_disease_virus,Redunca_arundinum,wild,Antibodies,0,Weaver et al. 2013
 Lumpy_skin_disease_virus,Redunca_arundinum,wild,Antibodies,0,Hedger & Hamblin 1983
-Bluetongue_virus,Redunca_fulvorufula,wild,Antibodies,0,Williams et al. 2001
+Bluetongue_virus,Redunca_fulvorufula,wild,Antibodies,0,Williams & Barker 2001
 Crimean-Congo_hemorrhagic_fever_virus,Redunca_fulvorufula,wild,Antibodies,0,Shepherd et al. 1987
 Bayou_virus,Reithrodontomys_fulvescens,wild,Antibodies,0,Holsomback et al. 2009
 El_Moro_Canyon_virus,Reithrodontomys_megalotis,wild,PCR,2,Torrez-Martinez 1995
@@ -2635,8 +2635,8 @@ Simbu_virus,Sylvilagus_audubonii,wild,Isolation,2,Hardy et al.  1974
 St._Louis_encephalitis_virus,Sylvilagus_audubonii,wild,Antibodies,0,Hardy et al. 1974
 Vesicular_stomatitis_Indiana_virus,Sylvilagus_audubonii,wild,plaque reduction neutralization,1,Aguirre et al. 1992
 Western_equine_encephalitis_virus,Sylvilagus_audubonii,wild,hemmaglutination,0,Hardy 1987
-Myxoma_virus,Sylvilagus_bachmani,wild,Isolation,2,Williams et al. 2001
-Myxoma_virus,Sylvilagus_brasiliensis,wild,Isolation,2,Williams et al. 2001
+Myxoma_virus,Sylvilagus_bachmani,wild,Isolation,2,Williams & Barker 2001
+Myxoma_virus,Sylvilagus_brasiliensis,wild,Isolation,2,Williams & Barker 2001
 Patois_virus,Sylvilagus_brasiliensis,wild,Antibodies,0,Scherer et al. 1972
 Vesicular_stomatitis_Indiana_virus,Sylvilagus_brasiliensis,wild,plaque reduction neutralization,1,Tesh et al. 1969
 California_encephalitis_virus,Sylvilagus_floridanus,wild,Antibodies,0,Parkin et al. 1973
@@ -2703,7 +2703,7 @@ Wad_Medani_virus,Tatera_indica,wild,Antibodies,0,Darwish et al. 1983
 Canine_distemper_virus,Taxidea_taxus,wild,Antibodies,0,Goodrich et al. 1994
 Andes_virus,Thaptomys_nigrita,wild,PCR,2,Araujo et al. 2011
 Simian_foamy_virus,Theropithecus_gelada,wild,PCR,2,Hussain et al. 2003
-St._Louis_encephalitis_virus,Thomomys_talpoides,wild,Antibodies,0,Williams et al. 2001
+St._Louis_encephalitis_virus,Thomomys_talpoides,wild,Antibodies,0,Williams & Barker 2001
 Lebombo_virus,Thryonomys_swinderianus,wild,Isolation,2,Kemp 1975; Brown et al. 1991
 Eastern_equine_encephalitis_virus,Tolypeutes_matacus,wild,Antibodies,0,Deem et al. 2009
 St._Louis_encephalitis_virus,Tolypeutes_matacus,wild,Antibodies,0,Deem et al. 2009
@@ -2727,7 +2727,7 @@ Lumpy_skin_disease_virus,Tragelaphus_oryx,wild,SNT,1,Barnard 1997
 Rinderpest_virus,Tragelaphus_oryx,wild,PCR,2,Roeder 2011
 Akabane_virus,Tragelaphus_scriptus,wild,Antibodies,0,Davies et al. 1985
 Foot-and-mouth_disease_virus,Tragelaphus_scriptus,wild,Antibodies,0,Weaver et al. 2013
-Bluetongue_virus,Tragelaphus_strepsiceros,wild,Antibodies,0,Williams et al. 2001
+Bluetongue_virus,Tragelaphus_strepsiceros,wild,Antibodies,0,Williams & Barker 2001
 Bovine_viral_diarrhea_virus_1,Tragelaphus_strepsiceros,wild,SNT,1,Hamblin & Hedger 1979
 Crimean-Congo_hemorrhagic_fever_virus,Tragelaphus_strepsiceros,wild,Antibodies,0,Shepherd et al. 1987
 Foot-and-mouth_disease_virus,Tragelaphus_strepsiceros,wild,Isolation,2,Weaver et al. 2013

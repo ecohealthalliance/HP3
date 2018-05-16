@@ -460,7 +460,7 @@ Palyam_virus,Capra_hircus,domestic,PCR,2,Aradaib et al. 2009
 Peste-des-petits-ruminants_virus,Capra_hircus,domestic,Isolation,2,Taylor & Abegunde 1978
 Rabies_virus,Capra_hircus,domestic,PCR,2,Kuzmin et al. 2004
 Rift_Valley_fever_virus,Capra_hircus,domestic,PCR,2,Andriamandimby et al. 2010
-Rinderpest_virus,Capra_hircus,domestic,PCR,2,Rossiter et al. 1989
+Rinderpest_virus,Capra_hircus,domestic,PCR,2,Rossiter & Wamwayi 1989
 Sepik_virus,Capra_hircus,domestic,Antibodies,0,Olson et al. 1984
 Sheeppox_virus,Capra_hircus,domestic,PCR,2,Bhanuprakash et al. 2010
 Suid_herpesvirus_1,Capra_hircus,domestic,"Cell culture, PCR",2,Salwa 2004
@@ -1960,7 +1960,7 @@ Palyam_virus,Ovis_aries,domestic,PCR,2,Aradaib et al. 2009
 Peste-des-petits-ruminants_virus,Ovis_aries,domestic,Isolation,2,Taylor & Abegunde 1979
 Rabies_virus,Ovis_aries,domestic,Direct Fluorescent Antibody Testing,0,Lembo et al. 2008
 Rift_Valley_fever_virus,Ovis_aries,domestic,PCR,2,Andriamandimby et al. 2010
-Rinderpest_virus,Ovis_aries,domestic,PCR,2,Rossiter et al. 1989
+Rinderpest_virus,Ovis_aries,domestic,PCR,2,Rossiter & Wamwayi 1989
 Rotavirus_B,Ovis_aries,wild,Antibodies,0,Wani et al. 2004
 Salehabad_virus,Ovis_aries,domestic,Antibodies,0,CDC Arbocat
 Sheeppox_virus,Ovis_aries,domestic,PCR,2,Mangana-Vougiouka et al. 2000

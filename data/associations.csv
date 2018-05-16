@@ -356,7 +356,7 @@ Lebombo_virus,Calomys_callosus,wild,Isolation,2,Brown et al. 1991
 Machupo_virus,Calomys_callosus,wild,Isolation,2,Webb et al. 1975
 Mason-Pfizer_monkey_virus,Calomys_callosus,wild,Isolation,2,Diehl et al. 2008
 Junin_virus,Calomys_laucha,wild,Isolation,2,Gonzalez et al. 2007
-Laguna_Negra_virus,Calomys_laucha,wild,Isolation,2,Acha & Szyfres 2003; Johnson et al. 1997
+Laguna_Negra_virus,Calomys_laucha,wild,Isolation,2,Acha & Szyfres 2003; Johnson et al. 1997b
 Junin_virus,Calomys_musculinus,wild,Isolation,2,Gonzalez et al. 2007
 St._Louis_encephalitis_virus,Calomys_musculinus,wild,Isolation,2,Kramer & Chandler 2001
 Andes_virus,Calomys_tener,wild,PCR,2,de Figueiredo et al. 2010
@@ -1161,7 +1161,7 @@ Kokobera_virus,Homo_sapiens,human,Antibodies,0,Boughton et al. 1986
 Kotonkan_virus,Homo_sapiens,human,Antibodies,0,Kemp et al. 1973
 Koutango_virus,Homo_sapiens,human,Isolation,2,Karabatsos 1985
 Kyasanur_Forest_disease_virus,Homo_sapiens,human,PCR,2,Wang et al. 2009
-Laguna_Negra_virus,Homo_sapiens,human,Antibodies,0,Levis et al. 1999
+Laguna_Negra_virus,Homo_sapiens,human,Antibodies,0,Johnson et al. 1997b
 Lake_Victoria_marburgvirus,Homo_sapiens,human,Isolation,2,Kuzmin et al. 2010
 Lassa_virus,Homo_sapiens,human,PCR,2,Panning et al. 2010
 Lebombo_virus,Homo_sapiens,human,Isolation,2,Moore et al. 1975
@@ -2480,7 +2480,7 @@ Theilovirus,Sciurus_carolinensis,wild,Antibodies,0,Greenwood & Sanchez 2002
 Vesicular_stomatitis_New_Jersey_virus,Sciurus_carolinensis,wild,SNT,1,Jenney et al. 1975
 West_Nile_virus,Sciurus_carolinensis,wild,Antibodies,0,Root et al. 2005
 Venezuelan_equine_encephalitis_virus,Sciurus_granatensis,wild,Antibodies,0,Grayson & Galindo 1968
-Colorado_tick_fever_virus,Sciurus_griseus,wild,Isolation,2,Acha & Szyfres 2003; Johnson et al. 1997
+Colorado_tick_fever_virus,Sciurus_griseus,wild,Isolation,2,Acha & Szyfres 2003; Johnson et al. 1997a
 Western_equine_encephalitis_virus,Sciurus_griseus,wild,hemmaglutination,0,Hardy 1987
 California_encephalitis_virus,Sciurus_niger,wild,Antibodies,0,Moulton & Thompson 1971
 Eastern_equine_encephalitis_virus,Sciurus_niger,wild,Antibodies,0,Karstad et al. 1960

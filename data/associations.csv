@@ -9,7 +9,7 @@ Feline_calicivirus,Acinonyx_jubatus,wild,Antibodies,0,Munson et al. 2004
 Feline_coronavirus,Acinonyx_jubatus,wild,Antibodies,0,Hofmann-Lehmann et al. 1996
 Rabies_virus,Acinonyx_jubatus,wild,Antibodies,0,Thalwitzer et al. 2010
 Akabane_virus,Aepyceros_melampus,wild,Antibodies,0,Davies et al. 1985
-Alcelaphine_herpesvirus_2,Aepyceros_melampus,wild,Antibodies,0,Reid et al. 1973
+Alcelaphine_herpesvirus_2,Aepyceros_melampus,wild,Antibodies,0,Reid et al. 1975
 Bluetongue_virus,Aepyceros_melampus,wild,Antibodies,0,Karesh et al. 1997
 Bovine_viral_diarrhea_virus_1,Aepyceros_melampus,wild,SNT,1,Hamblin & Hedger 1979
 Crimean-Congo_hemorrhagic_fever_virus,Aepyceros_melampus,wild,Antibodies,0,Shepherd et al. 1987
@@ -29,7 +29,7 @@ Andes_virus,Akodon_paranaensis,wild,Antibodies,0,de Oliveira et al. 2011
 Laguna_Negra_virus,Akodon_simulator,wild,PCR,2,Levis et al. 2004
 Andes_virus,Akodon_varius,wild,Antibodies,0,Sosa-Estani et al. 2002
 Akabane_virus,Alcelaphus_buselaphus,wild,Antibodies,0,Davies et al. 1985
-Alcelaphine_herpesvirus_2,Alcelaphus_buselaphus,wild,Isolation,2,Reid et al. 1973
+Alcelaphine_herpesvirus_2,Alcelaphus_buselaphus,wild,Isolation,2,Reid & Rowe 1973
 Bluetongue_virus,Alcelaphus_buselaphus,wild,Antibodies,0,Hamblin et al.
 Bovine_viral_diarrhea_virus_1,Alcelaphus_buselaphus,wild,SNT,1,Hamblin & Hedger 1979
 Crimean-Congo_hemorrhagic_fever_virus,Alcelaphus_buselaphus,wild,Antibodies,0,Shepherd et al. 1987
@@ -635,7 +635,7 @@ Foot-and-mouth_disease_virus,Connochaetes_gnou,wild,Isolation,2,"Walker, 1934; F
 Lumpy_skin_disease_virus,Connochaetes_gnou,wild,SNT,1,Barnard 1997
 Akabane_virus,Connochaetes_taurinus,wild,Antibodies,0,Davies et al. 1985
 Alcelaphine_herpesvirus_1,Connochaetes_taurinus,wild,Isolation,2,Plowright et al. 1960
-Alcelaphine_herpesvirus_2,Connochaetes_taurinus,wild,Antibodies,0,Reid et al. 1973
+Alcelaphine_herpesvirus_2,Connochaetes_taurinus,wild,Antibodies,0,Reid et al. 1975
 Bluetongue_virus,Connochaetes_taurinus,wild,Antibodies,0,Hamblin et al. 1990
 Bovine_viral_diarrhea_virus_1,Connochaetes_taurinus,wild,SNT,1,Hamblin & Hedger 1979
 Foot-and-mouth_disease_virus,Connochaetes_taurinus,wild,Antibodies,0,Hamblin et al. 1990
@@ -1896,7 +1896,7 @@ Rabbit_fibroma_virus,Oryctolagus_cuniculus,domestic,Isolation,2,Raflo et al. 197
 Rabbit_hemorrhagic_disease_virus,Oryctolagus_cuniculus,wild,PCR,2,Merchan et al. 2011
 Rabbit_oral_papillomavirus,Oryctolagus_cuniculus,domestic,PCR,2,Munday et al. 2007
 Trubanaman_virus,Oryctolagus_cuniculus,wild,Antibodies,0,Johansen et al. 2005
-Alcelaphine_herpesvirus_2,Oryx_beisa,wild,Antibodies,0,Reid et al. 1973
+Alcelaphine_herpesvirus_2,Oryx_beisa,wild,Antibodies,0,Reid et al. 1975
 Bluetongue_virus,Oryx_beisa,wild,IFA,0,Davies & Walker 1974
 Bluetongue_virus,Oryx_gazella,wild,Antibodies,0,Bender et al. 2003
 Bovine_viral_diarrhea_virus_1,Oryx_gazella,wild,SNT,1,Hamblin & Hedger 1979

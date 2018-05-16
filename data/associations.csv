@@ -79,7 +79,7 @@ Epizootic_hemorrhagic_disease_virus,Antilope_cervicapra,wild,Antibodies,0,Willia
 Foot-and-mouth_disease_virus,Antilope_cervicapra,wild,Isolation,2,Kar et al. 1983; Hegde et al. 2011 in Weaver & Karesh 2013
 Rabies_virus,Antrozous_pallidus,wild,PCR,2,Blanton et al. 2008
 Measles_virus,Aotus_azarae,wild,Antibodies,0,O'Brien et al. 1981
-Encephalomyocarditis_virus,Aotus_trivirgatus,wild,Isolation,2,Roca-Garcia 1957
+Encephalomyocarditis_virus,Aotus_trivirgatus,wild,Isolation,2,Roca-Garcia & Sanmartin-Barber 1957
 GB_virus_A,Aotus_trivirgatus,wild,PCR,2,Bukh & Apgar 1997
 GB_virus_B,Aotus_trivirgatus,captive,Isolation,2,Bukh et al. 2001
 Hepatitis_A_virus,Aotus_trivirgatus,captive,Antibodies,0,Lemon et al. 1982
@@ -2456,7 +2456,7 @@ GB_virus_A,Saguinus_nigricollis,wild,PCR,2,Bukh & Apgar 1997
 GB_virus_A,Saguinus_oedipus,wild,PCR,2,Bukh & Apgar 1997
 Torque_Teno_virus,Saguinus_oedipus,wild,PCR,2,Catroxo et al. 2008
 Foot-and-mouth_disease_virus,Saiga_tatarica,wild,Isolation,2,Weaver et al. 2013
-Encephalomyocarditis_virus,Saimiri_sciureus,wild,Isolation,2,Roca-Garcia 1957
+Encephalomyocarditis_virus,Saimiri_sciureus,wild,Isolation,2,Roca-Garcia & Sanmartin-Barber 1957
 Mayaro_virus,Saimiri_sciureus,wild,Antibodies,0,de Thoisy et al. 2003
 Measles_virus,Saimiri_sciureus,wild,Isolation,2,Fowler & Miller 2003
 Saimiriine_herpesvirus_1,Saimiri_sciureus,wild,Isolation,2,Daniel et al. 1967

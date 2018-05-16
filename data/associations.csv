@@ -123,7 +123,7 @@ Sendai_virus,Apodemus_sylvaticus,wild,Antibodies,0,Kaplan et al. 1980
 Theilovirus,Apodemus_sylvaticus,wild,Antibodies,0,Kaplan et al. 1980
 Thiafora_virus,Apodemus_sylvaticus,wild,Antibodies,0,Woessner et al. 2000
 Tick-borne_encephalitis_virus,Apodemus_sylvaticus,wild,Isolation,2,Kozuch et al. 1995
-Uukuniemi_virus,Apodemus_sylvaticus,wild,Antibodies,0,Traavik et al. 1977
+Uukuniemi_virus,Apodemus_sylvaticus,wild,Antibodies,0,Traavik & Mehl 1977
 Tula_virus,Apodemus_uralensis,wild,antigen,0,Heroldova et al. 2010
 Influenza_A_virus,Arctocephalus_australis,wild,Antibodies,0,Blanc et al. 2009
 Dengue_virus,Artibeus_cinereus,wild,Antibodies,0,Price 1978
@@ -1257,7 +1257,7 @@ Trubanaman_virus,Homo_sapiens,human,Antibodies,0,Johansen et al. 2005
 Tula_virus,Homo_sapiens,human,PCR,2,Reynes et al. 2015
 Una_virus,Homo_sapiens,human,Antibodies,0,Diaz et al. 2003
 Usutu_virus,Homo_sapiens,human,PCR,2,Pecorari et al. 2009
-Uukuniemi_virus,Homo_sapiens,human,Antibodies,0,Traavik et al. 1977
+Uukuniemi_virus,Homo_sapiens,human,Antibodies,0,Traavik & Mehl 1977
 Vaccinia_virus,Homo_sapiens,human,PCR,2,Silva-Fernandes et al. 2009
 Variola_virus,Homo_sapiens,human,Isolation,2,Dumbell et al. 1999
 Venezuelan_equine_encephalitis_virus,Homo_sapiens,human,Isolation,2,Mangiafico et al. 2002
@@ -1720,7 +1720,7 @@ Sendai_virus,Myodes_glareolus,wild,Antibodies,0,Kaplan et al. 1980
 Theilovirus,Myodes_glareolus,wild,Antibodies,0,Kaplan et al. 1980
 Thiafora_virus,Myodes_glareolus,wild,Antibodies,0,Woessner et al. 2000
 Tick-borne_encephalitis_virus,Myodes_glareolus,wild,PCR,2,Weidmann et al. 2006
-Uukuniemi_virus,Myodes_glareolus,wild,Antibodies,0,Traavik et al. 1977
+Uukuniemi_virus,Myodes_glareolus,wild,Antibodies,0,Traavik & Mehl 1977
 Puumala_virus,Myodes_regulus,wild,PCR,2,Plyusnina et al. 2008
 Cowpox_virus,Myodes_rufocanus,wild,PCR,2,Tryland et al. 1998b
 Puumala_virus,Myodes_rufocanus,wild,Isolation,2, Yanagihara et al. 1984
@@ -2533,7 +2533,7 @@ Andes_virus,Sooretamys_angouya,wild,Antibodies,0,de Oliveira et al. 2011
 Flexal_virus,Sooretamys_angouya,wild,Isolation,2,Gonzalez et al. 2007
 Parana_virus,Sooretamys_angouya,wild,Isolation,2,Webb et al. 1970; and Charrel et al. 2008
 Vaccinia_virus,Sooretamys_angouya,wild,PRNT,1,Peres et al. 2013
-Uukuniemi_virus,Sorex_araneus,wild,Antibodies,0,Traavik et al. 1977
+Uukuniemi_virus,Sorex_araneus,wild,Antibodies,0,Traavik & Mehl 1977
 Colorado_tick_fever_virus,Spermophilus_beecheyi,wild,Antibodies,0,Emmons 1994
 Ground_squirrel_hepatitis_virus,Spermophilus_beecheyi,wild,PCR,2,Ranck et al. 2008; Marion et al. 1980
 Modoc_virus,Spermophilus_beecheyi,wild,Antibodies,0,Hardy et al. 1974

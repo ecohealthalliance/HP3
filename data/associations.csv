@@ -238,7 +238,7 @@ Foot-and-mouth_disease_virus,Bos_mutus,domestic,Isolation,2,Prasad et al. 1978
 Adelaide_River_virus,Bos_taurus,domestic,Isolation,2,Gard et al. 1984
 Akabane_virus,Bos_taurus,domestic,Antibodies,0,Kono et al. 2008
 Alcelaphine_herpesvirus_1,Bos_taurus,domestic,PCR,2,Tham 1997
-Banna_virus,Bos_taurus,domestic,Isolation,2,Tao et al. 2005
+Banna_virus,Bos_taurus,domestic,Isolation,2,Tao & Chen 2005
 Berrimah_virus,Bos_taurus,domestic,Isolation,2,Gard et al. 1983
 Bluetongue_virus,Bos_taurus,domestic,PCR,2,Polci et al. 2007
 Border_disease_virus,Bos_taurus,domestic,PCR,2,McFadden et al. 2012
@@ -2570,7 +2570,7 @@ Kyasanur_Forest_disease_virus,Suncus_murinus,wild,Antibodies,0,Webb 1965
 Thottapalayam_virus,Suncus_murinus,wild,Isolation,2,Carey et al. 1971
 Rabies_virus,Suricata_suricatta,wild,PCR,2,van Zyl et al. 2010
 African_swine_fever_virus,Sus_scrofa,domestic,Isolation,2,ICTV database
-Banna_virus,Sus_scrofa,domestic,Isolation,2,Tao et al. 2005
+Banna_virus,Sus_scrofa,domestic,Isolation,2,Tao & Chen 2005
 Border_disease_virus,Sus_scrofa,domestic,PCR,2,Roehe et al. 1992
 Borna_disease_virus,Sus_scrofa,domestic,PCR,2,Zhang et al. 2014
 Bovine_viral_diarrhea_virus_1,Sus_scrofa,domestic,PCR,2,Van Gennip et al. 1999

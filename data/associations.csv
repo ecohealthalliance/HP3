@@ -589,7 +589,7 @@ Deer_adenovirus,Cervus_elaphus,domestic,micropsy,0,Horner & Read 1982
 Epizootic_hemorrhagic_disease_virus,Cervus_elaphus,domestic,Antibodies,0,Nol et al. 2010
 Ovine_herpesvirus_2,Cervus_elaphus,wild,PCR,2,Vikoren et al. 2006
 Parapoxvirus_of_red_deer_in_New_Zealand,Cervus_elaphus,domestic,DNA RFLP,2,Horner et al. 1987
-Thiafora_virus,Cervus_elaphus,wild,Antibodies,0,Chastel 1989
+Thiafora_virus,Cervus_elaphus,wild,Antibodies,0,Chastel et al. 1989
 Vesicular_stomatitis_New_Jersey_virus,Cervus_elaphus,wild,SNT,1,Webb et al. 1987a
 Bluetongue_virus,Cervus_nippon,domestic,Antibodies,0,Williams & Barker 2001
 Bovine_viral_diarrhea_virus_1,Cervus_nippon,domestic,SNT,1,Lawman et al. 1978
@@ -652,7 +652,7 @@ Qalyub_virus,Cricetomys_gambianus,wild,Isolation,2,Saluzzo et al. 1986
 Uganda_S_virus,Cricetomys_gambianus,wild,Isolation,2,Kemp 1975; Kemp et al. 1974
 Sendai_virus,Cricetus_cricetus,captive,Isolation,2,Parker & Reynolds 1968
 Borna_disease_virus,Crocidura_leucodon,wild,PCR,2,Hilbe et al. 2006
-Thiafora_virus,Crocidura_russula,wild,Isolation,2,Chastel 1989
+Thiafora_virus,Crocidura_russula,wild,Isolation,2,Chastel et al. 1989
 African_horse_sickness_virus,Crocuta_crocuta,wild,Antibodies,0,Binepal et al. 1992
 Bluetongue_virus,Crocuta_crocuta,wild,Antibodies,0,Alexander et al. 1994a
 Canine_distemper_virus,Crocuta_crocuta,domestic,Antibodies,0,Prager et al. 2012
@@ -1965,7 +1965,7 @@ Rotavirus_B,Ovis_aries,wild,Antibodies,0,Wani et al. 2004
 Salehabad_virus,Ovis_aries,domestic,Antibodies,0,CDC Arbocat
 Sheeppox_virus,Ovis_aries,domestic,PCR,2,Mangana-Vougiouka et al. 2000
 Suid_herpesvirus_1,Ovis_aries,domestic,"Cell culture, PCR",2,Salwa 2004
-Thiafora_virus,Ovis_aries,domestic,Antibodies,0,Chastel 1989
+Thiafora_virus,Ovis_aries,domestic,Antibodies,0,Chastel et al. 1989
 Thogoto_virus,Ovis_aries,domestic,Isolation,2,Jones et al. 1987
 Torque_Teno_virus,Ovis_aries,domestic,PCR,2,Leary et al. 1999
 Trubanaman_virus,Ovis_aries,domestic,Antibodies,0,Johansen et al. 2005
@@ -2617,7 +2617,7 @@ Suid_herpesvirus_1,Sus_scrofa,domestic,PCR,2,Hahn et al. 2010
 Suid_herpesvirus_1,Sus_scrofa,wild,Isolation,2,Pannwitz et al. 2012
 Swine_norovirus,Sus_scrofa,domestic,PCR,2,Song et al. 2011
 Swinepox_virus,Sus_scrofa,domestic,PCR,2,Moorkamp et al. 2008
-Thiafora_virus,Sus_scrofa,wild,Antibodies,0,Chastel 1989
+Thiafora_virus,Sus_scrofa,wild,Antibodies,0,Chastel et al. 1989
 Torque_Teno_virus,Sus_scrofa,domestic,PCR,2,Martelli et al. 2006
 Transmissible_gastroenteritis_virus,Sus_scrofa,domestic,Antibodies,0,Morin et al. 1973
 Trubanaman_virus,Sus_scrofa,wild,Antibodies,0,Johansen et al. 2005

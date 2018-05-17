@@ -93,7 +93,7 @@ Dobrava-Belgrade_virus,Apodemus_agrarius,wild,Isolation,2,Plyusnin 2002
 Hantaan_virus,Apodemus_agrarius,wild,Isolation,2,Acha & Szyfres 2003; Lee et al. 1978
 Lymphocytic_choriomeningitis_virus,Apodemus_agrarius,wild,Antibodies,0,Tagliapietra et al. 2009
 Tick-borne_encephalitis_virus,Apodemus_agrarius,wild,Isolation,2,Golovljova et al. 2004
-Apoi_virus,Apodemus_argenteus,wild,Isolation,2,Karabatsos 1995
+Apoi_virus,Apodemus_argenteus,wild,Isolation,2,Arbovirus Catalogue
 Cowpox_virus,Apodemus_flavicollis,wild,Antibodies,0,Acha & Szyfres 2003; Essbauer & Meyer 2007; Essbauer et al. 2009
 Dobrava-Belgrade_virus,Apodemus_flavicollis,wild,Isolation,2,Avsic-Zupanc et al. 1992
 Ljungan_virus,Apodemus_flavicollis,wild,PCR,2,Hauffe et al. 2010
@@ -105,7 +105,7 @@ Thiafora_virus,Apodemus_flavicollis,wild,Antibodies,0,Woessner et al. 2000
 Tick-borne_encephalitis_virus,Apodemus_flavicollis,wild,Isolation,2,Acha & Szyfres 2003; Kozch et al. 1995
 Lymphocytic_choriomeningitis_virus,Apodemus_mystacinus,wild,Antibodies,0,Tagliapietra et al. 2009
 Hantaan_virus,Apodemus_peninsulae,wild,Isolation,2,Wang et al. 2000
-Apoi_virus,Apodemus_speciosus,wild,Isolation,2,Karabatsos 1995
+Apoi_virus,Apodemus_speciosus,wild,Isolation,2,Arbovirus Catalogue
 Cowpox_virus,Apodemus_sylvaticus,wild,PCR,2,Acha & Szyfres 2003; Chantrey et al. 1999
 Ectromelia_virus,Apodemus_sylvaticus,wild,Antibodies,0,Kaplan et al. 1980
 Encephalomyocarditis_virus,Apodemus_sylvaticus,wild,Antibodies,0,Kaplan et al. 1980
@@ -1159,7 +1159,7 @@ Kairi_virus,Homo_sapiens,human,Antibodies,0,Tauro et al. 2009
 Kasokero_virus,Homo_sapiens,human,Isolation,2,Kalunda et al. 1986
 Kokobera_virus,Homo_sapiens,human,Antibodies,0,Boughton et al. 1986
 Kotonkan_virus,Homo_sapiens,human,Antibodies,0,Kemp et al. 1973
-Koutango_virus,Homo_sapiens,human,Isolation,2,Karabatsos 1985
+Koutango_virus,Homo_sapiens,human,Isolation,2,Arbovirus Catalogue
 Kyasanur_Forest_disease_virus,Homo_sapiens,human,PCR,2,Wang et al. 2009
 Laguna_Negra_virus,Homo_sapiens,human,Antibodies,0,Johnson et al. 1997b
 Lake_Victoria_marburgvirus,Homo_sapiens,human,Isolation,2,Kuzmin et al. 2010
@@ -1607,7 +1607,7 @@ California_encephalitis_virus,Microtus_oeconomus,wild,Antibodies,0,Mitchell et a
 Cowpox_virus,Microtus_oeconomus,wild,Isolation,2,Lvov et al. 1988
 Khabarovsk_virus,Microtus_oeconomus,wild,PCR,2,Plyusnina et al. 2008
 Omsk_hemorrhagic_fever_virus,Microtus_oeconomus,wild,Isolation,2,Acha & Szyfres 2003
-Eastern_equine_encephalitis_virus,Microtus_pennsylvanicus,wild,Antibodies,0,Karabatsos 1985 in Day et al. 1996
+Eastern_equine_encephalitis_virus,Microtus_pennsylvanicus,wild,Antibodies,0,Arbovirus Catalogue
 Mammalian_orthoreovirus,Microtus_pennsylvanicus,wild,Antibodies,0,Descoteaux 1992
 Murid_herpesvirus_5,Microtus_pennsylvanicus,wild,Isolation,2,Melendez et al. 1967
 Prospect_Hill_virus,Microtus_pennsylvanicus,wild,Isolation,2,Lee et al. 1985
@@ -2086,7 +2086,7 @@ Highlands_J_virus,Peromyscus_gossypinus,wild,Antibodies,0,Day et al. 1996
 St._Louis_encephalitis_virus,Peromyscus_gossypinus,wild,Antibodies,0,Day et al. 1996
 Venezuelan_equine_encephalitis_virus,Peromyscus_gossypinus,wild,Antibodies,0,Acha & Szyfres 2003; Chamberlain et al. 1964; Bigler 1971
 Bayou_virus,Peromyscus_leucopus,wild,Antibodies,0,Holsomback et al. 2009
-Eastern_equine_encephalitis_virus,Peromyscus_leucopus,wild,Antibodies,0,Karabatsos 1985 in Day et al. 1996
+Eastern_equine_encephalitis_virus,Peromyscus_leucopus,wild,Antibodies,0,Arbovirus Catalogue
 New_York_virus,Peromyscus_leucopus,wild,PCR,2,Hjelle et al. 1995
 Powassan_virus,Peromyscus_leucopus,wild,Isolation,2,Shope 2003
 Sal_Vieja_virus,Peromyscus_leucopus,wild,Isolation,2,Varelas-Wesley et al. 1982
@@ -2120,7 +2120,7 @@ Volepox_virus,Peromyscus_truei,wild,Isolation,2,Knight et al. 1992
 Crimean-Congo_hemorrhagic_fever_virus,Phacochoerus_aethiopicus,wild,Antibodies,0,Shepherd et al. 1987
 Foot-and-mouth_disease_virus,Phacochoerus_aethiopicus,wild,Antibodies,0,Hamblin et al. 1990
 African_swine_fever_virus,Phacochoerus_africanus,wild,PCR,2,Gallardo et al. 2011
-Araguari_virus,Philander_opossum,wild,Isolation,2,Karabatsos 1985
+Araguari_virus,Philander_opossum,wild,Isolation,2,Arbovirus Catalogue
 Mayaro_virus,Philander_opossum,wild,Antibodies,0,de Thoisy et al. 2003
 Patois_virus,Philander_opossum,wild,Antibodies,0,Scherer et al. 1972
 Venezuelan_equine_encephalitis_virus,Philander_opossum,wild,Antibodies,0,Seymour et al. 1978

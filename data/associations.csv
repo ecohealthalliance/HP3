@@ -191,7 +191,7 @@ Lymphocytic_choriomeningitis_virus,Arvicola_scherman,wild,Antibodies,0,Tagliapie
 Bhanja_virus,Atelerix_albiventris,wild,Antibodies,0,Hubalek 2009
 Chandipura_virus,Atelerix_albiventris,wild,Isolation,2,Kemp 1975
 Kotonkan_virus,Atelerix_albiventris,wild,Antibodies,0,Kemp et al. 1973
-Semliki_Forest_virus,Atelerix_albiventris,wild,Isolation,2,CDC ArboCat Report
+Semliki_Forest_virus,Atelerix_albiventris,wild,Isolation,2,Arbovirus Catalogue
 Ateline_herpesvirus_1,Ateles_geoffroyi,captive,isolation,2,Hull et al. 1972
 Ateline_herpesvirus_2,Ateles_geoffroyi,wild,Isolation,2,Melendez et al. 1972
 St._Louis_encephalitis_virus,Ateles_paniscus,wild,Isolation,2,Sabattini et al. 1965
@@ -672,7 +672,7 @@ Nipah_virus,Cynopterus_brachyotis,wild,Isolation,2,WHO
 Phnom_Penh_bat_virus,Cynopterus_brachyotis,wild,Isolation,2,Beran & Steele 1994
 Rabies_virus,Cynopterus_brachyotis,wild,Isolation,2,Smith et al. 1967
 Wesselsbron_virus,Cynopterus_brachyotis,wild,Antibodies,0,Geevarghese & Banerjee 1990
-Bunyamwera_virus,Cynopterus_sphinx,wild,Antibodies,0,CDC Arbocat Report 1984
+Bunyamwera_virus,Cynopterus_sphinx,wild,Antibodies,0,Arbovirus Catalogue
 Influenza_A_virus,Cynopterus_sphinx,wild,Antibodies,0,Kelkar et al. 1981
 Japanese_encephalitis_virus,Cynopterus_sphinx,wild,Isolation,2,Calisher et al. 2006; Sulkin & Allen 1974; Johnsen et al. 1974
 Kyasanur_Forest_disease_virus,Cynopterus_sphinx,wild,Isolation,2,Calisher et al. 2006
@@ -1055,7 +1055,7 @@ Corriparta_virus,Homo_sapiens,human,Antibodies,0,Doherty et al. 1970
 Cote_d'Ivoire_ebolavirus,Homo_sapiens,human,Isolation,2,Formenty et al. 1999
 Cowpox_virus,Homo_sapiens,human,Isolation,2,Davies et al. 1938
 Crimean-Congo_hemorrhagic_fever_virus,Homo_sapiens,human,PCR,2,Mourya et al. 2012
-Dengue_virus,Homo_sapiens,human,Isolation,2,CDC Arbocat Report 1985
+Dengue_virus,Homo_sapiens,human,Isolation,2,Arbovirus Catalogue
 Dera_Ghazi_Khan_virus,Homo_sapiens,human,Antibodies,0,Darwish et al. 1983
 Dhori_virus,Homo_sapiens,human,Antibodies,0,Darwish et al. 1983
 Dobrava-Belgrade_virus,Homo_sapiens,human,Isolation,2,Gligic et al. 1992
@@ -1066,7 +1066,7 @@ Encephalomyocarditis_virus,Homo_sapiens,human,PCR,2,Oberste et al. 2009
 European_bat_lyssavirus_1,Homo_sapiens,human,PCR,2,Fooks et al. 2003
 European_bat_lyssavirus_2,Homo_sapiens,human,PCR,2,Fooks et al. 2003
 Everglades_virus,Homo_sapiens,human,Isolation,2,Calisher et al. 1980
-Flexal_virus,Homo_sapiens,human,Antibodies,0,CDC ArboCat
+Flexal_virus,Homo_sapiens,human,Antibodies,0,Arbovirus Catalogue
 Foot-and-mouth_disease_virus,Homo_sapiens,human,Isolation,2,Ghoneim et al. 2010
 Gan_Gan_virus,Homo_sapiens,human,Antibodies,0,Vale et al. 1986
 GB_virus_C,Homo_sapiens,human,PCR,2,Kao et al. 1999
@@ -1408,7 +1408,7 @@ Cercopithecine_herpesvirus_1,Macaca_arctoides,wild,Isolation,2,Huff & Barry 2003
 Simian_foamy_virus,Macaca_arctoides,wild,PCR,2,Hussain et al. 2003
 Cercopithecine_herpesvirus_1,Macaca_cyclopis,wild,Isolation,2,Huff & Barry 2003
 Simian_foamy_virus,Macaca_cyclopis,wild,PCR,2,Schweizer et al. 1995
-Bakau_virus,Macaca_fascicularis,wild,Isolation,2,CDC ArboCat
+Bakau_virus,Macaca_fascicularis,wild,Isolation,2,Arbovirus Catalogue
 Canine_distemper_virus,Macaca_fascicularis,captive,Isolation,2,Sakai et al. 2013
 Cercopithecine_herpesvirus_1,Macaca_fascicularis,wild,Isolation,2,Huff & Barry 2003
 Chikungunya_virus,Macaca_fascicularis,wild,Antibodies,0,Inoue et al. 2003
@@ -1861,7 +1861,7 @@ Foot-and-mouth_disease_virus,Odocoileus_virginianus,wild,Isolation,2,Grubman & B
 Vesicular_stomatitis_Indiana_virus,Odocoileus_virginianus,wild,Antibodies,0,Fletcher et al. 1985
 West_Nile_virus,Odocoileus_virginianus,wild,Antibodies,0,Santaella et al. 2005
 Allpaahuayo_virus,Oecomys_bicolor,wild,Isolation,2,Moncayo et al. 2001
-Flexal_virus,Oecomys_bicolor,wild,Isolation,2,CDC ArboCat
+Flexal_virus,Oecomys_bicolor,wild,Isolation,2,Arbovirus Catalogue
 Allpaahuayo_virus,Oecomys_paricola,wild,Isolation,2,Moncayo et al. 2001
 Andes_virus,Oligoryzomys_chacoensis,wild,PCR,2,Chu et al. 2003
 Andes_virus,Oligoryzomys_flavescens,wild,PCR,2,Medina et al. 2009
@@ -1995,7 +1995,7 @@ Human_adenovirus_E,Pan_paniscus,wild,PCR,2,Roy et al. 2009
 Primate_T-lymphotropic_virus_2,Pan_paniscus,wild,PCR,2,Ahuka-Mundeke et al. 2011
 Primate_T-lymphotropic_virus_3,Pan_paniscus,wild,Isolation,2,NA
 Simian_foamy_virus,Pan_paniscus,wild,PCR,2,Schweizer et al. 1995
-Bunyamwera_virus,Pan_troglodytes,wild,Antibodies,NA,CDC Arbocat
+Bunyamwera_virus,Pan_troglodytes,wild,Antibodies,NA,Arbovirus Catalogue
 Chikungunya_virus,Pan_troglodytes,wild,Antibodies,0,Morrison 1979
 Cote_d'Ivoire_ebolavirus,Pan_troglodytes,wild,Isolation,2,Le Guenno & Formentry 1995
 Encephalomyocarditis_virus,Pan_troglodytes,wild,Isolation,2,Reddacliff et al. 1997
@@ -2052,7 +2052,7 @@ Cercopithecine_herpesvirus_12,Papio_hamadryas,captive,isolation,2,Jenson et al. 
 Chikungunya_virus,Papio_hamadryas,wild,Antibodies,0,McIntosh 1970
 Primate_T-lymphotropic_virus_3,Papio_hamadryas,wild,PCR,2,NA
 Simian_foamy_virus,Papio_hamadryas,wild,PCR,2,Hussain et al. 2003
-Bouboui_virus,Papio_papio,wild,Isolation,2,CDC Arbovirus Catalog
+Bouboui_virus,Papio_papio,wild,Isolation,2,Arbovirus Catalogue
 Chikungunya_virus,Papio_papio,wild,Isolation,2,Diallo et al. 1999
 Simian_foamy_virus,Papio_papio,wild,PCR,2,Hussain et al. 2003
 Cercopithecine_herpesvirus_16,Papio_ursinus,wild,Antibodies,0,Eberle et al. 1997
@@ -2345,7 +2345,7 @@ Wad_Medani_virus,Rattus_norvegicus,wild,Antibodies,0,Darwish et al. 1983
 West_Nile_virus,Rattus_norvegicus,wild,Antibodies,0,Gomez et al. 2008
 Whitewater_Arroyo_virus,Rattus_norvegicus,wild,Antibodies,0,Bennett et al. 2000
 Andes_virus,Rattus_rattus,domestic,PCR,2,Medina et al. 2009
-Barur_virus,Rattus_rattus,wild,Isolation,2,CDC ArboCat
+Barur_virus,Rattus_rattus,wild,Isolation,2,Arbovirus Catalogue
 Bunyamwera_virus,Rattus_rattus,wild,Isolation,2,Monath et al. 1972; Henderson et al. 1972
 Crimean-Congo_hemorrhagic_fever_virus,Rattus_rattus,wild,Antibodies,0,Darwish et al. 1983
 Dera_Ghazi_Khan_virus,Rattus_rattus,domestic,Antibodies,0,Darwish et al. 1983
@@ -2497,7 +2497,7 @@ Chikungunya_virus,Scotophilus_kuhlii,wild,Isolation,2,Calisher et al. 2006
 Dengue_virus,Scotophilus_kuhlii,wild,Antibodies,0,Sulkin et al. 1974; Johnsen et al. 1974
 Issyk-Kul_virus,Scotophilus_kuhlii,wild,Isolation,2,Calisher et al. 2006; Calisher 2009
 Nipah_virus,Scotophilus_kuhlii,wild,Antibodies,0,WHO
-Dakar_bat_virus,Scotophilus_nigrita,wild,Isolation,2,CDC Arbocat Report 1985
+Dakar_bat_virus,Scotophilus_nigrita,wild,Isolation,2,Arbovirus Catalogue
 Kyasanur_Forest_disease_virus,Semnopithecus_entellus,wild,Isolation,2,Sreenivasan et al. 1986
 Langur_virus,Semnopithecus_entellus,wild,Isolation,2,Nandi et al. 2006
 Measles_virus,Semnopithecus_entellus,wild,Antibodies,0,Bhatt et al. 1966
@@ -2691,7 +2691,7 @@ Issyk-Kul_virus,Taphozous_melanopogon,wild,Isolation,2,Calisher et al. 2006
 Japanese_encephalitis_virus,Taphozous_melanopogon,wild,Antibodies,0,Cui et al. 2008
 Dakar_bat_virus,Taphozous_perforatus,wild,Isolation,2,Calisher et al. 2006
 Kaeng_Khoi_virus,Taphozous_perforatus,wild,Isolation,2,Wong et al. 2007
-Kaeng_Khoi_virus,Taphozous_theobaldi,wild,Isolation,2,CDC Arbocat Report 1985
+Kaeng_Khoi_virus,Taphozous_theobaldi,wild,Isolation,2,Arbovirus Catalogue
 Bakau_virus,Tatera_indica,wild,Antibodies,0,Darwish et al. 1983
 Crimean-Congo_hemorrhagic_fever_virus,Tatera_indica,wild,Antibodies,0,Darwish et al. 1983
 Dera_Ghazi_Khan_virus,Tatera_indica,wild,Antibodies,0,Darwish et al. 1983

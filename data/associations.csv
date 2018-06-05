@@ -300,7 +300,7 @@ Rotavirus_A,Bos_taurus,domestic,PAGE,0,Buzinaro et al. 2003
 Rotavirus_B,Bos_taurus,domestic,Antibodies,0,Snodgrass et al. 1984
 Rotavirus_C,Bos_taurus,domestic,Isolation,2,Tsunemitsu et al. 1991
 Sathuperi_virus,Bos_taurus,domestic,Isolation,2,Yanase et al. 2004
-Sepik_virus,Bos_taurus,domestic,Antibodies,0,Olson et al. 1986
+Sepik_virus,Bos_taurus,domestic,Antibodies,0,Olson et al. 1983
 Shuni_virus,Bos_taurus,domestic,PCR,2,Yanase et al. 2004
 Suid_herpesvirus_1,Bos_taurus,domestic,"Cell culture, PCR",2,Salwa 2004
 Thogoto_virus,Bos_taurus,domestic,Isolation,2,Jones et al. 1987
@@ -338,7 +338,7 @@ Oropouche_virus,Bubalus_bubalis,domestic,Antibodies,0,Casseb et al. 2014
 Ovine_herpesvirus_2,Bubalus_bubalis,domestic,PCR,2,Wiyono et al. 1994
 Peste-des-petits-ruminants_virus,Bubalus_bubalis,domestic,PCR,2,Govindarajan et al. 1997
 Rinderpest_virus,Bubalus_bubalis,domestic,Isolation,2,Chamberlain et al. 1993
-Sepik_virus,Bubalus_bubalis,domestic,Antibodies,0,Olson et al. 1985
+Sepik_virus,Bubalus_bubalis,domestic,Antibodies,0,Olson et al. 1983
 Tacaiuma_virus,Bubalus_bubalis,domestic,Antibodies,0,Casseb et al. 2014
 Wad_Medani_virus,Bubalus_bubalis,domestic,Antibodies,0,Darwish et al. 1983
 Vesicular_stomatitis_Indiana_virus,Cabassous_centralis,wild,plaque reduction neutralization,1,Tesh et al. 1969
@@ -461,7 +461,7 @@ Peste-des-petits-ruminants_virus,Capra_hircus,domestic,Isolation,2,Taylor & Abeg
 Rabies_virus,Capra_hircus,domestic,PCR,2,Kuzmin et al. 2004
 Rift_Valley_fever_virus,Capra_hircus,domestic,PCR,2,Andriamandimby et al. 2010
 Rinderpest_virus,Capra_hircus,domestic,PCR,2,Rossiter & Wamwayi 1989
-Sepik_virus,Capra_hircus,domestic,Antibodies,0,Olson et al. 1984
+Sepik_virus,Capra_hircus,domestic,Antibodies,0,Olson et al. 1983
 Sheeppox_virus,Capra_hircus,domestic,PCR,2,Bhanuprakash et al. 2010
 Suid_herpesvirus_1,Capra_hircus,domestic,"Cell culture, PCR",2,Salwa 2004
 Trubanaman_virus,Capra_hircus,domestic,Antibodies,0,Johansen et al. 2005

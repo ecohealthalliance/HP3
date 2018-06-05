@@ -1160,7 +1160,7 @@ Kasokero_virus,Homo_sapiens,human,Isolation,2,Kalunda et al. 1986
 Kokobera_virus,Homo_sapiens,human,Antibodies,0,Boughton et al. 1986
 Kotonkan_virus,Homo_sapiens,human,Antibodies,0,Kemp et al. 1973
 Koutango_virus,Homo_sapiens,human,Isolation,2,Karabatsos 1985
-Kyasanur_Forest_disease_virus,Homo_sapiens,human,PCR,2,Wang et al. 2009
+Kyasanur_Forest_disease_virus,Homo_sapiens,human,PCR,2,Wang et al. 2009b
 Laguna_Negra_virus,Homo_sapiens,human,Antibodies,0,Johnson et al. 1997b
 Lake_Victoria_marburgvirus,Homo_sapiens,human,Isolation,2,Kuzmin et al. 2010
 Lassa_virus,Homo_sapiens,human,PCR,2,Panning et al. 2010
@@ -1510,7 +1510,7 @@ St._Louis_encephalitis_virus,Marmota_flaviventris,wild,Antibodies,0,McLean et al
 Eastern_equine_encephalitis_virus,Marmota_monax,wild,Antibodies,0,Karstad et al. 1960
 Marmodid_herpesvirus_1,Marmota_monax,wild,Isolation,2,Buchen-Osmond 2003
 Powassan_virus,Marmota_monax,wild,Isolation,2, McLean et al. 1967
-Rabies_virus,Marmota_monax,wild,Isolation,2,Wang et al. 2009
+Rabies_virus,Marmota_monax,wild,Isolation,2,Wang et al. 2009c
 Woodchuck_hepatitis_virus,Marmota_monax,wild,"EM, DNA (i.e. more than just PCR)",2,Summers et al. 1978
 European_bat_lyssavirus_1,Martes_foina,wild,Antibodies,0,Muller et al. 2004
 Canine_adenovirus,Martes_pennanti,wild,Antibodies,0,Philippa et al. 2004
@@ -1652,7 +1652,7 @@ Rio_Bravo_virus,Mormoops_megalophylla,wild,Antibodies,0,Price 1978
 Tamana_bat_virus,Mormoops_megalophylla,wild,Antibodies,0,Price 1978
 Thogoto_virus,Mungos_mungo,wild,Isolation,2,Ogen-Odoi et al. 1999
 Foot-and-mouth_disease_virus,Muntiacus_muntjak,wild,Antibodies,0,Barman et al. 1999
-Japanese_encephalitis_virus,Murina_aurata,wild,Isolation,2,Wang et al. 2009
+Japanese_encephalitis_virus,Murina_aurata,wild,Isolation,2,Wang et al. 2009a
 Irkut_virus,Murina_leucogaster,wild,Isolation,2,Calisher et al. 2006
 Japanese_encephalitis_virus,Murina_leucogaster,wild,Antibodies,0,Miura et al. 1970
 Encephalomyocarditis_virus,Mus_booduga,wild,Isolation,2,Tesh & Wallace 1978
@@ -2429,7 +2429,7 @@ Reston_ebolavirus,Rousettus_amplexicaudatus,wild,Antibodies,0,Taniguchi et al. 2
 Chikungunya_virus,Rousettus_leschenaultii,wild,Isolation,2,Yu et al. 1989
 Dengue_virus,Rousettus_leschenaultii,wild,PCR,2,Wong et al. 2007
 Influenza_A_virus,Rousettus_leschenaultii,wild,Antibodies,0,Kelkar et al. 1981
-Japanese_encephalitis_virus,Rousettus_leschenaultii,wild,Isolation,2,Wang et al. 2009
+Japanese_encephalitis_virus,Rousettus_leschenaultii,wild,Isolation,2,Wang et al. 2009a
 Kyasanur_Forest_disease_virus,Rousettus_leschenaultii,wild,Antibodies,0,Bhat et al. 1978
 Nelson_Bay_orthoreovirus,Rousettus_leschenaultii,wild,Isolation,2,Calisher et al. 2006; Du et al. 2010
 Nipah_virus,Rousettus_leschenaultii,wild,Antibodies,0,Li et al. 2008

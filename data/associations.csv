@@ -203,8 +203,8 @@ Amapari_virus,Baiomys_taylori,wild,Antibodies,0,Milazzo et al. 2010
 Bayou_virus,Baiomys_taylori,wild,Antibodies,0,Holsomback et al. 2009
 Vesicular_stomatitis_Indiana_virus,Baiomys_taylori,wild,plaque reduction neutralization,1,Aguirre et al. 1992
 Influenza_A_virus,Balaenoptera_acutorostrata,wild,Antibodies,0,Ohishi et al. 2006
-Vesicular_exanthema_of_swine_virus,Balaenoptera_borealis,wild,Antibodies,0,Smith et al. 1978
-Vesicular_exanthema_of_swine_virus,Balaenoptera_physalus,wild,Antibodies,0,Smith et al. 1978
+Vesicular_exanthema_of_swine_virus,Balaenoptera_borealis,wild,Antibodies,0,Smith & Latham 1978
+Vesicular_exanthema_of_swine_virus,Balaenoptera_physalus,wild,Antibodies,0,Smith & Latham 1978
 Hepatitis_E_virus,Bandicota_bengalensis,wild,Antibodies,0,Arankalle et al. 2001
 Lassa_virus,Bandicota_indica,wild,Antibodies,0,Nitatpattana et al. 2000
 Murid_herpesvirus_2,Bandicota_indica,wild,PCR,2,Ehlers et al. 2007
@@ -795,7 +795,7 @@ Human_picobirnavirus,Equus_asinus,captive,PAGE,0,Masachessi et al. 2007
 Rabies_virus,Equus_asinus,domestic,Direct Fluorescent Antibody Testing,0,Jungeblut et al. 1943
 Thogoto_virus,Equus_asinus,domestic,Antibodies,0,Jones et al. 1987
 Venezuelan_equine_encephalitis_virus,Equus_asinus,domestic,Isolation,2,Hearn 1960
-Vesicular_exanthema_of_swine_virus,Equus_asinus,domestic,Antibodies,0,Smith et al. 1978
+Vesicular_exanthema_of_swine_virus,Equus_asinus,domestic,Antibodies,0,Smith & Latham 1978
 Vesicular_stomatitis_Indiana_virus,Equus_asinus,domestic,Antibodies,0,Fletcher et al. 1985
 Wesselsbron_virus,Equus_asinus,domestic,Antibodies,0,Baba et al. 1995
 African_horse_sickness_virus,Equus_caballus,domestic,Antibodies,0,Baba et al. 1993
@@ -874,7 +874,7 @@ Dugbe_virus,Erythrocebus_patas,wild,Isolation,2,Butenko 1995
 Simian_hemorrhagic_fever_virus,Erythrocebus_patas,captive,Isolation,2,Gravell et al. 1986
 Yaba_monkey_tumor_virus,Erythrocebus_patas,wild,Antibodies,0,Downie 1974
 Yellow_fever_virus,Erythrocebus_patas,wild,Isolation,2,Deubel et al. 1985
-Vesicular_exanthema_of_swine_virus,Eschrichtius_robustus,wild,Antibodies,0,Smith et al. 1978
+Vesicular_exanthema_of_swine_virus,Eschrichtius_robustus,wild,Antibodies,0,Smith & Latham 1978
 Rabies_virus,Euderma_maculatum,wild,Isolation,2,Nadin-Davis et al. 2001
 Akabane_virus,Eudorcas_thomsonii,wild,Antibodies,0,Davies et al. 1985
 Bluetongue_virus,Eudorcas_thomsonii,wild,Antibodies,0,Anderson et al. 1998
@@ -2153,7 +2153,7 @@ St._Louis_encephalitis_virus,Phyllostomus_hastatus,wild,Antibodies,0,Price 1978a
 Tacaribe_virus,Phyllostomus_hastatus,wild,Antibodies,0,Price 1978a
 Yellow_fever_virus,Phyllostomus_hastatus,wild,Antibodies,0,Price 1978a
 Andes_virus,Phyllotis_darwini,wild,Antibodies,0,Padula et al. 2004
-Vesicular_exanthema_of_swine_virus,Physeter_macrocephalus,wild,Antibodies,0,Smith et al. 1978
+Vesicular_exanthema_of_swine_virus,Physeter_macrocephalus,wild,Antibodies,0,Smith & Latham 1978
 Japanese_encephalitis_virus,Pipistrellus_abramus,wild,Antibodies,0,Miura et al. 1970
 Influenza_A_virus,Pipistrellus_ceylonicus,wild,Antibodies,0,Kelkar et al. 1981
 Rabies_virus,Pipistrellus_hesperus,wild,PCR,2,Blanton et al. 2008

@@ -935,7 +935,7 @@ Arumowot_virus,Gerbilliscus_kempi,wild,isolation,2,Kemp et al. 1974
 Keuraliba_virus,Gerbilliscus_kempi,wild,Isolation,2,Kemp 1975
 Koutango_virus,Gerbilliscus_kempi,wild,Isolation,2,Butenko et al. 1986
 Qalyub_virus,Gerbilliscus_kempi,wild,Isolation,2,Saluzzo et al. 1986
-Saboya_virus,Gerbilliscus_kempi,wild,Isolation,2,Kemp 1975; Varelas-Wesley et al. 1982
+Saboya_virus,Gerbilliscus_kempi,wild,Isolation,2,Kemp 1975; Varelas-Wesley & Calisher 1982
 Taterapox_virus,Gerbilliscus_kempi,wild,Isolation,2,Lourie et al. 1975
 Crimean-Congo_hemorrhagic_fever_virus,Gerbilliscus_leucogaster,wild,Antibodies,0,Shepherd et al. 1987
 Bunyamwera_virus,Gerbilliscus_validus,wild,Antibodies,0,Henderson et al. 1972
@@ -2089,8 +2089,8 @@ Bayou_virus,Peromyscus_leucopus,wild,Antibodies,0,Holsomback et al. 2009
 Eastern_equine_encephalitis_virus,Peromyscus_leucopus,wild,Antibodies,0,Karabatsos 1985
 New_York_virus,Peromyscus_leucopus,wild,PCR,2,Hjelle et al. 1995
 Powassan_virus,Peromyscus_leucopus,wild,Isolation,2,Shope 2003
-Sal_Vieja_virus,Peromyscus_leucopus,wild,Isolation,2,Varelas-Wesley et al. 1982
-San_Perlita_virus,Peromyscus_leucopus,wild,Isolation,2,Varelas-Wesley et al. 1982
+Sal_Vieja_virus,Peromyscus_leucopus,wild,Isolation,2,Varelas-Wesley & Calisher 1982
+San_Perlita_virus,Peromyscus_leucopus,wild,Isolation,2,Varelas-Wesley & Calisher 1982
 Sin_Nombre_virus,Peromyscus_leucopus,wild,Antibodies,0,Weigler et al. 1996
 St._Louis_encephalitis_virus,Peromyscus_leucopus,wild,Antibodies,0,White & White 1981
 Vesicular_stomatitis_Indiana_virus,Peromyscus_leucopus,wild,plaque reduction neutralization,1,Aguirre et al. 1992
@@ -2360,7 +2360,7 @@ Murine_pneumonia_virus,Rattus_rattus,domestic,PCR,2,McInnes et al. 2011
 Patois_virus,Rattus_rattus,domestic,Antibodies,0,Scherer et al. 1972
 Rift_Valley_fever_virus,Rattus_rattus,domestic,Isolation,2,Imam et al. 1979
 Seoul_virus,Rattus_rattus,domestic,Isolation,2,Wang et al. 2000
-St._Louis_encephalitis_virus,Rattus_rattus,domestic,Isolation,2,Varelas-Wesley et al. 1982
+St._Louis_encephalitis_virus,Rattus_rattus,domestic,Isolation,2,Varelas-Wesley & Calisher 1982
 Theilovirus,Rattus_rattus,domestic,Isolation,2,Ohsawa et al. 2003
 Thogoto_virus,Rattus_rattus,domestic,Antibodies,0,Jones et al. 1987
 Venezuelan_equine_encephalitis_virus,Rattus_rattus,wild,Antibodies,0,Sudia & Newhouse 1975
@@ -2516,11 +2516,11 @@ Everglades_virus,Sigmodon_hispidus,wild,Antibodies,0,Day et al. 1996
 Guama_virus,Sigmodon_hispidus,wild,Isolation,2,Shope et al. 1988
 Guanarito_virus,Sigmodon_hispidus,wild,Isolation,2,Acha & Szyfres 2003; Salas et al. 1991
 Highlands_J_virus,Sigmodon_hispidus,wild,Antibodies,0,Day et al. 1996
-Jutiapa_virus,Sigmodon_hispidus,wild,Isolation,2,Varelas-Wesley et al. 1982
+Jutiapa_virus,Sigmodon_hispidus,wild,Isolation,2,Varelas-Wesley & Calisher 1982
 Muleshoe_virus,Sigmodon_hispidus,wild,PCR,2,Rawlings et al. 1996
 Patois_virus,Sigmodon_hispidus,wild,Isolation,2,Galindo et al. 1966
-Sal_Vieja_virus,Sigmodon_hispidus,wild,Isolation,2,Varelas-Wesley et al. 1982
-San_Perlita_virus,Sigmodon_hispidus,wild,Isolation,2,Varelas-Wesley et al. 1982
+Sal_Vieja_virus,Sigmodon_hispidus,wild,Isolation,2,Varelas-Wesley & Calisher 1982
+San_Perlita_virus,Sigmodon_hispidus,wild,Isolation,2,Varelas-Wesley & Calisher 1982
 St._Louis_encephalitis_virus,Sigmodon_hispidus,wild,Antibodies,0,Day et al. 1996
 Tamiami_virus,Sigmodon_hispidus,wild,Isolation,2,Calisher et al. 1970
 Venezuelan_equine_encephalitis_virus,Sigmodon_hispidus,wild,Isolation,2,Acha & Szyfres 2003; Chamberlain et al. 1964; Grayson & Galindo 1968; Lord 1973

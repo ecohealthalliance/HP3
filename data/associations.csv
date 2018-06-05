@@ -49,7 +49,7 @@ Vesicular_stomatitis_Indiana_virus,Alouatta_palliata,wild,Antibodies,0,Nisbett 2
 Yellow_fever_virus,Alouatta_palliata,wild,Antibodies,0,Galindo & Srihongse 1967
 St._Louis_encephalitis_virus,Alouatta_pigra,wild,Antibodies,0,Seymour et al. 1989
 Vesicular_stomatitis_Indiana_virus,Alouatta_pigra,wild,plaque reduction neutralization,1,Tesh et al. 1969
-Mayaro_virus,Alouatta_seniculus,wild,Antibodies,0,de Thoisy et al. 2003
+Mayaro_virus,Alouatta_seniculus,wild,Antibodies,0,de Thoisy et al. 2003a
 Modoc_virus,Ammospermophilus_nelsoni,wild,Antibodies,0,Hardy et al. 1974
 St._Louis_encephalitis_virus,Ammospermophilus_nelsoni,wild,Antibodies,0,Hardy et al. 1974
 Western_equine_encephalitis_virus,Ammospermophilus_nelsoni,wild,Isolation,2,Hardy et al. 1974
@@ -316,7 +316,7 @@ Wesselsbron_virus,Bos_taurus,domestic,Antibodies,0,Baba et al. 1995
 Wongorr_virus,Bos_taurus,domestic,Antibodies,0,Doherty et al. 1973
 Foot-and-mouth_disease_virus,Boselaphus_tragocamelus,wild,PCR,2,Subramaniam et al. 2013
 Marituba_virus,Bradypus_tridactylus,wild,Isolation,2,Shope et al. 1988
-Mayaro_virus,Bradypus_tridactylus,wild,Antibodies,0,de Thoisy et al. 2003
+Mayaro_virus,Bradypus_tridactylus,wild,Antibodies,0,de Thoisy et al. 2003a
 St._Louis_encephalitis_virus,Bradypus_tridactylus,wild,Antibodies,0,de Thoisy et al. 2004
 Changuinola_virus,Bradypus_variegatus,wild,Isolation,2,Seymour et al. 1983b
 Punta_Toro_virus,Bradypus_variegatus,wild,Antibodies,0,Seymour et al. 1983b
@@ -364,7 +364,7 @@ Vesicular_stomatitis_Indiana_virus,Caluromys_derbianus,wild,plaque reduction neu
 Caraparu_virus,Caluromys_philander,wild,Isolation,2,Shope et al. 1988
 Guama_virus,Caluromys_philander,wild,Antibodies,0,Shope et al. 1988
 Marituba_virus,Caluromys_philander,wild,Antibodies,0,Shope et al. 1988
-Mayaro_virus,Caluromys_philander,wild,Antibodies,0,de Thoisy et al. 2003
+Mayaro_virus,Caluromys_philander,wild,Antibodies,0,de Thoisy et al. 2003a
 Crimean-Congo_hemorrhagic_fever_virus,Camelus_bactrianus,domestic,Antibodies,0,Morrill et al. 1990
 Dugbe_virus,Camelus_bactrianus,domestic,Antibodies,0,Morrill et al. 1990
 African_horse_sickness_virus,Camelus_dromedarius,domestic,Antibodies,0,Baba et al. 1993
@@ -618,14 +618,14 @@ Cercopithecine_herpesvirus_2,Chlorocebus_sabaeus,wild,Isolation,2,Malherbe & Har
 Measles_virus,Chlorocebus_sabaeus,wild,Isolation,2,Fowler & Miller 2003
 Borna_disease_virus,Choeropsis_liberiensis,wild,Antibodies,0,Schuppel et al. 1994
 Borna_disease_virus,Choloepus_didactylus,wild,Antibodies,0,Schuppel et al. 1994
-Mayaro_virus,Choloepus_didactylus,wild,Antibodies,0,de Thoisy et al. 2003
+Mayaro_virus,Choloepus_didactylus,wild,Antibodies,0,de Thoisy et al. 2003a
 Changuinola_virus,Choloepus_hoffmanni,wild,Isolation,2,Seymour et al. 1983b
-Mayaro_virus,Choloepus_hoffmanni,wild,Antibodies,0,de Thoisy et al. 2003
+Mayaro_virus,Choloepus_hoffmanni,wild,Antibodies,0,de Thoisy et al. 2003a
 St._Louis_encephalitis_virus,Choloepus_hoffmanni,wild,Antibodies,0,Seymour et al. 1983a
 Vesicular_stomatitis_Indiana_virus,Choloepus_hoffmanni,wild,plaque reduction neutralization,1,Tesh et al. 1969
 Rabies_virus,Chrotopterus_auritus,wild,Isolation,2,Silva et al. 1968
 Rabies_virus,Chrysocyon_brachyurus,wild,Antibodies,0,Deem & Emmons 2005
-Mayaro_virus,Coendou_prehensilis,wild,Antibodies,0,de Thoisy et al. 2003
+Mayaro_virus,Coendou_prehensilis,wild,Antibodies,0,de Thoisy et al. 2003a
 Vesicular_stomatitis_Indiana_virus,Coendou_rothschildi,wild,plaque reduction neutralization,1,Tesh et al. 1969
 Measles_virus,Colobus_guereza,wild,Isolation,2,Scott & Keymer 1975
 Simian_foamy_virus,Colobus_guereza,wild,PCR,2,Hussain et al. 2003
@@ -696,12 +696,12 @@ Crimean-Congo_hemorrhagic_fever_virus,Damaliscus_pygargus,wild,Antibodies,0,Shep
 Bunyamwera_virus,Dasymys_incomtus,wild,Isolation,2,Johnson et al. 1977
 Witwatersrand_virus,Dasymys_incomtus,wild,Antibodies,0,Henderson et al. 1972
 Dengue_virus,Dasyprocta_leporina,wild,Antibodies,0,de Thoisy et al. 2004
-Mayaro_virus,Dasyprocta_leporina,wild,Antibodies,0,de Thoisy et al. 2003
+Mayaro_virus,Dasyprocta_leporina,wild,Antibodies,0,de Thoisy et al. 2003a
 Yellow_fever_virus,Dasyprocta_leporina,wild,Antibodies,0,de Thoisy et al. 2004; McIntosh 1961
 Mayaro_virus,Dasyprocta_punctata,wild,Antibodies,0,Seymour et al. 1983a
 Vesicular_stomatitis_Indiana_virus,Dasyprocta_punctata,wild,plaque reduction neutralization,1,Tesh et al. 1969
 Eastern_equine_encephalitis_virus,Dasypus_novemcinctus,wild,Antibodies,0,Deem et al. 2009
-Mayaro_virus,Dasypus_novemcinctus,wild,Antibodies,0,de Thoisy et al. 2003
+Mayaro_virus,Dasypus_novemcinctus,wild,Antibodies,0,de Thoisy et al. 2003a
 St._Louis_encephalitis_virus,Dasypus_novemcinctus,wild,Antibodies,0,Day et al. 1995
 Vesicular_stomatitis_Indiana_virus,Dasypus_novemcinctus,wild,plaque reduction neutralization,1,Tesh et al. 1969
 Cetacean_morbillivirus_virus,Delphinus_delphis,wild,PCR,2,Birkun et al. 1999
@@ -724,7 +724,7 @@ Rabies_virus,Diclidurus_albus,wild,Isolation,2,Goodwin & Greenhall 1961
 Catu_virus,Didelphis_marsupialis,wild,Isolation,2,Shope et al. 1988
 Guama_virus,Didelphis_marsupialis,wild,Isolation,2,Shope et al. 1988
 Marituba_virus,Didelphis_marsupialis,wild,Isolation,2,Shope et al. 1988
-Mayaro_virus,Didelphis_marsupialis,wild,Antibodies,0,de Thoisy et al. 2003
+Mayaro_virus,Didelphis_marsupialis,wild,Antibodies,0,de Thoisy et al. 2003a
 Oriboca_virus,Didelphis_marsupialis,wild,Isolation,2,Shope et al. 1988
 Patois_virus,Didelphis_marsupialis,wild,Antibodies,0,Scherer et al. 1972
 St._Louis_encephalitis_virus,Didelphis_marsupialis,wild,Isolation,2,Kramer & Chandler 2001
@@ -2121,7 +2121,7 @@ Crimean-Congo_hemorrhagic_fever_virus,Phacochoerus_aethiopicus,wild,Antibodies,0
 Foot-and-mouth_disease_virus,Phacochoerus_aethiopicus,wild,Antibodies,0,Hamblin et al. 1990
 African_swine_fever_virus,Phacochoerus_africanus,wild,PCR,2,Gallardo et al. 2011
 Araguari_virus,Philander_opossum,wild,Isolation,2,Karabatsos 1995
-Mayaro_virus,Philander_opossum,wild,Antibodies,0,de Thoisy et al. 2003
+Mayaro_virus,Philander_opossum,wild,Antibodies,0,de Thoisy et al. 2003a
 Patois_virus,Philander_opossum,wild,Antibodies,0,Scherer et al. 1972
 Venezuelan_equine_encephalitis_virus,Philander_opossum,wild,Antibodies,0,Seymour et al. 1978
 Vesicular_stomatitis_Indiana_virus,Philander_opossum,wild,plaque reduction neutralization,1,Tesh et al. 1969
@@ -2164,7 +2164,7 @@ European_bat_lyssavirus_1,Pipistrellus_pipistrellus,wild,Isolation,2,Muller et a
 Issyk-Kul_virus,Pipistrellus_pipistrellus,wild,Isolation,2,Kostyukov 1976
 Rabies_virus,Pipistrellus_subflavus,wild,PCR,2,Blanton et al. 2008
 Measles_virus,Pithecia_monachus,wild,Isolation,2,Fowler & Miller 2003
-Mayaro_virus,Pithecia_pithecia,wild,Antibodies,0,de Thoisy et al. 2003
+Mayaro_virus,Pithecia_pithecia,wild,Antibodies,0,de Thoisy et al. 2003a
 Eastern_equine_encephalitis_virus,Platyrrhinus_helleri,wild,Antibodies,0,Price 1978
 Ilheus_virus,Platyrrhinus_helleri,wild,Antibodies,0,Price et al. 1978
 Tacaribe_virus,Platyrrhinus_helleri,wild,Antibodies,0,Price 1978
@@ -2190,7 +2190,7 @@ Sindbis_virus,Pongo_pygmaeus,wild,Antibodies,0,Kilbourn et al. 2003
 Tembusu_virus,Pongo_pygmaeus,wild,Antibodies,0,Kilbourn et al. 2003
 Zika_virus,Pongo_pygmaeus,wild,Antibodies,0,Kilbourn et al. 2003
 African_swine_fever_virus,Potamochoerus_porcus,wild,PCR,2,Jori & Bastos 2009
-Mayaro_virus,Potos_flavus,wild,Antibodies,0,de Thoisy et al. 2003
+Mayaro_virus,Potos_flavus,wild,Antibodies,0,de Thoisy et al. 2003a
 Vesicular_stomatitis_Indiana_virus,Potos_flavus,wild,plaque reduction neutralization,1,Tesh et al. 1969
 Ippy_virus,Praomys_jacksoni,wild,Antibodies,0,Hugot et al. 2001
 Mobala_virus,Praomys_jacksoni,wild,Isolation,2,Charrel & de Lamballerie 2010; Gonzalez et al. 1983
@@ -2449,15 +2449,15 @@ Yellow_fever_virus,Saguinus_geoffroyi,wild,Antibodies,0,Seymour et al. 1983a
 GB_virus_A,Saguinus_labiatus,wild,PCR,2,Bukh & Apgar 1997
 GB_virus_B,Saguinus_labiatus,captive,Isolation,2,Simons et al. 1995
 Torque_Teno_virus,Saguinus_labiatus,wild,PCR,2,Okamoto et al. 2000
-Callitrichine_herpesvirus_1,Saguinus_midas,wild,Isolation,2,de Thoisy et al. 2003
-Mayaro_virus,Saguinus_midas,wild,Antibodies,0,de Thoisy et al. 2003
+Callitrichine_herpesvirus_1,Saguinus_midas,wild,Isolation,2,de Thoisy et al. 2003b
+Mayaro_virus,Saguinus_midas,wild,Antibodies,0,de Thoisy et al. 2003a
 GB_virus_A,Saguinus_mystax,wild,PCR,2,Bukh & Apgar 1997
 GB_virus_A,Saguinus_nigricollis,wild,PCR,2,Bukh & Apgar 1997
 GB_virus_A,Saguinus_oedipus,wild,PCR,2,Bukh & Apgar 1997
 Torque_Teno_virus,Saguinus_oedipus,wild,PCR,2,Catroxo et al. 2008
 Foot-and-mouth_disease_virus,Saiga_tatarica,wild,Isolation,2,Weaver et al. 2013
 Encephalomyocarditis_virus,Saimiri_sciureus,wild,Isolation,2,Roca-Garcia & Sanmartin-Barber 1957
-Mayaro_virus,Saimiri_sciureus,wild,Antibodies,0,de Thoisy et al. 2003
+Mayaro_virus,Saimiri_sciureus,wild,Antibodies,0,de Thoisy et al. 2003a
 Measles_virus,Saimiri_sciureus,wild,Isolation,2,Fowler & Miller 2003
 Saimiriine_herpesvirus_1,Saimiri_sciureus,wild,Isolation,2,Daniel et al. 1967
 Saimiriine_herpesvirus_2,Saimiri_sciureus,wild,Isolation,2,Falk et al. 1972
@@ -2670,7 +2670,7 @@ Chikungunya_virus,Tadarida_pumila,wild,Isolation,2,Calisher et al. 2006
 Dakar_bat_virus,Tadarida_pumila,wild,Isolation,2,Calisher et al. 2006
 Entebbe_bat_virus,Tadarida_pumila,wild,Isolation,2,Calisher et al. 2006
 European_bat_lyssavirus_1,Tadarida_teniotis,wild,Antibodies,0,Serra-Cobo et al. 2002
-Mayaro_virus,Tamandua_tetradactyla,wild,Antibodies,0,de Thoisy et al. 2003
+Mayaro_virus,Tamandua_tetradactyla,wild,Antibodies,0,de Thoisy et al. 2003a
 St._Louis_encephalitis_virus,Tamandua_tetradactyla,wild,Antibodies,0,de Thoisy et al. 2004
 Vesicular_stomatitis_Indiana_virus,Tamandua_tetradactyla,wild,plaque reduction neutralization,1,Tesh et al. 1969
 Colorado_tick_fever_virus,Tamias_amoenus,wild,Isolation,2,Burgdorfer & Eklund 1959

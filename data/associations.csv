@@ -2000,7 +2000,7 @@ Chikungunya_virus,Pan_troglodytes,wild,Antibodies,0,Morrison 1979
 Cote_d'Ivoire_ebolavirus,Pan_troglodytes,wild,Isolation,2,Le Guenno et al. 1995
 Encephalomyocarditis_virus,Pan_troglodytes,wild,Isolation,2,Reddacliff et al. 1997
 GB_virus_C,Pan_troglodytes,wild,PCR,2,Adams et al. 1998
-Hepatitis_A_virus,Pan_troglodytes,domestic,Isolation,2,Taylor et al. 2001; http://www.uniprot.org/uniprot/Q2A069
+Hepatitis_A_virus,Pan_troglodytes,domestic,Isolation,2,Taylor et al. 2001
 Hepatitis_B_virus,Pan_troglodytes,wild,Antibodies,0,Sa-Nguanmoo et al. 2009
 Human_adenovirus_A,Pan_troglodytes,wild,PCR,2,Wevers et al. 2011
 Human_adenovirus_B,Pan_troglodytes,wild,PCR,2,Roy et al. 2009
@@ -2351,7 +2351,7 @@ Crimean-Congo_hemorrhagic_fever_virus,Rattus_rattus,wild,Antibodies,0,Darwish et
 Dera_Ghazi_Khan_virus,Rattus_rattus,domestic,Antibodies,0,Darwish et al. 1983
 Dhori_virus,Rattus_rattus,wild,Antibodies,0,Darwish et al. 1983
 Encephalomyocarditis_virus,Rattus_rattus,domestic,Isolation,2,Tesh & Wallace 1978
-Hepatitis_E_virus,Rattus_rattus,domestic,Antibodies,0,Taylor et al. 2001; http://www.uniprot.org/uniprot/Q2A069
+Hepatitis_E_virus,Rattus_rattus,domestic,Antibodies,0,Taylor et al. 2001
 Kilham_rat_virus,Rattus_rattus,wild and captive,Antibodies and Isolation,2,Robey et al. 1968; Besselsen et al. 1995
 Kyasanur_Forest_disease_virus,Rattus_rattus,wild,Antibodies,0,Webb 1965
 Latino_virus,Rattus_rattus,wild,Isolation,2,Gonzalez et al. 2007
@@ -2578,7 +2578,7 @@ Classical_swine_fever_virus,Sus_scrofa,domestic,Isolation,2,Kosmidou et al 1998
 Encephalomyocarditis_virus,Sus_scrofa,domestic,Isolation,2,Tesh & Wallace 1978
 Foot-and-mouth_disease_virus,Sus_scrofa,domestic,Isolation,2,Ghoneim et al. 2010
 Getah_virus,Sus_scrofa,domestic,Isolation,2,Attoui et al. 2007
-Hepatitis_E_virus,Sus_scrofa,domestic,Antibodies,0,Taylor et al. 2001;http://www.uniprot.org/uniprot/Q2A069
+Hepatitis_E_virus,Sus_scrofa,domestic,Antibodies,0,Taylor et al. 2001
 Human_picobirnavirus,Sus_scrofa,domestic,PCR,2,Banyai et al. 2008
 Influenza_A_virus,Sus_scrofa,wild,Antibodies,0,Kaden et al. 2008
 Influenza_C_virus,Sus_scrofa,domestic,Isolation,2,Kimura et al. 1997

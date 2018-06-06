@@ -399,7 +399,7 @@ Crimean-Congo_hemorrhagic_fever_virus,Canis_familiaris,domestic,Antibodies,0,She
 Everglades_virus,Canis_familiaris,domestic,Antibodies,0,Coffey et al. 2006
 Hepatitis_E_virus,Canis_familiaris,domestic,Antibodies,0,Vitral et al. 2005
 Human_herpesvirus_4,Canis_familiaris,domestic,PCR,2,Chiou et al. 2005
-Human_norovirus-Alphatron,Canis_familiaris,domestic,PCR,2,Martella et al. 2008
+Human_norovirus-Alphatron,Canis_familiaris,domestic,PCR,2,Martella et al. 2008b
 Human_picobirnavirus,Canis_familiaris,domestic,PAGE,0,Costa et al. 2004
 Mammalian_orthoreovirus,Canis_familiaris,domestic,Isolation,2,Decaro et al. 2005
 Mokola_virus,Canis_familiaris,domestic,Antibodies,0,Sabeta et al. 2007
@@ -2595,7 +2595,7 @@ Porcine_adenovirus_C,Sus_scrofa,domestic,Isolation,2,Tuboly et al. 1995
 Porcine_astrovirus,Sus_scrofa,domestic,PCR,2,Indik et al. 2006
 Porcine_circovirus-1,Sus_scrofa,domestic,PCR,2,Kim et al. 2001
 Porcine_circovirus-2,Sus_scrofa,domestic,PCR,2,Petrini et al. 2009
-Porcine_enteric_sapovirus,Sus_scrofa,domestic,Isolation,2,Martella et al. 2008
+Porcine_enteric_sapovirus,Sus_scrofa,domestic,Isolation,2,Martella et al. 2008a
 Porcine_enterovirus_A,Sus_scrofa,domestic,Isolation,2,Dunne et al. 1971
 Porcine_enterovirus_B,Sus_scrofa,domestic,Isolation,2,Moon et al. 2012
 Porcine_epidemic_diarrhea_virus,Sus_scrofa,domestic,PCR,2,Puranaveja et al. 2009

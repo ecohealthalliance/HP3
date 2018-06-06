@@ -644,7 +644,7 @@ Rift_Valley_fever_virus,Connochaetes_taurinus,wild,Antibodies,0,Capobianco Dondo
 Rinderpest_virus,Connochaetes_taurinus,wild,Antibodies,0,Taylor & Watson 1967
 Rabies_virus,Corynorhinus_townsendii,wild,Isolation,2,Streiker et al. 2010
 Monkeypox_virus,Cricetomys_emini,wild,Antibodies,0,Hutin et al. 2001
-Dugbe_virus,Cricetomys_gambianus,wild,Isolation,2,Beran 1994; Kemp 1975; Kemp et al. 1974; Arbovirus Catalogue
+Dugbe_virus,Cricetomys_gambianus,wild,Isolation,2,Kemp 1975; Kemp et al. 1974; Arbovirus Catalogue
 Ife_virus,Cricetomys_gambianus,wild,Antibodies,0,Ezeifeka et al. 1987
 Kotonkan_virus,Cricetomys_gambianus,wild,Antibodies,0,Kemp et al. 1973
 Monkeypox_virus,Cricetomys_gambianus,wild,PCR,2,CDC
@@ -705,7 +705,7 @@ Mayaro_virus,Dasypus_novemcinctus,wild,Antibodies,0,de Thoisy et al. 2003a
 St._Louis_encephalitis_virus,Dasypus_novemcinctus,wild,Antibodies,0,Day et al. 1995
 Vesicular_stomatitis_Indiana_virus,Dasypus_novemcinctus,wild,plaque reduction neutralization,1,Tesh et al. 1969
 Cetacean_morbillivirus_virus,Delphinus_delphis,wild,PCR,2,Birkun et al. 1999
-Wesselsbron_virus,Desmodillus_auricularis,wild,Isolation,2,Beran 1994
+Wesselsbron_virus,Desmodillus_auricularis,wild,Isolation,2,Beran & Steele 1994
 Dengue_virus,Desmodus_rotundus,wild,Antibodies,0,Price 1978a
 Ilheus_virus,Desmodus_rotundus,wild,Antibodies,0,Price 1978a
 Rabies_virus,Desmodus_rotundus,wild,Isolation,2,Kobayashi et al. 2005

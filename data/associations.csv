@@ -783,7 +783,7 @@ St._Louis_encephalitis_virus,Eptesicus_fuscus,wild,Antibodies,0,Herbold et al. 1
 West_Nile_virus,Eptesicus_fuscus,wild,Antibodies,0,Davis et al. 2005
 European_bat_lyssavirus_1,Eptesicus_serotinus,wild,Isolation,2,Calisher et al. 2006
 Hantaan_virus,Eptesicus_serotinus,wild,Isolation,2,Calisher et al. 2006
-Issyk-Kul_virus,Eptesicus_serotinus,wild,Isolation,2,Calisher et al. 2006; Lvov et al. 1973
+Issyk-Kul_virus,Eptesicus_serotinus,wild,Isolation,2,Calisher et al. 2006; Lvov et al. 1973b
 African_horse_sickness_virus,Equus_asinus,domestic,Antibodies,0,Baba et al. 1993
 Borna_disease_virus,Equus_asinus,domestic,PCR,2,Zhang et al. 2014
 Bovine_papillomavirus_1,Equus_asinus,domestic,PCR,2,Nasir et al. 2007
@@ -1733,7 +1733,7 @@ Zaire_ebolavirus,Myonycteris_torquata,wild,PCR,2,Leroy et al. 2004
 Rabies_virus,Myotis_albescens,wild,antigen,0,Sodre et al. 2010; Sheeler-Gordon & Smith 2001
 Rabies_virus,Myotis_austroriparius,wild,antigen,0,Constantine 1979
 Aravan_virus,Myotis_blythii,wild,Isolation,2,Calisher et al. 2006
-Issyk-Kul_virus,Myotis_blythii,wild,Isolation,2,Calisher et al. 2006; Lvov et al. 1973
+Issyk-Kul_virus,Myotis_blythii,wild,Isolation,2,Calisher et al. 2006; Lvov et al. 1973b
 Rabies_virus,Myotis_californicus,wild,PCR,2,Blanton et al. 2008
 Rabies_virus,Myotis_chiloensis,wild,PCR,2,de Mattos et al. 2000
 European_bat_lyssavirus_1,Myotis_dasycneme,wild,Isolation,2,Muller et al. 2004
@@ -1825,7 +1825,7 @@ Duvenhage_virus,Nyctalus_noctula,wild,Isolation,2,Calisher et al. 2006
 European_bat_lyssavirus_1,Nyctalus_noctula,wild,Isolation,2,Muller et al. 2007
 European_bat_lyssavirus_2,Nyctalus_noctula,wild,Isolation,2,Kuzmin & Rupprecht 1999
 Influenza_A_virus,Nyctalus_noctula,wild,Isolation,2,Calisher et al. 2006
-Issyk-Kul_virus,Nyctalus_noctula,wild,Isolation,2,Calisher et al. 2006; Lvov et al. 1973
+Issyk-Kul_virus,Nyctalus_noctula,wild,Isolation,2,Calisher et al. 2006; Lvov et al. 1973b
 Rabies_virus,Nyctalus_noctula,wild,Isolation,2,Selimov et al. 1991
 Rabies_virus,Nyctereutes_procyonoides,wild,PCR,2,Kuzmin et al. 2004
 Rotavirus_A,Nyctereutes_procyonoides,wild,PCR,2,Abe et al. 2010
@@ -2159,7 +2159,7 @@ Influenza_A_virus,Pipistrellus_ceylonicus,wild,Antibodies,0,Kelkar et al. 1981
 Rabies_virus,Pipistrellus_hesperus,wild,PCR,2,Blanton et al. 2008
 Sandfly_fever_Naples_virus,Pipistrellus_kuhlii,wild,Isolation,2,Calisher et al. 2006
 European_bat_lyssavirus_1,Pipistrellus_nathusii,wild,Isolation,2,Muller et al. 2007; Kuzmin & Rupprecht 1999
-Entebbe_bat_virus,Pipistrellus_pipistrellus,wild,Isolation,2,Gonzalez et al. 2008; Lvov et al. 1973
+Entebbe_bat_virus,Pipistrellus_pipistrellus,wild,Isolation,2,Gonzalez et al. 2008; Lvov et al. 1973a
 European_bat_lyssavirus_1,Pipistrellus_pipistrellus,wild,Isolation,2,Muller et al. 2007
 Issyk-Kul_virus,Pipistrellus_pipistrellus,wild,Isolation,2,Kostyukov 1976
 Rabies_virus,Pipistrellus_subflavus,wild,PCR,2,Blanton et al. 2008

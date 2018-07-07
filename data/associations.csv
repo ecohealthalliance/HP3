@@ -98,7 +98,7 @@ Cowpox_virus,Apodemus_flavicollis,wild,Antibodies,0,Acha & Szyfres 2003; Essbaue
 Dobrava-Belgrade_virus,Apodemus_flavicollis,wild,Isolation,2,Avsic-Zupanc et al. 1992
 Ljungan_virus,Apodemus_flavicollis,wild,PCR,2,Hauffe et al. 2010
 Lymphocytic_choriomeningitis_virus,Apodemus_flavicollis,wild,Antibodies,0,Tagliapietra et al. 2009
-Murid_herpesvirus_1,Apodemus_flavicollis,wild,Isolation,2,Mistrikova & Blaskovis 1985
+Murid_herpesvirus_1,Apodemus_flavicollis,wild,Isolation,2,Mistrikova & Blaskovic 1985
 Murid_herpesvirus_2,Apodemus_flavicollis,wild,PCR,2,Ehlers et al. 2007
 Murid_herpesvirus_4,Apodemus_flavicollis,wild,Isolation,2,Blaskovic et al. 1980; Ehlers et al. 2007
 Thiafora_virus,Apodemus_flavicollis,wild,Antibodies,0,Woessner et al. 2000
@@ -113,7 +113,7 @@ Eyach_virus,Apodemus_sylvaticus,wild,Isolation,2,Chastel et al. 1985
 Ljungan_virus,Apodemus_sylvaticus,wild,PCR,2,Salisbury et al. 2014
 Louping_ill_virus,Apodemus_sylvaticus,wild,Antibodies,0,Gilbert et al. 2000
 Lymphocytic_choriomeningitis_virus,Apodemus_sylvaticus,wild,PCR,2,Ledesma et al. 2009
-Murid_herpesvirus_1,Apodemus_sylvaticus,wild,PCR,2,Mistrikova & Blaskovis 1985
+Murid_herpesvirus_1,Apodemus_sylvaticus,wild,PCR,2,Mistrikova & Blaskovic 1985
 Murid_herpesvirus_2,Apodemus_sylvaticus,wild,PCR,2,Ehlers et al. 2007
 Murid_herpesvirus_4,Apodemus_sylvaticus,wild,PCR,2,Blasdell et al. 2003
 Murine_norovirus_1,Apodemus_sylvaticus,wild,PCR,2,Smith et al. 2012
@@ -1585,7 +1585,7 @@ Tula_virus,Microtus_agrestis,wild,PCR,2,Schmidt-Chanasit et al. 2010
 California_encephalitis_virus,Microtus_arvalis,wild,Antibodies,0,Mitchell et al. 1993
 Encephalomyocarditis_virus,Microtus_arvalis,wild,Antibodies,0,Billinis 2009
 Lymphocytic_choriomeningitis_virus,Microtus_arvalis,wild,Antibodies,0,Tagliapietra et al. 2009
-Murid_herpesvirus_1,Microtus_arvalis,wild,Antibodies,0,Mistrikova & Blaskovis 1985
+Murid_herpesvirus_1,Microtus_arvalis,wild,Antibodies,0,Mistrikova & Blaskovic 1985
 Tick-borne_encephalitis_virus,Microtus_arvalis,wild,PCR,2,Kozuch et al. 1990; Achazi et al. 2011
 Tula_virus,Microtus_arvalis,wild,PCR,2,Schlegel et al. 2012
 Colorado_tick_fever_virus,Microtus_californicus,wild,Antibodies,0,Emmons 1994

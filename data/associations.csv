@@ -8,7 +8,7 @@ Feline_astrovirus,Acinonyx_jubatus,wild,PCR,2,Atkins at al. 2009
 Feline_calicivirus,Acinonyx_jubatus,wild,Antibodies,0,Munson et al. 2004
 Feline_coronavirus,Acinonyx_jubatus,wild,Antibodies,0,Hofmann-Lehmann et al. 1996
 Rabies_virus,Acinonyx_jubatus,wild,Antibodies,0,Thalwitzer et al. 2010
-Akabane_virus,Aepyceros_melampus,wild,Antibodies,0,Davies et al. 1985
+Akabane_virus,Aepyceros_melampus,wild,Antibodies,0,Davies & Jessett 1985
 Alcelaphine_herpesvirus_2,Aepyceros_melampus,wild,Antibodies,0,Reid et al. 1975
 Bluetongue_virus,Aepyceros_melampus,wild,Antibodies,0,Karesh et al. 1997
 Bovine_viral_diarrhea_virus_1,Aepyceros_melampus,wild,SNT,1,Hamblin & Hedger 1979
@@ -28,7 +28,7 @@ St._Louis_encephalitis_virus,Akodon_montensis,wild,Isolation,2,NA
 Andes_virus,Akodon_paranaensis,wild,Antibodies,0,de Oliveira et al. 2011
 Laguna_Negra_virus,Akodon_simulator,wild,PCR,2,Levis et al. 2004
 Andes_virus,Akodon_varius,wild,Antibodies,0,Sosa-Estani et al. 2002
-Akabane_virus,Alcelaphus_buselaphus,wild,Antibodies,0,Davies et al. 1985
+Akabane_virus,Alcelaphus_buselaphus,wild,Antibodies,0,Davies & Jessett 1985
 Alcelaphine_herpesvirus_2,Alcelaphus_buselaphus,wild,Isolation,2,Reid & Rowe 1973
 Bluetongue_virus,Alcelaphus_buselaphus,wild,Antibodies,0,Hamblin et al.
 Bovine_viral_diarrhea_virus_1,Alcelaphus_buselaphus,wild,SNT,1,Hamblin & Hedger 1979
@@ -368,7 +368,7 @@ Mayaro_virus,Caluromys_philander,wild,Antibodies,0,de Thoisy et al. 2003a
 Crimean-Congo_hemorrhagic_fever_virus,Camelus_bactrianus,domestic,Antibodies,0,Morrill et al. 1990
 Dugbe_virus,Camelus_bactrianus,domestic,Antibodies,0,Morrill et al. 1990
 African_horse_sickness_virus,Camelus_dromedarius,domestic,Antibodies,0,Baba et al. 1993
-Akabane_virus,Camelus_dromedarius,domestic,Antibodies,0,Davies et al. 1985
+Akabane_virus,Camelus_dromedarius,domestic,Antibodies,0,Davies & Jessett 1985
 Bluetongue_virus,Camelus_dromedarius,domestic,ELISA,0,Kimber et al. 2002
 Camelpox_virus,Camelus_dromedarius,domestic,Isolation,2,Bera et al. 2011
 Crimean-Congo_hemorrhagic_fever_virus,Camelus_dromedarius,domestic,Antibodies,0,Morrill et al. 1990
@@ -433,7 +433,7 @@ Feline_panleukopenia_virus,Canis_simensis,wild,Antibodies,0,Laurenson et al. 199
 Rabies_virus,Canis_simensis,wild,Isolation,2,Sillero-Zubiri et al. 1996
 Foot-and-mouth_disease_virus,Capra_aegagrus,wild,Isolation,2,Alexandersen et al. 2003; Arzt et al. 2011
 Peste-des-petits-ruminants_virus,Capra_aegagrus,wild,PCR,2,Abubakar et al. 2011
-Akabane_virus,Capra_hircus,domestic,Antibodies,0,Davies et al. 1985
+Akabane_virus,Capra_hircus,domestic,Antibodies,0,Davies & Jessett 1985
 Bhanja_virus,Capra_hircus,domestic,Antibodies,0,Hubalek 2009
 Bluetongue_virus,Capra_hircus,domestic,Antibodies,0,Allepuz et al. 2010
 Border_disease_virus,Capra_hircus,domestic,PCR,2,Kim et al. 2006
@@ -633,7 +633,7 @@ Simian_immunodeficiency_virus,Colobus_guereza,wild,PCR,2,Peeters et al. 2002
 Yellow_fever_virus,Colobus_polykomos,wild,Antibodies,0,Haddow et al. 1947
 Foot-and-mouth_disease_virus,Connochaetes_gnou,wild,Isolation,2,Walker 1934
 Lumpy_skin_disease_virus,Connochaetes_gnou,wild,SNT,1,Barnard 1997
-Akabane_virus,Connochaetes_taurinus,wild,Antibodies,0,Davies et al. 1985
+Akabane_virus,Connochaetes_taurinus,wild,Antibodies,0,Davies & Jessett 1985
 Alcelaphine_herpesvirus_1,Connochaetes_taurinus,wild,Isolation,2,Plowright et al. 1960
 Alcelaphine_herpesvirus_2,Connochaetes_taurinus,wild,Antibodies,0,Reid et al. 1975
 Bluetongue_virus,Connochaetes_taurinus,wild,Antibodies,0,Hamblin et al. 1990
@@ -688,7 +688,7 @@ Bovine_herpesvirus_1,Dama_dama,wild,PCR,2,Kalman & Egyed 2005
 Bovine_herpesvirus_2,Dama_dama,wild,PCR,2,Kalman & Egyed 2005
 Bovine_herpesvirus_4,Dama_dama,wild,PCR,2,Kalman & Egyed 2005
 Epizootic_hemorrhagic_disease_virus,Dama_dama,domestic,Antibodies,0,OIE Report 2006
-Akabane_virus,Damaliscus_lunatus,wild,Antibodies,0,Davies et al. 1985
+Akabane_virus,Damaliscus_lunatus,wild,Antibodies,0,Davies & Jessett 1985
 Bluetongue_virus,Damaliscus_lunatus,wild,Antibodies,0,Hamblin et al. 1990
 Bovine_viral_diarrhea_virus_1,Damaliscus_lunatus,wild,SNT,1,Hamblin & Hedger 1979
 Foot-and-mouth_disease_virus,Damaliscus_lunatus,wild,Antibodies,0,Hamblin et al. 1990
@@ -799,7 +799,7 @@ Vesicular_exanthema_of_swine_virus,Equus_asinus,domestic,Antibodies,0,Smith & La
 Vesicular_stomatitis_Indiana_virus,Equus_asinus,domestic,Antibodies,0,Fletcher et al. 1985
 Wesselsbron_virus,Equus_asinus,domestic,Antibodies,0,Baba et al. 1995
 African_horse_sickness_virus,Equus_caballus,domestic,Antibodies,0,Baba et al. 1993
-Akabane_virus,Equus_caballus,domestic,Antibodies,0,Davies et al. 1985
+Akabane_virus,Equus_caballus,domestic,Antibodies,0,Davies & Jessett 1985
 Anopheles_A_virus,Equus_caballus,domestic,Isolation,2,NA
 Aura_virus,Equus_caballus,domestic,Hemagglutination inhibition assay; Neutralization test,0,Sabattini et al. 1965
 Barmah_Forest_virus,Equus_caballus,domestic,Antibodies,0,Kay et al. 2007
@@ -859,7 +859,7 @@ West_Nile_virus,Equus_caballus,domestic,PCR,2,Ibarra-Juarez et al. 2012
 Western_equine_encephalitis_virus,Equus_caballus,domestic,Antibodies,0,Calisher et al. 1983
 Equid_herpesvirus_9,Equus_hemionus,wild,Isolation,2,Kasem et al. 2008
 African_horse_sickness_virus,Equus_quagga,wild,Antibodies,0,Maclachlan & Guthrie 2010
-Akabane_virus,Equus_quagga,wild,Antibodies,0,Davies et al. 1985
+Akabane_virus,Equus_quagga,wild,Antibodies,0,Davies & Jessett 1985
 Crimean-Congo_hemorrhagic_fever_virus,Equus_quagga,wild,Antibodies,0,Shepherd et al. 1987
 Equid_herpesvirus_4,Equus_quagga,wild,Antibodies,0,Borchers & Frolich 1997
 Equid_herpesvirus_9,Equus_quagga,wild,Antibodies,0,Borchers et al. 2005
@@ -876,7 +876,7 @@ Yaba_monkey_tumor_virus,Erythrocebus_patas,wild,Antibodies,0,Downie 1974
 Yellow_fever_virus,Erythrocebus_patas,wild,Isolation,2,Deubel et al. 1985
 Vesicular_exanthema_of_swine_virus,Eschrichtius_robustus,wild,Antibodies,0,Smith & Latham 1978
 Rabies_virus,Euderma_maculatum,wild,Isolation,2,Nadin-Davis et al. 2001
-Akabane_virus,Eudorcas_thomsonii,wild,Antibodies,0,Davies et al. 1985
+Akabane_virus,Eudorcas_thomsonii,wild,Antibodies,0,Davies & Jessett 1985
 Bluetongue_virus,Eudorcas_thomsonii,wild,Antibodies,0,Anderson et al. 1998
 Equid_herpesvirus_1,Eudorcas_thomsonii,captive,PCR,2,Wohlsein et al. 2011
 Equid_herpesvirus_9,Eudorcas_thomsonii,wild,Isolation,2,Fukushi et al. 1997
@@ -1305,7 +1305,7 @@ Crimean-Congo_hemorrhagic_fever_virus,Hystrix_africaeaustralis,wild,Antibodies,0
 Encephalomyocarditis_virus,Ichneumia_albicauda,wild,Isolation,2,Tesh & Wallace 1978
 Rabies_virus,Ichneumia_albicauda,wild,PCR,2,Lembo et al. 2008
 Koongol_virus,Isoodon_macrourus,wild,Antibodies,0,Doherty et al. 1970
-Akabane_virus,Kobus_ellipsiprymnus,wild,Antibodies,0,Davies et al. 1985
+Akabane_virus,Kobus_ellipsiprymnus,wild,Antibodies,0,Davies & Jessett 1985
 Bluetongue_virus,Kobus_ellipsiprymnus,wild,Antibodies,0,Hamblin et al. 1990
 Bovine_ephemeral_fever_virus,Kobus_ellipsiprymnus,wild,Antibodies,0,Davies et al. 1975
 Bovine_herpesvirus_2,Kobus_ellipsiprymnus,wild,Antibodies,0,Hamblin & Hedger 1982
@@ -1775,7 +1775,7 @@ Rabies_virus,Myotis_volans,wild,Antibodies,0, Bowen et al. 2013
 Kern_Canyon_virus,Myotis_yumanensis,wild,Isolation,2,Calisher et al. 2006
 Rabies_virus,Myotis_yumanensis,wild,PCR,2,Blanton et al. 2008
 Human_picobirnavirus,Myrmecophaga_tridactyla,captive,PAGE,0,Haga et al. 1999
-Akabane_virus,Nanger_granti,wild,Antibodies,0,Davies et al. 1985
+Akabane_virus,Nanger_granti,wild,Antibodies,0,Davies & Jessett 1985
 Bluetongue_virus,Nanger_granti,wild,Antibodies,0,Williams & Barker 2001
 Foot-and-mouth_disease_virus,Nanger_granti,wild,Antibodies,0,Weaver et al. 2013
 Vesicular_stomatitis_Indiana_virus,Nasua_narica,wild,plaque reduction neutralization,1,Tesh et al. 1969
@@ -1925,7 +1925,7 @@ Witwatersrand_virus,Otomys_tropicalis,wild,Antibodies,0,Henderson et al. 1972
 Bluetongue_virus,Ourebia_ourebi,wild,Antibodies,0,Williams & Barker 2001
 Orf_virus,Ovibos_moschatus,wild,PCR,2,Vikoren et al. 2008
 Ovine_herpesvirus_2,Ovibos_moschatus,wild,ELISA,0,Zarnke et al 2002
-Akabane_virus,Ovis_aries,domestic,Antibodies,0,Davies et al. 1985
+Akabane_virus,Ovis_aries,domestic,Antibodies,0,Davies & Jessett 1985
 Alcelaphine_herpesvirus_1,Ovis_aries,domestic,PCR,2,Li et al. 1995
 Bhanja_virus,Ovis_aries,domestic,Antibodies,0,Hubalek 2009
 Bluetongue_virus,Ovis_aries,domestic,Antibodies,0,Allepuz et al. 2010
@@ -2718,14 +2718,14 @@ Crimean-Congo_hemorrhagic_fever_virus,Tragelaphus_angasii,wild,Antibodies,0,Shep
 Bovine_viral_diarrhea_virus_1,Tragelaphus_eurycerus,wild,Isolation,2,Becher et al. 2000
 Foot-and-mouth_disease_virus,Tragelaphus_imberbis,wild,Antibodies,0,Anonymous 1966
 Rinderpest_virus,Tragelaphus_imberbis,wild,PCR,2,Roeder 2011
-Akabane_virus,Tragelaphus_oryx,wild,Antibodies,0,Davies et al. 1985
+Akabane_virus,Tragelaphus_oryx,wild,Antibodies,0,Davies & Jessett 1985
 Bluetongue_virus,Tragelaphus_oryx,wild,Antibodies,0,Anderson & Rowe 1998
 Bovine_viral_diarrhea_virus_1,Tragelaphus_oryx,wild,Isolation,2,Vilcek et al. 2000
 Crimean-Congo_hemorrhagic_fever_virus,Tragelaphus_oryx,wild,Antibodies,0,Shepherd et al. 1987
 Foot-and-mouth_disease_virus,Tragelaphus_oryx,wild,Antibodies,0,Anderson 1981
 Lumpy_skin_disease_virus,Tragelaphus_oryx,wild,SNT,1,Barnard 1997
 Rinderpest_virus,Tragelaphus_oryx,wild,PCR,2,Roeder 2011
-Akabane_virus,Tragelaphus_scriptus,wild,Antibodies,0,Davies et al. 1985
+Akabane_virus,Tragelaphus_scriptus,wild,Antibodies,0,Davies & Jessett 1985
 Foot-and-mouth_disease_virus,Tragelaphus_scriptus,wild,Antibodies,0,Weaver et al. 2013
 Bluetongue_virus,Tragelaphus_strepsiceros,wild,Antibodies,0,Williams & Barker 2001
 Bovine_viral_diarrhea_virus_1,Tragelaphus_strepsiceros,wild,SNT,1,Hamblin & Hedger 1979

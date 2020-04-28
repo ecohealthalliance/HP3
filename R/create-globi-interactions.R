@@ -3,26 +3,37 @@ library(dplyr)
 # read in datasheets
 asc <- read.csv(file = "data/associations.csv")
 ref <- read.csv(file = "data/references.csv")
-# merge the two datasets
-asc <- left_join(asc, ref, by = "referencekey")
+host <- read.csv(file = "data/hosts.csv")
+virus <- read.csv(file = "data/viruses.csv")
+
+# merge sheets
+asc <- left_join(asc, ref, by = "referencekey") # merge in the references 
+asc <- left_join(asc, host, by = "hHostNameFinal") # merge in the host taxonomy
+asc <- left_join(asc, virus, by = "vVirusNameCorrected") # merge in the virus taxonomy
 
 # select columns for interactions sheet 
-asc <- dplyr::select(asc, vVirusNameCorrected, hHostNameFinal, Reference)
-# rename columns 
+asc <- dplyr::select(asc, vVirusNameCorrected, vOrder, vFamily, vGenus, hHostNameFinal, hOrder, hFamily, hGenus, Reference)
 
-# create in empty interactions sheet
+
+# create globi interactions sheet
 globi_df = data.frame("sourceOccurrenceId" = rep("", nrow(asc)),
        "sourceTaxonId" = 	rep("", nrow(asc)),
        "sourceTaxonName" = asc$vVirusNameCorrected,
+       "sourceTaxonOrder" = asc$vOrder,
+       "sourceTaxonFamily" = asc$vFamily, 
+       "sourceTaxonGenus" = asc$vGenus,
        "sourceBodyPartId" = rep("", nrow(asc)),
        "sourceBodyPartName"	= rep("", nrow(asc)), 
        "sourceLifeStageId" = rep("", nrow(asc)),
        "sourceLifeStageName" = rep("", nrow(asc)),
-       "interactionTypeId" = rep("http://purl.obolibrary.org/obo/RO_0002444", nrow(asc)),
-       "interactionTypeName" = rep("parasite of", nrow(asc)),
+       "interactionTypeId" = rep("http://purl.obolibrary.org/obo/RO_0002556", nrow(asc)),
+       "interactionTypeName" = rep("pathogen of", nrow(asc)),
        "targetOccurrenceId" = rep("", nrow(asc)),
        "targetTaxonId" =	rep("", nrow(asc)), 
        "targetTaxonName" =	asc$hHostNameFinal,
+       "targetTaxonOrder" = asc$hOrder,
+       "targetTaxonFamily" = asc$hFamily,
+       "targetTaxonGenus" = asc$hGenus,
        "targetBodyPartId" =	rep("", nrow(asc)),
        "targetBodyPartName" =	rep("", nrow(asc)),
        "targetLifeStageId" =	rep("", nrow(asc)),

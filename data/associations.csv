@@ -30,7 +30,7 @@ Laguna_Negra_virus,Akodon_simulator,wild,PCR,2,Levis et al. 2004
 Andes_virus,Akodon_varius,wild,Antibodies,0,Sosa-Estani et al. 2002
 Akabane_virus,Alcelaphus_buselaphus,wild,Antibodies,0,Davies & Jessett 1985
 Alcelaphine_herpesvirus_2,Alcelaphus_buselaphus,wild,Isolation,2,Reid & Rowe 1973
-Bluetongue_virus,Alcelaphus_buselaphus,wild,Antibodies,0,Hamblin et al.
+Bluetongue_virus,Alcelaphus_buselaphus,wild,Antibodies,0,Hamblin et al. 1990
 Bovine_viral_diarrhea_virus_1,Alcelaphus_buselaphus,wild,SNT,1,Hamblin & Hedger 1979
 Crimean-Congo_hemorrhagic_fever_virus,Alcelaphus_buselaphus,wild,Antibodies,0,Shepherd et al. 1987
 Foot-and-mouth_disease_virus,Alcelaphus_buselaphus,wild,Antibodies,0,Ayebazibwe et al. 2010
@@ -877,7 +877,7 @@ Yellow_fever_virus,Erythrocebus_patas,wild,Isolation,2,Deubel et al. 1985
 Vesicular_exanthema_of_swine_virus,Eschrichtius_robustus,wild,Antibodies,0,Smith & Latham 1978
 Rabies_virus,Euderma_maculatum,wild,Isolation,2,Nadin-Davis et al. 2001
 Akabane_virus,Eudorcas_thomsonii,wild,Antibodies,0,Davies & Jessett 1985
-Bluetongue_virus,Eudorcas_thomsonii,wild,Antibodies,0,Anderson et al. 1998
+Bluetongue_virus,Eudorcas_thomsonii,wild,Antibodies,0,Davies & Walker 1974
 Equid_herpesvirus_1,Eudorcas_thomsonii,captive,PCR,2,Wohlsein et al. 2011
 Equid_herpesvirus_9,Eudorcas_thomsonii,wild,Isolation,2,Fukushi et al. 1997
 Foot-and-mouth_disease_virus,Eudorcas_thomsonii,wild,Antibodies,0,Anderson 1981
@@ -2215,7 +2215,7 @@ Western_equine_encephalitis_virus,Procyon_lotor,wild,hemmaglutination,0,Hardy 19
 Venezuelan_equine_encephalitis_virus,Proechimys_guairae,wild,Antibodies,0,Navarro et al. 2005
 Aroa_virus,Proechimys_guyannensis,wild,isolation,2,Shope 2003
 Bimiti_virus,Proechimys_guyannensis,wild,Isolation,2,Shope et al. 1988
-Bujaru_virus,Proechimys_guyannensis,wild,Isolation,2,NA
+Bujaru_virus,Proechimys_guyannensis,wild,Isolation,2,Woodall 1967
 Caraparu_virus,Proechimys_guyannensis,wild,Isolation,2,Shope et al. 1988
 Catu_virus,Proechimys_guyannensis,wild,Isolation,2,Shope et al. 1988
 Encephalomyocarditis_virus,Proechimys_guyannensis,wild,Isolation,2,Tesh & Wallace 1978
